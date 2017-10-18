@@ -214,7 +214,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **W3C compliant:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
  
-> 🛠 [W3C validator]( )
+> 🛠 [W3C validator](https://validator.w3.org/)
 
 * [ ] **HTML Lint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) I use tools to help me analyse any issues I could have on my HTML code.
 
