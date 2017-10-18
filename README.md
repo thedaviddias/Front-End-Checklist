@@ -24,9 +24,9 @@ All items in the **Front-End Checklist** are required for the majority of the pr
 
 * ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) means that the item is **recommended** but can be omitted in some particular situations.
 * ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omited in some really particular cases. Some elements, if omited, can have bad repercutions in terms of performance or SEO.
-* ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means you **can't be omitted** by any reason. You may cause a dysfunction in your page or have 
+* ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means you **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
 
-Some resources possessed an emoticon to help you to understand which type of content / help:
+Some resources possessed an emoticon to help you to understand which type of content / help you may find on the checklist:
 
 * 📖: documentation or article
 * 🛠: online tool / testing tool
@@ -35,7 +35,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 ---
 ## Head
 
-> **Reference:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> **Notes**: You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
 
 ### Meta tag
 
@@ -45,6 +45,9 @@ Some resources possessed an emoticon to help you to understand which type of con
 <!-- Doctype HTML5 -->
 <!DOCTYPE html>
 ```
+
+> 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+
 *The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
 
 * [ ] **Charset**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The charset declared (UTF-8) is declared correctly.
@@ -97,7 +100,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
->  * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
+> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](http://caniuse.com/#feat=link-icon-png)
 
 * [ ] **Apple Touch Icon**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Apple touch favicon apple-mobile-web-app-capable are present. *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need)*
@@ -106,9 +109,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 <!-- Apple Touch Icon -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 ```
-
 > * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
-
 
 * [ ] **Canonical**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Use ``rel="canonical"`` is present to avoid duplicate content.
 
@@ -130,6 +131,8 @@ Some resources possessed an emoticon to help you to understand which type of con
 <body dir="rtl">
 ```
 
+> 📖 [dir - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+
 * [ ] **Alternate language**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) The language tag of your website is specified and related to the language of the current page.
 
 ```html
@@ -138,7 +141,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 * [ ] **Conditional comments**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Conditional comments are present for IE if needed.
 
-> [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+> 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
 * [ ] **RSS feed:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) If your projet is a blog or has articles, an RSS link was provided.
 
@@ -152,7 +155,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 ***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommanded. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
 
-* [ ] **Facebook Open Graph**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) All Facebook Open Graph (OG) are tested and no one is missing or with a false information.
+* [ ] **Facebook Open Graph**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images needs to be at least 600 x 315 pixels, 1200 x 630 pixels recommanded.
 
 ```html
 <meta property="og:type" content="website">
@@ -198,7 +201,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 > 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
 > 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
 
-* [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 500 exist.
+* [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
 * [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using ``target="_blank"`` on your links, ``rel="noreferrer noopener"`` is present on the ``<img>``.
 * [ ] **Clean up comments:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Unnecessary code needs to be removed before sending the page to production.
   
@@ -212,12 +215,18 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
+* [ ] **Desktop Browsers:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
+* [ ] **Desktop Mobile:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browser (Native browser, Chrome, Safari...).
+
 * [ ] **Link checker**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) There is no broken links in my page, verify that you don't have any 404 error.
  
 > * 🛠 [W3C Link Checker](http://validator.w3.org/checklink)
 
-* [ ] **Desktop Browsers:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Desktop Mobile:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browser (Native browser, Chrome, Safari...).
+* [ ] **Adblockers test:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your website show your content correctly with adblockers enable (You can provide a message encouraging people to disable their adblocker)
+
+- [ ] **Pixel perfect:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Pages are close to pixel perfect. Depending the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
+
+>  [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -309,15 +318,14 @@ Some resources possessed an emoticon to help you to understand which type of con
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
 > * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 
-* [ ] **Retina:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) You provide layout images x2 or 3x, support retina display
+* [ ] **Retina:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) You provide layout images x2 or 3x, support retina display.
 * [ ] **Sprite:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Small images are in a sprite file (in case of icons, they can be in an SVG sprite image).
-* [ ] **Height and width:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have height and width set (Don't specify px or %)
-* [ ] **Srcset:** 
+* [ ] **Width and Height:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have height and width set (Don't specify px or %).
 
 > ***Note:*** Lot of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
 
 * [ ] **Alternative text:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have an alternative text which describe the image visually.
-* [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images are lazyloaded (A noscript fallback is always provided)
+* [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images are lazyloaded (A noscript fallback is always provided).
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -326,9 +334,12 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 ### Best practices
 
-* [ ] **JS Inline:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) You don't have any JavaScript code inline (mixed with your HTML code).
+* [ ] **JavaScript Inline:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) You don't have any JavaScript code inline (mixed with your HTML code).
 * [ ] **Concatenation:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are concatened
-* [ ] **Minification:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are minified (and have the ``.min`` suffix)
+* [ ] **Minification:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are minified (you can add the ``.min`` suffix).
+
+> [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
+
 * [ ] **Non-blocking:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) JavaScript files are loaded asynchronously using ``async`` or deferred using ``defer`` attribute.
 
 > 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
@@ -349,6 +360,10 @@ Some resources possessed an emoticon to help you to understand which type of con
 ### Best practices
 
 - [ ] **Weight page:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The weight of each page is between 0ko and 500ko
+
+> * 🛠 [Website Page Size Online Checker](https://smallseotools.com/website-page-size-checker/)
+> * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
+
 - [ ] **Minified:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your HTML is minified
 > 🛠 [W3C Validator](http://validator.w3.org/)
  
@@ -358,9 +373,9 @@ Some resources possessed an emoticon to help you to understand which type of con
 
 * [ ] **Google PageSpeed:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All your pages were tested (not only the homepage) and have min 90/100.
 
-> [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-> [Test your mobile speed with Google](https://testmysite.withgoogle.com)
-> [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
+> * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
+> * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
+> * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -382,7 +397,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 #### Headings
 
 * [ ] **H1**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Headings sould be used properly in the right order (H1 to H6 )
+* [ ] **Headings:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Headings sould be used properly in the right order (H1 to H6)
 
 > 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
@@ -392,14 +407,18 @@ Some resources possessed an emoticon to help you to understand which type of con
 - [ ] **Role navigation:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) ``<nav>`` has ``role="navigation"``
 - [ ] **Role main:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) ``<main>`` has ``role="main"``
 
+> 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
+
 ### Semantics
 
 - [ ] **Specific HTML5 input types are used**: This is especially important for mobile devices that show customized keypads and widgets for different types.
 
-> 📖 [Mobile Input Types](http://mobileinputtypes.com/)*
+> 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
 ### Form
-* [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element (for attribute) or aria
+* [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element. In case, a label can't be display, use ``aria-label`` instead.
+
+> 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
 ### Accessibility testing
 * [ ] **Accessibility standards testing:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Use the WAVE tool to test if your page respect the accessibility standards.
@@ -418,7 +437,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 ## SEO
 
 * [ ] **Google Analytics:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Google Analytics is installed and correctly configured.
-* [ ] **Headings logic:** Headings help to understand the content
+* [ ] **Headings logic:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Heading text helps to understand the content in the current page.
 * [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exist and was submit in Google Search Console (ex:Google Webmaster Tools)
 * [ ] **robot.txt:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The robot.txt is not blocking webpages
 Linked your website to the Google webmaster tools
