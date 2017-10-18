@@ -22,9 +22,9 @@ All items in the **Front-End Checklist** are required for the majority of the pr
 
 * ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) means that the item is **recommended** but can be omitted in some particular situations.
 * ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omited in some really particular cases. Some elements, if omited, can have bad repercutions in terms of performance or SEO.
-* ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means you **can't be omitted** by any reason. You may cause a disfunction in your page or have 
+* ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means you **can't be omitted** by any reason. You may cause a dysfunction in your page or have 
 
-Some resources posessed an emoticon to help you to understand which type of content / help:
+Some resources possessed an emoticon to help you to understand which type of content / help:
 
 * 📖: documentation or article
 * 🛠: online tool / testing tool
