@@ -60,7 +60,11 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **X-UA-Compatible**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The X-UA-Compatible meta tag is present.
  
 ```html
+<<<<<<< HEAD
 <!-- Specifying legacy document modes -->
+=======
+<!-- Instruct Internet Explorer to use its latest rendering engine -->
+>>>>>>> Fix error in code comment for x-ua-compatible
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
