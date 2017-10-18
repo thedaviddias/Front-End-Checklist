@@ -1,6 +1,6 @@
 # Front-End Checklist
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Contributors](https://img.shields.io/github/contributors/thedaviddias/modern-front-end-checklist.svg)](https://github.com/thedaviddias/modern-front-end-checklist/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 
 The **Front-End Checklist** is based on Front-End developers year of experiences, with the addition from Open-Source checklists.
 
