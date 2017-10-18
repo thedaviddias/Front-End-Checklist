@@ -233,7 +233,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ---
 ## Webfonts
 
-* [ ] **Webfront format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browsers.
+* [ ] **Webfont format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browsers.
   
 > * 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff). 
 > * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
