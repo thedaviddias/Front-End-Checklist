@@ -38,7 +38,7 @@ Some resources posessed an emoticon to help you to understand which type of cont
 ### Meta tag
 
 * [ ] **Doctype**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The Doctype is HTML5 and is in the top of all your HTML pages.
-* 
+ 
 ```html
 <!-- Doctype HTML5 -->
 <!DOCTYPE html>
@@ -46,14 +46,14 @@ Some resources posessed an emoticon to help you to understand which type of cont
 *The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
 
 * [ ] **Charset**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The charset declared (UTF-8) is declared correctly.
-* 
+
 ```html
 <!-- Set character encoding for the document -->
 <meta charset="utf-8">
 ```
 
 * [ ] **X-UA-Compatible**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The X-UA-Compatible meta tag is present.
-* 
+ 
 ```html
 <!-- Set character encoding for the document -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -62,14 +62,14 @@ Some resources posessed an emoticon to help you to understand which type of cont
 > 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
 
 * [ ] **Viewport**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The viewport is declared correctly
-* 
+
 ```html
 <!-- Viewport for responsive web design -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 * [ ] **Title**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A title is used on all pages (SEO: No more than 65 characters, website title include)
-* 
+
 ```html
 <!-- Document Title -->
 <title>Page Title less than 65 characters</title>
@@ -78,7 +78,7 @@ Some resources posessed an emoticon to help you to understand which type of cont
 > 📖 [Title - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 
 * [ ] **Description**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A meta description is provided, unique and don't possessed more than 150 characters.
-* 
+
 ```html
 <!-- Meta Description -->
 <meta name="description" content="Description of the page less than 150 characters">
@@ -87,7 +87,6 @@ Some resources posessed an emoticon to help you to understand which type of cont
 * [ ] **Favicons**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Each favicons have been created and displays correctly. If you have only a ``favicon.ico``, put it at the root of your site. You will normally don't need to use any markup. However, its still good practice to link to it using the example below. Today, **PNG format is recommended** over ``.ico`` format.
 *(Create your favicon file with at least 200px x 200px dimension to support all dimensions needed)*
  
-* 
 ```html
 <!-- Standard favicon -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico" />
@@ -102,7 +101,6 @@ Some resources posessed an emoticon to help you to understand which type of cont
 
 * [ ] **Apple Touch Icon**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Apple touch favicon apple-mobile-web-app-capable are present (The logo needs to be 200px by 200px). 
 
-* 
 ```html
 <!-- Apple Touch Icon -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
@@ -113,7 +111,6 @@ Some resources posessed an emoticon to help you to understand which type of cont
 
 * [ ] **Canonical**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Use ``rel="canonical"`` is present to avoid duplicate content.
 
-* 
 ```html
 <!-- Helps prevent duplicate content issues -->
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
@@ -121,19 +118,19 @@ Some resources posessed an emoticon to help you to understand which type of cont
 
 ### HTML tags
 * [ ] **Language tag**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The language tag of your website is specified and related to the language of the current page.
-* 
+
 ```html
 <body lang="en">
 ```
 
 * [ ] **Direction tag**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The direction of lecture is specified on the body tag (It can be used on another HTML tag).
-* 
+
 ```html
 <body dir="rtl">
 ```
 
 * [ ] **Alternate language**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) The language tag of your website is specified and related to the language of the current page.
-* 
+
 ```html
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
@@ -156,7 +153,6 @@ Some resources posessed an emoticon to help you to understand which type of cont
 
 * [ ] **Facebook Open Graph**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) All Facebook Open Graph (OG) are tested and no one is missing or with a false information.
 
-* 
 ```html
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/page.html">
@@ -172,7 +168,6 @@ Some resources posessed an emoticon to help you to understand which type of cont
  
 * [ ] **Twitter Card**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png)
 
-* 
 ```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
@@ -248,7 +243,6 @@ http://html5doctor.com/element-index/
 
 * [ ] **JS prefix:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
 
-* 
 ```html
 <div id="js-slider" class="my-slider">
 <!- Or ->
