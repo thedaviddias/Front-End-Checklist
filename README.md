@@ -235,10 +235,10 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Webfront format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browsers.
   
-> 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff). 
-> 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
-> 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
-> 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
+> * 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff). 
+> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
+> * 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
+> * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 * [ ] **Webfont size**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Webfont sizes don't exceed 2 MO (all variants included)
 
