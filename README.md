@@ -2,7 +2,9 @@
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 
-The **Front-End Checklist** is based on Front-End developers year of experiences, with the addition from Open-Source checklists.
+The **Front-End Checklist** is an exhaustive list of all elements you need to have / to test before launching your site / page HTML to production.
+
+It is based on Front-End developers year's of experiences, with the addition from some other open-source checklists.
 
 ## Table of Contents
 1. **[How to use](#how-to-use)**
@@ -84,8 +86,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 <meta name="description" content="Description of the page less than 150 characters">
 ```
 
-* [ ] **Favicons**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Each favicons have been created and displays correctly. If you have only a ``favicon.ico``, put it at the root of your site. You will normally don't need to use any markup. However, its still good practice to link to it using the example below. Today, **PNG format is recommended** over ``.ico`` format.
-*(Create your favicon file with at least 200px x 200px dimension to support all dimensions needed)*
+* [ ] **Favicons**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Each favicons have been created and displays correctly. If you have only a ``favicon.ico``, put it at the root of your site. You will normally don't need to use any markup. However, its still good practice to link to it using the example below. Today, **PNG format is recommended** over ``.ico`` format (dimentions: 32x32px)
  
 ```html
 <!-- Standard favicon -->
@@ -99,7 +100,7 @@ Some resources possessed an emoticon to help you to understand which type of con
 >  * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](http://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Touch Icon**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Apple touch favicon apple-mobile-web-app-capable are present (The logo needs to be 200px by 200px). 
+* [ ] **Apple Touch Icon**: ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Apple touch favicon apple-mobile-web-app-capable are present. *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need)*
 
 ```html
 <!-- Apple Touch Icon -->
@@ -186,20 +187,22 @@ Some resources possessed an emoticon to help you to understand which type of con
 ---
 ## HTML
 
-http://html5doctor.com/element-index/
-
 ### Best practices
 
 * [ ] **HTML5 Semantic Elements:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) HTML5 Semantic Elements are used appropriately (header, section, footer, main...)
+
+> 📖 [HTML Reference](http://htmlreference.io/)
+
 * [ ] **Structured Data:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Pages using structured data are tested and are without errors.
 
+> 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
 > 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
 
 * [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 500 exist.
 * [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using ``target="_blank"`` on your links, ``rel="noreferrer noopener"`` is present on the ``<img>``.
 * [ ] **Clean up comments:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Unnecessary code needs to be removed before sending the page to production.
   
-### Testing
+### HTML testing
 
 * [ ] **W3C compliant:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
  
@@ -213,6 +216,9 @@ http://html5doctor.com/element-index/
  
 > * 🛠 [W3C Link Checker](http://validator.w3.org/checklink)
 
+* [ ] **Desktop Browsers:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
+* [ ] **Desktop Mobile:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browser (Native browser, Chrome, Safari...).
+
 **[⬆ back to top](#table-of-contents)**
 
 ---
@@ -220,7 +226,10 @@ http://html5doctor.com/element-index/
 
 * [ ] **Webfront format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browers.
   
-> 📖 [to cover the most recent browsers](https://caniuse.com). 
+> 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff). 
+> 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
+> 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
+> 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 * [ ] **Webfont size**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Webfont size don't exceed 2 MO (all variant included)
 
@@ -229,7 +238,7 @@ http://html5doctor.com/element-index/
 ---
 ## CSS
 
-> **References:** Take a look on [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most of Front-End developers.
+> **Notes**: Take a look on [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most of Front-End developers. If you have a doubt about CSS proprties, you can visit [CSS Reference](http://cssreference.io/).
 
 * [ ] **Responsve Web Design:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) A print stylesheet is provided and is correct on each page.
@@ -245,7 +254,7 @@ http://html5doctor.com/element-index/
 
 ```html
 <div id="js-slider" class="my-slider">
-<!- Or ->
+<!-- Or -->
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
@@ -275,6 +284,8 @@ http://html5doctor.com/element-index/
 > * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
 > * 📖 [Sass guidelines](https://sass-guidelin.es/)
 
+* [ ] **Responsive web design:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be fmore / different according to your analytics).
+
 * [ ] **CSS Validator:**: ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The CSS was tested and pertinents errors were corrected.
 
 > 🛠 [CSS Validator](http://jigsaw.w3.org/css-validator/)
@@ -290,17 +301,18 @@ http://html5doctor.com/element-index/
 ---
 ## Images
 
-For a complete understanding of image optimizations, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
+> **Notes:** For a complete understanding of image optimizations, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
 
 ### Best practices
 * [ ] **Optimization:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
 
-> Imagemin
+> * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
+> * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 
-* [ ] **Retina:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) You provide layout images x2, support retina display
+* [ ] **Retina:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) You provide layout images x2 or 3x, support retina display
 * [ ] **Sprite:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Small images are in a sprite file (in case of icons, they can be in an SVG sprite image).
 * [ ] **Height and width:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have height and width set (Don't specify px or %)
-* [ ] srcset
+* [ ] **Srcset:** 
 
 > ***Note:*** Lot of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
 
@@ -314,8 +326,9 @@ For a complete understanding of image optimizations, check the free ebook **[Ess
 
 ### Best practices
 
-- [ ] **Concatenation:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are concatened
-- [ ] **Minification:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are minified (and have the ``.min`` suffix)
+* [ ] **JS Inline:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) You don't have any JavaScript code inline (mixed with your HTML code).
+* [ ] **Concatenation:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are concatened
+* [ ] **Minification:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) JavaScript files are minified (and have the ``.min`` suffix)
 * [ ] **Non-blocking:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) JavaScript files are loaded asynchronously using ``async`` or deferred using ``defer`` attribute.
 
 > 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
@@ -341,16 +354,20 @@ For a complete understanding of image optimizations, check the free ebook **[Ess
  
 * [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images, scripts and css need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
+### Performance testing
+
+* [ ] **Google PageSpeed:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All your pages were tested (not only the homepage) and have min 90/100.
+
+> [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
+> [Test your mobile speed with Google](https://testmysite.withgoogle.com)
+> [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
+
 **[⬆ back to top](#table-of-contents)**
 
 ---
 ## Accessibility
 
-**Accessibility**
-
-> **References:**
->  
-> * [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
+> **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
 ### Best practices
 
@@ -384,14 +401,15 @@ For a complete understanding of image optimizations, check the free ebook **[Ess
 ### Form
 * [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element (for attribute) or aria
 
-### Testing
+### Accessibility testing
 * [ ] **Accessibility standards testing:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Use the WAVE tool to test if your page respect the accessibility standards.
+
 > 🛠 [Wave testing](http://wave.webaim.org/)
 
-* [ ] **Keyboard navigation**: Test your website using only your keyboard in a previsible order
+* [ ] **Keyboard navigation:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
+* [ ] **Screen-reader:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
+* [ ] **Focus style:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) If the focus is disabled, it is replaced by visible state in CSS.
 
-- [ ] **Focus style**: If the focus is disabled, it is replaced by visible state in CSS
-*
 > 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
 **[⬆ back to top](#table-of-contents)**
@@ -399,11 +417,12 @@ For a complete understanding of image optimizations, check the free ebook **[Ess
 ---
 ## SEO
 
-- [ ] **Google Analytics:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Google Analytics is installed and correctly configured.
-- [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exist and was submit in Google Search Console (ex:Google Webmaster Tools)
-- [ ] **robot.txt:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The robot.txt is not blocking webpages
+* [ ] **Google Analytics:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Google Analytics is installed and correctly configured.
+* [ ] **Headings logic:** Headings help to understand the content
+* [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exist and was submit in Google Search Console (ex:Google Webmaster Tools)
+* [ ] **robot.txt:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The robot.txt is not blocking webpages
 Linked your website to the Google webmaster tools
-* [ ] **Sitemap HTML:** A HTML sitemap is provided and accessible by a link in the footer of your website.
+* [ ] **Sitemap HTML:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) A HTML sitemap is provided and accessible by a link in the footer of your website.
 
 **[⬆ back to top](#table-of-contents)**
 
