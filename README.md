@@ -46,7 +46,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Doctype HTML5 -->
-<!DOCTYPE html>
+<!doctype html>
 ```
 
 > 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
