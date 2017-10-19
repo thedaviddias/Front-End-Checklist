@@ -249,7 +249,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-* [ ] **Webfont size:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Webfont sizes don't exceed 2 MO (all variants included)
+* [ ] **Webfont size:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Webfont sizes don't exceed 2 MB (all variants included)
 
 **[⬆ back to top](#table-of-contents)**
 
