@@ -23,7 +23,7 @@ It is based on Front-End developers' years of experience, with the addition from
 All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or not essential (in case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
 
 * ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercutions in terms of performance or SEO.
+* ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
 * ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
 
 Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
@@ -212,7 +212,7 @@ Some resources possess an emoticon to help you understand which type of content 
  
 > 🛠 [W3C validator](https://validator.w3.org/)
 
-* [ ] **HTML Lint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) I use tools to help me analyse any issues I could have on my HTML code.
+* [ ] **HTML Lint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) I use tools to help me analyze any issues I could have on my HTML code.
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
