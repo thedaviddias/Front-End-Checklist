@@ -225,7 +225,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
 * [ ] **Desktop Browsers:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Desktop Mobile:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browser (Native browser, Chrome, Safari...).
+* [ ] **Mobile Browsers:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
 
 * [ ] **Link checker:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) There are no broken links in my page, verify that you don't have any 404 error.
  
