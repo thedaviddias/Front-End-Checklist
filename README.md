@@ -320,10 +320,6 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-* [ ] **Debug CSS:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Pages were tested with DebugCSS
-
-> 🛠 [Debug CSS](http://yahoo.github.io/debugCSS) (you can use the bookmarklet)
-
 * [ ] **Reading direction:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages need to be tested for LTR and RTL languages if they need to be supported.
 
 **[⬆ back to top](#table-of-contents)**
