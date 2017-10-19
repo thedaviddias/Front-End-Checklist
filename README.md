@@ -1,4 +1,5 @@
 # Front-End Checklist
+
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 
@@ -7,6 +8,7 @@ The **Front-End Checklist** is an exhaustive list of all elements you need to ha
 It is based on Front-End developers' years of experience, with the addition from some other open-source checklists.
 
 ## Table of Contents
+
 1. **[How to use](#how-to-use)**
 2. **[Head](#head)**
 3. **[HTML](#html)**
@@ -33,6 +35,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * 📹: media or video content
 
 ---
+
 ## Head
 
 > **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
@@ -102,7 +105,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
-> * 📖 [PNG favicons - caniuse](http://caniuse.com/#feat=link-icon-png)
+> * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
 * [ ] **Apple Touch Icon:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Apple touch favicon apple-mobile-web-app-capable are present. *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need)*
 
@@ -110,6 +113,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <!-- Apple Touch Icon -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 ```
+
 > * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
 * [ ] **Canonical:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Use ``rel="canonical"`` to avoid duplicate content.
@@ -120,6 +124,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ```
 
 ### HTML tags
+
 * [ ] **Language tag:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The language tag of your website is specified and related to the language of the current page.
 
 ```html
@@ -189,6 +194,7 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## HTML
 
 ### Best practices
@@ -221,24 +227,25 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Link checker:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) There are no broken links in my page, verify that you don't have any 404 error.
 
-> * 🛠 [W3C Link Checker](http://validator.w3.org/checklink)
+> * 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
 * [ ] **Adblockers test:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker)
 
 - [ ] **Pixel perfect:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Pages are close to pixel perfect. Depending on the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
 
->  [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
+> [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## Webfonts
 
 * [ ] **Webfont format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browsers.
 
-> * 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff).
-> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
-> * 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
+> * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
+> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
+> * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 * [ ] **Webfont size:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Webfont sizes don't exceed 2 MB (all variants included)
@@ -246,6 +253,7 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## CSS
 
 > **Notes:** Take a look on [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt on CSS properties, you can visit [CSS Reference](http://cssreference.io/).
@@ -298,7 +306,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **CSS Validator:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The CSS was tested and pertinent errors were corrected.
 
-> 🛠 [CSS Validator](http://jigsaw.w3.org/css-validator/)
+> 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 * [ ] **Debug CSS:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Pages were tested with DebugCSS
 
@@ -309,11 +317,13 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## Images
 
 > **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
 
 ### Best practices
+
 * [ ] **Optimization:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
@@ -331,6 +341,7 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## JavaScript
 
 ### Best practices
@@ -356,6 +367,7 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## Performance
 
 ### Best practices
@@ -366,7 +378,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 - [ ] **Minified:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your HTML is minified
-> 🛠 [W3C Validator](http://validator.w3.org/)
+> 🛠 [W3C Validator](https://validator.w3.org/)
 
 * [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
@@ -381,6 +393,7 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## Accessibility
 
 > **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
@@ -393,7 +406,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 - [ ] **Color contrast:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Color contrast should at least pass WCAG AA (AAA for mobile)
 
-> 🛠 [Contrast ratio](http://leaverou.github.io/contrast-ratio/)
+> 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
 
 #### Headings
 
@@ -417,11 +430,13 @@ Some resources possess an emoticon to help you understand which type of content 
 > 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
 ### Form
+
 * [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element. In case, a label can't be display, use ``aria-label`` instead.
 
 > 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
 ### Accessibility testing
+
 * [ ] **Accessibility standards testing:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Use the WAVE tool to test if your page respects the accessibility standards.
 
 > 🛠 [Wave testing](http://wave.webaim.org/)
@@ -435,18 +450,22 @@ Some resources possess an emoticon to help you understand which type of content 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## SEO
 
 * [ ] **Google Analytics:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Google Analytics is installed and correctly configured.
 * [ ] **Headings logic:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Heading text helps to understand the content in the current page.
-* [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exists and was submit in Google Search Console (ex:Google Webmaster Tools)
+* [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exists and was submit in Google Search Console (ex: Google Webmaster Tools)
 * [ ] **robots.txt:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The robots.txt is not blocking webpages
+
 Link your website to the Google webmaster tools
+
 * [ ] **Sitemap HTML:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) An HTML sitemap is provided and is accessible via a link in the footer of your website.
 
 **[⬆ back to top](#table-of-contents)**
 
 ---
+
 ## Contributing
 
 **Open an issue or a pull request to suggest changes or additions.**
@@ -469,10 +488,10 @@ Check out all the super awesome [contributors](https://github.com/thedaviddias/f
 
 ## Authors
 
-**[David Dias]()**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
+**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
 
 ## License
 
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 **[⬆ back to top](#table-of-contents)**
