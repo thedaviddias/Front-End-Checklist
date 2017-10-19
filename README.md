@@ -48,7 +48,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ### Meta tag
 
 * [ ] **Doctype:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The Doctype is HTML5 and is in the top of all your HTML pages.
- 
+
 ```html
 <!-- Doctype HTML5 -->
 <!DOCTYPE html>
@@ -66,7 +66,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ```
 
 * [ ] **X-UA-Compatible:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The X-UA-Compatible meta tag is present.
- 
+
 ```html
 <<<<<<< HEAD
 <!-- Specifying legacy document modes -->
@@ -102,13 +102,13 @@ Some resources possess an emoticon to help you understand which type of content 
 ```
 
 * [ ] **Favicons:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Each favicon has been created and displays correctly. If you have only a ``favicon.ico``, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over ``.ico`` format (dimensions: 32x32px)
- 
+
 ```html
 <!-- Standard favicon -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico" />
 <!-- Recommended favicon format -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png" />
-``` 
+```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
@@ -182,7 +182,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
 > * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
- 
+
 * [ ] **Twitter Card:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png)
 
 ```html
@@ -196,7 +196,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ```
 
 > * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-> * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator) 
+> * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -217,11 +217,11 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
 * [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using ``target="_blank"`` on your links, ``rel="noreferrer noopener"`` is present on the ``<img>``.
 * [ ] **Clean up comments:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Unnecessary code needs to be removed before sending the page to production.
-  
+
 ### HTML testing
 
 * [ ] **W3C compliant:**: ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
- 
+
 > 🛠 [W3C validator](https://validator.w3.org/)
 
 * [ ] **HTML Lint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) I use tools to help me analyze any issues I could have on my HTML code.
@@ -232,7 +232,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **Mobile Browsers:**  ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
 
 * [ ] **Link checker:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) There are no broken links in my page, verify that you don't have any 404 error.
- 
+
 > * 🛠 [W3C Link Checker](http://validator.w3.org/checklink)
 
 * [ ] **Adblockers test:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker)
@@ -247,8 +247,8 @@ Some resources possess an emoticon to help you understand which type of content 
 ## Webfonts
 
 * [ ] **Webfont format:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) WOFF, WOFF2 and TTF are supported by all modern browsers.
-  
-> * 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff). 
+
+> * 📖 [WOFF - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff).
 > * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](http://caniuse.com/#feat=woff2).
 > * 📖 [TTF/OTF - TrueType and OpenType font support](http://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
@@ -266,11 +266,11 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **CSS Print:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) A print stylesheet is provided and is correct on each page.
 * [ ] **Preprocessors:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your page is using a CSS preprocessor ([Sass](http://sass-lang.com/) is preferred).
 * [ ] **Unique ID:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) If IDs are used, they are unique to a page
-* [ ] **Reset CSS:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Twitter Bootstrap or Foundation, a Normalize is already included into it.)*
+* [ ] **Reset CSS:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
-> * 📖 [Reboot](https://v4-alpha.getbootstrap.com/content/reboot/)
+> * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
 
 * [ ] **JS prefix:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
 
@@ -301,7 +301,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ### CSS testing
 
-* [ ] **Stylelint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All CSS or SCSS files are without any errors. 
+* [ ] **Stylelint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All CSS or SCSS files are without any errors.
 
 > * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
 > * 📖 [Sass guidelines](https://sass-guidelin.es/)
@@ -379,7 +379,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 - [ ] **Minified:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your HTML is minified
 > 🛠 [W3C Validator](http://validator.w3.org/)
- 
+
 * [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
 ### Performance testing
@@ -488,10 +488,3 @@ Check out all the super awesome [contributors](https://github.com/thedaviddias/f
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 **[⬆ back to top](#table-of-contents)**
-
-
-
-
-
-
-
