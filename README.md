@@ -108,9 +108,9 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
 <!-- Recommended favicon format -->
-<link rel="icon" type="image/png" href="https://example.com/favicon.png" />
+<link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
