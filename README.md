@@ -123,13 +123,13 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **Language tag:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The language tag of your website is specified and related to the language of the current page.
 
 ```html
-<body lang="en">
+<html lang="en">
 ```
 
 * [ ] **Direction tag:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The direction of lecture is specified on the body tag (It can be used on another HTML tag).
 
 ```html
-<body dir="rtl">
+<html dir="rtl">
 ```
 
 > 📖 [dir - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
