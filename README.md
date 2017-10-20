@@ -1,7 +1,6 @@
 # Front-End Checklist
-
-[![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
+[![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 The **Front-End Checklist** is an exhaustive list of all elements you need to have / to test before launching your site / page HTML to production.
 
@@ -16,9 +15,10 @@ It is based on Front-End developers' years of experience, with the addition from
 5. **[CSS](#css)**
 6. **[Images](#images)**
 7. **[JavaScript](#javascript)**
-8. **[Performance](#performance)**
-9. **[Accessibility](#accessibility)**
-10. **[SEO](#seo)**
+8. **[Security](#security)**
+9. **[Performance](#performance)**
+10. **[Accessibility](#accessibility)**
+11. **[SEO](#seo)**
 
 ## How to use?
 
@@ -283,6 +283,10 @@ Some resources possess an emoticon to help you understand which type of content 
 - [ ] **Non-blocking:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
+<<<<<<< HEAD
+=======
+> * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
+>>>>>>> Add security section
 
 - [ ] **Unused CSS:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Remove unused CSS
 
@@ -343,6 +347,10 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
 
+* [ ] **JavaScript security:**
+
+> [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
+
 * [ ] **Non-blocking:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) JavaScript files are loaded asynchronously using ``async`` or deferred using ``defer`` attribute.
 
 > 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
@@ -354,6 +362,32 @@ Some resources possess an emoticon to help you understand which type of content 
 ### JavaScript testing
 
 * [ ] **ESLint:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) No errors are flagged by ESLint (based on your configuration or standards rules)
+
+**[⬆ back to top](#table-of-contents)**
+
+---
+
+## Security
+
+* [ ] **HTTPS:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) HTTPS is used on every pages and for all external content (plugins, images...).
+
+> * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
+> * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
+> * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
+
+* [ ] **HSTS:** The HTTP header is set to 'Strict-Transport-Security'.
+
+> * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
+> * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
+
+* [ ] **Cross Site Request Forgery (CSRF):** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Your are ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+
+> 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
+
+* [ ] **Cross Site Scripting (XSS):** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Your page or website is free from XSS possible issues.
+
+> 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+> 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -372,6 +406,13 @@ Some resources possess an emoticon to help you understand which type of content 
 > 🛠 [W3C Validator](https://validator.w3.org/)
 
 * [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+
+* [ ] **Cookie size:** If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domaine name don't have more than 20 cookies.
+
+> * 📖 [Cookie specification: RFC 6265
+](https://tools.ietf.org/html/rfc6265)
+> * 📖 [](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+> * 🛠 [](http://browsercookielimits.squawky.net/)
 
 ### Performance testing
 
