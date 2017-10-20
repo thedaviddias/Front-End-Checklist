@@ -370,14 +370,22 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ## Security
 
+### Scan and check your web site
+
+> * [securityheaders.io](https://securityheaders.io/)
+> * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
+
+### Best practices 
+
 * [ ] **HTTPS:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) HTTPS is used on every pages and for all external content (plugins, images...).
 
 > * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 > * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
 > * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-* [ ] **HSTS:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The HTTP header is set to 'Strict-Transport-Security'.
+* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The HTTP header is set to 'Strict-Transport-Security'.
 
+> * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
@@ -389,6 +397,15 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 > * 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+
+* [ ] **Content Type Options** ![Medium] Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+
+> * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
+
+* [ ] **X-Frame-Options (XFO)** ![Medium] Protects your visitors against clickjacking attacks.
+
+> * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
+> * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -412,8 +429,8 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [Cookie specification: RFC 6265
 ](https://tools.ietf.org/html/rfc6265)
-> * 📖 [](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-> * 🛠 [](http://browsercookielimits.squawky.net/)
+> * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+> * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
 ### Performance testing
 
