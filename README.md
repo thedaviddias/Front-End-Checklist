@@ -402,6 +402,10 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
 
+* [ ] **X-Frame-Options (XFO)** ![Medium] Protects your visitors against clickjacking attacks.
+
+> * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
+
 **[⬆ back to top](#table-of-contents)**
 
 ---
