@@ -22,18 +22,10 @@ It is based on Front-End developers' years of experience, with the addition from
 
 ## How to use?
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or not essential (in case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
+All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
 
 * ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) means that the item is **recommended** but can be omitted in some particular situations.
-<<<<<<< HEAD
-<<<<<<< HEAD
-* ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercutions in terms of performance or SEO.
-=======
 * ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
->>>>>>> Fix Misspellings
-=======
-* ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
->>>>>>> corrected typos
 * ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
 
 Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
@@ -50,11 +42,11 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ### Meta tag
 
-* [ ] **Doctype:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The Doctype is HTML5 and is in the top of all your HTML pages.
+* [ ] **Doctype:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The Doctype is HTML5 and is at the top of all your HTML pages.
 
 ```html
 <!-- Doctype HTML5 -->
-<!doctype html>
+<!DOCTYPE html>
 ```
 
 > 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
@@ -71,11 +63,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **X-UA-Compatible:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The X-UA-Compatible meta tag is present.
 
 ```html
-<<<<<<< HEAD
-<!-- Specifying legacy document modes -->
-=======
 <!-- Instruct Internet Explorer to use its latest rendering engine -->
->>>>>>> Fix error in code comment for x-ua-compatible
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
@@ -108,9 +96,9 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
+<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico" />
 <!-- Recommended favicon format -->
-<link rel="icon" type="image/png" href="https://example.com/favicon.png">
+<link rel="icon" type="image/png" href="https://example.com/favicon.png" />
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
@@ -126,7 +114,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <link rel="apple-touch-icon" href="/custom-icon.png">
 ```
 
-> 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
 * [ ] **Canonical:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Use ``rel="canonical"`` to avoid duplicate content.
 
@@ -167,7 +155,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > 🛠 [Critical by Addy Osmany on Github](https://github.com/addyosmani/critical)
 
-* [ ] **CSS order:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All CSS files are loaded before any JavaScript files in the ``<head>``. (Except the case, where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **CSS order:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All CSS files are loaded before any JavaScript files in the ``<head>``. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
 
 ### Social meta
 
@@ -215,12 +203,8 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > 📖 [HTML Reference](http://htmlreference.io/)
 
-* [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
-
-* [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using external links with ``target="_blank"``, your link should have a ``rel="noopener"`` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use ``rel="noopener noreferrer"``.
-
-> 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
-
+* [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 5xx exist. Remember that the 5xx error page needs to have its CSS integrated (no external call on the current server).
+* [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using ``target="_blank"`` on your links, ``rel="noreferrer noopener"`` is present on the ``<img>``.
 * [ ] **Clean up comments:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Unnecessary code needs to be removed before sending the page to production.
 
 ### HTML testing
@@ -238,7 +222,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Link checker:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) There are no broken links in my page, verify that you don't have any 404 error.
 
-> 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
+> * 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
 * [ ] **Adblockers test:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker)
 
@@ -267,7 +251,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ## CSS
 
-> **Notes:** Take a look on [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt on CSS properties, you can visit [CSS Reference](http://cssreference.io/).
+> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/).
 
 * [ ] **Responsive Web Design:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) A print stylesheet is provided and is correct on each page.
@@ -298,7 +282,7 @@ Some resources possess an emoticon to help you understand which type of content 
 - [ ] **Minification:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All CSS files are minified.
 - [ ] **Non-blocking:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
-> 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
+> * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
 
 - [ ] **Unused CSS:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Remove unused CSS
 
@@ -337,7 +321,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 
 * [ ] **Retina:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) You provide layout images x2 or 3x, support retina display.
-* [ ] **Sprite:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Small images are in a sprite file (in case of icons, they can be in an SVG sprite image).
+* [ ] **Sprite:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
 * [ ] **Width and Height:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have height and width set (Don't specify px or %).
 
 > ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
@@ -438,7 +422,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ### Form
 
-* [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element. In case, a label can't be display, use ``aria-label`` instead.
+* [ ] **Label:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A label is associated with each input form element. In case a label can't be displayed, use ``aria-label`` instead.
 
 > 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
@@ -462,12 +446,12 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Google Analytics:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Google Analytics is installed and correctly configured.
 * [ ] **Headings logic:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Heading text helps to understand the content in the current page.
-* [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exists and was submit in Google Search Console (ex: Google Webmaster Tools)
+* [ ] **sitemap.xml:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) A sitemap.xml exists and was submitted to Google Search Console (ex: Google Webmaster Tools)
 * [ ] **robots.txt:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) The robots.txt is not blocking webpages
 * [ ] **Structured Data:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
 
-> * 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
-> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+> 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
+> 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
 
 * [ ] **Sitemap HTML:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) An HTML sitemap is provided and is accessible via a link in the footer of your website.
 
