@@ -507,6 +507,9 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
 * [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (ex: Google Webmaster Tools)
 * [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages
+
+> * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
+
 * [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
 
 > * 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
