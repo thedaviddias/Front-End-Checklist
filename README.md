@@ -369,6 +369,13 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ## Security
 
+### Scan and check your web site
+
+> * [securityheaders.io](https://securityheaders.io/)
+> * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
+
+### Best practices 
+
 * [ ] **HTTPS:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) HTTPS is used on every pages and for all external content (plugins, images...).
 
 > * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
