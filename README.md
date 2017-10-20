@@ -404,6 +404,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **X-Frame-Options (XFO)** ![Medium] Protects your visitors against clickjacking attacks.
 
 > * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
+> * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
 **[⬆ back to top](#table-of-contents)**
 
