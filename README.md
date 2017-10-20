@@ -364,7 +364,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules)
 
-> * 🛠 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
+> * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
 
 **[⬆ back to top](#table-of-contents)**
 
