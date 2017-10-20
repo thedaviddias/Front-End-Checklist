@@ -427,8 +427,8 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [Cookie specification: RFC 6265
 ](https://tools.ietf.org/html/rfc6265)
-> * 📖 [](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-> * 🛠 [](http://browsercookielimits.squawky.net/)
+> * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+> * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
 ### Performance testing
 
