@@ -310,6 +310,9 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
 
+> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 | Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
+> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 | Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
+
 **[⬆ back to top](#table-of-contents)**
 
 ---
