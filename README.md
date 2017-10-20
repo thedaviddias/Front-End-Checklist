@@ -383,8 +383,9 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
 > * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-* [ ] **HSTS:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The HTTP header is set to 'Strict-Transport-Security'.
+* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) The HTTP header is set to 'Strict-Transport-Security'.
 
+> * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
