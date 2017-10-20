@@ -102,6 +102,7 @@ Some resources possess an emoticon to help you understand which type of content 
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
+> * 🛠 [ConvertICO](http://convertico.com/)
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
