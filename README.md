@@ -332,6 +332,8 @@ Some resources possess an emoticon to help you understand which type of content 
 > ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
 
 * [ ] **Alternative text:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) All ``<img>`` have an alternative text which describe the image visually.
+> * :book: [The Importance of Alt Text](https://9clouds.com/blog/the-importance-of-alt-attributes-aka-alt-tags-or-alt-text/)
+
 * [ ] **Lazy loading:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) Images are lazyloaded (A noscript fallback is always provided).
 
 **[⬆ back to top](#table-of-contents)**
