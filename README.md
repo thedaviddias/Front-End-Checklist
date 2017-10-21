@@ -4,7 +4,7 @@
 
 The **Front-End Checklist** is an exhaustive list of all elements you need to have / to test before launching your site / page HTML to production.
 
-It is based on Front-End developers' years of experience, with the addition from some other open-source checklists.
+It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
 
 ## Table of Contents
 
