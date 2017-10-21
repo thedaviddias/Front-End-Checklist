@@ -289,7 +289,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
 > * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS
+- [ ] **Unused CSS:** ![High][low_img] Remove unused CSS
 
 > * 🛠 [UnCSS Online](https://uncss-online.com/) 🛠
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
