@@ -16,7 +16,7 @@ It is based on Front-End developers' years of experience, with the additions com
 6. **[Images](#images)**
 7. **[JavaScript](#javascript)**
 8. **[Security](#security)**
-9. **[Performance](#performance)**
+9. **[Performance](#performance-1)**
 10. **[Accessibility](#accessibility)**
 11. **[SEO](#seo)**
 
