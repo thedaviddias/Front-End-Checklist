@@ -260,7 +260,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
-* [ ] **Prueba de Adblockers:** ![Medium][medium_img] Tu sitio web muesta el contenido correctamente cuando adblockers están habilitados (Puedes incluir un mensaje para sugerir a las personas deshabilitar su adblockr).
+* [ ] **Prueba de Adblockers:** ![Medium][medium_img] Tu sitio web muesta el contenido correctamente cuando adblockers están habilitados (Puedes incluir un mensaje para sugerir a las personas deshabilitar su adblocker).
 
 - [ ] **Pixel perfect:** ![High][high_img] Las páginas son similares al diseño. Dependiendo de la calidad de los creativos, podrías no ser 100% exacto, pero tu página necesita verse muy similar a tu plantilla.
 
@@ -272,34 +272,34 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ## Webfonts
 
-* [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
+* [ ] **Formato de fuentes:** ![Alto][high_img] WOFF, WOFF2 y TTF son formatos soportados por todos los navegadores modernos.
 
 > * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
 > * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
 > * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-* [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
+* [ ] **Tamaño de fuentes:** ![High][high_img] El tamaño de las fuentes no excede los 2 MVB (todas las variantes incluidas).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a ariiba](#tabla-de-contenidos)**
 
 ---
 
 ## CSS
 
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/).
+> **Notas:** Echa un vistazo a los [Lineamientos CSS](https://cssguidelin.es/) y [Lineamientos Sass](https://sass-guidelin.es/) seguidos por la mayoría de los desarrolladores. Si tienes alguna duda acerca de las propiedades CSS, puedes visitar la [Referencia CSS](http://cssreference.io/).
 
-* [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
-* [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Medium][medium_img] Your page is using a CSS preprocessor ([Sass](http://sass-lang.com/) is preferred).
-* [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
-* [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
+* [ ] **Diseño Web Responsivo:** ![High][high_img] El sitio wen utiliza diseño web responsivo.
+* [ ] **CSS Print:** ![Medium][medium_img] Se proporciona una hoja de estilo para impresión y es correcto en cada página.
+* [ ] **Preprocesador:** ![Medium][medium_img] Tu página utiliza un preprocesador CSS ([Sass](http://sass-lang.com/) es recomendado).
+* [ ] **Unique ID:** ![High][high_img] Si utilizas IDs, son únicos en la página.
+* [ ] **Reinicio de CSS:** ![High][high_img] Un reinicio de CSS es usado y está actualizado. *(Si utilizas algún Framework CSS como Bootstrap o Fundation, el reinicio de CSS ya está implementado.)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
 > * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
 
-* [ ] **JS prefix:** ![Low][low_img] All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
+* [ ] **Prefijos JS:** ![Low][low_img] Todas las clases (o id- usados en archivos JavaScript) comienzan con **js-** y no son estilizados dentro del archivo CSS.
 
 ```html
 <div id="js-slider" class="my-slider">
@@ -307,46 +307,47 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **CSS embed or line:** ![High][high_img] Avoid at all cost the use of CSS embed or inline: only used for valid reasons (ex: background-image for slider, CSS critical).
-* [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
+* [ ] **CSS incrustado:** ![High][high_img] Evita a todo costo el CSS inscrustado (directo al HTML): solo usalo con razones válidas (ej: imagen de fondo para un slider, CSS crítico).
+* [ ] **Vendor prefixes:** ![High][high_img] Los vendor prefixes son usados y generados de acuerdo con la compatibilidad de tu navegador. *(Si utilizas un preprocesador, esta labor se puede automatizar)*
 
 > 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
-### Performance
+### Rendimiento
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file. *(Not for HTTP/2)*
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
+- [ ] **Concatenado:** ![High][high_img] Los archivos CSS son concatenados en un solo archivo. *(No aplica en HTTP/2)*
+- [ ] **Minificado:** ![High][high_img] Todos los archivos CSS están minificados (estilos en una sola línea).
+- [ ] **No bloquea renderizado:** ![Medium][medium_img] Los archivos CSS no deben afectar el tiempo carga del DOM.
 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
 > * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
+- [ ] **CSS sin utilizar:** ![Low][low_img] Remover CSS sin utilizar.
 
 > * 🛠 [UnCSS Online](https://uncss-online.com/) 🛠
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
 > * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 
 
-### CSS testing
+### Pruebas CSS 
 
-* [ ] **Stylelint:** ![High][high_img] All CSS or SCSS files are without any errors.
+* [ ] **Stylelint:** ![High][high_img] Los archivos CSS o SCSS no contienen errores.
 
 > * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
 > * 📖 [Sass guidelines](https://sass-guidelin.es/)
 
-* [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be more / different according to your analytics).
 
-* [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
+* [ ] **Diseño web responsivo:** ![High][high_img] Todas las páginas fueron probadas en los siguientes puntos: 320px, 768px, 1024px (pueden ser más / varia de acuerdo a tus resultados en analítica).
+
+* [ ] **Validador CSS:** ![Medium][medium_img] El CSS fue probado y los errores pertinentes fueron corregidos.
 
 > 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-* [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
+* [ ] **Dirección de lectura:** ![High][high_img] Todas las páginas necesitan ser probadas para idiomas LTR y RTL si necesitan soporte.
 
 > * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
 > * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
