@@ -2,13 +2,13 @@
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-The **Front-End Checklist** is an exhaustive list of all elements you need to have / to test before launching your site / page HTML to production.
+La **Front-End Checklist** es una lista exaustiva de todos los elementos que necesitas tener/probar antes de lanzar tu sitio/página HTML a producción.
 
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
+Esta basada en años de experiencia de desarrolladores Front-End, con agregados provenientes de otros checklist de código abierto.
 
-## Table of Contents
+##Tabla de contenidos
 
-1. **[How to use](#how-to-use)**
+1. **[Cómo usar](#como-usar)**
 2. **[Head](#head)**
 3. **[HTML](#html)**
 4. **[Webfonts](#webfonts)**
@@ -22,19 +22,20 @@ It is based on Front-End developers' years of experience, with the additions com
 12. **[Translation](#translation)**
 13. **[Contributing](#contributing)**
 
-## How to use?
+## ¿Cómo usar?
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
+Todos los elementos en la **Front-End Checklist** son requeridos para la mayoría de los proyectos, pero algunos elementos pueden ser omitidos o no son esenciales (por ejemplo, en el caso de una aplicación web administrativa, quizás no necesitas la función de RSS). Elegimos usar 3 niveles de flexibilidad:
 
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Bajo][low_img] significa que el elemento es **recomendado** pero puede ser omitido en situaciones partículares.
+* ![Medio][medium_img] significa que el elemento es **altamente recomendado** y eventualmente puede ser omitido en casos muy particulares. Algunos elementos, si son omitidos, pueden traer malas repercusiones en términos de rendimiento o SEO.
+* ![Alto][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Alto][high_img] significa que el elemento **no puede ser omitido** bajo ninguna razón. Puede ocasionar mal funcionamiento en tu página, crear problemas de accesibilidad o SEO.
 
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido/ayuda que podrás encontrar en el checklist:
 
-* 📖: documentation or article
-* 🛠: online tool / testing tool
-* 📹: media or video content
+* 📖: documentación o artículos
+* 🛠: herramienta en línea / herramienta para pruebas
+* 📹: media o contenido en video
 
 ---
 
