@@ -85,7 +85,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <title>Page Title less than 65 characters</title>
 ```
 
-> 📖 [Title - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+> 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 
 * [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
 
@@ -139,7 +139,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <html dir="rtl">
 ```
 
-> 📖 [dir - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+> 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
 * [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
 
