@@ -630,9 +630,16 @@ This branch will be used to make some significant changes to the structure, cont
 
 Check out all the super awesome [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
 
+## Support
+
+If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
+
+* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Twitter](https://twitter.com/thedaviddias)
+
 ## Authors
 
-**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
+**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cedric Poilly](https://github.com/CedricPoilly)**.
 
 ## License
 
