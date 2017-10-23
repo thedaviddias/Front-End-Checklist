@@ -8,7 +8,7 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 
 ## Tabla de contenidos
 
-1. **[Cómo usar](#como-usar)**
+1. **[Cómo usar](#cómo-usar)**
 2. **[Head](#head)**
 3. **[HTML](#html)**
 4. **[Webfonts](#webfonts)**
@@ -152,118 +152,122 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
 ```
 
-### HTML tags
+### Etiquetas HTML
 
-* [ ] **Language tag:** ![High][high_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Language tag:** ![Alto][high_img] La etiqueta de lenguaje de tu sitio web está especidicada y relacionada al lenguaje de la página actual.
 
 ```html
-<html lang="en">
+<!-- Indicamos el idioma definido para la página actual -->
+<html lang="es">
 ```
 
 * [ ] **Direction tag:** ![Medium][medium_img] The direction of lecture is specified on the body tag (It can be used on another HTML tag).
+* [ ] **Direction tag:** ![Medio][medium_img] La dirección de lectura es especificada en la etiqueta body (Puede ser usada en otra etiqueta HTML).
 
 ```html
+<!-- Indicamos la dirección de lectura (rtl = right to left/ derecha a izquierda) -->
 <html dir="rtl">
 ```
 
 > 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-* [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Alternate language:** ![Bajo][low_img] La etiqueta de lenguaje de tu sitio web está especidicada y relacionada al lenguaje de la página actual .
 
 ```html
+<!-- Indicamos el idioma definido para la página actual -->
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
-* [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
+* [ ] **Comentarios condicionales:** ![Bajo][low_img] Comentarios condicionales están presentes para IE si son necesarios.
 
 > 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
+* [ ] **RSS feed:** ![Bajo][low_img] Si tu proyecto es un blog o tiene artículos, un enlace RSS fue proprocionado.
 
-* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+* [ ] **CSS Crítico:** ![Medio][medium_img] El CSS crítio (o "above the fold") contiene todo el CSS usado para renderizar la porción visible de la página. Se incrusta antes de la llamada principal a CSS y entre `<style></style>` en una sola línea (minificado).
 
 > 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
 
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **Orden del CSS:** ![Alto][high_img] Todos los archivos CSS son cargados antes que cualquier archivo JavaScript en el `<head>`. (Excepto en el casos donde los archivos JS se cargan asíncronamente en tus páginas).
 
 ### Social meta
 
-***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
+***Facebook OG*** y ***Twitter Cards*** son altamente recomendados para cualquier sitio. Otras etiquetas de medios sociales pueden ser considerados si tienes un objetivo partícular y quieres asegurar la visualización.
 
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, 1200 x 630 pixels recommended.
+* [ ] **Facebook Open Graph:** ![Bajo][low_img] Todos los Facebook Open Graph (OG) fueron probados y ninguno es erroneo o contiene información falsa. Las imágenes necesitan ser de al menos 600 x 315 pixeles, se recomienda 1200 x 630 pixeles.
 
 ```html
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/page.html">
-<meta property="og:title" content="Content Title">
+<meta property="og:title" content="Título del contenido">
 <meta property="og:image" content="https://example.com/image.jpg">
-<meta property="og:description" content="Description Here">
-<meta property="og:site_name" content="Site Name">
+<meta property="og:description" content="Descripción aquí">
+<meta property="og:site_name" content="Nombre del sitio">
 <meta property="og:locale" content="en_US">
 ```
 
 > * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
 > * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
 
-* [ ] **Twitter Card:** ![Low][low_img]
+* [ ] **Twitter Card:** ![Bajo][low_img]
 
 ```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
 <meta name="twitter:url" content="https://example.com/page.html">
-<meta name="twitter:title" content="Content Title">
-<meta name="twitter:description" content="Content description less than 200 characters">
+<meta name="twitter:title" content="Título del contenido">
+<meta name="twitter:description" content="Descripción del contenido menor a 200 caracteres">
 <meta name="twitter:image" content="https://example.com/image.jpg">
 ```
 
 > * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
 > * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
 ## HTML
 
-### Best practices
+### Mejores prácticas
 
-* [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section, footer, main...).
+* [ ] **Elementos semánticos HTML5:** ![Alto][high_img] Los elementos semánticos HTML5 son usados apropiadamente (header, section, footer, main...).
 
 > 📖 [HTML Reference](http://htmlreference.io/)
 
-* [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
+* [ ] **Páginas de error:** ![Alto][high_img] Páginas de error 400 y 5xx existen. Recuerda que las páginas de error 5xx necesitan tener su CSS integrado (sin llamadas externas en el servidor actual).
 
-* [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
+* [ ] **Noopener:** ![Medio][medium_img] En caso que uses enlaces externos con `target="_blank"`, tu enlace debe tener un atributo `rel="noopener"`para evitar tab nabbing. Si necesitas dar soporte a versiones antigüas de Firefox, usa `rel="noopener noreferrer"`.
 
 > 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
-* [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
+* [ ] **Limpiar comentarios:** ![Bajo][low_img] Código innecesario necesita ser removido antes de enviar la página a producción.
 
-### HTML testing
+### Pruebas HTML
 
-* [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
+* [ ] **Obedece al W3C:** ![Alto][high_img] Todas las páginas necesitan ser aprobadas por el validador W3C para identificar posibles problemas en el código HTML.
 
 > 🛠 [W3C validator](https://validator.w3.org/)
 
-* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
+* [ ] **HTML Lint:** ![Alto][high_img] Uso herramientas para ayudarme a analizar cualquier problema que podría tener en mi código HTML.
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
-* [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
+* [ ] **Navegadores de escritorio:** ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores de escritorio actuales (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
+* [ ] **Navegadores móviles:**  ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores móviles actuales (Native browser, Chrome, Safari...).
 
-* [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404 error.
+* [ ] **Verificador de enlaces:** ![High][high_img] No hay enlaces rotos en la página,  verifica que no tienes ningún error 404.
 
 > 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
-* [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker).
+* [ ] **Prueba de Adblockers:** ![Medium][medium_img] Tu sitio web muesta el contenido correctamente cuando adblockers están habilitados (Puedes incluir un mensaje para sugerir a las personas deshabilitar su adblockr).
 
-- [ ] **Pixel perfect:** ![High][high_img] Pages are close to pixel perfect. Depending on the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
+- [ ] **Pixel perfect:** ![High][high_img] Las páginas son similares al diseño. Dependiendo de la calidad de los creativos, podrías no ser 100% exacto, pero tu página necesita verse muy similar a tu plantilla.
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
