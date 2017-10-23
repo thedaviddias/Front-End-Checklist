@@ -42,7 +42,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 
 ## Head
 
-> **Nota:** Puedes encontrar [una lista de todo](https://github.com/joshbuchea/HEAD) lo que puede encontrarse en el '<head>' de un documento HTML.
+> **Nota:** Puedes encontrar [una lista de todo](https://github.com/joshbuchea/HEAD) lo que puede encontrarse en el `<head>` de un documento HTML.
 
 ### Meta tag
 
@@ -154,15 +154,14 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ### Etiquetas HTML
 
-* [ ] **Language tag:** ![Alto][high_img] La etiqueta de lenguaje de tu sitio web está especidicada y relacionada al lenguaje de la página actual.
+* [ ] **Language tag:** ![Alto][high_img] La etiqueta de lenguaje de tu sitio web está específicada y relacionada al lenguaje de la página actual.
 
 ```html
 <!-- Indicamos el idioma definido para la página actual -->
 <html lang="es">
 ```
 
-* [ ] **Direction tag:** ![Medium][medium_img] The direction of lecture is specified on the body tag (It can be used on another HTML tag).
-* [ ] **Direction tag:** ![Medio][medium_img] La dirección de lectura es especificada en la etiqueta body (Puede ser usada en otra etiqueta HTML).
+* [ ] **Direction tag:** ![Medio][medium_img] La dirección de lectura es específicada en la etiqueta body (Puede ser usada en otra etiqueta HTML).
 
 ```html
 <!-- Indicamos la dirección de lectura (rtl = right to left/ derecha a izquierda) -->
@@ -171,7 +170,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-* [ ] **Alternate language:** ![Bajo][low_img] La etiqueta de lenguaje de tu sitio web está especidicada y relacionada al lenguaje de la página actual .
+* [ ] **Alternate language:** ![Bajo][low_img] La etiqueta de lenguaje de tu sitio web está específicada y relacionada al lenguaje de la página actual .
 
 ```html
 <!-- Indicamos el idioma definido para la página actual -->
@@ -188,7 +187,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
 
-* [ ] **Orden del CSS:** ![Alto][high_img] Todos los archivos CSS son cargados antes que cualquier archivo JavaScript en el `<head>`. (Excepto en el casos donde los archivos JS se cargan asíncronamente en tus páginas).
+* [ ] **Orden del CSS:** ![Alto][high_img] Todos los archivos CSS son cargados antes que cualquier archivo JavaScript en el `<head>`. (Excepto en los casos donde los archivos JS se cargan asíncronamente en tus páginas).
 
 ### Social meta
 
