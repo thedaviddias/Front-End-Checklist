@@ -6,7 +6,7 @@ La **Front-End Checklist** es una lista exahustiva de todos los elementos que ne
 
 Esta basada en años de experiencia de desarrolladores Front-End, con agregados provenientes de otros checklist de código abierto.
 
-##Tabla de contenidos
+## Tabla de contenidos
 
 1. **[Cómo usar](#como-usar)**
 2. **[Head](#head)**
