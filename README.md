@@ -119,6 +119,7 @@ Some resources possess an emoticon to help you understand which type of content 
 - [ ] **Windows Tiles:**![Low][low_img] Windows tiles are present and linked.
 
 ```html
+<!-- Microsoft Tiles -->
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
