@@ -600,10 +600,10 @@ The Front-End Checklist is also available in other languages. Thanks for all tra
 
 If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
 
-➔ ![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)
+➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 
 ```md
-![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 ```
 
 **[⬆ back to top](#table-of-contents)**
