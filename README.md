@@ -279,9 +279,9 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 > * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-* [ ] **Tamaño de fuentes:** ![High][high_img] El tamaño de las fuentes no excede los 2 MVB (todas las variantes incluidas).
+* [ ] **Tamaño de fuentes:** ![High][high_img] El tamaño de las fuentes no excede los 2 MB (todas las variantes incluidas).
 
-**[⬆ volver a ariiba](#tabla-de-contenidos)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
@@ -292,7 +292,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 * [ ] **Diseño Web Responsivo:** ![High][high_img] El sitio wen utiliza diseño web responsivo.
 * [ ] **CSS Print:** ![Medium][medium_img] Se proporciona una hoja de estilo para impresión y es correcto en cada página.
 * [ ] **Preprocesador:** ![Medium][medium_img] Tu página utiliza un preprocesador CSS ([Sass](http://sass-lang.com/) es recomendado).
-* [ ] **Unique ID:** ![High][high_img] Si utilizas IDs, son únicos en la página.
+* [ ] **ID único:** ![High][high_img] Si utilizas IDs, son únicos en la página.
 * [ ] **Reinicio de CSS:** ![High][high_img] Un reinicio de CSS es usado y está actualizado. *(Si utilizas algún Framework CSS como Bootstrap o Fundation, el reinicio de CSS ya está implementado.)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
@@ -307,7 +307,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **CSS incrustado:** ![High][high_img] Evita a todo costo el CSS inscrustado (directo al HTML): solo usalo con razones válidas (ej: imagen de fondo para un slider, CSS crítico).
+* [ ] **CSS incrustado:** ![High][high_img] Evita a todo costo el CSS inscrustado (directo al HTML): solo usalo por razones válidas (ej: imagen de fondo para un slider, CSS crítico).
 * [ ] **Vendor prefixes:** ![High][high_img] Los vendor prefixes son usados y generados de acuerdo con la compatibilidad de tu navegador. *(Si utilizas un preprocesador, esta labor se puede automatizar)*
 
 > 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
