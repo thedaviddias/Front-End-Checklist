@@ -118,6 +118,31 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
+- [ ] **Windows Tiles:**![Low][low_img] Windows tiles are present and linked.
+
+```html
+<!-- Microsoft Tiles -->
+<meta name="msapplication-config" content="browserconfig.xml" />
+```
+
+Minimum required xml markup for the browserconfig.xml file is as follows:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+   <msapplication>
+     <tile>
+        <square70x70logo src="small.png"/>
+        <square150x150logo src="medium.png"/>
+        <wide310x150logo src="wide.png"/>
+        <square310x310logo src="large.png"/>
+     </tile>
+   </msapplication>
+</browserconfig>
+```
+
+> 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+
 * [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
 
 ```html
