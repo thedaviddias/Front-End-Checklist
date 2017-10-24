@@ -124,7 +124,7 @@
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
-Minimum required xml markup for the browserconfig.xml file is as follows:
+browserconfig.xml文件的最小所需xml标记如下所示:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -140,7 +140,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 </browserconfig>
 ```
 
-> 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+> 📖 [浏览器配置模式参考](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
 * [ ] **Canonical:** ![Medium][medium_img] 使用`rel="canonical"`以避免重复的内容。
 
