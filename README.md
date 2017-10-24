@@ -9,17 +9,16 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 ## Tabla de contenidos
 
 1. **[Head](#head)**
-3. **[HTML](#html)**
-4. **[Webfonts](#webfonts)**
-5. **[CSS](#css)**
-6. **[Imágenes](#imágenes)**
-7. **[JavaScript](#javascript)**
-8. **[Seguridad](#seguridad)**
-9. **[Rendimiento](#rendimiento-1)**
-10. **[Accesibilidad](#accesibilidad)**
-11. **[SEO](#seo)**
-12. **[Traducción](#traducción)**
-13. **[Contribución](#contribución)**
+2. **[HTML](#html)**
+3. **[Webfonts](#webfonts)**
+4. **[CSS](#css)**
+5. **[Imágenes](#imágenes)**
+6. **[JavaScript](#javascript)**
+7. **[Seguridad](#seguridad)**
+8. **[Rendimiento](#rendimiento-1)**
+9. **[Accesibilidad](#accesibilidad)**
+10. **[SEO](#seo)**
+
 
 ## ¿Cómo usar?
 
