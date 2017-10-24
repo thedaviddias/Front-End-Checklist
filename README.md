@@ -2,7 +2,7 @@
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**前端清单**是在将你的站点/HTML页面发布到生产环境之前需要测试的所有元素的详尽列表。
+**前端清单**是一份在站点/HTML页面发布到生产环境之前需要测试的所有元素的详尽列表。
 
 它基于前端开发人员多年的经验沉淀，以及其他优秀的开源清单。
 
