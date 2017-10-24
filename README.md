@@ -8,19 +8,18 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 
 ## Tabla de contenidos
 
-1. **[Cómo usar](#cómo-usar)**
-2. **[Head](#head)**
+1. **[Head](#head)**
 3. **[HTML](#html)**
 4. **[Webfonts](#webfonts)**
 5. **[CSS](#css)**
 6. **[Imágenes](#imágenes)**
 7. **[JavaScript](#javascript)**
-8. **[Security](#security)**
-9. **[Performance](#performance-1)**
-10. **[Accessibility](#accessibility)**
+8. **[Seguridad](#seguridad)**
+9. **[Rendimiento](#rendimiento-1)**
+10. **[Accesibilidad](#accesibilidad)**
 11. **[SEO](#seo)**
-12. **[Translation](#translation)**
-13. **[Contributing](#contributing)**
+12. **[Traducción](#traducción)**
+13. **[Contribución](#contribución)**
 
 ## ¿Cómo usar?
 
@@ -406,93 +405,93 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ---
 
-## Security
+## Seguridad
 
-### Scan and check your web site
+### Scanear verificar tu sitio web
 
 > * [securityheaders.io](https://securityheaders.io/)
 > * [Observatory by Mozilla](https://observatory.mozilla.org/)
 > * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
 
-### Best practices
+### Mejores prácticas
 
-* [ ] **HTTPS:** ![Medium][medium_img] HTTPS is used on every pages and for all external content (plugins, images...).
+* [ ] **HTTPS:** ![Medium][medium_img] HTTPS es usado en cada página y para todo el contenido externo (plugins, imágenes...).
 
 > * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 > * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
 > * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] The HTTP header is set to 'Strict-Transport-Security'.
+* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] La cabecera HTTP está configurada como 'Strict-Transport-Security'.
 
 > * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
-* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You are ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] Te aseguraste que las peticiones hechas a tu servidor son legítimas y oríginadas desde tu sitio web/aplicación para prevenir ataques CSRF.
 
 > 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
 
-* [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
+* [ ] **Cross Site Scripting (XSS):** ![High][high_img] Tu página o sitio web esta libre de posibles problemas XSS.
 
 > * 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 > * 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 
-* [ ] **Content Type Options** ![Medium][medium_img] Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+* [ ] **Opciones de Content-Type** ![Medium][medium_img] Previene a Google Chrome e Internet Explorer intentar ataques mime-sniff al content-type de respuestas no declaradas desde el servidor.
 
 > * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
 
-* [ ] **X-Frame-Options (XFO)** ![Medium][medium_img] Protects your visitors against clickjacking attacks.
+* [ ] **X-Frame-Options (XFO)** ![Medium][medium_img] Proteje a tus visitantes contra ataques clickkacking.
 
 > * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
 > * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
-## Performance
+## Rendimiento
 
-### Best practices
+### Mejores prácticas
 
-- [ ] **Weight page:** ![High][high_img] The weight of each page is between 0 and 500 KB.
+- [ ] **Peso de página:** ![High][high_img] El peso de cada página está entre 0 y 500 KB.
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-- [ ] **Minified:** ![Medium][medium_img] Your HTML is minified.
+- [ ] **Minificado:** ![Medium][medium_img] Tu HTML está minificado.
 > 🛠 [W3C Validator](https://validator.w3.org/)
 
-* [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+* [ ] **Lazy loading:** ![Medium][medium_img] Imágenes, scripts y CSS necesitan cargarse implementando lazy loading para mejorar el tiempo de respuesta de la página actual (Mira los detalles en las secciones respectivas)
 
-* [ ] **Cookie size:** If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name don't have more than 20 cookies.
+* [ ] **Tamaño de Cookie:** Si estás usando cookies asegurate que cada cookie no exceda los 4096 bytes y tu nombre dedominio no tiene más de 20 cookies.
 
 > * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 > * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
-### Preparing upcoming requests
+### Preparando solicitudes futuras
 
 > 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
-* [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during idle time using `dns-prefetch`.
+* [ ] **Resolución de DNS:** ![Low][low_img] Los DNS de servicios de terceros que son necesarios son resueltos por adelantado durante el tiempo de inactividad usando `dns-prefetch`.
 
 ```html
 <link rel="dns-prefetch" href="https://example.com">
 ```
 
-* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negociation with services that will be needed soon is done in advance during idle time using `preconnect`.
+* [ ] **Pre-conexión:** ![Low][low_img] Búsquedas de DNS, TCP handshakes y negociaciones TLS con servicios que serán requeridos pronto son hechos por adelantado durante el tiempo de inactividad usando `preconnect`.
 
 ```html
 <link rel="preconnect" href="https://example.com">
 ```
 
-* [ ] **Prefetching:** ![Low][low_img] Resources that will be needed soon (e.g. lazy loaded images) are requested in advance during idle time using `prefetch`.
+* [ ] **Prefetching:** ![Low][low_img] Recursos que se necesitarán pronto (ej. imágenes con lazy loading) son solicitados por adelantado durante el tiempo de inactividad usando `prefetch`.
 
 ```html
 <link rel="prefetch" href="image.png">
 ```
 
-* [ ] **Preloading:** ![Low][low_img] Resources needed in the current page (e.g. scripts placed at the end of `<body>`) in advance using `preload`.
+* [ ] **Precarga:** ![Low][low_img] Recursos necesarios en la página actual (ej. scripts colocados al final de la etiqueta `<body>`) son solicitados por adelantado usando `preload`.
 
 ```html
 <link rel="preload" href="app.js">
@@ -502,136 +501,150 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ### Performance testing
 
-* [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at least 90/100.
+* [ ] **Google PageSpeed:** ![High][high_img] Todas tus páginas fueron probadas (no solo la página de inicio) y tienen una calificación de al menos 90/100.
 
 > * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 > * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
 > * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
-## Accessibility
+## Accesibilidad
 
-> **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
+> **Notas:** Puedes mirar la lista de reproducción [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
-### Best practices
+### Mejores prácticas
 
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
+- [ ] **Mejora progresiva:** ![Medium][medium_img] Las funcionalidad principales, como la navegación y búsquedas, deben funcionar con JavaScript deshabilitado.
 
 > 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
+- [ ] **Contraste de color:** ![Medium][medium_img] El contraste de color debe pasar la recomendación WCAG AA (AAA para móviles).
 
 > 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
 
-#### Headings
+#### Encabezados
 
-* [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High][high_img] Headings should be used properly in the right order (H1 to H6).
+* [ ] **H1:** ![High][high_img] Todas las páginas tienen una etiqueta H1 la cual no es el título del sitio web.
+* [ ] **Encabezados:** ![High][high_img] Los encabezados deben ser usados en el orden correcto (H1 a H6).
 
 > 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-#### Landmarks
+#### Puntos de referencia
 
-- [ ] **Role banner:** ![High][high_img] `<header>` has `role="banner"`.
-- [ ] **Role navigation:** ![High][high_img] `<nav>` has `role="navigation"`.
-- [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
+- [ ] **Role banner:** ![High][high_img] `<header>` tiene el atributo `role="banner"`.
+- [ ] **Role navigation:** ![High][high_img] `<nav>` tiene el atributo `role="navigation"`.
+- [ ] **Role main:** ![High][high_img] `<main>` tiene el atributo `role="main"`.
 
 > 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
 
-### Semantics
+### Semántica
 
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
+- [ ] **Tipos de entrada HTML5 específicos son usados:** ![Medium][medium_img] Esto es importante para dispositivos móviles que muestran teclados personalizados y widgets para diferentes tipos.
 
 > 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
-### Form
+### Formulario
 
-* [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be displayed, use `aria-label` instead.
+* [ ] **Etiqueta:** ![High][high_img] Una etiqueta `<label>` es asociada a cada elemento del formulario. En caso de que una etiqueta no pueda ser mostrada, usa `aria-label` en su lugar.
 
 > 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
-### Accessibility testing
+### Pruebas de accesibilidad
 
-* [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the accessibility standards.
+* [ ] **Pruebas de estándares de accesibilidad:** ![High][high_img] Usa la herramienta WAVE para probar si tu página respeta los estándares de accesibilidad.
 
 > 🛠 [Wave testing](http://wave.webaim.org/)
 
-* [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
-* [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
-* [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
+* [ ] **Navegación con teclado:** ![High][high_img] Prueba tu sitio web utlizando solo tu teclado en un orden previsible. Todos los elementos interactivos son alcanzable y pueden usarse.
+* [ ] **Screen-reader:** ![Medium][medium_img] Todas las páginas son probadas en un screen reader (VoiceOver, ChromeVox, NVDA o Lynx).
+* [ ] **Focus style:** ![High][high_img] Si se deshabilita el estado focus de los elementos, se reemplaza por un estado visible en CSS.
 
 > 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
 ## SEO
 
-* [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
-* [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
-* [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
-* [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
+* [ ] **Google Analytics:** ![High][high_img] Google Analytics está instalado y configurado correctamente.
+* [ ] **Lógica de encabezados:** ![Medium][medium_img] El texto de emcabezado ayuda a entender el contenido en la página actual.
+* [ ] **sitemap.xml:** ![High][high_img] Existe un sitemap.xml y fue enviado por Google Search Console (nombrado Google Webmaster Tools anteriormente).
+* [ ] **robots.txt:** ![High][high_img] El archivo robots.txt no bloquea páginas.
 
 > * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
-* [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
+* [ ] **Datos estructurados:** ![High][high_img] Las páginas usando datos estructurados son probadas y no contienen errores. Los datos estructurados ayudar a los crawlers a entender el contenido en la página actual.
 
 > * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
 > * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
 
-* [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
+* [ ] **Sitemap HTML:** ![Medium][medium_img] Un sitemap HTML es proporcionado y es accesible con enlaces en el footer del sitio web.
 
 > * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
 > * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ vovler a arriba](#tabla-de-contenidos)**
 
 ---
 
-## Translation
+## Traducción
 
-The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
+La Front-End Checklist también está disponible en otros idiomas. ¡Gracias a todos los traductores y a su mágnifico trabajo!
 
-* 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+*    Inglés: [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+* 🇯🇵 Japonés: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
+
+---
+## Insignia Front-End Checklist
+
+Si quieres mostrar que estás siguiendo las reglas del Front-End Checklist, pon esta insignia en tu archivo README.
+
+➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+
+```md
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+```
+
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
-## Contributing
+## Contribución
 
-**Open an issue or a pull request to suggest changes or additions.**
+**Abre un issue o un pull requesto para sugerir cambios o añadir información**
 
-### Guide
+### Guía
 
-The **Front-End Checklist** repository consists of two branches:
+El repositorio del **Front-End Checklist** consiste en dos branches:
 
 #### 1. `master`
 
-This branch consists of the `README.md` file that is automatically reflected on the [Front-End Checklist](http://frontendchecklist.com/) website.
+Esta branch consiste en el archivo `README.md` que se refleja automaticamete en el sitio web [Front-End Checklist](http://frontendchecklist.com/).
 
 #### 2. `develop`
 
-This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
+Esta branch será usada para hacer cambios significativos a la estructura o contenido, de ser necesarios. Es preferible usar el master branch para pequeñas correcciones o añadir un nuevo elemento.
 
-### Contributors
+### Contribuyentes
 
-Check out all the super awesome [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
+Dale un vistazo a todos estos asombrosos [contribuyentes](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
 
-## Authors
+## Autores
 
 **[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
 
-## License
+## Licencia
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 [low_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png
 [medium_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png
