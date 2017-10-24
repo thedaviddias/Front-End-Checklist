@@ -13,7 +13,7 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 3. **[HTML](#html)**
 4. **[Webfonts](#webfonts)**
 5. **[CSS](#css)**
-6. **[Imágenes](#imagenes)**
+6. **[Imágenes](#imágenes)**
 7. **[JavaScript](#javascript)**
 8. **[Security](#security)**
 9. **[Performance](#performance-1)**
@@ -353,7 +353,6 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ## Imágenes
 
-> **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
 > **Notas:** Para un completo entendimiento de la optimización de imágenes, mira el ebook gratuito **[Essential Image Optimization](https://images.guide/)** de Addy Osmani.
 
 ### Mejores prácticas
@@ -367,7 +366,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 * [ ] **Sprite:** ![Medium][medium_img] Las imágenes pequeñas están en un archivo sprite (en el caso de iconos, es recomedable colocarlos en formato SVG).
 * [ ] **Ancho y altura:** ![High][high_img] Todo las etiquetas `<img>` tienen una altura y ancho establecido (No especificar px o %).
 
-> ***Nota:*** Muchos desarrolladores asumen que definir el ancho y alto no es compatible con el diseño web responsivo, lo cual no es cierto.
+> ***Nota:*** Muchos desarrolladores asumen que definir el ancho y alto no es compatible con el diseño web responsivo, lo cual no es correcto.
 
 * [ ] **Texto alternativo:** ![High][high_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
 
