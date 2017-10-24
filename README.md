@@ -313,7 +313,7 @@
 
 ---
 
-## 图片
+## Images
 
 > **注意:** 想要完整的了解图像优化，可以在Addy Osmani查看免费电子书**[图像优化基础](https://images.guide/)**。
 
@@ -368,7 +368,7 @@
 
 ---
 
-## 安全
+## Security
 
 ### 扫描并检查你的网站
 
@@ -412,7 +412,7 @@
 
 ---
 
-## 性能
+## Performance
 
 ### 最佳实践
 
@@ -474,7 +474,7 @@
 
 ---
 
-## 无障碍浏览(Accessibility)
+## Accessibility
 
 > **注意:** 查看播放列表[A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
