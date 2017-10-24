@@ -570,7 +570,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 ## SEO
 
 * [ ] **Google Analytics:** ![High][high_img] Google Analytics está instalado y configurado correctamente.
-* [ ] **Lógica de encabezados:** ![Medium][medium_img] El texto de emcabezado ayuda a entender el contenido en la página actual.
+* [ ] **Lógica de encabezados:** ![Medium][medium_img] El texto de encabezado ayuda a entender el contenido en la página actual.
 * [ ] **sitemap.xml:** ![High][high_img] Existe un sitemap.xml y fue enviado por Google Search Console (nombrado Google Webmaster Tools anteriormente).
 * [ ] **robots.txt:** ![High][high_img] El archivo robots.txt no bloquea páginas.
 
@@ -595,7 +595,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 La Front-End Checklist también está disponible en otros idiomas. ¡Gracias a todos los traductores y a su mágnifico trabajo!
 
-*    Inglés: [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+*    Inglés(repo original): [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 * 🇯🇵 Japonés: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
@@ -621,15 +621,15 @@ Si quieres mostrar que estás siguiendo las reglas del Front-End Checklist, pon 
 
 ### Guía
 
-El repositorio del **Front-End Checklist** consiste en dos branches:
+El repositorio del **Front-End Checklist** consiste en dos ramas:
 
 #### 1. `master`
 
-Esta branch consiste en el archivo `README.md` que se refleja automaticamete en el sitio web [Front-End Checklist](http://frontendchecklist.com/).
+Esta rama consiste en el archivo `README.md` que se refleja automaticamete en el sitio web [Front-End Checklist](http://frontendchecklist.com/).
 
 #### 2. `develop`
 
-Esta branch será usada para hacer cambios significativos a la estructura o contenido, de ser necesarios. Es preferible usar el master branch para pequeñas correcciones o añadir un nuevo elemento.
+Esta rama será usada para hacer cambios significativos a la estructura o contenido, de ser necesarios. Es preferible usar la rama master para pequeñas correcciones o añadir un nuevo elemento.
 
 ### Contribuyentes
 
