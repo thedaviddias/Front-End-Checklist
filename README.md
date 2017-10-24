@@ -1,4 +1,7 @@
 # 前端清单
+
+[![Join the chat at https://gitter.im/Front-End-Checklist/Lobby](https://badges.gitter.im/Front-End-Checklist/Lobby.svg)](https://gitter.im/Front-End-Checklist/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -8,17 +11,16 @@
 
 ## 目录
 
-1. **[How to use](#how-to-use)**
-2. **[Head](#head)**
-3. **[HTML](#html)**
-4. **[Webfonts](#webfonts)**
-5. **[CSS](#css)**
-6. **[Images](#images)**
-7. **[JavaScript](#javascript)**
-8. **[Security](#security)**
-9. **[Performance](#performance-1)**
-10. **[Accessibility](#accessibility)**
-11. **[SEO](#seo)**
+1. **[Head](#head)**
+2. **[HTML](#html)**
+3. **[Webfonts](#webfonts)**
+4. **[CSS](#css)**
+5. **[Images](#images)**
+6. **[JavaScript](#javascript)**
+7. **[Security](#security)**
+8. **[Performance](#performance-1)**
+9. **[Accessibility](#accessibility)**
+10. **[SEO](#seo)**
 
 ## How to use?
 
@@ -82,7 +84,7 @@
 <title>Page Title less than 65 characters</title>
 ```
 
-> 📖 [Title - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+> 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 
 * [ ] **Description:** ![High][high_img] 提供`description`标签， 它是唯一的同时内容不能超过150个字符。
 
@@ -115,6 +117,31 @@
 
 > 📖 [配置Web应用程序](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
+- [ ] **Windows Tiles:**![Low][low_img] Windows tiles are present and linked.
+
+```html
+<!-- Microsoft Tiles -->
+<meta name="msapplication-config" content="browserconfig.xml" />
+```
+
+Minimum required xml markup for the browserconfig.xml file is as follows:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+   <msapplication>
+     <tile>
+        <square70x70logo src="small.png"/>
+        <square150x150logo src="medium.png"/>
+        <wide310x150logo src="wide.png"/>
+        <square310x310logo src="large.png"/>
+     </tile>
+   </msapplication>
+</browserconfig>
+```
+
+> 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+
 * [ ] **Canonical:** ![Medium][medium_img] 使用`rel="canonical"`以避免重复的内容。
 
 ```html
@@ -136,7 +163,7 @@
 <html dir="rtl">
 ```
 
-> 📖 [dir - HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+> 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
 * [ ] **Alternate language:** ![Low][low_img] 指定网站的语言标签并与当前页面的语言相关联。
 
@@ -555,6 +582,29 @@
 
 ---
 
+## Translation
+
+The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
+
+* 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+* 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
+
+---
+
+## Front-End Checklist Badge
+
+If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
+
+➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+
+```md
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+---
+
 ## Contributing
 
 **提issue或提交合并请求以建议更改或添加。**
@@ -575,9 +625,16 @@
 
 查看所有贡献人员 [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
 
+## Support
+
+If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
+
+* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Twitter](https://twitter.com/thedaviddias)
+
 ## 作者
 
-**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
+**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
 
 ## Translators
 **Chinese:** **[Johnsen](https://github.com/JohnsenZhou)**
