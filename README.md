@@ -1,15 +1,15 @@
-# Front-End Checklist
+# 前端清单
 
 [![Join the chat at https://gitter.im/Front-End-Checklist/Lobby](https://badges.gitter.im/Front-End-Checklist/Lobby.svg)](https://gitter.im/Front-End-Checklist/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-The **Front-End Checklist** is an exhaustive list of all elements you need to have / to test before launching your site / page HTML to production.
+**前端清单**是一份在站点/HTML页面发布到生产环境之前需要测试的所有元素的详尽列表。
 
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
+它基于前端开发人员多年的经验沉淀，以及其他优秀的开源清单。
 
-## Table of Contents
+## 目录
 
 1. **[Head](#head)**
 2. **[HTML](#html)**
@@ -24,27 +24,27 @@ It is based on Front-End developers' years of experience, with the additions com
 
 ## How to use?
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
+**前端清单**中的所有项目都是大部分项目所必需的, 但某些元素可以省略或者并不是这么重要 (在管理Web应用程序的情况下，你可能并不需要RSS订阅源)。我们选择使用一下3级区分:
 
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Low][low_img] 意味着该项目被**推荐**，但在某些特定情况下可以省略。
+* ![Medium][medium_img] 意味着该项目是**强烈推荐**的，但是可能在某些特殊情况下能被省略。某些元素，如果省略将会对性能或SEO方面产生不良影响。
+* ![High][high_img] 意味着项目**不能被任何理由省略**。你的页面可能会导致功能障碍或有可访问性或SEO问题。测试优先级需要首先考虑这些元素。
 
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+某些资源拥有特定的标识符，帮助你去理解清单上不同类型的内容或帮助。
 
-* 📖: documentation or article
-* 🛠: online tool / testing tool
-* 📹: media or video content
+* 📖: 文档或文章
+* 🛠: 在线工具/测试工具
+* 📹: 媒体或视频内容
 
 ---
 
 ## Head
 
-> **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> **注意:** 你能在HTML文档的`<head>`中找到[所有的清单列表](https://github.com/joshbuchea/HEAD)。
 
-### Meta tag
+### Meta 标签
 
-* [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
+* [ ] **Doctype:** ![High][high_img] Doctype是HTML5的属性，需要声明在HTML文件的顶部。
 
 ```html
 <!-- Doctype HTML5 -->
@@ -53,70 +53,69 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-*The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
+*接下来三个 meta 标签 (Charset, X-UA Compatible, Viewport) 需要首先在head中声明*
 
-* [ ] **Charset:** ![High][high_img] The charset declared (UTF-8) is declared correctly.
-
+* [ ] **Charset:** ![High][high_img] 正确声明Charset标签(UTF-8)。
 ```html
-<!-- Set character encoding for the document -->
+<!-- 设置文档的字符编码 -->
 <meta charset="utf-8">
 ```
 
-* [ ] **X-UA-Compatible:** ![Medium][medium_img] The X-UA-Compatible meta tag is present.
+* [ ] **X-UA-Compatible:** ![Medium][medium_img] `X-UA-Compatible` 元标签。
 
 ```html
-<!-- Instruct Internet Explorer to use its latest rendering engine -->
+<!-- 指示Internet Explorer使用其最新的渲染引擎 -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
-> 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
+> 📖 [指定旧文档模式(Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
 
-* [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
+* [ ] **Viewport:** ![High][high_img] 正确声明`viewport`标签。
 
 ```html
-<!-- Viewport for responsive web design -->
+<!-- 响应式网页设计viewpoint声明 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculate the pixel width of the characters used in the title, cut off between 472 and 482 pixels. Average character limit would be around 55-characters).
+* [ ] **Title:** ![High][high_img] 所有页面都使用`title`(SEO:包括网站标题不超过65个字符)。
 
 ```html
-<!-- Document Title -->
+<!-- 文档标题 -->
 <title>Page Title less than 65 characters</title>
 ```
 
 > 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 
-* [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
+* [ ] **Description:** ![High][high_img] 提供`description`标签， 它是唯一的同时内容不能超过150个字符。
 
 ```html
 <!-- Meta Description -->
 <meta name="description" content="Description of the page less than 150 characters">
 ```
 
-* [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format (dimensions: 32x32px).
+* [ ] **Favicons:** ![Medium][medium_img] 每个`favicon`都被创建并正确显示，如果你只有一个`favicon.ico`，把它放在你网站的根目录下。 通常来说你不需要做任何操作他就能正常显示。 然而, 使用一下示例中的方法是比较好的做法。不过现在我们推荐使用**PNG**格式，相比`.ico`格式有较好的优势(推荐尺寸: 32x32px)。
 
 ```html
-<!-- Standard favicon -->
+<!-- 标准favicon -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
-<!-- Recommended favicon format -->
+<!-- 推荐favicon格式 -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
-> * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
+> * 🛠 [Favicon 生成器](https://www.favicon-generator.org/)
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
-> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
+> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS 技巧](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Touch Icon:** ![Low][low_img] Apple touch favicon apple-mobile-web-app-capable are present. *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need)*
+* [ ] **Apple Touch Icon:** ![Low][low_img] 苹果设备favicon适配。 *(创建至少200x200像素尺寸的Apple图标文件以支持你可能需要的用到的所有尺寸)*
 
 ```html
 <!-- Apple Touch Icon -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 ```
 
-> 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> 📖 [配置Web应用程序](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
 - [ ] **Windows Tiles:**![Low][low_img] Windows tiles are present and linked.
 
@@ -143,22 +142,22 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 > 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
-* [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
+* [ ] **Canonical:** ![Medium][medium_img] 使用`rel="canonical"`以避免重复的内容。
 
 ```html
-<!-- Helps prevent duplicate content issues -->
+<!-- 帮助防止重复内容出现 -->
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
 ```
 
-### HTML tags
+### HTML 标签
 
-* [ ] **Language tag:** ![High][high_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Language tag:** ![High][high_img] 指定你网站的语言标签并与当前页面语言相关联。
 
 ```html
-<html lang="en">
+<html lang="zh_cn">
 ```
 
-* [ ] **Direction tag:** ![Medium][medium_img] The direction of lecture is specified on the body tag (It can be used on another HTML tag).
+* [ ] **Direction tag:** ![Medium][medium_img] `direction`属性规定元素内容的文本方向。(可以在另一个HTML标签上使用)。
 
 ```html
 <html dir="rtl">
@@ -166,30 +165,29 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 > 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-* [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Alternate language:** ![Low][low_img] 指定网站的语言标签并与当前页面的语言相关联。
 
 ```html
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
-* [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
+* [ ] **条件注释:** ![Low][low_img] 如有需要，可针对IE添加条件注释。
 
-> 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+> 📖 [关于条件注释(Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
-
-* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+* [ ] **RSS feed:** ![Low][low_img] 如果你的项目是一个博客或者有大量的文章，可以添加一个RSS链接。
+* 
+* [ ] **CSS Critical:** ![Medium][medium_img] `CSS critical`收集并呈现当前页面可见部分的所有CSS。在主要的CSS调用之前以单行(最小化)在`<style></style>`中嵌入。
 
 > 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
 
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **CSS 顺序:** ![High][high_img] 所有CSS文件都需要在JavaScript文件加载之前加载完成(除了有时JS文件异步加载到页面之外的情况)。
 
 ### Social meta
 
-***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
+强烈推荐***Facebook OG*** and ***Twitter Cards***。如果你针对某些特定的存在并希望确保显示，也可以考虑其他社交媒体标签。
 
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, 1200 x 630 pixels recommended.
-
+* [ ] **Facebook Open Graph:** ![Low][low_img] 所有Facebook Open Graph（OG）都经过测试并且没有任何错误。图片至少需要600 x 315像素，建议使用1200 x 630像素。
 ```html
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/page.html">
@@ -201,7 +199,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 ```
 
 > * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
-> * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
+> * 🛠 使用[Facebook OG testing](https://developers.facebook.com/tools/debug/)测试你的页面。
 
 * [ ] **Twitter Card:** ![Low][low_img]
 
@@ -216,85 +214,84 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 ```
 
 > * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-> * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
+> * 🛠 使用[Twitter card validator](https://cards-dev.twitter.com/validator)测试你的页面。
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## HTML
 
-### Best practices
+### 最佳实践
 
-* [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section, footer, main...).
+* [ ] **HTML5 Semantic Elements:** ![High][high_img] 正确的使用HTML5语义化标签(header, section, footer, main...).
 
-> 📖 [HTML Reference](http://htmlreference.io/)
+> 📖 [HTML 参考](http://htmlreference.io/)
 
-* [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
+* [ ] **Error pages:** ![High][high_img] 404页面和5xx错误的存在。5xx错误页面需要集成其CSS(在当前服务器上无外部调用)。
 
-* [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
+* [ ] **Noopener:** ![Medium][medium_img] 如果你使用外部链接`target="_blank"`, 你的链接必须有个`rel="noopener"`属性，防止制表符的隐藏。如果你需要兼容旧版本的火狐浏览器，请使用`rel="noopener noreferrer"`。
 
-> 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
+> 📖 [关于 rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
-* [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
+* [ ] **清除注释:** ![Low][low_img] 在将页面发布到生产环境之前，应该删除不必要的代码。
 
-### HTML testing
+### HTML 测试
 
-* [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
+* [ ] **W3C 兼容:** ![High][high_img] 所有页面需要使用W3C验证器进行测试，以检测HTML代码中的可能存在的问题。
 
 > 🛠 [W3C validator](https://validator.w3.org/)
 
-* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
+* [ ] **HTML Lint:** ![High][high_img] 使用工具来帮助我们分析HTML代码中可能存在的问题。
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
-* [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
+* [ ] **Desktop Browsers:** ![High][high_img] 所有页面都在桌面浏览器上通过测试(Safari, Firefox, Chrome, Internet Explorer, EDGE...)。
+* [ ] **Mobile Browsers:**  ![High][high_img] 所有页面都在移动端浏览器上通过测试(Native browser, Chrome, Safari...).
 
-* [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404 error.
+* [ ] **链接检查器:** ![High][high_img] 页面中链接没有断开，请确认你没有404错误。
 
 > 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
-* [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker).
+* [ ] **广告拦截器测试:** ![Medium][medium_img] 你的的网站会在启用广告拦截器的情况下正确显示页面内容(你可以提供一条消息，引导人们停用其广告拦截器)。
 
-- [ ] **Pixel perfect:** ![High][high_img] Pages are close to pixel perfect. Depending on the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
+- [ ] **Pixel perfect:** ![High][high_img] 页面的像素级实现。根据设计稿的质量，你的页面可能做不到100%的还原，但你的网页需要尽可能的靠近设计稿。
 
-> [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
+> [Pixel Perfect - Chrome 扩展](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## Webfonts
 
-* [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
-
+* [ ] **Webfont格式:** ![High][high_img] 现代浏览器都支持WOFF、WOFF2、TTF格式
 > * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
 > * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
 > * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-* [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
+* [ ] **Webfont 大小:** ![High][high_img] Webfont大小不超过 2 MB (包括所有版本在内)。
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#table-of-contents)**
 
 ---
 
 ## CSS
 
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/).
+> **注意:** 大部分前端开发人员都会看看[CSS指南](https://cssguidelin.es/)和[Sass指南](https://sass-guidelin.es/)。如果你对CSS属性有疑问，可以访问[CSS参考文档](http://cssreference.io/).
 
-* [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
-* [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Medium][medium_img] Your page is using a CSS preprocessor ([Sass](http://sass-lang.com/) is preferred).
-* [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
-* [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
+* [ ] **响应式网站设计:** ![High][high_img] 网站使用响应式设计。
+* [ ] **CSS打印属性:** ![Medium][medium_img] 提供打印样式表，并确保使用正确。
+* [ ] **预处理器:** ![Medium][medium_img] 你的网站使用css预处理器(推荐[Sass](http://sass-lang.com/)).
+* [ ] **唯一ID:** ![High][high_img] 如果使用了ID，确保ID的唯一性。
+* [ ] **Reset CSS:** ![High][high_img] 使用CSS reset(如reset.css, normalize.css, reboot) *(如果你使用的是CSS框架，例如Bootstrap或Foundation，则reset css已被包含在其中)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
 > * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
 
-* [ ] **JS prefix:** ![Low][low_img] All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
+* [ ] **JS 前缀:** ![Low][low_img] 所有以**js-**开头的class(或者JavaScript文件中使用的id)不写入css文件。
 
 ```html
 <div id="js-slider" class="my-slider">
@@ -302,289 +299,286 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **CSS embed or line:** ![High][high_img] Avoid at all cost the use of CSS embed or inline: only used for valid reasons (ex: background-image for slider, CSS critical).
-* [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
+* [ ] **CSS embed or line:** ![High][high_img] 避免使用CSS嵌入或内联，仅用于必要的情况(例如: background-image for slider, CSS critical).
+* [ ] **浏览器内核前缀:** ![High][high_img] 对部分属性加上浏览器内核前缀，生成你浏览器兼容的属性。
 
 > 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
-### Performance
+### 性能
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file. *(Not for HTTP/2)*
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
+- [ ] **连接:** ![High][high_img] 将CSS文件连接到一个文件中。 *(不适用HTTP/2)*
+- [ ] **压缩:** ![High][high_img] 压缩所有CSS文件。
+- [ ] **非阻塞:** ![Medium][medium_img] CSS文件需要非阻塞，以防在DOM加载时花费大量时间。
 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
-> * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
+> * 📖 [使用loadCSS预加载CSS的示例](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
+- [ ] **未使用的CSS:** ![Low][low_img] 删除未使用的CSS。
 
-> * 🛠 [UnCSS Online](https://uncss-online.com/) 🛠
+> * 🛠 [UnCSS Online](https://uncss-online.com/)
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
 > * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 
 
-### CSS testing
+### CSS 测试
 
-* [ ] **Stylelint:** ![High][high_img] All CSS or SCSS files are without any errors.
-
+* [ ] **格式检查:** ![High][high_img] 所有的CSS或SCSS文件没有任何格式错误。
 > * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
-> * 📖 [Sass guidelines](https://sass-guidelin.es/)
+> * 📖 [Sass指南](https://sass-guidelin.es/)
 
-* [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be more / different according to your analytics).
+* [ ] **响应式网页设计:** ![High][high_img] 所有页面都需要经过以下几种情况的测试: 320px, 768px, 1024px (根据自己的项目情况，可以设置更多)。
 
-* [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
+* [ ] **CSS验证器:** ![Medium][medium_img] CSS经过测试，同时所有错误都被修复。
+> 🛠 [CSS验证器](https://jigsaw.w3.org/css-validator/)
 
-> 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [ ] **Reading direction:** ![High][high_img] 如果需要的话，所有页面都需要对LTR和RTL语言进行测试。
 
-* [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
+> * 📖 [构建RTL-Aware Web Apps & Websites: Part 1 | Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
+> * 📖 [构建RTL-Aware Web Apps & Websites: Part 2 | Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
-
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## Images
 
-> **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
+> **注意:** 想要完整的了解图像优化，可以在Addy Osmani查看免费电子书**[图像优化基础](https://images.guide/)**。
 
-### Best practices
+### 最佳实践
 
-* [ ] **Optimization:** ![High][high_img] All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
+* [ ] **优化:** ![High][high_img] 所有图像都经过优化并且可在浏览器中正常显示。WebP格式可用于关键页面（如首页）。 All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
-> * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
+> * 🛠 使用[ImageOptim](https://imageoptim.com/)免费优化您的图像。
+* [ ] **视网膜屏:** ![Low][low_img] 提供x2 或 3x的图像来支持视网膜屏显示。
+* [ ] **雪碧图:** ![Medium][medium_img] 小图片放到一个雪碧图中。
+* [ ] **宽高:** ![High][high_img] 所有`<img>`都需要设置高度和宽度(不要指定px 和 %)。
 
-* [ ] **Retina:** ![Low][low_img] You provide layout images x2 or 3x, support retina display.
-* [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
-* [ ] **Width and Height:** ![High][high_img] All `<img>` have height and width set (Don't specify px or %).
+> ***注意:*** 许多开发人员认为设置了宽度和高度就不能实现响应式设计，实际上并不是这样的。
 
-> ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
+* [ ] **Alternative text:** ![High][high_img] 所有 `<img>` 必须有`alt`属性来直观的描述图片。
+* [ ] **懒加载:** ![Medium][medium_img] 图片懒加载 (A noscript fallback is always provided).
 
-* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
-* [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
-
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## JavaScript
 
-### Best practices
+### 最佳实践
 
-* [ ] **JavaScript Inline:** ![High][high_img] You don't have any JavaScript code inline (mixed with your HTML code).
-* [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
-* [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
+* [ ] **JavaScript 内联:** ![High][high_img] 确保没有任何js代码内联(与HTML代码混合)。
+* [ ] **连接:** ![High][high_img] 将js文件连接起来。
+* [ ] **压缩:** ![High][high_img] 压缩所有js文件(可以添加 `.min` 后缀)。
 
-> [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
+> [压缩资源 (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
 
-* [ ] **JavaScript security:**
+* [ ] **JavaScript安全性:**
 
-> [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
+> [用JavaScript开发安全应用程序指南](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
 
-* [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
+* [ ] **非阻塞:** ![Medium][medium_img] JavaScript文件使用async或延迟使用defer属性异步加载。
 
 > 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-* [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
+* [ ] **Modernizr:** ![Low][low_img] 如果您需要定位某些特定功能，则可以使用自定义Modernizr在`<html>`标签中添加class。
 
 > 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
 
-### JavaScript testing
+### JavaScript 测试
 
-* [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
+* [ ] **ESLint:** ![High][high_img] 用ESLint检测并没有错误(基于你的配置规则)。
 
 > * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#目录)**
 
 ---
 
 ## Security
 
-### Scan and check your web site
+### 扫描并检查你的网站
 
 > * [securityheaders.io](https://securityheaders.io/)
 > * [Observatory by Mozilla](https://observatory.mozilla.org/)
 > * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
 
-### Best practices
+### 最佳实践
 
-* [ ] **HTTPS:** ![Medium][medium_img] HTTPS is used on every pages and for all external content (plugins, images...).
+* [ ] **HTTPS:** ![Medium][medium_img] 每个页面和所有外部内容(插件、图像...)都使用HTTPS。
 
-> * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
-> * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
+> * 🛠 [Let's Encrypt - 免费 SSL/TLS 证书](https://letsencrypt.org/)
+> * 🛠 [免费 SSL 服务测试](https://www.ssllabs.com/ssltest/index.html)
 > * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] The HTTP header is set to 'Strict-Transport-Security'.
+* [ ] **HTTP严格传输安全性(HSTS):** ![Medium][medium_img] HTTP头设置 'Strict-Transport-Security'.
 
 > * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
-* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You are ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+* [ ] **跨站点请求伪造攻击(CSRF):** ![High][high_img] 确保向服务器端发出的请求是合法的，并来自您的网站/应用程序，以防止发生CSRF攻击。
 
-> 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
+> 📖 [跨站点请求伪造（CSRF）防范清单 - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
 
-* [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
+* [ ] **跨站脚本攻击(XSS):** ![High][high_img] 页面或网站没有XSS攻击的可能性。
 
-> * 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
-> * 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+> * 📖 [XSS (跨站脚本攻击) 防范清单 - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+> * 📖 [基于DOM的XSS防范清单 - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 
-* [ ] **Content Type Options** ![Medium][medium_img] Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+* [ ] **Content Type Options** ![Medium][medium_img] 防止Google Chrome和Internet Explorer尝试将响应的内容类型从服务器声明的内容类型中嗅探出来。
 
 > * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
 
-* [ ] **X-Frame-Options (XFO)** ![Medium][medium_img] Protects your visitors against clickjacking attacks.
+* [ ] **X-Frame-Options (XFO)** ![Medium][medium_img] 保护网站的访问者免受劫持攻击。
 
 > * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
 > * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## Performance
 
-### Best practices
+### 最佳实践
 
-- [ ] **Weight page:** ![High][high_img] The weight of each page is between 0 and 500 KB.
+- [ ] **页面大小:** ![High][high_img] 每张网页的大小在0到500KB之间。
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-- [ ] **Minified:** ![Medium][medium_img] Your HTML is minified.
+- [ ] **文件压缩:** ![Medium][medium_img] 压缩你的HTML文件。
 > 🛠 [W3C Validator](https://validator.w3.org/)
 
-* [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+* [ ] **懒加载:** ![Medium][medium_img] 图片、js脚本和CSS需要懒加载，以提高当前页面的响应时间（请参见各自部分的详细信息）。
 
-* [ ] **Cookie size:** If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
+* [ ] **Cookie大小:** 如果使用Cookie，确保每个Cookie不超过4096个字节，并且域名下不超过20个Cookie。
 
-> * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
+> * 📖 [Cookie规范: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-> * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
+> * 🛠 [浏览器Cookie限制](http://browsercookielimits.squawky.net/)
 
-### Preparing upcoming requests
+### 为将到来的请求做准备
 
-> 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
+> 📖 [以下几种技术的详细说明](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
-* [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during idle time using `dns-prefetch`.
+* [ ] **DNS解析:** ![Low][low_img] 使用`dns-prefetch`让第三方DNS服务商主动去执行域名解析的功能。
 
 ```html
 <link rel="dns-prefetch" href="https://example.com">
 ```
 
-* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negociation with services that will be needed soon is done in advance during idle time using `preconnect`.
+* [ ] **预连接:** ![Low][low_img] 使用`preconnect`在空闲期间提前做好DNS查询, TCP三次握手和TLS 协商。
 
 ```html
 <link rel="preconnect" href="https://example.com">
 ```
 
-* [ ] **Prefetching:** ![Low][low_img] Resources that will be needed soon (e.g. lazy loaded images) are requested in advance during idle time using `prefetch`.
+* [ ] **预获取:** ![Low][low_img] 使用`prefetch`在空闲期间提前请求即将需要的资源(例如：图像的懒加载)。
 
 ```html
 <link rel="prefetch" href="image.png">
 ```
 
-* [ ] **Preloading:** ![Low][low_img] Resources needed in the current page (e.g. scripts placed at the end of `<body>`) in advance using `preload`.
+* [ ] **预加载:** ![Low][low_img] 使用`preload`提前加载当前页面所需要的资源(例如：js脚本放在`<body>`的最后)。
 
 ```html
 <link rel="preload" href="app.js">
 ```
 
-> 📖 [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
+> 📖 [预加载和预获取之间的差异](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
-### Performance testing
+### 性能测试
 
-* [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at least 90/100.
+* [ ] **Google PageSpeed:** ![High][high_img] 所有的网页都经过测试（不仅仅是首页），而且得分至少为90/100。
 
 > * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-> * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
-> * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
+> * 🛠 [用Google测试移动端速度](https://testmysite.withgoogle.com)
+> * 🛠 [WebPagetest - 网站性能和优化测试](https://www.webpagetest.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## Accessibility
 
-> **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
+> **注意:** 查看播放列表[A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
-### Best practices
+### 最佳实践
 
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
+- [ ] **渐进式增强:** ![Medium][medium_img] 主要功能如主导航和搜索等功能应该在没有启用JavaScript的情况下工作。
 
-> 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
+> 📖 [在Chrome开发者具中启用/禁用JavaScript](https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
+- [ ] **颜色对比度:** ![Medium][medium_img] 颜色对比度至少通过WCAG AA标准(移动端需要通过AAA)。
 
 > 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
 
-#### Headings
+#### 标题
 
-* [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High][high_img] Headings should be used properly in the right order (H1 to H6).
+* [ ] **H1:** ![High][high_img] 所有页面都有H1，它不是网站的标题。
+* [ ] **Headings:** ![High][high_img] 标题应以正确的顺序合理使用(H1至H6)。
 
 > 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
 #### Landmarks
 
-- [ ] **Role banner:** ![High][high_img] `<header>` has `role="banner"`.
-- [ ] **Role navigation:** ![High][high_img] `<nav>` has `role="navigation"`.
-- [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
+- [ ] **banner角色:** ![High][high_img] `<header>` 标签中加入 `role="banner"`属性。
+- [ ] **navigation角色:** ![High][high_img] `<nav>` 标签中加入 `role="navigation"`属性。
+- [ ] **main角色:** ![High][high_img] `<main>` 标签中加入 `role="main"`属性。
 
 > 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
 
-### Semantics
+### 语义化
 
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
+- [ ] **使用特定的HTML5输入类型:** ![Medium][medium_img] 这对于显示不同类型的自定义键盘和小部件的移动设备尤其重要。
 
 > 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
-### Form
+### 表单
 
-* [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be displayed, use `aria-label` instead.
+* [ ] **Label:** ![High][high_img] `label`与每个输入表单元素相关联，如果`label`无法显示，请使用`aria-label`代替。
 
-> 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
+> 📖 [使用aria-label属性 - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
-### Accessibility testing
+### Accessibility 测试
 
-* [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the accessibility standards.
+* [ ] **Accessibility标准测试:** ![High][high_img] 使用WAVE工具测试你的页面是否符合accessibility标准。
 
 > 🛠 [Wave testing](http://wave.webaim.org/)
 
-* [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
-* [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
-* [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
+* [ ] **Keyboard navigation:** ![High][high_img] 在你的键盘上以可能出现的操作顺序去测试，确保所有交互式元素都可访问和可用。
+* [ ] **Screen-reader:** ![Medium][medium_img] 所有页面都在屏幕阅读器(VoiceOver, ChromeVox, NVDA or Lynx)中进行了测试。
+* [ ] **Focus style:** ![High][high_img] 如果焦点被禁用，它将被CSS中的可见状态所替代。
 
 > 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 返回顶部](#目录)**
 
 ---
 
 ## SEO
 
-* [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
-* [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
-* [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
-* [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
+* [ ] **Google Analytics:** ![High][high_img] Google Analytics 正确安装和配置。
+* [ ] **Headings logic:** ![Medium][medium_img] 标题文字有助于了解当前页面的主要内容。
+* [ ] **sitemap.xml:** ![High][high_img] `sitemap.xml`存在并提交到Google Search Console(以前的Google管理员工具)。
+* [ ] **robots.txt:** ![High][high_img] `robots.txt`正确配置，不阻止网页被爬取。
 
-> * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
+> * 🛠 使用[Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)测试你的`robots.txt`。 
 
-* [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
+* [ ] **结构化数据:** ![High][high_img] 使用结构化数据的页面通过测试并且没有错误。结构化数据帮助爬虫理解当前页面的内容。
 
-> * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
-> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+> * 📖 [结构化数据简介 | 搜索 | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
+> * 🛠 使用[Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)测试你的页面。
 
-* [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
+* [ ] **Sitemap HTML:** ![Medium][medium_img] 提供HTML网站地图，可通过网站页脚中的链接进行访问。
 
-> * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
-> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
+> * 📖 [Sitemap 指南 | Google 支持](https://support.google.com/webmasters/answer/183668?hl=en)
+> * 🛠 [Sitemap 生成器](https://websiteseochecker.com/html-sitemap-generator/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#目录)**
 
 ---
 
@@ -613,23 +607,23 @@ If you want to show you are following the rules of the Front-End Checklist, put 
 
 ## Contributing
 
-**Open an issue or a pull request to suggest changes or additions.**
+**提issue或提交合并请求以建议更改或添加。**
 
 ### Guide
 
-The **Front-End Checklist** repository consists of two branches:
+**前端清单** 项目有两个分支:
 
 #### 1. `master`
 
-This branch consists of the `README.md` file that is automatically reflected on the [Front-End Checklist](http://frontendchecklist.com/) website.
-
+该分支包含`README.md`,内容会自动反映到[前端清单](http://frontendchecklist.com/)。
+网站上。
 #### 2. `develop`
 
-This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
+这个分支将用于对结构和内容进行一些重大更改。不过最好还是使用主分支来修复小错误或添加新项目。
 
-### Contributors
+### 贡献
 
-Check out all the super awesome [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
+查看所有贡献人员 [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
 
 ## Support
 
@@ -638,15 +632,18 @@ If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
 * [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 * [Twitter](https://twitter.com/thedaviddias)
 
-## Authors
+## 作者
 
 **[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
+
+## Translators
+**Chinese:** **[Johnsen](https://github.com/JohnsenZhou)**
 
 ## License
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 回到顶部](#目录)**
 
 [low_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png
 [medium_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png
