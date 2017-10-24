@@ -596,8 +596,10 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 La Front-End Checklist también está disponible en otros idiomas. ¡Gracias a todos los traductores y a su mágnifico trabajo!
 
-*    Inglés(repo original): [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+*    Inglés(repositorio principal): [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 * 🇯🇵 Japonés: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+* 🇨🇳 Chino: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
+* 🇰🇷 Coreano: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
