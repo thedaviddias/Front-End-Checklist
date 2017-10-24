@@ -1,4 +1,7 @@
 # Front-End Checklist
+
+[![Join the chat at https://gitter.im/Front-End-Checklist/Lobby](https://badges.gitter.im/Front-End-Checklist/Lobby.svg)](https://gitter.im/Front-End-Checklist/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 [![Contributors](https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg)](https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -8,19 +11,16 @@ It is based on Front-End developers' years of experience, with the additions com
 
 ## Table of Contents
 
-1. **[How to use](#how-to-use)**
-2. **[Head](#head)**
-3. **[HTML](#html)**
-4. **[Webfonts](#webfonts)**
-5. **[CSS](#css)**
-6. **[Images](#images)**
-7. **[JavaScript](#javascript)**
-8. **[Security](#security)**
-9. **[Performance](#performance-1)**
-10. **[Accessibility](#accessibility)**
-11. **[SEO](#seo)**
-12. **[Translation](#translation)**
-13. **[Contributing](#contributing)**
+1. **[Head](#head)**
+2. **[HTML](#html)**
+3. **[Webfonts](#webfonts)**
+4. **[CSS](#css)**
+5. **[Images](#images)**
+6. **[JavaScript](#javascript)**
+7. **[Security](#security)**
+8. **[Performance](#performance-1)**
+9. **[Accessibility](#accessibility)**
+10. **[SEO](#seo)**
 
 ## How to use?
 
@@ -78,7 +78,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: No more than 65 characters, website title included).
+* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculate the pixel width of the characters used in the title, cut off between 472 and 482 pixels. Average character limit would be around 55-characters).
 
 ```html
 <!-- Document Title -->
@@ -459,7 +459,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
-* [ ] **Cookie size:** If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name don't have more than 20 cookies.
+* [ ] **Cookie size:** If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
 
 > * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
@@ -593,6 +593,19 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
 
 * 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+* 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
+
+---
+
+## Front-End Checklist Badge
+
+If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
+
+➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+
+```md
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -618,9 +631,16 @@ This branch will be used to make some significant changes to the structure, cont
 
 Check out all the super awesome [contributors](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
 
+## Support
+
+If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
+
+* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Twitter](https://twitter.com/thedaviddias)
+
 ## Authors
 
-**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**, **[Geoffrey Signorato](https://github.com/geosenna)**, **[Sandeep Ramgolam](https://twitter.com/__Sun__)** and **[Cédric Poilly](https://github.com/CedricPoilly)**.
+**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
 
 ## License
 
