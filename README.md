@@ -13,7 +13,7 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 3. **[HTML](#html)**
 4. **[Webfonts](#webfonts)**
 5. **[CSS](#css)**
-6. **[Images](#images)**
+6. **[Imágenes](#imagenes)**
 7. **[JavaScript](#javascript)**
 8. **[Security](#security)**
 9. **[Performance](#performance-1)**
@@ -351,59 +351,59 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ---
 
-## Images
+## Imágenes
 
 > **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
+> **Notas:** Para un completo entendimiento de la optimización de imágenes, mira el ebook gratuito **[Essential Image Optimization](https://images.guide/)** de Addy Osmani.
 
-### Best practices
+### Mejores prácticas
 
-* [ ] **Optimization:** ![High][high_img] All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
+* [ ] **Optimización:** ![High][high_img] Todas las imágesnes están optimizadas para ser renderizadas en el navegador. El formato WebP puede ser utilizado para páginas críticas (como la Página de Inicio).
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
-> * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
+> * 🛠 Usa [ImageOptim](https://imageoptim.com/) para optimizar tus imágenes gratis.
 
-* [ ] **Retina:** ![Low][low_img] You provide layout images x2 or 3x, support retina display.
-* [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
-* [ ] **Width and Height:** ![High][high_img] All `<img>` have height and width set (Don't specify px or %).
+* [ ] **Retina:** ![Low][low_img] Proporcionas imágenes para layouts x2 o x3, soporte para retina display.
+* [ ] **Sprite:** ![Medium][medium_img] Las imágenes pequeñas están en un archivo sprite (en el caso de iconos, es recomedable colocarlos en formato SVG).
+* [ ] **Ancho y altura:** ![High][high_img] Todo las etiquetas `<img>` tienen una altura y ancho establecido (No especificar px o %).
 
-> ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
+> ***Nota:*** Muchos desarrolladores asumen que definir el ancho y alto no es compatible con el diseño web responsivo, lo cual no es cierto.
 
-* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
-* [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
+* [ ] **Texto alternativo:** ![High][high_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
 ## JavaScript
 
-### Best practices
+### Mejores prácticas
 
-* [ ] **JavaScript Inline:** ![High][high_img] You don't have any JavaScript code inline (mixed with your HTML code).
-* [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
-* [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
+* [ ] **JavaScript Incrustado:** ![High][high_img] No tienes JavaScript incrustado (mezclado con tu código HTML).
+* [ ] **Concatenado:** ![High][high_img] Los archivos JavaScript están concatenados.
+* [ ] **Minificado:** ![High][high_img] Los archivos JavaScript están minificados (puedes agregar el subfijo `.min`).
 
 > [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
 
-* [ ] **JavaScript security:**
+* [ ] **Seguridad JavaScript:**
 
 > [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
 
-* [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
+* [ ] **No bloquea el renderizado:** ![Medium][medium_img] Los archivos JavaScript son cargados asíncronamente usando el atributo `async` o deferidos usando el atributo `defer`.
 
 > 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-* [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
+* [ ] **Modernizr:** ![Low][low_img] Si necesitas apuntar a alguna característica específica puedes usar Modernizr para agregar clases a tu etiqueta `<html>`.
 
 > 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
 
-### JavaScript testing
+### Pruebas de JavaScript
 
-* [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
+* [ ] **ESLint:** ![High][high_img] No hay errores marcados por ESLint (basados en tu configuración o reglas de estándares)
 
 > * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
 
