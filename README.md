@@ -151,6 +151,9 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
 ```
 
+> 📖 [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
+> 📖 [5 common mistakes with rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
+
 ### HTML tags
 
 * [ ] **Language tag:** ![High][high_img] The language tag of your website is specified and related to the language of the current page.
