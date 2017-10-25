@@ -55,7 +55,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <!DOCTYPE html>
 ```
 
-> 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+> * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
 *The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
 
@@ -73,7 +73,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
-> 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
+> * 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
 
 * [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
 
@@ -89,7 +89,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <title>Page Title less than 65 characters</title>
 ```
 
-> 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+> * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 
 * [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
 
@@ -145,7 +145,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 </browserconfig>
 ```
 
-> 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+> * 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
 * [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
 
@@ -171,7 +171,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <html dir="rtl">
 ```
 
-> 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+> * 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
 * [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
 
@@ -181,13 +181,13 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
 
-> 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+> * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
 * [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
 
 * [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
 
-> 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
+> * 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
 
 * [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
 
@@ -235,7 +235,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section, footer, main...).
 
-> 📖 [HTML Reference](http://htmlreference.io/)
+> * 📖 [HTML Reference](http://htmlreference.io/)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,7 +250,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
 
-> 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
+> * 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
 * [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
 >>>>>>> Assorted tweaks.
@@ -259,11 +259,11 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
 
-> 🛠 [W3C validator](https://validator.w3.org/)
+> * 🛠 [W3C validator](https://validator.w3.org/)
 
 * [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
 
-> 🛠 [Dirty markup](https://dirtymarkup.com/)
+> * 🛠 [Dirty markup](https://dirtymarkup.com/)
 
 * [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
 * [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
@@ -322,7 +322,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **CSS embed or line:** ![High][high_img] Avoid at all cost the use of CSS embed or inline: only used for valid reasons (ex: background-image for slider, CSS critical).
 * [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
 
-> 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
+> * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
 ### Performance
 
@@ -354,7 +354,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
 
-> 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
+> * 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 * [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
 
@@ -397,19 +397,19 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
 * [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
 
-> [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
+> * 📖 [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
 
 * [ ] **JavaScript security:**
 
-> [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
+> * 📖 [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
 
 * [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
 
-> 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
+> * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
 * [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
 
-> 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
+> * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
 
 ### JavaScript testing
 
@@ -445,7 +445,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
 
-> 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
+> * 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
 
 * [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
 
@@ -475,7 +475,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 - [ ] **Minified:** ![Medium][medium_img] Your HTML is minified.
-> 🛠 [W3C Validator](https://validator.w3.org/)
+> * 🛠 [W3C Validator](https://validator.w3.org/)
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
@@ -487,7 +487,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ### Preparing upcoming requests
 
-> 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
+> * 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
 * [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during idle time using `dns-prefetch`.
 
@@ -513,7 +513,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <link rel="preload" href="app.js">
 ```
 
-> 📖 [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
+> * 📖 [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
 ### Performance testing
 
@@ -535,18 +535,18 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 - [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
 
-> 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
+> * 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
 - [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
 
-> 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
+> * 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
 
 #### Headings
 
 * [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
 * [ ] **Headings:** ![High][high_img] Headings should be used properly in the right order (H1 to H6).
 
-> 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+> * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
 #### Landmarks
 
@@ -554,31 +554,31 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 - [ ] **Role navigation:** ![High][high_img] `<nav>` has `role="navigation"`.
 - [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
 
-> 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
+> * 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
 
 ### Semantics
 
 - [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
 
-> 📖 [Mobile Input Types](http://mobileinputtypes.com/)
+> * 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
 ### Form
 
 * [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be displayed, use `aria-label` instead.
 
-> 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
+> * 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
 ### Accessibility testing
 
 * [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the accessibility standards.
 
-> 🛠 [Wave testing](http://wave.webaim.org/)
+> * 🛠 [Wave testing](http://wave.webaim.org/)
 
 * [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
 * [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
 * [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
 
-> 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+> * 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
 **[⬆ back to top](#table-of-contents)**
 
