@@ -79,10 +79,10 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-* [ ] **Chrome Theme Color:** ![Low][low_img] C
+* [ ] **Chrome Theme Color:** ![Low][low_img] Chrome theme color for android devices is present
 
 ```html
-<!-- Theme color for Chrome in android devices -->
+<!-- Theme color for Chrome on Android devices -->
 <meta name="theme-color" content="#99CC00"/>
 ```
 
