@@ -41,7 +41,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 
 ## Head
 
-> **Nota:** Puedes encontrar [una lista de todo (fuente en inglés)](https://github.com/joshbuchea/HEAD) lo que puede encontrarse en el `<head>` de un documento HTML.
+> **Nota:** Puedes encontrar [una lista de todo](https://github.com/joshbuchea/HEAD) `(fuente en inglés)` lo que puede encontrarse en el `<head>` de un documento HTML.
 
 ### Meta tag
 
@@ -52,7 +52,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <!doctype html>
 ```
 
-> 📖 [Determinando la codificación de caracteres - HTML5 W3C (fuente en inglés)](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+> 📖 [Determinando la codificación de caracteres - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)`(fuente en inglés)`
 
 *Los siguientes 3 meta etiquetas (Charset, X-UA Compatible and Viewport) necesitan ir primero en el head.*
 
@@ -70,7 +70,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
-> 📖 [Especificando modos de documento heredado (Internet Explorer - fuente en inglés)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
+> 📖 [Especificando modos de documento heredado (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx) `(fuente en inglés)`
 
 * [ ] **Viewport:** ![Alto][high_img] El viewport es declarado correctamente.
 
@@ -86,7 +86,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <title>Título de página menor a 65 caracteres</title>
 ```
 
-> 📖 [Título - HTML - MDN (fuente en inglés)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+> 📖 [Título - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) `(fuente en inglés)`
 
 * [ ] **Description:** ![Alto][high_img] Una meta descripción es proporcionada, es única y no posee más de 150 caracteres.
 
@@ -104,11 +104,11 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
-> * 🛠 [Generador de Favicon (herramienta en inglés)](https://www.favicon-generator.org/)
-> * 🛠 [RealFaviconGenerator (herramienta en inglés)](https://realfavicongenerator.net/)
-> * 📖 [Favicon Cheat Sheet  (fuente en inglés)](https://github.com/audreyr/favicon-cheat-sheet)
-> * 📖 [Favicons, Touch Icons, Tile Icons, etc. ¿Cuál necesitas? - CSS Tricks (fuente en inglés)](https://css-tricks.com/favicon-quiz/)
-> * 📖 [PNG favicons - caniuse (fuente en inglés)](https://caniuse.com/#feat=link-icon-png)
+> * 🛠 [Generador de Favicon](https://www.favicon-generator.org/) `(herramienta en inglés)`
+> * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/) `(herramienta en inglés)`
+> * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet) `(fuente en inglés)`
+> * 📖 [Favicons, Touch Icons, Tile Icons, etc. ¿Cuál necesitas? - CSS Tricks](https://css-tricks.com/favicon-quiz/) `(fuente en inglés)`
+> * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png) `(fuente en inglés)`
 
 * [ ] **Apple Touch Icon:** ![Bajo][low_img] Apple touch favicon apple-mobile-web-app-capable está presente. *(Crea tu archivo Apple Icon con una dimensión de al menos 200x200px para dar soporte a todas las dimensiones que podrías necesitar)*
 
@@ -117,7 +117,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <link rel="apple-touch-icon" href="/custom-icon.png">
 ```
 
-> 📖 [Configurando Aplicaciones Web (fuente en inglés)](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> 📖 [Configurando Aplicaciones Web](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) `(fuente en inglés)`
 
 - [ ] **Windows Tiles:**![Low][low_img] Windows tiles están presentes y enlazadas.
 
