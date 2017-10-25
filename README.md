@@ -27,7 +27,7 @@ Todos los elementos en la **Front-End Checklist** son requeridos para la mayorí
 
 * ![Bajo][low_img] significa que el elemento es **recomendado** pero puede ser omitido en situaciones partículares.
 * ![Medio][medium_img] significa que el elemento es **altamente recomendado** y eventualmente puede ser omitido en casos muy particulares. Algunos elementos, si son omitidos, pueden traer malas repercusiones en términos de rendimiento o SEO.
-* ![Alto][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Alto][high_img] significa que el elemento **no se puede omitir** por ningún motivo. Puede causar una anomalía en su página, tener problemas de accesibilidad o SEO. Estos elementos deben tener prioridad en el test.
 
 Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido/ayuda que podrás encontrar en el checklist:
 
