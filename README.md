@@ -370,6 +370,9 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
 
 * [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
+
+> * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
+
 * [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
 
 **[⬆ back to top](#table-of-contents)**
