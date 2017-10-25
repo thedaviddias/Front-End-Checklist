@@ -79,6 +79,13 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+* [ ] **Chrome Theme Color:** ![Low][low_img] C
+
+```html
+<!-- Theme color for Chrome in android devices -->
+<meta name="theme-color" content="#99CC00"/>
+```
+
 * [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculate the pixel width of the characters used in the title, cut off between 472 and 482 pixels. Average character limit would be around 55-characters).
 
 ```html
