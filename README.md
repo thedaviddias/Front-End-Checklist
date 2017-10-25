@@ -600,6 +600,8 @@ La Front-End Checklist también está disponible en otros idiomas. ¡Gracias a t
 * 🇯🇵 Japonés: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
 * 🇨🇳 Chino: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
 * 🇰🇷 Coreano: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
+* 🇧🇷 Portugués: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
+* 🇻🇳 Vietnamita: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
