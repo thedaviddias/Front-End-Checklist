@@ -159,13 +159,13 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ### HTML tags
 
-* [ ] **Language tag:** ![High][high_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Language attribute:** ![High][high_img] The language tag of your website is specified and related to the language of the current page.
 
 ```html
 <html lang="en">
 ```
 
-* [ ] **Direction tag:** ![Medium][medium_img] The direction of lecture is specified on the body tag (It can be used on another HTML tag).
+* [ ] **Direction attribute:** ![Medium][medium_img] The direction of lecture is specified on the body tag (It can be used on another HTML tag).
 
 ```html
 <html dir="rtl">
