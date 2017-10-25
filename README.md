@@ -636,7 +636,7 @@ Esta rama será usada para hacer cambios significativos a la estructura o conten
 
 ### Contribuyentes
 
-Dale un vistazo a todos estos asombrosos [contribuyentes](https://github.com/thedaviddias/frontendchecklist/graphs/contributors).
+Dale un vistazo a todos estos asombrosos [contribuyentes](https://github.com/eoasakura/Front-End-Checklist-ES/graphs/contributors).
 
 ## Autores
 
