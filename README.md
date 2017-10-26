@@ -368,7 +368,12 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > ***Nota:*** Muchos desarrolladores asumen que definir el ancho y alto no es compatible con el diseño web responsivo, lo cual no es correcto.
 
-* [ ] **Texto alternativo:** ![High][high_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
+* [ ] **Lazy loading:** ![Medium][medium_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
+
+* [ ] **Texto alternativo:** ![High][high_img] Todas las imágenes tienen un texto al ternativo que las describe.
+
+> * 📖 [Textos alternativos - La guía definitiva](https://axesslab.com/alt-texts/) `(fuente en inglés)`
+
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
