@@ -487,6 +487,10 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 > * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
+* [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components, thus limiting calls to external APIs and keeping your users activity private.
+
+> * [Simple sharing buttons generator](https://simplesharingbuttons.com/)
+
 ### Preparing upcoming requests
 
 > * 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
