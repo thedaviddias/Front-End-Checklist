@@ -94,6 +94,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <!-- Meta descripción -->
 <meta name="description" content="Descripción de la página en menos de 150 caracteres">
 ```
+> 📖 [Meta descripción - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description) `(fuente en inglés)`
 
 * [ ] **Favicons:** ![Medio][medium_img] Cada favicon se ha creado y mostrado correctamente. Si solo tienes un `favicon.ico`, colocalo en la raíz de tu sitio. Normalmente no nececsitarás usar ningun marcado. Sin embargo, es una buena práctica enlazarlo usando el ejemplo debajo. Al día de hoy, **se recomienda el formato PNG** sobre el formato `.ico` (dimensión: 32x32px).
 
