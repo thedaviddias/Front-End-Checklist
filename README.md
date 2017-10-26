@@ -41,7 +41,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 
 ## Head
 
-> **Nota:** Puedes encontrar [una lista de todo](https://github.com/joshbuchea/HEAD) `(fuente en inglés)` lo que puede encontrarse en el `<head>` de un documento HTML.
+> **Nota:** Puedes encontrar [una lista de todo](https://github.com/eoasakura/HEAD-ES) `(traducción en progreso)` lo que puede encontrarse en el `<head>` de un documento HTML.
 
 ### Meta tag
 
