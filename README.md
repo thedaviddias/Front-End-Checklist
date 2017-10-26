@@ -439,7 +439,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 * [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your users activity private.
 
-> * [Simple sharing buttons generator](https://simplesharingbuttons.com/)
+> * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
 
 ### Preparing upcoming requests
 
