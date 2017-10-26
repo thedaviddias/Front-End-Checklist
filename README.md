@@ -365,10 +365,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Retina:** ![Low][low_img] You provide layout images x2 or 3x, support retina display.
 * [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
-* [ ] **Width and Height:** ![High][high_img] All `<img>` have height and width set (Don't specify px or %).
-
-> ***Note:*** Lots of developers assume that width and height are not compatible with responsive web design. It's absolutely not the case.
-
+* [ ] **Width and Height:** ![High][high_img] Set width and height attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
 * [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
 
 > * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
