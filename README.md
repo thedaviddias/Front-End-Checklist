@@ -441,6 +441,18 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
 
+### Compression
+
+* [ ] **Gzip:** ![High][high_img] Content is served compressed with gzip.
+
+* [ ] **Brotli:** ![Medium][medium_img] Content is served compressed with [Brotli](https://github.com/google/brotli) instead of gzip for clients supporting it (higher compression rate).
+
+* [ ] **Zopfli:** ![Low][low_img] Content that rarely changes is served compressed with [Zopfli](https://github.com/google/zopfli) for clients supporting it (higher compression rate than Brotli but slower to compress).
+
+* [ ] **HTTP/2 HPACK:** ![High][high_img] If using HTTP/2, HPACK headers compression is enabled.
+
+> 📖 [HPACK: the silent killer (feature) of HTTP/2](https://blog.cloudflare.com/hpack-the-silent-killer-feature-of-http-2/)
+
 ### Preparing upcoming requests
 
 > 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
