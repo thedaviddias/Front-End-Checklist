@@ -271,6 +271,8 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ## Webfonts
 
+> **Notes:** Using webfonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing webfont loaders to control behavior.
+
 * [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
 
 > * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
@@ -279,6 +281,10 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 * [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
+
+* [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader
+
+> * 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
 **[⬆ back to top](#table-of-contents)**
 
