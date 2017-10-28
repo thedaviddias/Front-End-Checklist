@@ -661,6 +661,7 @@ Check out all the super awesome [contributors](https://github.com/thedaviddias/f
 If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
 
 * [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Facebook](https://www.facebook.com/frontendchecklist/)
 * [Twitter](https://twitter.com/thedaviddias)
 
 ## Authors
