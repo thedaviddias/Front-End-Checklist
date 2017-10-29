@@ -278,6 +278,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 ## Webfonts
 
 > **Notes:** Using webfonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing webfont loaders to control behavior.
+> * 📖 [Google Technical considerations about webfonts](https://developers.google.com/fonts/docs/technical_considerations)
 
 * [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
 
@@ -568,6 +569,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 - [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
 
 > * 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
+> * 📖 [ARIA roles categorization](https://www.w3.org/TR/wai-aria/roles#roles_categorization)
 
 ### Semantics
 
@@ -616,7 +618,6 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 > * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
 > * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
-
 
 **[⬆ back to top](#table-of-contents)**
 
