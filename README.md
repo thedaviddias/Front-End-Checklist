@@ -199,7 +199,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, 1200 x 630 pixels recommended.
 
-> **Notes:** Using use og:image:width and og:image:height will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
+> **Notes:** Using use `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
 
 ```html
 <meta property="og:type" content="website">
@@ -308,7 +308,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ## CSS
 
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/). There is also a short [Code Guide](http://codeguide.co/) for consistency
+> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/). There is also a short [Code Guide](http://codeguide.co/) for consistency.
 
 * [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
