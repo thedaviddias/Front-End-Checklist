@@ -86,7 +86,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Document Title -->
-<title>Page Title less than 65 characters</title>
+<title>Page Title less than 55 characters</title>
 ```
 
 > * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
