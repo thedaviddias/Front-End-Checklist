@@ -536,6 +536,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 > * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
 > * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
+> * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
 
 **[⬆ back to top](#table-of-contents)**
 
