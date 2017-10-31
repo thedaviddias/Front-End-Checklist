@@ -189,7 +189,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
 
 * [ ] **Inline critical CSS:** ![Medium][medium_img] CSS which styles content that is immediately visible during pageload ("above the fold content") is called "critical CSS". It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
-> * 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical) automates this
+> * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this
 
 * [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
 
