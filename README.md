@@ -96,7 +96,7 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 ```
 > 📖 [Meta descripción - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description) `(fuente en inglés)`
 
-* [ ] **Favicons:** ![Medio][medium_img] Cada favicon se ha creado y mostrado correctamente. Si solo tienes un `favicon.ico`, colocalo en la raíz de tu sitio. Normalmente no nececsitarás usar ningun marcado. Sin embargo, es una buena práctica enlazarlo usando el ejemplo debajo. Al día de hoy, **se recomienda el formato PNG** sobre el formato `.ico` (dimensión: 32x32px).
+* [ ] **Favicons:** ![Medio][medium_img] Cada favicon se ha creado y mostrado correctamente. Si solo tienes un `favicon.ico`, colocalo en la raíz de tu sitio. Normalmente no necesitarás usar ningún marcado. Sin embargo, es una buena práctica enlazarlo usando el ejemplo debajo. Al día de hoy, **se recomienda el formato PNG** sobre el formato `.ico` (dimensión: 32x32px).
 
 ```html
 <!-- Favicon estandar -->
@@ -183,7 +183,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **RSS feed:** ![Bajo][low_img] Si tu proyecto es un blog o tiene artículos, un enlace RSS fue proprocionado.
 
-* [ ] **CSS Crítico:** ![Medio][medium_img] El CSS crítio (o "above the fold") contiene todo el CSS usado para renderizar la porción visible de la página. Se incrusta antes de la llamada principal a CSS y entre `<style></style>` en una sola línea (minificado).
+* [ ] **CSS Crítico:** ![Medio][medium_img] El CSS crítico (o "above the fold") contiene todo el CSS usado para renderizar la porción visible de la página. Se incrusta antes de la llamada principal a CSS y entre `<style></style>` en una sola línea (minificado).
 
 > 🛠 [Critical by Addy Osmani on Github](https://github.com/addyosmani/critical)
 
@@ -235,7 +235,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 📖 [HTML Reference](http://htmlreference.io/)
 
-* [ ] **Páginas de error:** ![Alto][high_img] Páginas de error 400 y 5xx existen. Recuerda que las páginas de error 5xx necesitan tener su CSS integrado (sin llamadas externas en el servidor actual).
+* [ ] **Páginas de error:** ![Alto][high_img] Páginas de error 400 y 5xx existen. Recuerda que las páginas de error 5xx necesitan tener su CSS integrado (sin llamadas externas del servidor actual).
 
 * [ ] **Noopener:** ![Medio][medium_img] En caso que uses enlaces externos con `target="_blank"`, tu enlace debe tener un atributo `rel="noopener"`para evitar tab nabbing. Si necesitas dar soporte a versiones antigüas de Firefox, usa `rel="noopener noreferrer"`.
 
@@ -253,7 +253,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
-* [ ] **Navegadores de escritorio:** ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores de escritorio actuales (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
+* [ ] **Navegadores de escritorio:** ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores de escritorio actuales (Safari, Firefox, Chrome, Internet Explorer, Edge...).
 * [ ] **Navegadores móviles:**  ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores móviles actuales (Native browser, Chrome, Safari...).
 
 * [ ] **Verificador de enlaces:** ![High][high_img] No hay enlaces rotos en la página,  verifica que no tienes ningún error 404.
@@ -293,7 +293,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 * [ ] **CSS Print:** ![Medium][medium_img] Se proporciona una hoja de estilo para impresión y es correcto en cada página.
 * [ ] **Preprocesador:** ![Medium][medium_img] Tu página utiliza un preprocesador CSS ([Sass](http://sass-lang.com/) es recomendado).
 * [ ] **ID único:** ![High][high_img] Si utilizas IDs, son únicos en la página.
-* [ ] **Reinicio de CSS:** ![High][high_img] Un reinicio de CSS es usado y está actualizado. *(Si utilizas algún Framework CSS como Bootstrap o Fundation, el reinicio de CSS ya está implementado.)*
+* [ ] **Reinicio de CSS:** ![High][high_img] Un reinicio de CSS es usado y está actualizado. *(Si utilizas algún Framework CSS como Bootstrap o Foundation, el reinicio de CSS ya está implementado.)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
@@ -370,7 +370,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
 
-* [ ] **Texto alternativo:** ![High][high_img] Todas las imágenes tienen un texto al ternativo que las describe.
+* [ ] **Texto alternativo:** ![High][high_img] Todas las imágenes tienen un texto alternativo que las describe.
 
 > * 📖 [Textos alternativos - La guía definitiva](https://axesslab.com/alt-texts/) `(fuente en inglés)`
 
@@ -433,7 +433,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
-* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] Te aseguraste que las peticiones hechas a tu servidor son legítimas y oríginadas desde tu sitio web/aplicación para prevenir ataques CSRF.
+* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] Asegurate que las peticiones hechas a tu servidor son legítimas y oríginadas desde tu sitio web/aplicación para prevenir ataques CSRF.
 
 > 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
 
@@ -469,7 +469,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Imágenes, scripts y CSS necesitan cargarse implementando lazy loading para mejorar el tiempo de respuesta de la página actual (Mira los detalles en las secciones respectivas)
 
-* [ ] **Tamaño de Cookie:** Si estás usando cookies asegurate que cada cookie no exceda los 4096 bytes y tu nombre dedominio no tiene más de 20 cookies.
+* [ ] **Tamaño de Cookie:** Si estás usando cookies asegurate que cada cookie no exceda los 4096 bytes y tu nombre de dominio no tiene más de 20 cookies.
 
 > * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
