@@ -116,7 +116,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Touch Icon:** ![Low][low_img] Apple touch favicon apple-mobile-web-app-capable are present. *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need)*
+* [ ] **Apple Touch Icon:** ![Low][low_img] Apple touch favicon apple-mobile-web-app-capable are present *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need).*
 
 ```html
 <!-- Apple Touch Icon -->
@@ -328,7 +328,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ### Performance
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file. *(Not for HTTP/2)*
+- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
 - [ ] **Minification:** ![High][high_img] All CSS files are minified.
 - [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
