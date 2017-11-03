@@ -342,7 +342,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ### Performance
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file. *(Not for HTTP/2)*
+- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
 - [ ] **Minification:** ![High][high_img] All CSS files are minified.
 - [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
