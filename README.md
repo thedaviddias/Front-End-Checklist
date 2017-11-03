@@ -517,7 +517,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <link rel="dns-prefetch" href="https://example.com">
 ```
 
-* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negociation with services that will be needed soon is done in advance during idle time using `preconnect`.
+* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negotiation with services that will be needed soon is done in advance during idle time using `preconnect`.
 
 ```html
 <link rel="preconnect" href="https://example.com">
