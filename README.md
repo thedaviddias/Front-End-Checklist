@@ -492,8 +492,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-- [ ] **Minified:** ![Medium][medium_img] Your HTML is minified.
-> * 🛠 [W3C Validator](https://validator.w3.org/)
+* [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
 
