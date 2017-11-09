@@ -650,7 +650,13 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 >>>>>>> Added reference to schema.org
 =======
 > * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Heirarchy](http://schema.org/docs/full.html)
+<<<<<<< HEAD
 >>>>>>> typo
+=======
+> * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
+> * 📖 [JSON-LD](https://json-ld.org/)
+> * 📖 [Microdata](https://www.w3.org/TR/microdata/)
+>>>>>>> Add more 3 links about SEO
 
 * [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
 
