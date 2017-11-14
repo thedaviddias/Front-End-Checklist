@@ -648,7 +648,7 @@ The Front-End Checklist is also available in other languages. Thanks for all tra
 * 🇹🇼 Traditional Chinese: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
 * 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
 * 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
-* 🇹🇷 Turkish: [erdoganoksuz/Front-End-Checklist](https://github.com/erdoganoksuz/Front-End-Checklist)
+* 🇹🇷 Turkish: [erdoganoksuz/Front-End-Checklist](https://github.com/erdoganoksuz/Front-End-Checklist), [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
 
 ---
 
