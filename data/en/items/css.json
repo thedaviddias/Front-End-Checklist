@@ -15,7 +15,7 @@
     "title": "Unique ID",
     "priority": "High",
     "description": "If IDs are used, they are unique to a page.",
-    "tags": ["all", ""]
+    "tags": ["all", "css"]
   },
   {
     "title": "Reset CSS",
