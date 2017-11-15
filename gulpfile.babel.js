@@ -86,7 +86,7 @@ gulp.task('pug-rebuild', ['compile-pug'], () => {
 });
 
 gulp.task('minify-html', ['compile-pug'], () => {
-  return gulp.src('./*.html')
+  return gulp.src('./dist/*.html')
     .pipe(htmlreplace({
       css: {
         src: './styles/main.min.css',
