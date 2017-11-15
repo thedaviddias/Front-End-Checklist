@@ -254,7 +254,7 @@ gulp.task('browser-reload', () => {
 
 
 gulp.task("clean-dist",  () => {
-  return del(["."]);
+  return del(["./dist"], {force: true});
 });
 
 gulp.task("clean-coverage",  () => {
