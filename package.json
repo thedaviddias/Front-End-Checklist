@@ -64,7 +64,6 @@
     "sinon": "^4.1.2",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-scss": "^2.1.0",
-    "travis-after-all": "^1.4.5",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
