@@ -727,6 +727,6 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 **[⬆ back to top](#table-of-contents)**
 
-[low_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png
-[medium_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png
-[high_img]: http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png
+[low_img]: https://front-end-checklist.now.sh/low.svg
+[medium_img]: https://front-end-checklist.now.sh/medium.svg
+[high_img]: https://front-end-checklist.now.sh/high.svg
