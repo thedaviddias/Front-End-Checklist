@@ -47,7 +47,7 @@ import pkg from './package.json';
 // ========================================
 
 const dirs = {
-	root: '',
+	root: '.',
   src: 'src',
   dest: 'dist'
 };
@@ -78,7 +78,7 @@ gulp.task('compile-pug', () => {
       locals: {},
       pretty: true
     }))
-    .pipe(gulp.dest(dirs.root));
+    .pipe(gulp.dest(dirs.dest));
 });
 
 gulp.task('pug-rebuild', ['compile-pug'], () => {
@@ -89,15 +89,15 @@ gulp.task('minify-html', ['compile-pug'], () => {
   return gulp.src('./*.html')
     .pipe(htmlreplace({
       css: {
-        src: './dist/styles/main.min.css',
+        src: './styles/main.min.css',
         tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
       },
       nocss: {
-        src: './dist/styles/main.min.css',
+        src: './styles/main.min.css',
       }
     }))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(dirs.root));
+    .pipe(gulp.dest(dirs.dest));
 });
 
 // ========================================
@@ -235,7 +235,7 @@ gulp.task("mocha", function () {
 gulp.task('browser-sync', () => {
 	browserSync({
 		server: {
-      baseDir: './',
+      baseDir: './dist',
       index: 'index.html'
     },
 		notify: false,
@@ -254,7 +254,7 @@ gulp.task('browser-reload', () => {
 
 
 gulp.task("clean-dist",  () => {
-  return del(["./dist"]);
+  return del(["."]);
 });
 
 gulp.task("clean-coverage",  () => {
