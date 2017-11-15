@@ -8,7 +8,7 @@ meta(http-equiv="x-ua-compatible", content="ie=edge")
 meta(name='viewport', content='width=device-width, initial-scale=1')
 
 <!-- Document Title -->
-title= translation.SITE_NAME
+title #[=translation.SITE_NAME] - #[=translation.INDEX_TITLE]
 
 <!-- Meta Description -->
 meta(name='description', content=translation.SITE_DESCRIPTION)
@@ -37,13 +37,7 @@ link(rel="icon", type="image/png", sizes="16x16", href="/dist/favicon-16x16.png"
 link(rel="apple-touch-icon", sizes="180x180", href="/dist/apple-touch-icon.png")
 
 <!-- Microsoft Tiles -->
-meta(name="msapplication-config" content="browserconfig.xml")
-
-meta(property="og:url" content=translation.URL_WEBSITE)
-meta(property="og:type" content="website")
-meta(property="og:title" content=translation.SITE_NAME)
-meta(property="og:description" content=translation.SITE_DESCRIPTION)
-meta(property="og:image" content=`${translation.URL_WEBSITE}/img/social/banner-facebook.jpg`)
+meta(name="msapplication-config" content="/dist/browserconfig.xml")
 
 link(rel="me" href="https://twitter.com/thedaviddias")
 
@@ -56,6 +50,8 @@ link(rel="manifest" href="/dist/manifest.json")
 
 link(rel="mask-icon", href="/dist/safari-pinned-tab.svg", color="#5bbad5")
 meta(name="theme-color", content="#ffffff")
+
+include social
 
 script
   include ../../modernizr-custom.min.js

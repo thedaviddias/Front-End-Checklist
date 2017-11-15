@@ -1,7 +1,8 @@
 {
-  "SITE_NAME": "Front-End Checklist",
+  "SITE_NAME": "The Front-End Checklist",
+  "INDEX_TITLE": "🔥 Your NEW Front-End Tool 🔥",
   "URL_WEBSITE": "http://frontendchecklist.com",
-  "SITE_DESCRIPTION": "🗂 The perfect Front-End Checklist Application for modern websites and meticulous developers!",
+  "SITE_DESCRIPTION": "🗂 The Front-End Checklist Application is perfect for modern websites and meticulous developers! Follow the rules and deliver the best of your work in a generated report!",
   "SITE_LANGUAGE": "en",
   "SITE_DIRECTION": "ltr",
   "URL_GITHUB_REPO": "https://github.com/thedaviddias/Front-End-Checklist",
@@ -28,9 +29,9 @@
   },
   "social": {
     "TWEET": "Tweet",
-    "TWITTER_MSG": "Check the 🔥 NEW Front-End Checklist Application 🔥 for modern websites and meticulous developers! With more than 15 000 🌟 on Github, now you can use the app on your daily workflow and generate reports 📑!",
+    "TWITTER_MSG": "Check the 🔥 NEW Front-End Checklist Application 🔥 for modern websites and meticulous developers! With more than 15 000 🌟 on Github, now you can use it on your daily workflow and generate reports 📑!",
     "TWITTER_VIA": "thedaviddias",
-    "TWITTER_HASHTAGS": "#FrontEndChecklist #FrontEnd #Tool",
+    "TWITTER_HASHTAGS": "FrontEndChecklist #FrontEnd #Tool",
     "STAR": "Star",
     "GITHUB_STAR_MSG": "Star thedaviddias/Front-End-Checklist on GitHub"
   }
