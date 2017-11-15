@@ -11,9 +11,6 @@ The **Front-End Checklist** is an exhaustive list of all elements you need to ha
 
 It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
 
-*Help to share the Front-End Checklist by voting and recommending on Product Hunt*
-[![](http://res.cloudinary.com/djnyaloac/image/upload/v1508896898/upvote-producthunt_vzys4c.jpg)](https://www.producthunt.com/posts/front-end-checklist)
-
 ## Table of Contents
 
 1. **[Head](#head)**
@@ -697,7 +694,7 @@ If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
 ## Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
-<a href="graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" /></a>
+<a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" /></a>
 
 
 ## Backers
