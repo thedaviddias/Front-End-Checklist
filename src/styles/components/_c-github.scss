@@ -2,6 +2,15 @@
   animation: octocat-wave 560ms ease-in-out;
 }
 
+.github-corner {
+  svg {
+    fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;
+  }
+  .octo-arm {
+    transform-origin: 130px 106px;
+  }
+}
+
 @keyframes octocat-wave {
   0%,
   100% {
