@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Google Analytics",
+    "priority": "High",
+    "description": "Google Analytics is installed and correctly configured.",
+    "tags": ["all", "seo"]
+  },
+  {
+    "title": "Headings logic",
+    "priority": "Medium",
+    "description": "Heading text helps to understand the content in the current page.",
+    "tags": ["all", "seo", "accessibility", "html"]
+  },
+  {
+    "title": "sitemap.xml",
+    "priority": "High",
+    "description": "A sitemap.xml exists and was submitted to Google Search Console.",
+    "detail": "(previously Google Webmaster Tools)",
+    "tags": ["all", "seo"]
+  },
+  {
+    "title": "Structured Data",
+    "priority": "High",
+    "description": "Pages using structured data are tested and are without errors.",
+    "detail": "Structured data helps crawlers understand the content in the current page.",
+    "documentation": [
+      {
+        "title": "Introduction to Structured Data - Search - Google Developers",
+        "url": "https://developers.google.com/search/docs/guides/intro-structured-data"
+      }
+    ],
+    "tools": [
+      {
+        "title": "Test your page with the Structured Data Testing Tool",
+        "url": "https://developers.google.com/structured-data/testing-tool/"
+      },
+      {
+        "title": "Complete list of vocabularies that can be used as structured data. Schema.org Full Heirarchy",
+        "url": "http://schema.org/docs/full.html"
+      }
+    ],
+    "tags": ["all", "seo", "testing"]
+  },
+  {
+    "title": "Sitemap HTML",
+    "priority": "Medium",
+    "description": "An HTML sitemap is provided and is accessible via a link in the footer of your website.",
+    "documentation": [
+      {
+        "title": "Sitemap guidelines - Google Support",
+        "url": "https://support.google.com/webmasters/answer/183668?hl=en"
+      }
+    ],
+    "tools": [
+      {
+        "title": "Sitemap generator",
+        "url": "https://websiteseochecker.com/html-sitemap-generator/"
+      }
+    ],
+    "tags": ["all", "seo", "html"]
+  }
+]

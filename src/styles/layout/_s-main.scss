@@ -1,0 +1,71 @@
+.s-main {
+  display: grid;
+  grid-column-start: 1;
+  position: relative;
+  background-color: map-get($colors, white);
+  text-align: left;
+  padding: 0 10px;
+
+  &__section {
+    margin: 0 0 10px;
+  }
+
+  @include mq('handheld-and-up') {
+    display: grid;
+    grid-column-start: 3;
+    margin-top: -50px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, .1);
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  &__section:nth-child(1) {
+    order: 2;
+
+    @include mq('handheld-and-up') {
+      padding: 0 20px;
+    }
+  }
+
+  &__section:nth-child(2) {
+    order: 4;
+
+    @include mq('handheld-and-up') {
+      padding: 0 20px;
+    }
+  }
+
+  &__section:nth-child(3) {
+    order: 4;
+  }
+
+  &__section:nth-child(4) {
+    order: 1;
+  }
+
+  &__item {
+    background: #ff6600;
+  }
+
+  &__header {
+    text-align: center;
+    z-index: 99999;
+  }
+
+  &__meta {
+    display: none;
+
+    @include mq('handheld-and-up') {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+.s-meta {
+  text-align: left;
+}

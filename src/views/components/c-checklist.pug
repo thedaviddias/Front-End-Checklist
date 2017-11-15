@@ -1,0 +1,40 @@
+.c-checklist
+
+  //- Grab introduction based on the name of the section
+  if introductions[0][sectionTitle.toLowerCase()]
+
+    each el in introductions[0][sectionTitle.toLowerCase()]
+
+      p.c-checklist__intro= el
+
+  //- List of all items elements based on the dataSection variable
+  ul.c-checklist__list
+
+    each item, i in dataSection
+
+      include ../components/checklist/class
+
+      //- data-item-check (false or true) => Element is checked or not
+      //- data-item-priority (high, medium or low) => The priority of the task
+      //- data-item-id (number) => the ID of the elements based on dataSection array
+      //- data-item-dropdown (open close or false) => State of the dropdown
+      //- data-item-visible (true or false) => Visibility of the item used by the tag filter
+      li.c-checklist__item.js-item(class=` ${allClass}`, data-item-priority=priorityClass ,data-item-id=i, data-item-check="false", data-item-dropdown=dataItemDropdown, data-item-visible="true" aria-hidden="false")
+
+        .c-checklist__item__inner
+
+          .c-checklist__body
+
+            //- Columns of the item
+
+            //- Priority column
+            include ../components/checklist/priority
+
+            //- Checkbox column
+            include ../components/checklist/checkbox
+
+            //- Label column
+            include ../components/checklist/label
+
+            //- Dropdown column
+            include ../components/checklist/dropdown

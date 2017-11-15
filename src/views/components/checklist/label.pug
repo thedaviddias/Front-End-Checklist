@@ -1,0 +1,52 @@
+.c-checklist__column.c-checklist__label
+  label(for=`c-checklist__item-${sectionTitle.toLowerCase()}-${i}`)
+
+    h3.label__title= item.title + ': '
+    span.label__description #{item.description}
+
+  if item.tools || item.documentation || item.code || item.video
+    .c-checklist__details.js-details
+
+      if item.detail
+        p.c-checklist__text= item.detail
+
+      if item.code
+        .c-checklist__code
+          .c-checklist__code__loader.js-loader
+            .code-icons
+          .c-checklist__code__github.js-code(data-code-url=`${item.code}`)
+
+      if item.documentation
+        .c-checklist__documentation
+          h4= translation.SECTION_DOCUMENTATION
+          ul.documentation__list
+            each documentation, i in item.documentation
+              li
+                if documentation.url && documentation.title
+                  img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${documentation.url}`, alt="")
+                  a(href=`${documentation.url}`, target="_blank", rel="noopener noreferrer")= documentation.title
+
+      if item.tools
+        .c-checklist__tools
+          h4= translation.SECTION_TOOL
+          ul.documentation__list
+            each tool, i in item.tools
+              li
+                img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${tool.url}`, alt="")
+                a(href=`${tool.url}`, target="_blank", rel="noopener noreferrer")= tool.title
+
+      if item.video
+        .c-checklist__video
+          h4= translation.SECTION_VIDEO
+          ul.video__list
+            each video, i in item.video
+              li
+                img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${video.url}`, alt="")
+                a(href=`${video.url}`, target="_blank", rel="noopener noreferrer")= video.title
+
+  .c-tags
+    ul.c-tags__list
+      each tag in item.tags
+        if tag == 'all'
+        else
+          li.c-tags__item= tag.toUpperCase()

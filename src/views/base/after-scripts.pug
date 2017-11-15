@@ -1,0 +1,25 @@
+script(src="/scripts/app.bundle.js" async)
+
+script.
+
+  if ('serviceWorker' in navigator) {
+    //- console.log('CLIENT: service worker registration in progress.');
+    navigator.serviceWorker.register('./service-worker.js').then(function() {
+      //- console.log('CLIENT: service worker registration complete.');
+    }, function() {
+      //- console.log('CLIENT: service worker registration failure.');
+    });
+  }
+  else {
+    //- console.log('CLIENT: service worker is not supported.');
+  }
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109578378-1');
+
+script(async src="https://www.googletagmanager.com/gtag/js?id=UA-109578378-1")

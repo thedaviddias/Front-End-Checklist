@@ -1,0 +1,23 @@
+@if $use-top-alert == true {
+  #{$namespace-top-alert} {
+    display: none;
+
+    .no-js & {
+      &--alert {
+        min-height: 35px;
+        background: orange;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        font-size: 1.3rem;
+        padding: 5px 0;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+

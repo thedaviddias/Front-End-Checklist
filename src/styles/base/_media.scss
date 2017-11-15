@@ -1,0 +1,15 @@
+.media {
+  align-items: flex-start;
+  display: flex;
+  text-align: left;
+}
+
+.img-logo {
+  width: 85px;
+  height: 85px;
+
+  @include mq('handheld-and-up') {
+    width: 100px;
+    height: 100px;
+  }
+}

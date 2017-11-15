@@ -1,0 +1,33 @@
+//- Array container for each filters
+- tagFilter = []
+
+//- Loop to save each tags present in JSON into tagFilter
+each item, i in _items
+
+  each tagList in item
+
+    each tag in tagList.tags
+
+      //- Check if the filter tag already exist in the tagFilter array
+      - if (tagFilter.indexOf(tag) === -1)
+        - tagFilter.push(tag)
+
+//- Filter code implementation
+aside.c-tag-filter
+  h2= translation.SECTION_TAG
+
+  ul.c-tag-filter__list
+
+    //- Loop to grab each title in the tagFilter array
+    each title in tagFilter
+
+      //- Add uppercase in the first letter
+      - titleFilter = title.charAt(0).toUpperCase() + title.slice(1)
+
+      //- Slip and add a dash if the tag is more than 1 word
+      - dataFilter = title.split(' ').join('-')
+
+      //- Check if title is not empty before printing it
+      if title != ''
+        li.c-tag-filter__item
+          button.js-filter-tag(data-tag=`${dataFilter}`)= titleFilter

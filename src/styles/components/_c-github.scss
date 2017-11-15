@@ -1,0 +1,64 @@
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+
+.gist {
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  width: calc(100%) !important; /* Fill 100% of the parent container with an extra 30px on each side */
+  overflow: hidden !important;
+}
+
+.gist-file {
+  margin: 0 !important;
+  border: none !important;
+}
+
+.gist-data {
+  padding: 5px !important;
+  border: 0 !important;
+  border-bottom: none !important;
+  border-radius: 0;
+}
+
+.gist .gist-meta {
+  color: map-get($colors, black) !important;
+  border: 0 !important;
+  border-radius: 0;
+  padding: 3px !important;
+  font-size: 8px !important;
+
+  @include mq('handheld-and-up') {
+    font-size: 10px !important;
+    padding: 5px !important;
+  }
+}

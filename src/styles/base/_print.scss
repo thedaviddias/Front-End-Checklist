@@ -1,0 +1,202 @@
+@media print {
+  @page {
+    margin: 20px 15px;
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: always;
+    font: 10pt Arial, 'Times New Roman', Times, serif;
+    line-height: 1.3;
+    background: map-get($colors, white) !important;
+    color: map-get($colors, black) !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Defining all page breaks */
+  a {
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  table,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  ul,
+  ol,
+  dl {
+    page-break-before: avoid;
+  }
+
+  /* Displaying link color and link behaviour */
+  a:link,
+  a:visited,
+  a {
+    background: transparent;
+    color: map-get($colors, primary);
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: left;
+  }
+
+  a[href^='http']::after {
+    content: ' < ' attr(href) ' > ';
+  }
+  $a: after &gt;
+
+  article a[href^='#']::after {
+    content: '';
+  }
+
+  /* stylelint-disable selector-pseudo-class-no-unknown */
+  a:not(:local-link)::after {
+    content: ' &lt; ' attr(href) '&gt; ';
+  }
+  /* stylelint-enable */
+
+  .icon-checkbox,
+  .icon-checked {
+    display: none !important;
+  }
+
+  .c-checklist__body input {
+    opacity: 1 !important;
+  }
+
+  .c-checklist__body label {
+    text-decoration: none !important;
+    opacity: 1 !important;
+  }
+
+  .c-tags,
+  .c-github-corner,
+  .s-header__media,
+  .img-logo,
+  .s-content__filter,
+  .s-content__search,
+  .s-content__meta,
+  .s-section__meta,
+  .s-meta,
+  .c-notation__generate,
+  .s-nav {
+    display: none !important;
+  }
+
+  .page-main {
+    display: block !important;
+  }
+
+  h2 {
+    font-size: 20pt !important;
+  }
+
+  label {
+    font-size: 9pt !important;
+  }
+
+
+  .s-header {
+    text-align: left !important;
+  }
+
+  .s-header__banner {
+    padding: 15px;
+  }
+
+  .sub-heading {
+    font-size: 9pt !important;
+    margin: 0 !important;
+  }
+
+  .c-checklist__item::before {
+    display: none;
+  }
+
+  .label__description {
+    line-height: 1.5;
+  }
+
+  .c-checklist__dropdown {
+    display: none;
+  }
+
+  .sub-heading::after {
+    content: ' ★ Generated on http://frontendchecklist.com ★ ';
+    white-space: pre;
+  }
+
+  .s-header__checklist__el {
+    padding: 0 !important;
+  }
+
+  .c-notation__item {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .c-progress {
+    padding: 0 20px;
+  }
+
+  .c-progress__counter,
+  .c-progress__label {
+    font-size: 8pt !important;
+  }
+
+  .c-progress__bar {
+    display: none !important;
+  }
+
+  .c-progress__label {
+    position: relative !important;
+    padding: 20pt 0 !important;
+    left: auto !important;
+  }
+
+  .c-nav {
+    margin: 0 !important;
+    position: relative !important;
+    right: auto !important;
+    z-index: 10 !important;
+  }
+
+  .c-nav__list {
+    position: relative !important;
+    top: 0 !important;
+    flex-direction: row !important;
+  }
+
+  .c-nav__item .c-button {
+    font-size: 9pt !important;
+    border: 0 !important;
+  }
+
+  .form input {
+    font-size: 9pt !important;
+    padding: 3px !important;
+  }
+
+  .c-checklist__body input {
+    height: auto !important;
+    top: 4px !important;
+  }
+}

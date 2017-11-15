@@ -1,0 +1,8 @@
+nav.c-nav
+  ul.c-nav__list.c-nav--inline
+
+    each item, i in listSections
+      li.c-nav__item
+        a.c-button.js-scroll(href=`#section-${item}`)
+          span.c-nav__status(id=`js-nav-${item}`, data-notation="0")
+          span= item

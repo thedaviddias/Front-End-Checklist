@@ -1,0 +1,92 @@
+.s-checklist {
+  position: relative;
+  min-height: 1px;
+
+  @include mq('handheld-and-up') {
+    padding: 0 10px;
+  }
+
+  @include mq('print') {
+    padding: 15px 0;
+
+    &:first-child {
+      padding: 0 0 15px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    border-top: 1px solid #e4ebf0;
+    bottom: 0;
+    width: 98%;
+  }
+
+  &__inner {
+    display: grid;
+  }
+
+  &__body {
+    padding: 0;
+
+    .introduction {
+      text-align: center;
+    }
+
+    .slide {
+      display: grid;
+    }
+  }
+
+  &__header {
+    padding: 15px 0;
+    z-index: 58;
+
+    @include mq('print') {
+      padding: 0;
+    }
+
+    @include mq('handheld-and-up') {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include mq('print') {
+      display: flex;
+    }
+
+    @include mq('handheld-and-up') {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__header__title {
+    margin: 0;
+    text-align: left;
+    color: rgb(65, 82, 87);
+    font-family: 'Open Sans';
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 2.5rem;
+
+    @include mq('handheld-and-up') {
+      font-size: 4rem;
+      margin: 0;
+    }
+  }
+
+  &__progress {
+    display: flex;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}

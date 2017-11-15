@@ -1,0 +1,122 @@
+@if $use-nav == true {
+
+  // Variables
+  // =============================================================================
+  $nav-height: 64px;
+  $nav-background: map-get($colors, white);
+  $nav-border: #dddddd;
+  $nav-collapse-breakpoint: 768px;
+  $nav-item-font-size: 14px;
+  $nav-item-border-width: 4px;
+  $nav-item-color: #555555;
+  $nav-item-active-color: #333333;
+  $nav-item-border: transparent;
+  $nav-item-active-border: $primary;
+
+  // Declarations
+  // =============================================================================
+  #{$namespace-nav} {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    @include mq(lap-and-up) {
+      display: flex;
+      margin: 15px 0;
+    }
+
+    &--inline {
+      flex-direction: row;
+    }
+
+    &__inner {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &__list {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      display: flex;
+
+      @include mq(lap-and-up) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__item {
+      margin: 0 10px 10px 0;
+
+      @include mq(lap-and-up) {
+        margin: 0 5px 5px 0;
+      }
+    }
+
+    &__status {
+      padding-left: 3px;
+      margin-right: 7px;
+    }
+
+    &__sidebar {
+      position: absolute;
+      right: -10px;
+      animation: navShow 1s normal;
+      z-index: -1;
+
+      .c-nav__list {
+        position: fixed;
+        top: 50px;
+        flex-direction: column;
+        width: auto;
+      }
+
+      .c-button {
+        text-align: left;
+      }
+    }
+
+    &__item a,
+    &__item button {
+      display: block;
+      text-transform: uppercase;
+      color: map-get($colors, black);
+      padding: 5px 10px;
+      font-size: 1.3rem;
+      border: 1px solid #cccccc;
+
+      @include mq('handheld-and-up') {
+        font-size: 14px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        font-weight: $weight-normal;
+        border: 1px solid $nav-item-active-border;
+      }
+    }
+  }
+}
+
+
+@keyframes navShow {
+  0% {
+    right: 150px;
+    opacity: 0;
+  }
+
+  80% {
+    opacity: .2;
+  }
+
+  100% {
+    right: -10px;
+    z-index: 9;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "JavaScript Inline",
+    "priority": "High",
+    "description": "You don't have any JavaScript code inline (mixed with your HTML code).",
+    "tags": ["all", "javascript"]
+  },
+  {
+    "title": "Concatenation",
+    "priority": "High",
+    "description": "JavaScript files are concatenated.",
+    "tags": ["all", "javascript"]
+  },
+  {
+    "title": "Minification",
+    "priority": "High",
+    "description": "JavaScript files are minified (you can add the .min suffix).",
+    "documentation": [
+      {
+        "title": "Minify Resources (HTML, CSS, and JavaScript)",
+        "url": "https://developers.google.com/speed/docs/insights/MinifyResources"
+      }
+    ],
+    "tags": ["all", "javascript"]
+  },
+  {
+    "title": "JavaScript security",
+    "priority": "High",
+    "description": "",
+    "documentation": [
+      {
+        "title": "Guidelines for Developing Secure Applications Utilizing JavaScript",
+        "url": "https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript"
+      }
+    ],
+    "tags": ["all", "javascript", "security"]
+  },
+  {
+    "title": "Non-blocking",
+    "priority": "Medium",
+    "description": "JavaScript files are loaded asynchronously using async or deferred using defer attribute.",
+    "documentation": [
+      {
+        "title": "Remove Render-Blocking JavaScript",
+        "url": "https://developers.google.com/speed/docs/insights/BlockingJS"
+      }
+    ],
+    "tags": ["all", "javascript", "performance"]
+  },
+  {
+    "title": "Modernizr",
+    "priority": "Low",
+    "description": "If you need to target some specific features you can use a custom Modernizr to add classes in your <html> tag.",
+    "documentation": [
+      {
+        "title": "Customize your Modernizr",
+        "url": "https://modernizr.com/download?setclasses"
+      }
+    ],
+    "tags": ["all", "javascript"]
+  },
+  {
+    "title": "ESLint",
+    "priority": "High",
+    "description": "No errors are flagged by ESLint (based on your configuration or standards rules).",
+    "documentation": [
+      {
+        "title": "ESLint - The pluggable linting utility for JavaScript and JSX",
+        "url": "https://eslint.org/"
+      }
+    ],
+    "tags": ["all", "javascript", "testing"]
+  }
+]
