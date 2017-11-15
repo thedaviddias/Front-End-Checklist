@@ -1,4 +1,3 @@
-import List from 'list.js';
 let instance = null;
 /**
  *

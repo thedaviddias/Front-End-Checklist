@@ -9,7 +9,6 @@ import runSequence from 'run-sequence';
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import cssnano from 'gulp-cssnano';
-import stylefmt from 'gulp-stylefmt';
 const critical = require('critical').stream;
 
 import pug from 'gulp-pug';
@@ -79,7 +78,7 @@ gulp.task('compile-pug', () => {
       locals: {},
       pretty: true
     }))
-    .pipe(gulp.dest(dirs.dest));
+    .pipe(gulp.dest(dirs.root));
 });
 
 gulp.task('pug-rebuild', ['compile-pug'], () => {
@@ -87,18 +86,18 @@ gulp.task('pug-rebuild', ['compile-pug'], () => {
 });
 
 gulp.task('minify-html', ['compile-pug'], () => {
-  return gulp.src(dirs.dest +'/*.html')
+  return gulp.src('./*.html')
     .pipe(htmlreplace({
       css: {
-        src: './styles/main.min.css',
+        src: './dist/styles/main.min.css',
         tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
       },
       nocss: {
-        src: './styles/main.min.css',
+        src: './dist/styles/main.min.css',
       }
     }))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(dirs.dest));
+    .pipe(gulp.dest(dirs.root));
 });
 
 // ========================================
@@ -236,7 +235,7 @@ gulp.task("mocha", function () {
 gulp.task('browser-sync', () => {
 	browserSync({
 		server: {
-      baseDir: 'dist',
+      baseDir: './',
       index: 'index.html'
     },
 		notify: false,
