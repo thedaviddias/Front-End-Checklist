@@ -53,7 +53,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Doctype HTML5 -->
-<!DOCTYPE html>
+<!doctype html>
 ```
 
 > * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
@@ -106,9 +106,9 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ```html
 <!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
 <!-- Recommended favicon format -->
-<link rel="icon" type="image/png" href="https://example.com/favicon.png" />
+<link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
@@ -246,23 +246,13 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 > * 📖 [HTML Reference](http://htmlreference.io/)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-* [ ] **Error pages:** ![High](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-high.png) Error 404 page and 5xx exist. Remember that the 5xx error page needs to have its CSS integrated (no external call on the current server).
-* [ ] **Noopener:** ![Medium](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-medium.png) In case you are using ``target="_blank"`` on your links, ``rel="noreferrer noopener"`` is present on the ``<img>``.
-* [ ] **Clean up comments:** ![Low](http://res.cloudinary.com/djnyaloac/image/upload/v1508238836/level-checklist-low.png) Unnecessary code needs to be removed before sending the page to production.
-=======
-* [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error page needs to have his CSS integrated (no external call on the current server).
-=======
 * [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error pages need to have their CSS integrated (no external call on the current server).
->>>>>>> Update README.md to not assume gender 🙂
 
 * [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
 
 > * 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
 * [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
->>>>>>> Assorted tweaks.
 
 ### HTML testing
 
@@ -332,11 +322,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-<<<<<<< HEAD
-* [ ] **CSS embed or line:** ![High][high_img] Avoid at all cost the use of CSS embed or inline: only used for valid reasons (ex: background-image for slider, critical CSS).
-=======
-* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
->>>>>>> Fixed typo
+* [ ] **Embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
 * [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
 
 > * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
@@ -348,10 +334,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 - [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
-<<<<<<< HEAD
-=======
 > * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
->>>>>>> Add security section
 
 - [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
 
@@ -636,27 +619,12 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
 
-<<<<<<< HEAD
-> 📖 [Introduction to Structured Data | Search | Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
-> 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
-=======
 > * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
 > * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Remove more pipes from links
-=======
-> * 🛠 Complete list of vocabularies that can be used as structure data. [Schema.org Full Heirarchy](http://schema.org/docs/full.html)
->>>>>>> Added reference to schema.org
-=======
 > * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Heirarchy](http://schema.org/docs/full.html)
-<<<<<<< HEAD
->>>>>>> typo
-=======
 > * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
 > * 📖 [JSON-LD](https://json-ld.org/)
 > * 📖 [Microdata](https://www.w3.org/TR/microdata/)
->>>>>>> Add more 3 links about SEO
 
 * [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
 
