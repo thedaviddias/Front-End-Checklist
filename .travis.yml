@@ -1,18 +1,20 @@
-# env:
-#   global:
-#     - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c
+env:
+  global:
+    - CC_TEST_REPORTER_ID=ce1177050144a136200e2f02e12b80c4e889eb6165703d84e12a1d1b29d4f423
 language: node_js
 sudo: false
 node_js:
-  - "4.1"
-  - "4.0"
+  - "7.1.0"
 install:
   - npm install
 script:
-  - gulp test
-after_script:
   - gulp build
-#   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications: # set notification options
   email:
     recipients:
