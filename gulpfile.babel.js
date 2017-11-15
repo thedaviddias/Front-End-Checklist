@@ -319,6 +319,7 @@ gulp.task("dev", ['compile-styles', 'compile-pug', "browser-sync", "watch"]);
 gulp.task("build", (done) => {
   runSequence(
     ['json-rebuild', 'modernizr', "clean-dist"],
+    ['lint-css'],
     ["minify-html", "styles-prod", "compress-images", "webpack"],
     'copy',
   done);
