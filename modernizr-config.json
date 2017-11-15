@@ -3,19 +3,14 @@
   "options": [
     "domPrefixes",
     "prefixes",
-    "addTest",
-    "hasEvent",
     "mq",
     "prefixedCSSValue",
-    "testAllProps",
-    "testProp",
     "testStyles",
     "setClasses"
   ],
   "feature-detects": [
     "test/history",
     "test/pointerevents",
-    "test/postmessage",
     "test/css/animations",
     "test/css/flexbox",
     "test/workers/webworkers"
