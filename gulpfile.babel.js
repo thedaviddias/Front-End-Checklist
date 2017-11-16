@@ -202,7 +202,7 @@ gulp.task('compress-images', ['compress-webp'], () => {
 });
 
 gulp.task('compress-webp', () => {
-  return gulp.src(dirs.src + '/img/**/*.{webp}')
+  return gulp.src(dirs.src + '/img/**/*.webp')
     .pipe(imagemin([
       imageminWebp({quality: 70})
     ]))
