@@ -2,7 +2,7 @@
   width: 18px;
   height: 18px;
   transition: all 200ms ease-in 0s;
-  fill: map-get($shades, grey-lighter);
+  fill: map-get($colors, grey-light);
   display: inline-block;
   text-align: center;
   speak: none;
@@ -25,6 +25,12 @@ button,
 .icon--small {
   width: 7px;
   height: 7px;
+}
+
+.icon-checkbox {
+  .path-check {
+    display: none;
+  }
 }
 
 .icon-checkbox,
@@ -214,11 +220,7 @@ button,
   }
 }
 
-.icon-uncheck {
-  .path-check {
-    display: none;
-  }
-}
+
 
 .st0 {
   fill: map-get($colors, white);
