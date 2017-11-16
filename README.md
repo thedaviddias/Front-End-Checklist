@@ -17,16 +17,49 @@ It is based on Front-End developers' years of experience, with the additions com
 
 ## Table of Contents
 
-1. **[Head](#head)**
-2. **[HTML](#html)**
-3. **[Webfonts](#webfonts)**
-4. **[CSS](#css)**
-5. **[Images](#images)**
-6. **[JavaScript](#javascript)**
-7. **[Security](#security)**
-8. **[Performance](#performance-1)**
-9. **[Accessibility](#accessibility)**
-10. **[SEO](#seo)**
+- [Table of Contents](#table-of-contents)
+- [How to use?](#how-to-use)
+- [Head](#head)
+  - [Meta tag](#meta-tag)
+  - [HTML tags](#html-tags)
+  - [Social meta](#social-meta)
+- [HTML](#html)
+  - [Best practices](#best-practices)
+  - [HTML testing](#html-testing)
+- [Webfonts](#webfonts)
+- [CSS](#css)
+  - [Performance](#performance)
+  - [CSS testing](#css-testing)
+- [Images](#images)
+  - [Best practices](#best-practices-1)
+- [JavaScript](#javascript)
+  - [Best practices](#best-practices-2)
+  - [JavaScript testing](#javascript-testing)
+- [Security](#security)
+  - [Scan and check your web site](#scan-and-check-your-web-site)
+  - [Best practices](#best-practices-3)
+- [Performance](#performance-1)
+  - [Best practices](#best-practices-4)
+  - [Preparing upcoming requests](#preparing-upcoming-requests)
+  - [Performance testing](#performance-testing)
+- [Accessibility](#accessibility)
+  - [Best practices](#best-practices-5)
+    - [Headings](#headings)
+    - [Landmarks](#landmarks)
+  - [Semantics](#semantics)
+  - [Form](#form)
+  - [Accessibility testing](#accessibility-testing)
+- [SEO](#seo)
+- [Translation](#translation)
+- [Front-End Checklist Badge](#front-end-checklist-badge)
+- [Contributing](#contributing)
+  - [Guide](#guide)
+    - [1. `master`](#1-master)
+    - [2. `develop`](#2-develop)
+  - [Contributors](#contributors)
+- [Support](#support)
+- [Authors](#authors)
+- [License](#license)
 
 ## How to use?
 
