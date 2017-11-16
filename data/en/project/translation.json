@@ -11,6 +11,7 @@
   "HIGH_CHECKED": "✓ high priority",
   "MEDIUM_CHECKED": "✓ medium priority",
   "LOW_CHECKED": "✓ low priority",
+  "PERCENTAGE_CHECKED": "items are ✓",
   "SECTION_DOCUMENTATION": "Documentation",
   "SECTION_TOOL": "Tools",
   "SECTION_VIDEO": "Videos",
@@ -38,4 +39,3 @@
     "GITHUB_STAR_MSG": "Star thedaviddias/Front-End-Checklist on GitHub"
   }
 }
-
