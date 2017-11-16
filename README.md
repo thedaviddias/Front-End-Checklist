@@ -610,6 +610,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
 
 > * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
+> * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
 
 * [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
 

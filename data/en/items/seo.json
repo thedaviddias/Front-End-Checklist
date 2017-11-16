@@ -7,6 +7,10 @@
       {
         "title": "Google Analytics",
         "url": "https://analytics.google.com/analytics/web/"
+      },
+      {
+        "title": "GA Checker (and others)",
+        "url": "http://www.gachecker.com/"
       }
     ],
     "tags": ["all", "seo"]
