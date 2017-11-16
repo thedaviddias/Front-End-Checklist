@@ -3,12 +3,24 @@
     "title": "Google Analytics",
     "priority": "High",
     "description": "Google Analytics is installed and correctly configured.",
+    "tools": [
+      {
+        "title": "Google Analytics",
+        "url": "https://analytics.google.com/analytics/web/"
+      }
+    ],
     "tags": ["all", "seo"]
   },
   {
     "title": "Headings logic",
     "priority": "Medium",
     "description": "Heading text helps to understand the content in the current page.",
+    "tools": [
+      {
+        "title": "Tota11y, tab Headings",
+        "url": "http://khan.github.io/tota11y/#Try-it"
+      }
+    ],
     "tags": ["all", "seo", "accessibility", "html"]
   },
   {
@@ -16,6 +28,12 @@
     "priority": "High",
     "description": "A sitemap.xml exists and was submitted to Google Search Console.",
     "detail": "(previously Google Webmaster Tools)",
+    "tools": [
+      {
+        "title": "Sitemap generator",
+        "url": "https://websiteseochecker.com/html-sitemap-generator/"
+      }
+    ],
     "tags": ["all", "seo"]
   },
   {
@@ -37,6 +55,70 @@
       {
         "title": "Complete list of vocabularies that can be used as structured data. Schema.org Full Heirarchy",
         "url": "http://schema.org/docs/full.html"
+      }
+    ],
+    "tags": ["all", "seo", "testing"]
+  },
+  {
+    "title": "Sitemap HTML",
+    "priority": "Medium",
+    "description": "An HTML sitemap is provided and is accessible via a link in the footer of your website.",
+    "documentation": [
+      {
+        "title": "Sitemap guidelines - Google Support",
+        "url": "https://support.google.com/webmasters/answer/183668?hl=en"
+      }
+    ],
+    "tags": ["all", "seo", "html"]
+  },
+  {
+    "title": "robots.txt",
+    "priority": "High",
+    "description": "The robots.txt is not blocking webpages.",
+    "documentation": [
+      {
+        "title": "The robots.txt file",
+        "url": "https://varvy.com/robottxt.html"
+      }
+    ],
+    "tools": [
+      {
+        "title": "Test your robots.txt with Google Robots Testing Tool",
+        "url": "https://www.google.com/webmasters/tools/robots-testing-tool"
+      }
+    ],
+    "tags": ["all", "seo", "testing"]
+  },
+  {
+    "title": "Structured Data",
+    "priority": "High",
+    "description": "Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.",
+    "documentation": [
+      {
+        "title": "Introduction to Structured Data - Search - Google Developers",
+        "url": "https://developers.google.com/search/docs/guides/intro-structured-data"
+      },
+      {
+        "title": "RDFa - Linked Data in HTML",
+        "url": "https://rdfa.info/"
+      },
+      {
+        "title": "JSON-LD",
+        "url": "https://json-ld.org/"
+      },
+      {
+        "title": "Microdata",
+        "url": "https://www.w3.org/TR/microdata/"
+      }
+    ],
+    "tools": [
+      {
+        "title": "Test your page with the Structured Data Testing Tool",
+        "url": "https://developers.google.com/structured-data/testing-tool/"
+      },
+      {
+        "title": "Complete list of vocabularies that can be used as structured data on Schema.org Full Hierarchy",
+        "url": ""
       }
     ],
     "tags": ["all", "seo", "testing"]

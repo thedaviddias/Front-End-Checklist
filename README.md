@@ -608,25 +608,34 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 ## SEO
 
 * [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
+
+> * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
+
 * [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
+
+> * 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
+
 * [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
+
+> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
+
 * [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
 
+> * 📖 [The robots.txt file](https://varvy.com/robottxt.html)
 > * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
 * [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
 
 > * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
-> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
-> * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Heirarchy](http://schema.org/docs/full.html)
 > * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
 > * 📖 [JSON-LD](https://json-ld.org/)
 > * 📖 [Microdata](https://www.w3.org/TR/microdata/)
+> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+> * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
 
 * [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
 
 > * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
-> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
 
 **[⬆ back to top](#table-of-contents)**
 
