@@ -33,6 +33,12 @@ button,
   }
 }
 
+.icon-uncheck {
+  .path-check {
+    display: none;
+  }
+}
+
 .icon-checkbox,
 .icon-checked {
   align-self: flex-start;
@@ -205,26 +211,22 @@ button,
 }
 
 .icon-eye {
-  path:nth-child(3),
-  path:nth-child(4) {
+  path:nth-child(2),
+  path:nth-child(3) {
     display: none;
   }
 
   &-hide {
     fill: #415257;
 
-    path:nth-child(3),
-    path:nth-child(4) {
+    path:nth-child(2),
+    path:nth-child(3) {
       display: block;
     }
   }
 }
 
-.icon-uncheck {
-  .path-check {
-    display: none;
-  }
-}
+
 
 .st0 {
   fill: map-get($colors, white);
