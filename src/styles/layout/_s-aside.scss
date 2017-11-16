@@ -45,6 +45,15 @@
       flex-direction: row;
     }
 
+    &__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      @include mq('handheld-and-up') {
+        font-size: 1.3rem;
+      }
+    }
+
     &__inner {
       display: flex;
       align-content: center;
