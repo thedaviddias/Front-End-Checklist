@@ -137,21 +137,11 @@ gulp.task('styles-prod', () => {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', () => {
-  return gulp.src(dirs.dest + '/index.html')
+  return gulp.src(dirs.src + '/*.html')
     .pipe(critical({
+      base: 'dist/',
       inline: true,
-      base: './dist/',
-      dest: 'index-critical.html',
-      minify: true,
-      width: 1300,
-      height: 900
-      // base: './',
-      // src: 'dist/index.html',
-      // width: 1300,
-      // height: 900,
-      // inline: false,
-      // minify: true,
-      // dest: '.tmp/styles/critical.min.css',
+      css: ['dist/styles/main.css']
     }))
     // .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
     .pipe(gulp.dest(dirs.dest));
@@ -271,7 +261,7 @@ gulp.task('browser-reload', () => {
 
 
 gulp.task("clean-dist",  () => {
-  return del(["./dist", "./.tmp"], {force: true});
+  return del(["./dist"], {force: true});
 });
 
 gulp.task("clean-coverage",  () => {
@@ -335,9 +325,9 @@ gulp.task("dev", ['compile-styles', 'json-rebuild', "browser-sync", "watch"]);
 
 gulp.task("build", (done) => {
   runSequence(
-    ['json-rebuild', 'modernizr', "clean-dist", 'critical'],
-    ["styles-prod", 'lint-css'],
-    ["compress-images", "webpack", "minify-html"],
+    ['json-rebuild', 'modernizr', "clean-dist"],
+    ['lint-css'],
+    ["minify-html", "styles-prod", "compress-images", "webpack"],
     'copy',
   done);
 });
