@@ -220,7 +220,11 @@ button,
   }
 }
 
-
+.icon-uncheck {
+  .path-check {
+    display: none;
+  }
+}
 
 .st0 {
   fill: map-get($colors, white);
