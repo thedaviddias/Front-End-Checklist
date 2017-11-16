@@ -78,7 +78,8 @@ gulp.task('compile-pug', ['json-rebuild'], () => {
       locals: {},
       pretty: true
     }))
-    .pipe(gulp.dest(dirs.dest));
+    .pipe(gulp.dest(dirs.dest))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('pug-rebuild', () => {
@@ -312,7 +313,7 @@ gulp.task( 'modernizr', (done) => {
 
 gulp.task("watch", function () {
   gulp.watch(dirs.src + '/styles/**/*.scss', ['lint-css', 'compile-styles']);
-  gulp.watch(dirs.src + '/views/**/*.pug', ['pug-rebuild']);
+  gulp.watch(dirs.src + '/views/**/*.pug', ['compile-pug']);
   gulp.watch(['!'+ dirs.src + '/data/en/**/_*.json', dirs.src + '/data/**/*.json'], ['json-rebuild']); // When JSON files are updated, concatenate these
   gulp.watch(dirs.src + '/data/**/_*.json', ['compile-pug']); // When JSON are updated, compile PUG files
   gulp.watch(dirs.src + "/img/**/*", ["compress-images"]);
