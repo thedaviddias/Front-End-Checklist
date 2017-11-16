@@ -60,6 +60,7 @@
     "jsdom-global": "3.0.2",
     "modernizr": "^3.5.0",
     "postscribe": "^2.0.8",
+    "prettier": "^1.8.2",
     "run-sequence": "^2.2.0",
     "sinon": "^4.1.2",
     "stylelint-config-standard": "^17.0.0",
