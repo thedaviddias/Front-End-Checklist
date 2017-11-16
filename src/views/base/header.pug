@@ -5,8 +5,9 @@ header.s-header
   .s-header__banner
     .text-center
       picture
-        source(srcset="./img/logos/logo-front-end-checklist.webp" type="image/webp")
-        img.img-logo(src="./img/logos/logo-front-end-checklist.jpg" alt="Front-End Checklist Logo" width="100" height="100")
+        source(srcset="/img/logos/logo-front-end-checklist.webp" type="image/webp")
+        source(srcset="/img/logos/logo-front-end-checklist.jpg" type="image/jpeg")
+        img.img-logo(src="/img/logos/logo-front-end-checklist.jpg" alt="Front-End Checklist Logo" width="100" height="100")
       h1.font-weight-bold= translation.SITE_NAME
       p.sub-heading= translation.SITE_TAGLINE
 

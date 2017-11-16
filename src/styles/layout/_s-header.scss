@@ -31,6 +31,13 @@
     padding: 0;
   }
 
+  &__banner {
+    @include mq('handheld-and-up') {
+      width: 795px;
+      margin: 0 auto;
+    }
+  }
+
   &__media__list {
     display: flex;
     align-items: flex-start;

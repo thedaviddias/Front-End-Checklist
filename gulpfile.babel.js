@@ -191,16 +191,22 @@ gulp.task("webpack", () => {
 // IMAGES
 // ========================================
 
-gulp.task('compress-images', () => {
-  return gulp.src(dirs.src + '/img/**/*.{jpg,png,webp}')
-   .pipe(imagemin([
-     imagemin.jpegtran({progressive: true}),
-     imagemin.optipng({optimizationLevel: 5}),
-     imageminWebp({quality: 70})
-   ]))
-   .pipe(gulp.dest(dirs.dest + '/img/'));
- });
+gulp.task('compress-images', ['compress-webp'], () => {
+  return gulp.src(dirs.src + '/img/**/*.{jpg,png}')
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe(gulp.dest(dirs.dest + '/img/'));
+});
 
+gulp.task('compress-webp', () => {
+  return gulp.src(dirs.src + '/img/**/*.{webp}')
+    .pipe(imagemin([
+      imageminWebp({quality: 70})
+    ]))
+    .pipe(gulp.dest(dirs.dest + '/img/'));
+});
 
 // ========================================
 // TDD
