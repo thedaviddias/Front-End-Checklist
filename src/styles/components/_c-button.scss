@@ -135,17 +135,17 @@
     }
 
     &-icon {
-      border-color: #dddddd;
+      border-color: map-get($colors, grey-light);
 
       .icon {
         margin: 0;
       }
 
       &:hover {
-        border-color: #415257;
+        border-color: $secondary;
 
         .icon {
-          fill: #415257;
+          fill: $secondary;
         }
       }
     }
@@ -159,7 +159,7 @@
     .icon {
       margin: 0 !important;
       vertical-align: top;
-      fill: #dddddd;
+      fill: map-get($colors, grey-light);
     }
 
     &:hover {
@@ -169,10 +169,10 @@
     }
 
     &.is-active {
-      border-color: #415257;
+      border-color: $secondary;
 
       svg {
-        fill: #415257;
+        fill: $secondary;
       }
     }
   }
