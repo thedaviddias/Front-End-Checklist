@@ -16,7 +16,11 @@ label:hover {
 
 
 .s-form {
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
+
+  @include mq('handheld-and-up') {
+    margin-bottom: 20px;
+  }
 }
 
 .form {
@@ -24,8 +28,9 @@ label:hover {
     font-size: 1.5rem;
     padding: 5px;
     display: block;
-    border: none;
+    border: 0;
     width: 100%;
+    border-radius: 0;
     border-bottom: 1px solid #757575;
 
     @include mq('handheld-and-up') {
