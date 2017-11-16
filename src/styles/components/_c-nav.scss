@@ -66,8 +66,8 @@
     &__sidebar {
       position: absolute;
       right: -10px;
-      animation: navShow 1s normal;
-      z-index: -1;
+      // animation: navShow 1s normal;
+      // z-index: -1;
 
       .c-nav__list {
         position: fixed;
