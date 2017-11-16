@@ -44,12 +44,11 @@
   }
 
   .c-progress__bar {
+    background-color: map-get($shades, white-ter);
     border: 0;
     height: 19px;
     border-radius: 3px;
     width: 120px;
-    background-color: map-get($shades, white-ter);
-    -webkit-appearance: none;
 
     @include mq('handheld-and-up') {
       height: 20px;
