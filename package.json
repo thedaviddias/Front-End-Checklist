@@ -43,7 +43,7 @@
     "gulp-eslint": "^4.0.0",
     "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.4.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-istanbul": "^1.1.2",
     "gulp-json-concat": "^0.1.1",
     "gulp-mocha": "^4.3.1",
