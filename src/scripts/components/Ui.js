@@ -23,6 +23,45 @@ class Ui {
     return isVisible;
   }
 
+  codeSponsor() {
+    // Your personal token
+    const token = "r1beBERkvMtxu_7Bp-Wo_A";
+    // DOM variables elements
+    const sponsorLink = document.querySelector('.cs__footer a');
+    const blurb = document.querySelector('.cs__blurb');
+    const blurbStrong = document.querySelector('.cs__blurb__name');
+    const blurbSpan = document.querySelector('.cs__blurb__tagline');
+    const pixel = document.querySelector('.cs__pixel');
+    // Text variables
+    const blurbStrongText = 'CodeSponsor.io';
+    const blurbSpanText = " - get paid by adding one line of code to your README";
+    // New request variables
+    const initOptions = { method: 'GET'};
+    const codeSponsorRequest = new Request('https://app.codesponsor.io/p/' + token + '/message.json', initOptions);
+
+    sponsorLink.setAttribute('href', 'https://codesponsor.io/?utm_source=widget&utm_medium=banner&utm_campaign=' + token);
+
+    fetch(codeSponsorRequest)
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(results => {
+        blurb.setAttribute('href', results.link_href);
+        blurbStrong.innerHTML = results.title;
+        blurbSpan.innerHTML = results.body;
+        pixel.setAttribute('src', results.pixel_href);
+      })
+      .catch(error => {
+        blurbStrong.innerHTML = blurbStrongText;
+        blurbSpan.innerHTML = blurbSpanText;
+
+        // console.log('There has been a problem with your fetch operation: ' + error.message);
+      });
+  }
+
   smoothScroll(anchor, duration) {
     // Calculate how far and how fast to scroll
     const startLocation = window.pageYOffset;
@@ -130,6 +169,7 @@ class Ui {
   enableUi() {
     instance.scrollAnchor();
     instance.navScroll();
+    instance.codeSponsor();
   }
 
 }

@@ -1,8 +1,59 @@
 .c-sponsor {
   width: 100%;
 
-  img {
-    width: 100%;
-    height: auto;
+
+}
+
+.cs {
+  &__wrapper {
+    min-width: 320px;
+    padding: 10px;
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: normal;
+    color: #212529;
+  }
+
+  &__header {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    color: #51585f;
+  }
+
+  &__blurb {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    color: #212529;
+
+    &__name {
+      font-weight: bold;
+    }
+  }
+
+  &__image {
+    max-width: 80%;
+
+    &_wrapper {
+      text-align: center;
+      display: block;
+    }
+  }
+
+  &__footer {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 10px;
   }
 }
