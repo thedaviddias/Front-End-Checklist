@@ -1,6 +1,6 @@
 ![Front-End Checklist Logo](https://github.com/thedaviddias/Front-End-Checklist/blob/master/src/img/banners/front-end-checklist-banner-light.jpg?raw=true)
 
-<h2 align="center">Front-End Checklist</h2>
+<h2 align="center"><a href="http://frontendchecklist.com">Front-End Checklist</a></h2>
 
 <p align="center">
   <em>The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your site / HTML page to production.</em>
