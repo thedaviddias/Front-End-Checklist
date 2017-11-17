@@ -1,4 +1,4 @@
-![Front-End Checklist Logo](https://github.com/thedaviddias/Front-End-Checklist/blob/master/src/img/banners/front-end-checklist-banner-light.jpg?raw=true)
+[![Front-End Checklist Logo](https://github.com/thedaviddias/Front-End-Checklist/blob/master/src/img/banners/front-end-checklist-banner-light.jpg?raw=true)](http://frontendchecklist.com)
 
 <h2 align="center"><a href="http://frontendchecklist.com">Front-End Checklist</a></h2>
 
