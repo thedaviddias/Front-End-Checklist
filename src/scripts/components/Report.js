@@ -67,6 +67,10 @@ class Report {
       localStorage.setItem('developer-name', developerName);
       localStorage.setItem('project-name', projectName);
       localStorage.setItem('page-title', pageTitle);
+      gtag('event', 'reset-all', {
+        'event_category': 'Click',
+        'event_label': 'Star new checklist'
+      });
       window.location.reload(false);
     });
   }
@@ -74,6 +78,10 @@ class Report {
   print() {
     document.querySelector('.js-print').addEventListener('click', () => {
       window.print();
+      gtag('event', 'generate-reports', {
+        'event_category': 'Click',
+        'event_label': 'Generate reports'
+      });
     });
   }
 

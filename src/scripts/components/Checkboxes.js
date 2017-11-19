@@ -68,6 +68,11 @@ class Checkboxes {
 
       new Notation().updatePriority();
 
+      gtag('event', 'check', {
+        'event_category': 'Click',
+        'event_label': 'Item checked'
+      });
+
       if (item !== null) {
         const button = item.querySelector('.js-dropdown');
         if (item.getAttribute('data-item-dropdown') === 'open') {
@@ -109,6 +114,11 @@ class Checkboxes {
         list.item.setAttribute('data-item-check', 'false');
 
         new Notation().updatePriority();
+
+        gtag('event', 'uncheck', {
+          'event_category': 'Click',
+          'event_label': 'Item unchecked'
+        });
       }
     });
   }
