@@ -116,11 +116,6 @@ class Dropdown {
     itemsBySection.forEach(item => {
       item.setAttribute('data-item-dropdown', 'close');
     });
-
-    gtag('event', 'collapse-dropdown', {
-      'event_category': 'Click',
-      'event_label': 'Collapse all dropdown'
-    });
     // update local storage state dropdown hide
   }
 
