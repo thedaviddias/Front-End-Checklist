@@ -1,0 +1,82 @@
+/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+
+.mc-field-group {
+  display: inline-block;
+}
+
+#mc_embed_signup {
+  form {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  input.email {
+    font-size: 15px;
+    border: 1px solid #abb0b2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #343434;
+    background-color: white;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0 5px;
+    display: inline-block;
+    margin: 0;
+    width: 350px;
+    vertical-align: top;
+  }
+
+  label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .clear {
+    display: inline-block;
+  }
+
+  /* positions button horizontally in line with input */
+  .button {
+    font-size: 13px;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #aaaaaa;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 18px;
+    display: inline-block;
+    margin: 0;
+    transition: all .23s ease-in-out 0s;
+  }
+
+  .button:hover {
+    background-color: #777777;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  #mc_embed_signup {
+    input.email {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    .clear {
+      display: block;
+      width: 100%;
+    }
+
+    .button {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

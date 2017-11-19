@@ -43,6 +43,11 @@
   }
 
   &__section:nth-child(4) {
+    text-align: center;
+    order: 5;
+  }
+
+  &__section:nth-child(5) {
     order: 1;
   }
 

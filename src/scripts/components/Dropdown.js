@@ -116,6 +116,7 @@ class Dropdown {
     itemsBySection.forEach(item => {
       item.setAttribute('data-item-dropdown', 'close');
     });
+
     // update local storage state dropdown hide
   }
 

@@ -22,6 +22,7 @@ notifications: # set notification options
 branches:
   only:
     - master
+    - develop
     - /^greenkeeper/.*$/
 deploy:
   local_dir: dist
