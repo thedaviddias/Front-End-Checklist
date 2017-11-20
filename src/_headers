@@ -1,0 +1,10 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  # Prevent browsers from incorrectly detecting non-scripts as scripts
+  X-Content-Type-Options: nosniff
+  # Don't load any resource type not explicitly enabled
+  # Disable plugins like Flash or Silverlight
+  # Load images, scripts, stylesheets and fonts from self
+  # Send reports to report-uri.io
+  Content-Security-Policy: default-src 'none'; object-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; report-uri https://frontendchecklist.report-uri.io/r/default/csp/enforce;

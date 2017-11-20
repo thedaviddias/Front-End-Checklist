@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    David Dias -- Front-End Developer -- @thedaviddias
 
 # THANKS
 
@@ -11,5 +11,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, Pug, Git, ES6, Webpack, Gulp, Modernizr, Normalize.css
