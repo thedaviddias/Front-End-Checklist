@@ -25,7 +25,7 @@ class Ui {
 
   codeSponsor() {
     // Your personal token
-    const token = "r1beBERkvMtxu_7Bp-Wo_A";
+    const token = "DLYkTVJg-n5euzNvb3kU5A";
     // DOM variables elements
     const sponsorLink = document.querySelector('.cs__footer a');
     const blurb = document.querySelector('.cs__blurb');
