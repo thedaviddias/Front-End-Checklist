@@ -1,21 +1,15 @@
-# env:
-#   global:
-#     - CC_TEST_REPORTER_ID=ce1177050144a136200e2f02e12b80c4e889eb6165703d84e12a1d1b29d4f423
 language: node_js
 sudo: false
 node_js:
   - "7.1.0"
+cache:
+  directories:
+    - node_modules
 install:
   - npm install
 script:
   - gulp build
-# before_script:
-#   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-#   - chmod +x ./cc-test-reporter
-#   - ./cc-test-reporter before-build
-# after_script:
-#   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-notifications: # set notification options
+notifications:
   email:
     recipients:
       - thedaviddias@gmail.com
