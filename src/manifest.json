@@ -1,6 +1,7 @@
 {
+    "short_name": "FE Checklist",
     "name": "Front-End Checklist",
-    "short_name": "F-E Checklist",
+    "start_url": "http://frontendchecklist.com/?utm_source=homescreen",
     "icons": [
       {
         "src": "/android-chrome-192x192.png",
