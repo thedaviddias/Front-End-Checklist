@@ -22,12 +22,15 @@ title #[=translation.SITE_NAME] - #[=translation.INDEX_TITLE]
 <!-- Meta Description -->
 meta(name='description', content=translation.SITE_DESCRIPTION)
 
+style
+  include ../../../.tmp/critical.min.css
+
 <!-- build:css -->
-link(rel="preload" href="./styles/main.css" as="style" onload="this.rel='stylesheet'")
+link(rel="preload" href="./styles/main.min.css" as="style" onload="this.rel='stylesheet'")
 <!-- endbuild -->
 noscript
   <!-- build:nocss -->
-  link(rel="stylesheet" href="./styles/main.css")
+  link(rel="stylesheet" href="./styles/main.min.css")
   <!-- endbuild -->
 
 script.

@@ -5,10 +5,14 @@ import fs from 'fs';
 
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
+import gutil from 'gulp-util';
+import gulpIf from 'gulp-if';
+import sourcemaps from 'gulp-sourcemaps';
 
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import cssnano from 'gulp-cssnano';
+import gcmq from 'gulp-group-css-media-queries';
 const critical = require('critical').stream;
 
 import pug from 'gulp-pug';
@@ -61,11 +65,20 @@ const pugPaths = {
   src: `${dirs.src}/views/index.pug`,
 };
 
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+
+var dir = './.tmp';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+    fs.closeSync(fs.openSync('./.tmp/critical.min.css', 'w'));
+}
+
 // ========================================
 // PUG / HTML
 // ========================================
 
-gulp.task('compile-pug', ['json-rebuild'], () => {
+gulp.task('compile-pug', () => {
   return gulp.src(pugPaths.src)
     .pipe(plumber((error) => {
       console.log(error);
@@ -82,7 +95,7 @@ gulp.task('compile-pug', ['json-rebuild'], () => {
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('pug-rebuild', () => {
+gulp.task('pug-rebuild', ['compile-pug'], () => {
 	browserSync.reload();
 });
 
@@ -97,7 +110,10 @@ gulp.task('minify-html', ['compile-pug'], () => {
         src: './styles/main.min.css',
       }
     }))
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
     .pipe(gulp.dest(dirs.dest));
 });
 
@@ -111,39 +127,34 @@ gulp.task('compile-styles', () => {
       console.log(error);
       this.emit('end');
     }))
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest(sassPaths.dest))
-    .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('styles-prod', () => {
-  return gulp.src(sassPaths.src)
-    .pipe(plumber((error) => {
-      console.log(error);
-      this.emit('end');
-    }))
+    .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(gcmq())
+    .pipe(cssnano())
     // .pipe(uncss({
     //   html: [dirs.dest + '/**/*.html']
     // }))
-    .pipe(cssnano())
     .pipe(rename({
       suffix: ".min"
     }))
+    .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
     .pipe(gulp.dest(sassPaths.dest))
     .pipe(browserSync.reload({stream: true}));
 });
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', () => {
-  return gulp.src(dirs.src + '/*.html')
+  return gulp.src(dirs.dest + '/index.html')
     .pipe(critical({
       base: 'dist/',
-      inline: true,
-      css: ['dist/styles/main.css']
+      inline: false,
+      dest: '../.tmp/critical.min.css',
+      css: 'dist/styles/main.min.css',
+      minify: true,
+      ignore: [/url\(/, '@font-face', /print/]
     }))
-    // .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+    .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
     .pipe(gulp.dest(dirs.dest));
 });
 
@@ -264,6 +275,10 @@ gulp.task("clean-dist",  () => {
   return del(["./dist"], {force: true});
 });
 
+gulp.task("clean-tmp",  () => {
+  return del(["./.tmp", './dist/index.css'], {force: true});
+});
+
 gulp.task("clean-coverage",  () => {
   return del(["./coverage"]);
 });
@@ -313,7 +328,7 @@ gulp.task( 'modernizr', (done) => {
 
 gulp.task("watch", function () {
   gulp.watch(dirs.src + '/styles/**/*.scss', ['lint-css', 'compile-styles']);
-  gulp.watch(dirs.src + '/views/**/*.pug', ['compile-pug']);
+  gulp.watch(dirs.src + '/views/**/*.pug', ['pug-rebuild']);
   gulp.watch(['!'+ dirs.src + '/data/en/**/_*.json', dirs.src + '/data/**/*.json'], ['json-rebuild']); // When JSON files are updated, concatenate these
   gulp.watch(dirs.src + '/data/**/_*.json', ['compile-pug']); // When JSON are updated, compile PUG files
   gulp.watch(dirs.src + "/img/**/*", ["compress-images"]);
@@ -327,7 +342,10 @@ gulp.task("build", (done) => {
   runSequence(
     ['json-rebuild', 'modernizr', "clean-dist"],
     ['lint-css'],
-    ["minify-html", "styles-prod", "compress-images", "webpack"],
+    ['minify-html', 'compile-styles', 'compress-images', 'webpack'],
+    ['critical'],
+    ['minify-html'],
+    ['clean-tmp'],
     'copy',
   done);
 });
