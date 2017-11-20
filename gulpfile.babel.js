@@ -37,6 +37,7 @@ import cached from 'gulp-cached';
 import jsonConcat from 'gulp-json-concat';
 import plumber from "gulp-plumber";
 import htmlreplace from 'gulp-html-replace';
+import cdnizer from "gulp-cdnizer";
 
 import modernizr from 'modernizr';
 import modernizrConfig from './modernizr-config.json';
@@ -103,11 +104,11 @@ gulp.task('minify-html', ['compile-pug'], () => {
   return gulp.src('./dist/*.html')
     .pipe(htmlreplace({
       css: {
-        src: './styles/main.min.css',
+        src: '/styles/main.min.css',
         tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
       },
       nocss: {
-        src: './styles/main.min.css',
+        src: '/styles/main.min.css',
       }
     }))
     .pipe(htmlmin({
@@ -271,6 +272,30 @@ gulp.task('browser-reload', () => {
 // ========================================
 
 
+gulp.task('cdn', () => {
+return gulp.src('./dist/index.html')
+  .pipe(cdnizer({
+    defaultCDNBase: "//everywhere-8a59.kxcdn.com",
+    allowRev: true,
+    files: [
+      '/scripts/app.bundle.js',
+      '/styles/main.min.css',
+      '/favicon-32x32.png',
+      '/favicon-16x16.png',
+      '/apple-touch-icon.png',
+      '/browserconfig.xml',
+      '/service-worker.js',
+      '/safari-pinned-tab.svg',
+      '/manifest.json',
+      '/img/social/facebook-banner.jpg',
+      '/img/logos/logo-front-end-checklist.jpg',
+      '/img/logos/logo-front-end-checklist.webp'
+    ]
+  }))
+  .pipe(gulp.dest(dirs.dest));
+});
+
+
 gulp.task("clean-dist",  () => {
   return del(["./dist"], {force: true});
 });
@@ -345,6 +370,7 @@ gulp.task("build", (done) => {
     ['minify-html', 'compile-styles', 'compress-images', 'webpack'],
     ['critical'],
     ['minify-html'],
+    ['cdn'],
     ['clean-tmp'],
     'copy',
   done);

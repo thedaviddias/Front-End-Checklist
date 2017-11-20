@@ -37,6 +37,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-cached": "^1.1.1",
+    "gulp-cdnizer": "^1.1.7",
     "gulp-changed": "^3.1.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-data": "^1.2.1",
