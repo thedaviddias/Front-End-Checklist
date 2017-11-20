@@ -330,7 +330,6 @@ gulp.task('copy', () => {
   return gulp.src([
     // Copy all files
     `${dirs.src}/*.*`,
-    `${dirs.src}/CNAME`,
     `!${dirs.src}/modernizr-custom.min.js`,
   ], {
     // Include hidden files by default
