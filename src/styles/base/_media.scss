@@ -13,3 +13,13 @@
     height: 100px;
   }
 }
+
+// frameborder="0"
+// allowtransparency="true"
+// scrolling="no"
+iframe {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

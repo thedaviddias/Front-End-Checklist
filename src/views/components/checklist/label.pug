@@ -1,7 +1,7 @@
 .c-checklist__column.c-checklist__label
   label(for=`c-checklist__item-${sectionTitle.toLowerCase()}-${i}`)
 
-    h3.label__title= item.title + ': '
+    span.label__title= item.title + ': '
     span.label__description #{item.description}
 
   if item.tools || item.documentation || item.code || item.video

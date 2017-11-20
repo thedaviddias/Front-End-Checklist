@@ -11,20 +11,20 @@ block main
   - listSectionId = []
 
   //- Section with Ad and search (TODO: to enable after first launch)
-  section.s-main__section.s-main__meta
+  .s-main__section.s-main__meta
 
     include components/c-sponsor
 
   //-   include components/c-search
 
   //- Section with tag filter
-  section.s-main__section.s-main__filter
+  .s-main__section.s-main__filter
 
     include components/c-tag-filter
 
   //- List each section (the order is linked to the order of the c-nav)
   //- _items is in the JSON injected in the view with gulp-data (called _project.json)
-  article.s-main__section.s-main__checklist
+  .s-main__section.s-main__checklist
 
     +checklist-section({
       dataSection: _items.head,
@@ -71,7 +71,7 @@ block main
       sectionTitle: "SEO"
     })
 
-  section.s-main__section.s-main__newsletter
+  .s-main__section.s-main__newsletter
 
     include components/c-newsletter
 
