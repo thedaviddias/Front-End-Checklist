@@ -7,4 +7,4 @@
   # Disable plugins like Flash or Silverlight
   # Load images, scripts, stylesheets and fonts from self
   # Send reports to report-uri.io
-  # Content-Security-Policy: default-src 'none'; object-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; report-uri https://frontendchecklist.report-uri.io/r/default/csp/enforce;
+  # Content-Security-Policy: default-src 'self' everywhere-8a59.kxcdn.com; object-src 'none'; img-src https: app.codesponsor.io www.google.com; script-src https: www.google-analytics.com ajax.googleapis.com platform.twitter.com buttons.github.io; style-src https: ; font-src https: ; report-uri https://frontendchecklist.report-uri.io/r/default/csp/enforce;

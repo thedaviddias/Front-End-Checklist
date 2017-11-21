@@ -484,6 +484,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 > * 📖 [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
 > * 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
 > * 📖 [CSP Cheat Sheet - OWASP](https://www.owasp.org/index.php/Content_Security_Policy_Cheat_Sheet)
+> * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
 
 **[⬆ back to top](#table-of-contents)**
 
