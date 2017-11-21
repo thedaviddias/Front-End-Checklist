@@ -1,3 +1,4 @@
+import Ui from './Ui';
 import Utils from '../Utils';
 import postscribe from 'postscribe';
 
@@ -42,6 +43,8 @@ class Dropdown {
       } else {
         item.setAttribute('data-item-dropdown', 'open');
         instance.loadCode(item);
+
+        new Ui().lazyLoadImg(item);
       }
     });
   }
@@ -97,6 +100,9 @@ class Dropdown {
         eachItem.setAttribute('data-item-dropdown', 'open');
         instance.dropdownIcon(el.button);
         instance.loadCode(eachItem);
+
+        new Ui().lazyLoadImg(eachItem);
+
         gtag('event', 'open-dropdown', {
           'event_category': 'Click',
           'event_label': 'Open dropdown'

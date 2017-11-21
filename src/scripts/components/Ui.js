@@ -12,6 +12,15 @@ class Ui {
     return instance;
   }
 
+  lazyLoadImg(item) {
+    [].forEach.call(item.querySelectorAll('img[data-src]'), (img) => {
+      img.setAttribute('src', img.getAttribute('data-src'));
+      img.onload = function() {
+        img.removeAttribute('data-src');
+      };
+    });
+  }
+
   isScrolledIntoView(el) {
     var elemTop = el.getBoundingClientRect().top;
     var elemBottom = el.getBoundingClientRect().bottom;
