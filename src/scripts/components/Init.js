@@ -6,6 +6,7 @@ import Notation from './Notation';
 import Tools from './Tools';
 import Report from './Report';
 import Ui from './Ui';
+import Analytics from './Analytics';
 
 let instance = null;
 /**
@@ -30,6 +31,7 @@ class Init {
     this.toolsInit();
     this.reportInit();
     this.uiInit();
+    this.AnalyticsInit();
 
     return instance;
   }
@@ -122,6 +124,15 @@ class Init {
    */
   uiInit() {
     new Ui().enableUi();
+  }
+
+  /**
+   * Add analytics utils
+   *
+   * @memberof Init
+   */
+  AnalyticsInit() {
+    new Analytics().enableAnalytics();
   }
 }
 
