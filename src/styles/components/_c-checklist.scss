@@ -273,9 +273,11 @@
     width: 14px;
     height: 14px;
     display: inline;
+
     &[data-src] {
       display: none;
     }
+
     .no-js & {
       display: none;
     }
