@@ -23,7 +23,7 @@
             each documentation, i in item.documentation
               li
                 if documentation.url && documentation.title
-                  img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${documentation.url}`, alt="")
+                  img.c-checklist__favicon(src="" data-src=`https://www.google.com/s2/favicons?domain_url=${documentation.url}`, alt="")
                   a(href=`${documentation.url}`, target="_blank", rel="noopener noreferrer")= documentation.title
 
       if item.tools
@@ -32,7 +32,7 @@
           ul.documentation__list
             each tool, i in item.tools
               li
-                img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${tool.url}`, alt="")
+                img.c-checklist__favicon(src="" data-src=`https://www.google.com/s2/favicons?domain_url=${tool.url}`, alt="")
                 a(href=`${tool.url}`, target="_blank", rel="noopener noreferrer")= tool.title
 
       if item.video
@@ -41,7 +41,7 @@
           ul.video__list
             each video, i in item.video
               li
-                img.c-checklist__favicon(src=`https://www.google.com/s2/favicons?domain_url=${video.url}`, alt="")
+                img.c-checklist__favicon(src="" data-src=`https://www.google.com/s2/favicons?domain_url=${video.url}`, alt="")
                 a(href=`${video.url}`, target="_blank", rel="noopener noreferrer")= video.title
 
   .c-tags
