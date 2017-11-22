@@ -1,0 +1,42 @@
+{
+  "SITE_NAME": "フロントエンドチェックリスト日本語訳 ",
+  "INDEX_TITLE": "🔥 Your NEW Front-End Tool 🔥",
+  "URL_WEBSITE": "https://frontendchecklist.io",
+  "URL_PAGE": "https://frontendchecklist.io/jp/",
+  "SITE_TAGLINE": "🗂 The Front-End Checklist Application is perfect for modern websites and meticulous developers!",
+  "SITE_DESCRIPTION": "🗂 The Front-End Checklist Application is perfect for modern websites and meticulous developers! Follow the rules and deliver the best of your work in a generated report!",
+  "SITE_LANGUAGE": "jp",
+  "SITE_DIRECTION": "ltr",
+  "URL_GITHUB_ROOT": "https://github.com/thedaviddias/Front-End-Checklist",
+  "URL_GITHUB_REPO": "https://github.com/thedaviddias/Front-End-Checklist/tree/gh-pages",
+  "HIGH_CHECKED": "✓ high priority",
+  "MEDIUM_CHECKED": "✓ medium priority",
+  "LOW_CHECKED": "✓ low priority",
+  "PERCENTAGE_CHECKED": "items are ✓",
+  "SECTION_DOCUMENTATION": "Documentation",
+  "SECTION_TOOL": "Tools",
+  "SECTION_VIDEO": "Videos",
+  "SECTION_TAG": "Filter by tags",
+  "alert": {
+    "JAVASCRIPT_DESACTIVATE": "Your JavaScript seems to be desactivate. Please enable your JavaScript to use all functionnalities of the Front-End Checklist."
+  },
+  "form": {
+    "LABEL_PROJECT_NAME": "Project Name",
+    "TITLE_PROJECT_NAME": "Type the name of your project",
+    "LABEL_PAGE_TITLE": "Page title or URL",
+    "TITLE_PAGE_TITLE": "Type the name of your page or URL",
+    "LABEL_DEVELOPER_NAME": "Developer's name or team",
+    "TITLE_DEVELOPER_NAME": "Type your name or the name of your team",
+    "LABEL_SEARCH": "Search",
+    "BUTTON_START_NEW": "Start new checklist",
+    "BUTTON_GENERATE_PRINT": "Generate report"
+  },
+  "social": {
+    "TWEET": "Tweet",
+    "TWITTER_MSG": "Check the 🔥 NEW Front-End Checklist Application 🔥 for modern websites and meticulous developers! With more than 15 000 🌟 on Github, now you can use it on your daily workflow and generate reports 📑!",
+    "TWITTER_VIA": "thedaviddias",
+    "TWITTER_HASHTAGS": "FrontEndChecklist #FrontEnd #Tool",
+    "STAR": "Star",
+    "GITHUB_STAR_MSG": "Star thedaviddias/Front-End-Checklist on GitHub"
+  }
+}
