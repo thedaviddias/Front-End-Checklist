@@ -68,7 +68,7 @@
     "prettier": "^1.8.2",
     "run-sequence": "^2.2.0",
     "sinon": "^4.1.2",
-    "stylelint-config-standard": "^17.0.0",
+    "stylelint-config-standard": "^18.0.0",
     "stylelint-scss": "^2.1.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "url-loader": "^0.6.2",
