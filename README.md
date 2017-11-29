@@ -122,14 +122,22 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Touch Icon:** ![Low][low_img] Apple touch favicon apple-mobile-web-app-capable are present *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need).*
+* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
 
 ```html
-<!-- Apple Touch Icon -->
+<!-- Apple Touch Icon (at least 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
+
+<!-- To run web application in full-screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+<!-- Has no effect unless you have the previous meta tag -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
 > * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
 - [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
 
@@ -138,7 +146,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
-Minimum required xml markup for the browserconfig.xml file is as follows:
+Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -312,7 +320,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Low][low_img] Your page is using a CSS preprocessor ([Sass](http://sass-lang.com/) is preferred).
+* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor.
 * [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
 * [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
 
@@ -421,6 +429,14 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **JavaScript security:** ![High][high_img]
 
 > * 📖 [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
+
+* [ ] **`noscript` tag:** ![Medium][medium_img] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering heavy apps such as React.js, see [examples](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
+
+```html
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+```
 
 * [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
 
