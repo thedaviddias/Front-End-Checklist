@@ -153,6 +153,7 @@
     &.--noevent {
       pointer-events: none;
       border-color: $secondary;
+
       .icon {
         fill: $secondary;
       }
