@@ -142,6 +142,10 @@ class Tools {
       btn.addEventListener(
         'click',
         () => {
+          const btnExpandActived = btn.parentNode.querySelector('.--noevent');
+          if (btnExpandActived) {
+            btnExpandActived.classList.remove('--noevent');
+          }
           new Dropdown().allDropdown({btn});
         }
       );
@@ -152,6 +156,7 @@ class Tools {
       btn.addEventListener(
         'click',
         () => {
+          btn.classList.add('--noevent');
           new Dropdown().allDropdown({btn});
         }
       );
