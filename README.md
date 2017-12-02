@@ -88,7 +88,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ```
 
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculate the pixel width of the characters used in the title, cut off between 472 and 482 pixels. Average character limit would be around 55-characters).
+* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculates the pixel width of the characters used in the title, and it cuts off between 472 and 482 pixels. The average character limit would be around 55-characters).
 
 ```html
 <!-- Document Title -->
@@ -122,14 +122,22 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Touch Icon:** ![Low][low_img] Apple touch favicon apple-mobile-web-app-capable are present *(Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need).*
+* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
 
 ```html
-<!-- Apple Touch Icon -->
+<!-- Apple Touch Icon (at least 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
+
+<!-- To run web application in full-screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+<!-- Has no effect unless you have the previous meta tag -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
 > * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
 - [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
 
@@ -138,7 +146,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
-Minimum required xml markup for the browserconfig.xml file is as follows:
+Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -160,7 +168,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ```html
 <!-- Helps prevent duplicate content issues -->
-<link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
+<link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html">
 ```
 
 > * 📖 [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
@@ -194,7 +202,8 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
 
-* [ ] **Inline critical CSS:** ![Medium][medium_img] CSS which styles content that is immediately visible during pageload ("above the fold content") is called "critical CSS". It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+
 > * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
 
 * [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
@@ -203,7 +212,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 ***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
 
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, 1200 x 630 pixels recommended.
+* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
 
 > **Notes:** Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
 
@@ -311,7 +320,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 
 * [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Low][low_img] Your page is using a CSS preprocessor ([Sass](http://sass-lang.com/) is preferred).
+* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor.
 * [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
 * [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
 
@@ -327,7 +336,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **Embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
+* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
 * [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
 
 > * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
@@ -420,6 +429,14 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 * [ ] **JavaScript security:** ![High][high_img]
 
 > * 📖 [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
+
+* [ ] **`noscript` tag:** ![Medium][medium_img] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering heavy apps such as React.js, see [examples](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
+
+```html
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+```
 
 * [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
 
@@ -573,7 +590,7 @@ Minimum required xml markup for the browserconfig.xml file is as follows:
 #### Headings
 
 * [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High][high_img] Headings should be used properly in the right order (H1 to H6).
+* [ ] **Headings:** ![High][high_img] Headings should be used properly and in the right order (H1 to H6).
 
 > * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
