@@ -442,6 +442,12 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
 
+* [ ] **Leverage better browser support:** ![Medium][medium_img]  If you don't care about supporting old browsers with broken implementations, consider writing plain JavaScript instead of adding third-party libraries. 
+
+> * [Plain JavaScript implementation of commonly used operations](https://plainjs.com/javascript/)
+
+* [ ] **Choose a library that does only what you need:** ![Medium][medium_img] If you really need to add a library for something then consider choosing a library that does just that. For example, if you need a library to handle ajax functionality then consider adding something like axios.js instead of a library that will also do multiple other things like DOM manuplation.
+
 ### JavaScript testing
 
 * [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
