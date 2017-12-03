@@ -15,10 +15,6 @@
 
 It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/HxqChNNHFKFaMpEpEikk4EM4/thedaviddias/Front-End-Checklist'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/HxqChNNHFKFaMpEpEikk4EM4/thedaviddias/Front-End-Checklist.svg' />
-</a>
-
 ## Table of Contents
 
 1. **[Head](#head)**
