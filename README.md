@@ -53,8 +53,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
 
 ```html
-<!-- Doctype HTML5 -->
-<!doctype html>
+<!doctype html> <!-- HTML5 -->
 ```
 
 > * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
