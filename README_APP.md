@@ -19,7 +19,12 @@
 
 
 ## Install
+To install and run:
 
+```shell
+    npm install
+    npm start
+```
 ## Usage
 
 
