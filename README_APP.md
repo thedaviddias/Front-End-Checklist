@@ -19,10 +19,11 @@
 
 
 ## Install
-To install and run:
+To install and run, open a terminal and use the following commands:
 
 ```shell
     npm install
+    npm run-script build
     npm start
 ```
 ## Usage
