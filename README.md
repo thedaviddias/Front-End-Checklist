@@ -437,6 +437,11 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
+* [ ] **Optimized and updated JS librairies:** ![Medium][medium_img] All JavaScript librairies used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their lastest version and don't overwhelm your JavaScript with unnecessary methods.
+
+> * 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
+> * 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
+
 * [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
 
 > * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
