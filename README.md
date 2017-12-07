@@ -3,7 +3,7 @@
 <h2 align="center"><a href="https://frontendchecklist.io">Front-End Checklist</a></h2>
 
 <p align="center">
-  <em>The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your site / HTML page to production.</em>
+  <em>Die Front-End Checklist ist eine gründlich erstellte liste von sämtlichen Elementen, welche du benötigst / um deine Seite/HTML Seite vor dem produktiven Start zu testen.</em>
 </p>
 
 [![Join the chat at https://gitter.im/Front-End-Checklist/Lobby](https://badges.gitter.im/Front-End-Checklist/Lobby.svg)](https://gitter.im/Front-End-Checklist/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -13,135 +13,135 @@
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/thedaviddias/front-end-checklist)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
+Diese Liste basiert auf jahrelanger Erfahrung von Front-End Entwicklern und einigen Zusätzen aus anderen Open Source Checklisten. 
 
-## Table of Contents
+## Inhaltsverzeichnis
 
 1. **[Head](#head)**
 2. **[HTML](#html)**
 3. **[Webfonts](#webfonts)**
 4. **[CSS](#css)**
-5. **[Images](#images)**
+5. **[Bilder](#images)**
 6. **[JavaScript](#javascript)**
-7. **[Security](#security)**
-8. **[Performance](#performance-1)**
-9. **[Accessibility](#accessibility)**
-10. **[SEO](#seo)**
+7. **[Sicherheit](#security)**
+8. **[Leistung](#performance-1)**
+9. **[Zugänglichkeit](#accessibility)**
+10. **[SEO/Suchmaschinenoptimierung](#seo)**
 
-## How to use?
+## Wie benutzt man es?
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
+Alle Punkte in der **Front-End Checklist**, werden für den Großteil von Projekten benötigt, jedoch sind manche Elemente nicht grundlegend wichtig, oder können weggelassen werden. Zum Beispiel benötigt man nicht unbedingt einen RSS Feed für eine Administrative Web App. Wir haben uns für 3 "Level" der Flexibilität entschieden:
 
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Low][low_img] bedeutet, dass es **empfohlen** wird, jedoch kann es in speziellen Situationen weggelassen werden.
+* ![Medium][medium_img] bedeutet, dass es **stark empfohlen** wird, jedoch kann es in wirklich stark speziellen Situationen ausgelassen werden. Sollte man manche Elemente davon weglassen, kann dies schlechte Auswirkungen auf die Leistung, oder auf die Suchmaschinenoptimierung haben. 
+* ![High][high_img] bedeutet, dass dieses "Item" **nicht ausgelassen** werden darf, egal aus was für einem Grund! Sonst kann es dadurch zu Fehlfunktionen der Seite, Zugriffsstörungen bei der Suchmaschinenoptimierung, oder andere Probleme geben. Die Priorität der Tests, sollte bei diesen Elementen die höchste Priorität haben. 
 
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+Manche Hilfsquellen haben ein Emoticon, damit du besser verstehen kannst um welchen Inhalt es sich handelt:
 
-* 📖: documentation or article
-* 🛠: online tool / testing tool
-* 📹: media or video content
+* 📖: Dokumentation oder Artikel
+* 🛠: Online Tool / Tool zum testen
+* 📹: Media oder Videoinhalt
 
 ---
 
 ## Head
 
-> **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> **Information:** Du findest [eine Liste von allem](https://github.com/joshbuchea/HEAD) was im `<head>` eines HTML Dokumentes vorkommt in diesem Link.
 
-### Meta tag
+### Meta Element
 
-* [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
+* [ ] **Doctype:** ![High][high_img] Der Dokumententyp ist HTML5 and ist auf all deinen HTML Seiten ganz oben eingetragen.
 
 ```html
 <!doctype html> <!-- HTML5 -->
 ```
 
-> * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+> * 📖 [Bestimmen der Zeichenkodierung - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-*The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
+*Die nächsten 3 meta tags (Charset, X-UA Compatible and Viewport) kommen ganz nach oben im head Teil der HTML Seite.*
 
-* [ ] **Charset:** ![High][high_img] The charset (UTF-8) is declared correctly.
+* [ ] **Charset:** ![High][high_img] Das charset (UTF-8) ist richtig angegeben worden.
 
 ```html
 <!-- Set character encoding for the document -->
 <meta charset="utf-8">
 ```
 
-* [ ] **X-UA-Compatible:** ![Medium][medium_img] The X-UA-Compatible meta tag is present.
+* [ ] **X-UA-Compatible:** ![Medium][medium_img] Das X-UA-Compatible meta tag ist präsent.
 
 ```html
-<!-- Instruct Internet Explorer to use its latest rendering engine -->
+<!-- Weist den Internet Explorer an, die neuste "Rendering engine" zu benutzen  -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 ```
 
-> * 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
+> * 📖 [Spezifizieren von älteren Dokumentmodi (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
 
-* [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
+* [ ] **Ansichtsfenster/Viewport:** ![High][high_img] Das Ansichtsfenster ist korrekt deklariert.
 
 ```html
-<!-- Viewport for responsive web design -->
+<!-- Ansichtsfenster für responsives Webdesign -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ```
 
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculates the pixel width of the characters used in the title, and it cuts off between 472 and 482 pixels. The average character limit would be around 55-characters).
+* [ ] **Titel:** ![High][high_img] Ein Titel wird auf allen Seiten genutzt (SEO: Google kalkuliert zum Beispiel die Pixelbreite der Zeichen, welche im Titel verwendet werden und schneidet den Titel zwischen 472 und 482 Pixel. Das Durchschnittszeichenlimit liegt bei ca. 55 Zeichen).
 
 ```html
-<!-- Document Title -->
+<!-- Dokument Titel -->
 <title>Page Title less than 55 characters</title>
 ```
 
-> * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
+> * 📖 [Titel - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 > * 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/)
 
-* [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
+* [ ] **Beschreibung:** ![High][high_img] Eine meta Beschreibung ist vorausgesetzt, ist einzigartig und besitzt nicht mehr als 150 Zeichen.
 
 ```html
-<!-- Meta Description -->
-<meta name="description" content="Description of the page less than 150 characters">
+<!-- Meta Beschreibung -->
+<meta name="Beschreibung" content="Description of the page less than 150 characters">
 ```
 
-> * 📖 [Meta Description - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
+> * 📖 [Meta Beschreibung - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
 
-* [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format (dimensions: 32x32px).
+* [ ] **Favicons/Symbol:** ![Medium][medium_img] Jedes favicon wurde erstellt und korrekt angezeigt. Wenn du nur ein `favicon.ico` hast, setze es nach oben an den Anfang deiner Seite. Normalerweise braucht ein favicon kein spezielles Highlight mehr, jedoch ist es eine gute und saubere Arbeitsmethode, wenn man es so verlinkt wie in dem Beispiel unten drunter. Heutzutage, **wird PNG Formatierung** über `.ico` Formatierung empfohlen. (Maße: 32x32px).
 
 ```html
 <!-- Standard favicon -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
-<!-- Recommended favicon format -->
+<!-- Empfohlenes favicon Format -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
-> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
+> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Was benötigst du? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
+* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags sind vorhanden.
 
 ```html
-<!-- Apple Touch Icon (at least 200x200px) -->
+<!-- Apple Touch Icon (mindestens 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 
-<!-- To run web application in full-screen -->
+<!-- Um die Web Applikation im Fullscreen laufen zu lassen-->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
-<!-- Has no effect unless you have the previous meta tag -->
+<!-- Status Bar Style (siehe die unterstützten Meta Tags unten drunter für verfügbare Werte) -->
+<!-- Hat keinen Effekt, außer du hast den vorherigen Meta Tag  -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
-> * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
-> * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+> * 📖 [Konfigurieren von Web Applikationen](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> * 📖 [Unterstützte Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
-- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
+- [ ] **Windows Kacheln/Tiles:** ![Low][low_img] Windows Kacheln sind vorhanden und verknüpft.
 
 ```html
-<!-- Microsoft Tiles -->
+<!-- Microsoft Kacheln -->
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
-Minimum required xml markup for the `browserconfig.xml` file is as follows:
+Das minimal benötigte xml markup/Auszeichnung für die Datei `browserconfig.xml` lautet wie folgt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -157,27 +157,27 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 </browserconfig>
 ```
 
-> * 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+> * 📖 [Browser Konfigurations Schema Empfehlung](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
-* [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
+* [ ] **Autorisiert/Canonical:** ![Medium][medium_img] Nutze `rel="canonical"` um duplizierten Inhalt zu vermeiden.
 
 ```html
-<!-- Helps prevent duplicate content issues -->
+<!-- Hilft vorbeugend gegen Probleme mit dupliziertem Inhalt  -->
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html">
 ```
 
-> * 📖 [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
-> * 📖 [5 common mistakes with rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
+> * 📖 [Nutze autorisierte/anerkannte URLs - Such Konsolen Hilfe - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
+> * 📖 [5 der häufigsten Fehler mit rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 
-### HTML tags
+### HTML Tags
 
-* [ ] **Language attribute:** ![High][high_img] The `lang` attribute of your website is specified and related to the language of the current page.
+* [ ] **Sprachen Attribut:** ![High][high_img] Das `lang` Attribut deiner Webseite ist spezifiziert und verbunden mit der derzeitigen Seite.
 
 ```html
 <html lang="en">
 ```
 
-* [ ] **Direction attribute:** ![Medium][medium_img] The direction of lecture is specified on the html tag (It can be used on another HTML tag).
+* [ ] **dir Attribut/Direction attribute:** ![Medium][medium_img] Das Direction/Ausrichtungsattribut der Leserichtung ist spezifiziert im HTML Tag. (Es kann in einem anderen HTML Tag benutzt werden).
 
 ```html
 <html dir="rtl">
@@ -185,31 +185,31 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-* [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Alternative Sprache/Alternate language:** ![Low][low_img] Das Sprachtag deiner Webseite ist spezifiziert und zugehörig zu der Sprache deiner derzeitigen Seite.
 
 ```html
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
-* [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
+* [ ] **Bedingte Kommentare/Conditional comments:** ![Low][low_img] Bedingte Kommentare sind vorfindlich für den IE, falls benötigt.
 
-> * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+> * 📖 [Über bedingte Kommentare (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
+* [ ] **RSS feed:** ![Low][low_img] Wenn dein Projekt ein Blog ist, oder diverse Artikel besitzt, kann man es mit einem RSS Link ausstatten.
 
-* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+* [ ] **Kritischer Pfad/CSS Critical:** ![Medium][medium_img] Der kritische Pfad (oder "minified CSS") sammelt all das CSS, welches benötigt wird um die Seite zu rendern. Es ist vor dem hauptsächlichen CSS eingebettet und steht zwischen `<style></style>` in einer Einzelzeile (minimiert).
 
-> * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
+> * 🛠 [Critical von Addy Osmani on GitHub](https://github.com/addyosmani/critical) automatisiert dies.
 
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **CSS Reihenfolge/CSS order:** ![High][high_img] Alle CSS Dateien, werden vor den JavaScript Dateien im Bereich `<head>` geladen. (Außer im Sonderfall, wo manchmal JS Dateien asynchron am Anfang der Seite geladen werden ).
 
-### Social meta
+### Soziales meta
 
-***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
+***Facebook OG*** und ***Twitter Cards***, werden für jede Webseite empfohlen. Die anderen sozialen Medien Tags, können je nach Ziel/Zielgruppe noch hinzugefügt werden.
 
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
+* [ ] **Facebook Open Graph:** ![Low][low_img] Alle "Facebook Open Graph" (OG) wurden getestet. Keiner fehlt oder besitzt falsche Informationen. Bilder müssen mindestens 600 x 315 Pixel haben, empfohlen wird jedoch 1200 x 630.
 
-> **Notes:** Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
+> **Information:** Das nutzen von `og:image:width` und `og:image:height` spezifiziert die Dimension des Bildes zum Crawler, damit das Bild direkt gerendert wird, ohne asynchronen Download.
 
 ```html
 <meta property="og:type" content="website">
@@ -219,14 +219,14 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <meta property="og:description" content="Description Here">
 <meta property="og:site_name" content="Site Name">
 <meta property="og:locale" content="en_US">
-<!-- Next tags are optional but recommended -->
+<!-- Die nächsten Tags sind optional, werden aber empfohlen -->
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 ```
 
-> * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
+> * 📖 [Eine Anleitung zum teilen für Webmaster ](https://developers.facebook.com/docs/sharing/webmasters/)
 > * 📖 [Best Practices - Sharing](https://developers.facebook.com/docs/sharing/best-practices/)
-> * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
+> * 🛠 Teste deine Seite mit [Facebook OG testing](https://developers.facebook.com/tools/debug/)
 
 * [ ] **Twitter Card:** ![Low][low_img]
 
@@ -240,112 +240,112 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <meta name="twitter:image" content="https://example.com/image.jpg">
 ```
 
-> * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-> * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
+> * 📖 [Starte mit den cards von Twitter — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+> * 🛠 Teste deine Seite mit [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
 ## HTML
 
-### Best practices
+### Best practices/Erfolgsmethode
 
-* [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section, footer, main...).
+* [ ] **HTML5 Semantische Elemente:** ![High][high_img] Semantische Elemente in HTML5, werden passend genutzt (header, section, footer, main...).
 
-> * 📖 [HTML Reference](http://htmlreference.io/)
+> * 📖 [HTML Referenz](http://htmlreference.io/)
 
-* [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error pages need to have their CSS integrated (no external call on the current server).
+* [ ] **Fehler Seiten/Error pages:** ![High][high_img] Error 404 und 5xx existieren. Denk dran, dass die 5xx Error Seiten, ihr CSS mit integriert haben müssen (also kein externer Aufruf zum momentanen Server).
 
-* [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
+* [ ] **Noopener:** ![Medium][medium_img] Im Falle, dass du externe Links mit `target="_blank"` nutzt sollte dein Link ein `rel="noopener"` Attribut besitzen um "tab nabbing" vorzubeugen. Solltest du ältere Versionen von Firefox supporten müssen, benutze `rel="noopener noreferrer"`.
 
-> * 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
+> * 📖 [Über rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
 
-* [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
+* [ ] **Aufräum Kommentare/Clean up comments:** ![Low][low_img] Unwichtiger Code muss entfernt werden, bevor die Seite zur Produktion übergeht. 
 
 ### HTML testing
 
-* [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
+* [ ] **W3C konform:** ![High][high_img] Jede Seite muss mit dem W3C Validierer getestet werden, um mögliche Fehler im HTML Code festzustellen.
 
-> * 🛠 [W3C validator](https://validator.w3.org/)
+> * 🛠 [W3C Validierer](https://validator.w3.org/)
 
-* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
+* [ ] **HTML Lint:** ![High][high_img] Ich nutze Tools, welche mir helfen diverse Fehler in meinem HTML Code zu finden.
 
 > * 🛠 [Dirty markup](https://dirtymarkup.com/)
 
-> * 🛠 [Sonar a linting tool for the web](https://sonarwhal.com/)
+> * 🛠 [Sonar ein linting tool für das Web](https://sonarwhal.com/)
 
-* [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404 error.
+* [ ] **Link checker:** ![High][high_img] Es sind keine kaputten Links auf meiner Seite. So stelle ich sicher, dass keine 404 Errors geworden werden.
 
 > * 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
-* [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker).
+* [ ] **Adblockers Test:** ![Medium][medium_img] Deine Webseite zeigt deinen Inhalt korrekt an, wenn Nutzer ihren Adblocker aktiviert haben. (Du kannst Nachrichten vorschalten, welche die Nutzer dazu auffordert, ihren Adblocker auszuschalten).
 
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
 ## Webfonts
 
-> **Notes:** Using webfonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing webfont loaders to control behavior.
-> * 📖 [Google Technical considerations about webfonts](https://developers.google.com/fonts/docs/technical_considerations)
+> **Information:** Das nutzen von Webfonts kann zu "Flash Of Unstyled Text/Flash of Invisible Text" führen. Erwäge mit "fallback fonts" und/oder "webfont loaders" zu benutzen. 
+> * 📖 [Google's technische Betrachtung über Webfonts](https://developers.google.com/fonts/docs/technical_considerations)
 
-* [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
+* [ ] **Webfont Format:** ![High][high_img] WOFF, WOFF2 und TTF werden von allen modernen Browsern unterstützt.
 
 > * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
 > * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
 > * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
-> * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
+> * 📖 [Nutzen von @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
-* [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
+* [ ] **Webfont Größe/webfont size:** ![High][high_img] Webfonts dürfen die Größe von 2 MB nicht überschreiten (Alle Varianten inbegriffen)
 
-* [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader
-
+* [ ] **Webfont Lader/webfont loader:** ![Low][low_img] Kontrolliere das Ladeverhalten mit einem "webfont loader"
 > * 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
 ## CSS
 
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/). There is also a short [Code Guide](http://codeguide.co/) for consistency.
+> **Information:** Schaue dir [CSS Richtlinien](https://cssguidelin.es/) und [Sass Richtlinien](https://sass-guidelin.es/) an, welche von den meisten Front-End Entwicklern befolgt werden. Wenn du Zweifel an CSS Eigenschaften hast kannst du [CSS Referenzen](http://cssreference.io/) besuchen. Dort gibt es außerdem eine kurze [Code Anleitung](http://codeguide.co/) für Einheitlichkeit.
 
-* [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
-* [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor.
-* [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
-* [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
+* [ ] **Responsives Web Design:** ![High][high_img] Die Webseite benutzt responsives Web Design.
+* [ ] **CSS Print:** ![Medium][medium_img] Es existiert ein "print stylesheet", welcher korrekt auf jeder Seite ist.
+* [ ] **Präprozessor/Preprocessors:** ![Low][low_img] Dein Projekt nutzt einen CSS Präprozessor
+* [ ] **Einzigartige ID's/Unique ID:** ![High][high_img] Solltest du ID's nutzen, sind diese einzigartig zur Seite
+* [ ] **Reset CSS:** ![High][high_img] Ein CSS reset (reset, normalize or reboot) ist in Benutzung und auf dem neusten Stand. *(Solltest du ein CSS Framework wie Bootstrap oder Foundation nutzen, ist eine "Normalize" bereits enthalten)*
 
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
 > * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
 
-* [ ] **JS prefix:** ![Low][low_img] All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
+* [ ] **JS prefix:** ![Low][low_img] oder ID's, welche in JavaScript Dateien genutzt werden, beginnen mit **js-** und sind nicht mit CSS Dateien vermischt.
 
 ```html
 <div id="js-slider" class="my-slider">
-<!-- Or -->
+<!-- Oder -->
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
-* [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
+* [ ] **eingebettetes CSS/embedded or inline CSS:** ![High][high_img] Vermeide es dringlichst eingebettetes CSS in `<style>` Tags zu schreiben. Nutze dies nur für einen zulässigen Grund (z.B. background-image für slilder, critical CSS).
+* [ ] **"Lieferanten Präfixe"/Vendor prefixes:** ![High][high_img] Es werden CSS-Herstellerpräfixe verwendet, die entsprechend der Kompatibilität mit Ihrem Browser generiert werden.
+
 
 > * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
-### Performance
+### Performanz
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
+- [ ] **Verknüpfung/Concatenation:** ![High][high_img] CSS Dateien sind in einer einzelnen Datei verknüpft *(gilt nicht für HTTP/2)*.
+- [ ] **Minimierungen/Minification:** ![High][high_img] Alle Dateien sind minimiert.
+- [ ] **Non-blocking:** ![Medium][medium_img] CSS Dateien müssen non-blocking sein, um zu verhindern das der DOM Zeit zum laden benötigt
 
-> * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
-> * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
+> * 📖 [loadCSS von filament group](https://github.com/filamentgroup/loadCSS)
+> * 📖 [Beispiel von "preload CSS", welches loadCSS nutzt ](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
+- [ ] **Ungenutztes/Unused CSS:** ![Low][low_img] Entferne ungenutztes CSS.
 
 > * 🛠 [UnCSS Online](https://uncss-online.com/)
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
@@ -354,53 +354,53 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ### CSS testing
 
-* [ ] **Stylelint:** ![High][high_img] All CSS or SCSS files are without any errors.
+* [ ] **Stylelint:** ![High][high_img] Alle CSS oder SCSS Dateien haben keine Fehler.
 
-> * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
-> * 📖 [Sass guidelines](https://sass-guidelin.es/)
+> * 🛠 [stylelint, ein CSS linter](https://stylelint.io/)
+> * 📖 [Sass Richtlinien](https://sass-guidelin.es/)
 
-* [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be more / different according to your analytics).
+* [ ] **Responsives/Responsive web design:** ![High][high_img] Alle Seiten wurden an folgenden Punkten getestet: 320px, 768px, 1024px (könnte eventuell mehr/anders sein, abhängig von deinen analytics)
 
-* [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
+* [ ] **CSS Validierer/CSS Validator:** ![Medium][medium_img] Der CSS Code wurde getestet und alle relevanten Fehler wurden beseitigt
 
-> * 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
+> * 🛠 [CSS Validierer](https://jigsaw.w3.org/css-validator/)
 
-* [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
-* [ ] **OS:**  ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
+* [ ] **Desktop Browsers:** ![High][high_img] Alle Seiten wurden in den derzeitig aktuellen Desktop Browsern getestet (Safari, Firefox, Chrome, Safari...).
+* [ ] **Mobile Browsers:**  ![High][high_img] Alle Seiten wurden in den derzeitig aktuellen mobilen Browsern getestet (Native browser, Chrome, Safari...).
+* [ ] **OS:**  ![High][high_img] Alle Seiten wurden auf allen derzeitigen OS getestet (Windows, Android, iOS, Mac...).
 
-- [ ] **Pixel perfect:** ![High][high_img] Pages are close to pixel perfect. Depending on the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
+- [ ] **Pixel perfect:** ![High][high_img] Alle Seiten sind nahe an der Perfektion. Hängt von der Kreativität der Designer ab, jedoch sollte die Seite sehr nah an dem vorgebenen Template anliegen. 
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
-* [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
+* [ ] **Leserichtung/Reading direction:** ![High][high_img] Alle Seiten sollten auf LTR und RTL Sprachen getestet werden, wenn man sie unterstützen muss.
 
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
+> * 📖 [Bauen von RTL Web Apps & Webseiten: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
+> * 📖 [Bauen von RTL Web Apps & Webseiten: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Images
+## Bilder
 
-> **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
+> **Information:** Um die Optimierung von Bildern komplett zu verstehen sollte man sich das eBook **[Essential Image Optimization](https://images.guide/)** von Addy Osmani anschauen.
 
-### Best practices
+### Optimale Vorgehensweise/best practices
 
-* [ ] **Optimization:** ![High][high_img] All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
+* [ ] **Optimierung/Optimization:** ![High][high_img] Alle Bilder sind optimiert, damit sie im Browser gerendert werden. Das WebP Format sollte für kritische Seiten (z.B. Homepage) genutzt werden.
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
-> * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
-> * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
+> * 🛠 Nutze [ImageOptim](https://imageoptim.com/) um deine Bilder kostenlos zu optimieren.
+> * 🛠 Nutze [Kraken.io](https://kraken.io/web-interface) fantastische Alternative für .png und .jpg Optimierung. (Bis zu 1mb pro Datei sind kostenlos bereit gestellt dort).
 
-* [ ] **Picture/Srcset:** ![Medium][medium_img] You use picture/srcset to provide the most appropriate image for the current viewport of the user.
+* [ ] **Bilder&/Picture/Srcset:** ![Medium][medium_img] Nutze picture/srcset um das bestmöglichste Bild auf den derzeitigen "viewport" des Users anbieten zu können.
 
-> * 📖 [How to Build Responsive Images with srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
+> * 📖 [Wie baut man responsive Bilder mit srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
 
-* [ ] **Retina:** ![Low][low_img] You provide layout images 2x or 3x, support retina display.
-* [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
-* [ ] **Width and Height:** ![High][high_img] Set `width` and `height` attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
+* [ ] **Retina:** ![Low][low_img] Biete dem Nutzer Layoutbilder 2x oder 3x an, welche Retina Display supporten.
+* [ ] **Sprite:** ![Medium][medium_img] Kleine Bilder sind in einem "Sprite". (Wenn man Icons hat, können diese in einem SVP sprite image abgespeichert werden). 
+* [ ] **Width and Height:** ![High][high_img] Setze `width` und `height` attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
 * [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
 
 > * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
