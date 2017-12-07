@@ -1,5 +1,5 @@
 {
-  "name": "Front-End-Checklist",
+  "name": "front-end-checklist",
   "version": "0.0.1",
   "description": "The perfect Front-End Checklist for modern websites and meticulous developers",
   "scripts": {
@@ -27,7 +27,7 @@
     "babel-register": "^6.26.0",
     "browser-sync": "^2.18.13",
     "chai": "^4.1.2",
-    "critical": "^0.9.1",
+    "critical": "^1.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-flowtype": "^2.39.1",

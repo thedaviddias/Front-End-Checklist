@@ -74,6 +74,7 @@
         top: 50px;
         flex-direction: column;
         width: auto;
+        will-change: transform;
       }
 
       .c-button {
