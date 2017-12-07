@@ -514,6 +514,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 - [ ] **Page weight:** ![High][high_img] The weight of each page is between 0 and 500 KB.
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
+> * 🛠 [WebPageTest](https://www.webpagetest.org/)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 * [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
