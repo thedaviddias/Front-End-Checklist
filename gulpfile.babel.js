@@ -258,8 +258,8 @@ gulp.task('browser-sync', () => {
       index: 'index.html'
     },
 		notify: false,
-    browser: false,
-    open: false
+    browser: true,
+    open: true
 	});
 });
 
