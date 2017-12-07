@@ -361,11 +361,11 @@ gulp.task("watch", function () {
   gulp.watch(['test/**'], ['mocha']);
 });
 
-gulp.task("dev", ['compile-styles', 'json-rebuild', "browser-sync", "watch"]);
+gulp.task('dev', ['compile-styles', 'compress-images', 'webpack', 'json-rebuild', 'browser-sync', 'watch']);
 
-gulp.task("build", (done) => {
+gulp.task('build', (done) => {
   runSequence(
-    ['json-rebuild', 'modernizr', "clean-dist"],
+    ['json-rebuild', 'modernizr', 'clean-dist'],
     ['lint-css'],
     ['minify-html', 'compile-styles', 'compress-images', 'webpack'],
     ['critical'],
@@ -376,8 +376,8 @@ gulp.task("build", (done) => {
   done);
 });
 
-gulp.task("test", (done) => {
-  runSequence("clean-coverage", "coverage", "mocha", "report", done);
+gulp.task('test', (done) => {
+  runSequence('clean-coverage', 'coverage', 'mocha', 'report', done);
 });
 
-gulp.task("default", ["browser-sync", "watch"]);
+gulp.task('default', ['browser-sync', 'watch']);
