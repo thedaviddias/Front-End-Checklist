@@ -6,14 +6,14 @@
     "tools": [
       {
         "title": "Google Analytics",
-        "url": "https://analytics.google.com/analytics/web/",
+        "url": "https://analytics.google.com/analytics/web/"
       },
       {
         "title": "GA Checker (and others)",
-        "url": "http://www.gachecker.com/",
-      },
+        "url": "http://www.gachecker.com/"
+      }
     ],
-    "tags": ["all", "seo"],
+    "tags": ["all", "seo"]
   },
   {
     "title": "Headings logic",
@@ -23,10 +23,10 @@
     "tools": [
       {
         "title": "Tota11y, tab Headings",
-        "url": "http://khan.github.io/tota11y/#Try-it",
-      },
+        "url": "http://khan.github.io/tota11y/#Try-it"
+      }
     ],
-    "tags": ["all", "seo", "accessibility", "html"],
+    "tags": ["all", "seo", "accessibility", "html"]
   },
   {
     "title": "sitemap.xml",
@@ -37,10 +37,10 @@
     "tools": [
       {
         "title": "Sitemap generator",
-        "url": "https://websiteseochecker.com/html-sitemap-generator/",
-      },
+        "url": "https://websiteseochecker.com/html-sitemap-generator/"
+      }
     ],
-    "tags": ["all", "seo"],
+    "tags": ["all", "seo"]
   },
   {
     "title": "robots.txt",
@@ -49,16 +49,16 @@
     "documentation": [
       {
         "title": "The robots.txt file",
-        "url": "https://varvy.com/robottxt.html",
-      },
+        "url": "https://varvy.com/robottxt.html"
+      }
     ],
     "tools": [
       {
         "title": "Test your robots.txt with Google Robots Testing Tool",
-        "url": "https://www.google.com/webmasters/tools/robots-testing-tool",
-      },
+        "url": "https://www.google.com/webmasters/tools/robots-testing-tool"
+      }
     ],
-    "tags": ["all", "seo", "testing"],
+    "tags": ["all", "seo", "testing"]
   },
   {
     "title": "Structured Data",
@@ -69,42 +69,42 @@
       {
         "title": "Introduction to Structured Data - Search - Google Developers",
         "url":
-          "https://developers.google.com/search/docs/guides/intro-structured-data",
+          "https://developers.google.com/search/docs/guides/intro-structured-data"
       },
       {
         "title": "RDFa - Linked Data in HTML",
-        "url": "https://rdfa.info/",
+        "url": "https://rdfa.info/"
       },
       {
         "title": "JSON-LD",
-        "url": "https://json-ld.org/",
+        "url": "https://json-ld.org/"
       },
       {
         "title": "Microdata",
-        "url": "https://www.w3.org/TR/microdata/",
+        "url": "https://www.w3.org/TR/microdata/"
       },
       {
         "title": "Test your page with the Structured Data Testing Tool",
-        "url": "https://developers.google.com/structured-data/testing-tool/",
+        "url": "https://developers.google.com/structured-data/testing-tool/"
       },
       {
         "title":
           "Complete list of vocabularies that can be used as structured data. Schema.org Full Heirarchy",
-        "url": "http://schema.org/docs/full.html",
-      },
+        "url": "http://schema.org/docs/full.html"
+      }
     ],
     "tools": [
       {
         "title": "Test your page with the Structured Data Testing Tool",
-        "url": "https://developers.google.com/structured-data/testing-tool/",
+        "url": "https://developers.google.com/structured-data/testing-tool/"
       },
       {
         "title":
           "Complete list of vocabularies that can be used as structured data on Schema.org Full Hierarchy",
-        "url": "http://schema.org/docs/full.html",
-      },
+        "url": "http://schema.org/docs/full.html"
+      }
     ],
-    "tags": ["all", "seo", "testing"],
+    "tags": ["all", "seo", "testing"]
   },
   {
     "title": "Sitemap HTML",
@@ -114,10 +114,10 @@
     "documentation": [
       {
         "title": "Sitemap guidelines - Google Support",
-        "url": "https://support.google.com/webmasters/answer/183668?hl=en",
-      },
+        "url": "https://support.google.com/webmasters/answer/183668?hl=en"
+      }
     ],
-    "tags": ["all", "seo", "html"],
+    "tags": ["all", "seo", "html"]
   },
   {
     "title": "Pagination link tags",
@@ -127,15 +127,15 @@
     "documentation": [
       {
         "title": "Pagination guidelines - Google Support",
-        "url": "https://support.google.com/webmasters/answer/1663744?hl=en",
-      },
+        "url": "https://support.google.com/webmasters/answer/1663744?hl=en"
+      }
     ],
     "tools": [
       {
         "title": "Pagination (rel=\"prev/next\") Testing Tool",
-        "url": "https://technicalseo.com/seo-tools/rel-prev-next/",
-      },
+        "url": "https://technicalseo.com/seo-tools/rel-prev-next/"
+      }
     ],
-    "tags": ["all", "seo", "html"],
-  },
-];
+    "tags": ["all", "seo", "html"]
+  }
+]
