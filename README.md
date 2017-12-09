@@ -93,14 +93,15 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 > * 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/)
 
-* [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
+* [ ] **Description:** ![High][high_img] A meta description is provided, it must be unique and doesn't possess more than 230 characters.
 
 ```html
 <!-- Meta Description -->
-<meta name="description" content="Description of the page less than 150 characters">
+<meta name="description" content="Description of the page less than 230 characters">
 ```
 
 > * 📖 [Meta Description - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
+> * 📖 [Google officially increases length of snippets in search results](https://searchengineland.com/google-officially-increases-length-snippets-search-results-287596)
 
 * [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format (dimensions: 32x32px).
 
