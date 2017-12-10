@@ -400,7 +400,7 @@ Das minimal benötigte xml markup/Auszeichnung für die Datei `browserconfig.xml
 
 * [ ] **Retina:** ![Low][low_img] Biete dem Nutzer Layoutbilder 2x oder 3x an, welche Retina Display supporten.
 * [ ] **Sprite:** ![Medium][medium_img] Kleine Bilder sind in einem "Sprite". (Wenn man Icons hat, können diese in einem SVP sprite image abgespeichert werden). 
-* [ ] **Width and Height:** ![High][high_img] Setze `width` und `height` attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
+* [ ] **Width and Height:** ![High][high_img] Setze `width` und `height` Attribute in`<img>`, wenn die finale Größe des Bildes bekannt ist.(Kann für CSS Größenbestimmung weggelassen werden).
 * [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
 
 > * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
