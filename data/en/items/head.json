@@ -43,7 +43,7 @@
     "title": "Title",
     "priority": "High",
     "description": "A title is used on all pages",
-    "detail": "SEO: Google calculate the pixel width of the characters used in the title, cut off between 472 and 482 pixels. Average character limit would be around 55-characters",
+    "detail": "SEO: Google calculates the pixel width of the characters used in the title and cuts off between 472 and 482 pixels. Average character limit would be around 55 characters",
     "code": "https://gist.github.com/thedaviddias/65d0df3b6e2ebcb0d3c738b40f6ff313.js",
     "documentation": [
       {
@@ -105,15 +105,18 @@
     "tags": ["all", "Meta tag"]
   },
   {
-    "title": "Apple Touch Icon",
+    "title": "Apple Web App Meta",
     "priority": "Low",
-    "description": "Apple touch favicon apple-mobile-web-app-capable are present",
-    "detail": "Create your Apple Icon file with at least 200x200px dimension to support all dimensions that you may need.",
+    "description": "Apple meta-tags are present.",
     "code": "https://gist.github.com/thedaviddias/4fbbc4c83cd76ebd0d2f18cc1b40f1a9.js",
     "documentation": [
       {
         "title": "Configuring Web Applications",
         "url": "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html"
+      },
+      {
+        "title": "Supported Meta Tags",
+        "url": "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html"
       }
     ],
     "tags": ["all", "Meta tag"]
