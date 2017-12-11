@@ -244,7 +244,7 @@ gulp.task("webpack", () => {
 // ========================================
 
 gulp.task('compress-images', ['compress-webp'], () => {
-  return gulp.src(dirs.src + '/img/**/*.{jpg,png}')
+  return gulp.src(dirs.src + '/img/**/*.{jpg,png,svg}')
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imagemin.optipng({optimizationLevel: 5})

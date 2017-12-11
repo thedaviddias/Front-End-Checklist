@@ -19,10 +19,15 @@
     }
 
     &__column {
-      padding: 8px 4px;
+      // padding: 8px 4px;
+      padding: 0 0 10px 0;
 
       @include mq('handheld') {
         padding: 2px;
+      }
+
+      @include mq('handheld-and-up') {
+        padding: 8px 4px;
       }
 
       @include mq('print') {
@@ -66,12 +71,13 @@
 
       label {
         font-weight: 400;
-        line-height: 1.4;
+        line-height: 1;
         position: relative;
         display: block;
 
         @include mq('handheld-and-up') {
           font-size: 1.6rem;
+          line-height: 1.4;
         }
 
         &::before {
