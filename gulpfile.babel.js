@@ -63,14 +63,7 @@ function getDirectories(srcPath) {
 const langs = getDirectories(dataFolder) || [];
 
 if (argv.l === undefined) {
-  argv.l = 'en';
-}
-
-const dir = './.tmp';
-
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-    fs.closeSync(fs.openSync('./.tmp/critical.min.css', 'w'));
+  argv.l = 'en'; // Default language
 }
 
 const dirs = {
@@ -120,31 +113,23 @@ gulp.task('pug-rebuild', ['compile-pug'], () => {
 	browserSync.reload();
 });
 
-gulp.task('minify-html', ['compile-all-pug'], () => {
-  langs.map(lang => {
-    return gulp.src(`./.tmp/index-${lang}.html`)
-      .pipe(htmlreplace({
-        css: {
-          src: '/styles/main.min.css',
-          tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
-        },
-        nocss: {
-          src: '/styles/main.min.css',
-        }
-      }))
-      .pipe(htmlmin({
-        collapseWhitespace: true,
-        removeComments: true
-      }))
-      .pipe(rename({
-        basename: 'index'
-      }))
-      .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
-  })
-});
+// gulp.task('minify-html', () => {
+//   langs.forEach(lang => {
+//     return gulp.src(`./dist/index-en.html`)
+//       .pipe(htmlmin({
+//         collapseWhitespace: true,
+//         removeComments: true
+//       }))
+//       .pipe(rename({
+//         basename: 'index'
+//       }))
+//       // .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
+//       .pipe(gulp.dest(`${dirs.dest}`));
+//   })
+// });
 
 gulp.task('compile-all-pug', () => {
-  langs.map(lang => {
+  langs.forEach(lang => {
     return gulp.src(`${dirs.src}/views/index-${lang}.pug`)
       .pipe(data(() => {
         return require(`./data/${lang}/_project.json`);
@@ -153,7 +138,7 @@ gulp.task('compile-all-pug', () => {
         locals: {},
         pretty: true
       }))
-      .pipe(gulp.dest('./.tmp'));
+      .pipe(gulp.dest(`${dirs.dest}`));
   });
 })
 
@@ -185,18 +170,27 @@ gulp.task('compile-styles', () => {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', () => {
-  return gulp.src(dirs.dest + '/*.html')
-    .pipe(critical({
-      base: 'dist/',
-      inline: false,
-      dest: '../.tmp/critical.min.css',
-      css: 'dist/styles/main.min.css',
-      minify: true,
-      ignore: [/url\(/, '@font-face', /print/]
-    }))
-    // .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
-    // .pipe(gulp.dest(dirs.dest));
+  langs.forEach(lang => {
+    return gulp.src(`${dirs.dest}/index-${lang}.html`)
+      .pipe(critical({
+        base: 'dist/',
+        inline: true,
+        css: 'dist/styles/main.min.css',
+        minify: true,
+        ignore: [/url\(/, '@font-face', /print/]
+      }))
+      .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(rename({
+        basename: 'index'
+      }))
+      .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
+  })
 });
+
+        // dest: '../.tmp/critical.min.css',
 
 gulp.task('lint-css', function lintCssTask() {
   const gulpStylelint = require('gulp-stylelint');
@@ -310,44 +304,44 @@ gulp.task('browser-reload', () => {
 // MISC
 // ========================================
 
-
 gulp.task('cdn', () => {
-return gulp.src('./dist/index.html')
-  .pipe(cdnizer({
-    defaultCDNBase: "//everywhere-8a59.kxcdn.com",
-    allowRev: true,
-    files: [
-      '/scripts/app.bundle.js',
-      '/styles/main.min.css',
-      '/favicon-32x32.png',
-      '/favicon-16x16.png',
-      '/apple-touch-icon.png',
-      '/browserconfig.xml',
-      '/service-worker.js',
-      '/safari-pinned-tab.svg',
-      '/manifest.json',
-      '/img/social/facebook-banner.jpg',
-      '/img/logos/logo-front-end-checklist.jpg',
-      '/img/logos/logo-front-end-checklist.webp'
-    ]
-  }))
-  .pipe(gulp.dest(dirs.dest));
+  langs.forEach(lang => {
+    return gulp.src(`./dist/index-${lang}.html`)
+      .pipe(cdnizer({
+        defaultCDNBase: "//everywhere-8a59.kxcdn.com",
+        allowRev: true,
+        files: [
+          '/scripts/app.bundle.js',
+          '/styles/main.min.css',
+          '/favicon-32x32.png',
+          '/favicon-16x16.png',
+          '/apple-touch-icon.png',
+          '/browserconfig.xml',
+          '/service-worker.js',
+          '/safari-pinned-tab.svg',
+          '/manifest.json',
+          '/img/social/facebook-banner.jpg',
+          '/img/logos/logo-front-end-checklist.jpg',
+          '/img/logos/logo-front-end-checklist.webp'
+        ]
+      }))
+      .pipe(gulp.dest(dirs.dest))
+    })
 });
 
-
 gulp.task("clean-dist",  () => {
-  return del(["./dist"], {force: true});
+  return del(['./dist'], {force: true});
 });
 
 gulp.task("clean-tmp",  () => {
-  return del(['./.tmp'], {force: true});
+  return del(['!./dist/index.html', './dist/index-*.html'], {force: true});
 });
 
 gulp.task("clean-coverage",  () => {
   return del(["./coverage"]);
 });
 
-gulp.task('json-rebuild', ['pug-rebuild'], () => {
+gulp.task('json-rebuild', () => {
   gulp.src(`./data/${argv.l}/items/*.json`)
     .pipe(jsonConcat('./_items.json', (data) => {
       return new Buffer(JSON.stringify(data));
@@ -379,8 +373,8 @@ gulp.task('copy', () => {
 });
 
 
-gulp.task( 'modernizr', (done) => {
-  modernizr.build(modernizrConfig, (code) => {
+gulp.task( 'modernizr', done => {
+  modernizr.build(modernizrConfig, code => {
     fs.writeFile(`${dirs.src}/modernizr-custom.min.js`, code, done);
   });
 });
@@ -400,19 +394,19 @@ gulp.task("watch", function () {
   gulp.watch(['test/**'], ['mocha']);
 });
 
-gulp.task('dev', ['compile-styles', 'compress-images', 'webpack', 'json-rebuild', 'browser-sync', 'watch']);
+gulp.task('dev', ['compile-pug', 'compile-styles', 'compress-images', 'webpack', 'json-rebuild', 'browser-sync', 'watch']);
 
 gulp.task('build', done => {
   runSequence(
-    ['json-rebuild', 'modernizr', 'clean-dist'],
+    ['clean-dist', 'json-rebuild', 'modernizr'],
     ['lint-css'],
-    ['minify-html', 'compile-styles', 'compress-images', 'webpack'],
-    ['critical'],
-    ['minify-html'],
+    ['compile-all-pug'],
+    ['compile-styles', 'compress-images', 'webpack'],
     ['cdn'],
-    ['clean-tmp'],
-    'copy',
-  done);
+    ['critical', 'copy'],
+
+    // ['clean-tmp'],
+    done);
 });
 
 gulp.task('test', done => {
