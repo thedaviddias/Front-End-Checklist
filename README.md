@@ -746,7 +746,7 @@ Danke an all unsere backers! 🙏 [[Werde ein backer](https://opencollective.com
 <a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890"></a>
 
 
-## Sponsors
+## Sponsoren
 
 Unterstütze dieses Projekt, indem du ein Sponsor wirst. Dein Logo wird hier gezeigt mit einer Verlinkung zu deiner Webseite. [[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
 
