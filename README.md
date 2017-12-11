@@ -30,7 +30,7 @@ It is based on Front-End developers' years of experience, with the additions com
 
 ---
 
-## Translation
+## Translations
 
 The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
 
