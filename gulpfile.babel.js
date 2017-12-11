@@ -260,24 +260,24 @@ gulp.task('compress-webp', () => {
 
 gulp.task("coverage", function () {
   return  gulp.src(dirs.src + '/scripts/**/*.js')
-  .pipe(istanbul({
-      includeUntested: true
-  }))
-  .pipe(istanbul.hookRequire());
+    .pipe(istanbul({
+        includeUntested: true
+    }))
+    .pipe(istanbul.hookRequire());
 });
 
 gulp.task("report", function () {
   gulp.src(dirs.src + '/scripts/**/*.js', { read: false })
-  .pipe(istanbul.writeReports());
+    .pipe(istanbul.writeReports());
 });
 
 gulp.task("mocha", function () {
   return gulp.src("test/**/*.test.js", { read: false })
-  .pipe(mocha({
-    reporter: 'spec',
-    compilers: 'js:babel-core/register',
-    require: ['jsdom-global']
-  }));
+    .pipe(mocha({
+      reporter: 'spec',
+      compilers: 'js:babel-core/register',
+      require: ['jsdom-global']
+    }));
 });
 
 // ========================================
@@ -342,7 +342,7 @@ gulp.task("clean-coverage",  () => {
 });
 
 gulp.task('json-rebuild', () => {
-  gulp.src(`./data/${argv.l}/items/*.json`)
+  return gulp.src(`./data/${argv.l}/items/*.json`)
     .pipe(jsonConcat('./_items.json', (data) => {
       return new Buffer(JSON.stringify(data));
     }))
@@ -358,6 +358,23 @@ gulp.task('json-rebuild', () => {
     .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('json-rebuild-all', () => {
+  langs.forEach(lang => {
+    return gulp.src(`./data/${lang}/items/*.json`)
+      .pipe(jsonConcat('./_items.json', (data) => {
+        return new Buffer(JSON.stringify(data));
+      }))
+      .pipe(gulp.dest(`./data/${lang}`))
+
+      .on('finish', () => {
+        return gulp.src([ `./data/${lang}/_items.json`, `./data/${lang}/project/*.json`])
+          .pipe(jsonConcat('./_project.json', (data) => {
+            return new Buffer(JSON.stringify(data));
+          }))
+          .pipe(gulp.dest(`./data/${lang}`));
+      })
+    });
+});
 
 gulp.task('copy', () => {
   return gulp.src([
@@ -398,7 +415,7 @@ gulp.task('dev', ['compile-pug', 'compile-styles', 'compress-images', 'webpack',
 
 gulp.task('build', done => {
   runSequence(
-    ['clean-dist', 'json-rebuild', 'modernizr'],
+    ['clean-dist', 'json-rebuild-all', 'modernizr'],
     ['lint-css'],
     ['compile-all-pug'],
     ['compile-styles', 'compress-images', 'webpack'],
