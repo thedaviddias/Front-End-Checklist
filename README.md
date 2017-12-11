@@ -27,6 +27,9 @@ It is based on Front-End developers' years of experience, with the additions com
 8. **[Performance](#performance-1)**
 9. **[Accessibility](#accessibility)**
 10. **[SEO](#seo)**
+11. **[Translations](#translations)**
+
+---
 
 ## How to use?
 
@@ -681,7 +684,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ---
 
-## Translation
+## Translations
 
 The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
 
