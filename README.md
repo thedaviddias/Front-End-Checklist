@@ -315,7 +315,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 * [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
 * [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor.
+* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor (e.g [Sass](http://sass-lang.com/), [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/)).
 * [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
 * [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
 
@@ -369,7 +369,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 * [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
 * [ ] **OS:**  ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
 
-- [ ] **Pixel perfect:** ![High][high_img] Pages are close to pixel perfect. Depending on the quality of the creatives, you may not be 100% accurate, but your page needs to be close to your template.
+- [ ] **Design fidelity:** ![Low][low_img] Depending the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
@@ -436,6 +436,11 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 * [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
 
 > * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
+
+* [ ] **Optimized and updated JS librairies:** ![Medium][medium_img] All JavaScript librairies used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their lastest version and don't overwhelm your JavaScript with unnecessary methods.
+
+> * 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
+> * 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
 
 * [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
 
@@ -509,6 +514,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 - [ ] **Page weight:** ![High][high_img] The weight of each page is between 0 and 500 KB.
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
+> * 🛠 [WebPageTest](https://www.webpagetest.org/)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 * [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
