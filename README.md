@@ -45,6 +45,8 @@ Some resources possess an emoticon to help you understand which type of content 
 * 🛠: online tool / testing tool
 * 📹: media or video content
 
+> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explain everything about the project.
+
 ---
 
 ## Head
@@ -739,9 +741,9 @@ If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
 * [Facebook](https://www.facebook.com/frontendchecklist/)
 * [Twitter](https://twitter.com/thedaviddias)
 
-## Authors
+## Author
 
-**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
+**[David Dias](https://github.com/thedaviddias)**
 
 ## Contributors
 

@@ -55,11 +55,17 @@ To add a new translation for the Front-End Checklist, you just need to translate
         img(src="/img/flags/jp.svg" width="20" height="15" alt="Japanese language")
   ```
 
+## Author
+
+**[David Dias](https://github.com/thedaviddias)**
+
 ## Contribute
 
 ## License
 
-[MIT © David Dias](../LICENSE)
+[![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+**[⬆ back to top](#table-of-contents)**
 
 
 
