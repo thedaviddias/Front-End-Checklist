@@ -38,6 +38,7 @@ import jsonConcat from 'gulp-json-concat';
 import plumber from "gulp-plumber";
 import htmlreplace from 'gulp-html-replace';
 import cdnizer from "gulp-cdnizer";
+import gulpif from 'gulp-if';
 
 import modernizr from 'modernizr';
 import modernizrConfig from './modernizr-config.json';
@@ -45,11 +46,32 @@ import modernizrConfig from './modernizr-config.json';
 import del from "del";
 import rename from "gulp-rename";
 
+const argv = require('yargs').argv;
+
 import pkg from './package.json';
 
 // ========================================
 // VARIABLES
 // ========================================
+
+const dataFolder = './data';
+
+function getDirectories(srcPath) {
+  return fs.readdirSync(srcPath).filter(file => fs.statSync(path.join(srcPath, file)).isDirectory())
+}
+
+const langs = getDirectories(dataFolder) || [];
+
+if (argv.l === undefined) {
+  argv.l = 'en';
+}
+
+const dir = './.tmp';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+    fs.closeSync(fs.openSync('./.tmp/critical.min.css', 'w'));
+}
 
 const dirs = {
 	root: '.',
@@ -63,17 +85,12 @@ const sassPaths = {
 };
 
 const pugPaths = {
-  src: `${dirs.src}/views/index.pug`,
+  src: `${dirs.src}/views/index-${argv.l}.pug`,
 };
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-var dir = './.tmp';
 
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-    fs.closeSync(fs.openSync('./.tmp/critical.min.css', 'w'));
-}
 
 // ========================================
 // PUG / HTML
@@ -86,11 +103,14 @@ gulp.task('compile-pug', () => {
       this.emit('end');
     }))
     .pipe(data(() => {
-      return require('./data/en/_project.json');
+      return require(`./data/${argv.l}/_project.json`);
     }))
 		.pipe(pug({
       locals: {},
       pretty: true
+    }))
+    .pipe(rename({
+      basename: 'index'
     }))
     .pipe(gulp.dest(dirs.dest))
     .pipe(browserSync.reload({stream: true}));
@@ -100,23 +120,42 @@ gulp.task('pug-rebuild', ['compile-pug'], () => {
 	browserSync.reload();
 });
 
-gulp.task('minify-html', ['compile-pug'], () => {
-  return gulp.src('./dist/*.html')
-    .pipe(htmlreplace({
-      css: {
-        src: '/styles/main.min.css',
-        tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
-      },
-      nocss: {
-        src: '/styles/main.min.css',
-      }
-    }))
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
-    .pipe(gulp.dest(dirs.dest));
+gulp.task('minify-html', ['compile-all-pug'], () => {
+  langs.map(lang => {
+    return gulp.src(`./.tmp/index-${lang}.html`)
+      .pipe(htmlreplace({
+        css: {
+          src: '/styles/main.min.css',
+          tpl: '<link rel="preload" href="%s" as="style" onload="this.rel=\'stylesheet\'">'
+        },
+        nocss: {
+          src: '/styles/main.min.css',
+        }
+      }))
+      .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(rename({
+        basename: 'index'
+      }))
+      .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
+  })
 });
+
+gulp.task('compile-all-pug', () => {
+  langs.map(lang => {
+    return gulp.src(`${dirs.src}/views/index-${lang}.pug`)
+      .pipe(data(() => {
+        return require(`./data/${lang}/_project.json`);
+      }))
+      .pipe(pug({
+        locals: {},
+        pretty: true
+      }))
+      .pipe(gulp.dest('./.tmp'));
+  });
+})
 
 // ========================================
 // CSS
@@ -146,7 +185,7 @@ gulp.task('compile-styles', () => {
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', () => {
-  return gulp.src(dirs.dest + '/index.html')
+  return gulp.src(dirs.dest + '/*.html')
     .pipe(critical({
       base: 'dist/',
       inline: false,
@@ -155,8 +194,8 @@ gulp.task('critical', () => {
       minify: true,
       ignore: [/url\(/, '@font-face', /print/]
     }))
-    .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
-    .pipe(gulp.dest(dirs.dest));
+    // .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+    // .pipe(gulp.dest(dirs.dest));
 });
 
 gulp.task('lint-css', function lintCssTask() {
@@ -301,7 +340,7 @@ gulp.task("clean-dist",  () => {
 });
 
 gulp.task("clean-tmp",  () => {
-  return del(["./.tmp", './dist/index.css'], {force: true});
+  return del(['./.tmp'], {force: true});
 });
 
 gulp.task("clean-coverage",  () => {
@@ -309,18 +348,18 @@ gulp.task("clean-coverage",  () => {
 });
 
 gulp.task('json-rebuild', ['pug-rebuild'], () => {
-  gulp.src("./data/en/items/*.json")
+  gulp.src(`./data/${argv.l}/items/*.json`)
     .pipe(jsonConcat('./_items.json', (data) => {
       return new Buffer(JSON.stringify(data));
     }))
-    .pipe(gulp.dest('./data/en'))
+    .pipe(gulp.dest(`./data/${argv.l}`))
 
     .on('finish', () => {
-      return gulp.src([ "./data/en/_items.json", './data/en/project/*.json'])
+      return gulp.src([ `./data/${argv.l}/_items.json`, `./data/${argv.l}/project/*.json`])
         .pipe(jsonConcat('./_project.json', (data) => {
           return new Buffer(JSON.stringify(data));
         }))
-        .pipe(gulp.dest('./data/en'));
+        .pipe(gulp.dest(`./data/${argv.l}`));
     })
     .pipe(browserSync.reload({stream: true}));
 });
@@ -354,7 +393,7 @@ gulp.task( 'modernizr', (done) => {
 gulp.task("watch", function () {
   gulp.watch(dirs.src + '/styles/**/*.scss', ['lint-css', 'compile-styles']);
   gulp.watch(dirs.src + '/views/**/*.pug', ['pug-rebuild']);
-  gulp.watch(['!'+ dirs.src + '/data/en/**/_*.json', dirs.src + '/data/**/*.json'], ['json-rebuild']); // When JSON files are updated, concatenate these
+  gulp.watch(['!'+ dirs.src + `/data/${argv.l}/**/_*.json`, dirs.src + '/data/**/*.json'], ['json-rebuild']); // When JSON files are updated, concatenate these
   gulp.watch(dirs.src + '/data/**/_*.json', ['compile-pug']); // When JSON are updated, compile PUG files
   gulp.watch(dirs.src + "/img/**/*", ["compress-images"]);
   gulp.watch([dirs.src + '/scripts/**/*.js'], ['lint', 'webpack']);
@@ -363,7 +402,7 @@ gulp.task("watch", function () {
 
 gulp.task('dev', ['compile-styles', 'compress-images', 'webpack', 'json-rebuild', 'browser-sync', 'watch']);
 
-gulp.task('build', (done) => {
+gulp.task('build', done => {
   runSequence(
     ['json-rebuild', 'modernizr', 'clean-dist'],
     ['lint-css'],
@@ -376,7 +415,7 @@ gulp.task('build', (done) => {
   done);
 });
 
-gulp.task('test', (done) => {
+gulp.task('test', done => {
   runSequence('clean-coverage', 'coverage', 'mocha', 'report', done);
 });
 
