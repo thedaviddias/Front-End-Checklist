@@ -8,11 +8,9 @@
 
 ## Table of Contents
 
-- [Security](#security)
-- [Background](#background)
 - [Install](#install)
-- [Usage](#usage)
-- [API](#api)
+- [Install](#install)
+- [Add new translation](#addnewtranslation)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -29,7 +27,7 @@ To install and run, open a terminal and use the following commands:
 ## Usage
 
 
-## Add a new translation
+## Add new translation
 
 To add a new translation for the Front-End Checklist, you just need to translate the original JSON files in English to your own language.
 
@@ -56,6 +54,8 @@ To add a new translation for the Front-End Checklist, you just need to translate
       a(href="/jp")
         img(src="/img/flags/jp.svg" width="20" height="15" alt="Japanese language")
   ```
+
+## Contribute
 
 ## License
 
