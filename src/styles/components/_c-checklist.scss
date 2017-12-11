@@ -20,7 +20,7 @@
 
     &__column {
       // padding: 8px 4px;
-      padding: 0 0 10px 0;
+      padding: 0 0 10px;
 
       @include mq('handheld') {
         padding: 2px;
