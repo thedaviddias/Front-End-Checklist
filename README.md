@@ -400,148 +400,148 @@ Das minimal benötigte xml markup/Auszeichnung für die Datei `browserconfig.xml
 
 * [ ] **Retina:** ![Low][low_img] Biete dem Nutzer Layoutbilder 2x oder 3x an, welche Retina Display supporten.
 * [ ] **Sprite:** ![Medium][medium_img] Kleine Bilder sind in einem "Sprite". (Wenn man Icons hat, können diese in einem SVP sprite image abgespeichert werden). 
-* [ ] **Width and Height:** ![High][high_img] Setze `width` und `height` Attribute in`<img>`, wenn die finale Größe des Bildes bekannt ist.(Kann für CSS Größenbestimmung weggelassen werden).
-* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
+* [ ] **Breite/Höhe/Width and Height:** ![High][high_img] Setze `width` und `height` Attribute in`<img>`, wenn die finale Größe des Bildes bekannt ist.(Kann für CSS Größenbestimmung weggelassen werden).
+* [ ] **Alternativer Text/Alternative text:** ![High][high_img] Alle `<img>` Tags haben einen alternativen Text, welche das Bild visuell beschreiben
 
-> * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
+> * 📖 [Alt-texts: Die ultimative Anleitung](https://axesslab.com/alt-texts/)
 
-* [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
+* [ ] **Lazy loading:** ![Medium][medium_img] Bilder werden "lazyloaded" (Also erst bei konkreter Anfrage aus der Datenquelle geholt). Eine "noscript" Variante sollte stets dabei sein.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
 ## JavaScript
 
-### Best practices
+### Optimale Vorgehensweise/Best practices
 
-* [ ] **JavaScript Inline:** ![High][high_img] You don't have any JavaScript code inline (mixed with your HTML code).
-* [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
-* [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
+* [ ] **JavaScript Inline:** ![High][high_img] Du hast keinen Javascript mit deinem HTML Code vermischt
+* [ ] **Concatenation:** ![High][high_img] JavaScript Dateien sind verknüpft miteinander.
+* [ ] **Minification:** ![High][high_img] JavaScript Dateien wurden minified (Du kannst den `.min` Suffix dafür benutzen).
 
-> * 📖 [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
+> * 📖 [Minify Quellen (HTML, CSS, und JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
 
-* [ ] **JavaScript security:** ![High][high_img]
+* [ ] **JavaScript Sicherheit/JavaScript security:** ![High][high_img]
 
-> * 📖 [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
+> * 📖 [Richtlinien um sichere Applikationen zu entwickeln, welche JavaScript nutzen](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
 
-* [ ] **`noscript` tag:** ![Medium][medium_img] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering heavy apps such as React.js, see [examples](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
+* [ ] **`noscript` tag:** ![Medium][medium_img] Nutze den `<noscript>` Tag im HTML body/Körper, wenn ein Scripttyp auf der Seite nicht unterstützt wird, oder wenn Scripts derzeit im Browser deaktiviert sind. [Beispiele](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
 
 ```html
 <noscript>
-  You need to enable JavaScript to run this app.
+  Du musst JavaScript aktivieren um diese Applikation nutzen zu können.
 </noscript>
 ```
 
-* [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
+* [ ] **Non-blocking:** ![Medium][medium_img] JavaScript Dateien werden asynchron geladen mit `async` oder verzögert mit dem `defer` Tag.
 
-> * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
+> * 📖 [Entfernen von Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-* [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
+* [ ] **Modernizr:** ![Low][low_img] Wenn du eine spezielle Funktion aufzeigen möchtest, kannst du ein benutzerdefinierten Modernizr in deinem `<html>` Tag benutzen.
 
-> * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
+> * 🛠 [ Erstelle deinen eigenen Modernizr](https://modernizr.com/download?setclasses)
 
-### JavaScript testing
+### JavaScript testen/JavaScript testing
 
-* [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
+* [ ] **ESLint:** ![High][high_img] Es werden keine Fehler von ESLint angezeigt (basierend auf deiner Konfiguration, oder deinen Standart Einstellungen).
 
-> * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
+> * 📖 [ESLint - Das Plug n' Play Tool zur Codeanalyse](https://eslint.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Security
+## Sicherheit/Security
 
-### Scan and check your web site
+### Scan und überprüfe deine Webseite/Scan and check your web site
 
 > * [securityheaders.io](https://securityheaders.io/)
-> * [Observatory by Mozilla](https://observatory.mozilla.org/)
-> * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
+> * [Observatory von Mozilla](https://observatory.mozilla.org/)
+> * [ASafaWeb - Automatisierter Sicherheitsanalyst für ASP.NET Webseiten](https://asafaweb.com/)
 
-### Best practices
+### Optimale Vorgehensweise/Best practices
 
-* [ ] **HTTPS:** ![Medium][medium_img] HTTPS is used on every pages and for all external content (plugins, images...).
+* [ ] **HTTPS:** ![Medium][medium_img] HTTPS wird auf jeder Seite genutzt, auch für allen externen Inhalt (Plugins, Bilder...).
 
-> * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
-> * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
+> * 🛠 [Let's Encrypt - Kostenlose SSL/TLS Zertifikate](https://letsencrypt.org/)
+> * 🛠 [Kostenloser SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
 > * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
 
-* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] The HTTP header is set to 'Strict-Transport-Security'.
+* [ ] **HTTP/HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] Der HTTP Header ist auf 'Strict-Transport-Security' gesetzt.
 
-> * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
+> * 🛠 [Überprüfe den HSTS "preload" Status und Berechtigungen](https://hstspreload.org/)
 > * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)
 > * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet)
 
-* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
+* [ ] **Webseiten-übergreifende Anfragenfälschung/Cross Site Request Forgery (CSRF):** ![High][high_img] Du stellst sicher, dass Anfragen auf deinen Server, legitim sind und von deiner Webseite aus entstehen, um sie vor CSRF Attacken zu schützen.
 
-> * 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
+> * 📖 [Cross-Site Request Forgery (CSRF) Präventions Cheat Sheet  - OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet)
 
-* [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
+* [ ] **Webseiten-übergreifendes skripten/Cross Site Scripting (XSS):** ![High][high_img] Deine Seite oder deine Webseite ist frei von XSS möglichen Problemen.
 
-> * 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
-> * 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+> * 📖 [XSS (Cross Site Scripting) Präventions Cheat Sheet  - OWASP](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+> * 📖 [DOM basierender XSS Präventions Cheat Sheet  - OWASP](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 
-* [ ] **Content Type Options:** ![Medium][medium_img] Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
+* [ ] **Content Type Options:** ![Medium][medium_img] Beugt vor, dass bspw. Google Chrome, oder der Internet Explorer mit der MIME-Sniff Methode an unerwünschte Inhalte herankommen.
 
 > * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
 
-* [ ] **X-Frame-Options (XFO):** ![Medium][medium_img] Protects your visitors against clickjacking attacks.
+* [ ] **X-Frame-Options (XFO):** ![Medium][medium_img] Schützt deine Besucher vor "clickjacking" Attacken.
 
 > * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
 > * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
-* [ ] **Content Security Policy:** ![Medium][medium_img] Defines how content is loaded on your site and from where it is permitted to be loaded. Can also be used to protect against clickjacking attacks.
+* [ ] **Content Security Policy:** ![Medium][medium_img] Definiert wie Inhalte auf deiner Seite geladen werden und von wo aus es gestattet ist, sie zu laden. Kann außerdem genutzt werden, um sich vor "clackjacking" Attacken zu schützen.
 
-> * 📖 [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
+> * 📖 [Content Security Policy - Eine Einleitung - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
 > * 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
 > * 📖 [CSP Cheat Sheet - OWASP](https://www.owasp.org/index.php/Content_Security_Policy_Cheat_Sheet)
 > * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Performance
+## Performanz/Performance
 
-### Best practices
+### Optimale Vorgehensweise/Best practices
 
-- [ ] **Page weight:** ![High][high_img] The weight of each page is between 0 and 500 KB.
+- [ ] **Seitengröße/Page weight:** ![High][high_img] Die Speichergröße jeder Seite liegt zwischen 0 und 500 KB.
 
-> * 🛠 [Website Page Analysis](https://tools.pingdom.com)
-> * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
+> * 🛠 [Webseiten Analyse](https://tools.pingdom.com)
+> * 📖 [Speichergrößenlimit: Mache das Web leichter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-* [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
+* [ ] **Minimales HTML/Minified HTML:** ![Medium][medium_img] Dein HTML Code wurde "minified".
 
-* [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
+* [ ] **Lazy loading:** ![Medium][medium_img] Bilder, Skripts und CSS müssen leicht ladbar sein, um die Wartezeit der aktuellen Seite zu verkürzen.
 
-* [ ] **Cookie size:** ![Medium][medium_img] If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
+* [ ] **Cookie size:** ![Medium][medium_img] Solltest du Cookies benutzen, sei dir sicher, dass die Speichergröße der Cookies nicht über 4096 bytes liegt und dass deine Domaine nicht mehr als 20 Cookies besitzt.
 
-> * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
+> * 📖 [Cookie Spezifizierung: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 > * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
-* [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your users activity private.
+* [ ] **Komponente von Drittanbietern/Third party components:** ![Medium][medium_img] Drittanbieter iframes oder Komponente, welche auf externen JS (z.B. sharing buttons) beruhen, wurden wenn möglich durch statische Komponente ersetzt. Das stellt sicher, dass keine externe API aufgerufen wird und hält somit deine Nutzeraktivitäten sicher.
 
-> * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
+> * 🛠 [Einfacher Teil Knopf Generator](https://simplesharingbuttons.com/)
 
-### Preparing upcoming requests
+### Vorbereiten von Anfragen/Preparing upcoming requests
 
-> * 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
+> * 📖 [Erklärung der folgenden Techniken](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
-* [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during idle time using `dns-prefetch`.
+* [ ] **DNS resolution:** ![Low][low_img] Drittanbieter DNS Services, welche eventuell benötigt werden, wurden bereits im Vorfeld in untätiger Zeit aufgelöst mit `dns-prefetch`.
 
 ```html
 <link rel="dns-prefetch" href="https://example.com">
 ```
 
-* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negotiation with services that will be needed soon is done in advance during idle time using `preconnect`.
+* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake und TLS Übertragung mit Diensten, welche zeitnah benötigt werden, wurden bereits im Vorfeld in der untätigen Zeit aufgelöst/angefragt mit `preconnect`.
 
 ```html
 <link rel="preconnect" href="https://example.com">
 ```
 
-* [ ] **Prefetching:** ![Low][low_img] Resources that will be needed soon (e.g. lazy loaded images) are requested in advance during idle time using `prefetch`.
+* [ ] **Prefetching:** ![Low][low_img] Quellen, welche bald benötigt werden (bspw. lazy loaded Bilder), wurden bereits im Vorfeld in der untätigen Zeit aufgelöst/angefragt mit `prefetch`.
 
 ```html
 <link rel="prefetch" href="image.png">
@@ -553,148 +553,147 @@ Das minimal benötigte xml markup/Auszeichnung für die Datei `browserconfig.xml
 <link rel="preload" href="app.js">
 ```
 
-> * 📖 [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
+> * 📖 [Der Unterschied zwischen prefetch und preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
-### Performance testing
+### Performanz Tests/Performance testing
 
-* [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at least 90/100.
+* [ ] **Google Seitengeschwindigkeit/Google PageSpeed:** ![High][high_img] Alle deiner Seiten wurden getestet (nicht nur die Homepage) und haben mindestens ein Ergebnis von 90/100.
 
-> * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-> * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
-> * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
-> * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
+> * 🛠 [Google Seitengeschwindigkeit](https://developers.google.com/speed/pagespeed/insights/)
+> * 🛠 [Teste deine mobile Geschwindigkeit mit Google](https://testmysite.withgoogle.com)
+> * 🛠 [WebPagetest - Webseiten Performanz und Optimalisierungstest](https://www.webpagetest.org/)
+> * 🛠 [GTmetrix - Webseitengeschwindigkeits und Performanz Test](https://gtmetrix.com/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Accessibility
+## Erreichbarkeit/Accessibility
 
-> **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
+> **Information:** Du kannst dir diese Playlist anschauen: [A11ycasts mit Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
-### Best practices
+### Optimale Vorgehensweise/Best practices
 
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
+- [ ] **Andauernde Verbesserung/Progressive enhancement:** ![Medium][medium_img] Hauptfunktionsbereiche wie die Hauptnavigation, oder die Suche sollten funktionieren, wenn JavaScript deaktiviert wurde.
 
-> * 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
+> * 📖 [Aktivieren / Deaktivieren von JavaScript in der GoogleChrome Konsole(https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
+- [ ] **Farbkontrast/Color contrast:** ![Medium][medium_img] Farben sollten mindestens WCAG AA (AAA für Mobile Geräte) bestehen.
 
-> * 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
+> * 🛠 [Kontrast ratio](https://leaverou.github.io/contrast-ratio/)
 
-#### Headings
+#### Überschriften/Headings
 
-* [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High][high_img] Headings should be used properly and in the right order (H1 to H6).
+* [ ] **H1:** ![High][high_img] Alle Seiten haben eine H1, welche nicht der Titel der Webseite ist.
+* [ ] **Überschriften/Headings:** ![High][high_img] Überschriften sollten geeignet und in der richtigen Reihenfolge genutzt werden (H1 zu H6).
 
-> * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+> * 📹 [Wieso Überschriften und landmarks so wichtig sind -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
 #### Landmarks
 
-- [ ] **Role banner:** ![High][high_img] `<header>` has `role="banner"`.
-- [ ] **Role navigation:** ![High][high_img] `<nav>` has `role="navigation"`.
-- [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
+- [ ] **Rolle Banner/Role banner:** ![High][high_img] `<header>` hat `role="banner"`.
+- [ ] **Rolle Navigation/Role navigation:** ![High][high_img] `<nav>` hat `role="navigation"`.
+- [ ] **Rolle Main/Role main:** ![High][high_img] `<main>` hat `role="main"`.
 
-> * 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
-> * 📖 [ARIA roles categorization](https://www.w3.org/TR/wai-aria/roles#roles_categorization)
+> * 📖 [Nutze ARIA Landmarks um Bereiche deiner Seite zu identifizieren](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
+> * 📖 [ARIA Rollen Kategorisierung](https://www.w3.org/TR/wai-aria/roles#roles_categorization)
 
-### Semantics
+### Semantik/Semantics
 
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
+- [ ] **Spezifische HTML5 Input Typen werden genutzt/Specific HTML5 input types are used:** ![Medium][medium_img] Das ist besonders wichtig für Mobile Endgeräte, welche angepasste Keypads oder Widgets verschiedenster Arten benutzen.
 
-> * 📖 [Mobile Input Types](http://mobileinputtypes.com/)
+> * 📖 [Mobile Input Typen](http://mobileinputtypes.com/)
 
 ### Form
 
-* [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be displayed, use `aria-label` instead.
+* [ ] **Label:** ![High][high_img] Ein Label ist mit jedem Eingabe form Element verbunden. Sollte es einmal der Fall sein, dass ein Label nicht angezeigt werden kann nutze dafür `aria-label`.
 
-> * 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
+> * 📖 [Nutzen des aria-label Attributs - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
 
-### Accessibility testing
+### Erreichbarkeits Tests/Accessibility testing
 
-* [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the accessibility standards.
+* [ ] **Erreichbarkeitsstandart Tests/Accessibility standards testing:** ![High][high_img] Nutze das WAVE tool um zu testen, ob deine Seite alle Standart Tests einhält. 
 
 > * 🛠 [Wave testing](http://wave.webaim.org/)
 
-* [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
-* [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
-* [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
+* [ ] **Tastatursteuerung/Keyboard navigation:** ![High][high_img] Teste deine Webseite, indem du nur deine Tastatur benutzt. Es sollten alle interaktiven Elemente ansteuerbar und nutzbar sein.
+* [ ] **Vorlese Anwendung/Screen-reader:** ![Medium][medium_img] Alle Seiten wurden mit einer Vorlese Anwendung getestet (VoiceOver, ChromeVox, NVDA oder Lynx).
+* [ ] **Focus style:** ![High][high_img] Sollte der Fokus/focus deaktiviert sein, replatziere es mit sichtbar festgelegtem CSS:
 
-> * 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
+> * 📹 [Handhaben des Fokus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
 ## SEO
 
-* [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
+* [ ] **Google Analytics:** ![High][high_img] Google Analytics wurde installiert und korrekt konfiguriert.
 
 > * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
-> * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
+> * 🛠 [GA Checker (und andere)](http://www.gachecker.com/)
 
-* [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
+* [ ] **Überschriftenlogik/Headings logic:** ![Medium][medium_img] Überschriftentext hilft den Kontext der aktuellen Seite besser zu verstehen.
 
 > * 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
 
-* [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
+* [ ] **sitemap.xml:** ![High][high_img] Eine sitemap.xml existiert und wurde bei Google Search Console eingereicht (früher Google Webmaster Tools).
 
-> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
+> * 🛠 [Sitemap Generator](https://websiteseochecker.com/html-sitemap-generator/)
 
-* [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
+* [ ] **robots.txt:** ![High][high_img] Die robots.txt blockiert keine Webseiten.
 
-> * 📖 [The robots.txt file](https://varvy.com/robottxt.html)
-> * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
+> * 📖 [Die robots.txt Datei](https://varvy.com/robottxt.html)
+> * 🛠 Teste deine robots.txt mit [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
-* [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
-
-> * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
+* [ ] **Strukturierte Daten/Structured Data:** ![High][high_img] Seiten, welche strukturierte Daten nutzen - wurden getestet und besitzen keine Fehler. Strukturierte Daten helfen "web crawlern", den Inhalt der Seite besser zu verstehen.
+> * 📖 [Einführung zu Strukturierten Daten - Suche - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
 > * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
 > * 📖 [JSON-LD](https://json-ld.org/)
 > * 📖 [Microdata](https://www.w3.org/TR/microdata/)
-> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
-> * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
+> * 🛠 Teste deine Webseite mit [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+> * 🛠 Vollständige Liste von Wörterverzeichnissen, welche als strukturierte Daten genutzt werden können. [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
 
-* [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
+* [ ] **Sitemap HTML:** ![Medium][medium_img] Eine HTML sidemap existiert und ist über einen Link im footer deiner Webseite erreichbar. 
 
-> * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
+> * 📖 [Sitemap Richtlinien - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
 
-* [ ] **Pagination link tags:** ![Medium][medium_img] Provide `rel="prev"` and `rel="next"` to indicate paginated content.
+* [ ] **Pagination link tags:** ![Medium][medium_img] Biete `rel="prev"` und `rel="next"` um auf weitere Seiten hinzuweisen.
 
-> * 🛠 [Pagination (rel="prev/next") Testing Tool](https://technicalseo.com/seo-tools/rel-prev-next/)
+> * 🛠 [Pagination (rel="prev/next") Testing Werkzeug](https://technicalseo.com/seo-tools/rel-prev-next/)
 
-> * 📖 [Pagination guidelines - Google Support](https://support.google.com/webmasters/answer/1663744?hl=en)
+> * 📖 [Pagination Richtlinien - Google Support](https://support.google.com/webmasters/answer/1663744?hl=en)
 
 ```html
-<!-- Example: Pagination link tags for page 2 of a paginated list -->
+<!-- Beispiel einer Angabe, wo darauf hingwiesen wird das mehrere Seiten existieren. -->
 <link rel="prev" href="https://example.com/?page=1">
 <link rel="next" href="https://example.com/?page=3">
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Translation
+## Übersetzungen
 
-The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
+Die Front-End Checkliste ist auch in anderen Sprachen verfügbar! Vielen Dank an alle Übersetzer für eure fantastische Arbeit!
 
-* 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
-* 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
-* 🇨🇳 Chinese: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
-* 🇰🇷 Korean: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
-* 🇧🇷 Portuguese: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
-* 🇻🇳 Vietnamese: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
-* 🇹🇼 Traditional Chinese: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
-* 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
-* 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
-* 🇹🇷 Turkish: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
+* 🇯🇵 Japanisch: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
+* 🇪🇸 Spanisch: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
+* 🇨🇳 Chinesisch: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
+* 🇰🇷 Koreanisch: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
+* 🇧🇷 Portugiesisch: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
+* 🇻🇳 Vietnamesich: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
+* 🇹🇼 Traditionales Chinesisch: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
+* 🇫🇷 Französisch: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
+* 🇷🇺 Russisch: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
+* 🇹🇷 Türkisch: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
 
 ---
 
-## Front-End Checklist Badge
+## Front-End Checklist Abzeichen
 
-If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
+Wenn du zeigen möchtest, dass du den Regeln der Front-End Checklist folgst - setze dieses Abzeichen in deine README Datei.
 
 ➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 
@@ -702,54 +701,54 @@ If you want to show you are following the rules of the Front-End Checklist, put 
 [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 ---
 
-## Contributing
+## Mitwirken
 
-**Open an issue or a pull request to suggest changes or additions.**
+**Eröffne ein issue oder einen pull request um auf Änderungen oder Ergänzungen hinzuweisen.**
 
-### Guide
+### Anleitung
 
-The **Front-End Checklist** repository consists of two branches:
+Das **Front-End Checklist** repository besteht aus zwei branches:
 
 #### 1. `master`
 
-This branch consists of the `README.md` file that is automatically reflected on the [Front-End Checklist](http://frontendchecklist.com/) website.
+Dieser branch besteht aus einer `README.md` Datei, welche automatisch auf der  [Front-End Checklist](http://frontendchecklist.com/) Webseite reflektiert wird.
 
 #### 2. `develop`
 
-This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
+Dieser branch wird genutzt um erhebliche Änderungen in der Struktur vorzunehmen, sollte es benötigt werden. Es wäre wünschenswert, den master branch zu nutzen um kleine Fehler zu beheben, oder ein neuen Punkt hinzuzufügen.
 
-## Support
+## Unterstützung
 
-If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
+Solltest du Fragen oder Vorschläge haben, zögere nicht Gitter oder Twitter zu nutzen.
 
-* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Chat auf Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 * [Facebook](https://www.facebook.com/frontendchecklist/)
 * [Twitter](https://twitter.com/thedaviddias)
 
-## Authors
+## Autoren
 
 **[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
 
-## Contributors
+## Mitwirkende
 
-This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+Dieses Projekt existiert durch alle Mitwirkenden. Danke!. [[Contribute]](CONTRIBUTING.md).
 <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" /></a>
 
 
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/front-end-checklist#backer)]
+Danke an all unsere backers! 🙏 [[Werde ein backer](https://opencollective.com/front-end-checklist#backer)]
 
 <a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890"></a>
 
 
 ## Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
+Unterstütze dieses Projekt, indem du ein Sponsor wirst. Dein Logo wird hier gezeigt mit einer Verlinkung zu deiner Webseite. [[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
 
 <a href="https://opencollective.com/front-end-checklist/sponsor/0/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/front-end-checklist/sponsor/1/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/1/avatar.svg"></a>
@@ -764,11 +763,11 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 
 
-## License
+## Lizenz
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ Zurück zum Anfang](#table-of-contents)**
 
 [low_img]: https://front-end-checklist.now.sh/low.svg
 [medium_img]: https://front-end-checklist.now.sh/medium.svg
