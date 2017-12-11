@@ -36,6 +36,18 @@
     "tags": ["all", "javascript", "security"]
   },
   {
+    "title": "noscript tag",
+    "priority": "Medium",
+    "description": "Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering heavy apps such as React.js.",
+    "documentation": [
+      {
+        "title": "Quick Tip: Don’t Forget the “noscript” Element",
+        "url": "https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498"
+      }
+    ],
+    "tags": ["all", "javascript"]
+  },
+  {
     "title": "Non-blocking",
     "priority": "Medium",
     "description": "JavaScript files are loaded asynchronously using async or deferred using defer attribute.",
