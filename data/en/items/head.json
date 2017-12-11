@@ -194,7 +194,7 @@
     "title": "Inline critical CSS",
     "priority": "Medium",
     "description": "The inline critical CSS is correctly injected in the HEAD.",
-    "detail": "CSS which styles content that is immediately visible during pageload (\"above the fold content\") is called \"critical CSS\". It is embedded before your principal CSS call and between <style></style> in a single line (minified).",
+    "detail": "The CSS critical (or above the fold) collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).",
     "tools": [
       {
         "title": "Critical by Addy Osmani on GitHub automates this.",
@@ -214,7 +214,7 @@
     "title": "Facebook Open Graph",
     "priority": "Low",
     "description": "",
-    "detail": "All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, 1200 x 630 pixels recommended. Using og:image:width and og:image:height will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.",
+    "detail": "All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended. Using og:image:width and og:image:height will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.",
     "code": "",
     "documentation": [
       {
