@@ -397,8 +397,10 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
 > * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
-> * 🛠 Use [TinyPNG](https://tinypng.com/) to losslessly optimise png, apng (animated png) and jpg images. Free and paid version available.
 > * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
+> * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimise png, apng (animated png) and jpg images. Free and paid version available.
+> * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking. 
+
 
 * [ ] **Picture/Srcset:** ![Medium][medium_img] You use picture/srcset to provide the most appropriate image for the current viewport of the user.
 
