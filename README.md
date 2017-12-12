@@ -688,6 +688,7 @@ Die Front-End Checkliste ist auch in anderen Sprachen verfügbar! Vielen Dank an
 * 🇫🇷 Französisch: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
 * 🇷🇺 Russisch: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
 * 🇹🇷 Türkisch: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
+*    German:  [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
 
 ---
 
