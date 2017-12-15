@@ -336,7 +336,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <div id="id-used-by-cms" class="js-slider my-slider">
 ```
 
-* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embeding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
+* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embedding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
 * [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
 
 > * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
@@ -447,7 +447,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-* [ ] **Optimized and updated JS librairies:** ![Medium][medium_img] All JavaScript librairies used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their lastest version and don't overwhelm your JavaScript with unnecessary methods.
+* [ ] **Optimized and updated JS libraries:** ![Medium][medium_img] All JavaScript libraries used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their latest version and don't overwhelm your JavaScript with unnecessary methods.
 
 > * 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
 > * 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
