@@ -12,36 +12,38 @@ class Storage {
   constructor() {
     if (!instance) {
       instance = this;
-
-      // TODO: Make sure this is the right position for these event-setters.
-      let loadButton = document.getElementsByClassName(
-        'js-load-from-file-button',
-      );
-      let loadInput = document.getElementsByClassName(
-        'js-load-from-file-input',
-      );
-      if (loadButton.length && loadInput.length) {
-        loadButton = loadButton[0];
-        loadInput = loadInput[0];
-        loadButton.addEventListener('click', () => {
-          loadInput.click();
-        });
-        loadButton.addEventListener('change', e => {
-          if (e.target.files.length) {
-            instance.loadLocalStorageFromFile(e.target.files[0]);
-          }
-        });
-      }
-
-      let save = document.getElementsByClassName('js-save-to-file');
-      if (save.length) {
-        save[0].addEventListener('click', instance.saveLocalStorageToFile);
-      }
+      instance.setPersistenceButtonEvents();
     }
 
     this.body = document.querySelectorAll('[data-section-id]');
 
     return instance;
+  }
+
+  setPersistenceButtonEvents() {
+    // TODO: Make sure this is the right position for these event-setters.
+    let loadButton = document.getElementsByClassName(
+      'js-load-from-file-button',
+    );
+    let loadInput = document.getElementsByClassName('js-load-from-file-input');
+
+    if (loadButton.length && loadInput.length) {
+      loadButton = loadButton[0];
+      loadInput = loadInput[0];
+      loadButton.addEventListener('click', () => {
+        loadInput.click();
+      });
+      loadButton.addEventListener('change', e => {
+        if (e.target.files.length) {
+          instance.loadLocalStorageFromFile(e.target.files[0]);
+        }
+      });
+    }
+
+    let save = document.getElementsByClassName('js-save-to-file');
+    if (save.length) {
+      save[0].addEventListener('click', instance.saveLocalStorageToFile);
+    }
   }
 
   checkingOption(list, keyName) {
@@ -250,6 +252,21 @@ class Storage {
 
     document.body.removeChild(element);
   }
+  
+  loadLocalStorageFromString(input) {
+    try {
+      let fileData = JSON.parse(input);
+      localStorage.clear();
+      let fileDataEntries = Object.entries(fileData);
+      for (let i = 0; i < fileDataEntries.length; i += 1) {
+        localStorage.setItem(fileDataEntries[i][0], fileDataEntries[i][1]);
+      }
+      window.location = window.location;
+    } catch (ev) {
+      // TODO: Translate and/or notify better?
+      alert('The file was not valid.');
+    }
+  }
 
   loadLocalStorageFromFile(file) {
     if (
@@ -260,19 +277,9 @@ class Storage {
       window.Blob
     ) {
       let fileReader = new FileReader();
+      let self = this;
       fileReader.onload = e => {
-        try {
-          let fileData = JSON.parse(e.target.result);
-          localStorage.clear();
-          let fileDataEntries = Object.entries(fileData);
-          for (let i = 0; i < fileDataEntries.length; i += 1) {
-            localStorage.setItem(fileDataEntries[i][0], fileDataEntries[i][1]);
-          }
-          window.location = window.location;
-        } catch (ev) {
-          // TODO: Translate and/or notify better?
-          alert('The file was not valid.');
-        }
+        self.loadLocalStorageFromString(e.target.result);
       };
       fileReader.readAsText(file);
     } else {
