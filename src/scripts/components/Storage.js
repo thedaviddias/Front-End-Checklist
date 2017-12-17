@@ -12,6 +12,27 @@ class Storage {
   constructor() {
     if (!instance) {
       instance = this;
+
+      // TODO: Make sure this is the right position for these event-setters.
+      let loadButton = document.getElementsByClassName('js-load-from-file-button');
+      let loadInput = document.getElementsByClassName('js-load-from-file-input');
+      if (loadButton.length && loadInput.length) {
+        loadButton = loadButton[0];
+        loadInput = loadInput[0];
+        loadButton.addEventListener('click', function() {
+          loadInput.click();
+        });
+        loadButton.addEventListener('change', function(e) {
+          if (e.target.files.length) {
+            instance.loadLocalStorageFromFile(e.target.files[0]);
+          }
+        });
+      }
+
+      let save = document.getElementsByClassName('js-save-to-file');
+      if (save.length) {
+        save[0].addEventListener('click', instance.saveLocalStorageToFile);
+      }
     }
 
     this.body = document.querySelectorAll('[data-section-id]');
@@ -194,6 +215,66 @@ class Storage {
 
     // Re-serialize the array back into a string and store it in localStorage
     localStorage.setItem(keyName, JSON.stringify(storage));
+  }
+
+  saveLocalStorageToFile() {
+    let projectName = '';
+    if (localStorage['project-name']) {
+      projectName = JSON.parse(localStorage['project-name'])[0].replace(
+        /\s+/g,
+        '-',
+      );
+      if (projectName) {
+        projectName = '_' + projectName;
+      }
+    }
+
+    let filename = 'frontendchecklist' + projectName + '.json';
+    let data = JSON.stringify(localStorage);
+
+    let element = document.createElement('a');
+    element.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(data),
+    );
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+
+  loadLocalStorageFromFile(file) {
+    if (
+      window.JSON &&
+      window.File &&
+      window.FileReader &&
+      window.FileList &&
+      window.Blob
+    ) {
+      let fileReader = new FileReader();
+      fileReader.onload = function(e) {
+        try {
+          let fileData = JSON.parse(e.target.result);
+          localStorage.clear();
+          let fileDataEntries = Object.entries(fileData);
+          for (let i = 0; i < fileDataEntries.length; i++) {
+            localStorage.setItem(fileDataEntries[i][0], fileDataEntries[i][1]);
+          }
+          window.location = window.location;
+        } catch (ev) {
+          // TODO: Translate and/or notify better?
+          alert('The file was not valid.');
+        }
+      };
+      fileReader.readAsText(file);
+    } else {
+      // TODO: Translate and/or notify better?
+      alert('The File APIs are not fully supported in this browser.');
+    }
   }
 }
 

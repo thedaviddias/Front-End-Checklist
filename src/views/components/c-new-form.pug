@@ -20,3 +20,11 @@
   button.button.btn--danger.js-reset-all
     +svg-icon.icon.icon-reset(data-icon-name='reset')
     | #[=translation.form.BUTTON_START_NEW]
+
+  //- TODO: how to translate and where to put this markup?
+  button.button.btn--danger.js-save-to-file
+    | #[=translation.form.BUTTON_SAVE_TO_FILE]
+
+  //- TODO: how to translate and where to put this markup?
+  button.button.btn--danger.js-load-from-file-button
+    | #[input(type='file', name='files', accept='.json', hidden).js-load-from-file-input]
