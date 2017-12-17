@@ -14,15 +14,19 @@ class Storage {
       instance = this;
 
       // TODO: Make sure this is the right position for these event-setters.
-      let loadButton = document.getElementsByClassName('js-load-from-file-button');
-      let loadInput = document.getElementsByClassName('js-load-from-file-input');
+      let loadButton = document.getElementsByClassName(
+        'js-load-from-file-button',
+      );
+      let loadInput = document.getElementsByClassName(
+        'js-load-from-file-input',
+      );
       if (loadButton.length && loadInput.length) {
         loadButton = loadButton[0];
         loadInput = loadInput[0];
-        loadButton.addEventListener('click', function() {
+        loadButton.addEventListener('click', () => {
           loadInput.click();
         });
-        loadButton.addEventListener('change', function(e) {
+        loadButton.addEventListener('change', e => {
           if (e.target.files.length) {
             instance.loadLocalStorageFromFile(e.target.files[0]);
           }
@@ -256,12 +260,12 @@ class Storage {
       window.Blob
     ) {
       let fileReader = new FileReader();
-      fileReader.onload = function(e) {
+      fileReader.onload = e => {
         try {
           let fileData = JSON.parse(e.target.result);
           localStorage.clear();
           let fileDataEntries = Object.entries(fileData);
-          for (let i = 0; i < fileDataEntries.length; i++) {
+          for (let i = 0; i < fileDataEntries.length; i += 1) {
             localStorage.setItem(fileDataEntries[i][0], fileDataEntries[i][1]);
           }
           window.location = window.location;
