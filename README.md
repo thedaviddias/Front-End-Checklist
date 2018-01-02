@@ -31,6 +31,9 @@ Diese Liste basiert auf der jahrelangen Erfahrung aus Frontend-Entwicklung, wobe
 8. **[Performance](#performance-1)**
 9. **[Accessibility](#accessibility)**
 10. **[SEO](#seo)**
+11. **[Translations](#translations)**
+
+---
 
 ## Wie nutze ich die Checkliste?
 
@@ -46,6 +49,8 @@ Für einige Ressourcen benutzen wir folgende Emoticon:
 * 🛠: Online-/ Test-Hilfen
 * 📹: Medien oder Video Inhalte
 
+> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explain everything about the project.
+
 ---
 
 ## Head
@@ -57,8 +62,7 @@ Für einige Ressourcen benutzen wir folgende Emoticon:
 * [ ] **Doctype:** ![High][high_img] In HTML5 ist der Doctype eine erforderliche Präambel und steht ganz oben auf allen Ihren HTML-Seiten.
 
 ```html
-<!-- Doctype HTML5 -->
-<!doctype html>
+<!doctype html> <!-- HTML5 -->
 ```
 
 > * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
@@ -89,6 +93,7 @@ Für einige Ressourcen benutzen wir folgende Emoticon:
 ```
 
 * [ ] **Titel:** ![High][high_img] Ein Titel wird auf allen Seiten verwendet (SEO: Google berechnet die Pixelbreite der im Titel verwendeten Zeichen und schneidet zwischen 472 und 482 Pixel ab. Das durchschnittliche Zeichenlimit liegt bei ca. 55 Zeichen).
+
 
 ```html
 <!-- Document Title -->
@@ -202,7 +207,9 @@ Die minimal erforderliche XML-Markup für die Datei `browserconfig.xml` ist wie 
 
 * [ ] **RSS feed:** ![Low][low_img] Wenn es sich bei Ihrem Projekt um einen Blog oder Artikel handelt, wurde ein RSS-Link bereitgestellt.
 
+
 * [ ] **Inline kritisches CSS:** ![Medium][medium_img] CSS, das Inhalte formatiert, die während des Seitenaufrufs sofort sichtbar sind ("above the fold content"), wird als " kritisches CSS " bezeichnet. Es ist eingebettet vor dem eigentlichen CSS-Aufruf und zwischen `<style></style></style>` in einer einzigen Zeile (minified).
+
 > * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
 
 * [ ] **CSS Reihenfolge:** ![High][high_img] Alle CSS-Dateien werden vor allen JavaScript-Dateien im `<head>` geladen. (Ausgenommen ist der Fall, dass manchmal JS-Dateien asynchron am Anfang der Seite geladen werden).
@@ -212,6 +219,7 @@ Die minimal erforderliche XML-Markup für die Datei `browserconfig.xml` ist wie 
 Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr empfehlenswert. Die anderen Social-Media-Tags können in Betracht gezogen werden, wenn Sie eine bestimmte Präsenz gezielt ansprechen und die Anzeige sicherstellen wollen.
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] Alle Facebook Open Graph (OG) sind getestet und beinhalten keine fehlenden oder falschen Informationen. Bilder müssen mindestens 600 x 315 Pixel groß sein, jedoch wird die Größe 1200 x 630 Pixel empfohlen.
+
 
 > **Anmerkung:** Durch die Verwendung von `og:image:width` und `og:image:height` werden die Bildabmessungen an den Crawler übergeben, so dass er das Bild sofort rendern kann, ohne es asynchron herunterladen und verarbeiten zu müssen.
 
@@ -321,6 +329,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 * [ ] **Unique ID:** ![High][high_img] Wenn IDs verwendet werden, sind sie eindeutig für eine Seite.
 * [ ] **Reset CSS:** ![High][high_img] Ein CSS-Reset (Reset, Normalize oder Reboot) wird verwendet und ist aktuell. *(Wenn Sie ein CSS-Framework wie Bootstrap oder Foundation verwenden, ist eine Normalisierung bereits enthalten.)*
 
+
 > * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
 > * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
 > * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
@@ -335,6 +344,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 
 * [ ] **Eingebettet oder Inline-CSS:** ![High][high_img] Vermeiden Sie unbedingt die Einbettung von CSS in `<style>`-Tags oder die Verwendung von Inline-CSS: Verwenden Sie CSS nur aus triftigen Gründen (z.B. Hintergrundbild für Slider, kritisches CSS).
 * [ ] **Vendor prefixes:** ![High][high_img] Es werden CSS-Herstellerpräfixe verwendet, die entsprechend der Kompatibilität mit Ihrem Browser generiert werden.
+
 
 > * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
@@ -371,6 +381,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 * [ ] **Mobile Browsers:**  ![High][high_img] Safari...) getestet.
 * [ [  [ ª **OS:** ! !Alle Seiten wurden auf allen gängigen Betriebssystemen (Windows, Android, iOS, Mac...) getestet.
 
+
 - [ ] **Pixel perfect:** ![High][high_img] Die Seiten sind nahezu pixelgenau. Abhängig von der Qualität der Kreativen, können Sie nicht 100% genau sein, sollten jedoch der Vorgabe sehr nahe liegen.
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
@@ -395,6 +406,11 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
 > * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 > * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
+> * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimise png, apng (animated png) and jpg images. Free and paid version available.
+> * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
+> * 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files. 
+> * 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/) a web-based GUI version of SVGO for optimising your svgs online.
+
 
 * [ ] **Picture/Srcset:** ![Medium][medium_img] Sie verwenden picture/srcset, um das am besten geeignete Bild für das aktuelle Ansichtsfenster des Benutzers bereitzustellen.
 
@@ -439,7 +455,9 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 
 > * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
+
 * [ ] **Modernizr:** ![Low][low_img] Wenn Sie einige spezifische Funktionen benötigen, können Sie ein benutzerdefiniertes Modernizr verwenden, um Klassen in Ihrem `<html>`-Tag hinzuzufügen.
+
 
 > * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
 
@@ -511,6 +529,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 - [ ] **Seitengröße:** ![High][high_img] Die Größe der Seite liegt zwischen 0 und 500 KB.
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
+> * 🛠 [WebPageTest](https://www.webpagetest.org/)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 * [ ] **Minified HTML:** ![Medium][medium_img] Ihr HTML ist verkleinert.
@@ -588,6 +607,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 
 * [ ] **H1:** ![High][high_img] Alle Seiten haben eine H1, die nicht der Titel der Webseite ist.
 * [ ] **Überschriften:** ![High][high_img] Überschriften sollten richtig und in der richtigen Reihenfolge (H1 bis H6) verwendet werden.
+
 
 > * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
@@ -679,6 +699,7 @@ Die beiden ***Facebook OG*** und ***Twitter Cards*** sind für jede Website sehr
 
 ## Übersetzungen
 
+
 Die Frontend-Checkliste ist auch in anderen Sprachen verfügbar. Vielen Dank für alle Übersetzer und ihre großartige Arbeit!
 
 * 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
@@ -691,6 +712,7 @@ Die Frontend-Checkliste ist auch in anderen Sprachen verfügbar. Vielen Dank fü
 * 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
 * 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
 * 🇹🇷 Turkish: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
+* 🇩🇪 German: [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
 
 ---
 
@@ -732,9 +754,9 @@ If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
 * [Facebook](https://www.facebook.com/frontendchecklist/)
 * [Twitter](https://twitter.com/thedaviddias)
 
-## Authors
+## Author
 
-**[David Dias](https://github.com/thedaviddias/Front-End-Checklist)**
+**[David Dias](https://github.com/thedaviddias)**
 
 ## Contributors
 

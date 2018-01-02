@@ -20,3 +20,12 @@ header.s-header
       li.s-header__media__item
         a.github-button(href=translation.URL_GITHUB_ROOT data-icon="octicon-star" data-show-count="true" aria-label=translation.social.GITHUB_STAR_MSG)= translation.social.STAR
 
+  //- Add new language manually
+  .s-header__lang
+    ul.s-header__lang__list
+      li.s-header__lang__item
+        a(href="/")
+          img(src="/img/flags/en.svg" width="20" height="15" alt="English language")
+      li.s-header__lang__item
+        a(href="/jp")
+          img(src="/img/flags/jp.svg" width="20" height="15" alt="Japanese language")

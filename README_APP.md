@@ -8,11 +8,9 @@
 
 ## Table of Contents
 
-- [Security](#security)
-- [Background](#background)
 - [Install](#install)
-- [Usage](#usage)
-- [API](#api)
+- [Install](#install)
+- [Add new translation](#addnewtranslation)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -20,12 +18,54 @@
 
 ## Install
 
+To install and run, open a terminal and use the following commands:
+
+```shell
+    npm install
+    npm start or gulp dev
+```
 ## Usage
 
 
+## Add new translation
+
+To add a new translation for the Front-End Checklist, you just need to translate the original JSON files in English to your own language.
+
+- [ ] Duplicate `data/en` folder and change the name of the folder to:
+  * jp for Japanese
+  * es for Spanish
+  * cn for Chinese
+  * fr for French
+
+- [ ] Launch the GULP development mode adding the `--l` argument and your language
+
+  ```shell
+    gulp dev --l jp
+  ```
+
+- [ ] Translate all JSON files starting with the `project` folder
+
+> You'll need to stop the development mode, manually launch `gulp json-rebuild`, and launch again the dev mode in order to see your changes on the view.
+
+- [ ] Update the `views/base/header.pug` with the right flag and url (you can download your flag if not already in `src/img/flags` at http://flag-icon-css.lip.is/)
+
+  ```haml
+    li.s-header__lang__item
+      a(href="/jp")
+        img(src="/img/flags/jp.svg" width="20" height="15" alt="Japanese language")
+  ```
+
+## Author
+
+**[David Dias](https://github.com/thedaviddias)**
+
+## Contribute
+
 ## License
 
-[MIT © David Dias](../LICENSE)
+[![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+**[⬆ back to top](#table-of-contents)**
 
 
 

@@ -32,7 +32,7 @@
   {
     "title": "Headings",
     "priority": "High",
-    "description": "Headings should be used properly in the right order (H1 to H6).",
+    "description": "Headings should be used properly and in the right order (H1 to H6).",
     "video": [
       {
         "title": "Why headings and landmarks are so important -- A11ycasts #18",
