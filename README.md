@@ -72,13 +72,6 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta charset="utf-8">
 ```
 
-* [ ] **X-UA-Compatible:** ![Medium][medium_img] The X-UA-Compatible meta tag is present.
-
-```html
-<!-- Instruct Internet Explorer to use its latest rendering engine -->
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-```
-
 > * 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
 
 * [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
