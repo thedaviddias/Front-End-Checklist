@@ -42,34 +42,6 @@
     "tags": ["all", "best practices"]
   },
   {
-    "title": "Role banner",
-    "priority": "High",
-    "description": "<header> has role=\"banner\".",
-    "tags": ["all"]
-  },
-  {
-    "title": "Role navigation",
-    "priority": "High",
-    "description": "<nav> has role=\"navigation\".",
-    "tags": ["all"]
-  },
-  {
-    "title": "Role main",
-    "priority": "High",
-    "description": "<main> has role=\"main\".",
-    "documentation": [
-      {
-        "title": "Using ARIA landmarks to identify regions of a page",
-        "url": "https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page"
-      },
-      {
-        "title": "ARIA roles categorization",
-        "url": "https://www.w3.org/TR/wai-aria/roles#roles_categorization"
-      }
-    ],
-    "tags": ["all"]
-  },
-  {
     "title": "Specific HTML5 input types are used",
     "priority": "Medium",
     "description": "This is especially important for mobile devices that show customized keypads and widgets for different types.",
