@@ -61,7 +61,7 @@
     "gulp-webpack": "^1.5.0",
     "html-webpack-plugin": "^2.30.1",
     "imagemin-webp": "^4.0.0",
-    "jsdom": "11.3.0",
+    "jsdom": "11.6.0",
     "jsdom-global": "3.0.2",
     "modernizr": "^3.5.0",
     "postscribe": "^2.0.8",
