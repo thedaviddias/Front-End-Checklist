@@ -74,6 +74,6 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-stream": "^4.0.0",
-    "yargs": "^10.0.3"
+    "yargs": "^11.0.0"
   }
 }
