@@ -606,15 +606,6 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-#### Landmarks
-
-- [ ] **Role banner:** ![High][high_img] `<header>` has `role="banner"`.
-- [ ] **Role navigation:** ![High][high_img] `<nav>` has `role="navigation"`.
-- [ ] **Role main:** ![High][high_img] `<main>` has `role="main"`.
-
-> * 📖 [Using ARIA landmarks to identify regions of a page](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page)
-> * 📖 [ARIA roles categorization](https://www.w3.org/TR/wai-aria/roles#roles_categorization)
-
 ### Semantics
 
 - [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
