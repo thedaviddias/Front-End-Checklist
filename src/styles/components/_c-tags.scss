@@ -1,0 +1,26 @@
+.c-tags {
+  &__list {
+    padding: 0;
+    list-style: none;
+    position: relative;
+    opacity: .7;
+
+    [data-item-check='true'] & {
+      opacity: .2;
+    }
+  }
+
+  &__item {
+    font-size: 1rem;
+    display: inline;
+    padding: 3px;
+    white-space: nowrap;
+    opacity: 1;
+    overflow: hidden;
+    border: .5px solid $border;
+
+    @include mq('handheld-and-up') {
+      font-size: 11px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+
+//
+$use-top-alert: true !default;
+$use-button: true !default;
+$use-checklist: true !default;
+$use-dropdown: true !default;
+$use-list: true !default;
+$use-modal: true !default;
+$use-nav: true !default;
+$use-progress: true !default;
+$use-tooltip: true !default;
+$use-aside: true !default;
+
+// Components
+$namespace-top-alert: '.c-top-alert' !default;
+$namespace-button: '.c-button' !default;
+$namespace-checklist: '.c-checklist' !default;
+$namespace-dropdown: '.c-dropdown' !default;
+$namespace-list: '.c-list' !default;
+$namespace-modal: '.c-modal' !default;
+$namespace-nav: '.c-nav' !default;
+$namespace-progress: '.c-progress' !default;
+$namespace-tooltip: '.c-tooltip' !default;
+$namespace-aside: '.c-tag-filter' !default;

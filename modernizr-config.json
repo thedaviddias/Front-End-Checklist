@@ -1,0 +1,16 @@
+{
+  "minify": true,
+  "options": [
+    "domPrefixes",
+    "prefixes",
+    "mq",
+    "prefixedCSSValue",
+    "testStyles",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/history",
+    "test/css/flexbox",
+    "test/workers/webworkers"
+  ]
+}

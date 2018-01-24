@@ -1,0 +1,17 @@
+$av-breakpoints: (
+  'print': 'print', 'thumb': 'screen and (max-width: 499px)', 'handheld': 'screen and (min-width: 500px) and (max-width: 800px)', 'handheld-and-up': 'screen and (min-width: 500px)', 'pocket': 'screen and (max-width: 800px)', 'lap': 'screen and (min-width: 801px) and (max-width: 1024px)', 'lap-and-up': 'screen and (min-width: 801px)', 'portable': 'screen and (max-width: 1024px)', 'desk': 'screen and (min-width: 1025px)', 'widescreen': 'screen and (min-width: 1160px)', 'retina': 'screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx)') !default; // Responsive breakpoints.
+
+@mixin mq($alias) {
+  // Search breakpoint map for alias
+  $query: map-get($av-breakpoints, $alias);
+  // If alias exists, print out media query
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'No breakpoint found for #{$alias}';
+  }
+}

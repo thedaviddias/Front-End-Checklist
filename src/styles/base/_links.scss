@@ -1,0 +1,74 @@
+//
+// Links
+//
+
+// Link colors
+$link: map-get($colors, primary) !default;
+$link-invert: map-get($colors, primary-invert) !default;
+$link-visited: map-get($colors, purple) !default;
+$link-hover: map-get($colors, grey-darker) !default;
+$link-hover-border: map-get($colors, grey-light) !default;
+$link-focus: map-get($colors, grey-darker) !default;
+$link-focus-border: map-get($colors, primary) !default;
+$link-active: map-get($colors, grey-darker) !default;
+$link-active-border: map-get($colors, grey-dark) !default;
+$link-color: $primary !default;
+$link-brand-color: #f40057 !default;
+$link-info-color: $info !default;
+$link-warning-color: $warning !default;
+$link-success-color: $success !default;
+$link-error-color: $danger !default;
+$link-text-decoration: none !default;
+$link-hover-text-decoration: underline !default;
+
+@mixin link--color($color: $link-color) {
+  &:not(:disabled) {
+    background-color: transparent;
+    color: $link-color;
+    // &:visited {
+    //   color: darken($color, $color-tint);
+    // }
+
+    &:hover {
+      background-color: transparent;
+      color: lighten($color, $color-tint);
+    }
+
+    &:active {
+      background-color: transparent;
+      color: lighten($color, $color-tint);
+    }
+  }
+}
+
+a,
+.c-link {
+  @include link--color;
+
+  text-decoration: $link-text-decoration;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: $link-hover-text-decoration;
+  }
+}
+
+.a-link--info {
+  @include link--color($link-info-color);
+}
+
+.c-link--warning {
+  @include link--color($link-warning-color);
+}
+
+.c-link--success {
+  @include link--color($link-success-color);
+}
+
+.c-link--error {
+  @include link--color($link-error-color);
+}
+
+// a:not( [href*='localhost:3000'] ):not( [href^='#'] ):not( [href^='/'] ):after {
+//   content: " (external)";
+// }

@@ -1,0 +1,26 @@
+language: node_js
+sudo: false
+node_js:
+  - "7.1.0"
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - gulp build
+notifications:
+  email:
+    recipients:
+      - thedaviddias@gmail.com
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+deploy:
+  local_dir: dist
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master

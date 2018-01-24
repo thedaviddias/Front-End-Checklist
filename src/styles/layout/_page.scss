@@ -1,0 +1,58 @@
+$layout-width: '1140px' !default;
+$av-element-class-chain: '__' !default;        // Chain characters between block and element
+$av-modifier-class-chain: '--' !default;        // Chain characters between block and modifier
+$av-breakpoint-class-chain: '--' !default;        // Chain characters between width and breakpoint
+$logo-width: 150px;
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+
+  @include mq('lap-and-up') {
+    grid-template-areas: 'header header header' 'main main main' 'footer footer footer';
+  }
+
+  .page-header {
+    grid-area: header;
+  }
+
+  .page-main {
+    grid-area: main;
+
+    @include mq('lap-and-up') {
+      display: grid;
+      grid-template-columns: auto 150px 960px 150px auto;
+    }
+  }
+
+  .page-footer {
+    grid-area: footer;
+  }
+}
+
+
+.page-header {
+  &__logo {
+    grid-area: header-left;
+    align-self: center;
+
+    .page-header__inner--centered & {
+      grid-area: header-center;
+      justify-self: center;
+    }
+  }
+
+  &__nav {
+    grid-area: header-right;
+    align-self: center;
+    display: flex;
+
+    & .version-01 {
+      grid-column-start: 3;
+    }
+  }
+}

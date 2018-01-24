@@ -1,0 +1,95 @@
+//
+// Lists
+//
+
+@if $use-list == true {
+
+  // Variables
+  // =============================================================================
+  $list-margin: 0 !default;
+  $list-padding: 0 0 0 $spacing-medium !default;
+  $list-unstyled-padding: 0 !default;
+  $list-unstyled-list-style: none !default;
+  $list-nested-padding: $list-padding !default;
+  $list-item-padding: 0 !default;
+  $list-item-unstyled-list-style: none !default;
+  $list-ordered-item-padding: 0 $spacing-small 0 0 !default;
+  $list-inline-padding: 0 !default;
+  $list-inline-item-padding-right: $spacing-medium !default;
+  $list-inline-item-bullet-content: '\2022' !default;
+  $list-inline-item-bullet-padding: 0 $spacing-small 0 0 !default;
+
+  @mixin list--unstyled {
+    padding: $list-unstyled-padding;
+    list-style: $list-unstyled-list-style;
+  }
+
+  @mixin list--inline {
+    padding: $list-inline-padding;
+  }
+
+  // Declarations
+  // =============================================================================
+  #{$namespace-list} {
+    display: block;
+    margin: $list-margin;
+    padding: $list-padding;
+    list-style-position: outside;
+
+    & .c-list {
+      padding: $list-nested-padding;
+    }
+
+    &__item {
+      padding: $list-item-padding;
+    }
+
+    &__item--unstyled {
+      list-style: $list-item-unstyled-list-style;
+    }
+
+    &--unstyled {
+      @include list--unstyled;
+    }
+
+    &--ordered {
+      @include list--unstyled;
+
+      counter-reset: ordered;
+
+      .c-list__item {
+        &::before {
+          padding: $list-ordered-item-padding;
+          content: counters(ordered, '.') ' ';
+          counter-increment: ordered;
+        }
+      }
+    }
+
+    // &--inline {
+    //   @include list--inline;
+
+    //   .c-list--inline {
+    //     @include list--inline;
+    //   }
+
+    //   .c-list__item {
+    //     display: inline-block;
+    //     width: auto;
+    //     padding-right: $list-inline-item-padding-right;
+    //   }
+
+    //   &:not(.c-list--unstyled) {
+    //     .c-list__item {
+    //       &::before {
+    //         padding: $list-inline-item-bullet-padding;
+    //         content: $list-inline-item-bullet-content;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+
+
+

@@ -1,0 +1,17 @@
+---
+engines:
+  eslint:
+    enabled: true
+    channel: eslint-3
+  stylelint:
+    enabled: true
+ratings:
+  paths:
+  - src/**
+  - "**.scss"
+  - "**.js"
+exclude_paths:
+- "test"
+- "data"
+- "dist"
+- "gulpfile.babel.js"

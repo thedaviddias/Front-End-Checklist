@@ -1,0 +1,6 @@
+.c-checklist__column.c-checklist__dropdown
+
+  //- Check if the item has content, if not hide the button
+  if item.tools || item.documentation || item.code
+    button.button-icon.js-dropdown.c-checklist__dropdown__button(aria-label="Open the description section")
+      +svg-icon.icon.icon-arrow(data-icon-name='arrow')
