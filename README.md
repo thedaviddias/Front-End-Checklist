@@ -522,7 +522,10 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ### Best practices
 
-- [ ] **Page weight:** ![High][high_img] The weight of each page is between 0 and 500 KB.
+- [ ] **Goals to achieve:** ![Medium][medium_img] Your pages should reach these goals:
+  - First Meaningful Paint under 1 second
+  - Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
+  - Critical file size under 170Kb gzipped
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
 > * 🛠 [WebPageTest](https://www.webpagetest.org/)
