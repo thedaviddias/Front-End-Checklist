@@ -40,7 +40,7 @@ class Dropdown {
       if (el.btn.classList.value.includes('js-collapse-all') === true) {
         item.setAttribute('data-item-dropdown', 'close');
         instance.removeCode(item);
-      } else {
+      } else if (item.getAttributeNode('data-item-dropdown').value != 'open') {
         item.setAttribute('data-item-dropdown', 'open');
         instance.loadCode(item);
 
