@@ -35,7 +35,7 @@
     "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.59.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-cached": "^1.1.1",
     "gulp-cdnizer": "^1.1.7",
     "gulp-changed": "^3.1.1",
