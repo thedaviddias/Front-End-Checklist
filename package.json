@@ -71,7 +71,7 @@
     "stylelint-config-standard": "^17.0.0",
     "stylelint-scss": "^2.1.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
-    "url-loader": "^0.6.2",
+    "url-loader": "^1.0.0",
     "webpack": "^3.8.1",
     "webpack-stream": "^4.0.0",
     "yargs": "^11.0.0"
