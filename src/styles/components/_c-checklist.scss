@@ -36,15 +36,15 @@
 
       // Priority bullet
       &:nth-child(1) {
-        padding-top: 12px;
+        padding-top: 8px;
 
         @include mq('handheld-and-up') {
-          padding-top: 15px;
+          padding-top: 11px;
         }
 
         @include mq('print') {
           margin: 0 5px;
-          padding-top: 5px;
+          padding-top: 2px;
         }
       }
 
@@ -148,7 +148,12 @@
 
     &__priority {
       order: 1;
-      flex-basis: 1%;
+      // width of medium priority icon plus padding
+      flex-basis: 41px + 2 * 4px;
+
+      svg {
+        float: right;
+      }
     }
 
     &__checkbox {
