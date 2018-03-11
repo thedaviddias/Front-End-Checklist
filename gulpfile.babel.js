@@ -113,20 +113,20 @@ gulp.task('pug-rebuild', ['compile-pug'], () => {
 	browserSync.reload();
 });
 
-// gulp.task('minify-html', () => {
-//   langs.forEach(lang => {
-//     return gulp.src(`./dist/index-en.html`)
-//       .pipe(htmlmin({
-//         collapseWhitespace: true,
-//         removeComments: true
-//       }))
-//       .pipe(rename({
-//         basename: 'index'
-//       }))
-//       // .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
-//       .pipe(gulp.dest(`${dirs.dest}`));
-//   })
-// });
+gulp.task('minify-html', () => {
+  langs.forEach(lang => {
+    return gulp.src(`./dist/index-en.html`)
+      .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true
+      }))
+      .pipe(rename({
+        basename: 'index'
+      }))
+      // .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
+      .pipe(gulp.dest(`${dirs.dest}`));
+  })
+});
 
 gulp.task('compile-all-pug', () => {
   langs.forEach(lang => {
@@ -420,9 +420,8 @@ gulp.task('build', done => {
     ['compile-all-pug'],
     ['compile-styles', 'compress-images', 'webpack'],
     ['cdn'],
-    ['critical', 'copy'],
-
-    // ['clean-tmp'],
+    ['copy'],
+    ['minify-html'],
     done);
 });
 
