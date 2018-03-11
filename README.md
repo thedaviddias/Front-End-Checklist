@@ -72,15 +72,6 @@ Some resources possess an emoticon to help you understand which type of content 
 <meta charset="utf-8">
 ```
 
-* [ ] **X-UA-Compatible:** ![Medium][medium_img] The X-UA-Compatible meta tag is present.
-
-```html
-<!-- Instruct Internet Explorer to use its latest rendering engine -->
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-```
-
-> * 📖 [Specifying legacy document modes (Internet Explorer)](https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx)
-
 * [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
 
 ```html
@@ -401,7 +392,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 > * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
 > * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimise png, apng (animated png) and jpg images. Free and paid version available.
 > * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
-> * 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files. 
+> * 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files.
 > * 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/) a web-based GUI version of SVGO for optimising your svgs online.
 
 
