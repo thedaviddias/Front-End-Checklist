@@ -20,19 +20,6 @@
     "tags": ["all", "Meta tag"]
   },
   {
-    "title": "X-UA-Compatible",
-    "priority": "Medium",
-    "description": "The X-UA-Compatible Meta tag is present.",
-    "code": "https://gist.github.com/thedaviddias/4f771e7efc07688c090a28ef1121b15e.js",
-    "documentation": [
-      {
-        "title": "Specifying legacy document modes (Internet Explorer)",
-        "url": "https://msdn.microsoft.com/en-us/library/jj676915(v=vs.85).aspx"
-      }
-    ],
-    "tags": ["all", "Meta tag"]
-  },
-  {
     "title": "Viewport",
     "priority": "High",
     "description": "The viewport is declared correctly.",
