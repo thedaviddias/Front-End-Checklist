@@ -79,6 +79,8 @@
   }
 
   .c-checklist__body input {
+    height: auto !important;
+    top: 4px !important;
     opacity: 1 !important;
   }
 
@@ -194,10 +196,5 @@
   .form input {
     font-size: 9pt !important;
     padding: 3px !important;
-  }
-
-  .c-checklist__body input {
-    height: auto !important;
-    top: 4px !important;
   }
 }

@@ -17,6 +17,7 @@
     "number-leading-zero": "never",
     "value-list-comma-newline-after": null,
     "max-nesting-depth": 3,
-    "unit-whitelist": ['%', 'px', 'rem', 's', 'deg', 'ms', 'fr', 'pt']
+    "unit-whitelist": ['%', 'px', 'rem', 's', 'deg', 'ms', 'fr', 'pt'],
+    "no-descending-specificity": null
   }
 }

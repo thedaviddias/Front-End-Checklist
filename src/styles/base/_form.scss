@@ -3,17 +3,9 @@ fieldset {
   margin: 0;
 }
 
-label,
-.nav li a,
-.nav li input {
-  transition: background-color .08s ease-in-out;
-}
-
 label:hover {
   cursor: pointer;
 }
-
-
 
 .s-form {
   margin: 10px 0 20px;
@@ -73,4 +65,10 @@ label:hover {
 .label__title {
   font-weight: bold;
   display: inline;
+}
+
+label,
+.nav li a,
+.nav li input {
+  transition: background-color .08s ease-in-out;
 }

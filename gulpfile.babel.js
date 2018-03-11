@@ -13,6 +13,7 @@ import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import cssnano from 'gulp-cssnano';
 import gcmq from 'gulp-group-css-media-queries';
+import stylelint from 'gulp-stylelint';
 const critical = require('critical').stream;
 
 import pug from 'gulp-pug';
@@ -190,14 +191,10 @@ gulp.task('critical', () => {
   })
 });
 
-        // dest: '../.tmp/critical.min.css',
-
 gulp.task('lint-css', function lintCssTask() {
-  const gulpStylelint = require('gulp-stylelint');
-
   return gulp.src(dirs.src + '/styles/**/*.scss')
     .pipe(cached('css'))
-    .pipe(gulpStylelint({
+    .pipe(stylelint({
       reporters: [
         { formatter: 'string', console: true }
       ]
