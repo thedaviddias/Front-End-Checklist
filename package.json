@@ -67,7 +67,7 @@
     "postscribe": "^2.0.8",
     "prettier": "^1.11.1",
     "run-sequence": "^2.2.1",
-    "sinon": "^4.4.2",
+    "sinon": "^5.0.0",
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^2.5.0",
