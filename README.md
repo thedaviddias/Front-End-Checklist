@@ -63,7 +63,7 @@ Some resources possess an emoticon to help you understand which type of content 
 
 > * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-*The next 3 meta tags (Charset, X-UA Compatible and Viewport) need to come first in the head.*
+*The next 2 meta tags (Charset and Viewport) need to come first in the head.*
 
 * [ ] **Charset:** ![High][high_img] The charset (UTF-8) is declared correctly.
 
