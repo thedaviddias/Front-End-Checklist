@@ -52,7 +52,7 @@
     "gulp-mocha": "^5.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-pug": "^3.3.0",
+    "gulp-pug": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
