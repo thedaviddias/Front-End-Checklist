@@ -41,7 +41,7 @@
     "gulp-changed": "^3.2.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-data": "^1.3.1",
-    "gulp-eslint": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^4.0.0",
