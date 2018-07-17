@@ -1,7 +1,7 @@
 // $control-radius: $radius !default;
 // $control-radius-small: $radius-small !default;
 
-@if $use-button == true {
+
   $control-padding-vertical: calc(8px - 1px) !default;
   $control-padding-horizontal: calc(11px - 1px) !default;
   $control-padding-vertical-up: calc(6px - 1px) !default;
@@ -181,6 +181,6 @@
     border: 2px $primary solid;
     color: $primary;
   }
-}
+
 
 
