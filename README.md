@@ -16,7 +16,7 @@
     <a href=“https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
   </a>
-  <a href=“#">
+  <a href=“https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link">
     <img src="https://img.shields.io/badge/chat-on_gitter-008080.svg?style=flat-square" alt="Gitter">
   </a>
       <a href=“https://github.com/thedaviddias/Front-End-Checklist/">
