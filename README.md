@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/src/img/banners/front-end-checklist-banner-light.jpg" alt="Front-End Checklist" width="170">
+  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/src/img/banners/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="170">
   <br>
     <br>
   Front-End Checklist
