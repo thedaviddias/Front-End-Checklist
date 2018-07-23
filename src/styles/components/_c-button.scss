@@ -2,185 +2,185 @@
 // $control-radius-small: $radius-small !default;
 
 
-  $control-padding-vertical: calc(8px - 1px) !default;
-  $control-padding-horizontal: calc(11px - 1px) !default;
-  $control-padding-vertical-up: calc(6px - 1px) !default;
-  $control-padding-horizontal-up: calc(10px - 1px) !default;
+$control-padding-vertical: calc(8px - 1px) !default;
+$control-padding-horizontal: calc(11px - 1px) !default;
+$control-padding-vertical-up: calc(6px - 1px) !default;
+$control-padding-horizontal-up: calc(10px - 1px) !default;
 
-  @mixin control {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    align-items: center;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    box-shadow: none;
-    display: inline-flex;
-    font-size: 1.3rem;
-    padding: $control-padding-vertical $control-padding-horizontal;
-    justify-content: flex-start;
-    line-height: 1.4;
-    position: relative;
-    vertical-align: top;
+@mixin control {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1.3rem;
+  padding: $control-padding-vertical $control-padding-horizontal;
+  justify-content: flex-start;
+  line-height: 1.4;
+  position: relative;
+  vertical-align: top;
 
-    @include mq(lap-and-up) {
-      font-size: $size-medium;
-      height: 34px;
-      padding: $control-padding-vertical-up $control-padding-horizontal-up;
-    }
-    // States
-    &:focus,
-    &.is-focused,
-    &:active,
-    &.is-active {
-      outline: none;
-    }
-
-    &[disabled] {
-      cursor: not-allowed;
-    }
-  }
-
-  // The controls sizes use mixins so they can be used at different breakpoints
-  @mixin control-small {
-    // border-radius: $control-radius-small;
-    font-size: $size-small;
-  }
-
-  @mixin control-medium {
+  @include mq(lap-and-up) {
     font-size: $size-medium;
+    height: 34px;
+    padding: $control-padding-vertical-up $control-padding-horizontal-up;
+  }
+  // States
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    outline: none;
   }
 
-  @mixin control-large {
-    font-size: $size-large;
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
+
+// The controls sizes use mixins so they can be used at different breakpoints
+@mixin control-small {
+  // border-radius: $control-radius-small;
+  font-size: $size-small;
+}
+
+@mixin control-medium {
+  font-size: $size-medium;
+}
+
+@mixin control-large {
+  font-size: $size-large;
+}
+
+$button-color: map-get($colors, grey-darker) !default;
+$button-background-color: map-get($colors, white) !default;
+$button-border-color: #999999 !default;
+$button-hover-color: $link-hover !default;
+$button-hover-border-color: $link-hover-border !default;
+$button-focus-color: $link-focus !default;
+$button-focus-border-color: $link-focus-border !default;
+
+// The button sizes use mixins so they can be used at different breakpoints
+@mixin button-small {
+  // border-radius: $radius-small;
+  font-size: $size-small;
+}
+
+@mixin button-medium {
+  font-size: $size-medium;
+}
+
+@mixin button-large {
+  font-size: $size-large;
+}
+
+// Declarations
+// =============================================================================
+#{$namespace-button},
+button {
+  @include control;
+  @include unselectable;
+
+  background-color: $button-background-color;
+  border-color: $button-border-color;
+  color: $button-color;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+
+  // States
+  &:hover,
+  &.--hovered {
+    border-color: $button-hover-border-color;
+    color: $button-hover-color;
+    transition: all 200ms ease-in 0s;
   }
 
-  $button-color: map-get($colors, grey-darker) !default;
-  $button-background-color: map-get($colors, white) !default;
-  $button-border-color: #999999 !default;
-  $button-hover-color: $link-hover !default;
-  $button-hover-border-color: $link-hover-border !default;
-  $button-focus-color: $link-focus !default;
-  $button-focus-border-color: $link-focus-border !default;
-
-  // The button sizes use mixins so they can be used at different breakpoints
-  @mixin button-small {
-    // border-radius: $radius-small;
-    font-size: $size-small;
+  &:focus,
+  &.--focused {
+    border-color: $button-focus-border-color;
+    color: $button-focus-color;
   }
 
-  @mixin button-medium {
-    font-size: $size-medium;
+  &:active,
+  &.--active {
+    border-color: $button-focus-border-color;
+    color: $button-focus-color;
   }
 
-  @mixin button-large {
-    font-size: $size-large;
+  // Sizes
+  &.--small {
+    @include button-small;
   }
 
-  // Declarations
-  // =============================================================================
-  #{$namespace-button},
-  button {
-    @include control;
-    @include unselectable;
+  &.--medium {
+    @include button-medium;
+  }
 
-    background-color: $button-background-color;
-    border-color: $button-border-color;
-    color: $button-color;
-    cursor: pointer;
-    justify-content: center;
-    text-align: center;
-    white-space: nowrap;
+  &.--large {
+    @include button-large;
+  }
 
-    // States
-    &:hover,
-    &.--hovered {
-      border-color: $button-hover-border-color;
-      color: $button-hover-color;
-      transition: all 200ms ease-in 0s;
-    }
+  &.--fill {
+    background-color: map-get($colors, green);
+    color: map-get($colors, white);
+    border-color: map-get($colors, green);
 
-    &:focus,
-    &.--focused {
-      border-color: $button-focus-border-color;
-      color: $button-focus-color;
-    }
-
-    &:active,
-    &.--active {
-      border-color: $button-focus-border-color;
-      color: $button-focus-color;
-    }
-
-    // Sizes
-    &.--small {
-      @include button-small;
-    }
-
-    &.--medium {
-      @include button-medium;
-    }
-
-    &.--large {
-      @include button-large;
-    }
-
-    &.--fill {
-      background-color: map-get($colors, green);
-      color: map-get($colors, white);
-      border-color: map-get($colors, green);
-
-      & .icon {
-        fill: map-get($colors, white);
-      }
-    }
-
-    &-icon {
-      border-color: map-get($colors, grey-light);
-
-      .icon {
-        margin: 0;
-      }
-
-      &:hover {
-        border-color: $secondary;
-
-        .icon {
-          fill: $secondary;
-        }
-      }
+    & .icon {
+      fill: map-get($colors, white);
     }
   }
 
-  #{$namespace-button}__group {
-    margin: 0 5px;
-  }
+  &-icon {
+    border-color: map-get($colors, grey-light);
 
-  .s-section__meta .button-icon {
     .icon {
-      margin: 0 !important;
-      vertical-align: top;
-      fill: map-get($colors, grey-light);
+      margin: 0;
     }
 
     &:hover {
-      .icon {
-        fill: $button-hover-border-color;
-      }
-    }
-
-    &.is-active {
       border-color: $secondary;
 
-      svg {
+      .icon {
         fill: $secondary;
       }
     }
   }
+}
 
-  button.filter-active {
-    border: 2px $primary solid;
-    color: $primary;
+#{$namespace-button}__group {
+  margin: 0 5px;
+}
+
+.s-section__meta .button-icon {
+  .icon {
+    margin: 0 !important;
+    vertical-align: top;
+    fill: map-get($colors, grey-light);
   }
+
+  &:hover {
+    .icon {
+      fill: $button-hover-border-color;
+    }
+  }
+
+  &.is-active {
+    border-color: $secondary;
+
+    svg {
+      fill: $secondary;
+    }
+  }
+}
+
+button.filter-active {
+  border: 2px $primary solid;
+  color: $primary;
+}
 
 
 
