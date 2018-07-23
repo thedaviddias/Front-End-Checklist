@@ -9,8 +9,7 @@
 ## Table of Contents
 
 - [Install](#install)
-- [Install](#install)
-- [Add new translation](#addnewtranslation)
+- [Add new translation](#add-new-translation)
 - [Contribute](#contribute)
 - [License](#license)
 
