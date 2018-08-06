@@ -492,7 +492,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ### Best practices
 
-* [ ] **HTTPS:** ![Medium][medium_img] HTTPS is used on every pages and for all external content (plugins, images...).
+* [ ] **HTTPS:** ![High][high_img] HTTPS is used on every pages and for all external content (plugins, images...).
 
 > * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 > * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
