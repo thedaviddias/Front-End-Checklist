@@ -59,7 +59,7 @@
   }
 
   a[href^='http']::after {
-    content: ' < ' attr(href) ' > ';
+    content: initial;
   }
   $a: after &gt;
 
