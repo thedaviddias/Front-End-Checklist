@@ -16,8 +16,8 @@
     <a href=“https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
   </a>
-  <a href=“https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link">
-    <img src="https://img.shields.io/badge/chat-on_gitter-008080.svg?style=flat-square" alt="Gitter">
+  <a href=“https://spectrum.chat/front-end-checklist">
+    <img src="https://img.shields.io/badge/chat-on_spectrum-4837E2.svg?style=flat-square" alt="Spectrum">
   </a>
       <a href=“https://github.com/thedaviddias/Front-End-Checklist/">
     <img src="https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg?style=flat-square" alt="Front‑End_Checklist followed">
