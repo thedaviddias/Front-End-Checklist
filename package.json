@@ -20,7 +20,7 @@
   "homepage": "https://github.com/thedaviddias/Front-End-Checklist-App#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^9.0.0",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
