@@ -21,7 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
