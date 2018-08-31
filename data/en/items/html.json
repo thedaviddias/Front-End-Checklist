@@ -58,8 +58,8 @@
         "url": "https://dirtymarkup.com/"
       },
       {
-        "title": "Sonar a linting tool for the web",
-        "url": "https://sonarwhal.com/"
+        "title": "webhint",
+        "url": "https://webhint.io/"
       }
     ],
     "tags": ["all", "html", "testing"]

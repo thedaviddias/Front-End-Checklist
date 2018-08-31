@@ -84,10 +84,16 @@
     "tags": ["all", "testing"]
   },
   {
-    "title": "Screen-reader",
+    "title": "Screen reader",
     "priority": "Medium",
-    "description": "All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).",
-    "tags": ["all", "testing"]
+    "description": "All pages were tested in two or more screen readers (such as JAWS, VoiceOver, and NVDA).",
+    "documentation": [
+      {
+        "title": "Screen Reader User Survey #7 Results - Primary Screen Reader",
+        "url": "https://webaim.org/projects/screenreadersurvey7/#primary"
+      }
+     ],
+     "tags": ["all", "testing"]
   },
   {
     "title": "Focus style",
