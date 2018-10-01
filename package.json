@@ -32,7 +32,7 @@
     "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "flow-bin": "^0.77.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
