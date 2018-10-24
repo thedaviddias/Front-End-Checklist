@@ -56,7 +56,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-stylelint": "^7.0.0",
+    "gulp-stylelint": "^8.0.0",
     "gulp-util": "^3.0.8",
     "gulp-webpack": "^1.5.0",
     "html-webpack-plugin": "^3.0.0",
