@@ -46,7 +46,7 @@
     "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^5.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^5.0.0",
     "gulp-istanbul": "^1.1.3",
     "gulp-json-concat": "^0.1.1",
     "gulp-mocha": "^6.0.0",
