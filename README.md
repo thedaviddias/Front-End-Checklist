@@ -301,6 +301,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 * [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker).
 
+> * 📖 [Use AdBlocking in your Dev Environment](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
 
 
 **[⬆ back to top](#table-of-contents)**
