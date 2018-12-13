@@ -20,9 +20,9 @@ import pug from 'gulp-pug';
 import data from 'gulp-data';
 import htmlmin from 'gulp-htmlmin';
 
-import webpack from "webpack";
+import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
-import webpackConfig from "./webpack.config.js";
+import webpackConfig from './webpack.config.js';
 
 import imagemin from 'gulp-imagemin';
 import imageminWebp from 'imagemin-webp';
@@ -36,16 +36,16 @@ import istanbul from 'gulp-istanbul';
 import changed from 'gulp-changed';
 import cached from 'gulp-cached';
 import jsonConcat from 'gulp-json-concat';
-import plumber from "gulp-plumber";
+import plumber from 'gulp-plumber';
 import htmlreplace from 'gulp-html-replace';
-import cdnizer from "gulp-cdnizer";
+import cdnizer from 'gulp-cdnizer';
 import gulpif from 'gulp-if';
 
 import modernizr from 'modernizr';
 import modernizrConfig from './modernizr-config.json';
 
-import del from "del";
-import rename from "gulp-rename";
+import del from 'del';
+import rename from 'gulp-rename';
 
 const argv = require('yargs').argv;
 
@@ -58,7 +58,9 @@ import pkg from './package.json';
 const dataFolder = './data';
 
 function getDirectories(srcPath) {
-  return fs.readdirSync(srcPath).filter(file => fs.statSync(path.join(srcPath, file)).isDirectory())
+  return fs
+    .readdirSync(srcPath)
+    .filter(file => fs.statSync(path.join(srcPath, file)).isDirectory());
 }
 
 const langs = getDirectories(dataFolder) || [];
@@ -68,21 +70,21 @@ if (argv.l === undefined) {
 }
 
 const dirs = {
-	root: '.',
+  root: '.',
   src: 'src',
-  dest: 'dist'
+  dest: 'dist',
 };
 
 const sassPaths = {
   src: `${dirs.src}/styles/main.scss`,
-  dest: `${dirs.dest}/styles/`
+  dest: `${dirs.dest}/styles/`,
 };
 
 const pugPaths = {
   src: `${dirs.src}/views/index-${argv.l}.pug`,
 };
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 
 
@@ -92,7 +94,7 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 
 gulp.task('compile-pug', () => {
   return gulp.src(pugPaths.src)
-    .pipe(plumber((error) => {
+    .pipe(plumber(error => {
       console.log(error);
       this.emit('end');
     }))
@@ -101,17 +103,17 @@ gulp.task('compile-pug', () => {
     }))
 		.pipe(pug({
       locals: {},
-      pretty: true
+      pretty: true,
     }))
     .pipe(rename({
-      basename: 'index'
+      basename: 'index',
     }))
     .pipe(gulp.dest(dirs.dest))
     .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('pug-rebuild', ['compile-pug'], () => {
-	browserSync.reload();
+  browserSync.reload();
 });
 
 gulp.task('minify-html', () => {
@@ -119,14 +121,14 @@ gulp.task('minify-html', () => {
     return gulp.src(`./dist/index-en.html`)
       .pipe(htmlmin({
         collapseWhitespace: true,
-        removeComments: true
+        removeComments: true,
       }))
       .pipe(rename({
-        basename: 'index'
+        basename: 'index',
       }))
       // .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
       .pipe(gulp.dest(`${dirs.dest}`));
-  })
+  });
 });
 
 gulp.task('compile-all-pug', () => {
@@ -137,11 +139,11 @@ gulp.task('compile-all-pug', () => {
       }))
       .pipe(pug({
         locals: {},
-        pretty: true
+        pretty: true,
       }))
       .pipe(gulp.dest(`${dirs.dest}`));
   });
-})
+});
 
 // ========================================
 // CSS
@@ -149,7 +151,7 @@ gulp.task('compile-all-pug', () => {
 
 gulp.task('compile-styles', () => {
   return gulp.src(sassPaths.src)
-    .pipe(plumber((error) => {
+    .pipe(plumber(error => {
       console.log(error);
       this.emit('end');
     }))
@@ -162,7 +164,7 @@ gulp.task('compile-styles', () => {
     //   html: [dirs.dest + '/**/*.html']
     // }))
     .pipe(rename({
-      suffix: ".min"
+      suffix: '.min',
     }))
     .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
     .pipe(gulp.dest(sassPaths.dest))
@@ -178,14 +180,14 @@ gulp.task('critical', () => {
         inline: true,
         css: 'dist/styles/main.min.css',
         minify: true,
-        ignore: [/url\(/, '@font-face', /print/]
+        ignore: [/url\(/, '@font-face', /print/],
       }))
       .pipe(htmlmin({
         collapseWhitespace: true,
-        removeComments: true
+        removeComments: true,
       }))
       .pipe(rename({
-        basename: 'index'
+        basename: 'index',
       }))
       .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
   })
@@ -196,8 +198,11 @@ gulp.task('lint-css', function lintCssTask() {
     .pipe(cached('css'))
     .pipe(stylelint({
       reporters: [
-        { formatter: 'string', console: true }
-      ]
+        {
+          formatter: 'string',
+          console: true,
+        }
+      ],
     }));
 });
 
@@ -218,9 +223,9 @@ gulp.task('lint', () => {
   }));
 });
 
-gulp.task("webpack", () => {
+gulp.task('webpack', () => {
   return gulp.src(dirs.src + '/scripts/main.js')
-    .pipe(plumber((error) => {
+    .pipe(plumber(error => {
       console.log(error);
       this.emit('end');
     }))
@@ -228,7 +233,6 @@ gulp.task("webpack", () => {
     .pipe(gulp.dest(dirs.dest + '/scripts/'))
     .pipe(browserSync.reload({stream: true}));
 });
-
 
 // ========================================
 // IMAGES
@@ -238,7 +242,7 @@ gulp.task('compress-images', ['compress-webp'], () => {
   return gulp.src(dirs.src + '/img/**/*.{jpg,png,svg}')
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
-      imagemin.optipng({optimizationLevel: 5})
+      imagemin.optipng({optimizationLevel: 5}),
     ]))
     .pipe(gulp.dest(dirs.dest + '/img/'));
 });
@@ -255,25 +259,25 @@ gulp.task('compress-webp', () => {
 // TDD
 // ========================================
 
-gulp.task("coverage", function () {
-  return  gulp.src(dirs.src + '/scripts/**/*.js')
+gulp.task('coverage', function() {
+  return gulp.src(dirs.src + '/scripts/**/*.js')
     .pipe(istanbul({
-        includeUntested: true
+        includeUntested: true,
     }))
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task("report", function () {
+gulp.task('report', function() {
   gulp.src(dirs.src + '/scripts/**/*.js', { read: false })
     .pipe(istanbul.writeReports());
 });
 
-gulp.task("mocha", function () {
-  return gulp.src("test/**/*.test.js", { read: false })
+gulp.task('mocha', function() {
+  return gulp.src('test/**/*.test.js', { read: false })
     .pipe(mocha({
       reporter: 'spec',
       compilers: 'js:babel-core/register',
-      require: ['jsdom-global']
+      require: ['jsdom-global'],
     }));
 });
 
@@ -282,19 +286,19 @@ gulp.task("mocha", function () {
 // ========================================
 
 gulp.task('browser-sync', () => {
-	browserSync({
-		server: {
+  browserSync({
+    server: {
       baseDir: './dist',
-      index: 'index.html'
+      index: 'index.html',
     },
-		notify: false,
+    notify: false,
     browser: true,
-    open: true
-	});
+    open: true,
+  });
 });
 
 gulp.task('browser-reload', () => {
-	browserSync.reload();
+  browserSync.reload();
 });
 
 // ========================================
@@ -305,7 +309,7 @@ gulp.task('cdn', () => {
   langs.forEach(lang => {
     return gulp.src(`./dist/index-${lang}.html`)
       .pipe(cdnizer({
-        defaultCDNBase: "//everywhere-8a59.kxcdn.com",
+        defaultCDNBase: '//everywhere-8a59.kxcdn.com',
         allowRev: true,
         files: [
           '/scripts/app.bundle.js',
@@ -319,35 +323,35 @@ gulp.task('cdn', () => {
           '/manifest.json',
           '/img/social/facebook-banner.jpg',
           '/img/logos/logo-front-end-checklist.jpg',
-          '/img/logos/logo-front-end-checklist.webp'
+          '/img/logos/logo-front-end-checklist.webp',
         ]
       }))
-      .pipe(gulp.dest(dirs.dest))
+      .pipe(gulp.dest(dirs.dest));
     })
 });
 
-gulp.task("clean-dist",  () => {
+gulp.task('clean-dist', () => {
   return del(['./dist'], {force: true});
 });
 
-gulp.task("clean-tmp",  () => {
+gulp.task('clean-tmp', () => {
   return del(['!./dist/index.html', './dist/index-*.html'], {force: true});
 });
 
-gulp.task("clean-coverage",  () => {
-  return del(["./coverage"]);
+gulp.task('clean-coverage', () => {
+  return del(['./coverage']);
 });
 
 gulp.task('json-rebuild', () => {
   return gulp.src(`./data/${argv.l}/items/*.json`)
-    .pipe(jsonConcat('./_items.json', (data) => {
+    .pipe(jsonConcat('./_items.json', data => {
       return new Buffer(JSON.stringify(data));
     }))
     .pipe(gulp.dest(`./data/${argv.l}`))
 
     .on('finish', () => {
       return gulp.src([ `./data/${argv.l}/_items.json`, `./data/${argv.l}/project/*.json`])
-        .pipe(jsonConcat('./_project.json', (data) => {
+        .pipe(jsonConcat('./_project.json', data => {
           return new Buffer(JSON.stringify(data));
         }))
         .pipe(gulp.dest(`./data/${argv.l}`));
@@ -358,18 +362,18 @@ gulp.task('json-rebuild', () => {
 gulp.task('json-rebuild-all', () => {
   langs.forEach(lang => {
     return gulp.src(`./data/${lang}/items/*.json`)
-      .pipe(jsonConcat('./_items.json', (data) => {
+      .pipe(jsonConcat('./_items.json', data => {
         return new Buffer(JSON.stringify(data));
       }))
       .pipe(gulp.dest(`./data/${lang}`))
 
       .on('finish', () => {
         return gulp.src([ `./data/${lang}/_items.json`, `./data/${lang}/project/*.json`])
-          .pipe(jsonConcat('./_project.json', (data) => {
+          .pipe(jsonConcat('./_project.json', data => {
             return new Buffer(JSON.stringify(data));
           }))
           .pipe(gulp.dest(`./data/${lang}`));
-      })
+      });
     });
 });
 
@@ -381,29 +385,27 @@ gulp.task('copy', () => {
     `!${dirs.src}/modernizr-custom.min.js`,
   ], {
     // Include hidden files by default
-    dot: true
+    dot: true,
   })
   .pipe(gulp.dest(dirs.dest));
 });
 
-
-gulp.task( 'modernizr', done => {
+gulp.task('modernizr', done => {
   modernizr.build(modernizrConfig, code => {
     fs.writeFile(`${dirs.src}/modernizr-custom.min.js`, code, done);
   });
 });
 
-
 // ##########################################
 // LIST TASKS
 // ##########################################
 
-gulp.task("watch", function () {
+gulp.task('watch', function () {
   gulp.watch(dirs.src + '/styles/**/*.scss', ['lint-css', 'compile-styles']);
   gulp.watch(dirs.src + '/views/**/*.pug', ['pug-rebuild']);
   gulp.watch(['!'+ dirs.src + `/data/${argv.l}/**/_*.json`, dirs.src + '/data/**/*.json'], ['json-rebuild']); // When JSON files are updated, concatenate these
   gulp.watch(dirs.src + '/data/**/_*.json', ['compile-pug']); // When JSON are updated, compile PUG files
-  gulp.watch(dirs.src + "/img/**/*", ["compress-images"]);
+  gulp.watch(dirs.src + '/img/**/*', ['compress-images']);
   gulp.watch([dirs.src + '/scripts/**/*.js'], ['lint', 'webpack']);
   gulp.watch(['test/**'], ['mocha']);
 });
@@ -419,7 +421,8 @@ gulp.task('build', done => {
     ['cdn'],
     ['copy'],
     ['minify-html'],
-    done);
+    done
+  );
 });
 
 gulp.task('test', done => {
