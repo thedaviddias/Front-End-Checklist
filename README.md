@@ -225,6 +225,8 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 ### Social meta
 
+Visualize and generate automatically our social meta tags with [Meta Tags](https://metatags.io/)
+
 ***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
