@@ -491,7 +491,6 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * [securityheaders.io](https://securityheaders.io/)
 > * [Observatory by Mozilla](https://observatory.mozilla.org/)
-> * [ASafaWeb - Automated Security Analyser for ASP.NET Websites](https://asafaweb.com/)
 
 ### Best practices
 
