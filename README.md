@@ -698,7 +698,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <link rel="next" href="https://example.com/?page=3">
 ```
 
-* [ ] **Link page AMP Project:** ![Medium][medium_img] The project enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms.
+* [ ] **Link page AMP Project:** ![Low][low_img] The project enables the creation of websites and ads that are consistently fast, beautiful and high-performing across devices and distribution platforms.
 
 > * 📖 [Creation of AMP pages](https://www.ampproject.org/)
 
