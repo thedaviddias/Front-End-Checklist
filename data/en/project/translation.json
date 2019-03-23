@@ -1,13 +1,9 @@
 {
-  "SITE_NAME": "Track Your Personal Progress",
-  "INDEX_TITLE": "Track Progress",
-  
+  "SITE_NAME": "Track Progress",
   "SITE_TAGLINE": "A Platform To Track Your Personal Progess in Subjects That Matter So You Can Unlish The Best You",
-  "SITE_DESCRIPTION": "🗂 The Front-End Checklist Application is perfect for modern websites and meticulous developers! Follow the rules and deliver the best of your work in a generated report!",
+  "SITE_DESCRIPTION": "<translation.json> text",
   "SITE_LANGUAGE": "en",
   "SITE_DIRECTION": "ltr",
-  "URL_GITHUB_ROOT": "https://github.com/thedaviddias/Front-End-Checklist",
-  "URL_GITHUB_REPO": "https://github.com/thedaviddias/Front-End-Checklist/tree/gh-pages",
   "HIGH_CHECKED": "✓ high priority",
   "MEDIUM_CHECKED": "✓ medium priority",
   "LOW_CHECKED": "✓ low priority",
@@ -29,13 +25,5 @@
     "LABEL_SEARCH": "Search",
     "BUTTON_START_NEW": "Start new checklist",
     "BUTTON_GENERATE_PRINT": "Generate report"
-  },
-  "social": {
-    "TWEET": "Tweet",
-    "TWITTER_MSG": "Check the ✨ Front-End Checklist Application ✨ for modern websites and meticulous developers! With more than 28 000 🌟 on #Github, now you can use it on your daily workflow and generate reports 📑!",
-    "TWITTER_VIA": "thedaviddias",
-    "TWITTER_HASHTAGS": "FrontEndChecklist #FrontEnd #Tool #Web",
-    "STAR": "Star",
-    "GITHUB_STAR_MSG": "Star thedaviddias/Front-End-Checklist on GitHub"
   }
 }
