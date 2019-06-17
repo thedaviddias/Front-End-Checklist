@@ -28,6 +28,7 @@
     "browser-sync": "^2.23.6",
     "chai": "^4.1.2",
     "critical": "^1.1.0",
+    "del": "4.1.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-flowtype": "^2.46.1",
