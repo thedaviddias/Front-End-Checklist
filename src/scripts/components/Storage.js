@@ -188,6 +188,14 @@ class Storage {
    * @memberof Storage
    */
   addItemStorage(itemId, storage, keyName) {
+    for (let key in storage) {
+      if (storage.hasOwnProperty(key)) {
+        let value = storage[key];
+        if (value.id === itemId) {
+          return;
+        }
+      }
+    }
     const newItem = {id: itemId};
 
     storage.push(newItem);
