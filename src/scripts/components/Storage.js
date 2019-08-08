@@ -188,7 +188,7 @@ class Storage {
    * @memberof Storage
    */
   addItemStorage(itemId, storage, keyName) {
-    for (let index = 0; index < storage.length; ++index) {
+    for (let index = 0; index < storage.length; index+=1) {
       let value = storage[index];
       if (value.id === itemId) {
         return;
