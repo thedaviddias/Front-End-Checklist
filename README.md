@@ -59,55 +59,55 @@ Oparta na latach doświadczeń programistów z użyciem innych list open-source.
 
 Wszystkie punkty **listy kontrolnej** są wymagane do poprawnego działania większości projektów, jednak niektóre elementy mogą być pominięte lub nie są kluczowe dla danej aplikacji (w przypadku aplikacji webowej możliwe że nie będziesz potrzebował funkcjonalności RSS). Wyróżniamy 3 poziomy przystosowania:
 
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![Niski][low_img] oznacza on, iż dana rzecz jest **rekomendowana** ale może zostać pominięta w niektórych sytuacjach.
+* ![Średni][medium_img] oznacza że dana rzecz jest **silnie rekomendowana** i może być ewentualnie pominięta w naprawdę wyjątkowych sytuacjach. Niektóre elementy mają silny wpływ na SEO lub wydajność, i ich pominięcie może pogorszyć działanie naszej strony.
+* ![Wysoki][high_img] Oznacza to że dana rzecz **bezwzględnie nie może zostać pominięta**. Jej brak może uszkodzić działanie strony lub spowodować poważne problemy z SEO i dostępnością. Te elementy listy powinny być testowane jako pierwsze.
 
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszego zrozumienia ich znaczenia / łatwiejsze nawigacji w liście:
 
-* 📖: documentation or article
-* 🛠: online tool / testing tool
-* 📹: media or video content
+* 📖: dokumentacja lub artykuł
+* 🛠: narzędzie online / narzędzie testowania
+* 📹: treść audiowizualna
 
-> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explain everything about the project.
+> Możesz kontrybuować do  ***Front-End Checklist App*** po przeczytaniu: [plik README_APP](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md). Znajdziesz tam wszystkie niezbędne informacje o projekcie.
 
 ---
 
 ## Head
 
-> **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> **Notes:** Tutaj znajdziesz [listę wszystkeigo](https://github.com/joshbuchea/HEAD) co powinno znaleźć się w znaczniku `<head>` dokumentu HTML.
 
-### Meta tag
+### Tag meta
 
-* [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
+* [ ] **Doctype:** ![High][high_img] Doctype jest znacznikiem HTML i powinien znajdować się na samej górze pliku.
 
 ```html
 <!doctype html> <!-- HTML5 -->
 ```
 
-> * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
+> * 📖 [Ustalanie kodowania znaków - W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-*The next 2 meta tags (Charset and Viewport) need to come first in the head.*
+*Tagi Charset oraz Viewport powinny pojawić się jako pierwsze w tagu <head>*
 
-* [ ] **Charset:** ![High][high_img] The charset (UTF-8) is declared correctly.
+* [ ] **Charset:** ![Wysoki][high_img] Kodowanie znaków (UTF-8) jest zadeklarowane poprawinie
 
 ```html
-<!-- Set character encoding for the document -->
+<!-- Deklaracja kodowania znaków  -->
 <meta charset="utf-8">
 ```
 
-* [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
+* [ ] **Viewport:** ![High][high_img] Viewport jest zadeklarowany poprawnie.
 
 ```html
-<!-- Viewport for responsive web design -->
+<!-- Poprawnie zadeklarowany Viewport dla widoku RWD (responsywnego) -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ```
 
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculates the pixel width of the characters used in the title, and it cuts off between 472 and 482 pixels. The average character limit would be around 55-characters).
+* [ ] **Title:** ![High][high_img] Tytuł jest używany na wszystkich stronach (SEO: Google oblicza ilość pikseli potrzebną na tytuł, i ucina go około 472 lub 482 piskeli. Tytuł powinien mieć średnio około 55 znaków).
 
 ```html
-<!-- Document Title -->
-<title>Page Title less than 55 characters</title>
+<!-- Tytuł dokumentu-->
+<title>Tytuł strony krótszy niż 55 znaków</title>
 ```
 
 > * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
