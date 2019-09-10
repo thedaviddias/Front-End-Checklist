@@ -3,11 +3,11 @@
   <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/src/img/banners/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="170">
   <br>
     <br>
-  Front-End Checklist
+  Front-End lista kontrolna
   <br>
 </h1>
 
-<h4 align="center">The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.</h4>
+<h4 align="center">Lista kontrolna jest wyczerpującą listą wszystkich rzeczy które musisz mieć lub sprawdzić przed wysłaniem kodu na produkcję.</h4>
 
 <p align="center">
   <a href="http://makeapullrequest.com">
@@ -28,16 +28,16 @@
 </p>
 
 <p align="center">
-  <a href="#how-to-use">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://frontendchecklist.io">Website</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
+  <a href="#how-to-use">Jak używać?</a> • <a href="#contributing">Kontrybuowanie</a> • <a href="https://frontendchecklist.io">Strona</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
 </p>
 <p align="center">
-    <span>Other Checklists:</span>
+    <span>Inne listy kontrolne:</span>
     <br>
-  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Front-End Performance Checklist</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Front-End Design Checklist</a>
+  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Lista kontrolna Front-End</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Lista kontrolna Front-End Design </a>
 </p>
 
 
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
+Oparta na latach doświadczeń programistów z użyciem innych list open-source.
 
 ## Table of Contents
 
@@ -45,19 +45,19 @@ It is based on Front-End developers' years of experience, with the additions com
 2. **[HTML](#html)**
 3. **[Webfonts](#webfonts)**
 4. **[CSS](#css)**
-5. **[Images](#images)**
+5. **[Zdjęcia](#images)**
 6. **[JavaScript](#javascript)**
-7. **[Security](#security)**
-8. **[Performance](#performance-1)**
-9. **[Accessibility](#accessibility)**
+7. **[Zabezpieczenia](#security)**
+8. **[Wydajność](#performance-1)**
+9. **[Dostępność](#accessibility)**
 10. **[SEO](#seo)**
-11. **[Translations](#translations)**
+11. **[Tłumaczenia](#translations)**
 
 ---
 
-## How to use?
+## Jak używać
 
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
+Wszystkie punkty **listy kontrolnej** są wymagane do poprawnego działania większości projektów, jednak niektóre elementy mogą być pominięte lub nie są kluczowe dla danej aplikacji (w przypadku aplikacji webowej możliwe że nie będziesz potrzebował funkcjonalności RSS). Wyróżniamy 3 poziomy przystosowania:
 
 * ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
 * ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
