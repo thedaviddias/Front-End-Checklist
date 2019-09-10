@@ -63,7 +63,7 @@ Wszystkie punkty **listy kontrolnej** są wymagane do poprawnego działania wię
 * ![Średni][medium_img] oznacza że dana rzecz jest **silnie rekomendowana** i może być ewentualnie pominięta w naprawdę wyjątkowych sytuacjach. Niektóre elementy mają silny wpływ na SEO lub wydajność, i ich pominięcie może pogorszyć działanie naszej strony.
 * ![Wysoki][high_img] Oznacza to że dana rzecz **bezwzględnie nie może zostać pominięta**. Jej brak może uszkodzić działanie strony lub spowodować poważne problemy z SEO i dostępnością. Te elementy listy powinny być testowane jako pierwsze.
 
-Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszego zrozumienia ich znaczenia / łatwiejsze nawigacji w liście:
+Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszego zrozumienia ich znaczenia / łatwiejszej nawigacji w liście:
 
 * 📖: dokumentacja lub artykuł
 * 🛠: narzędzie online / narzędzie testowania
