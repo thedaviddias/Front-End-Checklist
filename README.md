@@ -87,7 +87,7 @@ Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszeg
 
 > * 📖 [Ustalanie kodowania znaków - W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
 
-*Tagi Charset oraz Viewport powinny pojawić się jako pierwsze w tagu <head>*
+*Tagi Charset oraz Viewport powinny pojawić się jako pierwsze w tagu head*
 
 * [ ] **Charset:** ![Wysoki][high_img] Kodowanie znaków (UTF-8) jest zadeklarowane poprawinie
 
@@ -111,23 +111,23 @@ Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszeg
 ```
 
 > * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
-> * 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/)
+> * 🛠 [Generator Snippetów SERP](https://www.sistrix.com/serp-snippet-generator/)
 
-* [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
+* [ ] **Description:** ![High][high_img] Opis meta (meta description) jest unikatowy i nie zajmuje więcej niż 150 znaków.
 
 ```html
 <!-- Meta Description -->
-<meta name="description" content="Description of the page less than 150 characters">
+<meta name="description" content="Opis strony krótszy niż 150 znaków.">
 ```
 
 > * 📖 [Meta Description - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
 
-* [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format (dimensions: 32x32px).
+* [ ] **Favicons:** ![Medium][medium_img] Każdy favicon został stworzony i wyświetlony prawidłowo. Jeżeli posiadasz tylko `favicon.ico`, umieść go w głównym pliku strony. Normalnie to wystarczy, jednak wciąż dobrą praktyką jest podłączenie tak jak w poniższym przykładzie. Format **PNG** jest rekomendowany zamiast formatu **ICO**.
 
 ```html
-<!-- Standard favicon -->
+<!-- Standardowy favicon -->
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
-<!-- Recommended favicon format -->
+<!-- Rekomendowany format favicon -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
@@ -137,22 +137,22 @@ Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszeg
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
 
-* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
+* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tagi
 
 ```html
 <!-- Apple Touch Icon (at least 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 
-<!-- To run web application in full-screen -->
+<!-- Otwieranie aplikacji webowych na pełnym ekranie -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
-<!-- Has no effect unless you have the previous meta tag -->
+<!-- Stylowanie Status Bar (przeczytaj Wspierane Meta Tagi poniżej aby znaleźć możliwe wartości) -->
+<!-- Nie daje żadnego efektu, dopóki posiadamy poprzedni meta tag -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
-> * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
-> * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+> * 📖 [Konfigurowanie aplikacji webowej](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+> * 📖 [Wspierane Meta Tagi](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
 - [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
 
@@ -161,7 +161,7 @@ Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszeg
 <meta name="msapplication-config" content="browserconfig.xml" />
 ```
 
-Minimum required xml markup for the `browserconfig.xml` file is as follows:
+Minimalny kod xml dla pliku `browserconfig.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +177,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 </browserconfig>
 ```
 
-> * 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+> * 📖 [Konfiguracja Przeglądarki - Dokumentacja](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
 * [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
 
