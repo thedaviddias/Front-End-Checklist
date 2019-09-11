@@ -154,7 +154,7 @@ Dla lepszej czytelności niektóre teksty poprzedzone są elementami dla lepszeg
 > * 📖 [Konfigurowanie aplikacji webowej](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 > * 📖 [Wspierane Meta Tagi](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
-- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
+- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles dodane prawidłowo
 
 ```html
 <!-- Microsoft Tiles -->
@@ -179,25 +179,24 @@ Minimalny kod xml dla pliku `browserconfig.xml`:
 
 > * 📖 [Konfiguracja Przeglądarki - Dokumentacja](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
 
-* [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
+* [ ] **Canonical:** ![Medium][medium_img] Dodaj `rel="canonical"` aby uniknąć zdublowanej treści.
 
 ```html
-<!-- Helps prevent duplicate content issues -->
+<!-- pomaga uniknąć problemu zduplikowanej treści -->
 <link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html">
 ```
 
 > * 📖 [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
 > * 📖 [5 common mistakes with rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
 
-### HTML tags
+### Tagi HTML
 
-* [ ] **Language attribute:** ![High][high_img] The `lang` attribute of your website is specified and related to the language of the current page.
-
+* [ ] **Atrybut Language:** ![High][high_img] Atrybut `lang` jest zdefiniowany i jednoznacznie określa język naszej strony.
 ```html
 <html lang="en">
 ```
 
-* [ ] **Direction attribute:** ![Medium][medium_img] The direction of lecture is specified on the html tag (It can be used on another HTML tag).
+* [ ] **Direction attribute:** ![Medium][medium_img] Kierunek czytania określony jest w tagu **dir**
 
 ```html
 <html dir="rtl">
@@ -205,27 +204,27 @@ Minimalny kod xml dla pliku `browserconfig.xml`:
 
 > * 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
 
-* [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
+* [ ] **Język alternatywny:** ![Low][low_img] Tag określa język dla danej podstrony
 
 ```html
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
-* [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
+* [ ] **Conditional comments:** ![Low][low_img] Komentarze warunkowe mogą być wyświetlane w IE
 
 > * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
+* [ ] **RSS feed:** ![Low][low_img] Przydatne w przypadku blogów, lub stron z artykułami.
 
-* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
+* [ ] **CSS Critical:** ![Medium][medium_img] Krytyczny CSS jest używany do wyrenderowania widocznej części strony.Jest osadzony przed głownym kodem CSS w tagach `<style></style>`, w linii pojedyńczej (zminifikowany).
 
-> * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
+> * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) - zautomatyzowane rozwiązanie.
 
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **Kolejność CSS:** ![High][high_img] Pilki CSS są wczytane przed plikami js w tagu `<head>`. (Oprócz przypadku gdy pliki JS są ładowane aynchronicznie na górze strony).
 
 ### Social meta
 
-Visualize and generate automatically our social meta tags with [Meta Tags](https://metatags.io/)
+Automatycznie wygeneruj tagi Social Media z: [Meta Tags](https://metatags.io/)
 
 ***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
 
