@@ -226,7 +226,7 @@ Minimalny kod xml dla pliku `browserconfig.xml`:
 
 Automatycznie wygeneruj tagi Social Media z: [Meta Tags](https://metatags.io/)
 
-***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
+***Facebook OG*** i ***Twitter Cards*** są silnie rekomendowany dla każdej strony. Inne tagi social media mogą zostać rozważone jeżeli zależy nam na prezentowaniu danych w określonych social media.
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
 
