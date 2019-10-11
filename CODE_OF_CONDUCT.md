@@ -13,6 +13,7 @@ Examples of behavior that contributes to creating a positive environment include
 * Gracefully accepting constructive criticism
 * Focusing on what is best for the community
 * Showing empathy towards other community members
+* Allowing other devlopers to gain and devote knowledge.
 
 Examples of unacceptable behavior by participants include:
 
@@ -21,6 +22,7 @@ Examples of unacceptable behavior by participants include:
 * Public or private harassment
 * Publishing others' private information, such as a physical or electronic address, without explicit permission
 * Other conduct which could reasonably be considered inappropriate in a professional setting
+* use of unacceptable commit text or username is also prohibted.
 
 ## Our Responsibilities
 
