@@ -5,7 +5,6 @@ import fs from 'fs';
 
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
-import gutil from 'gulp-util';
 import gulpIf from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 
