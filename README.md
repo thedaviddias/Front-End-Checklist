@@ -809,6 +809,6 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 **[⬆ back to top](#table-of-contents)**
 
-[low_img]: https://front-end-checklist.now.sh/low.svg
-[medium_img]: https://front-end-checklist.now.sh/medium.svg
-[high_img]: https://front-end-checklist.now.sh/high.svg
+[low_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/priority/low.svg
+[medium_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/priority/medium.svg
+[high_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/priority/high.svg
