@@ -72,7 +72,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * 🛠: online tool / testing tool
 * 📹: media or video content
 
-> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explain everything about the project.
+> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explains everything about the project.
 
 ---
 
@@ -232,7 +232,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
 
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
+* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
 
 > **Notes:** Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
 
@@ -315,7 +315,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ## Webfonts
 
-> **Notes:** Using webfonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing webfont loaders to control behavior.
+> **Notes:** Using web fonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing web font loaders to control behavior.
 > * 📖 [Google Technical considerations about webfonts](https://developers.google.com/fonts/docs/technical_considerations)
 
 * [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
@@ -396,7 +396,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 * [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
 * [ ] **OS:**  ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
 
-- [ ] **Design fidelity:** ![Low][low_img] Depending the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
+- [ ] **Design fidelity:** ![Low][low_img] Depending on the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
@@ -421,7 +421,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 > * 🛠 Use [KeyCDN Image Processing](https://www.keycdn.com/support/image-processing) for image optimization in real time.
 > * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
-> * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimise png, apng (animated png) and jpg images. Free and paid version available.
+> * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimises png, apng (animated png) and jpg images. Free and paid version available.
 > * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
 > * 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files.
 > * 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/) a web-based GUI version of SVGO for optimising your svgs online.
@@ -434,7 +434,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 * [ ] **Retina:** ![Low][low_img] You provide layout images 2x or 3x, support retina display.
 * [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
 * [ ] **Width and Height:** ![High][high_img] Set `width` and `height` attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
-* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describe the image visually.
+* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describes the image visually.
 
 > * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
 
@@ -498,7 +498,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ### Best practices
 
-* [ ] **HTTPS:** ![High][high_img] HTTPS is used on every pages and for all external content (plugins, images...).
+* [ ] **HTTPS:** ![High][high_img] HTTPS is used on every page and for all external content (plugins, images...).
 
 > * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 > * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
@@ -562,7 +562,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 > * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
 
-* [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your users activity private.
+* [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your user's activity private.
 
 > * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
 
