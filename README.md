@@ -214,7 +214,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
-* [ ] **x-default:** ![Low][low_img] For all other languages.
+* [ ] **x-default:** ![Low][low_img] The language tag of your website for international landing pages.
 
 ```html
 <link rel="alternate" href="https://example.com/" hreflang="x-default" />
