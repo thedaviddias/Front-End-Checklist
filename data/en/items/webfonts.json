@@ -26,7 +26,7 @@
   {
     "title": "Webfont size",
     "priority": "High",
-    "description": "Webfont sizes don't exceed 2 MB (all variants included).",
+    "description": "Webfont sizes don't exceed 100 KB (all variants included).",
     "tags": ["all", "webfont"]
   },
   {
