@@ -532,7 +532,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 📖 [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
 > * 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
-> * 📖 [CSP Cheat Sheet - OWASP](https://www.owasp.org/index.php/Content_Security_Policy_Cheat_Sheet)
+> * 📖 [CSP Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
 > * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
 
 **[⬆ back to top](#table-of-contents)**
