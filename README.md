@@ -214,6 +214,15 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
 ```
 
+* [ ] **x-default:** ![Low][low_img] The language tag of your website for international landing pages.
+
+```html
+<link rel="alternate" href="https://example.com/" hreflang="x-default" />
+```
+
+> * 📖 [x-default - Google](https://webmasters.googleblog.com/2013/04/x-default-hreflang-for-international-pages.html)
+
+
 * [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
 
 > * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
