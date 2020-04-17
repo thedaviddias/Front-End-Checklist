@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://thedaviddias@github.com/thedaviddias/Front-End-Checklist-App.git"
+    "url": "git+https://thedaviddias@github.com/thedaviddias/Front-End-Checklist.git"
   },
   "author": "David Dias (thedaviddias@gmail.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thedaviddias/Front-End-Checklist-App/issues"
+    "url": "https://github.com/thedaviddias/Front-End-Checklist/issues"
   },
-  "homepage": "https://github.com/thedaviddias/Front-End-Checklist-App#readme",
+  "homepage": "https://github.com/thedaviddias/Front-End-Checklist#readme",
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/core": "7.9.0",
