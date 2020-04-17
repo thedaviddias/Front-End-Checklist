@@ -465,4 +465,12 @@ exports.dev = gulp.series(
   watchGulp,
 );
 
+exports.build = gulp.series(
+  compilePug,
+  compileStyles,
+  compressImages,
+  webpackJs,
+  jsonRebuild
+);
+
 exports.default = gulp.series(browserSyncConf);
