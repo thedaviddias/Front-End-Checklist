@@ -58,7 +58,6 @@
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylelint": "13.0.0",
-    "gulp-util": "^3.0.8",
     "gulp-webpack": "^1.5.0",
     "html-webpack-plugin": "4.2.0",
     "imagemin-webp": "5.1.0",

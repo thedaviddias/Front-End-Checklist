@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs';
 
 import gulp from 'gulp';
+import runSequence from 'run-sequence';
 import gulpIf from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 
