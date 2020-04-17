@@ -759,7 +759,13 @@ This branch will be used to make some significant changes to the structure, cont
 
 ### Online Setup with a single Click
 
-You can use gitpod ( A free VS Code like IDE) for contributing online, with a single click it will launch a ready to code workspace with all the dependencies pre-installed, build finished & the web server running so that you can start coding straight away.
+You can use Gitpod ( A free online VS Code-like IDE) for contributing, with a single click it will launch a workspace and automatically:
+
+- clone the frontendchecklist repo.
+- install the dependencies.
+- run `npm run start`.
+
+So that you can start straight away.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thedaviddias/Front-End-Checklist)
 
