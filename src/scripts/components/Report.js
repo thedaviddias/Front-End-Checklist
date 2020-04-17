@@ -17,7 +17,7 @@ class Report {
 
   readInputs() {
     this.inputs.forEach(el => {
-      if (localStorage.getItem(el.name) !== null) {
+      if (localStorage.getItem(el.name) && localStorage.getItem(el.name) !== 'null') {
         const storage = JSON.parse(localStorage.getItem(el.name));
         el.value = storage[0]
       }
