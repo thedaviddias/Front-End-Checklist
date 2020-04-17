@@ -119,10 +119,6 @@ function compilePug() {
     .pipe(browserSync.reload({stream: true}));
 }
 
-// gulp.task('pug-rebuild', ['compile-pug'], () => {
-//   browserSync.reload();
-// });
-
 function minifyHtml() {
   langs.forEach(() => {
     return (
@@ -139,7 +135,6 @@ function minifyHtml() {
             basename: 'index',
           }),
         )
-        // .pipe(gulpif(lang !== 'en', gulp.dest(`${dirs.dest}/${lang}`), gulp.dest(`${dirs.dest}`)))
         .pipe(gulp.dest(`${dirs.dest}`))
     );
   });
@@ -183,9 +178,6 @@ function compileStyles() {
       .pipe(autoprefixer())
       .pipe(gcmq())
       .pipe(cssnano())
-      // .pipe(uncss({
-      //   html: [dirs.dest + '/**/*.html']
-      // }))
       .pipe(
         rename({
           suffix: '.min',
@@ -292,7 +284,7 @@ function compressImages() {
     .src(dirs.src + '/img/**/*.{jpg,png,svg}')
     .pipe(
       imagemin([
-        imagemin.jpegtran({progressive: true}),
+        imagemin.mozjpeg({progressive: true}),
         imagemin.optipng({optimizationLevel: 5}),
       ]),
     )
@@ -305,37 +297,6 @@ function compressWebp() {
     .pipe(imagemin([imageminWebp({quality: 70})]))
     .pipe(gulp.dest(dirs.dest + '/img/'));
 }
-
-// ========================================
-// TDD
-// ========================================
-
-// gulp.task('coverage', function() {
-//   return gulp
-//     .src(dirs.src + '/scripts/**/*.js')
-//     .pipe(
-//       istanbul({
-//         includeUntested: true,
-//       }),
-//     )
-//     .pipe(istanbul.hookRequire());
-// });
-
-// gulp.task('report', function() {
-//   gulp
-//     .src(dirs.src + '/scripts/**/*.js', {read: false})
-//     .pipe(istanbul.writeReports());
-// });
-
-// gulp.task('mocha', function() {
-//   return gulp.src('test/**/*.test.js', {read: false}).pipe(
-//     mocha({
-//       reporter: 'spec',
-//       compilers: 'js:babel-core/register',
-//       require: ['jsdom-global'],
-//     }),
-//   );
-// });
 
 // ========================================
 // SERVER
@@ -491,7 +452,6 @@ function watchGulp() {
   gulp.watch(dirs.src + '/data/**/_*.json', ['compile-pug']); // When JSON are updated, compile PUG files
   gulp.watch(dirs.src + '/img/**/*', ['compress-images']);
   gulp.watch([dirs.src + '/scripts/**/*.js'], ['lint', 'webpack']);
-  // gulp.watch(['test/**'], ['mocha']);
 }
 
 exports.dev = gulp.series(
@@ -503,22 +463,5 @@ exports.dev = gulp.series(
   browserSyncConf,
   watchGulp,
 );
-
-// gulp.task('build', done => {
-//   runSequence(
-//     ['clean-dist', 'json-rebuild-all', 'modernizr'],
-//     ['lint-css'],
-//     ['compile-all-pug'],
-//     ['compile-styles', 'compress-images', 'webpack'],
-//     ['cdn'],
-//     ['copy'],
-//     ['minify-html'],
-//     done,
-//   );
-// });
-
-// gulp.task('test', done => {
-//   runSequence('clean-coverage', 'coverage', 'mocha', 'report', done);
-// });
 
 exports.default = gulp.series(browserSyncConf);
