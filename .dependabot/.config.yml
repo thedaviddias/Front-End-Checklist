@@ -1,0 +1,22 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "weekly"
+    allowed_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "security"
+    target_branch: "develop"
+    commit_message:
+      prefix: "fix"
+      prefix_development: "chore"
+      include_scope: true
+    default_assignees:
+      - "thedaviddias"
+    default_labels:
+      - "dependencies"
+      - "dependabot"
