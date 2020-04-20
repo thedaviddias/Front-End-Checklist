@@ -1,9 +1,0 @@
-@if $use-dropdown == true {
-  [data-item-dropdown='open'] .c-checklist__details {
-    display: block;
-  }
-
-  [data-item-dropdown='close'] .c-checklist__details {
-    display: none;
-  }
-}

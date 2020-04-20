@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/src/img/banners/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="170">
+  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
   <br>
     <br>
   Front-End Checklist
@@ -764,19 +764,6 @@ This branch consists of the `README.md` file that is automatically reflected on 
 #### 2. `develop`
 
 This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
-
-
-### Online Setup with a single Click
-
-You can use Gitpod ( A free online VS Code-like IDE) for contributing, with a single click it will launch a workspace and automatically:
-
-- clone the frontendchecklist repo.
-- install the dependencies.
-- run `npm run start`.
-
-So that you can start straight away.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thedaviddias/Front-End-Checklist)
 
 ## Support
 

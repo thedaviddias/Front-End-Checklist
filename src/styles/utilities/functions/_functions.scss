@@ -1,4 +1,0 @@
-// Function to choose colors in CSS variables
-@function color($color-name) {
-  @return var(--color-#{$color-name});
-}
