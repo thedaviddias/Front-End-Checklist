@@ -714,7 +714,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 ## Translations
 
 The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
-
+* 🇸🇦 Arabic: [iabdullahwaleed/FrontEnd-Checklist](https://iabdullahwaleed.github.io/FrontEnd-Checklist)
 * 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
 * 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
 * 🇨🇳 Chinese: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
