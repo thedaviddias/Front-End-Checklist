@@ -66,7 +66,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * 🛠: online tool / testing tool
 * 📹: media or video content
 
-> You can contribute to the ***Front-End Checklist App*** reading the [README_APP file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/README_APP.md) which explains everything about the project.
+> You can contribute to the ***Front-End Checklist App*** reading the [CONTRIBUTING.md file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/CONTRIBUTING.md) which explains everything about the project.
 
 ---
 
