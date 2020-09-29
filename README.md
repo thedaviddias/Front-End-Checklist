@@ -151,7 +151,7 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 > * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
-- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
+* [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
 
 ```html
 <!-- Microsoft Tiles -->
@@ -367,14 +367,14 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ### Performance
 
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
+* [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
+* [ ] **Minification:** ![High][high_img] All CSS files are minified.
+* [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
 
 > * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
 > * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
 
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
+* [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
 
 > * 🛠 [UnCSS Online](https://uncss-online.com/)
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
@@ -399,7 +399,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 * [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
 * [ ] **OS:**  ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
 
-- [ ] **Design fidelity:** ![Low][low_img] Depending on the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
+* [ ] **Design fidelity:** ![Low][low_img] Depending on the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
 
 > [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
@@ -546,10 +546,10 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ### Best practices
 
-- [ ] **Goals to achieve:** ![Medium][medium_img] Your pages should reach these goals:
-  - First Meaningful Paint under 1 second
-  - Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
-  - Critical file size under 170Kb gzipped
+* [ ] **Goals to achieve:** ![Medium][medium_img] Your pages should reach these goals:
+  * First Meaningful Paint under 1 second
+  * Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
+  * Critical file size under 170Kb gzipped
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
 > * 🛠 [WebPageTest](https://www.webpagetest.org/)
@@ -619,11 +619,11 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ### Best practices
 
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
+* [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
 
 > * 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
 
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
+* [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
 
 > * 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
 
@@ -636,7 +636,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ### Semantics
 
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
+* [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
 
 > * 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
