@@ -221,7 +221,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
 
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
+* [ ] **RSS feed:** ![Low][low_img] RSS is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format.If your project is a blog or has articles, an RSS link was provided.
 
 * [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
 
