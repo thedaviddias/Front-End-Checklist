@@ -390,6 +390,13 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Sass guidelines](https://sass-guidelin.es/)
 
 * [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be more / different according to your analytics).
+**Responsive Checker -**
+> * 🛠 [Am I Responsive?](http://ami.responsivedesign.is/)
+> * 🛠 [Mobile Friendly Test](https://search.google.com/test/mobile-friendly)
+> * 🛠 [Responsive Website Design Tester](https://responsivedesignchecker.com/)
+> * 🛠 [Responsinator](https://www.responsinator.com/)
+> * 🛠 [XRespond](https://xrespond.com/)
+
 
 * [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
 
