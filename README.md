@@ -671,7 +671,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 ## SEO
 
-* [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
+* [ ] **Google Analytics:** ![Low][low_img] Google Analytics is installed and correctly configured.
 
 > * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
 > * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
