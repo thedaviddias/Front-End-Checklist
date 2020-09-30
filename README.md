@@ -449,6 +449,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
+> * 🛠 [Native lazy loading polyfill](https://github.com/mfranzke/loading-attribute-polyfill/)
 
 **[⬆ back to top](#table-of-contents)**
 
