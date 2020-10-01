@@ -1,811 +1,436 @@
-<h1 align="center">
-<br>
-  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
-  <br>
-    <br>
-  Front-End Checklist
-  <br>
-</h1>
 
-<h4 align="center">The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.</h4>
-
-<p align="center">
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
-  </a>
-    <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
-  </a>
-  <a href="https://github.com/thedaviddias/Front-End-Checklist/">
-    <img src="https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg?style=flat-square" alt="Front‑End_Checklist followed">
-  </a>
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="https://img.shields.io/badge/license-CC0-green.svg?style=flat-square" alt="CC0">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#how-to-use">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://frontendchecklist.io">Website</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
-</p>
-<p align="center">
-    <span>Other Checklists:</span>
-    <br>
-  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Front-End Performance Checklist</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Front-End Design Checklist</a>
-</p>
-
-
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
-
-## Table of Contents
-
-1. **[Head](#head)**
-2. **[HTML](#html)**
-3. **[Webfonts](#webfonts)**
-4. **[CSS](#css)**
-5. **[Images](#images)**
-6. **[JavaScript](#javascript)**
-7. **[Security](#security)**
-8. **[Performance](#performance-1)**
-9. **[Accessibility](#accessibility)**
-10. **[SEO](#seo)**
-11. **[Translations](#translations)**
-
----
-
-## How to use?
-
-All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
-
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
-
-Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
-
-* 📖: documentation or article
-* 🛠: online tool / testing tool
-* 📹: media or video content
-
-> You can contribute to the ***Front-End Checklist App*** reading the [CONTRIBUTING.md file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/CONTRIBUTING.md) which explains everything about the project.
-
----
-
-## Head
-
-> **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
-
-### Meta tag
-
-* [ ] **Doctype:** ![High][high_img] The Doctype is HTML5 and is at the top of all your HTML pages.
-
-```html
-<!doctype html> <!-- HTML5 -->
-```
-
-> * 📖 [Determining the character encoding - HTML5 W3C](https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding)
-
-*The next 2 meta tags (Charset and Viewport) need to come first in the head.*
-
-* [ ] **Charset:** ![High][high_img] The charset (UTF-8) is declared correctly.
-
-```html
-<!-- Set character encoding for the document -->
-<meta charset="utf-8">
-```
-
-* [ ] **Viewport:** ![High][high_img] The viewport is declared correctly.
-
-```html
-<!-- Viewport for responsive web design -->
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-```
-
-* [ ] **Title:** ![High][high_img] A title is used on all pages (SEO: Google calculates the pixel width of the characters used in the title, and it cuts off between 472 and 482 pixels. The average character limit would be around 55-characters).
-
-```html
-<!-- Document Title -->
-<title>Page Title less than 55 characters</title>
-```
-
-> * 📖 [Title - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
-> * 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/)
-
-* [ ] **Description:** ![High][high_img] A meta description is provided, it is unique and doesn't possess more than 150 characters.
-
-```html
-<!-- Meta Description -->
-<meta name="description" content="Description of the page less than 150 characters">
-```
-
-> * 📖 [Meta Description - HTML - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description)
-
-* [ ] **Favicons:** ![Medium][medium_img] Each favicon has been created and displays correctly. If you have only a `favicon.ico`, put it at the root of your site. Normally you won't need to use any markup. However, it's still good practice to link to it using the example below. Today, **PNG format is recommended** over `.ico` format (dimensions: 32x32px).
-
-```html
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
-<!-- Recommended favicon format -->
-<link rel="icon" type="image/png" href="https://example.com/favicon.png">
-```
-
-> * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
-> * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
-> * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
-> * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
-> * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
-
-* [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
-
-```html
-<!-- Apple Touch Icon (at least 200x200px) -->
-<link rel="apple-touch-icon" href="/custom-icon.png">
-
-<!-- To run web application in full-screen -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<!-- Status Bar Style (see Supported Meta Tags below for available values) -->
-<!-- Has no effect unless you have the previous meta tag -->
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-```
-
-> * 📖 [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
-> * 📖 [Supported Meta Tags](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
-
-- [ ] **Windows Tiles:** ![Low][low_img] Windows tiles are present and linked.
-
-```html
-<!-- Microsoft Tiles -->
-<meta name="msapplication-config" content="browserconfig.xml" />
-```
-
-Minimum required xml markup for the `browserconfig.xml` file is as follows:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<browserconfig>
-   <msapplication>
-     <tile>
-        <square70x70logo src="small.png"/>
-        <square150x150logo src="medium.png"/>
-        <wide310x150logo src="wide.png"/>
-        <square310x310logo src="large.png"/>
-     </tile>
-   </msapplication>
-</browserconfig>
-```
-
-> * 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
-
-* [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
-
-```html
-<!-- Helps prevent duplicate content issues -->
-<link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html">
-```
-
-> * 📖 [Use canonical URLs - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=en)
-> * 📖 [5 common mistakes with rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
-
-### HTML tags
-
-* [ ] **Language attribute:** ![High][high_img] The `lang` attribute of your website is specified and related to the language of the current page.
-
-```html
-<html lang="en">
-```
-
-* [ ] **Direction attribute:** ![Medium][medium_img] The direction of lecture is specified on the html tag (It can be used on another HTML tag).
-
-```html
-<html dir="rtl">
-```
-
-> * 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
-
-* [ ] **Alternate language:** ![Low][low_img] The language tag of your website is specified and related to the language of the current page.
-
-```html
-<link rel="alternate" href="https://es.example.com/" hreflang="es">
-```
-
-* [ ] **x-default:** ![Low][low_img] The language tag of your website for international landing pages.
-
-```html
-<link rel="alternate" href="https://example.com/" hreflang="x-default" />
-```
-
-> * 📖 [x-default - Google](https://webmasters.googleblog.com/2013/04/x-default-hreflang-for-international-pages.html)
-
-
-* [ ] **Conditional comments:** ![Low][low_img] Conditional comments are present for IE if needed.
-
-> * 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
-
-* [ ] **RSS feed:** ![Low][low_img] If your project is a blog or has articles, an RSS link was provided.
-
-* [ ] **CSS Critical:** ![Medium][medium_img] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified).
-
-> * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
-
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
-
-### Social meta
-
-Visualize and generate automatically our social meta tags with [Meta Tags](https://metatags.io/)
-
-***Facebook OG*** and ***Twitter Cards*** are, for any website, highly recommended. The other social media tags can be considered if you target a particular presence on those and want to ensure the display.
-
-* [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
-
-> **Notes:** Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
-
-```html
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://example.com/page.html">
-<meta property="og:title" content="Content Title">
-<meta property="og:image" content="https://example.com/image.jpg">
-<meta property="og:description" content="Description Here">
-<meta property="og:site_name" content="Site Name">
-<meta property="og:locale" content="en_US">
-<!-- Next tags are optional but recommended -->
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-```
-
-> * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
-> * 📖 [Best Practices - Sharing](https://developers.facebook.com/docs/sharing/best-practices/)
-> * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
-
-* [ ] **Twitter Card:** ![Low][low_img]
-
-```html
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@site_account">
-<meta name="twitter:creator" content="@individual_account">
-<meta name="twitter:url" content="https://example.com/page.html">
-<meta name="twitter:title" content="Content Title">
-<meta name="twitter:description" content="Content description less than 200 characters">
-<meta name="twitter:image" content="https://example.com/image.jpg">
-```
-
-> * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
-> * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## HTML
-
-### Best practices
-
-* [ ] **HTML5 Semantic Elements:** ![High][high_img] HTML5 Semantic Elements are used appropriately (header, section, footer, main...).
-
-> * 📖 [HTML Reference](http://htmlreference.io/)
-
-* [ ] **Error pages:** ![High][high_img] Error 404 page and 5xx exist. Remember that the 5xx error pages need to have their CSS integrated (no external call on the current server).
-
-* [ ] **Noopener:** ![Medium][medium_img] In case you are using external links with `target="_blank"`, your link should have a `rel="noopener"` attribute to prevent tab nabbing. If you need to support older versions of Firefox, use `rel="noopener noreferrer"`.
-
-> * 📖 [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
-
-* [ ] **Clean up comments:** ![Low][low_img] Unnecessary code needs to be removed before sending the page to production.
-
-### HTML testing
-
-* [ ] **W3C compliant:** ![High][high_img] All pages need to be tested with the W3C validator to identify possible issues in the HTML code.
-
-> * 🛠 [W3C validator](https://validator.w3.org/)
-
-* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
-
-> * 🛠 [Dirty markup](https://www.10bestdesign.com/dirtymarkup/)
-
-> * 🛠 [webhint](https://webhint.io/)
-
-* [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404 error.
-
-> * 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
-
-* [ ] **Adblockers test:** ![Medium][medium_img] Your website shows your content correctly with adblockers enabled (You can provide a message encouraging people to disable their adblocker).
-
-> * 📖 [Use AdBlocking in your Dev Environment](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
-
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Webfonts
-
-> **Notes:** Using web fonts may cause Flash Of Unstyled Text/Flash Of Invisible Text - consider having fallback fonts and/or utilizing web font loaders to control behavior.
-> * 📖 [Google Technical considerations about webfonts](https://developers.google.com/fonts/docs/technical_considerations)
-
-* [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
-
-> * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
-> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
-> * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
-> * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
-
-* [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
-
-* [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader
-
-> * 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## CSS
-
-> **Notes:** Take a look at [CSS guidelines](https://cssguidelin.es/) and [Sass Guidelines](https://sass-guidelin.es/) followed by most  Front-End developers. If you have a doubt about CSS properties, you can visit [CSS Reference](http://cssreference.io/). There is also a short [Code Guide](http://codeguide.co/) for consistency.
-
-* [ ] **Responsive Web Design:** ![High][high_img] The website is using responsive web design.
-* [ ] **CSS Print:** ![Medium][medium_img] A print stylesheet is provided and is correct on each page.
-* [ ] **Preprocessors:** ![Low][low_img] Your project is using a CSS preprocessor (e.g [Sass](http://sass-lang.com/), [Less](http://lesscss.org/), [Stylus](http://stylus-lang.com/)).
-* [ ] **Unique ID:** ![High][high_img] If IDs are used, they are unique to a page.
-* [ ] **Reset CSS:** ![High][high_img] A CSS reset (reset, normalize or reboot) is used and up to date. *(If you are using a CSS Framework like Bootstrap or Foundation, a Normalize is already included into it.)*
-
-> * 📖 [Reset.css](https://meyerweb.com/eric/tools/css/reset/)
-> * 📖 [Normalize.css](https://necolas.github.io/normalize.css/)
-> * 📖 [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/)
-
-* [ ] **JS prefix:** ![Low][low_img] All classes (or id- used in JavaScript files) begin with **js-** and are not styled into the CSS files.
-
-```html
-<div id="js-slider" class="my-slider">
-<!-- Or -->
-<div id="id-used-by-cms" class="js-slider my-slider">
-```
-
-* [ ] **embedded or inline CSS:** ![High][high_img] Avoid at all cost embedding CSS in `<style>` tags or using inline CSS: only use for valid reasons (e.g. background-image for slider, critical CSS).
-* [ ] **Vendor prefixes:** ![High][high_img] CSS vendor prefixes are used and are generated accordingly with your browser support compatibility.
-
-> * 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
-
-### Performance
-
-- [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file *(Not for HTTP/2)*.
-- [ ] **Minification:** ![High][high_img] All CSS files are minified.
-- [ ] **Non-blocking:** ![Medium][medium_img] CSS files need to be non-blocking to prevent the DOM from taking time to load.
-
-> * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
-> * 📖 [Example of preload CSS using loadCSS](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
-
-- [ ] **Unused CSS:** ![Low][low_img] Remove unused CSS.
-
-> * 🛠 [UnCSS Online](https://uncss-online.com/)
-> * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
-> * 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
-> * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
-
-
-### CSS testing
-
-* [ ] **Stylelint:** ![High][high_img] All CSS or SCSS files are without any errors.
-
-> * 🛠 [stylelint, a CSS linter](https://stylelint.io/)
-> * 📖 [Sass guidelines](https://sass-guidelin.es/)
-
-* [ ] **Responsive web design:** ![High][high_img] All pages were tested at the following breakpoints: 320px, 768px, 1024px (can be more / different according to your analytics).
-
-* [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
-
-> * 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
-
-* [ ] **Desktop Browsers:** ![High][high_img] All pages were tested on all current desktop browsers (Safari, Firefox, Chrome, Internet Explorer, EDGE...).
-* [ ] **Mobile Browsers:**  ![High][high_img] All pages were tested on all current mobile browsers (Native browser, Chrome, Safari...).
-* [ ] **OS:**  ![High][high_img] All pages were tested on all current OS (Windows, Android, iOS, Mac...).
-
-- [ ] **Design fidelity:** ![Low][low_img] Depending on the project and the quality of the creatives, you may be asked to be close to the design. You can use some tools to compare creatives with your code implementation and ensure consistency.
-
-> [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
-
-* [ ] **Reading direction:** ![High][high_img] All pages need to be tested for LTR and RTL languages if they need to be supported.
-
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Images
-
-> **Notes:** For a complete understanding of image optimization, check the free ebook **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
-
-### Best practices
-
-* [ ] **Optimization:** ![High][high_img] All images are optimized to be rendered in the browser. WebP format could be used for critical pages (like Homepage).
-
-> * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
-> * 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
-> * 🛠 Use [KeyCDN Image Processing](https://www.keycdn.com/support/image-processing) for image optimization in real time.
-> * 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb per files on free plan.
-> * 🛠 [TinyPNG](https://tinypng.com/) losslessly optimises png, apng (animated png) and jpg images. Free and paid version available.
-> * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
-> * 🛠 [SVGO](https://github.com/svg/svgo) a Nodejs-based tool for optimizing SVG vector graphics files.
-> * 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/) a web-based GUI version of SVGO for optimising your svgs online.
-
-
-* [ ] **Picture/Srcset:** ![Medium][medium_img] You use picture/srcset to provide the most appropriate image for the current viewport of the user.
-
-> * 📖 [How to Build Responsive Images with srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
-
-* [ ] **Retina:** ![Low][low_img] You provide layout images 2x or 3x, support retina display.
-* [ ] **Sprite:** ![Medium][medium_img] Small images are in a sprite file (in the case of icons, they can be in an SVG sprite image).
-* [ ] **Width and Height:** ![High][high_img] Set `width` and `height` attributes on `<img>` if the final rendered image size is known (can be omitted for CSS sizing).
-* [ ] **Alternative text:** ![High][high_img] All `<img>` have an alternative text which describes the image visually.
-
-> * 📖 [Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
-
-* [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## JavaScript
-
-### Best practices
-
-* [ ] **JavaScript Inline:** ![High][high_img] You don't have any JavaScript code inline (mixed with your HTML code).
-* [ ] **Concatenation:** ![High][high_img] JavaScript files are concatenated.
-* [ ] **Minification:** ![High][high_img] JavaScript files are minified (you can add the `.min` suffix).
-
-> * 📖 [Minify Resources (HTML, CSS, and JavaScript)](https://developers.google.com/speed/docs/insights/MinifyResources)
-
-* [ ] **JavaScript security:** ![High][high_img]
-
-> * 📖 [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)
-
-* [ ] **`noscript` tag:** ![Medium][medium_img] Use `<noscript>` tag in the HTML body if a script type on the page is unsupported or if scripting is currently turned off in the browser. This will be helpful in client-side rendering heavy apps such as React.js, see [examples](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498).
-
-```html
-<noscript>
-  You need to enable JavaScript to run this app.
-</noscript>
-```
-
-* [ ] **Non-blocking:** ![Medium][medium_img] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
-
-> * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
-
-* [ ] **Optimized and updated JS libraries:** ![Medium][medium_img] All JavaScript libraries used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their latest version and don't overwhelm your JavaScript with unnecessary methods.
-
-> * 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
-> * 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
-
-* [ ] **Modernizr:** ![Low][low_img] If you need to target some specific features you can use a custom Modernizr to add classes in your `<html>` tag.
-
-> * 🛠 [Customize your Modernizr](https://modernizr.com/download?setclasses)
-
-### JavaScript testing
-
-* [ ] **ESLint:** ![High][high_img] No errors are flagged by ESLint (based on your configuration or standards rules).
-
-> * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Security
-
-### Scan and check your web site
-
-> * [securityheaders.io](https://securityheaders.io/)
-> * [Observatory by Mozilla](https://observatory.mozilla.org/)
-
-### Best practices
-
-* [ ] **HTTPS:** ![High][high_img] HTTPS is used on every page and for all external content (plugins, images...).
-
-> * 🛠 [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
-> * 🛠 [Free SSL Server Test](https://www.ssllabs.com/ssltest/index.html)
-> * 📖 [Strict Transport Security](http://caniuse.com/#feat=stricttransportsecurity)
-
-* [ ] **HTTP Strict Transport Security (HSTS):** ![Medium][medium_img] The HTTP header is set to 'Strict-Transport-Security'.
-
-> * 🛠 [Check HSTS preload status and eligibility](https://hstspreload.org/)
-> * 📖 [HTTP Strict Transport Security Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)
-> * 📖 [Transport Layer Protection Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)
-
-* [ ] **Cross Site Request Forgery (CSRF):** ![High][high_img] You ensure that requests made to your server-side are legitimate and originate from your website / app to prevent CSRF attacks.
-
-> * 📖 [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet  - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
-
-* [ ] **Cross Site Scripting (XSS):** ![High][high_img] Your page or website is free from XSS possible issues.
-
-> * 📖 [XSS (Cross Site Scripting) Prevention Cheat Sheet  - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
-> * 📖 [DOM based XSS Prevention Cheat Sheet  - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
-
-* [ ] **Content Type Options:** ![Medium][medium_img] Prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server.
-
-> * 📖 [X-Content-Type-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options)
-
-* [ ] **X-Frame-Options (XFO):** ![Medium][medium_img] Protects your visitors against clickjacking attacks.
-
-> * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
-> * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
-
-* [ ] **Content Security Policy:** ![Medium][medium_img] Defines how content is loaded on your site and from where it is permitted to be loaded. Can also be used to protect against clickjacking attacks.
-
-> * 📖 [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
-> * 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
-> * 📖 [CSP Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
-> * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Performance
-
-### Best practices
-
-- [ ] **Goals to achieve:** ![Medium][medium_img] Your pages should reach these goals:
-  - First Meaningful Paint under 1 second
-  - Time To Interactive under 5 seconds for the "average" configuration (a $200 Android on a slow 3G network with 400ms RTT and 400kbps transfer speed) and under 2 seconds for repeat visits
-  - Critical file size under 170Kb gzipped
-
-> * 🛠 [Website Page Analysis](https://tools.pingdom.com)
-> * 🛠 [WebPageTest](https://www.webpagetest.org/)
-> * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
-
-* [ ] **Minified HTML:** ![Medium][medium_img] Your HTML is minified.
-
-* [ ] **Lazy loading:** ![Medium][medium_img] Images, scripts and CSS need to be lazy loaded to improve the response time of the current page (See details in their respective sections).
-
-* [ ] **Cookie size:** ![Medium][medium_img] If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
-
-> * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
-> * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-> * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
-
-* [ ] **Third party components:** ![Medium][medium_img] Third party iframes or components relying on external JS (like sharing buttons) are replaced by static components when possible, thus limiting calls to external APIs and keeping your user's activity private.
-
-> * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
-
-### Preparing upcoming requests
-
-> * 📖 [Explanation of the following techniques](https://css-tricks.com/prefetching-preloading-prebrowsing/)
-
-* [ ] **DNS resolution:** ![Low][low_img] DNS of third-party services that may be needed are resolved in advance during idle time using `dns-prefetch`.
-
-```html
-<link rel="dns-prefetch" href="https://example.com">
-```
-
-* [ ] **Preconnection:** ![Low][low_img] DNS lookup, TCP handshake and TLS negotiation with services that will be needed soon is done in advance during idle time using `preconnect`.
-
-```html
-<link rel="preconnect" href="https://example.com">
-```
-
-* [ ] **Prefetching:** ![Low][low_img] Resources that will be needed soon (e.g. lazy loaded images) are requested in advance during idle time using `prefetch`.
-
-```html
-<link rel="prefetch" href="image.png">
-```
-
-* [ ] **Preloading:** ![Low][low_img] Resources needed in the current page (e.g. scripts placed at the end of `<body>`) in advance using `preload`.
-
-```html
-<link rel="preload" href="app.js">
-```
-
-> * 📖 [Difference between prefetch and preload](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
-
-### Performance testing
-
-* [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at least 90/100.
-
-> * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
-> * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
-> * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
-> * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
-> * 🛠 [Speedrank - Improve the performance of your website](https://speedrank.app/)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Accessibility
-
-> **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
-
-### Best practices
-
-- [ ] **Progressive enhancement:** ![Medium][medium_img] Major functionality like main navigation and search should work without JavaScript enabled.
-
-> * 📖 [Enable / Disable JavaScript in Chrome Developer Tools](https://www.youtube.com/watch?v=kBmvq2cE0D8)
-
-- [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
-
-> * 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
-
-#### Headings
-
-* [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
-* [ ] **Headings:** ![High][high_img] Headings should be used properly and in the right order (H1 to H6).
-
-> * 📹 [Why headings and landmarks are so important -- A11ycasts #18](https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
-
-### Semantics
-
-- [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices that show customized keypads and widgets for different types.
-
-> * 📖 [Mobile Input Types](http://mobileinputtypes.com/)
-
-### Form
-
-* [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be displayed, use `aria-label` instead.
-
-> * 📖 [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
-
-### Accessibility testing
-
-* [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the accessibility standards.
-
-> * 🛠 [Wave testing](http://wave.webaim.org/)
-
-* [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All interactive elements are reachable and usable.
-* [ ] **Screen-reader:** ![Medium][medium_img] All pages were tested in a screen-reader (VoiceOver, ChromeVox, NVDA or Lynx).
-* [ ] **Focus style:** ![High][high_img] If the focus is disabled, it is replaced by visible state in CSS.
-
-> * 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## SEO
-
-* [ ] **Google Analytics:** ![High][high_img] Google Analytics is installed and correctly configured.
-
-> * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
-> * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
-
-* [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
-
-> * 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
-
-* [ ] **sitemap.xml:** ![High][high_img] A sitemap.xml exists and was submitted to Google Search Console (previously Google Webmaster Tools).
-
-> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
-
-* [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
-
-> * 📖 [The robots.txt file](https://varvy.com/robottxt.html)
-> * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
-
-* [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
-
-> * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
-> * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
-> * 📖 [JSON-LD](https://json-ld.org/)
-> * 📖 [Microdata](https://www.w3.org/TR/microdata/)
-> * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
-> * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
-
-* [ ] **Sitemap HTML:** ![Medium][medium_img] An HTML sitemap is provided and is accessible via a link in the footer of your website.
-
-> * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
-
-* [ ] **Pagination link tags:** ![Medium][medium_img] Provide `rel="prev"` and `rel="next"` to indicate paginated content.
-
-> * 🛠 [Pagination (rel="prev/next") Testing Tool](https://technicalseo.com/seo-tools/rel-prev-next/)
-
-> * 📖 [Pagination guidelines - Google Support](https://support.google.com/webmasters/answer/1663744?hl=en)
-
-```html
-<!-- Example: Pagination link tags for page 2 of a paginated list -->
-<link rel="prev" href="https://example.com/?page=1">
-<link rel="next" href="https://example.com/?page=3">
-```
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Translations
-
-The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
-
-* 🇯🇵 Japanese: [miya0001/Front-End-Checklist](https://github.com/miya0001/Front-End-Checklist)
-* 🇪🇸 Spanish: [eoasakura/Front-End-Checklist-ES](https://github.com/eoasakura/Front-End-Checklist-ES)
-* 🇨🇳 Chinese: [JohnsenZhou/Front-End-Checklist](https://github.com/JohnsenZhou/Front-End-Checklist)
-* 🇰🇷 Korean: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
-* 🇧🇷 Portuguese: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
-* 🇻🇳 Vietnamese: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
-* 🇹🇼 Traditional Chinese: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
-* 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
-* 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
-* 🇹🇷 Turkish: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
-* 🇩🇪 German: [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
-* 🇦🇷 Arabic: [iabdullahwaleed/Front-End-Checklist](https://iabdullahwaleed.github.io/FrontEnd-Checklist)
-
----
-
-## Front-End Checklist Badge
-
-If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
-
-➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
-
-```md
-[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
-```
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Contributing
-
-**Open an issue or a pull request to suggest changes or additions.**
-
-### Guide
-
-The **Front-End Checklist** repository consists of two branches:
-
-#### 1. `master`
-
-This branch consists of the `README.md` file that is automatically reflected on the [Front-End Checklist](https://frontendchecklist.io) website.
-
-#### 2. `develop`
-
-This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
-
-## Support
-
-If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
-
-* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-* [Facebook](https://www.facebook.com/frontendchecklist/)
-* [Twitter](https://twitter.com/thedaviddias)
-
-## Author
-
-**[David Dias](https://github.com/thedaviddias)**
-
-## Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute]](.github/CONTRIBUTING.md).
-<a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" /></a>
-
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/front-end-checklist#backer)]
-
-<a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890"></a>
-
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
-
-<a href="https://opencollective.com/front-end-checklist/sponsor/0/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/1/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/2/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/3/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/4/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/5/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/6/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/7/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/8/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/9/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/9/avatar.svg"></a>
-
-## License
-
-[![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-**[⬆ back to top](#table-of-contents)**
-
-[low_img]: data/images/priority/low.svg
-[medium_img]: data/images/priority/medium.svg
-[high_img]: data/images/priority/high.svg
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name=”description” content="قائمة التدقيق الشاملة لمطورين واجهات المستخدم تحتوى على عناصر قد تحتاجها او فحصها قبل اطلاق مشروعك / صفحتك.">
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <title>قائمة التدقيق لمطورين واجهات الويب</title>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/prism.css"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139156431-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-139156431-1');
+    </script>
+</head>
+<body>
+    <nav>
+        <h1>قائمة التدقيق لمطورين واجهات الويب</h1>
+    </nav>
+    <header>
+        <img src="logo.jpg"/>
+        <p>قائمة التدقيق الشاملة لمطورين واجهات المستخدم تحتوى على عناصر قد تحتاجها او فحصها قبل اطلاق مشروعك / صفحتك.        </p>
+        <div class="update-note">مرحبَا بكم في الشكل الجديد من الموقع, سيتم اجراء العديد من التغيرات الاخرى  قريبا بالاضافة الى اطلاق قائمة اخرى لاحقا. 2019/12/08</div>
+    </header>
+    <section class="index container">
+        <article>
+        <h2>الفهرس</h2>
+        <ul>
+            <li><a href="#head">العناصر الداخل Head</a></li>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#webfonts">خطوط الويب</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#images">الصور</a></li>
+            <li><a href="#js">جافاسكربت</a></li>
+            <li><a href="#sec">الحماية</a></li>
+            <li><a href="#performance">الأداء</a></li>
+            <li><a href="#access">امكانية الوصول</a></li>
+            <li><a href="#seo">السيو</a></li>
+            <li><a href="#translation">الترجمات</a></li>
+        </ul>
+    </article>
+    </section>
+    <section class="how-to-use container">
+        <article>
+        <h2>كيفية الاستخدام؟</h2>
+        <p>جميع العناصر في القائمة يجب أن تستخدم في غالبية المشاريع، لكن بعض العناصر يمكن تجاهلها، مثلا: لا تحتاج إلى تغذية RSS في موقع خاص لإدارة المدارس.</p>
+        <p>اخترنا وجود ثلاث مراحل من العناصر وأهمية استخدامها:</p>
+        <ul>
+            <li>
+                <span class="low-icon"></span>
+                <p>يعني ان العنصر ينصح إستخدامه لكن يُمكن ان يتم اهماله في بعض الحالات.</p>
+            </li>
+            <li>
+                <span class="medium-icon"></span>
+                <p> يعني ان العنصر ينصح بشدة استخدامه، لكن يُمكن ان يهمل في بعض الحالات الخاصة، ولكن بعض العناصر إذا أُهملت يمكن ان تأثر على الأداء او SEO .</p>
+            </li>
+            <li>
+                <span class="high-icon"></span>
+                <p> يعني ان العنصر لا يمكن إهماله لأي سبب، اذا تم اهمالة سيتسبب بمشاكل في الصفحة و SEO، أولوية اختبارات الاداء تكون على هذة العناصر اولاً.</p>
+            </li>
+        </ul>
+        <p>نوع المحتوى الذي ستجده في قائمة التدقيق:</p>
+        <ul>
+            <li>توثيقات أو مقالات</li>
+            <li>أدوات اختبار</li>
+            <li>محتوى مرئي</li>
+        </ul>
+    </article>
+    </section>
+    <section class="head container">
+        <article>
+        <h2 id="head">ما يتم ضبطه داخل العنصر HEAD</h2>
+        <p>
+            <span class='high-icon'>نوع المستند</span><span>: تعريف المتصفح انك تستخدم الاصدار الخامس من لغة HTML, يوضع في اعلى الملف</span>
+            <pre dir="ltr"><code class="language-markup">&lt;!doctype html> &lt;!-- HTML5 --></code></pre>
+        </p>
+        <a target="_blank" class="note" href="https://wiki.hsoub.com/HTML#.D8.A8.D9.86.D9.8A.D8.A9_.D9.85.D8.B3.D8.AA.D9.86.D8.AF.D8.A7.D8.AA_HTML" target="_blank">تحديد ترميز الأحرف</a>
+        <p>عنصران البيانات الوصفية القادمه (Charset و Viewport) يجب ان تكونا في بداية عنصر Head</p>
+        <span class="high-icon">ترميز المحارف</span><span>: يجب على ترميز UTF-8 مكتوب بشكل صحيح</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- تحديد ترميز الاحرف للمستند -->
+&lt;meta charset="utf-8"></code></pre>
+        <span class="high-icon">العرض</span><span>: العنصر Viewport ايضا يجب ان يكتب بشكل صحيح</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- Viewport for responsive web design -->
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></code></pre>
+        <span class="high-icon">العنوان</span><span>: العنوان يجب ان يستخدم في كل الصفحات (سيو : محرك البحث Google يحسب عرض الحرف بالبكسل ويقطع بين 472 الى 482 بكسل, يجب ان يكون الحد الاعلى للاحرف حوالي 55 حرف).</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- عنوان المستند -->
+&lt;title>عنوان الصفحه&lt;/title></code></pre>
+        <a target="_blank" href="https://wiki.hsoub.com/HTML/title">العنصر title - موسوعة حسوب</a><br/>
+        <a target="_blank" href="https://app.sistrix.com/en/serp-snippet-generator">اداة لفحص كيفية ظهور اسم الموقع في محركات البحث</a></br>
+        <span class="high-icon">الوصف</span><span>: يجب ان يكون الوصف فريدا من نوعه ولا يتجاوز 150 حرف.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- الوصف -->
+&lt;meta name="description" content="وصف الصفحة لا يتجاوز 150 حرف"></code></pre>
+        <a target="_blank" href="https://wiki.hsoub.com/HTML/meta#name">الوصف - موسوعة حسوب</a></br>
+        <span class="medium-icon">أَيْقُونَة</span><span>: يجب ان تظعها في عنصر Head, يمكنك استخدام الصيغة .ico ولكن ينصح الان باستخدام الصيغة PNG (الابعاد 32x32px)</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- الصيغة الأساسية -->
+&lt;link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
+&lt;!-- الصيغة التي ينصح بها -->
+&lt;link rel="icon" type="image/png" href="https://example.com/favicon.png"></code></pre>
+        <span class="low-icon">البيانات الوصفية لتطبيقات Apple :</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- ايقونة Apple Touch (على الأقل 200 بكسل طولا وعرضا) -->
+&lt;link rel="apple-touch-icon" href="/custom-icon.png">
+            
+&lt;!-- لتشغيل الموقع في وضع ملء الشاشة -->
+&lt;meta name="apple-mobile-web-app-capable" content="yes">
+            
+&lt;!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+&lt;!-- Has no effect unless you have the previous meta tag -->
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="black"></code></pre>
+        <a target="_blank" href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">تكوين تطبيقات الويب</a><br/>
+        <a target="_blank" href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">البيانات الوصفية المعتمدة</a><br/>
+        <span class="low-icon">قائمة ويندوز</span><span>: من ميزات اخر اصدار من نظام ويندوز</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- Microsoft Tiles -->
+&lt;meta name="msapplication-config" content="browserconfig.xml" /></code></pre>
+        <p>اقل ما يكتب في ملف browserconfig.xml :</p>
+        <pre dir="ltr"><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;browserconfig>
+    &lt;msapplication>
+     &lt;tile>
+        &lt;square70x70logo src="small.png"/>
+        &lt;square150x150logo src="medium.png"/>
+        &lt;wide310x150logo src="wide.png"/>
+        &lt;square310x310logo src="large.png"/>
+     &lt;/tile>
+   &lt;/msapplication>
+&lt;/browserconfig></code></pre>
+        <a target="_blank" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85)">تفاصيل أكثر</a><br/>
+        <span class="medium-icon">دمج الصفحات</span><span>: يساعد في تجنب المحتوى المتكرر</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- Helps prevent duplicate content issues -->
+&lt;link rel="canonical" href="http://example.com/2017/09/a-new-article-to-read.html</code></pre>
+        <a target="_blank" href="https://support.google.com/webmasters/answer/139066?hl=ar">دمج عناوين URL المتكررة</a><br/>
+        <a target="_blank" href="https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html">5 اخطاء شائعة مع rel=cononical</a>
+        <h3>العنصر HTML</h3>
+        <span class="high-icon">اللغة</span><span>: ضع رمز اللغة الاساسية التي تستخدم في الصفحه</span>
+        <pre dir="ltr"><code class="language-markup">&lt;html lang="ar"></code></pre>
+        <span class="medium-icon">اتجاه الصفحه</span><span>: في حالة اللغة العربية والعبرية والفارسية يستعمل rtl وفي الغات الاخرى يستعمل ltr</span>
+        <pre dir="ltr"><code class="language-markup">&lt;html dir="rtl"></code></pre>
+        <span class="low-icon">لغة اخرى</span><span>وضع رابط لنسخ اخرى من موقع بلغات مختلفة</span>
+        <pre dir="ltr"><code class="language-markup">&lt;link rel="alternate" href="https://es.example.com/" hreflang="tr"></code></pre>
+        <span class="low-icon">التعليقات الشرطية</span><span>التعليقات الشرطية لمتصفج IE اذا تحتاج</span><br/>
+        <a target="_blank" href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/ms537512(v=vs.85)">التعليقات الشرطية - Microsoft</a><br/>
+        <span class="low-icon">تغذية RSS</span><span>: اذا كان مشروعك مدونة او يحتوي على مقالات, يجب توفر وصلة RSS.</span><br/>
+        <span class="medium-icon">ضغط شفرة CSS</span><span>: يجمع كل شفرة CSS في سطر واحد (تصغير).</span><br/>
+        <span class="high-icon">ترتيب ملفات CSS</span><span>يجب على كلف ملفات CSS ان تحمل قبل اي ملف JavaScript. (عدا بعض الحالات التي تحمل ملفات JavaScript بشكل غير متزامن في اعلى صفحك)</span>
+        <h3>مواقع التواصل الاجتماعي</h3>
+        <p>مشاهدة وانشاء البيانات الوصفية لمواقع التواصل الاجتماعي بشكل تلقائي مع <a href="https://metatags.io/">Meta Tags</a></p>
+        <p>بالنسبة لفيس بوك وتويتر فهما مهمين, المواقع الاجتماعيه الاخرى يمكن ان تاخذ بعين الأعتبار اذا كنت تستهدف جمهور معين.</p>
+        <span class="low-icon">فيس بوك</span><span>: الصورة يجب ان تكون على الأقل 600 في 315 بكسل, وينصح 1200 في 630 بكسل.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;meta property="og:type" content="website">
+&lt;meta property="og:url" content="https://example.com/page.html">
+&lt;meta property="og:title" content="Content Title">
+&lt;meta property="og:image" content="https://example.com/image.jpg">
+&lt;meta property="og:description" content="Description Here">
+&lt;meta property="og:site_name" content="Site Name">
+&lt;meta property="og:locale" content="en_US">
+&lt;!-- Next tags are optional but recommended -->
+&lt;meta property="og:image:width" content="1200">
+&lt;meta property="og:image:height" content="630"></code></pre>
+        <a target="_blank" href="https://developers.facebook.com/docs/sharing/webmasters/">دليل المشاركة لمسؤولي مواقع الويب</a><br/>
+        <a target="_blank" href="https://developers.facebook.com/docs/sharing/best-practices/">أفضل ممارسات المشاركة لمواقع الويب وتطبيقات الهواتف المحمولة</a><br/>
+        <a target="_blank" href="https://developers.facebook.com/tools/debug/">أداة تصحيح أخطاء المشاركة</a>
+        <p>شكرا لفيس بوك لتوفير كل الادوات والتوثيقات مترجمة الى الغة العربية</p>
+        <span class="low-icon">تويتر :</span>
+        <pre dir="ltr"><code class="language-markup">&lt;meta name="twitter:card" content="summary">
+&lt;meta name="twitter:site" content="@site_account">
+&lt;meta name="twitter:creator" content="@individual_account">
+&lt;meta name="twitter:url" content="https://example.com/page.html">
+&lt;meta name="twitter:title" content="Content Title">
+&lt;meta name="twitter:description" content="Content description less than 200 characters">
+&lt;meta name="twitter:image" content="https://example.com/image.jpg"></code></pre>
+        <a target="_blank" href="docs/tweets/optimize-with-cards/guides/getting-started">التوثيق</a><br/>
+        <a target="_blank" href="https://cards-dev.twitter.com/validator">اداة فصح التوافق لبطاقات تويتر</a>
+        </article>
+        <article>
+        <h2 id="html">HTML</h2>
+        <h3>افضل الممارسات</h3>
+        <span class="high-icon">دلالات لفظية</span><span>: يجب ان تستعمل عناصر التي تحتوي دلالات لفظية بشكل مناسب مثل (header, footer, section, main ...)</span><br/>
+        <a target="_blank" href="https://htmlreference.io/">مرجع</a><br/>
+        <span class="high-icon">صفحات الخطأ</span><span>    : يجب على صفحات الاخطاء 404 و5xx ان تكون متوفر, تذكر صفحه خطا 5xx يجب ان تحتوي على شفرة CSS داخلية.</span><br/>
+        <span class="medium-icon">خاصية Noopener</span><span>: في حالة تم استخداك رابط خارجي مع target="_blank", يجب ان يحتوي على خاصية rel="noopener" في الصفحه السابقة, اذا كنت تحتاج دعم الاصدارات القديمة من متصفح فايرفوكس, استخدم rel="noopener noreferrer".</span><br/>
+        <span class="low-icon">تنضيف تعليقات</span><span>: احذف جميع التعليقات والشفرات الغير مستخدمة</span>
+        <h3>اختبار HTML</h3>
+        <span class="high-icon">اختبار W3C</span><span>: جميع الصفحات يجب ان تفحص على W3C وتحديد الاخطاء المحتملة.</span><br/>
+        <a target="_blank" href="https://validator.w3.org">اختبار W3C</a><br/>
+        <span class="high-icon">فحوصات اخرى</span><span>: استخدام ادوات لتحليل اي خطأ قد يوجد في شفرة HTML</span><br/>
+        <a target="_blank" href="https://www.10bestdesign.com/dirtymarkup/">اداة Dirty Markup</a><br/>
+        <a target="_blank" href="https://webhint.io/">موقع webhint</a><br/>
+        <span class="high-icon">مدقق الارتباط</span><span>: فحص عدم وجود رابط لا يعمل, تاكد من عدم وجود خطأ 404.</span><br/>
+        <a target="_blank" href="https://validator.w3.org/checklink">مدقق الروابط</a><br/>
+        <span class="high-icon">مانع الاعلانات</span><span>: يجب على موقعك ان يظهر بشكل صحيح اثناء استعمال مانع اعلانات (يجب توفير رسالة تشجع الزائر على اغلاق مانع الاعلانات).</span><br/>
+        <a target="_blank" href="https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86">استخدام مانع الاعلانات في بيئة التطوير</a>
+        </article>
+        <article>
+        <h2 id="webfonts">خطوط الويب</h2>
+        <p>ملاحظة : استخدام خطوط ويب قد يسبب مشاكل في النص - خذ في عين الاعتبار ان يكون لديك خط احتياطي (اساسي في كل الاجهزة مثل Arial).</p>
+        <a target="_blank" href="https://developers.google.com/fonts/docs/technical_considerations">اعتبارات فنية يجب  ان تاخذها في عين الاعتبار</a><br/>
+        <span class="high-icon">صيغ خطوط الويب</span><span>: الصيغ الاتية WOFF و WOFF2 و TTF مدعومة في جميع المتصفحات الحديثة.</span><br/>
+        <a target="_blank" href="https://caniuse.com/#feat=woff2">دعم WOFF في المتصفحات</a><br/>
+        <a target="_blank" href="https://caniuse.com/#feat=woff2">دعم WOFF2 في المتصفحات</a></br/>
+        <a target="_blank" href="https://caniuse.com/#feat=ttf">دعم TTF/OTF في المتصفحات</a><br/>
+        <a target="_blank" href="https://css-tricks.com/snippets/css/using-font-face/">استخدام @font-face</a><br/>
+        <span class="high-icon">حجم ملف الخط</span><span>: يجب ان لا يتجاوز 2MB</span><br/>
+        <span class="low-icon">تحميل خطوط الويب</span><span>: التحكم بسلوك التحميل</span><br/>
+        <a target="_blank" href="https://github.com/typekit/webfontloader">Typekit Web Font Loader</a>
+        </article>
+        <article>
+        <h2 id="css">CSS</h2>
+        <p>ملاحظة : اذا كان لديك شك في خاصية يمكنك زيارة <a target="_blank" href="https://wiki.hsoub.com/CSS">التوثيق</a></p>
+        <span class="high-icon">تصميم ويب متجاوب</span><span>: يجب على التصميم ان يكون متجاوب.</span><br/>
+        <span class="medium-icon">تصميم الطباعة</span><span>يجب كتابة تصميم خاص لنسخه الطباعه من موقعك</span><br/>
+        <span class="low-icon">المعالجة الاولية</span><span>: مشروعك يستخدم (<a target="_blank" href="https://wiki.hsoub.com/Sass">Sass</a>, Less, Stylus).</span><br/>
+        <span class="high-icon">ID مميز</span><span>: اذا استخدم خاصية ID, يجب ان تكون مميزة</span><br/>
+        <span class="high-icon">اعادة تعيين CSS</span><span>: ابو خدوداستخدام احد هذة الملفات (reset ,Normalize , reboot) ويجب ان تكون باخر اصدار (اذا كنت تستخدم اطار عمل مثل Bootstrap او Foundation يكون ملف Normalize متضمن بالفعل).</span>
+        <ul>
+            <li><a target="_blank" href="https://meyerweb.com/eric/tools/css/reset/">Reset.css</a></li>
+            <li><a target="_blank" href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
+            <li><a target="_blank" href="https://getbootstrap.com/docs/4.0/content/reboot/">Reboot</a></li>
+            <li><a target="_blank" href="https://getbootstrap.com/">Bootstrap</a></li>
+            <li><a target="_blank" href="https://foundation.zurb.com/">Foundation</a></li>
+        </ul>
+        <span class="high-icon">شفرة CSS المضمنه</span><span>: تجنب تضمين شفرة CSS داخل العنصر &lt;style&gt; او كتابة الشفرة بشكل مباشر في ملف HTML.</span><br/>
+        <span class="high-icon">البادئات</span><span>: يتم كتابة البادئات وفقا لتوافق المتصفح الخاص بك.</span><br/>
+        <a target="_blank" href="https://autoprefixer.github.io/">Autoprefixer CSS online</a>
+        <h3>الأداء</h3>
+        <span class="high-icon">دمج</span><span>: يتم دمج كل ملفات CSS في ملف واحد بشكل متسلسل.</span><br/>
+        <span class="high-icon">ضغط الملفات</span><span>: ملف CSS مضغوط.</span><br/>
+        <span class="medium-icon">حظر العرض</span><span>: يجب على ملفات CSS عدم حظر الرؤية.</span><br/>
+        <a target="_blank" href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css">حظر العرض - Google</a><br/>
+        <a target="_blank" href="https://keithclark.co.uk/articles/loading-css-without-blocking-render/">Loading CSS without blocking render</a><br/>
+        <span class="high-icon">الشفرات الغير مستعملة</span><span>: احذف كل الاسطر الغير مستعملة.</span>
+        <ul>
+            <li><a target="_blank" href="https://uncss-online.com/">UnCSS Online</a></li>
+            <li><a target="_blank" href="https://github.com/purifycss/purifycss">PurifyCSS</a></li>
+            <li><a target="_blank" href="https://github.com/FullHuman/purgecss">PurgeCSS</a></li>
+            <li><a target="_blank" href="https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage">Chrome DevTools Coverage</a></li>
+        </ul>
+        <h3>اختبار شفرة CSS</h3>
+        <span class="high-icon">تصميم ويب متجاوب</span><span>: كل الصفحات يجب ان تختبر في النقاط الاتية: 320px, 768px, 1024px.</span><br/>
+        <span class="medium-icon">مدقق شفرة CSS</span><span>: شفرة CSS تم اختبارها وتصحيح اخطاءها.</span><br/>
+        <a target="_blank" href="https://jigsaw.w3.org/css-validator/">CSS Validator</a><br/>
+        <span class="high-icon">متصفحات سطح المكتب</span><span>: كل الصفحات يتم فحصها على (FireFox, Chrome , Opera , Microsoft Edge).</span><br/>
+        <span class="high-icon">متصفحات الهاتف</span><span>: كل الصفحات تم اختبارها على : (Chrome, Safari , Samsung Browser, FireFox).</span><br/>
+        <span class="high-icon">أنظمة التشغيل</span><span>: كل الصفحات تم اختبارها على الانظمة الاتية : (Windows, Android, IOS, Mac...).</span><br/>
+        <span class="low-icon">الاخلاص في التصميم</span><span>: حسب المشروع وجودة التصميم, قد يطلب منك ان تبرمج نسخه قريبه من تصميم, في هذا الحالة يمكنك استخدام ادوات لتقارن التصميم بالتطبيق البرمجي وضمان التناسق.</span><br/>
+        <a target="_blank" href="https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en">Pixel Perfect - اضافة متصفح</a><br/>
+        <span class="high-icon">قراءة الاتجاه</span><span>: دعم اللغات التي تقرا من اليمين اليسار.</span><br/>
+        <a target="_blank" href="https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/">Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks</a><br/>
+        <a target="_blank" href="https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/">Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks</a>
+        </article>
+        <article>
+        <h2 id="images">الصور</h2>
+        <p>لفهم اكثر في عملية تجاوب الصور, اقرا الكتاب الالكتروني <a href="https://images.guide/">Essential Image Optimization</a> من عدي عثماني</p>
+        <h3>افضل الممارسات</h3>
+        <span>تجاوب</span><span>: كل الصور يجب ان تظهر في الصفحه في احسن صورة, بعض الادوات التي ستساعدك :</span>
+        <ul>
+            <li><a target="_blank" href="https://github.com/imagemin/imagemin">Imagemin</a></li>
+            <li><a target="_blank" href="https://imageoptim.com/api">ImageOptim</a></li>
+            <li><a target="_blank" href="https://kraken.io/web-interface">Kraken.io</a></li>
+            <li><a target="_blank" href="https://tinypng.com/">TinyPNG</a></li>
+            <li><a target="_blank" href="http://quasimondo.com/ZorroSVG/">ZorroSVG</a></li>
+            <li><a target="_blank" href="https://github.com/svg/svgo">SVGO</a></li>
+            <li><a target="_blank" href="https://jakearchibald.github.io/svgomg/">SVGOMG</a></li>
+        </ul>
+        <span class="medium-icon">صور والعنصر srcset</span><span>: توفير صور مناسبة لكل مقاسات الشاشات.</span><br/>
+        <a target="_blank" href="https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/">How to Build Responsive Images with srcset</a><br/>
+        <span class="low-icon">شاشات ريتنا</span><span>: بالنسبة للشاشات التي تحتوي معدل عالي من dpi, فان الصور يتم مدها وتَفقد جودتها.</span><br/>
+        <a target="_blank" href="https://www.sitelock.com/blog/2018/04/how-to-enable-retina-screen-ready-images-on-your-wordpress-website/">How to Upgrade Website Images for Retina Displays</a><br/>
+        <span class="high-icon">الدمج</span><span>: دمج الصور الصغيرة في ملف واحد.</span><br/>
+        <a target="_blank" href="https://css.spritegen.com/">CSS Sprite Generator</a><br/>
+        <span class="high-icon">العرض والطول</span><span>: تحديد العرض والطول للصورة اذا كانت الابعاد معلومة</span><br/>
+        <span class="high-icon">نص بديل</span><span>: كل الصور يجب ان تحتوي على نص بديل يفسر الصورة اذا حدث خطأ في تحميلها.</span><br/>
+        <span class="medium-icon">التحميل الكسول</span><span>: توفير خاصية التحميل الكسول في موقعك, مثال :</span>
+        <img src="B1.jpg"/>
+        </article>
+        <article>
+        <h2 id="js">Javascript</h2>
+        <h3>افضل الممارسات</h3>
+        <span class="high-icon">شفرة جافاسكربت في النسق</span><span>: عدم استعمال اي شفرة جافاسكربت مع شفرات HTML.</span><br/>
+        <span class="high-icon">دمج</span><span>: دمج الملفات بشكل متسلسل.</span><br/>
+        <span class="high-icon">تصغير الحجم</span><span>: ضغط ملفات Javascript.</span><br/>
+        <a target="_blank" href="https://developers.google.com/speed/docs/insights/MinifyResources">Minify Resources (HTML, CSS, and JavaScript</a><br/>
+        <span class="high-icon">الأمان</span><span>:</span><br/>
+        <a target="_blank" href="https://github.com/OWASP/CheatSheetSeries">Guidelines for Developing Secure Applications Utilizing JavaScript</a><br/>
+        <span class="high-icon">العنصر noscript</span><span>: العنصر noscript عبارة عن رسالة تظهر للمستخدم اذا تم الغاء تفعيل الجافاسكريبت في متصفحه.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;noscript>
+    يجب عليك تفعيل الجافاسكريبت لأستخدام الموقع
+&lt;/noscript></code></pre>
+        <span class="medium-icon">تحديث مكتبات Javascript</span><span>: كل المكتباب المستخدمه يجب ان تكون ضرورية (تفضيل استخدام شفرة Javascript اصلية للمهام البسيطة), كل المكتبات بأخر اصدار ولا تغرق الشفرة بطرق غير مرغوبة او غير ضرورية.</span><br/>
+        <a target="_blank" href="http://youmightnotneedjquery.com/">You may not need jQuery</a><br/>
+        <a target="_blank" href="https://plainjs.com/"> Vanilla JavaScript for building powerful web applications</a><br/>
+        <span class="low-icon">داله Modernizr (المرتب)</span><span>: تقوم باخبار المتصفخ اذا كان يدعم ميزة معينه أم لا ويتصرف بناءً على ذلك.</span>
+        <pre dir="ltr"><code class="language-javascript">if (Modernizr.opacity){
+    // يدعم
+} else {
+    // لا يدعم
+}</code></pre>
+        <a target="_blank" href="https://modernizr.com/download?setclasses">Customize your Modernizr</a><br/>
+        <span class="high-icon">اداة ESLint</span><span>: عدم وجود اخطاء تم اعلامها من قبل ESLint (بناء على القواعد او المعايير الخاصة بك.</span><br/>
+        <a target="_blank" href="https://eslint.org/">ESLint - The pluggable linting utility for JavaScript and JSX</a>
+        </article>
+        <article>
+        <h2 id="sec">الحماية</h2>
+        <h3>الفحص والتحقق من موقعك</h3>
+        <a target="_blank" href="https://securityheaders.com/">SecurityHeaders</a><br/>
+        <a target="_blank" href="https://observatory.mozilla.org/">Observatory by Mozilla</a><br/>
+        <span class="high-icon">بروتوكول نقل النص التشعبي الآمن (HTTPS)</span><span>يجب على بروتوكول HTTPS ان يستخدم في كل صفحه وفي كل المحتوى الاضافي : (صور, مرئيات)</span><br/>
+        <a target="_blank" href="https://letsencrypt.org/">Let's Encrypt - Free SSL/TLS Certificates</a><br/>
+        <a target="_blank" href="https://www.ssllabs.com/ssltest/index.html">Free SSL Server Test</a><br/>
+        <a target="_blank" href="https://caniuse.com/#feat=stricttransportsecurity">Strict Transport Security</a>
+        <h3 class="note-un">"لم أتم ترجمه قسم الحماية لعدم خبرتي في المصطلحات المجال ولا فهم للتقنيات"</h3>
+        </article>
+        <article>
+        <h2 id="performance">الاداء</h2>
+        <h3>افضل الممارسات</h3>
+        <span class="medium-icon">اهداف لتحقيقها</span>
+        <ul>
+            <li>اول رؤية ذو معنى من الزائر في اقل من ثانية</li>
+            <li>الوقت الذي تحتاجه الصفحه لتجهز حوالي الخمس ثواني (على جهاز اندرويد بسعر 200 دولار مع انترنت 3G بطيء) ومعدل ثانيتين في حالة تكرار زيارة الموقع</li>
+        </ul>
+        <a target="_blank" href="https://tools.pingdom.com/">Website Page Analysis</a><br/>
+        <a target="_blank" href="https://www.webpagetest.org/">WebPageTest</a><br/>
+        <a target="_blank" href="https://evilmartians.com/chronicles/size-limit-make-the-web-lighter">Size Limit: Make the Web lighter</a><br/>
+        <span class="high-icon">ضفط شفرة HTML</span><br/>
+        <span class="medium-icon">حجم ملف تعريف الارتباط</span><span>: يجب على الملف ان لا يتجاوز 4096 بايت ويجب على النطاق الخاص بك ان لا يتاوز العشرين ملف ارتباط.</span><br/>
+        <a target="_blank" href="https://tools.ietf.org/html/rfc6265">Cookie specification: RFC 6265</a><br/>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">Cookies</a><br/>
+        <a target="_blank" href="http://browsercookielimits.squawky.net/">Browser Cookie Limits</a><br/>
+        <span class="medium-icon">مكونات الطرف الثالث</span><span>مكونات الطرف الثالث مثل iframe او مكونات تعتمد على شفرة JS خارجيه يجب ان تستبدل بمكونات ثابته داخليه عند الامكان</span><br/>
+        <a target="_blank" href="https://simplesharingbuttons.com/">Simple sharing buttons generator</a>
+        <h3>اعداد الطلبات القادمه</h3>
+        <p>اعطاء المتصفح تلميح على المحتويات التي سيحتاجها المستخدم للتحميل في الصفحات القادمه.</p>
+        <span class="low-icon">التحميل المسبق لـDNS</span><span>: اخبار المتصفح بان هناك رابط معلين يجب ان تبحث عن عنوان IP الخاص به, فلن نحتاج الى الانتظار للبحث عن IP عند الحاجه للصفحة.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;link rel="dns-prefetch" href="https://example.com">
+</code></pre>
+        <span class="low-icon">الاتصال المسبق</span><span>: يستخدم نفس الطريقة السابقة ولكن مع TCP و TLS</span><br/>
+        <pre dir="ltr"><code class="language-markup">&lt;link rel="preconnect" href="http://css-tricks.com"></code></pre>
+        <span class="low-icon">الجلب المسبق</span><span>: اذا كان هناك اي محتوى يحتاجه المستخدم مستقبلا, مثلا اذا أشرت الى قميص في محل الملابس فصاخب المحال سيقوم بانزال القياسات الاخرى لنفس القميص, يمكن ان يكون المحتوى صورة او سكربت.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;link rel="prefetch" href="image.png"></code></pre>
+        <span class="low-icon">العرض المسبق</span><span>انه القنبله النووية, يعطينا القابلية على تحميل كل الملفات والمحتوى لرابط معين.</span>
+        <pre dir="ltr"><code class="language-markup">&lt;link rel="prerender" href="http://css-tricks.com"></code></pre>
+        <a target="_blank" href="https://css-tricks.com/prefetching-preloading-prebrowsing/">مقالة من CSS Tricks لفهم اكبر</a>        
+        <h3>فحص الاداء</h3>
+        <ul>
+            <li><a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/">Google PageSpeed</a></li>
+            <li><a target="_blank" href="https://testmysite.withgoogle.com/">Test your mobile speed with Google</a></li>
+            <li><a target="_blank" href="https://www.webpagetest.org/">WebPagetest - Website Performance and Optimization Test</a></li>
+            <li><a target="_blank" href="https://gtmetrix.com/">GTmetrix - Website speed and performance optimization</a></li>
+            <li><a target="_blank"href="https://speedrank.app/">Speedrank - Improve the performance of your website</a></li>
+        </ul>
+        </article>
+        <article>
+        <h2 id="access">إمكانية الوصول</h2>
+        <p>يمكنك مشاهدة الدورة التالية <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g">A11ycasts مع Rob Dodson</a></p>
+        <h3>افضل الممارسات</h3>
+        <span class="medium-icon">بدون JavaScript</span><span>: غالبية العمليات يجب ان تعمل بدون شفرة Javascript مثل البحث والتنقل.</span><br/>
+        <a target="_blank" href="https://www.youtube.com/watch?v=kBmvq2cE0D8">Enable / Disable JavaScript in Chrome Developer Tools</a><br/>
+        <span class="medium-icon">تباين الألوان</span><span>تناسق الالوان مهم ويمكنك قياسه في الاداة ادناه, او استعمل عيناك.</span><br/>
+        <a target="_blank" href="https://contrast-ratio.com">Contrast ratio</a>
+        <h3>العناوين</h3>
+        <span class="high-icon">العنصر H1</span><span>: كل الصفحات يجب ان تحتوي على H1 ولا يجب ان يكون مشابها للـtitle.</span><br/>
+        <span class="high-icon">العناوين</span><span>: يجب ان تستخدم بشكل بصورة صحيحه وبترتيب صحيح (h1-h6).</span><br/>
+        <a target="_blank" href="https://www.youtube.com/watch?v=vAAzdi1xuUY&index=9&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g">Why headings and landmarks are so important -- A11ycasts #18</a>
+        <h3>دلالات</h3>
+        <span class="high-icon">تخصيص نوع الادخال</span><span>تخصيص نوع البيانات المدخله مهم جدا وخاصة للهواتف.</span><br/>
+        <a target="_blank" href="https://iabdullahwaleed.github.io/Mobile-Input-types/">انواع المُدخلات واهميتها</a>
+        <pre dir="ltr"><code class="language-markup">&lt;input type="date"></code></pre>
+        <img src="Input.png"/>
+        <h3>استمارة</h3>
+        <span class="high-icon">العنصر Label</span><span>: عنصر Label يجب ان يكون مرفق مع كل عنصر ادخال</span>
+        <h3>اختبارات إمكانية الوصول</h3>
+        <span class="high-icon">إختبار معايير امكانية الوصول</span><span>: استخدم الأداة WAVE.</span><br/>
+        <a target="_blank" href="http://wave.webaim.org/">Wave</a><br/>
+        <span class="high-icon">لوحة المفاتيح</span><span>: فحص موقعك اثناء وجود لوحة المفاتيح, كل العناصر قابلة للوصول والاستعمال.</span><br/>
+        <span class="high-icon">التركيز</span><span>: استعمال خاصية التركيز (Focus) لدعم اجهزة Screen Reader.</span><br/>
+        <a target="_blank" href="https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g">Managing Focus - A11ycasts #22</a>
+        </article>
+        <article>
+        <h2 id="seo">تحسين محركات البحث (SEO)</h2>
+        <span class="high-icon">تحليلات Google</span><span>: تحليلات Google تم تفعليه في الموقع.</span><br/>
+        <a target="_blank" href="https://analytics.google.com/analytics/web/provision/?authuser=0#/provision">Google Analytics</a><br/>
+        <a target="_blank" href="http://www.gachecker.com/">GA Cheaker</a><br/>
+        <span class="medium-icon">منطق العناوين</span><span>العناوين يجب ان تساعد لفهم محتوى الصفحه</span><br/>
+        <a target="_blank" href="http://khan.github.io/tota11y/#Try-it">Tota11y, tab Headings</a><br/>
+        <span class="high-icon">ملف sitemap.xml</span><span>: ملف sitemap.xml موجود.</span><br/>
+        <a target="_blank" href="https://websiteseochecker.com/html-sitemap-generator/">Sitemap generator</a><br/>
+        <span class="high-icon">ملف robots.xml</span><span>: ملف robots.xml لا يحظر الصفحه.</span><br/>
+        <a target="_blank" href="https://varvy.com/robottxt.html">The robots.txt file</a><br/>
+        <a target="_blank" href="https://www.google.com/webmasters/tools/robots-testing-tool?pli=1">فحص ملف robots.xml</a><br/>
+        <span class="high-icon">البيانات المنظَّمة</span><span>الصفحات التي تستخدم البيانات المنظمة تم فحصها وبدون اخطاء</span><br/>
+        <a target="_blank" href="https://developers.google.com/search/docs/guides/intro-structured-data">التعرّف على آلية عمل البيانات المنظَّمة - Google</a><br/>
+        <a target="_blank" href="https://rdfa.info/">RDFa - Linked Data in HTML</a><br/>
+        <a target="_blank" href="https://json-ld.org/">JSON-LD</a><br/>
+        <a target="_blank" href="https://www.w3.org/TR/microdata/">Microdata</a><br/>
+        <a target="_blank" href="https://developers.google.com/structured-data/testing-tool/">Structured Data Testing Tool</a><br/>
+        <a target="_blank" href="http://schema.org/docs/full.html">Schema.org Full Hierarchy</a><br/>
+        <span class="medium-icon">خريطة الموقع</span><span>: صفحه تعتبر فهرست للموقع يكون متوفر رابطها في اسفل الموقع.</span><br/>
+        <a target="_blank" href="https://support.google.com/webmasters/answer/183668?hl=ar">إنشاء ملف Sitemap وإرساله - Google</a><br/>
+        <span class="high-icon">توفير روابط لترقيم الصفحات</span><span>: توفير rel="prev" و rel="next".</span>
+        <pre dir="ltr"><code class="language-markup">&lt;!-- مثال : توفير صفحات الترقيم للصفحه الثانية -->
+&lt;link rel="prev" href="https://example.com/?page=1">
+&lt;link rel="next" href="https://example.com/?page=3"></code></pre>
+        </article>
+        <article>
+        <h2 id="translation">الترجمات</h2>
+        <ul>
+            <li><a target="_blank" href="https://github.com/thedaviddias/Front-End-Checklist">الانجليزية</a></li>
+            <li><a target="_blank" href="https://github.com/miya0001/Front-End-Checklist">اليابانية</a></li>
+            <li><a target="_blank" href="https://github.com/eoasakura/Front-End-Checklist-ES">الاسبانية</a></li>
+            <li><a target="_blank" href="https://github.com/JohnsenZhou/Front-End-Checklist">الصينية</a></li>
+            <li><a target="_blank" href="https://github.com/kesuskim/Front-End-Checklist">الكورية</a></li>
+            <li><a target="_blank" href="https://github.com/jcezarms/Front-End-Checklist">البرتغالية</a></li>
+            <li><a target="_blank" href="https://github.com/euclid1990/Front-End-Checklist">الفيتنامية</a></li>
+            <li><a target="_blank" href="https://github.com/EngineLin/Front-End-Checklist">الصينية التقليدية</a></li>
+            <li><a target="_blank" href="https://github.com/ynizon/Front-End-Checklist">الفرنسية</a></li>
+            <li><a target="_blank" href="https://github.com/ungear/Front-End-Checklist">الروسية</a></li>
+            <li><a target="_blank" href="https://github.com/eraycetinay/Front-End-Checklist">التركية</a></li>
+            <li><a target="_blank" href="https://github.com/xFuture603/Front-End-Checklist">الالمانية</a></li>
+        </ul>
+        </article>
+    </section>
+    <footer class="container">
+        <article>
+        تمت الكتابة من قبل <a href="https://github.com/thedaviddias" target="_blank">David Dias</a> وتمت الترجمه من قبل <a href="https://github.com/iAbdullahWaleed" target="_blank">Abdullah Waleed</a>
+        <a href="https://github.com/iAbdullahWaleed/FrontEnd-Checklist" target="_blank"><img height="32" width="32" src="github.svg" class="github-logo"/></a>
+    </article>
+    </footer>
+    <!-- Javascript -->
+    <script src="prism.js"></script>
+</body>
+</html>
