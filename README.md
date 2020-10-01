@@ -1,9 +1,9 @@
-<h1 align="center">
+<h1 align="top">
 <br>
   <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
   <br>
     <br>
-  Front-End Checklist
+  Front-End list checking
   <br>
 </h1>
 
