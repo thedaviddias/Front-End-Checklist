@@ -677,6 +677,10 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
 > * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
 
+* [ ] **Search Console:** ![Low][low_img] Search Console is installed and correctly configured. It is a free service offered by Google that helps you monitor, maintain, and troubleshoot your site's presence in Google Search results.
+
+> * 🛠 [Search Console](https://search.google.com/search-console/about)
+
 * [ ] **Headings logic:** ![Medium][medium_img] Heading text helps to understand the content in the current page.
 
 > * 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
