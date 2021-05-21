@@ -379,7 +379,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 🛠 [UnCSS Online](https://uncss-online.com/)
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
 > * 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
-> * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+> * 🛠 [Chrome DevTools Coverage](https://developer.chrome.com/docs/devtools/coverage/)
 
 
 ### CSS testing
