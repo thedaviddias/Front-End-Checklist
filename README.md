@@ -241,7 +241,7 @@ Visualisasikan dan hasilkan secara otomatis meta tag social kami dengan [Meta Ta
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] Seluruh Facebook Open Graph (OG) diuji dan tidak ada yang hilang atau berisi informasi yang salah. Gambar sedikitnya berukuran 600 x 315 pixel, walau demikian 1200 x 630 pixel lebih disarankan
 
-> **Notes:** Menggunakan `og:image:width` dan `og:image:height` akan menspesifikasikan dimensi gambar pada crawler sehingga dapat merender gambar secara langsung tanpa harus mengunduh secara asinkron dan memprosesnya.
+> **Catatan:** Menggunakan `og:image:width` dan `og:image:height` akan menspesifikasikan dimensi gambar pada crawler sehingga dapat merender gambar secara langsung tanpa harus mengunduh secara asinkron dan memprosesnya.
 
 ```html
 <meta property="og:type" content="website">
@@ -281,7 +281,7 @@ Visualisasikan dan hasilkan secara otomatis meta tag social kami dengan [Meta Ta
 
 ## HTML
 
-### Penerapan terbaik
+### Best Practices
 
 * [ ] **HTML5 Semantic Elements:** ![High][high_img] Elemen semantik HTML5 digunakan dengan sesuai (header, section, footer, main...).
 
@@ -323,7 +323,7 @@ Visualisasikan dan hasilkan secara otomatis meta tag social kami dengan [Meta Ta
 
 ## Webfonts
 
-> **Notes:** Menggunakan font web dapat menyebabkan flash dari teks yang tidak berstyle/ flash dari teks yang tidak terlihat - pertimbangkan untuk menggunakan font dan/atau memanfaatkan pemuat font untuk mengontrol perilaku font
+> **Catatan:** Menggunakan font web dapat menyebabkan flash dari teks yang tidak berstyle/ flash dari teks yang tidak terlihat - pertimbangkan untuk menggunakan font dan/atau memanfaatkan pemuat font untuk mengontrol perilaku font
 
 * [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 dan TTF didukung oleh semua browser moderen
 
@@ -387,7 +387,7 @@ Visualisasikan dan hasilkan secara otomatis meta tag social kami dengan [Meta Ta
 > * 🛠 [UnCSS Online](https://uncss-online.com/)
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
 > * 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
-> * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
+> * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-Catatan#coverage)
 
 
 ### Pengujian CSS
