@@ -7,6 +7,11 @@
   <br>
 </h1>
 
+---
+<h3 align="center">🚨 Currently working on a V2 of frontendchecklist.io,<br>feel free to <a href="https://github.com/thedaviddias/Front-End-Checklist/discussions">discuss</a> any feature you would like to see in the next version</h3>
+
+---
+
 <h4 align="center">The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.</h4>
 
 <p align="center">
