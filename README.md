@@ -682,7 +682,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 * [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
 
-> * 📖 [The robots.txt file](https://varvy.com/robottxt.html)
+> * 📖 [The robots.txt file](https://www.robotstxt.org/)
 > * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
 * [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured data helps crawlers understand the content in the current page.
