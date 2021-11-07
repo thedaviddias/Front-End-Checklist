@@ -262,7 +262,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
 > * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -303,7 +303,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Use AdBlocking in your Dev Environment](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -325,7 +325,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -406,7 +406,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
 > * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -442,7 +442,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 * [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
 > * 🛠 [Native lazy loading polyfill](https://github.com/mfranzke/loading-attribute-polyfill/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -487,7 +487,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -537,7 +537,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 📖 [CSP Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
 > * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -608,7 +608,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
 > * 🛠 [Speedrank - Improve the performance of your website](https://speedrank.app/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -657,7 +657,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 📹 [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -697,7 +697,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
@@ -731,7 +731,7 @@ If you want to show you are following the rules of the Front-End Checklist, put 
 [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 ---
 
