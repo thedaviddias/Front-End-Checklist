@@ -795,7 +795,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#readme)**
 
 [low_img]: data/images/priority/low.svg
 [medium_img]: data/images/priority/medium.svg
