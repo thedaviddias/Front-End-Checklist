@@ -3,8 +3,8 @@
   <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
   <br>
     <br>
-  Front-End Checklist
-  <br>
+  Front-End Checklist
+  <br>
 </h1>
 
 ---
@@ -15,27 +15,27 @@
 <h4 align="center">The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.</h4>
 
 <p align="center">
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
-  </a>
-    <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
-  </a>
-  <a href="https://github.com/thedaviddias/Front-End-Checklist/">
-    <img src="https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg?style=flat-square" alt="Front‑End_Checklist followed">
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
   </a>
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="https://img.shields.io/badge/license-CC0-green.svg?style=flat-square" alt="CC0">
-  </a>
+    <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
+  </a>
+  <a href="https://github.com/thedaviddias/Front-End-Checklist/">
+    <img src="https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg?style=flat-square" alt="Front‑End_Checklist followed">
+  </a>
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="https://img.shields.io/badge/license-CC0-green.svg?style=flat-square" alt="CC0">
+  </a>
 </p>
 
 <p align="center">
-  <a href="#how-to-use">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://frontendchecklist.io">Website</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
+  <a href="#how-to-use">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://frontendchecklist.io">Website</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
 </p>
 <p align="center">
     <span>Other Checklists:</span>
     <br>
-  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Front-End Performance Checklist</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Front-End Design Checklist</a>
+  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Front-End Performance Checklist</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Front-End Design Checklist</a>
 </p>
 
 
@@ -124,6 +124,22 @@ Some resources possess an emoticon to help you understand which type of content 
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
+
+* [ ] **Theme Color:** ![Low][low_img] Indicates a suggested color that user agents should use to customize the display of the page or of the surrounding user interface.
+
+```html
+<!-- Theme Color -->
+<!-- Chrome, Firefox, Opera -->
+<meta name="theme-color" content="#6666ff">
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#6666ff">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#6666ff">
+```
+
+> * 📖 [MDN Web Docs Definition](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color)
+> * 📖 [Meta Theme Color and Trickery](https://css-tricks.com/meta-theme-color-and-trickery/)
+> * 📖 [Theme Color - CanIUse](https://caniuse.com/meta-theme-color)
 
 * [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
 
