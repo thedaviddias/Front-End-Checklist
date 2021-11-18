@@ -602,7 +602,7 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 * [ ] **Google PageSpeed:** ![High][high_img] All your pages were tested (not only the homepage) and have a score of at least 90/100.
 
-> * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
+> * 🛠 [Google PageSpeed](https://pagespeed.web.dev/)
 > * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
 > * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
 > * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
