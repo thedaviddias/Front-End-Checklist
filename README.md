@@ -131,7 +131,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <!-- Apple Touch Icon (at least 200x200px) -->
 <link rel="apple-touch-icon" href="/custom-icon.png">
 
-<!-- To run web application in full-screen -->
+<!-- To run the web application in full-screen -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
