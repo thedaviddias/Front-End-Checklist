@@ -49,7 +49,7 @@ All items in the **Front-End Checklist** are required for the majority of the pr
 
 * ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
 * ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+* ![High][high_img] means that the item **can't be omitted**  for any reason. You may cause dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
 
 Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
 
@@ -57,7 +57,7 @@ Some resources possess an emoticon to help you understand which type of content 
 * 🛠: online tool / testing tool
 * 📹: media or video content
 
-> You can contribute to the ***Front-End Checklist App*** reading the [CONTRIBUTING.md file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/CONTRIBUTING.md) which explains everything about the project.
+> You can contribute to the ***Front-End Checklist App*** by reading the [CONTRIBUTING.md file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/CONTRIBUTING.md) which explains everything about the project.
 
 ---
 
@@ -218,7 +218,7 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 
 > * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
 
-* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except the case where sometimes JS files are loaded asynchronously on top of your page).
+* [ ] **CSS order:** ![High][high_img] All CSS files are loaded before any JavaScript files in the `<head>`. (Except for the case where sometimes JS files are loaded asynchronously on top of your page).
 
 ### Social meta
 
@@ -288,13 +288,13 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 > * 🛠 [W3C validator](https://validator.w3.org/)
 
-* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have on my HTML code.
+* [ ] **HTML Lint:** ![High][high_img] I use tools to help me analyze any issues I could have with my HTML code.
 
 > * 🛠 [Dirty markup](https://www.10bestdesign.com/dirtymarkup/)
 
 > * 🛠 [webhint](https://webhint.io/)
 
-* [ ] **Link checker:** ![High][high_img] There are no broken links in my page, verify that you don't have any 404 error.
+* [ ] **Link checker:** ![High][high_img] There are no broken links on my page, verify that you don't have any 404 error.
 
 > * 🛠 [W3C Link Checker](https://validator.w3.org/checklink)
 
