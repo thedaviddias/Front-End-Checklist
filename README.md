@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center" id=table-of-contents>
 <br>
   <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
   <br>
