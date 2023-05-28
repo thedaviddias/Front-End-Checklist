@@ -47,9 +47,13 @@ It is based on Front-End developers' years of experience, with the additions com
 
 All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
 
-* ![Low][low_img] means that the item is **recommended** but can be omitted in some particular situations.
-* ![Medium][medium_img] means that the item is **highly recommended** and can eventually be omitted in some really particular cases. Some elements, if omitted, can have bad repercussions in terms of performance or SEO.
-* ![High][high_img] means that the item **can't be omitted** by any reason. You may cause a dysfunction in your page or have accessibility or SEO issues. The testing priority needs to be on these elements first.
+All items in the Front-End Checklist are necessary for the majority of projects, but some elements can be omitted or are not essential. For example, in an administration web app, you may not need an RSS feed. We have categorized the flexibility into three levels:
+
+![Low][low_img] indicates that the item is recommended but can be omitted in certain situations.
+![Medium][medium_img] indicates that the item is highly recommended but can potentially be omitted in very specific cases. However, omitting these elements can negatively impact performance or SEO.
+![High][high_img] indicates that the item cannot be omitted under any circumstances. Removing these elements may result in page malfunctions or cause accessibility and SEO issues. Testing should prioritize these elements first.
+
+
 
 Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
 
