@@ -123,6 +123,7 @@ Some resources possess an emoticon to help you understand which type of content 
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
 ```
 
+> * 🛠 [Favicon InBrowser.App](https://favicon.inbrowser.app/)
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
 > * 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 > * 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
