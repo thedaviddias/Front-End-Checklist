@@ -121,6 +121,8 @@ Some resources possess an emoticon to help you understand which type of content 
 <link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico">
 <!-- Recommended favicon format -->
 <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+<!-- Recommended modern favicon format (not recommended for legacy browsers) -->
+<link rel="icon" type="image/svg+xml" href="https://example.com/favicon.svg">
 ```
 
 > * 🛠 [Favicon Generator](https://www.favicon-generator.org/)
