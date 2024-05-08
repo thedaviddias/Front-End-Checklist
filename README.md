@@ -39,7 +39,7 @@
 </p>
 
 
-It is based on Front-End developers' years of experience, with the additions coming from some other open-source checklists.
+It is based on Front-End developer's years of experience, with the additions coming from some other open-source checklists.
 
 ---
 
