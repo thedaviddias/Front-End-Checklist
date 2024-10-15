@@ -804,3 +804,5 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 [low_img]: data/images/priority/low.svg
 [medium_img]: data/images/priority/medium.svg
 [high_img]: data/images/priority/high.svg
+
+## Thank You!
