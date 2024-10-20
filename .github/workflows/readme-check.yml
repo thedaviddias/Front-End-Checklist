@@ -1,0 +1,45 @@
+name: Readme Check
+
+on:
+  push:
+    paths:
+      - './README.md'
+  pull_request:
+    paths:
+      - './README.md'
+
+env:
+  HUSKY: 0
+
+jobs:
+  readme-check:
+    runs-on: ubuntu-latest
+    name: Readme Check
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Check Markdown formatting
+        run: pnpm format:check
+
+      - name: Lint Markdown
+        run: pnpm lint:md
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2.0.2
+        with:
+          args: --config ./lychee.toml --verbose --no-progress README.md
+          fail: true

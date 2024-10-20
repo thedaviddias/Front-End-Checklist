@@ -10,7 +10,7 @@ HTML page to production.
 
 ---
 
-### ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
+## ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
 
 ---
 
@@ -130,7 +130,7 @@ _The next 2 meta tags (Charset and Viewport) need to come first in the head._
 - 🛠 [RealFaviconGenerator](https://realfavicongenerator.net/)
 - 📖 [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 - 📖 [Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks](https://css-tricks.com/favicon-quiz/)
-- 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png)
+- 📖 [PNG favicons - caniuse](https://caniuse.com/link-icon-png)
 
 - [ ] **Apple Web App Meta:** ![Low][low_img] Apple meta-tags are present.
 
@@ -299,7 +299,7 @@ considered if you target a particular presence on those and want to ensure the d
   [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
 - 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ## HTML
 
@@ -345,7 +345,7 @@ considered if you target a particular presence on those and want to ensure the d
 - 📖
   [Use AdBlocking in your Dev Environment](https://andreicioara.com/use-adblocking-in-your-dev-environment-48db500d9b86)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -359,9 +359,9 @@ considered if you target a particular presence on those and want to ensure the d
 
 - [ ] **Webfont format:** ![High][high_img] WOFF, WOFF2 and TTF are supported by all modern browsers.
 
-- 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
-- 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
-- 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
+- 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/woff).
+- 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/woff2).
+- 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/ttf)
 - 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
 
 - [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
@@ -370,7 +370,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -439,7 +439,6 @@ considered if you target a particular presence on those and want to ensure the d
   - 🛠 [Am I Responsive?](http://ami.responsivedesign.is/)
   - 🛠 [Mobile Friendly Test](https://search.google.com/test/mobile-friendly)
   - 🛠 [Responsive Website Design Tester](https://responsivedesignchecker.com/)
-  - 🛠 [Responsinator](https://www.responsinator.com/)
   - 🛠 [XRespond](https://xrespond.com/)
 
 - [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
@@ -466,7 +465,7 @@ considered if you target a particular presence on those and want to ensure the d
 - 📖
   [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -508,7 +507,7 @@ considered if you target a particular presence on those and want to ensure the d
 - [ ] **Lazy loading:** ![Medium][medium_img] Images are lazyloaded (A noscript fallback is always provided).
   - 🛠 [Native lazy loading polyfill](https://github.com/mfranzke/loading-attribute-polyfill/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -559,7 +558,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - 📖 [ESLint - The pluggable linting utility for JavaScript and JSX](https://eslint.org/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -620,7 +619,7 @@ considered if you target a particular presence on those and want to ensure the d
 - 📖 [CSP Cheat Sheet - OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html)
 - 📖 [Content Security Policy Reference](https://content-security-policy.com/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ---
 
@@ -703,7 +702,7 @@ considered if you target a particular presence on those and want to ensure the d
 - 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
 - 🛠 [Speedrank - Improve the performance of your website](https://speedrank.app/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ## Accessibility
 
@@ -719,7 +718,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - [ ] **Color contrast:** ![Medium][medium_img] Color contrast should at least pass WCAG AA (AAA for mobile).
 
-- 🛠 [Contrast ratio](https://leaverou.github.io/contrast-ratio/)
+- 🛠 [Contrast ratio](https://www.siegemedia.com/contrast-ratio)
 
 #### Headings
 
@@ -760,7 +759,7 @@ considered if you target a particular presence on those and want to ensure the d
 - 📹
   [Managing Focus - A11ycasts #22](https://www.youtube.com/watch?v=srLRSQg6Jgg&index=5&list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ## SEO
 
@@ -786,7 +785,6 @@ considered if you target a particular presence on those and want to ensure the d
 
 - [ ] **robots.txt:** ![High][high_img] The robots.txt is not blocking webpages.
 
-- 📖 [The robots.txt file](https://varvy.com/robottxt.html)
 - 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
 - [ ] **Structured Data:** ![High][high_img] Pages using structured data are tested and are without errors. Structured
@@ -805,7 +803,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
 ## Translations
 
@@ -833,37 +831,28 @@ If you have any question or suggestion, don't hesitate to reach me on X:
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute]](.github/CONTRIBUTING.md).
-<a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" /></a>
+This project exists thanks to all the people who contribute. ([Contribute](https://github.com/thedaviddias/Front-End-Checklist/blob/main/CONTRIBUTING.md)).
+<a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors"><img src="https://opencollective.com/front-end-checklist/contributors.svg?width=890" alt="Contributors" /></a>
 
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/front-end-checklist#backer)]
 
-<a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890"></a>
+<a href="https://opencollective.com/front-end-checklist#backers" target="_blank"><img src="https://opencollective.com/front-end-checklist/backers.svg?width=890" alt="Backers" /></a>
 
 ## Sponsors
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
 [[Become a sponsor](https://opencollective.com/front-end-checklist#sponsor)]
 
-<a href="https://opencollective.com/front-end-checklist/sponsor/0/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/1/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/2/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/3/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/4/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/5/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/6/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/7/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/8/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/front-end-checklist/sponsor/9/website" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/front-end-checklist" target="_blank"><img src="https://opencollective.com/front-end-checklist/sponsor/1/avatar.svg" alt="Sponsors" /></a>
 
 ## License
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#-table-of-contents)**
 
-[low_img]: data/images/priority/low.svg
-[medium_img]: data/images/priority/medium.svg
-[high_img]: data/images/priority/high.svg
+[low_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/low.svg
+[medium_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/medium.svg
+[high_img]: https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/refs/heads/main/data/images/priority/high.svg

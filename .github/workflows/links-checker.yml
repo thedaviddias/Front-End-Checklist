@@ -1,0 +1,35 @@
+name: Links Checker
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1' # bi weekly on Monday
+
+env:
+  HUSKY: 0
+
+jobs:
+  links-checker:
+    runs-on: ubuntu-latest
+    name: Links Checker
+    permissions:
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2.0.2
+        with:
+          args: --config ./lychee.toml --verbose --no-progress README.md
+          fail: true
+
+      - name: Create Issue From File
+        if: env.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee-out.md
+          labels: report, automated issue
