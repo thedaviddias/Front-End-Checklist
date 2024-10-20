@@ -1,29 +1,33 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
+# 🗂 Front-End Checklist
 
-  # Front-End Checklist
+The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.
 
-  #### The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.
+**Other Checklists:**
 
-  ---
-
-  ### ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out!
-
-  ---
-
-  [How To Use](#how-to-use) • [Contributing](#contributing) • [Website](https://frontendchecklist.io) • [Product Hunt](https://www.producthunt.com/posts/front-end-checklist)
-
-  **Other Checklists:**
-
-  [🎮 Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-) • [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
-
-</div>
-
-This checklist is based on Front-End developers' years of experience, with additions from other open-source checklists.
+* [🎮 Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-)
+* [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
 
 ---
 
+### ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
+
+---
+
+## 📚 Table of Contents
+- [How to use](#how-to-use)
+- [Head](#head)
+- [HTML](#html)
+- [Webfonts](#webfonts)
+- [CSS](#css)
+- [JavaScript](#javascript)
+- [Accessibility](#accessibility)
+
 ## How to use?
+
+<!-- prettier-ignore-start -->
+> [!IMPORTANT]
+> **Disclaimer:** This checklist is based on Front-End developers' years of experience, with additions from other open-source checklists.
+> <!-- prettier-ignore-end -->
 
 All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
 
@@ -36,10 +40,6 @@ Some resources possess an emoticon to help you understand which type of content 
 * 📖: documentation or article
 * 🛠: online tool / testing tool
 * 📹: media or video content
-
-> You can contribute to the ***Front-End Checklist App*** reading the [CONTRIBUTING.md file](https://github.com/thedaviddias/Front-End-Checklist/blob/master/CONTRIBUTING.md) which explains everything about the project.
-
----
 
 ## Head
 
@@ -211,7 +211,8 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 * [ ] **Facebook Open Graph:** ![Low][low_img] All Facebook Open Graph (OG) are tested and no one is missing or with false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended.
 
-> **Notes:** Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
+> [!NOTE]
+> Using `og:image:width` and `og:image:height` will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.
 
 ```html
 <meta property="og:type" content="website">
@@ -246,8 +247,6 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 > * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 **[⬆ back to top](#table-of-contents)**
-
----
 
 ## HTML
 
@@ -593,8 +592,6 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 **[⬆ back to top](#table-of-contents)**
 
----
-
 ## Accessibility
 
 > **Notes:** You can watch the playlist [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
@@ -642,8 +639,6 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 **[⬆ back to top](#table-of-contents)**
 
----
-
 ## SEO
 
 * [ ] **Google Analytics:** ![Low][low_img] Google Analytics is installed and correctly configured.
@@ -682,8 +677,6 @@ Visualize and generate automatically our social meta tags with [Meta Tags](https
 
 **[⬆ back to top](#table-of-contents)**
 
----
-
 ## Translations
 
 The Front-End Checklist is also available in other languages. Thanks for all translators and their awesome work!
@@ -702,49 +695,11 @@ The Front-End Checklist is also available in other languages. Thanks for all tra
 * 🇵🇱 Polish: [mbiesiad/Front-End-Checklist](https://github.com/mbiesiad/Front-End-Checklist)
 * 🇮🇩 Indonesian: [nniinnoo/Front-End-Checklist](https://github.com/nniinnoo/Front-End-Checklist)
 
----
-
-## Front-End Checklist Badge
-
-If you want to show you are following the rules of the Front-End Checklist, put this badge on your README file!
-
-➔ [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
-
-```md
-[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
-```
-
-**[⬆ back to top](#table-of-contents)**
-
----
-
-## Contributing
-
-**Open an issue or a pull request to suggest changes or additions.**
-
-### Guide
-
-The **Front-End Checklist** repository consists of two branches:
-
-#### 1. `master`
-
-This branch consists of the `README.md` file that is automatically reflected on the [Front-End Checklist](https://frontendchecklist.io) website.
-
-#### 2. `develop`
-
-This branch will be used to make some significant changes to the structure, content if needed. It is preferable to use the master branch to fix small errors or add a new item.
-
 ## Support
 
-If you have any question or suggestion, don't hesitate to use Gitter or Twitter:
+If you have any question or suggestion, don't hesitate to reach me on X:
 
-* [Chat on Gitter](https://gitter.im/Front-End-Checklist/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-* [Facebook](https://www.facebook.com/frontendchecklist/)
-* [Twitter](https://twitter.com/thedaviddias)
-
-## Author
-
-**[David Dias](https://github.com/thedaviddias)**
+* [X (formerly Twitter)](https://ddias.link/x)
 
 ## Contributors
 
