@@ -1,0 +1,19 @@
+#############################  Display  #############################
+verbose = "info"
+output = "./lychee-out.md"
+
+#############################  Cache  ###############################
+cache = true
+max_cache_age = "2d"
+
+#############################  Runtime  #############################
+max_concurrency = 14
+
+#############################  Requests  ############################
+user_agent = "curl/7.83.1"
+timeout = 20
+accept = ["200", "429", "403"]
+scheme = ["https"]
+
+#############################  Exclusions  ##########################
+base = "https://github.com/thedaviddias/indie-dev-toolkit/"

@@ -1,0 +1,18 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 150,
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore",
+        "proseWrap": "preserve",
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}

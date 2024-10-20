@@ -1,0 +1,29 @@
+{
+  "name": "front-end-checklist",
+  "version": "1.0.0",
+  "description": "The perfect Front-End Checklist for modern websites and meticulous developers",
+  "scripts": {
+    "format:check": "prettier --check README.md",
+    "format:fix": "prettier --write README.md",
+    "lint:md": "markdownlint README.md",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "front-end",
+    "checklist",
+    "html",
+    "css",
+    "javascript",
+    "accessibility",
+    "lists",
+    "developer",
+    "developer-tools"
+  ],
+  "author": "David Dias (https://thedaviddias.com/)",
+  "license": "CC-BY-4.0",
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "markdownlint-cli": "^0.42.0",
+    "prettier": "^3.3.3"
+  }
+}
