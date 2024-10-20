@@ -16,4 +16,5 @@ accept = ["200", "429", "403"]
 scheme = ["https"]
 
 #############################  Exclusions  ##########################
-base = "https://github.com/thedaviddias/indie-dev-toolkit/"
+base = "https://github.com/thedaviddias/Front-End-Checklist/"
+exclude = ["https://caniuse.com"]

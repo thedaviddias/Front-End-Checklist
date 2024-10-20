@@ -9,6 +9,9 @@ permissions:
   issues: write
   pull-requests: write
 
+env:
+  HUSKY: 0
+
 jobs:
   stale:
     runs-on: ubuntu-latest
