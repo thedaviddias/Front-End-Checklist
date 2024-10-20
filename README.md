@@ -8,11 +8,8 @@ HTML page to production.
 - [🎮 Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-)
 - [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
 
----
-
-## ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
-
----
+> [!TIP]
+> ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
 
 ## 📚 Table of Contents
 
@@ -439,7 +436,6 @@ considered if you target a particular presence on those and want to ensure the d
   - 🛠 [Am I Responsive?](http://ami.responsivedesign.is/)
   - 🛠 [Mobile Friendly Test](https://search.google.com/test/mobile-friendly)
   - 🛠 [Responsive Website Design Tester](https://responsivedesignchecker.com/)
-  - 🛠 [XRespond](https://xrespond.com/)
 
 - [ ] **CSS Validator:** ![Medium][medium_img] The CSS was tested and pertinent errors were corrected.
 
@@ -482,8 +478,6 @@ considered if you target a particular presence on those and want to ensure the d
 - 🛠 [Imagemin](https://github.com/imagemin/imagemin)
 - 🛠 Use [ImageOptim](https://imageoptim.com/) to optimise your images for free.
 - 🛠 Use [KeyCDN Image Processing](https://www.keycdn.com/support/image-processing) for image optimization in real time.
-- 🛠 Use [Kraken.io](https://kraken.io/web-interface) awesome alternative for both png and jpg optimization. Up to 1mb
-  per files on free plan.
 - 🛠 [TinyPNG](https://tinypng.com/) optimises png, apng (animated png) and jpg images with very small loss in quality.
   Free and paid version available.
 - 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) jpg-like compression for transparent images using svg masking.
@@ -828,6 +822,7 @@ The Front-End Checklist is also available in other languages. Thanks for all tra
 If you have any question or suggestion, don't hesitate to reach me on X:
 
 - [X (formerly Twitter)](https://ddias.link/x)
+- [Chat on Discord](https://ddias.link/discord)
 
 ## Contributors
 

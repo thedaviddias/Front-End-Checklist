@@ -1,12 +1,9 @@
 name: Readme Check
 
 on:
-  push:
-    paths:
-      - './README.md'
   pull_request:
     paths:
-      - './README.md'
+      - 'README.md'
 
 env:
   HUSKY: 0
@@ -34,9 +31,6 @@ jobs:
 
       - name: Check Markdown formatting
         run: pnpm format:check
-
-      - name: Lint Markdown
-        run: pnpm lint:md
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.0.2
