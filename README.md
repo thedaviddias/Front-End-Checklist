@@ -1,45 +1,25 @@
-<h1 align="center">
-<br>
+<div align="center">
   <img src="https://raw.githubusercontent.com/thedaviddias/Front-End-Checklist/master/data/images/logo-front-end-checklist.jpg" alt="Front-End Checklist" width="130">
-  <br>
-    <br>
-  Front-End Checklist
-  <br>
-</h1>
 
----
-<h3 align="center">🚨 Currently working on new version of frontendchecklist.io,<br>feel free to <a href="https://github.com/thedaviddias/Front-End-Checklist/discussions/513">discuss</a> any feature you would like to see. Thanks for your support!</h3>
+  # Front-End Checklist
 
----
+  #### The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.
 
-<h4 align="center">The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.</h4>
+  ---
 
-<p align="center">
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
-  </a>
-    <a href="https://github.com/thedaviddias/Front-End-Checklist/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/thedaviddias/Front-End-Checklist.svg?style=flat-square" alt="Contributors">
-  </a>
-  <a href="https://github.com/thedaviddias/Front-End-Checklist/">
-    <img src="https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg?style=flat-square" alt="Front‑End_Checklist followed">
-  </a>
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="https://img.shields.io/badge/license-CC0-green.svg?style=flat-square" alt="CC0">
-  </a>
-</p>
+  ### ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out!
 
-<p align="center">
-  <a href="#how-to-use">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://frontendchecklist.io">Website</a> • <a href="https://www.producthunt.com/posts/front-end-checklist">Product Hunt</a>
-</p>
-<p align="center">
-    <span>Other Checklists:</span>
-    <br>
-  <a href="https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-">🎮 Front-End Performance Checklist</a> • <a href="https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist">💎 Front-End Design Checklist</a>
-</p>
+  ---
 
+  [How To Use](#how-to-use) • [Contributing](#contributing) • [Website](https://frontendchecklist.io) • [Product Hunt](https://www.producthunt.com/posts/front-end-checklist)
 
-It is based on Front-End developer's years of experience, with the additions coming from some other open-source checklists.
+  **Other Checklists:**
+
+  [🎮 Front-End Performance Checklist](https://github.com/thedaviddias/Front-End-Performance-Checklist#---------front-end-performance-checklist-) • [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
+
+</div>
+
+This checklist is based on Front-End developers' years of experience, with additions from other open-source checklists.
 
 ---
 
@@ -47,11 +27,9 @@ It is based on Front-End developer's years of experience, with the additions com
 
 All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use 3 levels of flexibility:
 
-![Low][low_img] indicates that the item is recommended but can be omitted in certain situations.
-![Medium][medium_img] indicates that the item is highly recommended but can potentially be omitted in very specific cases. However, omitting these elements can negatively impact performance or SEO.
-![High][high_img] indicates that the item cannot be omitted under any circumstances. Removing these elements may result in page malfunctions or cause accessibility and SEO issues. Testing should prioritize these elements first.
-
-
+* ![Low][low_img] indicates that the item is recommended but can be omitted in certain situations.
+* ![Medium][medium_img] indicates that the item is highly recommended but can potentially be omitted in very specific cases. However, omitting these elements can negatively impact performance or SEO.
+* ![High][high_img] indicates that the item cannot be omitted under any circumstances. Removing these elements may result in page malfunctions or cause accessibility and SEO issues. Testing should prioritize these elements first.
 
 Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
 
@@ -65,7 +43,8 @@ Some resources possess an emoticon to help you understand which type of content 
 
 ## Head
 
-> **Notes:** You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+> [!NOTE]
+> You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
 
 ### Meta tag
 
