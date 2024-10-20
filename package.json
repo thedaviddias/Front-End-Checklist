@@ -4,7 +4,7 @@
   "description": "The perfect Front-End Checklist for modern websites and meticulous developers",
   "scripts": {
     "format:check": "prettier --check README.md",
-    "format:fix": "markdownlint README.md && prettier --write README.md",
+    "format:fix": "prettier --write README.md && markdownlint README.md",
     "prepare": "husky || true"
   },
   "keywords": [
