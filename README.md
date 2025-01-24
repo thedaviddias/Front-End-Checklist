@@ -363,7 +363,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - [ ] **Webfont size:** ![High][high_img] Webfont sizes don't exceed 2 MB (all variants included).
 
-- [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader
+- [ ] **Webfont loader:** ![Low][low_img] Control loading behavior with a webfont loader.
 
 - 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
