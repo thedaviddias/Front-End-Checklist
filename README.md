@@ -9,7 +9,7 @@ HTML page to production.
 - [💎 Front-End Design Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist#front-end-design-checklist)
 
 > [!TIP]
-> ⭐️ I've just launched a new curated list for [indie developers](https://github.com/thedaviddias/indie-dev-toolkit), feel free to check it out! ⭐️
+> ⭐️ Dev-friendly UX patterns you wish you knew. 👉 [UX Patterns for Devs](https://uxpatterns.dev/en) ⭐️
 
 ## 📚 Table of Contents
 
