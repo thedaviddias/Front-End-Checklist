@@ -406,6 +406,11 @@ considered if you target a particular presence on those and want to ensure the d
 
 - 🛠 [Autoprefixer CSS online](https://autoprefixer.github.io/)
 
+- [ ] **Dark mode / Forced colors mode:** ![Medium][medium_img] Developers must implement both Dark Mode and Forced Colors Mode accessibility features through CSS media queries such as `@media (prefers-color-scheme: dark)` and `@media (forced-colors: active)` to guarantee web content adaptability based on user preferences.
+
+- 📖 [prefers-color-scheme - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+- 📖 [forced-colors - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
+
 ### Performance
 
 - [ ] **Concatenation:** ![High][high_img] CSS files are concatenated in a single file _(Not for HTTP/2)_.
