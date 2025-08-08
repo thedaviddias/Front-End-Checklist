@@ -467,6 +467,15 @@ considered if you target a particular presence on those and want to ensure the d
 
 ## Images
 
+Images
+- Alt Text: ![High][high_img] Every non-decorative <img> has a meaningful alt attribute. Decorative images must use alt="".
+
+- GOV.UK: Alt text in action
+
+- WebAIM: Alternative Text
+
+
+
 > **Notes:** For a complete understanding of image optimization, check the free ebook
 > **[Essential Image Optimization](https://images.guide/)** from Addy Osmani.
 
@@ -698,8 +707,23 @@ considered if you target a particular presence on those and want to ensure the d
 
 **[⬆ back to top](#-table-of-contents)**
 
-## Accessibility
+### Accessibility
+Notes: Accessibility (a11y) ensures that websites are usable by everyone, including people with disabilities. Follow WCAG guidelines, semantic HTML practices, and test thoroughly.
 
+Best Practices
+ Progressive Enhancement: ![Medium][medium_img] Ensure major functionality like navigation and search works without JavaScript.
+
+ Color Contrast: ![Medium][medium_img] All text meets at least WCAG AA contrast ratio (AAA for mobile preferred).
+
+🛠 WebAIM Contrast Checker
+
+ Focus Style: ![High][high_img] All interactive elements show visible focus states. If custom focus is used, it must be highly visible.
+
+ Keyboard Navigation: ![High][high_img] All features are accessible via keyboard with logical tab order.
+
+ Screen Reader Compatibility: ![Medium][medium_img] Tested with screen readers (VoiceOver, NVDA, ChromeVox).
+
+ 
 > **Notes:** You can watch the playlist
 > [A11ycasts with Rob Dodson](https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g) 📹
 
@@ -716,6 +740,18 @@ considered if you target a particular presence on those and want to ensure the d
 
 #### Headings
 
+Headings
+ Page Headings (<h1>): ![High][high_img] All pages include an <h1> that represents the main heading (not just the site name).
+
+ Heading Order: ![High][high_img] Use headings (<h1>–<h6>) in a logical, hierarchical order without skipping levels (e.g., no <h2> followed by <h4>).
+
+If an element is visually styled like a heading, use the appropriate heading tag.
+
+Multiple <h1> elements are acceptable if each represents a separate section or article.
+
+📹 A11ycasts: Headings and landmarks
+
+
 - [ ] **H1:** ![High][high_img] All pages have an H1 which is not the title of the website.
 - [ ] **Headings:** ![High][high_img] Headings should be used properly and in the right order (H1 to H6).
 
@@ -724,12 +760,34 @@ considered if you target a particular presence on those and want to ensure the d
 
 ### Semantics
 
+- Semantic HTML5 Tags: ![High][high_img] Use semantic elements like <main>, <nav>, <article>, <section>, <footer>, <aside> instead of generic <div> or <span>.
+
+This improves navigation for screen readers and accessibility tools.
+
+📖 HTML5 Element Reference
+
+
+
 - [ ] **Specific HTML5 input types are used:** ![Medium][medium_img] This is especially important for mobile devices
       that show customized keypads and widgets for different types.
 
 - 📖 [Mobile Input Types](http://mobileinputtypes.com/)
 
 ### Form
+
+- Form Labels: ![High][high_img] Each input has an associated <label>. If not visible, use aria-label.
+
+- Grouped Inputs: ![Medium][medium_img] Related inputs like checkboxes and radios are grouped using <fieldset> with a <legend>.
+
+- Required Fields: ![High][high_img] Required fields are marked visibly, not just with color. Use an asterisk * and explain what it means.
+
+- Autocomplete Attributes: ![Medium][medium_img] Inputs include appropriate autocomplete values (e.g., autocomplete="email").
+
+- Error Messaging: ![High][high_img] Errors are described clearly, visible on screen, and announced to screen readers (using ARIA aria-live or focus management).
+
+- ARIA Live Regions - MDN
+
+- Form Validation Best Practices
 
 - [ ] **Label:** ![High][high_img] A label is associated with each input form element. In case a label can't be
       displayed, use `aria-label` instead.
@@ -738,6 +796,12 @@ considered if you target a particular presence on those and want to ensure the d
   [Using the aria-label attribute - MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
 
 ### Accessibility testing
+
+- WAVE Tool: ![High][high_img] Use the WAVE accessibility tool to check for compliance.
+
+- Lighthouse Audit: ![High][high_img] Run accessibility audits using Chrome DevTools or Google Lighthouse.
+
+- Manual Testing: ![High][high_img] Navigate your site with only a keyboard and with screen reader enabled.
 
 - [ ] **Accessibility standards testing:** ![High][high_img] Use the WAVE tool to test if your page respects the
       accessibility standards.
