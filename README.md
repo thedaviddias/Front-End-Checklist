@@ -556,6 +556,42 @@ considered if you target a particular presence on those and want to ensure the d
 
 ---
 
+# API Integration Checklist
+
+> **Notes:** Proper API integration ensures secure, maintainable, and performant communication between clients/front-end and back-end or third-party services. Use established standards for security, validation, and error handling. Use the resources below for deeper guidance.
+
+## Best practices
+
+- [ ] **Transport Security (HTTPS / TLS):** ![High][high_img] All API endpoints must use HTTPS (TLS) to protect data in transit.  
+- [ ] **Input Validation & Sanitization:** ![High][high_img] Validate and sanitize all inputs on the server side (even if you validate client-side). Use allow-lists (not just deny-lists) to define valid input patterns.  
+- 📖 Reference: OWASP Input Validation Cheat Sheet ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html))  
+- 📖 Also consider injection prevention guidelines when dealing with SQL / database queries. ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html))
+
+- [ ] **Consistent API Design & HTTP Semantics:** ![High][high_img] Design resource-oriented endpoints (nouns, not verbs), use plural naming for collections, and apply correct HTTP methods (GET, POST, PUT/PATCH, DELETE) and status codes.  
+- 📖 Reference: API design guidance from Postman — what is a REST API & error handling best practices ([blog.postman.com](https://blog.postman.com/rest-api-examples))
+
+- [ ] **Standardized Error Handling:** ![High][high_img] Use HTTP status codes correctly (e.g. 200, 201, 400, 401, 403, 404, 422, 500 etc.). Provide structured error responses with error codes/messages to allow clients to handle errors programmatically.  
+- 📖 Reference: Postman blog on best practices for API error handling ([blog.postman.com]([https://blog.postman.com/best-practices-for-api-error-handling/))
+
+- [ ] **Authentication & Authorization:** ![High][high_img] Secure endpoints requiring user identity or privileges with strong methods (e.g. token-based auth, OAuth, API keys). Enforce authorization checks on server side.  
+- 📖 Reference: OWASP Web Service Security Cheat Sheet ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html))
+
+- [ ] **Versioning & Deprecation Strategy:** ![Medium][medium_img] Define a clear API versioning scheme (e.g. URI versioning, headers) and plan how to phase out old versions without breaking clients.  
+
+- [ ] **Rate Limiting & Abuse Protection:** ![Medium][medium_img] Enforce rate limits or quotas per client / IP to protect against abuse or denial-of-service.  
+
+- [ ] **Logging & Monitoring:** ![Medium][medium_img] Log requests and errors (but avoid logging sensitive data), monitor performance, and setup alerts for unusual behavior (e.g. high error rate, repeated failed requests).  
+
+- [ ] **Documentation & Spec:** ![Medium][medium_img] Maintain up-to-date API specification (e.g. OpenAPI / Swagger), document endpoints, request/response formats, authentication flows, and error codes.  
+
+- [ ] **Testing (Automated & Manual):** ![High][high_img] Test APIs thoroughly: unit tests for business logic, integration tests including dependencies (database, external services), and contract/schema tests to ensure your API adheres to its specification.  
+
+- [ ] **Secure Data Handling / Privacy Compliance:** ![Medium][medium_img] If handling sensitive data (user info, personal data), ensure encryption (in transit and at rest), secure storage, and compliance with privacy regulations as required.  
+
+**[⬆ back to top](#-table-of-contents)**
+
+---
+
 ## Security
 
 ### Scan and check your web site
