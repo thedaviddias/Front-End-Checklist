@@ -14,12 +14,69 @@ HTML page to production.
 ## 📚 Table of Contents
 
 - [How to use](#how-to-use)
+- [API Integration Example](#api-integration-example)
 - [Head](#head)
 - [HTML](#html)
 - [Webfonts](#webfonts)
 - [CSS](#css)
 - [JavaScript](#javascript)
 - [Accessibility](#accessibility)
+
+## How to use?
+
+<!-- prettier-ignore-start -->
+> [!IMPORTANT]
+> **Disclaimer:** This checklist is based on Front-End developers' years of experience, with additions from other open-source checklists.
+<!-- prettier-ignore-end -->
+
+All items in the **Front-End Checklist** are required for the majority of the projects, but some elements can be omitted
+or are not essential (in the case of an administration web app, you may not need RSS feed for example). We choose to use
+3 levels of flexibility:
+
+- ![Low][low_img] indicates that the item is recommended but can be omitted in certain situations.
+- ![Medium][medium_img] indicates that the item is highly recommended but can potentially be omitted in very specific
+  cases. However, omitting these elements can negatively impact performance or SEO.
+- ![High][high_img] indicates that the item cannot be omitted under any circumstances. Removing these elements may
+  result in page malfunctions or cause accessibility and SEO issues. Testing should prioritize these elements first.
+
+Some resources possess an emoticon to help you understand which type of content / help you may find on the checklist:
+
+- 📖: documentation or article
+- 🛠: online tool / testing tool
+- 📹: media or video content
+
+---
+
+## API Integration Example
+
+This repository includes a simple frontend example demonstrating how to integrate and consume a public API using JavaScript.
+
+**Example file:**
+- `examples/api-integration.js`
+
+This example demonstrates:
+- Fetching data from a public API using the `fetch` API
+- Using `async / await`
+- Rendering API data dynamically in the DOM
+
+---
+
+## Head
+
+<!-- prettier-ignore-start -->
+> [!NOTE]
+> You can find [a list of everything](https://github.com/joshbuchea/HEAD) that could be found in the `<head>` of an HTML document.
+<!-- prettier-ignore-end -->
+
+## HTML
+
+## Webfonts
+
+## CSS
+
+## JavaScript
+
+## Accessibility
 
 ## How to use?
 
