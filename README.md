@@ -562,6 +562,7 @@ considered if you target a particular presence on those and want to ensure the d
 
 - [securityheaders.io](https://securityheaders.io/)
 - [Observatory by Mozilla](https://observatory.mozilla.org/)
+- [PageGuard](https://pageguard.org) - Free all-in-one website health scanner (SEO, performance, accessibility, security best practices, and AI action plans)
 
 ### Best practices
 
