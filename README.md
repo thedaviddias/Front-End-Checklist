@@ -743,6 +743,9 @@ considered if you target a particular presence on those and want to ensure the d
       accessibility standards.
 
 - 🛠 [Wave testing](http://wave.webaim.org/)
+- 🛠 [axe DevTools](https://www.deque.com/axe/devtools/) — Browser extension for automated WCAG testing
+- 🛠 [RatedWithAI](https://ratedwithai.com) — AI-powered accessibility scanner with WCAG 2.2 compliance scoring
+- 🛠 [Pa11y](https://pa11y.org/) — Command-line accessibility testing tool for CI/CD pipelines
 
 - [ ] **Keyboard navigation:** ![High][high_img] Test your website using only your keyboard in a previsible order. All
       interactive elements are reachable and usable.
