@@ -177,6 +177,25 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 - 📖 [Browser configuration schema reference](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn320426(v=vs.85))
 <!-- prettier-ignore-end -->
 
+- [ ] **Theme color & color-scheme:** ![Medium][medium_img] Add a `theme-color` meta tag and support for
+      `prefers-color-scheme` so the browser UI (address bar, task switcher) matches the site theme.
+
+<!-- prettier-ignore-start -->
+```html
+<!-- Default theme color (used by Android and some browsers) -->
+<meta name="theme-color" content="#ffffff">
+
+<!-- Theme color per color scheme (modern browsers support media attribute) -->
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+<!-- Opt-in for both light and dark color schemes (CSS) -->
+<style>
+      :root { color-scheme: light dark; }
+</style>
+```
+<!-- prettier-ignore-end -->
+
 - [ ] **Canonical:** ![Medium][medium_img] Use `rel="canonical"` to avoid duplicate content.
 
 <!-- prettier-ignore-start -->
