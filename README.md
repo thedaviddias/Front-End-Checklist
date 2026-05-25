@@ -189,7 +189,10 @@ Minimum required xml markup for the `browserconfig.xml` file is as follows:
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
-<!-- Opt-in for both light and dark color schemes (CSS) -->
+<!-- Declare support for both light and dark color schemes -->
+<meta name="color-scheme" content="light dark">
+
+<!-- Complement with CSS so form controls and UA-rendered surfaces match -->
 <style>
       :root { color-scheme: light dark; }
 </style>
