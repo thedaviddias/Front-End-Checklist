@@ -175,6 +175,8 @@ export const auth = betterAuth({
     github: {
       clientId: process.env.GITHUB_CLIENT_ID ?? '',
       clientSecret: process.env.GITHUB_CLIENT_SECRET ?? '',
+      // GitHub Apps (Iv1.*) do not support the scope parameter and will 404 if it is sent.
+      ...(process.env.GITHUB_CLIENT_ID?.startsWith('Iv1.') ? { disableDefaultScope: true } : {}),
       mapProfileToUser: profile => {
         return {
           ...buildGithubProfileImport(profile),
