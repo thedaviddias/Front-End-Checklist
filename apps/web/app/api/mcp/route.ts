@@ -26,9 +26,9 @@ import { createCorsHeaders, isOriginAllowed, mergeHeaders } from './route-helper
 const MAX_BATCH_SIZE = 10
 const MAX_REQUEST_SIZE = 100 * 1024 // 100KB
 
-/** Set to "true" or "1" to disable DB and in-memory MCP telemetry (usage counts). */
-const MCP_TELEMETRY_DISABLED =
-  process.env.MCP_TELEMETRY_DISABLED === 'true' || process.env.MCP_TELEMETRY_DISABLED === '1'
+/** Set to "true" or "1" to enable DB and in-memory MCP telemetry (usage counts). */
+const MCP_TELEMETRY_ENABLED =
+  process.env.MCP_TELEMETRY_ENABLED === 'true' || process.env.MCP_TELEMETRY_ENABLED === '1'
 
 interface McpRequest {
   jsonrpc: '2.0'
@@ -269,12 +269,12 @@ export async function POST(request: Request) {
         maxResponseChars: process.env.MCP_MAX_RESPONSE_CHARS
           ? parseInt(process.env.MCP_MAX_RESPONSE_CHARS, 10)
           : undefined,
-        telemetryEnabled: !MCP_TELEMETRY_DISABLED
+        telemetryEnabled: MCP_TELEMETRY_ENABLED
       },
       body
     )
 
-    if (!MCP_TELEMETRY_DISABLED) {
+    if (MCP_TELEMETRY_ENABLED) {
       const toolNames = extractToolNamesFromRequest(body)
       if (toolNames.length > 0) {
         prisma.mcpToolCall
@@ -382,7 +382,7 @@ export async function GET(request: Request) {
             maxResponseChars: process.env.MCP_MAX_RESPONSE_CHARS
               ? parseInt(process.env.MCP_MAX_RESPONSE_CHARS, 10)
               : undefined,
-            telemetryEnabled: !MCP_TELEMETRY_DISABLED
+            telemetryEnabled: MCP_TELEMETRY_ENABLED
           }
         ),
         rateLimitResult
@@ -405,7 +405,7 @@ export async function GET(request: Request) {
     }
   }
 
-  const usage = MCP_TELEMETRY_DISABLED ? {} : getTelemetryStats()
+  const usage = MCP_TELEMETRY_ENABLED ? getTelemetryStats() : {}
   const tools = getToolDefinitions(getChecklists()).map((tool: { name: string }) => tool.name)
 
   return Response.json(

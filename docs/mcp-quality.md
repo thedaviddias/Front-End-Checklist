@@ -210,9 +210,10 @@ Tool responses are capped so the MCP doesn’t blow LLM token budgets:
 - **In-memory usage counters** in `packages/mcp`: every `tools/call` increments a per-tool counter when telemetry is enabled. Exposed via `getTelemetryStats()` and in **GET /api/mcp** as the optional `usage` object (e.g. `usage: { get_rule: 42, search_rules: 10 }`). Anonymous only; no IPs or identifiers. Counts reset on each deploy/restart.
 - **Database persistence**: Each `tools/call` is stored in the `McpToolCall` table (anonymous: `toolName`, `createdAt`). The API route writes after a successful request; DB errors are ignored so telemetry never breaks MCP responses. Apply migrations with `pnpm --filter @repo/auth db:migrate`.
 
-**Disabling telemetry**
+**Enabling telemetry**
 
-- Set **`MCP_TELEMETRY_DISABLED=true`** (or `MCP_TELEMETRY_DISABLED=1`) in the app environment. When set: in-memory counters are not updated and **GET /api/mcp** does not include `usage`; no rows are written to `McpToolCall`. The handler also accepts `createMcpHandler(getRules, getChecklists, { telemetryEnabled: false })` when creating it programmatically (e.g. in tests).
+- Telemetry is disabled by default for the public hosted endpoint to avoid database writes and analytics work for routine agent traffic.
+- Set **`MCP_TELEMETRY_ENABLED=true`** (or `MCP_TELEMETRY_ENABLED=1`) in the app environment to opt in. When enabled: in-memory counters are updated, **GET /api/mcp** includes `usage`, and successful `tools/call` requests write anonymous rows to `McpToolCall`. The handler also accepts `createMcpHandler(getRules, getChecklists, { telemetryEnabled: true })` when creating it programmatically (e.g. in tests).
 
 **How to see it**
 
