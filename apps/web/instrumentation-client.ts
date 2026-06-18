@@ -12,6 +12,8 @@ Sentry.init({
   tracesSampleRate: 0.1
 })
 
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart
+
 initBotId({
   protect: [
     { path: '/api/waitlist', method: 'POST' },

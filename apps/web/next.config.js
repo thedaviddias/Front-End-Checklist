@@ -268,11 +268,15 @@ const sentryWrappedConfig =
   process.env.SENTRY_AUTH_TOKEN && process.env.SENTRY_ORG && process.env.SENTRY_PROJECT
     ? withSentryConfig(botProtectedConfig, {
         authToken: process.env.SENTRY_AUTH_TOKEN,
-        disableLogger: true,
         org: process.env.SENTRY_ORG,
         project: process.env.SENTRY_PROJECT,
         silent: !process.env.CI,
         tunnelRoute: '/monitoring',
+        webpack: {
+          treeshake: {
+            removeDebugLogging: true
+          }
+        },
         widenClientFileUpload: true
       })
     : botProtectedConfig
