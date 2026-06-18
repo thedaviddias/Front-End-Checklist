@@ -17,6 +17,7 @@ import {
   buildGuideRuleLink
 } from '@/components/guides/guide-link-builders'
 import { mdxComponents } from '@/components/rules/detail/mdx-components'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { generateGuideMetadata, generateGuideSchema, JsonLd, siteConfig } from '@/lib/seo'
 
 const BASE_URL = siteConfig.url
@@ -67,6 +68,9 @@ export async function generateMetadata({ params }: GuideDetailPageProps): Promis
  * Renders a single guide detail page.
  */
 export default async function GuideDetailPage({ params }: GuideDetailPageProps) {
+  'use cache'
+  cachePublicContent()
+
   const { slug } = await params
   const guide = allGuides.find(item => item.slug === slug && item.language === SITE_LANGUAGE)
 

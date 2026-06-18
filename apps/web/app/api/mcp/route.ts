@@ -11,7 +11,7 @@ import {
   MCP_SERVER_INSTRUCTIONS
 } from '@repo/mcp'
 import { CATEGORIES, type Category, SUBCATEGORIES, type Subcategory } from '@repo/types'
-import { GET_CACHE_HEADERS } from '@/lib/mcp-cache'
+import { GET_CACHE_HEADERS, getCachedResponse, setCachedResponse } from '@/lib/mcp-cache'
 import {
   checkRateLimit,
   createRateLimitHeaders,
@@ -35,6 +35,13 @@ interface McpRequest {
   id: string | number
   method: string
   params?: Record<string, unknown>
+}
+
+interface CachedMcpResponse {
+  body: string
+  headers: Array<[string, string]>
+  status: number
+  statusText: string
 }
 
 const VALID_CATEGORIES = new Set<string>(CATEGORIES)
@@ -86,6 +93,42 @@ function isMcpRequest(value: unknown): value is McpRequest {
  */
 function isMcpRequestBatch(value: unknown): value is McpRequest[] {
   return Array.isArray(value) && value.every(isMcpRequest)
+}
+
+/**
+ * Check whether an MCP request is safe to cache at the response-envelope level.
+ *
+ * Tool lists are static for a deployment and do not contain user payloads.
+ */
+function isCacheableMcpPostBody(body: unknown): boolean {
+  return isMcpRequest(body) && body.method === 'tools/list'
+}
+
+/**
+ * Check whether a cached value has the serialized response shape expected by this route.
+ */
+function isCachedMcpResponse(value: unknown): value is CachedMcpResponse {
+  if (typeof value !== 'object' || value === null) {
+    return false
+  }
+
+  return (
+    typeof Reflect.get(value, 'body') === 'string' &&
+    Array.isArray(Reflect.get(value, 'headers')) &&
+    typeof Reflect.get(value, 'status') === 'number' &&
+    typeof Reflect.get(value, 'statusText') === 'string'
+  )
+}
+
+/**
+ * Recreate a cached MCP response before per-request CORS and rate-limit headers are merged.
+ */
+function cachedMcpResponseToResponse(cached: CachedMcpResponse): Response {
+  return new Response(cached.body, {
+    status: cached.status,
+    statusText: cached.statusText,
+    headers: new Headers(cached.headers)
+  })
 }
 
 /**
@@ -261,6 +304,13 @@ export async function POST(request: Request) {
   }
 
   try {
+    const cacheableBody = isCacheableMcpPostBody(body)
+    const cachedResponse = cacheableBody ? getCachedResponse(body) : undefined
+
+    if (isCachedMcpResponse(cachedResponse)) {
+      return withRouteHeaders(request, cachedMcpResponseToResponse(cachedResponse), rateLimitResult)
+    }
+
     const response = await handleMcpHttpRequest(
       request,
       () => getRules(isCategory, isSubcategory),
@@ -273,6 +323,16 @@ export async function POST(request: Request) {
       },
       body
     )
+
+    if (cacheableBody && response.ok) {
+      const clonedResponse = response.clone()
+      setCachedResponse(body, {
+        body: await clonedResponse.text(),
+        headers: Array.from(clonedResponse.headers.entries()),
+        status: clonedResponse.status,
+        statusText: clonedResponse.statusText
+      } satisfies CachedMcpResponse)
+    }
 
     if (MCP_TELEMETRY_ENABLED) {
       const toolNames = extractToolNamesFromRequest(body)

@@ -15,6 +15,7 @@ import {
   getChecklistCuration
 } from '@/components/checklists/checklist-curation'
 import { PageHero } from '@/components/content/page/page-hero'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { pageMetadata, siteConfig } from '@/lib/seo'
 import { QueryProvider } from '@/providers/query-provider'
 
@@ -40,6 +41,9 @@ interface RecommendedChecklistEntry {
 }
 
 export default async function ChecklistsPage() {
+  'use cache'
+  cachePublicContent()
+
   const lang = SITE_LANGUAGE
 
   // Get all checklists for the current language

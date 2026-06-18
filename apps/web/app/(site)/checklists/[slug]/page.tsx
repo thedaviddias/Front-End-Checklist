@@ -1,4 +1,3 @@
-import { MDXContent } from '@content-collections/mdx/react'
 import { PageBreadcrumbs } from '@repo/design-system/custom/navigation/page-breadcrumbs'
 import { Clock } from '@repo/design-system/icons'
 import { allChecklists, allRules } from 'content-collections'
@@ -14,9 +13,10 @@ import {
 import { ChecklistDifficultyBadge } from '@/components/checklists/checklist-difficulty-badge'
 import { PageHero } from '@/components/content/page/page-hero'
 import { RulesBrowser, RulesBrowserSkeleton } from '@/components/rules/browser/rules-browser'
-import { mdxComponents } from '@/components/rules/detail/mdx-components'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { generateChecklistMetadata, generateChecklistSchema, JsonLd, siteConfig } from '@/lib/seo'
 import { QueryProvider } from '@/providers/query-provider'
+import { ChecklistMdxContent } from './checklist-mdx-content'
 
 // Base URL for structured data
 const BASE_URL = siteConfig.url
@@ -63,6 +63,9 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function ChecklistDetailPage({ params }: PageProps) {
+  'use cache'
+  cachePublicContent()
+
   const { slug } = await params
   const lang = SITE_LANGUAGE
 
@@ -201,7 +204,7 @@ export default async function ChecklistDetailPage({ params }: PageProps) {
 
         <section className="mb-10">
           <div className="prose max-w-none" data-checklist-content>
-            <MDXContent code={checklist.mdx} components={mdxComponents} />
+            <ChecklistMdxContent code={checklist.mdx} />
           </div>
         </section>
 

@@ -2,6 +2,7 @@
 
 import { GITHUB_REPO_API_URL } from '@repo/config'
 import { allRules } from 'content-collections'
+import { cachePublicContent } from './public-content-cache'
 import { getFetchTimeoutOptions } from './remote-data'
 
 // Cache rule data with Next.js 16 Cache Components
@@ -11,6 +12,7 @@ import { getFetchTimeoutOptions } from './remote-data'
  */
 export async function getCachedRules(lang: string) {
   'use cache'
+  cachePublicContent()
 
   return allRules
     .filter(rule => rule.language === lang)
@@ -33,6 +35,7 @@ export async function getCachedRules(lang: string) {
  */
 export async function getCachedRulesByCategory(lang: string, category: string) {
   'use cache'
+  cachePublicContent()
 
   return allRules.filter(rule => rule.language === lang && rule.primaryCategory === category)
 }
@@ -44,6 +47,7 @@ export async function getCachedRulesByCategory(lang: string, category: string) {
  */
 export async function getCachedRule(lang: string, slug: string) {
   'use cache'
+  cachePublicContent()
 
   return allRules.find(rule => rule.slug === slug && rule.language === lang)
 }
@@ -54,6 +58,7 @@ export async function getCachedRule(lang: string, slug: string) {
  */
 export async function getCachedCategories(lang: string) {
   'use cache'
+  cachePublicContent()
 
   const rules = allRules.filter(rule => rule.language === lang)
   const categoryCounts: Record<string, number> = {}
@@ -80,6 +85,7 @@ export async function getCachedCategories(lang: string) {
  */
 export async function getCachedGitHubStars(): Promise<number | null> {
   'use cache'
+  cachePublicContent()
 
   try {
     const response = await fetch(GITHUB_REPO_API_URL, {

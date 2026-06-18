@@ -5,6 +5,7 @@ import { Button } from '@repo/design-system/ui/button'
 import { PageHero } from '@/components/content/page/page-hero'
 import { MentionsBrowser } from '@/components/mentions/browser/mentions-browser'
 import { getMentions } from '@/lib/mentions'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = pageMetadata.mentions
@@ -12,6 +13,9 @@ export const metadata = pageMetadata.mentions
 const mentions = getMentions()
 
 export default async function MentionsPage() {
+  'use cache'
+  cachePublicContent()
+
   return (
     <div className="container-content py-12 sm:py-16 lg:pt-5 lg:pb-20">
       <PageBreadcrumbs

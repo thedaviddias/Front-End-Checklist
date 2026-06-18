@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { SITE_LANGUAGE } from '@/app/(site)/layout'
 import { ChecklistActionBar } from '@/components/checklists/actions/checklist-action-bar'
 import { buildChecklistActionBarProps } from '@/components/checklists/actions/checklist-action-bar-props'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { getRuleRawContent } from '@/lib/rule-content'
 import { generateRuleMetadata, siteConfig } from '@/lib/seo'
 import { QueryProvider } from '@/providers/query-provider'
@@ -59,6 +60,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function RulePage({ params }: PageProps) {
+  'use cache'
+  cachePublicContent()
+
   const { category, slug } = await params
   const lang = SITE_LANGUAGE
   const rule = allRules.find(item => item.slug === slug && item.language === lang)

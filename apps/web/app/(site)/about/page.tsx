@@ -1,5 +1,6 @@
 import { CreatorProjects } from '@/components/about/creator-projects'
 import { UpcomingBook } from '@/components/about/upcoming-book'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { pageMetadata } from '@/lib/seo'
 
 export const metadata = {
@@ -9,7 +10,10 @@ export const metadata = {
     'Learn more about David Dias, the creator of the Front-End Checklist, and his other projects.'
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  'use cache'
+  cachePublicContent()
+
   return (
     <main role="main" className="py-12">
       <div className="container-content">

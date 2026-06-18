@@ -10,6 +10,7 @@ import { buildChecklistActionBarProps } from '@/components/checklists/actions/ch
 import { PageHero } from '@/components/content/page/page-hero'
 import { RulesBrowser, RulesBrowserSkeleton } from '@/components/rules/browser/rules-browser'
 import { ShareButton } from '@/components/rules/detail/share-button'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import {
   categoryConfig,
   generateCategoryMetadata,
@@ -39,6 +40,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CategoryPage({ params }: PageProps) {
+  'use cache'
+  cachePublicContent()
+
   const { category } = await params
   const lang = SITE_LANGUAGE
   const config = categoryConfig[category] || {
