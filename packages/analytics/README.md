@@ -13,10 +13,11 @@ Unified analytics package for **OpenPanel**. Drop the provider into your Next.js
 
 ## Environment variables
 
-| Variable                          | Required                      | Scope           | Description                                                     |
-| --------------------------------- | ----------------------------- | --------------- | --------------------------------------------------------------- |
-| `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` | Yes (for OpenPanel)           | Client + Server | OpenPanel client ID from [openpanel.dev](https://openpanel.dev) |
-| `OPENPANEL_CLIENT_SECRET`         | Only for server-side tracking | Server only     | OpenPanel client secret (never expose to the browser)           |
+| Variable                          | Required                      | Scope           | Description                                                                                          |
+| --------------------------------- | ----------------------------- | --------------- | ---------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` | Yes (for OpenPanel)           | Client + Server | OpenPanel client ID from your self-hosted dashboard                                                  |
+| `OPENPANEL_CLIENT_SECRET`         | Only for server-side tracking | Server only     | OpenPanel client secret (never expose to the browser)                                                |
+| `OPENPANEL_API_URL`               | No                            | Server only     | Self-hosted API base (default: `https://stats.daviddias.digital/api`). Used by the proxy + SDK.      |
 
 Both variables must be added to `turbo.json` → `tasks.build.env` so Turborepo invalidates the build cache when they change.
 
@@ -59,8 +60,9 @@ Create `app/api/op/[...path]/route.ts` to proxy analytics requests through your 
 
 ```ts
 import { createRouteHandler } from '@openpanel/nextjs/server'
+import { openPanelApiUrl } from '@thedaviddias/analytics/server'
 
-export const { GET, POST } = createRouteHandler()
+export const { GET, POST } = createRouteHandler({ apiUrl: openPanelApiUrl })
 ```
 
 ### 4. Update middleware
@@ -77,6 +79,7 @@ Add these to your middleware:
 ```jsonc
 // turbo.json → tasks.build.env
 "NEXT_PUBLIC_OPENPANEL_CLIENT_ID",
+"OPENPANEL_API_URL",
 "OPENPANEL_CLIENT_SECRET",
 ```
 

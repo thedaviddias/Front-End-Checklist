@@ -56,6 +56,7 @@ This is not a generic startup checklist. It is based on the current repository s
   - [ ] `SUBSCRIBE_SECRET`
   - [ ] `NEXT_PUBLIC_OPENPANEL_CLIENT_ID`
   - [ ] `OPENPANEL_CLIENT_SECRET`
+  - [ ] `OPENPANEL_API_URL` (self-hosted: `https://stats.daviddias.digital/api`)
   - [ ] `UPSTASH_REDIS_REST_URL`
   - [ ] `UPSTASH_REDIS_REST_TOKEN`
 - [ ] Confirm `allowedHosts`, `trustedOrigins`, auth callback URLs, and cookie domain behavior match the final production domains and subdomains.
