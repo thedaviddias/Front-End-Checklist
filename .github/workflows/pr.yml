@@ -117,15 +117,10 @@ jobs:
       - name: Run Biome checks
         run: |
           pnpm biome check --no-errors-on-unmatched .
-          pnpm run lint --filter=web
+          pnpm --filter web lint
 
       - name: Check for formatting issues
-        run: |
-          pnpm biome format . --check
-          if [ $? -ne 0 ]; then
-            echo "::error::Formatting issues found. Please run 'pnpm biome format . --write' locally"
-            exit 1
-          fi
+        run: pnpm biome format .
 
   type-safety:
     name: Type Safety
