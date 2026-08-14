@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "2,17,32,47 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: routed-production-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   validate-and-deploy:
