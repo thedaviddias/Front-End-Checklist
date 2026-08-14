@@ -47,6 +47,7 @@ const MCP_HOST = 'mcp.frontendchecklist.io'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  staticPageGenerationTimeout: 180,
   transpilePackages: [
     '@thedaviddias/analytics',
     '@frontendchecklist/rules',
@@ -67,6 +68,8 @@ const nextConfig = {
   serverExternalPackages: ['esbuild', '@esbuild/darwin-arm64'],
 
   experimental: {
+    staticGenerationMaxConcurrency: 2,
+    staticGenerationMinPagesPerWorker: 100,
     // Enhanced routing and prefetching
     optimizePackageImports: [
       'lucide-react',

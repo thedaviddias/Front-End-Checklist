@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @repo/auth build && content-collections build && next build",
+    "build": "pnpm --filter @repo/auth build && next build",
     "build:content": "content-collections build",
     "dev": "concurrently \"content-collections watch\" \"portless run next dev\"",
     "e2e": "playwright test",
