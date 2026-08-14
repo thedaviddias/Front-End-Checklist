@@ -9,5 +9,6 @@ pnpm install --frozen-lockfile
 pnpm run lint
 pnpm validate:rule-structure
 pnpm validate:guide-structure
+pnpm --filter web build:content
 pnpm run typecheck --filter=web
 pnpm run test:ci --filter=web
