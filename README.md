@@ -1,7 +1,5 @@
 # Front-End Checklist
 
-[![Backers on Open Collective](https://opencollective.com/front-end-checklist/backers/badge.svg)](#backers)
-[![Support via Open Collective](https://opencollective.com/front-end-checklist/sponsors/badge.svg)](https://opencollective.com/front-end-checklist)
 
 Front-End Checklist is the open-source front-end quality system for humans and AI agents. It turns front-end best practices into a practical review workflow you can browse on the web, run through with MCP-compatible tools, or work through directly in this README.
 
