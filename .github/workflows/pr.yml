@@ -117,7 +117,7 @@ jobs:
       - name: Run Biome checks
         run: |
           pnpm biome check --no-errors-on-unmatched .
-          pnpm run lint --filter=web
+          pnpm --filter web lint
 
       - name: Check for formatting issues
         run: |
