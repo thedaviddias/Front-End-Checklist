@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 jest.mock('content-collections', () => ({
+  __esModule: true,
   allRules: [
     {
       id: 'en-flashing-content',

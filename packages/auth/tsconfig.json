@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "types": ["jest"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
