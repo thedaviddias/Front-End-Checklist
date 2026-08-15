@@ -11,6 +11,8 @@ import { allChecklists, allRules } from 'content-collections'
 import { getRuleRawContent } from '@/lib/rule-content'
 import { isChecklistDifficulty } from './route-helpers'
 
+let cachedRulesPromise: Promise<Rule[]> | null = null
+
 /**
  * Check whether a value has the shape of a related-rule reference.
  *
@@ -67,6 +69,21 @@ export function isRuleSourceSummary(
  * @returns English rule records with raw markdown content attached.
  */
 export async function getRules(
+  isCategory: (value: string) => value is Category,
+  isSubcategory: (value: string) => value is Subcategory
+): Promise<Rule[]> {
+  cachedRulesPromise ??= buildRules(isCategory, isSubcategory)
+
+  return cachedRulesPromise
+}
+
+/**
+ * Build the English rule corpus exposed through MCP.
+ *
+ * The corpus only changes on deployment, so keeping it in memory avoids repeated raw MDX reads on
+ * every MCP request handled by a warm serverless instance.
+ */
+async function buildRules(
   isCategory: (value: string) => value is Category,
   isSubcategory: (value: string) => value is Subcategory
 ): Promise<Rule[]> {

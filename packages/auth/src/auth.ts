@@ -7,6 +7,13 @@ import { buildGithubProfileImport, getStringProperty, normalizeGithubUsername } 
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const baseUrl = process.env.BETTER_AUTH_URL ?? publicSiteUrl ?? 'http://localhost:3000'
 const subscribeSecret = process.env.SUBSCRIBE_SECRET
+const isProductionBuild = process.env.NEXT_PHASE === 'phase-production-build'
+const productionBuildAuthSecret = isProductionBuild
+  ? 'fec-build-only-better-auth-secret-d2f9a4c8b1e6-7a3d-4b9f-9e2c-8f1a6d5c3b0a'
+  : undefined
+const githubClientId = process.env.GITHUB_CLIENT_ID ?? (isProductionBuild ? 'build-only' : '')
+const githubClientSecret =
+  process.env.GITHUB_CLIENT_SECRET ?? (isProductionBuild ? 'build-only' : '')
 
 const allowedHosts = Array.from(
   new Set(
@@ -23,6 +30,7 @@ const crossSubdomainCookieDomain =
   process.env.NODE_ENV === 'production' ? 'frontendchecklist.io' : undefined
 
 export const auth = betterAuth({
+  secret: process.env.BETTER_AUTH_SECRET ?? productionBuildAuthSecret,
   baseURL: {
     allowedHosts,
     fallback: baseUrl,
@@ -173,10 +181,10 @@ export const auth = betterAuth({
   plugins: [nextCookies()],
   socialProviders: {
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID ?? '',
-      clientSecret: process.env.GITHUB_CLIENT_SECRET ?? '',
+      clientId: githubClientId,
+      clientSecret: githubClientSecret,
       // GitHub Apps (Iv1.*) do not support the scope parameter and will 404 if it is sent.
-      ...(process.env.GITHUB_CLIENT_ID?.startsWith('Iv1.') ? { disableDefaultScope: true } : {}),
+      ...(githubClientId.startsWith('Iv1.') ? { disableDefaultScope: true } : {}),
       mapProfileToUser: profile => {
         return {
           ...buildGithubProfileImport(profile),

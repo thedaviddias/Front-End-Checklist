@@ -9,6 +9,7 @@ import { PageHero } from '@/components/content/page/page-hero'
 import { CategoryQuickNav } from '@/components/navigation/quick-nav/category-quick-nav'
 import { RulesBrowser, RulesBrowserSkeleton } from '@/components/rules/browser/rules-browser'
 import { ShareButton } from '@/components/rules/detail/share-button'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { categoryConfig, pageMetadata, siteConfig } from '@/lib/seo'
 import { QueryProvider } from '@/providers/query-provider'
 
@@ -18,6 +19,9 @@ export const metadata = pageMetadata.rules
 const BASE_URL = siteConfig.url
 
 export default async function RulesPage() {
+  'use cache'
+  cachePublicContent()
+
   const lang = SITE_LANGUAGE
 
   // Get all rules for the current language

@@ -12,6 +12,7 @@ env:
 jobs:
   rule-structure:
     name: Rule Structure
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -36,6 +37,7 @@ jobs:
 
   guide-validation:
     name: Guide Validation
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -63,6 +65,7 @@ jobs:
 
   lint:
     name: Lint
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -90,6 +93,7 @@ jobs:
 
   typecheck:
     name: Type Check
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -117,6 +121,7 @@ jobs:
 
   unit-tests:
     name: Unit Tests
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -165,6 +170,7 @@ jobs:
 
   build:
     name: Build
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -209,6 +215,7 @@ jobs:
 
   e2e-tests:
     name: E2E Smoke Tests
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     needs: [lint, typecheck, unit-tests, build]
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -270,6 +277,7 @@ jobs:
 
   security-scan:
     name: Security Scan
+    if: ${{ github.event_name != 'push' || vars.BUILD_PROVIDER == 'github' }}
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -296,7 +304,7 @@ jobs:
     name: All Checks Passed
     runs-on: ubuntu-latest
     needs: [rule-structure, guide-validation, lint, typecheck, unit-tests, build, e2e-tests, security-scan]
-    if: always()
+    if: ${{ always() && (github.event_name != 'push' || vars.BUILD_PROVIDER == 'github') }}
     steps:
       - name: Check all job results
         run: |

@@ -1,6 +1,17 @@
 // Learn more: https://github.com/testing-library/jest-dom
 require('@testing-library/jest-dom')
 
+const { TextDecoder, TextEncoder } = require('node:util')
+
+global.TextDecoder ??= TextDecoder
+global.TextEncoder ??= TextEncoder
+
+jest.mock('next/cache', () => ({
+  cacheLife: jest.fn(),
+  cacheTag: jest.fn(),
+  unstable_cache: jest.fn(fn => fn)
+}))
+
 // Mock environment variables if needed
 process.env.NEXT_PUBLIC_API_URL = 'http://localhost:3000'
 

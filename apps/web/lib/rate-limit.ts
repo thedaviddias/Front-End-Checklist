@@ -2,7 +2,7 @@ import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
 // Rate limiter configuration for MCP endpoint
-// Uses sliding window algorithm: 60 requests per minute per IP
+// Uses sliding window algorithm: 30 requests per minute per IP
 
 let ratelimit: Ratelimit | null = null
 let waitlistRatelimit: Ratelimit | null = null
@@ -36,8 +36,8 @@ function getRatelimiter(): Ratelimit | null {
 
     ratelimit = new Ratelimit({
       redis,
-      // Sliding window: 60 requests per 60 seconds
-      limiter: Ratelimit.slidingWindow(60, '60 s'),
+      // Sliding window: 30 requests per 60 seconds
+      limiter: Ratelimit.slidingWindow(30, '60 s'),
       // Prefix for Redis keys
       prefix: 'mcp-ratelimit',
       // Analytics disabled by default (costs extra)
@@ -116,8 +116,8 @@ export async function checkRateLimit(identifier: string): Promise<RateLimitResul
   if (!limiter) {
     return {
       success: true,
-      limit: 60,
-      remaining: 60,
+      limit: 30,
+      remaining: 30,
       reset: Date.now() + 60000
     }
   }
@@ -135,8 +135,8 @@ export async function checkRateLimit(identifier: string): Promise<RateLimitResul
     console.error('[rate-limit] Rate limit check failed:', error)
     return {
       success: true,
-      limit: 60,
-      remaining: 60,
+      limit: 30,
+      remaining: 30,
       reset: Date.now() + 60000
     }
   }

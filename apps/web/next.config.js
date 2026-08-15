@@ -47,6 +47,7 @@ const MCP_HOST = 'mcp.frontendchecklist.io'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  staticPageGenerationTimeout: 180,
   transpilePackages: [
     '@thedaviddias/analytics',
     '@frontendchecklist/rules',
@@ -67,6 +68,8 @@ const nextConfig = {
   serverExternalPackages: ['esbuild', '@esbuild/darwin-arm64'],
 
   experimental: {
+    staticGenerationMaxConcurrency: 2,
+    staticGenerationMinPagesPerWorker: 100,
     // Enhanced routing and prefetching
     optimizePackageImports: [
       'lucide-react',
@@ -268,11 +271,15 @@ const sentryWrappedConfig =
   process.env.SENTRY_AUTH_TOKEN && process.env.SENTRY_ORG && process.env.SENTRY_PROJECT
     ? withSentryConfig(botProtectedConfig, {
         authToken: process.env.SENTRY_AUTH_TOKEN,
-        disableLogger: true,
         org: process.env.SENTRY_ORG,
         project: process.env.SENTRY_PROJECT,
         silent: !process.env.CI,
         tunnelRoute: '/monitoring',
+        webpack: {
+          treeshake: {
+            removeDebugLogging: true
+          }
+        },
         widenClientFileUpload: true
       })
     : botProtectedConfig

@@ -1,0 +1,51 @@
+name: Routed CI
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "2,17,32,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: routed-production-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate-and-deploy:
+    if: ${{ vars.BUILD_PROVIDER == 'gitea' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PNPM_STORE_DIR: /pnpm-store
+      NPM_CONFIG_REGISTRY: http://172.17.0.1:4873
+      PNPM_CONFIG_REGISTRY: http://172.17.0.1:4873
+      COREPACK_NPM_REGISTRY: http://172.17.0.1:4873
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - id: deployment-state
+        run: bash scripts/ci/deployment-state.sh
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+      - if: ${{ steps.deployment-state.outputs.required == 'true' }}
+        run: corepack enable
+      - if: ${{ steps.deployment-state.outputs.required == 'true' }}
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: .nvmrc
+      - if: ${{ steps.deployment-state.outputs.required == 'true' }}
+        run: bash scripts/ci/validate.sh
+      - name: Build and deploy production
+        if: ${{ steps.deployment-state.outputs.required == 'true' && github.ref == 'refs/heads/main' && vars.BUILD_PROVIDER == 'gitea' }}
+        run: bash scripts/ci/deploy-vercel.sh
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}

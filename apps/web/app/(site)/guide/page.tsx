@@ -3,12 +3,16 @@ import { PageBreadcrumbs } from '@repo/design-system/custom/navigation/page-brea
 import { BookOpen, ChevronRight, Lightbulb, Target } from '@repo/design-system/icons'
 import Link from 'next/link'
 import { PageHero } from '@/components/content/page/page-hero'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { pageMetadata } from '@/lib/seo'
 import { PriorityCard, StepCard, TipCard } from './guide-components'
 
 export const metadata = pageMetadata.guide
 
 export default async function GuidePage() {
+  'use cache'
+  cachePublicContent()
+
   return (
     <div className="container-content py-12 sm:py-16 lg:pt-5 lg:pb-20">
       <PageBreadcrumbs items={[{ label: 'Home', href: routeHome() }, { label: 'Guide' }]} />

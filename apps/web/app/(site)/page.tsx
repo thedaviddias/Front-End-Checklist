@@ -7,6 +7,7 @@ import type { ChecklistPreviewData } from '@/components/homepage/checklists-prev
 import { HomePageContent } from '@/components/homepage/home-page-content'
 import { getCachedGitHubStars } from '@/lib/cache'
 import { getMentions } from '@/lib/mentions'
+import { cachePublicContent } from '@/lib/public-content-cache'
 import { pageMetadata } from '@/lib/seo'
 import { QueryProvider } from '@/providers/query-provider'
 import { SITE_LANGUAGE } from './layout'
@@ -108,6 +109,9 @@ function normalizeChecklistDifficulty(value: string | undefined): ChecklistDiffi
 }
 
 export default async function Page() {
+  'use cache'
+  cachePublicContent()
+
   const lang = SITE_LANGUAGE
   const githubStars = await getCachedGitHubStars()
 

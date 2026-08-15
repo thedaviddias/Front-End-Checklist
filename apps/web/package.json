@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @repo/auth build && content-collections build && next build",
+    "build": "pnpm --filter @repo/auth build && next build",
     "build:content": "content-collections build",
     "dev": "concurrently \"content-collections watch\" \"portless run next dev\"",
     "e2e": "playwright test",
@@ -19,7 +19,7 @@
     "test": "jest --watchman=false --passWithNoTests",
     "test:ci": "jest --watchman=false --ci --maxWorkers=1 --passWithNoTests",
     "test:coverage": "jest --watchman=false --coverage --passWithNoTests",
-    "test:coverage:check": "jest --watchman=false --coverage --coverageReporters=text-summary --passWithNoTests",
+    "test:coverage:check": "jest --watchman=false --coverage --coverageReporters=text-summary --coverageReporters=json-summary --passWithNoTests",
     "test:related": "jest --watchman=false --findRelatedTests --passWithNoTests",
     "typecheck": "tsc --noEmit"
   },
