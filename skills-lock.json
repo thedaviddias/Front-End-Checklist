@@ -16,11 +16,6 @@
       "sourceType": "github",
       "computedHash": "5717187bba9c22030c7174c74012f01c359f21e2ce87e0eb80e24244d8b8c915"
     },
-    "brainstorming": {
-      "source": "obra/superpowers",
-      "sourceType": "github",
-      "computedHash": "8e99026256fdd857520640b72e0181221ae02bcba16bdb9d644191c1b1b3b9e4"
-    },
     "create-auth-skill": {
       "source": "better-auth/skills",
       "sourceType": "github",
@@ -46,15 +41,22 @@
       "sourceType": "github",
       "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461"
     },
-    "frontend-design": {
-      "source": "anthropics/skills",
-      "sourceType": "github",
-      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    "frontend-ui-engineering": {
+      "source": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceUrl": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceType": "git",
+      "skillPath": "skills/frontend-ui-engineering/SKILL.md"
     },
     "fun-brainstorming": {
       "source": "roin-orca/skills",
       "sourceType": "github",
       "computedHash": "b1873510f9c511f65db575ffb5721b6caa8bac4cf4f81515618b339186f6ca56"
+    },
+    "idea-refine": {
+      "source": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceUrl": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceType": "git",
+      "skillPath": "skills/idea-refine/SKILL.md"
     },
     "mcp-builder": {
       "source": "anthropics/skills",
@@ -126,10 +128,11 @@
       "sourceType": "github",
       "computedHash": "b8a0477cd4d7bf8fa54d27f8e64d82388402f0d502591db50a357df5b9995c75"
     },
-    "tdd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "computedHash": "ad055544599481182d0079c4198e85da26677cb408a677be2da04915375f0427"
+    "test-driven-development": {
+      "source": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceUrl": "git@gitea.lab.coolio.cloud:thedaviddias/skills.git",
+      "sourceType": "git",
+      "skillPath": "skills/test-driven-development/SKILL.md"
     },
     "vercel-composition-patterns": {
       "source": "vercel-labs/agent-skills",
