@@ -7,6 +7,8 @@
 ---
 End-to-end tests verify that your application works correctly from the user's perspective, testing complete user journeys across multiple components and services.
 
+Teams that want natural-language, black-box user-flow coverage can use [Agent QA](https://github.com/vostride/agent-qa) alongside code-level Playwright or Cypress suites; it complements rather than replaces their framework-level assertions.
+
 ## Code Example
 
 ```typescript
