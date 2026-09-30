@@ -16,7 +16,7 @@
     "@repo/storage": "workspace:*",
     "@repo/types": "workspace:*",
     "flexsearch": "^0.8.212",
-    "fuse.js": "^7.3.0"
+    "fuse.js": "^7.5.0"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",

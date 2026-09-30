@@ -22,9 +22,9 @@
     "test:ci": "jest --ci --passWithNoTests"
   },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "catalog:",
-    "better-auth": "^1.6.11"
+    "better-auth": "~1.6.33"
   },
   "devDependencies": {
     "@types/jest": "catalog:",

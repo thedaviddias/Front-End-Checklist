@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "catalog:",
-    "@radix-ui/react-accordion": "^1.2.12",
+    "@radix-ui/react-accordion": "^1.2.20",
     "@radix-ui/react-checkbox": "catalog:",
     "@radix-ui/react-dialog": "catalog:",
     "@radix-ui/react-dropdown-menu": "catalog:",
@@ -31,7 +31,7 @@
     "@repo/utils": "workspace:*",
     "class-variance-authority": "catalog:",
     "framer-motion": "catalog:",
-    "lucide-react": "^1.17.0",
+    "lucide-react": "^1.49.0",
     "react": "catalog:"
   },
   "devDependencies": {

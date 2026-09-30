@@ -17,8 +17,8 @@
     "@repo/config": "workspace:*",
     "@repo/storage": "workspace:*",
     "@repo/types": "workspace:*",
-    "i18next": "^26.3.0",
-    "react-i18next": "^17.0.8"
+    "i18next": "^26.4.2",
+    "react-i18next": "^17.0.15"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",

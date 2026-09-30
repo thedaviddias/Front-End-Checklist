@@ -16,9 +16,9 @@
     "@repo/schemas": "workspace:*",
     "@repo/storage": "workspace:*",
     "@repo/types": "workspace:*",
-    "@tanstack/react-store": "^0.11.0",
-    "immer": "^11.1.8",
-    "zustand": "^5.0.14"
+    "@tanstack/react-store": "^0.11.2",
+    "immer": "^11.1.18",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",

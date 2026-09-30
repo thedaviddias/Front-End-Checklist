@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@repo/types": "workspace:*",
-    "@tanstack/react-virtual": "^3.13.26"
+    "@tanstack/react-virtual": "^3.14.13"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",
