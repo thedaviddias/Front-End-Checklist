@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
+    "dotenv": "^17.4.2",
     "jest": "catalog:",
     "prisma": "catalog:",
     "ts-jest": "catalog:",

@@ -28,7 +28,7 @@ catalog:
   "@types/react": "^19.3.0"
   "@types/react-dom": "^19.3.0"
   "class-variance-authority": "^0.7.1"
-  "framer-motion": "^12.43.0"
+  "framer-motion": "^13.4.6"
   jest: "^30.5.2"
   # Next
   next: "^16.3.8"
