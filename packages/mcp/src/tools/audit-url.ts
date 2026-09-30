@@ -1,7 +1,9 @@
+import { lookup as lookupCallback } from 'node:dns'
 import { lookup } from 'node:dns/promises'
-import { BlockList, isIP } from 'node:net'
+import { BlockList, isIP, type LookupFunction } from 'node:net'
 import { BOT_USER_AGENT } from '@repo/config'
 import type { Category, Priority, Rule } from '@repo/types'
+import { Agent } from 'undici'
 import {
   NUMBER_SCHEMA,
   OPEN_WORLD_READ_ONLY_TOOL_ANNOTATIONS,
@@ -159,6 +161,34 @@ export function isBlockedAddress(address: string): boolean {
   return family === 4 ? BLOCKED_IPV4.check(address, 'ipv4') : BLOCKED_IPV6.check(address, 'ipv6')
 }
 
+/**
+ * Connect-time DNS lookup that refuses non-public addresses. Validating the
+ * hostname before `fetch` is not enough on its own: the name could resolve
+ * differently when the socket connects (DNS rebinding).
+ */
+const publicOnlyLookup: LookupFunction = (hostname, options, callback) => {
+  lookupCallback(hostname, { ...options, all: true }, (error, addresses) => {
+    if (error) {
+      callback(error, '', 0)
+      return
+    }
+
+    const blocked = addresses.find(entry => isBlockedAddress(entry.address))
+    if (blocked || addresses.length === 0) {
+      callback(new Error(`Blocked non-public address for ${hostname}`), '', 0)
+      return
+    }
+
+    if (options.all) {
+      callback(null, addresses)
+      return
+    }
+    callback(null, addresses[0].address, addresses[0].family)
+  })
+}
+
+const publicOnlyDispatcher = new Agent({ connect: { lookup: publicOnlyLookup } })
+
 type HostResolver = (hostname: string) => Promise<string[]>
 
 const resolveHost: HostResolver = async hostname =>
@@ -274,14 +304,18 @@ async function fetchWithValidatedRedirects(
   const signal = AbortSignal.timeout(FETCH_TIMEOUT_MS)
 
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
-    const response = await fetch(current.toString(), {
+    // `dispatcher` is an undici extension to RequestInit supported by Node's fetch.
+    const init: RequestInit & { dispatcher: Agent } = {
       headers: {
         'User-Agent': BOT_USER_AGENT,
         Accept: 'text/html,application/xhtml+xml'
       },
       redirect: 'manual',
-      signal
-    })
+      signal,
+      // Re-checks resolved addresses at connect time.
+      dispatcher: publicOnlyDispatcher
+    }
+    const response = await fetch(current.toString(), init)
 
     const location = response.headers.get('location')
     if (response.status < 300 || response.status >= 400 || !location) {
@@ -349,7 +383,10 @@ export async function executeAuditUrl(
     if (err instanceof Error && err.name === 'TimeoutError') {
       return { error: `Request timed out after ${FETCH_TIMEOUT_MS / 1000} seconds` }
     }
-    return { error: `Failed to fetch URL: ${err instanceof Error ? err.message : 'Unknown error'}` }
+    const cause = err instanceof Error && err.cause instanceof Error ? err.cause : err
+    return {
+      error: `Failed to fetch URL: ${cause instanceof Error ? cause.message : 'Unknown error'}`
+    }
   }
 
   // Run the same review as review_code
