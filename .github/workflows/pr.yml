@@ -193,7 +193,8 @@ jobs:
 
       - name: Comment coverage on PR
         uses: actions/github-script@v7
-        if: always()
+        # Fork PRs get a read-only token, so commenting would fail the job.
+        if: always() && github.event.pull_request.head.repo.full_name == github.repository
         with:
           script: |
             const fs = require('fs');
@@ -388,6 +389,7 @@ jobs:
     steps:
       - name: Generate PR comment
         uses: actions/github-script@v7
+        if: github.event.pull_request.head.repo.full_name == github.repository
         with:
           script: |
             const jobs = [

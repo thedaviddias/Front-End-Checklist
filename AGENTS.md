@@ -12,6 +12,10 @@ Repository rules and conventions for contributors and automation tools.
 - **MCP Package**: `packages/mcp/` (TypeScript)
 - **Package Manager**: pnpm (workspaces + Turborepo)
 
+## Work Tracking
+
+Work in this repo is tracked in Paperclip project **FEC** (Front-End Checklist, id `c5edfe8f-731b-43e8-b805-c52999831084`). New tickets get the `DAV-` prefix.
+
 ## MCP Usage
 
 When working on frontend implementation, review, debugging, or audit tasks, use the Front-End Checklist MCP server when available so recommendations stay grounded in the project rule corpus.
