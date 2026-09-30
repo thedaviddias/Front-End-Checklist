@@ -1,0 +1,236 @@
+---
+title: Optimize and compress web videos
+description: >-
+  Videos are compressed, resized per device, and served in efficient codecs
+  (H.264, HEVC, VP9/AV1) to reduce page weight and bandwidth use.
+categories:
+  - performance
+  - images
+subcategory: assets
+priority: high
+difficulty: intermediate
+estimatedTime: 20
+tldr:
+  - Re-encode source video instead of shipping raw camera/screen-recorder output
+  - Serve multiple resolutions so mobile doesn't download a 4K file
+  - 'Prefer modern codecs: AV1/VP9/HEVC over baseline H.264 where supported'
+  - Strip audio tracks from silent background/looping videos
+whyItMatters: >-
+  Unoptimized video is frequently the single heaviest asset on a page—an
+  uncompressed or oversized video can dwarf every image and script combined,
+  delaying Largest Contentful Paint and burning mobile data budgets.
+aiContext: >-
+  Use when reviewing <video> elements, background/hero video, or embedded
+  media assets. Check encoded bitrate, resolution relative to the rendered
+  player size, codec/container choice, and whether a poster/thumbnail avoids
+  blocking on the first frame.
+prompts:
+  check: >-
+    Scan this codebase for <video> elements and video asset references. For
+    each one, verify: 1) The served resolution is appropriate for the
+    rendered player size and device (no 4K video in a 400px player). 2) The
+    codec/container is efficient (H.264 baseline is acceptable but VP9/AV1/HEVC
+    is preferred when available). 3) Audio is stripped from silent
+    background/looping videos. 4) A poster attribute or lightweight
+    thumbnail is present. 5) File size is reasonable for its duration and
+    placement (hero/background videos under a few MB). Report issues grouped
+    by severity with file paths.
+  fix: >-
+    For each video optimization issue found: 1) Re-encode to multiple
+    resolutions (e.g. 480p/720p/1080p) and serve the smallest one that fits
+    the player via <source> or JS-based selection. 2) Convert to an efficient
+    codec (VP9 or AV1 in WebM, or HEVC/H.264 in MP4) with a reasonable CRF/
+    quality setting rather than default encoder settings. 3) Remove the audio
+    track from muted background/looping videos. 4) Add a poster attribute
+    pointing to a compressed thumbnail. 5) Add preload="metadata" (or "none")
+    instead of "auto" for below-the-fold videos. Show the corrected <video>
+    markup and encoding command.
+  explain: >-
+    Explain why video is often the largest asset on a page and how it affects
+    Largest Contentful Paint and mobile data usage. Cover the tradeoffs
+    between H.264, HEVC, VP9, and AV1 (compression efficiency vs browser/
+    device support and encode time), how resolution and bitrate should scale
+    to the rendered player size and viewport, and why muted background video
+    should have its audio track stripped entirely rather than just muted in
+    markup.
+  codeReview: >-
+    Review video assets, <video>/<source> markup, and any encoding or CDN
+    transform pipeline related to Optimize and compress web videos. Flag
+    exact files or components where resolution, codec, bitrate, or loading
+    behavior violates the rule, and describe how to confirm the fix in
+    DevTools' Network and Media panels.
+relatedRules:
+  - slug: image-optimization
+    reason: >-
+      Both rules cover compressing and right-sizing heavy media assets before
+      they reach the browser.
+  - slug: animated-content
+    reason: >-
+      Both rules deal with replacing or re-encoding heavy visual assets with
+      more efficient video formats.
+  - slug: lazy-loading
+    reason: Defer offscreen or below-the-fold video the same way images are deferred.
+  - slug: video-thumbnail
+    reason: A poster/thumbnail avoids blocking on the first decoded frame.
+sources:
+  - title: 'web.dev: Video performance'
+    url: 'https://web.dev/learn/performance/video-performance'
+    type: guide
+    id: web-dev-video-performance
+    role: implementation
+    authority: primary
+  - title: 'MDN: Video and audio content'
+    url: >-
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content
+    type: mdn
+    id: mdn-video-audio-content
+    role: reference
+    authority: primary
+tools:
+  - name: HandBrake
+    url: 'https://handbrake.fr/'
+  - name: FFmpeg
+    url: 'https://ffmpeg.org/'
+  - name: SlingSite
+    url: 'https://slingsite.github.io'
+resources:
+  - name: 'web.dev: Replace GIFs with video'
+    url: 'https://web.dev/articles/replace-gifs-with-videos'
+    type: article
+    author: web.dev
+    description: Why and how to replace animated GIFs with compressed video
+  - name: react-responsive-video
+    url: 'https://github.com/damiarita/react-responsive-video'
+    type: reference
+    description: >-
+      React component that serves a different video resolution/format per
+      breakpoint via an SSR-safe <picture>-to-<video> swap
+---
+
+Video is often the heaviest single asset on a page. A source file straight off a camera or screen recorder is typically encoded for archival quality, not for the size and bitrate a browser actually needs—re-encoding it for the web can cut file size dramatically with no visible difference at normal playback sizes.
+
+## Code Example
+
+Serve the smallest codec/resolution combination the browser supports, with a fallback for older browsers.
+
+```html
+<video poster="hero-poster.jpg" preload="metadata" muted playsinline controls>
+  <source src="hero-1080p.av1.webm" type="video/webm; codecs=av01.0.05M.08" />
+  <source src="hero-1080p.vp9.webm" type="video/webm; codecs=vp9" />
+  <source src="hero-1080p.h264.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+```
+
+```bash
+# FFmpeg: re-encode to H.264 at a reasonable quality/size tradeoff
+ffmpeg -i input.mov -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 128k output.mp4
+
+# FFmpeg: VP9/WebM, smaller than H.264 at the same visual quality
+ffmpeg -i input.mov -c:v libvpx-vp9 -crf 32 -b:v 0 -an output.webm
+
+# Strip audio entirely from a silent background/looping video
+ffmpeg -i input.mp4 -c copy -an output-no-audio.mp4
+```
+
+## Why It Matters
+
+Unoptimized video is frequently the single heaviest asset on a page—an uncompressed or oversized video can dwarf every image and script combined, delaying Largest Contentful Paint and burning mobile data budgets.
+
+## Resolution and Bitrate
+
+Match the delivered resolution to how large the video will actually render, not the resolution it was captured at.
+
+| Player size | Reasonable source resolution |
+|-------------|-------------------------------|
+| Full-bleed hero (desktop) | 1080p |
+| Inline article video | 720p |
+| Thumbnail/preview | 480p or a static poster image |
+
+Serving a 4K background video behind a 400px-tall hero section wastes bandwidth the same way an oversized `<img>` does.
+
+## Codec Choice
+
+| Codec | Container | Compression | Browser Support |
+|-------|-----------|-------------|------------------|
+| AV1 | WebM/MP4 | Best | Modern browsers, slow to encode |
+| VP9 | WebM | Very good | Broad modern support |
+| HEVC (H.265) | MP4 | Very good | Safari, licensing constraints elsewhere |
+| H.264 | MP4 | Good (baseline) | Universal fallback |
+
+<Tip>
+Provide multiple `<source>` elements ordered from most to least efficient codec—the browser picks the first one it can play, so list AV1/VP9 before the H.264 fallback.
+</Tip>
+
+## Framework Examples
+
+Codec fallback via `<source>` solves format negotiation, but the native `<video>` element still has no way to pick a *resolution* per breakpoint the way `<picture>` does for images with `media` queries on `<source>`. A naive fix either ships every resolution in one hidden-by-CSS `<video>` per size (the browser downloads all of them regardless of `display: none`) or requires manual JS to swap sources after the fact.
+
+```jsx
+import ReactResponsiveVideo from '@damiarita/react-responsive-video'
+
+function ResponsiveHero() {
+  return (
+    <ReactResponsiveVideo
+      videoProps={{ autoPlay: true, muted: true, loop: true, playsInline: true }}
+      sizes={[
+        {
+          width: 1920,
+          height: 1080,
+          mediaQuery: '(min-width: 1200px)',
+          videoSources: [
+            { url: '/hero-1080p.webm', format: 'video/webm' },
+            { url: '/hero-1080p.mp4', format: 'video/mp4' },
+          ],
+          posterSources: [
+            { url: '/hero-1080p.webp', format: 'image/webp' },
+            { url: '/hero-1080p.jpg', format: 'image/jpeg' },
+          ],
+        },
+        {
+          width: 640,
+          height: 360,
+          videoSources: [
+            { url: '/hero-360p.webm', format: 'video/webm' },
+            { url: '/hero-360p.mp4', format: 'video/mp4' },
+          ],
+          posterSources: [
+            { url: '/hero-360p.webp', format: 'image/webp' },
+            { url: '/hero-360p.jpg', format: 'image/jpeg' },
+          ],
+        },
+      ]}
+    />
+  )
+}
+```
+
+This component renders an SSR-safe `<picture>` placeholder first, then swaps in the `<video>` for the resolution matching the resolved media query once it's running in the browser—so only one poster/video pair downloads instead of one per breakpoint.
+
+## Common Mistakes
+
+<Warning title="Mistakes to Avoid">
+- **Shipping the raw capture file** — Camera and screen-recorder output is rarely encoded for web delivery
+- **One resolution for every device** — Forces mobile to download the same file as a 4K desktop monitor
+- **Keeping audio on muted background video** — The audio track still adds bytes even if the browser never plays it
+- **`preload="auto"` on below-the-fold video** — Downloads the whole file before the user may ever see it
+- **No poster image** — The player shows a blank or black box until the first frame decodes
+</Warning>
+
+<Exceptions>
+- **Short, silent looping clips** (e.g. UI micro-interactions) may be small enough that further compression isn't worth the added encode complexity
+- **User-generated or on-demand uploads** often need a server-side transcoding pipeline rather than build-time encoding
+- **Live streams** have different constraints (adaptive bitrate via HLS/DASH) than the static-file guidance above
+</Exceptions>
+
+## Verification
+
+### Automated Checks
+
+- Check transferred file size in DevTools' Network tab, filtered to Media
+- Run Lighthouse and review any "Efficiently encode video" or LCP-related flags
+
+### Manual Checks
+
+- Confirm the player-rendered size roughly matches the delivered resolution (no visible downscaling of a much larger source)
+- Play the video on a throttled mobile network profile to confirm reasonable start time
