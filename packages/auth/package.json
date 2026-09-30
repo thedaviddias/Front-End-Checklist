@@ -24,7 +24,7 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "catalog:",
-    "better-auth": "~1.6.33"
+    "better-auth": "^1.7.7"
   },
   "devDependencies": {
     "@types/jest": "catalog:",

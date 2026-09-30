@@ -65,7 +65,7 @@
     "@thedaviddias/analytics": "workspace:*",
     "@upstash/ratelimit": "^2.2.0",
     "@upstash/redis": "^1.39.0",
-    "better-auth": "~1.6.33",
+    "better-auth": "^1.7.7",
     "botid": "^1.5.11",
     "class-variance-authority": "catalog:",
     "cmdk": "^1.1.1",
