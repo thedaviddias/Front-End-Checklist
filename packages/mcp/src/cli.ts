@@ -139,7 +139,8 @@ async function main() {
   serveStdio(() =>
     createMcpServer(
       () => rules,
-      () => checklists
+      () => checklists,
+      { skillsDir: path.join(process.cwd(), 'skills') }
     )
   )
   console.error('Front-End Checklist MCP server started (stdio mode)')

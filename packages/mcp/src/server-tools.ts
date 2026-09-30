@@ -1,5 +1,6 @@
 import { fromJsonSchema, type JsonSchemaType, type McpServer } from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
+import { getToolUiMeta } from './server-apps'
 import {
   type AuditUrlInput,
   auditUrlDefinition,
@@ -244,7 +245,8 @@ export function registerTools(
         inputSchema: fromJsonSchema(definition.inputSchema as JsonSchemaType),
         outputSchema: fromJsonSchema(definition.outputSchema as JsonSchemaType),
         icons: [MCP_SERVER_ICON],
-        annotations: definition.annotations
+        annotations: definition.annotations,
+        _meta: getToolUiMeta(definition.name)
       },
       async (args: unknown) => {
         const rules = await Promise.resolve(getRules())

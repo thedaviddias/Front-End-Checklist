@@ -67,6 +67,11 @@ const nextConfig = {
   // Server components external packages - prevent bundling of native modules
   serverExternalPackages: ['esbuild', '@esbuild/darwin-arm64'],
 
+  // Agent skills served by the MCP Skills extension are read from the repo root at runtime.
+  outputFileTracingIncludes: {
+    '/api/mcp': ['../../skills/**/*.md']
+  },
+
   experimental: {
     staticGenerationMaxConcurrency: 2,
     staticGenerationMinPagesPerWorker: 100,

@@ -564,6 +564,15 @@ The server is built on `@modelcontextprotocol/server` v2 and is stateless on eve
 - Methods: `tools/list`, `tools/call`, `prompts/list`, `prompts/get`, `resources/list`, `resources/templates/list`, `resources/read`, `completion/complete`
 - Unknown resources return a JSON-RPC resource-not-found error.
 
+### Extensions
+
+- **Skills over MCP** (`io.modelcontextprotocol/skills`, SEP-2640): `skills/list` (paginated, 50 per page) and `skills/get` expose the generated agent skills in `/skills` (one per rule plus `frontend-checklist-global`; repository-maintenance skills with `metadata.category: meta` are excluded). Files are served through `resources/read` at `skill://{name}/{+path}`, and every manifest entry carries the SHA-256 digest and byte size of the exact bytes served.
+- **MCP Apps** (`io.modelcontextprotocol/ui`, SEP-1865): `review_code` and `audit_url` declare `_meta.ui.resourceUri = ui://frontend-checklist/review-report`, a self-contained HTML report view (`text/html;profile=mcp-app`, no external resources). Hosts without MCP Apps keep using the text/structured output.
+
+### Registry
+
+`server.json` (schema `2025-12-11`) describes the remote endpoint for the official MCP Registry as `io.github.thedaviddias/front-end-checklist`. Publish from `packages/mcp` with `mcp-publisher login github` then `mcp-publisher publish`.
+
 ### Request Format
 
 ```json

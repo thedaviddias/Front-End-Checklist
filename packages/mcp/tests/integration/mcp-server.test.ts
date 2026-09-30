@@ -336,6 +336,33 @@ describe('SDK-backed MCP server', () => {
     expect(json).toMatchObject({ result: { completion: { values: ['doctype'] } } })
   })
 
+  it('links review tools to the MCP Apps report view', async () => {
+    const init = await callMcp(buildInitializeRequest(1))
+    expect(init.json).toMatchObject({
+      result: { capabilities: { extensions: { 'io.modelcontextprotocol/ui': {} } } }
+    })
+
+    const { json } = await callMcp({ jsonrpc: '2.0', id: 2, method: 'tools/list' })
+    const tools = (json.result as { tools: Array<{ name: string; _meta?: unknown }> }).tools
+    const uiMeta = { ui: { resourceUri: 'ui://frontend-checklist/review-report' } }
+
+    expect(tools.find(tool => tool.name === 'review_code')?._meta).toEqual(uiMeta)
+    expect(tools.find(tool => tool.name === 'audit_url')?._meta).toEqual(uiMeta)
+    expect(tools.find(tool => tool.name === 'get_rule')?._meta).toBeUndefined()
+
+    const read = await callMcp({
+      jsonrpc: '2.0',
+      id: 3,
+      method: 'resources/read',
+      params: { uri: 'ui://frontend-checklist/review-report' }
+    })
+    const [content] = (read.json.result as { contents: Array<{ mimeType: string; text: string }> })
+      .contents
+    expect(content.mimeType).toBe('text/html;profile=mcp-app')
+    expect(content.text).toContain('ui/initialize')
+    expect(content.text).not.toContain('innerHTML')
+  })
+
   it('answers unknown resources with a resource-not-found error', async () => {
     const { json } = await callMcp({
       jsonrpc: '2.0',

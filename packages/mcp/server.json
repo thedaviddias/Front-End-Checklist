@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.thedaviddias/front-end-checklist",
+  "title": "Front-End Checklist",
+  "description": "Review frontend code and live pages against 386 quality-gated web development rules.",
+  "version": "2.0.0",
+  "websiteUrl": "https://frontendchecklist.io/en/mcp",
+  "repository": {
+    "url": "https://github.com/thedaviddias/Front-End-Checklist",
+    "source": "github",
+    "subfolder": "packages/mcp"
+  },
+  "icons": [
+    {
+      "src": "https://frontendchecklist.io/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.frontendchecklist.io"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import path from 'node:path'
 import type {
   Category,
   CuratedChecklist,
@@ -12,6 +13,9 @@ import { getRuleRawContent } from '@/lib/rule-content'
 import { isChecklistDifficulty } from './route-helpers'
 
 let cachedRulesPromise: Promise<Rule[]> | null = null
+
+/** Generated agent skills served through the MCP Skills extension (traced in next.config.js). */
+export const SKILLS_DIR = path.join(process.cwd(), '..', '..', 'skills')
 
 /**
  * Check whether a value has the shape of a related-rule reference.

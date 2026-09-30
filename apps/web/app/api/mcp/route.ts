@@ -20,7 +20,7 @@ import {
 } from '@/lib/rate-limit'
 import { TELEMETRY_EVENTS } from '@/lib/telemetry-events'
 import { captureServerException, trackServerEvent } from '@/lib/telemetry-server'
-import { getChecklists, getRules } from './content-helpers'
+import { getChecklists, getRules, SKILLS_DIR } from './content-helpers'
 import {
   createCorsHeaders,
   isOriginAllowed,
@@ -307,7 +307,8 @@ export async function POST(request: Request) {
         maxResponseChars: process.env.MCP_MAX_RESPONSE_CHARS
           ? parseInt(process.env.MCP_MAX_RESPONSE_CHARS, 10)
           : undefined,
-        telemetryEnabled: MCP_TELEMETRY_ENABLED
+        telemetryEnabled: MCP_TELEMETRY_ENABLED,
+        skillsDir: SKILLS_DIR
       },
       body
     )
@@ -430,7 +431,8 @@ export async function GET(request: Request) {
             maxResponseChars: process.env.MCP_MAX_RESPONSE_CHARS
               ? parseInt(process.env.MCP_MAX_RESPONSE_CHARS, 10)
               : undefined,
-            telemetryEnabled: MCP_TELEMETRY_ENABLED
+            telemetryEnabled: MCP_TELEMETRY_ENABLED,
+            skillsDir: SKILLS_DIR
           }
         ),
         rateLimitResult

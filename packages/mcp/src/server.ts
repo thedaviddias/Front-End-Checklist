@@ -7,8 +7,10 @@ import {
 } from '@modelcontextprotocol/server'
 import { SITE_URL } from '@repo/config'
 import type { CuratedChecklist, Rule } from '@repo/types'
+import { APPS_EXTENSION, registerApps } from './server-apps'
 import { registerPrompts } from './server-prompts'
 import { registerResources } from './server-resources'
+import { loadSkills, registerSkills, SKILLS_EXTENSION } from './server-skills'
 import { registerTools } from './server-tools'
 import { MCP_SERVER_ICON } from './tools/metadata'
 import { DEFAULT_MAX_RESPONSE_CHARS } from './utils/response-cap'
@@ -59,6 +61,8 @@ export const MCP_PROMPTS = [
 interface McpServerOptions {
   maxResponseChars?: number
   telemetryEnabled?: boolean
+  /** Directory of generated agent skills to serve via the Skills extension. */
+  skillsDir?: string
 }
 
 /**
@@ -122,6 +126,7 @@ export function createMcpServer(
 ) {
   const maxResponseChars = options.maxResponseChars ?? DEFAULT_MAX_RESPONSE_CHARS
   const telemetryEnabled = options.telemetryEnabled !== false
+  const skills = options.skillsDir ? loadSkills(options.skillsDir) : []
   const server = new McpServer(MCP_SERVER_INFO, {
     instructions: MCP_SERVER_INSTRUCTIONS,
     // Content is static per deploy, so no list-changed notifications (and no
@@ -129,7 +134,11 @@ export function createMcpServer(
     capabilities: {
       tools: { listChanged: false },
       prompts: { listChanged: false },
-      resources: { listChanged: false }
+      resources: { listChanged: false },
+      extensions: {
+        [APPS_EXTENSION]: {},
+        ...(skills.length > 0 ? { [SKILLS_EXTENSION]: {} } : {})
+      }
     },
     cacheHints: {
       'server/discover': CONTENT_CACHE_HINT,
@@ -157,6 +166,11 @@ export function createMcpServer(
     MCP_RESOURCE_TEMPLATES.checklist
   )
   registerPrompts(server, getRules, getChecklists)
+  registerApps(server)
+
+  if (skills.length > 0) {
+    registerSkills(server, () => skills)
+  }
 
   return server
 }
