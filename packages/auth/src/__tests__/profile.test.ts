@@ -1,4 +1,4 @@
-import { buildGithubProfileImport } from '../profile'
+import { buildGithubProfileImport, isGithubAppClientId } from '../profile'
 
 describe('buildGithubProfileImport', () => {
   it('normalizes public GitHub profile fields for a new user import', () => {
@@ -71,5 +71,15 @@ describe('buildGithubProfileImport', () => {
   it('does not import when the GitHub login is missing or invalid', () => {
     expect(buildGithubProfileImport({ login: '-invalid' })).toEqual({})
     expect(buildGithubProfileImport({ bio: 'No login' })).toEqual({})
+  })
+})
+
+describe('isGithubAppClientId', () => {
+  it.each(['Iv1.6939d4d823c53021', 'Iv23liAbCdEf123456'])('detects GitHub App ID %s', clientId => {
+    expect(isGithubAppClientId(clientId)).toBe(true)
+  })
+
+  it.each(['Ov23liAbCdEf123456', 'abcdef1234567890', ''])('rejects OAuth App ID %s', clientId => {
+    expect(isGithubAppClientId(clientId)).toBe(false)
   })
 })

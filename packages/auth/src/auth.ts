@@ -2,7 +2,12 @@ import { betterAuth } from 'better-auth'
 import { prismaAdapter } from 'better-auth/adapters/prisma'
 import { nextCookies } from 'better-auth/next-js'
 import { prisma } from './prisma'
-import { buildGithubProfileImport, getStringProperty, normalizeGithubUsername } from './profile'
+import {
+  buildGithubProfileImport,
+  getStringProperty,
+  isGithubAppClientId,
+  normalizeGithubUsername
+} from './profile'
 
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const baseUrl = process.env.BETTER_AUTH_URL ?? publicSiteUrl ?? 'http://localhost:3000'
@@ -183,6 +188,8 @@ export const auth = betterAuth({
     github: {
       clientId: githubClientId,
       clientSecret: githubClientSecret,
+      // GitHub Apps grant access through app permissions; skip OAuth scopes for them.
+      ...(isGithubAppClientId(githubClientId) ? { disableDefaultScope: true } : {}),
       mapProfileToUser: profile => {
         return {
           ...buildGithubProfileImport(profile),

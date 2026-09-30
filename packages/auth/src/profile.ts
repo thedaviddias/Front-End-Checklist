@@ -22,6 +22,17 @@ export interface GithubProfileImport {
 }
 
 /**
+ * Detect a GitHub App client ID (`Iv1.` legacy or `Iv23` current format).
+ * GitHub Apps use fine-grained permissions instead of OAuth scopes.
+ *
+ * @param clientId - Configured GitHub client ID.
+ * @returns True when the ID belongs to a GitHub App rather than an OAuth App.
+ */
+export function isGithubAppClientId(clientId: string): boolean {
+  return /^Iv(?:1\.|23)/.test(clientId)
+}
+
+/**
  * Normalize a GitHub login into the public profile username format.
  *
  * @param value - Raw GitHub login value.

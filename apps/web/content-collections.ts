@@ -191,12 +191,13 @@ const rules = defineCollection({
     })
 
     // Extract language and slug from file path
-    const pathParts = document._meta.path.split('/')
+    const normalizedPath = document._meta.path.replace(/\\/g, '/')
+    const pathParts = normalizedPath.split('/')
     const language = pathParts.length > 2 ? pathParts[0] : 'en' // Default to English
     const category = pathParts.length > 2 ? pathParts[1] : pathParts[0]
     const slug =
       document.slug ||
-      document._meta.path
+      normalizedPath
         .replace(/\.mdx$/, '')
         .split('/')
         .pop() ||
@@ -305,11 +306,12 @@ const checklists = defineCollection({
     })
 
     // Extract language from file path
-    const pathParts = document._meta.path.split('/')
+    const normalizedPath = document._meta.path.replace(/\\/g, '/')
+    const pathParts = normalizedPath.split('/')
     const language = pathParts.length > 1 ? pathParts[0] : 'en'
     const slug =
       document.slug ||
-      document._meta.path
+      normalizedPath
         .replace(/\.mdx$/, '')
         .split('/')
         .pop() ||
@@ -379,7 +381,8 @@ const guides = defineCollection({
       rehypePlugins: [rehypeSlug, [rehypePrettyCode, rehypePrettyCodeOptions]]
     })
 
-    const pathParts = document._meta.path.split('/')
+    const normalizedPath = document._meta.path.replace(/\\/g, '/')
+    const pathParts = normalizedPath.split('/')
     const language = pathParts.length > 1 ? pathParts[0] : 'en'
 
     return {
