@@ -193,14 +193,14 @@ pnpm --filter @repo/mcp test -- tool-performance.test --verbose
 
 ## Adding more tools
 
-If you adopt MCPSpec, MCP Eval, or other CLIs, add them to `scripts/mcp-audit.ts` (or new scripts) and document the exact commands and exit-code behavior here.
+If you adopt MCPSpec, MCP Eval, or other CLIs, add them to `scripts/audit/mcp-audit.ts` (or new scripts) and document the exact commands and exit-code behavior here.
 
 ## Token / response size
 
 Tool responses are capped so the MCP doesn’t blow LLM token budgets:
 
 - **Default**: Each tool response is limited to **~32k characters** (~8k tokens). If the JSON would exceed that, it’s truncated at a newline and a short `[... response truncated to stay within token budget ...]` note is appended.
-- **Configure**: Set `MCP_MAX_RESPONSE_CHARS` (number) in the app env to override the limit. The handler also accepts `createMcpHandler(getRules, getChecklists, { maxResponseChars })`.
+- **Configure**: Set `MCP_MAX_RESPONSE_CHARS` (number) in the app env to override the limit. `handleMcpHttpRequest(request, getRules, getChecklists, { maxResponseChars })` and `createMcpServer(getRules, getChecklists, { maxResponseChars })` accept it programmatically.
 - **Pagination**: Use `search_rules` with `limit` and `cursor` to fetch in smaller chunks; `get_rule` returns one rule (still subject to the cap).
 
 ## Telemetry
@@ -213,7 +213,7 @@ Tool responses are capped so the MCP doesn’t blow LLM token budgets:
 **Enabling telemetry**
 
 - Telemetry is disabled by default for the public hosted endpoint to avoid database writes and analytics work for routine agent traffic.
-- Set **`MCP_TELEMETRY_ENABLED=true`** (or `MCP_TELEMETRY_ENABLED=1`) in the app environment to opt in. When enabled: in-memory counters are updated, **GET /api/mcp** includes `usage`, and successful `tools/call` requests write anonymous rows to `McpToolCall`. The handler also accepts `createMcpHandler(getRules, getChecklists, { telemetryEnabled: true })` when creating it programmatically (e.g. in tests).
+- Set **`MCP_TELEMETRY_ENABLED=true`** (or `MCP_TELEMETRY_ENABLED=1`) in the app environment to opt in. When enabled: in-memory counters are updated, **GET /api/mcp** includes `usage`, and successful `tools/call` requests write anonymous rows to `McpToolCall`. `handleMcpHttpRequest` and `createMcpServer` also accept `{ telemetryEnabled: true }` when used programmatically (e.g. in tests).
 
 **How to see it**
 

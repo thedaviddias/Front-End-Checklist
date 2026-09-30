@@ -306,14 +306,12 @@ export const CLIENT_CONFIGS: SetupConfig[] = [
   {
     id: 'vscode',
     title: 'VS Code',
-    description: 'Add to User Settings (JSON) or .vscode/mcp.json — native HTTP',
+    description: 'Add to .vscode/mcp.json (or run "MCP: Open User Configuration") — native HTTP',
     config: `{
-  "mcp": {
-    "servers": {
-      "frontend-checklist": {
-        "type": "http",
-        "url": "${MCP_SERVER_URL}"
-      }
+  "servers": {
+    "frontend-checklist": {
+      "type": "http",
+      "url": "${MCP_SERVER_URL}"
     }
   }
 }`

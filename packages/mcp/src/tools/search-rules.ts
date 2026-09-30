@@ -65,7 +65,10 @@ export const searchRulesDefinition = {
         description: 'Filter by priorities (array)'
       },
       limit: {
-        type: 'number',
+        type: 'integer',
+        minimum: 1,
+        maximum: 100,
+        default: 20,
         description: 'Max results to return (default: 20, max: 100)'
       },
       cursor: {

@@ -1,16 +1,39 @@
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
-import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js'
+import {
+  createMcpHandler,
+  isLegacyRequest,
+  McpServer,
+  SUPPORTED_PROTOCOL_VERSIONS,
+  WebStandardStreamableHTTPServerTransport
+} from '@modelcontextprotocol/server'
+import { SITE_URL } from '@repo/config'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import { registerPrompts } from './server-prompts'
 import { registerResources } from './server-resources'
 import { registerTools } from './server-tools'
+import { MCP_SERVER_ICON } from './tools/metadata'
 import { DEFAULT_MAX_RESPONSE_CHARS } from './utils/response-cap'
 
-export const MCP_PROTOCOL_VERSION = '2025-06-18'
+/** Stateless 2026-07-28 revision, negotiated per request via `server/discover`. */
+export const MCP_MODERN_PROTOCOL_VERSION = '2026-07-28'
+
+/** Every protocol revision the server answers, newest first. */
+export const MCP_PROTOCOL_VERSIONS = [
+  MCP_MODERN_PROTOCOL_VERSION,
+  ...SUPPORTED_PROTOCOL_VERSIONS
+] as const
+
+export { MCP_SERVER_ICON }
+
 export const MCP_SERVER_INFO = {
   name: 'frontend-checklist-mcp',
-  version: '1.0.0'
-} as const
+  title: 'Front-End Checklist',
+  version: '2.0.0',
+  websiteUrl: `${SITE_URL}/en/mcp`,
+  icons: [MCP_SERVER_ICON]
+}
+
+/** Rule content only changes on deploy, so list/read results can be cached publicly. */
+const CONTENT_CACHE_HINT = { ttlMs: 60 * 60 * 1000, cacheScope: 'public' } as const
 
 export const MCP_SERVER_INSTRUCTIONS = [
   'Use Front-End Checklist whenever the user is reviewing, implementing, debugging, or auditing frontend code.',
@@ -61,16 +84,18 @@ export function resetTelemetry(): void {
   telemetryCounters.clear()
 }
 
-function withDefaultTransportHeaders(request: Request, parsedBody?: unknown): Request {
+/**
+ * Default a missing or wildcard `Accept` header (plain `curl` sends a bare
+ * wildcard) so such callers get a response instead of a 406.
+ */
+function withDefaultAcceptHeader(request: Request, parsedBody?: unknown): Request {
+  const accept = request.headers.get('accept')?.trim()
+  if (accept && accept !== '*/*') {
+    return request
+  }
+
   const headers = new Headers(request.headers)
-
-  if (!headers.has('accept')) {
-    headers.set('accept', 'application/json, text/event-stream')
-  }
-
-  if (!headers.has('mcp-protocol-version')) {
-    headers.set('mcp-protocol-version', MCP_PROTOCOL_VERSION)
-  }
+  headers.set('accept', 'application/json, text/event-stream')
 
   if (parsedBody === undefined && request.method !== 'GET' && request.method !== 'HEAD') {
     return new Request(request.url, {
@@ -99,10 +124,20 @@ export function createMcpServer(
   const telemetryEnabled = options.telemetryEnabled !== false
   const server = new McpServer(MCP_SERVER_INFO, {
     instructions: MCP_SERVER_INSTRUCTIONS,
+    // Content is static per deploy, so no list-changed notifications (and no
+    // long-lived `subscriptions/listen` streams on serverless) are offered.
     capabilities: {
-      tools: {},
-      prompts: {},
-      resources: {}
+      tools: { listChanged: false },
+      prompts: { listChanged: false },
+      resources: { listChanged: false }
+    },
+    cacheHints: {
+      'server/discover': CONTENT_CACHE_HINT,
+      'tools/list': CONTENT_CACHE_HINT,
+      'prompts/list': CONTENT_CACHE_HINT,
+      'resources/list': CONTENT_CACHE_HINT,
+      'resources/templates/list': CONTENT_CACHE_HINT,
+      'resources/read': CONTENT_CACHE_HINT
     }
   })
 
@@ -121,13 +156,16 @@ export function createMcpServer(
     MCP_RESOURCE_TEMPLATES.rule,
     MCP_RESOURCE_TEMPLATES.checklist
   )
-  registerPrompts(server, getChecklists)
+  registerPrompts(server, getRules, getChecklists)
 
   return server
 }
 
 /**
- * Handle a single HTTP request using a fresh stateless SDK transport.
+ * Serve one stateless HTTP request for either protocol era.
+ *
+ * 2026-07-28 requests go through the SDK's `createMcpHandler`; 2025-era
+ * requests keep a fresh per-request transport with plain JSON responses.
  */
 export async function handleMcpHttpRequest(
   request: Request,
@@ -136,22 +174,32 @@ export async function handleMcpHttpRequest(
   options: McpServerOptions = {},
   parsedBody?: unknown
 ) {
-  const server = createMcpServer(getRules, getChecklists, options)
-  const transport = new WebStandardStreamableHTTPServerTransport({
-    sessionIdGenerator: undefined,
-    enableJsonResponse: true
-  })
-  const normalizedRequest = withDefaultTransportHeaders(request, parsedBody)
+  const buildServer = () => createMcpServer(getRules, getChecklists, options)
+  const normalizedRequest = withDefaultAcceptHeader(request, parsedBody)
+  const handlerOptions = parsedBody === undefined ? undefined : { parsedBody }
+
+  if (await isLegacyRequest(normalizedRequest, parsedBody)) {
+    const server = buildServer()
+    const transport = new WebStandardStreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,
+      enableJsonResponse: true
+    })
+
+    try {
+      await server.connect(transport)
+      return await transport.handleRequest(normalizedRequest, handlerOptions)
+    } finally {
+      await transport.close()
+      await server.close()
+    }
+  }
+
+  const handler = createMcpHandler(buildServer, { legacy: 'reject', responseMode: 'json' })
 
   try {
-    await server.connect(transport)
-    return await transport.handleRequest(
-      normalizedRequest,
-      parsedBody === undefined ? undefined : { parsedBody }
-    )
+    return await handler.fetch(normalizedRequest, handlerOptions)
   } finally {
-    await transport.close()
-    await server.close()
+    await handler.close()
   }
 }
 

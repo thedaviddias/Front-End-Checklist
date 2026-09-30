@@ -20,13 +20,14 @@
   },
   "dependencies": {
     "@frontendchecklist/rules": "workspace:*",
-    "@modelcontextprotocol/sdk": "^1.31.0",
+    "@modelcontextprotocol/server": "^2.2.0",
     "@repo/config": "workspace:*",
     "@repo/types": "workspace:*",
     "node-html-parser": "^7.1.0",
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@modelcontextprotocol/client": "^2.2.0",
     "@repo/config-typescript": "workspace:^",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",

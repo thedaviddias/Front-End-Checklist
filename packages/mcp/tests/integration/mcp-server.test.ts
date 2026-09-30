@@ -1,13 +1,17 @@
+import { Client, StreamableHTTPClientTransport } from '@modelcontextprotocol/client'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import {
   getTelemetryStats,
   handleMcpHttpRequest,
+  MCP_MODERN_PROTOCOL_VERSION,
   MCP_PROMPTS,
-  MCP_PROTOCOL_VERSION,
   MCP_RESOURCE_TEMPLATES,
   MCP_SERVER_INSTRUCTIONS,
   resetTelemetry
 } from '../../src/server'
+
+/** A 2025-era revision still used by deployed clients. */
+const LEGACY_PROTOCOL_VERSION = '2025-06-18'
 
 const mockRules: Rule[] = [
   {
@@ -90,7 +94,7 @@ function buildInitializeRequest(id: number) {
     id,
     method: 'initialize',
     params: {
-      protocolVersion: MCP_PROTOCOL_VERSION,
+      protocolVersion: LEGACY_PROTOCOL_VERSION,
       capabilities: {},
       clientInfo: {
         name: 'jest-client',
@@ -111,10 +115,11 @@ describe('SDK-backed MCP server', () => {
     expect(status).toBe(200)
     expect(json).toMatchObject({
       result: {
-        protocolVersion: MCP_PROTOCOL_VERSION,
+        protocolVersion: LEGACY_PROTOCOL_VERSION,
         serverInfo: {
           name: 'frontend-checklist-mcp',
-          version: '1.0.0'
+          title: 'Front-End Checklist',
+          version: '2.0.0'
         },
         instructions: MCP_SERVER_INSTRUCTIONS,
         capabilities: {
@@ -295,5 +300,102 @@ describe('SDK-backed MCP server', () => {
     expect(getTelemetryStats()).toMatchObject({
       search_rules: 1
     })
+  })
+
+  it('advertises a description for every tool input property', async () => {
+    const { json } = await callMcp({ jsonrpc: '2.0', id: 1, method: 'tools/list' })
+    const tools = (
+      json.result as {
+        tools: Array<{
+          name: string
+          inputSchema: { properties?: Record<string, { description?: string }> }
+        }>
+      }
+    ).tools
+
+    const undocumented = tools.flatMap(tool =>
+      Object.entries(tool.inputSchema.properties ?? {})
+        .filter(([, property]) => !property.description)
+        .map(([key]) => `${tool.name}.${key}`)
+    )
+
+    expect(undocumented).toEqual([])
+  })
+
+  it('completes rule slugs for prompt arguments', async () => {
+    const { json } = await callMcp({
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'completion/complete',
+      params: {
+        ref: { type: 'ref/prompt', name: 'explain_rule_prompt' },
+        argument: { name: 'slug', value: 'doc' }
+      }
+    })
+
+    expect(json).toMatchObject({ result: { completion: { values: ['doctype'] } } })
+  })
+
+  it('answers unknown resources with a resource-not-found error', async () => {
+    const { json } = await callMcp({
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'resources/read',
+      params: { uri: 'frontendchecklist://rules/does-not-exist' }
+    })
+
+    expect(json).toMatchObject({ error: { code: expect.any(Number) } })
+    expect(json).not.toHaveProperty('result')
+  })
+})
+
+describe('2026-07-28 protocol revision', () => {
+  async function connectModernClient() {
+    const client = new Client(
+      { name: 'jest-client', version: '1.0.0' },
+      { versionNegotiation: { mode: { pin: MCP_MODERN_PROTOCOL_VERSION } } }
+    )
+    const transport = new StreamableHTTPClientTransport(new URL('https://example.com/mcp'), {
+      // Mirror the Next.js route: the body is parsed once before dispatch.
+      fetch: async (url, init) => {
+        const request = new Request(url, init)
+        const parsedBody = request.method === 'POST' ? await request.clone().json() : undefined
+        return handleMcpHttpRequest(
+          request,
+          () => mockRules,
+          () => mockChecklists,
+          {},
+          parsedBody
+        )
+      }
+    })
+
+    await client.connect(transport)
+    return client
+  }
+
+  it('negotiates the stateless revision through server/discover', async () => {
+    const client = await connectModernClient()
+
+    expect(client.getNegotiatedProtocolVersion()).toBe(MCP_MODERN_PROTOCOL_VERSION)
+    expect(client.getServerVersion()).toMatchObject({ name: 'frontend-checklist-mcp' })
+
+    await client.close()
+  })
+
+  it('lists and calls tools on the modern revision', async () => {
+    const client = await connectModernClient()
+
+    const { tools } = await client.listTools()
+    expect(tools.map(tool => tool.name)).toContain('search_rules')
+
+    const result = await client.callTool({
+      name: 'get_rule',
+      arguments: { slug: 'doctype' }
+    })
+    expect(result.isError).toBeFalsy()
+    expect(result.structuredContent).toMatchObject({ slug: 'doctype' })
+
+    await client.close()
   })
 })

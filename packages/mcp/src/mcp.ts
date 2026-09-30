@@ -7,9 +7,11 @@ export {
   type FrontendChecklistMcpServer,
   getTelemetryStats,
   handleMcpHttpRequest,
+  MCP_MODERN_PROTOCOL_VERSION,
   MCP_PROMPTS,
-  MCP_PROTOCOL_VERSION,
+  MCP_PROTOCOL_VERSIONS,
   MCP_RESOURCE_TEMPLATES,
+  MCP_SERVER_ICON,
   MCP_SERVER_INFO,
   MCP_SERVER_INSTRUCTIONS,
   resetTelemetry

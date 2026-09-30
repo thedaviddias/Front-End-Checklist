@@ -1,3 +1,5 @@
+import { SITE_URL } from '@repo/config'
+
 export const STRING_SCHEMA = {
   type: 'string'
 } as const
@@ -82,6 +84,13 @@ export const ERROR_WITH_SUGGESTIONS_SCHEMA = {
     message: STRING_SCHEMA
   }
 } as const
+
+/** Icon advertised for the server and each tool (SEP-973). */
+export const MCP_SERVER_ICON = {
+  src: `${SITE_URL}/favicon.svg`,
+  mimeType: 'image/svg+xml',
+  sizes: ['any']
+}
 
 export const READ_ONLY_TOOL_ANNOTATIONS = {
   readOnlyHint: true,

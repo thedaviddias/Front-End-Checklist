@@ -1,6 +1,5 @@
-import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+import { fromJsonSchema, type JsonSchemaType, type McpServer } from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
-import { jsonSchemaToZod } from './schema-utils'
 import {
   type AuditUrlInput,
   auditUrlDefinition,
@@ -35,6 +34,7 @@ import {
   type SearchRulesInput,
   searchRulesDefinition
 } from './tools'
+import { MCP_SERVER_ICON } from './tools/metadata'
 import { capResponseText } from './utils/response-cap'
 
 export type ToolResultPayload = Record<string, unknown>
@@ -240,12 +240,10 @@ export function registerTools(
       {
         title: definition.title,
         description: definition.description,
-        inputSchema: jsonSchemaToZod(
-          definition.inputSchema as Parameters<typeof jsonSchemaToZod>[0]
-        ),
-        outputSchema: jsonSchemaToZod(
-          definition.outputSchema as Parameters<typeof jsonSchemaToZod>[0]
-        ),
+        // Register the JSON Schema as-is so descriptions and constraints reach clients.
+        inputSchema: fromJsonSchema(definition.inputSchema as JsonSchemaType),
+        outputSchema: fromJsonSchema(definition.outputSchema as JsonSchemaType),
+        icons: [MCP_SERVER_ICON],
         annotations: definition.annotations
       },
       async (args: unknown) => {

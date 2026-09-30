@@ -93,7 +93,8 @@ describe('mcp route', () => {
     await expect(response.json()).resolves.toMatchObject({
       name: 'frontend-checklist-mcp',
       instructions: expect.stringContaining('Use Front-End Checklist'),
-      protocolVersion: '2025-06-18',
+      protocolVersion: '2026-07-28',
+      supportedProtocolVersions: expect.arrayContaining(['2026-07-28', '2025-11-25', '2025-06-18']),
       tools: expect.arrayContaining(['get_workflow', 'get_checklist_rules', 'get_rule']),
       recommendedUsage: {
         frontendCodeReview: expect.stringContaining('review_code'),
@@ -102,7 +103,7 @@ describe('mcp route', () => {
     })
   })
 
-  it('returns the same protocol version for initialize', async () => {
+  it('still negotiates 2025-era protocol versions through initialize', async () => {
     const response = await POST(
       new Request('https://mcp.frontendchecklist.io', {
         method: 'POST',
@@ -211,6 +212,9 @@ describe('mcp route', () => {
     expect(response.status).toBe(204)
     expect(response.headers.get('Access-Control-Allow-Origin')).toBe(
       'https://mcp.frontendchecklist.io'
+    )
+    expect(response.headers.get('Access-Control-Allow-Headers')).toEqual(
+      expect.stringContaining('Mcp-Protocol-Version')
     )
   })
 })

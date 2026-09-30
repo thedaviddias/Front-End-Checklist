@@ -5,7 +5,7 @@ import {
   getToolDefinitions,
   handleMcpHttpRequest,
   MCP_PROMPTS,
-  MCP_PROTOCOL_VERSION,
+  MCP_PROTOCOL_VERSIONS,
   MCP_RESOURCE_TEMPLATES,
   MCP_SERVER_INFO,
   MCP_SERVER_INSTRUCTIONS
@@ -21,7 +21,12 @@ import {
 import { TELEMETRY_EVENTS } from '@/lib/telemetry-events'
 import { captureServerException, trackServerEvent } from '@/lib/telemetry-server'
 import { getChecklists, getRules } from './content-helpers'
-import { createCorsHeaders, isOriginAllowed, mergeHeaders } from './route-helpers'
+import {
+  createCorsHeaders,
+  isOriginAllowed,
+  isTransportGetRequest,
+  mergeHeaders
+} from './route-helpers'
 
 const MAX_BATCH_SIZE = 10
 const MAX_REQUEST_SIZE = 100 * 1024 // 100KB
@@ -214,23 +219,6 @@ function withRouteHeaders(
     statusText: response.statusText,
     headers
   })
-}
-
-/**
- * Decide whether a GET request is intended for the SDK transport or for human-readable metadata.
- *
- * @param request - Incoming GET request.
- * @returns True when the request looks like an MCP transport request.
- */
-function isTransportGetRequest(request: Request): boolean {
-  const accept = request.headers.get('accept') || ''
-
-  return (
-    accept.includes('text/event-stream') ||
-    request.headers.has('mcp-session-id') ||
-    request.headers.has('mcp-protocol-version') ||
-    request.headers.has('last-event-id')
-  )
 }
 
 /**
@@ -471,10 +459,13 @@ export async function GET(request: Request) {
   return Response.json(
     {
       name: MCP_SERVER_INFO.name,
+      title: MCP_SERVER_INFO.title,
       version: MCP_SERVER_INFO.version,
+      icons: MCP_SERVER_INFO.icons,
       description: 'MCP server exposing Front-End Checklist rules to AI agents',
       instructions: MCP_SERVER_INSTRUCTIONS,
-      protocolVersion: MCP_PROTOCOL_VERSION,
+      protocolVersion: MCP_PROTOCOL_VERSIONS[0],
+      supportedProtocolVersions: [...MCP_PROTOCOL_VERSIONS],
       endpoint: MCP_SERVER_URL,
       tools,
       recommendedUsage: {

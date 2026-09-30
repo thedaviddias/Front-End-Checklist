@@ -556,10 +556,13 @@ Use subset of real rules for consistent testing:
 
 ### MCP Protocol
 
-The server implements MCP protocol version 2025-06-18:
-- Transport: HTTP POST to `/api/mcp`
+The server is built on `@modelcontextprotocol/server` v2 and is stateless on every protocol revision:
+- **2026-07-28** (current): clients negotiate with `server/discover`; each request carries its protocol version and client info in `_meta`, plus the `MCP-Protocol-Version`, `Mcp-Method` and `Mcp-Name` headers. List and read results include `ttlMs`/`cacheScope` (1 hour, public).
+- **2025-11-25 and earlier** (2025-06-18, 2025-03-26, 2024-11-05): clients negotiate with `initialize` as before.
+- Transport: Streamable HTTP, `POST` to `/api/mcp` (`mcp.frontendchecklist.io`), JSON responses, no sessions. Local stdio via `serveStdio`.
 - Content-Type: `application/json`
-- Methods: `tools/list`, `tools/call`
+- Methods: `tools/list`, `tools/call`, `prompts/list`, `prompts/get`, `resources/list`, `resources/templates/list`, `resources/read`, `completion/complete`
+- Unknown resources return a JSON-RPC resource-not-found error.
 
 ### Request Format
 

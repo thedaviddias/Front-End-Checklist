@@ -1,4 +1,8 @@
-import { type McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js'
+import {
+  type McpServer,
+  ResourceNotFoundError,
+  ResourceTemplate
+} from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import type { ToolResultPayload } from './server-tools'
 import { executeGetRule, executeGetWorkflow } from './tools'
@@ -151,14 +155,7 @@ export function registerResources(
       const output = executeGetRule({ slug, includeUrl: true }, rules)
 
       if (!output.success) {
-        return {
-          contents: [
-            {
-              uri: buildRuleResourceUri(slug),
-              text: `# Rule not found\n\n${output.error.message}`
-            }
-          ]
-        }
+        throw new ResourceNotFoundError(buildRuleResourceUri(slug), output.error.message)
       }
 
       return {
@@ -209,14 +206,10 @@ export function registerResources(
       const checklist = checklists.find(item => item.slug === slug)
 
       if (!checklist) {
-        return {
-          contents: [
-            {
-              uri: buildChecklistResourceUri(slug),
-              text: `# Checklist not found\n\nUnknown checklist: '${slug}'.`
-            }
-          ]
-        }
+        throw new ResourceNotFoundError(
+          buildChecklistResourceUri(slug),
+          `Unknown checklist: '${slug}'.`
+        )
       }
 
       const workflow = executeGetWorkflow({ slug }, await Promise.resolve(getRules()), checklists)

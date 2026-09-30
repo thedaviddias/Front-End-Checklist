@@ -1,6 +1,8 @@
 import { spawn } from 'node:child_process'
 import path from 'node:path'
-import { MCP_PROTOCOL_VERSION } from '../../src/server'
+
+/** A 2025-era revision still used by deployed stdio clients. */
+const LEGACY_PROTOCOL_VERSION = '2025-06-18'
 
 function waitForJsonLine(command: ReturnType<typeof spawn>): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -57,7 +59,7 @@ describe('MCP CLI', () => {
         id: 1,
         method: 'initialize',
         params: {
-          protocolVersion: MCP_PROTOCOL_VERSION,
+          protocolVersion: LEGACY_PROTOCOL_VERSION,
           capabilities: {},
           clientInfo: {
             name: 'jest-client',
@@ -86,7 +88,7 @@ describe('MCP CLI', () => {
       jsonrpc: '2.0',
       id: 1,
       result: {
-        protocolVersion: MCP_PROTOCOL_VERSION,
+        protocolVersion: LEGACY_PROTOCOL_VERSION,
         serverInfo: {
           name: 'frontend-checklist-mcp'
         }

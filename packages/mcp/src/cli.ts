@@ -6,7 +6,7 @@
 
 import * as fs from 'node:fs'
 import * as path from 'node:path'
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
+import { serveStdio } from '@modelcontextprotocol/server/stdio'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import { loadRules } from './load-rules'
 import { createMcpServer } from './server'
@@ -130,17 +130,18 @@ function extractYamlField(yaml: string, field: string): string | null {
 async function main() {
   const rules = getRules()
   const checklists = loadChecklists()
-  const server = createMcpServer(
-    () => rules,
-    () => checklists
-  )
-  const transport = new StdioServerTransport()
 
   console.error(
     `Loaded ${rules.length} rules and ${checklists.length} checklists from content directory`
   )
 
-  await server.connect(transport)
+  // serveStdio answers both 2026-07-28 (`server/discover`) and 2025-era `initialize` clients.
+  serveStdio(() =>
+    createMcpServer(
+      () => rules,
+      () => checklists
+    )
+  )
   console.error('Front-End Checklist MCP server started (stdio mode)')
 }
 

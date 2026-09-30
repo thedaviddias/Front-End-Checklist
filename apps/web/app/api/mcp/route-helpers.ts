@@ -3,9 +3,12 @@ import type { CuratedChecklist } from '@repo/types'
 
 type Difficulty = CuratedChecklist['difficulty']
 
+// Includes the MCP transport headers browser clients send: `Mcp-Protocol-Version`
+// on every era, plus `Mcp-Method`/`Mcp-Name` on 2026-07-28 requests (SEP-2243).
 const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+  'Access-Control-Allow-Headers':
+    'Content-Type, Authorization, Mcp-Protocol-Version, Mcp-Method, Mcp-Name'
 }
 
 /**
@@ -80,4 +83,21 @@ export function createCorsHeaders(request: Request): Record<string, string> {
     'Access-Control-Allow-Origin': origin,
     Vary: 'Origin'
   }
+}
+
+/**
+ * Decide whether a GET request is intended for the SDK transport or for human-readable metadata.
+ *
+ * @param request - Incoming GET request.
+ * @returns True when the request looks like an MCP transport request.
+ */
+export function isTransportGetRequest(request: Request): boolean {
+  const accept = request.headers.get('accept') || ''
+
+  return (
+    accept.includes('text/event-stream') ||
+    request.headers.has('mcp-session-id') ||
+    request.headers.has('mcp-protocol-version') ||
+    request.headers.has('last-event-id')
+  )
 }

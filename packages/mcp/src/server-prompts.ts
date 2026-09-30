@@ -1,23 +1,44 @@
-import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
-import type { CuratedChecklist } from '@repo/types'
+import { completable, type McpServer } from '@modelcontextprotocol/server'
+import type { CuratedChecklist, Rule } from '@repo/types'
 import * as z from 'zod'
+
+const MAX_COMPLETIONS = 25
 
 /**
  * Register prompt templates on the MCP server.
  *
  * @param server - MCP server instance.
+ * @param getRules - Rule loader callback, used for slug completion.
  * @param getChecklists - Checklist loader callback.
  */
-export function registerPrompts(server: McpServer, getChecklists: () => CuratedChecklist[]): void {
+export function registerPrompts(
+  server: McpServer,
+  getRules: () => Rule[] | Promise<Rule[]>,
+  getChecklists: () => CuratedChecklist[]
+): void {
+  /**
+   * Build a rule-slug argument schema that autocompletes from the rule corpus.
+   *
+   * @returns Completable string schema for a rule slug.
+   */
+  const ruleSlug = () =>
+    completable(z.string().describe('Rule slug, e.g. "doctype"'), async value =>
+      (await Promise.resolve(getRules()))
+        .map(rule => rule.slug)
+        .filter(slug => slug.startsWith(value))
+        .slice(0, MAX_COMPLETIONS)
+    )
+
   server.registerPrompt(
     'review_code_prompt',
     {
+      title: 'Review Frontend Code',
       description: 'Guide the model to review provided frontend code with the review_code tool.',
-      argsSchema: {
+      argsSchema: z.object({
         code: z.string().optional(),
         focus: z.array(z.string()).optional(),
         minPriority: z.enum(['critical', 'high', 'medium', 'low']).optional()
-      }
+      })
     },
     async ({ code, focus, minPriority }) => ({
       messages: [
@@ -44,10 +65,11 @@ export function registerPrompts(server: McpServer, getChecklists: () => CuratedC
   server.registerPrompt(
     'explain_rule_prompt',
     {
+      title: 'Explain a Frontend Rule',
       description: 'Guide the model to explain why a frontend rule matters.',
-      argsSchema: {
-        slug: z.string()
-      }
+      argsSchema: z.object({
+        slug: ruleSlug()
+      })
     },
     async ({ slug }) => ({
       messages: [
@@ -65,11 +87,12 @@ export function registerPrompts(server: McpServer, getChecklists: () => CuratedC
   server.registerPrompt(
     'fix_rule_prompt',
     {
+      title: 'Fix a Rule Violation',
       description: 'Guide the model to retrieve remediation guidance for a specific rule.',
-      argsSchema: {
-        slug: z.string(),
+      argsSchema: z.object({
+        slug: ruleSlug(),
         codeSnippet: z.string().optional()
-      }
+      })
     },
     async ({ slug, codeSnippet }) => ({
       messages: [
@@ -91,12 +114,13 @@ export function registerPrompts(server: McpServer, getChecklists: () => CuratedC
   server.registerPrompt(
     'audit_url_prompt',
     {
+      title: 'Audit a Live URL',
       description: 'Guide the model to audit a live website using the audit_url tool.',
-      argsSchema: {
+      argsSchema: z.object({
         url: z.string(),
         focus: z.array(z.string()).optional(),
         minPriority: z.enum(['critical', 'high', 'medium', 'low']).optional()
-      }
+      })
     },
     async ({ url, focus, minPriority }) => ({
       messages: [
@@ -119,14 +143,22 @@ export function registerPrompts(server: McpServer, getChecklists: () => CuratedC
   server.registerPrompt(
     'workflow_prompt',
     {
+      title: 'Run a Checklist Workflow',
       description: 'Guide the model through a curated frontend checklist workflow.',
-      argsSchema: {
-        checklist: z.string().describe(
-          `Available: ${getChecklists()
-            .map(item => item.slug)
-            .join(', ')}`
+      argsSchema: z.object({
+        checklist: completable(
+          z.string().describe(
+            `Available: ${getChecklists()
+              .map(item => item.slug)
+              .join(', ')}`
+          ),
+          value =>
+            getChecklists()
+              .map(item => item.slug)
+              .filter(slug => slug.startsWith(value))
+              .slice(0, MAX_COMPLETIONS)
         )
-      }
+      })
     },
     async ({ checklist }) => ({
       messages: [
