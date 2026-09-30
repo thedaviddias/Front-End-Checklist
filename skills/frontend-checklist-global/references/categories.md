@@ -1,6 +1,6 @@
 # Front-End Checklist Global Skill Reference
 
-This aggregate skill routes to the Front-End Checklist MCP tools across 385 rules.
+This aggregate skill routes to the Front-End Checklist MCP tools across 386 rules.
 
 ## Tool Routing
 
@@ -122,7 +122,7 @@ This aggregate skill routes to the Front-End Checklist MCP tools across 385 rule
 - **i18n**: 5 rules
 - **images**: 25 rules · 1 critical · 15 high
 - **javascript**: 26 rules · 1 critical · 12 high
-- **performance**: 42 rules · 1 critical · 21 high
+- **performance**: 43 rules · 1 critical · 22 high
 - **privacy**: 5 rules · 2 high
 - **security**: 22 rules · 4 critical · 10 high
 - **seo**: 93 rules · 19 high

@@ -12,7 +12,7 @@ metadata:
 
 # Front-End Checklist Global Audit
 
-This skill connects one entry point to all 385 Front-End Checklist rules.
+This skill connects one entry point to all 386 Front-End Checklist rules.
 Use MCP retrieval instead of trying to recall rules from memory.
 
 ## Workflow
@@ -172,7 +172,7 @@ Use MCP retrieval instead of trying to recall rules from memory.
 - i18n: 5 rules
 - images: 25 rules (1 critical, 15 high)
 - javascript: 26 rules (1 critical, 12 high)
-- performance: 42 rules (1 critical, 21 high)
+- performance: 43 rules (1 critical, 22 high)
 - privacy: 5 rules (2 high)
 - security: 22 rules (4 critical, 10 high)
 - seo: 93 rules (19 high)

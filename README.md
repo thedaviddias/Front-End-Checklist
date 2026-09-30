@@ -16,7 +16,7 @@ Companion project: [UX Patterns for Devs](https://uxpatterns.dev/) helps develop
 
 ## What you get
 
-- `385` English rules across `11` active categories
+- `386` English rules across `11` active categories
 - `11` MCP tools exposed by the hosted server
 - Rule pages with explanations, remediation guidance, and verification steps
 
@@ -112,14 +112,14 @@ Example uses:
 
 <!-- rules-catalog:start -->
 
-<!-- Generated from 385 English rules. This block is maintained by `pnpm generate:readme`. -->
+<!-- Generated from 386 English rules. This block is maintained by `pnpm generate:readme`. -->
 
 ### Jump to a category
 
 - [HTML](#html) (25) · [Open on the site](https://frontendchecklist.io/rules/html)
 - [CSS](#css) (32) · [Open on the site](https://frontendchecklist.io/rules/css)
 - [JavaScript](#javascript) (26) · [Open on the site](https://frontendchecklist.io/rules/javascript)
-- [Performance](#performance) (43) · [Open on the site](https://frontendchecklist.io/rules/performance)
+- [Performance](#performance) (44) · [Open on the site](https://frontendchecklist.io/rules/performance)
 - [Accessibility](#accessibility) (95) · [Open on the site](https://frontendchecklist.io/rules/accessibility)
 - [SEO](#seo) (94) · [Open on the site](https://frontendchecklist.io/rules/seo)
 - [Security](#security) (22) · [Open on the site](https://frontendchecklist.io/rules/security)
@@ -242,7 +242,7 @@ Example uses:
 
 ### Performance
 
-*43 rules. Loading speed, rendering, optimization, and Core Web Vitals rules.*
+*44 rules. Loading speed, rendering, optimization, and Core Web Vitals rules.*
 
 [Browse Performance on frontendchecklist.io](https://frontendchecklist.io/rules/performance)
 
@@ -264,6 +264,7 @@ Example uses:
 - [ ] [Minimize critical request chains](https://frontendchecklist.io/rules/performance/critical-request-chains) ![High][high_img]: Reduce the number and depth of dependent resource requests that block the initial rendering of the page.
 - [ ] [Minimize cumulative layout shift](https://frontendchecklist.io/rules/performance/cumulative-layout-shift) ![High][high_img]: Page maintains visual stability with a CLS score below 0.1, preventing unexpected content shifts during load.
 - [ ] [Minimize HTTP requests](https://frontendchecklist.io/rules/performance/http-requests) ![High][high_img]: HTTP requests are minimized by combining files, using sprites, and HTTP/2.
+- [ ] [Optimize and compress web videos](https://frontendchecklist.io/rules/performance/video-optimization) ![High][high_img]: Videos are compressed, resized per device, and served in efficient codecs (H.264, HEVC, VP9/AV1) to reduce page weight and bandwidth use.
 - [ ] [Optimize CSS file size](https://frontendchecklist.io/rules/performance/css-file-size) ![Medium][medium_img]: Keep individual CSS files small and remove unused styles to accelerate the critical rendering path.
 - [ ] [Optimize first contentful paint](https://frontendchecklist.io/rules/performance/first-contentful-paint) ![High][high_img]: First content renders within 1.8 seconds, providing quick visual feedback that the page is loading.
 - [ ] [Optimize Google Tag Manager implementation](https://frontendchecklist.io/rules/performance/gtm-present) ![Medium][medium_img]: Configure Google Tag Manager efficiently to minimize its impact on page load speed and main-thread blocking.

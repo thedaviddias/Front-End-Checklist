@@ -1,7 +1,7 @@
 name: frontendchecklist
 displayName: Front-End Checklist
 description: >
-  Frontend code review MCP server with 385 quality-gated rules for React,
+  Frontend code review MCP server with 386 quality-gated rules for React,
   Next.js, HTML, CSS, JavaScript, accessibility, performance, SEO, security,
   images, privacy, i18n, and testing. Review pasted code, audit live sites,
   search rule guidance, and run launch-ready MCP workflows from the

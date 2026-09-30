@@ -2,14 +2,14 @@
 
 <!-- Generated from rule frontmatter. Do not edit manually. Run `pnpm generate:readme`. -->
 
-Generated from 385 English rules across 11 categories.
+Generated from 386 English rules across 11 categories.
 
 ## Quick links
 
 - [HTML](#html) (25)
 - [CSS](#css) (32)
 - [JavaScript](#javascript) (26)
-- [Performance](#performance) (43)
+- [Performance](#performance) (44)
 - [Accessibility](#accessibility) (95)
 - [SEO](#seo) (94)
 - [Security](#security) (22)
@@ -154,6 +154,7 @@ Loading speed, rendering, optimization, and Core Web Vitals rules.
 - [ ] [Minimize critical request chains](https://frontendchecklist.io/rules/performance/critical-request-chains) ![High][high_img]: Reduce the number and depth of dependent resource requests that block the initial rendering of the page.
 - [ ] [Minimize cumulative layout shift](https://frontendchecklist.io/rules/performance/cumulative-layout-shift) ![High][high_img]: Page maintains visual stability with a CLS score below 0.1, preventing unexpected content shifts during load.
 - [ ] [Minimize HTTP requests](https://frontendchecklist.io/rules/performance/http-requests) ![High][high_img]: HTTP requests are minimized by combining files, using sprites, and HTTP/2.
+- [ ] [Optimize and compress web videos](https://frontendchecklist.io/rules/performance/video-optimization) ![High][high_img]: Videos are compressed, resized per device, and served in efficient codecs (H.264, HEVC, VP9/AV1) to reduce page weight and bandwidth use.
 - [ ] [Optimize CSS file size](https://frontendchecklist.io/rules/performance/css-file-size) ![Medium][medium_img]: Keep individual CSS files small and remove unused styles to accelerate the critical rendering path.
 - [ ] [Optimize first contentful paint](https://frontendchecklist.io/rules/performance/first-contentful-paint) ![High][high_img]: First content renders within 1.8 seconds, providing quick visual feedback that the page is loading.
 - [ ] [Optimize Google Tag Manager implementation](https://frontendchecklist.io/rules/performance/gtm-present) ![Medium][medium_img]: Configure Google Tag Manager efficiently to minimize its impact on page load speed and main-thread blocking.
