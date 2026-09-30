@@ -279,7 +279,7 @@ export const categoryConfig: Record<
     title: 'Performance',
     description: 'Core Web Vitals, asset optimization, and rendering strategies.',
     seoDescription:
-      'Web performance optimization rules covering Core Web Vitals, LCP, FID, CLS, asset optimization, caching, and rendering strategies.'
+      'Web performance optimization rules covering Core Web Vitals, LCP, INP, CLS, asset optimization, caching, and rendering strategies.'
   },
   accessibility: {
     title: 'Accessibility',
