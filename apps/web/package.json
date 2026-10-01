@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter @repo/auth build && next build",
+    "build": "bash ../../scripts/ci/migrate-on-vercel-production.sh && pnpm --filter @repo/auth build && next build",
     "build:content": "content-collections build",
     "dev": "concurrently \"content-collections watch\" \"portless run next dev\"",
     "e2e": "playwright test",
