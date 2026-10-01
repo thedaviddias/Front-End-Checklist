@@ -185,9 +185,53 @@ pnpm --filter @repo/mcp test -- tool-performance.test --verbose
 
 **Budgets** (p95, in ms): `review_code` 100, `search_rules` 50, `list_categories` 50, `get_rule` 5, `get_checklist_rules` 10. These run as part of the full MCP test suite and in `pnpm mcp:audit`. They do **not** cover the HTTP layer (Next.js route, JSON serialization) or `audit_url` (which does a live fetch).
 
+### 7. Protocol conformance (official suite)
+
+**What**: Runs [`@modelcontextprotocol/conformance`](https://www.npmjs.com/package/@modelcontextprotocol/conformance) (pinned in `packages/mcp/scripts/conformance.ts`) against a standalone copy of the server. Most scenarios target the reference "everything" server's fixture tools (`test_simple_text`, `test://static-text`, …), so `packages/mcp/conformance-baseline.yml` lists them as expected failures with the reason. Everything this server advertises must pass: initialize, ping, tools/list, resources/list, prompts/list, and DNS-rebinding protection.
+
+**How**:
+
+```bash
+pnpm mcp:conformance                                  # spawns scripts/serve.ts on a free port
+pnpm mcp:conformance -- --url http://localhost:3000/api/mcp   # any running server
+```
+
+Fails on any failure outside the baseline **and** on baseline entries that start passing (stale baseline).
+
+### 8. Load testing and profiling
+
+**What**: `packages/mcp/scripts/load-test.ts` drives a weighted mix of real operations (connect, tools/list, search_rules, get_rule, review_code, resources/read, prompts/get, skills/list) at stepped concurrency, half with the official v2 client on protocol 2026-07-28 and half with 2025-era JSON-RPC. Per operation it reports throughput, p50/p95/p99/max latency and errors; per stage it reports **server CPU ms per request** and RSS.
+
+By default it spawns the standalone server (`scripts/serve.ts`, same `handleMcpHttpRequest` pipeline as the Vercel route, minus Next.js, CORS and rate limiting) in its own process, so client and server do not share an event loop.
+
+**How**:
+
+```bash
+pnpm mcp:load                                         # 1, 8, 32 workers × 10 s, mixed eras
+pnpm mcp:load -- --concurrency 1,16,64 --duration 20
+pnpm mcp:load -- --era modern                         # 2026-07-28 clients only
+pnpm mcp:load -- --profile                            # V8 CPU profile + top self-time functions
+pnpm mcp:load -- --compare .mcp-load/baseline.json    # deltas vs a previous run
+pnpm mcp:serve -- --port 3100                         # just the standalone server
+```
+
+Reports (and `.cpuprofile` files, loadable in Chrome DevTools → Performance) go to `.mcp-load/` (gitignored). The run exits non-zero when any stage's error rate exceeds 1%.
+
+**Reading results**: wall-clock throughput depends on what else the machine is doing; the harness records the load average and warns when the machine is busy. Prefer **server CPU ms per request** for before/after comparisons: it is kernel-accounted CPU time, so it stays valid under contention. Do not point the load test at production: it is rate limited (30 requests/min per IP), so you would only measure the limiter.
+
+**Finding improvements**: run with `--profile`, read the "Server CPU hot spots" table, fix the top entry, then re-run with `--compare` against the previous report.
+
+**History**:
+
+| Date | Change | Server CPU / request | Notes |
+| --- | --- | --- | --- |
+| 2026-10-01 | Baseline (SDK v2 migration) | ~6.2 ms | Ajv recompiled all 22 tool schemas on every request (~30% of CPU) |
+| 2026-10-01 | Compile tool schemas once; drop forced `responseMode: 'json'` (per-request warning); hoist skills param schemas | ~2.1 ms | ~3× less CPU per request, ~90 MB lower RSS; remaining hot spots are search scoring and review_code heuristics |
+
 ## Suggested workflow
 
-- **Before PRs**: Run `pnpm mcp:audit` (tests + security scan).
+- **Before PRs**: Run `pnpm mcp:audit` (tests + security scan) and `pnpm mcp:conformance`.
+- **Before performance-sensitive changes**: Save a `pnpm mcp:load -- --out .mcp-load/before.json` report, then compare with `--compare .mcp-load/before.json`.
 - **Periodically**: Run MCP Inspector against `https://mcp.frontendchecklist.io` and, if you use Python, MCP Doctor against the same URL.
 - **CI**: Add `pnpm mcp:audit` to your pipeline (e.g. `ci:check` or a dedicated MCP job).
 

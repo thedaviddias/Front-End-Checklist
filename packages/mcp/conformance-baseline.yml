@@ -1,0 +1,38 @@
+# Expected failures for the official MCP conformance suite
+# (@modelcontextprotocol/conformance, run by `pnpm mcp:conformance`).
+#
+# The suite targets a reference "everything" server: most scenarios call fixture
+# tools, prompts, and resources (test_simple_text, test://static-text, ...) that
+# a real server does not have. Every scenario that matches what this server
+# advertises must pass: initialize, ping, tools/list, resources/list,
+# prompts/list, and DNS-rebinding protection.
+server:
+  # Fixture tools/prompts/resources from the reference test server.
+  - completion-complete
+  - tools-call-simple-text
+  - tools-call-image
+  - tools-call-audio
+  - tools-call-embedded-resource
+  - tools-call-mixed-content
+  - tools-call-error
+  - tools-call-with-progress
+  - tools-call-sampling
+  - tools-call-elicitation
+  - elicitation-sep1034-defaults
+  - elicitation-sep1330-enums
+  - resources-read-text
+  - resources-read-binary
+  - resources-templates-read
+  - prompts-get-simple
+  - prompts-get-with-args
+  - prompts-get-embedded-resource
+  - prompts-get-with-image
+  # Capabilities this server deliberately does not advertise: logging (deprecated
+  # in 2026-07-28) and resource subscriptions (content only changes on deploy).
+  - logging-set-level
+  - tools-call-with-logging
+  - resources-subscribe
+  - resources-unsubscribe
+  # Warning-only: probes session-scoped SSE streams; this server is stateless
+  # (no Mcp-Session-Id, no standalone GET stream) by design.
+  - server-sse-multiple-streams

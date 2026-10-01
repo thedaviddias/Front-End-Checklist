@@ -10,8 +10,11 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
+    "conformance": "tsx scripts/conformance.ts",
     "evaluate": "jest tests/quality --runInBand",
     "lint": "biome check .",
+    "load": "tsx scripts/load-test.ts",
+    "serve": "tsx scripts/serve.ts",
     "test": "jest",
     "test:ci": "jest --ci --runInBand --passWithNoTests",
     "test:coverage": "jest --coverage --ci --passWithNoTests",

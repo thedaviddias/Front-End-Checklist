@@ -78,3 +78,6 @@ docs
 evals
 evals/**
 .artifacts
+
+# MCP load-test reports and CPU profiles
+.mcp-load/
