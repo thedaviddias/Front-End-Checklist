@@ -1,27 +1,59 @@
 {
   "name": "@frontendchecklist/cli",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Standalone CLI to audit a URL against Front-End Checklist rules",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Front-End Checklist from the command line: review local code, audit URLs, and look up 380+ frontend rules. Agent-first: JSON output, stable exit codes, no prompts.",
+  "keywords": [
+    "frontend",
+    "checklist",
+    "accessibility",
+    "performance",
+    "seo",
+    "code-review",
+    "cli",
+    "ai-agents"
+  ],
+  "homepage": "https://frontendchecklist.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedaviddias/Front-End-Checklist.git",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
   "type": "module",
   "bin": {
-    "frontendchecklist": "./src/index.ts"
+    "frontendchecklist": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "SKILL.md",
+    "README.md"
+  ],
   "scripts": {
+    "build": "node --import tsx scripts/build.ts",
     "lint": "biome check .",
+    "prepublishOnly": "pnpm run build && pnpm run test",
+    "test": "pnpm run build && node --test tests/*.test.mjs",
+    "test:ci": "pnpm run build && node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@repo/config": "workspace:*",
-    "@repo/mcp": "workspace:*",
-    "@repo/types": "workspace:*"
+    "undici": "^7.30.0"
   },
   "devDependencies": {
+    "@repo/config": "workspace:*",
     "@repo/config-typescript": "workspace:^",
+    "@repo/mcp": "workspace:*",
+    "@repo/types": "workspace:*",
     "@types/node": "catalog:",
+    "esbuild": "^0.28.2",
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }

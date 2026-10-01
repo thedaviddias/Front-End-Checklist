@@ -5,7 +5,9 @@
   "description": "MCP server exposing Front-End Checklist rules to AI agents",
   "exports": {
     ".": "./src/index.ts",
-    "./load-rules": "./src/load-rules.ts"
+    "./load-rules": "./src/load-rules.ts",
+    "./tools": "./src/tools/index.ts",
+    "./content-loader": "./src/content-loader.ts"
   },
   "main": "./src/index.ts",
   "types": "./src/index.ts",

@@ -62,7 +62,7 @@ catalogs:
       version: 0.7.1
     framer-motion:
       specifier: ^13.4.6
-      version: 12.43.0
+      version: 13.4.6
     jest:
       specifier: ^30.5.2
       version: 30.5.2
@@ -503,22 +503,28 @@ importers:
 
   packages/cli:
     dependencies:
+      undici:
+        specifier: ^7.30.0
+        version: 7.30.0
+    devDependencies:
       '@repo/config':
         specifier: workspace:*
         version: link:../config
+      '@repo/config-typescript':
+        specifier: workspace:^
+        version: link:../../configs/config-typescript
       '@repo/mcp':
         specifier: workspace:*
         version: link:../mcp
       '@repo/types':
         specifier: workspace:*
         version: link:../types
-    devDependencies:
-      '@repo/config-typescript':
-        specifier: workspace:^
-        version: link:../../configs/config-typescript
       '@types/node':
         specifier: 'catalog:'
         version: 25.9.8
+      esbuild:
+        specifier: ^0.28.2
+        version: 0.28.2
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

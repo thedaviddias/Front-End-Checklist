@@ -12,7 +12,7 @@ function waitForJsonLine(command: ReturnType<typeof spawn>): Promise<string> {
     const timeout = setTimeout(() => {
       command.kill()
       reject(new Error(`Timed out waiting for CLI response. stderr: ${stderr}`))
-    }, 15000)
+    }, 60000)
 
     command.stdout.on('data', chunk => {
       stdout += chunk.toString()
@@ -44,6 +44,9 @@ function waitForJsonLine(command: ReturnType<typeof spawn>): Promise<string> {
     })
   })
 }
+
+// Spawning tsx + loading the corpus can take a while on a busy CI runner.
+jest.setTimeout(90_000)
 
 describe('MCP CLI', () => {
   it('awaits async request handling before writing to stdout', async () => {

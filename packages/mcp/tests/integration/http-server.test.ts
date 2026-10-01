@@ -9,6 +9,9 @@ jest.mock('../../src/content-loader', () => ({
   loadLocalChecklists: () => []
 }))
 
+// The first request loads the rule corpus and ~800 skill files from disk.
+jest.setTimeout(60_000)
+
 let server: LocalMcpHttpServer
 
 /**

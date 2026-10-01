@@ -1,39 +1,65 @@
 # @frontendchecklist/cli
 
-Standalone CLI to audit a URL against Front-End Checklist rules (single-page).
-
-## Usage (from repo root)
+The [Front-End Checklist](https://frontendchecklist.io) from the command line: review local code,
+audit public pages, and look up 380+ frontend rules (accessibility, performance, SEO, security,
+HTML, CSS, JavaScript, images, i18n, privacy, testing). Works offline; the rules ship with the
+package.
 
 ```bash
-# Audit a URL (default: console output)
-pnpm audit:url https://example.com
-
-# Or with explicit "audit" command
-pnpm exec frontendchecklist audit https://example.com
-
-# Output formats
-pnpm audit:url https://example.com --format json
-pnpm audit:url https://example.com -f md
-pnpm audit:url https://example.com -f html   # basic HTML report
-
-# Focus categories and minimum priority
-pnpm audit:url https://example.com --categories accessibility,seo --min-priority high
+npx -y @frontendchecklist/cli review src/
 ```
 
-## Options
+## Commands
 
-| Option | Short | Description | Default |
-|--------|-------|-------------|---------|
-| `--format` | `-f` | Output: `console` \| `json` \| `md` \| `html` | `console` |
-| `--categories` | — | Comma-separated: html, css, javascript, performance, accessibility, seo, security, images, testing, general | all |
-| `--min-priority` | — | Minimum priority: critical \| high \| medium \| low | medium |
+```bash
+frontendchecklist review src/ index.html          # files and directories (node_modules, dist skipped)
+git diff --cached | frontendchecklist review -    # stdin
+frontendchecklist audit https://example.com       # public https pages only
+frontendchecklist search "image formats" -n 5
+frontendchecklist rule alt-text
+frontendchecklist checklists
+frontendchecklist checklist launch-checklist
+frontendchecklist categories
+frontendchecklist schema                          # command reference as JSON
+frontendchecklist skill                           # agent skill (SKILL.md)
+```
 
-## Requirements
+Flags: `--focus accessibility,seo`, `--min-priority high`, `--fail-on high`, `--limit 20`,
+`--format json|text|md|html`, `--json`, `--save` (audit: publish the report on frontendchecklist.io).
 
-- The public rules package must be available. Inside this monorepo, the CLI falls back to the
-  local content source automatically.
-- Node 18+.
+## Built for agents and CI
 
-## Publish
+- **JSON when piped**: output is JSON whenever stdout is not a terminal (or with `--json`); logs and
+  errors go to stderr.
+- **Exit codes**: `0` ok, `1` findings at or above `--fail-on`, `2` usage or runtime error (with
+  `{"error": "..."}` on stdout in JSON mode).
+- **No prompts**, stable flags, and `frontendchecklist schema` for discovery.
+- **Agent skill**: `frontendchecklist skill > .claude/skills/frontendchecklist/SKILL.md` teaches
+  coding agents when and how to use it.
 
-For npm publish, add a build step that compiles `src/index.ts` to `dist/index.js` and set `bin` to `./dist/index.js`. Currently the CLI is intended for local use via `pnpm audit:url`.
+### CI example
+
+```yaml
+- run: npx -y @frontendchecklist/cli review src/ --fail-on high
+```
+
+## MCP
+
+Prefer MCP? The same rules and tools are available at `https://mcp.frontendchecklist.io`
+(see [frontendchecklist.io/en/mcp](https://frontendchecklist.io/en/mcp)).
+
+## Development (monorepo)
+
+```bash
+pnpm --filter @frontendchecklist/cli build    # dist/index.js + dist/content.json snapshot
+node packages/cli/dist/index.js review src/
+pnpm audit:url https://example.com            # build + audit shortcut
+pnpm --filter @frontendchecklist/cli test
+```
+
+The build bundles the shared tools from `packages/mcp` (the same code behind the MCP server) and
+snapshots the rules from `packages/content`, so the published package has no private dependencies.
+
+## License
+
+MIT
