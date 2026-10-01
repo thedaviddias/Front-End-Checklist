@@ -1,4 +1,4 @@
-import { fromJsonSchema, type JsonSchemaType, type McpServer } from '@modelcontextprotocol/server'
+import { fromJsonSchema, type McpServer } from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import { getToolUiMeta } from './server-apps'
 import {
@@ -215,6 +215,38 @@ async function executeTool(
   }
 }
 
+type CompiledToolSchema = ReturnType<typeof fromJsonSchema>
+
+/** Compiled tool schemas keyed by their JSON text (dynamic checklist schemas included). */
+const compiledToolSchemas = new Map<string, CompiledToolSchema>()
+/** Identity fast path for the static tool definitions (skips JSON.stringify). */
+const compiledToolSchemasByObject = new WeakMap<object, CompiledToolSchema>()
+
+/**
+ * Compile a tool JSON Schema once per process.
+ *
+ * Every request builds a fresh stateless McpServer; compiling the 22 tool
+ * input/output schemas each time made Ajv the top CPU cost under load.
+ *
+ * @param schema - Tool input or output JSON Schema.
+ * @returns Reusable Standard Schema wrapper.
+ */
+function compileToolSchema(schema: object): CompiledToolSchema {
+  const byIdentity = compiledToolSchemasByObject.get(schema)
+  if (byIdentity) {
+    return byIdentity
+  }
+
+  const key = JSON.stringify(schema)
+  let compiled = compiledToolSchemas.get(key)
+  if (!compiled) {
+    compiled = fromJsonSchema(JSON.parse(key))
+    compiledToolSchemas.set(key, compiled)
+  }
+  compiledToolSchemasByObject.set(schema, compiled)
+  return compiled
+}
+
 /**
  * Register MCP tools on the server instance.
  *
@@ -242,8 +274,8 @@ export function registerTools(
         title: definition.title,
         description: definition.description,
         // Register the JSON Schema as-is so descriptions and constraints reach clients.
-        inputSchema: fromJsonSchema(definition.inputSchema as JsonSchemaType),
-        outputSchema: fromJsonSchema(definition.outputSchema as JsonSchemaType),
+        inputSchema: compileToolSchema(definition.inputSchema),
+        outputSchema: compileToolSchema(definition.outputSchema),
         icons: [MCP_SERVER_ICON],
         annotations: definition.annotations,
         _meta: getToolUiMeta(definition.name)

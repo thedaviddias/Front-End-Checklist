@@ -18,6 +18,10 @@ const SKILLS_PAGE_SIZE = 50
 /** Skills are regenerated from rules on deploy, so entries can be cached publicly. */
 const SKILLS_CACHE = { ttlMs: 60 * 60 * 1000, cacheScope: 'public' } as const
 
+/** Request param schemas, built once rather than per stateless request. */
+const SKILLS_LIST_PARAMS = z.object({ cursor: z.string().optional() }).loose()
+const SKILLS_GET_PARAMS = z.object({ uri: z.string() }).loose()
+
 interface SkillFile {
   uri: string
   relativePath: string
@@ -191,39 +195,31 @@ export function registerSkills(server: McpServer, getSkills: () => SkillEntry[])
    */
   const findSkill = (uri: string) => getSkills().find(skill => skill.uri === uri)
 
-  server.server.setRequestHandler(
-    'skills/list',
-    { params: z.object({ cursor: z.string().optional() }).loose() },
-    ({ cursor }) => {
-      const skills = getSkills()
-      const offset = cursor ? Number.parseInt(cursor, 10) : 0
-      if (!Number.isSafeInteger(offset) || offset < 0 || offset > skills.length) {
-        throw new ProtocolError(ProtocolErrorCode.InvalidParams, `Invalid cursor: ${cursor}`)
-      }
-
-      const page = skills.slice(offset, offset + SKILLS_PAGE_SIZE)
-      const next = offset + SKILLS_PAGE_SIZE
-
-      return {
-        skills: page.map(toSkillEntry),
-        ...(next < skills.length ? { nextCursor: String(next) } : {}),
-        ...SKILLS_CACHE
-      }
+  server.server.setRequestHandler('skills/list', { params: SKILLS_LIST_PARAMS }, ({ cursor }) => {
+    const skills = getSkills()
+    const offset = cursor ? Number.parseInt(cursor, 10) : 0
+    if (!Number.isSafeInteger(offset) || offset < 0 || offset > skills.length) {
+      throw new ProtocolError(ProtocolErrorCode.InvalidParams, `Invalid cursor: ${cursor}`)
     }
-  )
 
-  server.server.setRequestHandler(
-    'skills/get',
-    { params: z.object({ uri: z.string() }).loose() },
-    ({ uri }) => {
-      const skill = findSkill(uri)
-      if (!skill) {
-        throw new ProtocolError(ProtocolErrorCode.InvalidParams, `Unknown skill: ${uri}`)
-      }
+    const page = skills.slice(offset, offset + SKILLS_PAGE_SIZE)
+    const next = offset + SKILLS_PAGE_SIZE
 
-      return { skill: toSkillEntry(skill), ...SKILLS_CACHE }
+    return {
+      skills: page.map(toSkillEntry),
+      ...(next < skills.length ? { nextCursor: String(next) } : {}),
+      ...SKILLS_CACHE
     }
-  )
+  })
+
+  server.server.setRequestHandler('skills/get', { params: SKILLS_GET_PARAMS }, ({ uri }) => {
+    const skill = findSkill(uri)
+    if (!skill) {
+      throw new ProtocolError(ProtocolErrorCode.InvalidParams, `Unknown skill: ${uri}`)
+    }
+
+    return { skill: toSkillEntry(skill), ...SKILLS_CACHE }
+  })
 
   server.registerResource(
     'skill_file',

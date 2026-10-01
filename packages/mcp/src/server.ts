@@ -208,7 +208,9 @@ export async function handleMcpHttpRequest(
     }
   }
 
-  const handler = createMcpHandler(buildServer, { legacy: 'reject', responseMode: 'json' })
+  // Default 'auto' response mode already answers with plain JSON because no tool emits
+  // mid-call notifications; forcing 'json' logged a warning on every request.
+  const handler = createMcpHandler(buildServer, { legacy: 'reject' })
 
   try {
     return await handler.fetch(normalizedRequest, handlerOptions)
