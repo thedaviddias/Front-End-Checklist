@@ -228,9 +228,51 @@ Reports (and `.cpuprofile` files, loadable in Chrome DevTools → Performance) g
 | 2026-10-01 | Baseline (SDK v2 migration) | ~6.2 ms | Ajv recompiled all 22 tool schemas on every request (~30% of CPU) |
 | 2026-10-01 | Compile tool schemas once; drop forced `responseMode: 'json'` (per-request warning); hoist skills param schemas | ~2.1 ms | ~3× less CPU per request, ~90 MB lower RSS; remaining hot spots are search scoring and review_code heuristics |
 
+### 9. Tool-description lint (CI)
+
+**What**: `packages/mcp/tests/quality/tool-descriptions.test.ts`. Agents choose tools from the name, description and input schema alone, so these are the server's real prompt. The lint fails when a description:
+- is outside 150–650 characters, or the combined budget exceeds 5,500;
+- doesn't say when to use the tool ("Use it when…");
+- uses emphatic all-caps or bold wording, which makes newer models over-trigger a tool;
+- names a tool that doesn't exist;
+- leaves a parameter documented in fewer than 25 characters, a numeric input without bounds, or an optional enum/boolean/number without its default;
+- reads too much like a sibling tool's description (word-overlap Jaccard above 0.35).
+
+It runs with the normal test suite (`pnpm --filter @repo/mcp test`).
+
+### 10. Tool-choice eval (Anthropic API, on demand)
+
+**What**: `packages/mcp/scripts/eval-tool-choice.ts` sends single-turn prompts to Claude with the server's tool definitions and a neutral client system prompt, then records which tool the model calls first, or whether it answers directly. The cases live in `scripts/tool-choice/cases.ts`:
+- `clear`: one obviously right tool.
+- `confusable`: sibling tools the descriptions must disambiguate, such as `fix_rule` vs `get_rule` vs `explain_rule`, `review_code` vs `audit_url`, and `get_quick_reference` vs `search_rules`.
+- `no-tool`: general coding or chit-chat, where calling a tool is an over-trigger.
+
+Each case runs *k* times. The report gives:
+- accuracy;
+- **pass@k**, the share of cases the model gets right at least once;
+- **pass^k**, the share it gets right every time, which is what users of an agent feel;
+- over- and under-trigger rates;
+- an `expected -> chosen` confusion list;
+- token usage.
+
+**How** (needs `ANTHROPIC_API_KEY` or an `ant auth login` profile; every non-dry run spends API credits):
+
+```bash
+pnpm mcp:eval-tools -- --dry-run                                   # validate cases, print request count
+pnpm mcp:eval-tools                                                # claude-opus-5-5, k=3 (93 requests)
+pnpm mcp:eval-tools -- --models claude-opus-5-5,claude-sonnet-5-5,claude-haiku-4-5
+pnpm mcp:eval-tools -- --only confusable --trials 5
+pnpm mcp:eval-tools -- --min-pass-hat-k 0.9                        # exit 1 below the threshold
+```
+
+Reports go to `.mcp-evals/` (gitignored). The runner records rate limits, server errors and connection failures as failed trials and aborts on anything systemic, such as missing credentials or an unknown model. Refusals are counted on their own. Server-side refusal fallbacks are deliberately off, because a fallback would score a different model than the one under test.
+
+**Improving tools with it**: when a case misses, fix the description or schema rather than the case. Then re-run `--only <group>` and compare pass^k. Every case's expected tools are unit-tested against the live tool list, so renaming a tool breaks the build instead of silently invalidating the eval.
+
 ## Suggested workflow
 
 - **Before PRs**: Run `pnpm mcp:audit` (tests + security scan) and `pnpm mcp:conformance`.
+- **After changing a tool name, description or schema**: Run `pnpm mcp:eval-tools -- --only confusable` and compare pass^k with the previous report.
 - **Before performance-sensitive changes**: Save a `pnpm mcp:load -- --out .mcp-load/before.json` report, then compare with `--compare .mcp-load/before.json`.
 - **Periodically**: Run MCP Inspector against `https://mcp.frontendchecklist.io` and, if you use Python, MCP Doctor against the same URL.
 - **CI**: Add `pnpm mcp:audit` to your pipeline (e.g. `ci:check` or a dedicated MCP job).

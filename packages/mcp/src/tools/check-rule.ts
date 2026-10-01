@@ -5,6 +5,7 @@ import {
   CATEGORY_ARRAY_SCHEMA,
   ERROR_WITH_SUGGESTIONS_SCHEMA,
   READ_ONLY_TOOL_ANNOTATIONS,
+  RULE_SLUG_DESCRIPTION,
   STRING_SCHEMA
 } from './metadata'
 
@@ -31,20 +32,18 @@ export type CheckRuleOutput = CheckRuleResult | CheckRuleError
 export const checkRuleDefinition = {
   name: 'check_rule',
   title: 'Check Rule Compliance',
-  description: `Checks code against a specific frontend rule. **Use PROACTIVELY** when reviewing HTML/CSS/JS code to validate against frontend best practices. Without code, returns verification guidance. With code, performs heuristic analysis and reports compliance status. If issues are found, includes the fix prompt for immediate remediation.
-
-**Workflow:** Use after search_rules finds relevant rules, or when review_code flags a specific issue. Follow up with fix_rule for remediation steps or explain_rule to understand why the rule matters.`,
+  description: `Checks a code snippet against one specific rule and reports whether it complies, including the fix prompt when it does not. Without code, returns how to verify the rule manually. Use it to confirm that a fix worked or to test code against a rule the user names. To review code against all rules at once use review_code.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       slug: {
         type: 'string',
-        description: "The rule's slug (e.g., 'doctype', 'alt-text')"
+        description: RULE_SLUG_DESCRIPTION
       },
       code: {
         type: 'string',
-        description: 'Code snippet to analyze against the rule (optional)'
+        description: 'Code to test against the rule. Omit to get manual verification steps.'
       }
     },
     required: ['slug']

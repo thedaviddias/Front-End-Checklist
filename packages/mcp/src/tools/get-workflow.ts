@@ -50,9 +50,7 @@ export function buildGetWorkflowDefinition(checklists: CuratedChecklist[]) {
   return {
     name: 'get_workflow',
     title: 'Get Audit Workflow',
-    description: `Returns a curated, ordered sequence of rules for a specific checklist workflow. **Use PROACTIVELY** when performing comprehensive audits or setting up new projects. Available workflows: ${availableSlugs.join(', ')}.
-
-**Workflow:** Use this tool FIRST to get a structured approach, then use get_rule for each step's details, and check_rule to validate code against each rule.`,
+    description: `Returns the ordered steps of a curated audit workflow, each with its rule slug, priority, and category. Use it when the user wants a structured, end-to-end pass such as a pre-launch audit, rather than help with one specific rule. Then call get_checklist_rules to fetch guidance for every step in one call, or get_rule for a single step. Available workflows: ${availableSlugs.join(', ')}.`,
     annotations: READ_ONLY_TOOL_ANNOTATIONS,
     inputSchema: {
       type: 'object' as const,
@@ -110,16 +108,14 @@ export function buildGetWorkflowDefinition(checklists: CuratedChecklist[]) {
 export const getWorkflowDefinition = {
   name: 'get_workflow',
   title: 'Get Audit Workflow',
-  description: `Returns a curated, ordered sequence of rules for a specific checklist workflow. **Use PROACTIVELY** when performing comprehensive audits or setting up new projects.
-
-**Workflow:** Use this tool FIRST to get a structured approach, then use get_rule for each step's details, and check_rule to validate code against each rule.`,
+  description: `Returns the ordered steps of a curated audit workflow, each with its rule slug, priority, and category. Use it when the user wants a structured, end-to-end pass such as a pre-launch audit, rather than help with one specific rule. Then call get_checklist_rules to fetch guidance for every step in one call, or get_rule for a single step.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       slug: {
         type: 'string',
-        description: 'The checklist workflow slug (e.g., "launch-checklist", "seo-audit")'
+        description: 'Workflow (checklist) slug, e.g. "launch-checklist".'
       }
     },
     required: ['slug']

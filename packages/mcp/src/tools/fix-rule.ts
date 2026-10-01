@@ -5,6 +5,7 @@ import {
   ERROR_WITH_SUGGESTIONS_SCHEMA,
   PRIORITY_SCHEMA,
   READ_ONLY_TOOL_ANNOTATIONS,
+  RULE_SLUG_DESCRIPTION,
   STRING_SCHEMA
 } from './metadata'
 
@@ -31,20 +32,18 @@ export type FixRuleOutput = FixRuleResult | FixRuleError
 export const fixRuleDefinition = {
   name: 'fix_rule',
   title: 'Get Rule Fix',
-  description: `Retrieves the fix/implementation prompt for a specific rule. **Use PROACTIVELY** after identifying issues in frontend code to get step-by-step remediation guidance. Returns detailed instructions on how to fix the issue correctly, with priority level to help triage multiple issues.
-
-**Workflow:** Use after review_code or check_rule identifies issues. Pair with get_rule for complete context, or explain_rule to help users understand the importance of the fix.`,
+  description: `Returns step-by-step remediation instructions for one rule, with its priority so multiple issues can be triaged. Use it when an issue has been found (by review_code, audit_url, or check_rule) and the user wants it fixed. Pass codeSnippet to get guidance framed around their code.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       slug: {
         type: 'string',
-        description: "The rule's slug"
+        description: RULE_SLUG_DESCRIPTION
       },
       codeSnippet: {
         type: 'string',
-        description: 'Optional: code or HTML snippet for context-aware fix suggestion'
+        description: 'Code that violates the rule, so the fix guidance can reference it.'
       }
     },
     required: ['slug']

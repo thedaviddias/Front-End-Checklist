@@ -57,7 +57,7 @@ export function buildGetChecklistRulesDefinition(checklists: CuratedChecklist[])
   return {
     name: 'get_checklist_rules',
     title: 'Get Checklist Rules',
-    description: `Returns full rule details for every rule in a curated checklist in a single call. **More efficient than calling get_rule N times** after get_workflow. Use when you need the complete rule content for an entire checklist to perform a comprehensive audit or code review. Available checklists: ${availableSlugs.join(', ')}.`,
+    description: `Returns guidance (title, priority, check/fix prompts) for every rule in a curated checklist in one call. Use it instead of calling get_rule once per rule when auditing against a whole checklist, typically after get_workflow. Set includeContent only when you need each rule's long-form body. Available checklists: ${availableSlugs.join(', ')}.`,
     annotations: READ_ONLY_TOOL_ANNOTATIONS,
     inputSchema: {
       type: 'object' as const,
@@ -121,18 +121,18 @@ export function buildGetChecklistRulesDefinition(checklists: CuratedChecklist[])
 export const getChecklistRulesDefinition = {
   name: 'get_checklist_rules',
   title: 'Get Checklist Rules',
-  description: `Returns full rule details for every rule in a curated checklist in a single call. **More efficient than calling get_rule N times** after get_workflow. Use when you need the complete rule content for an entire checklist.`,
+  description: `Returns guidance (title, priority, check/fix prompts) for every rule in a curated checklist in one call. Use it instead of calling get_rule once per rule when auditing against a whole checklist, typically after get_workflow. Set includeContent only when you need each rule's long-form body.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       checklist: {
         type: 'string',
-        description: 'Checklist slug (e.g. "launch-checklist", "seo-audit")'
+        description: 'Checklist slug, e.g. "launch-checklist".'
       },
       includeContent: {
         type: 'boolean',
-        description: 'Include full MDX body content (large). Default false.'
+        description: "Include each rule's full MDX body (large). Default false."
       }
     },
     required: ['checklist']

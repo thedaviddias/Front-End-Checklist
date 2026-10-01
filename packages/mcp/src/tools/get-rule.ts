@@ -8,6 +8,7 @@ import {
   NUMBER_SCHEMA,
   READ_ONLY_TOOL_ANNOTATIONS,
   RULE_PROMPTS_SCHEMA,
+  RULE_SLUG_DESCRIPTION,
   STRING_SCHEMA
 } from './metadata'
 
@@ -237,18 +238,14 @@ function toRuleDifficulty(value: unknown): RuleResponse['difficulty'] | undefine
 export const getRuleDefinition = {
   name: 'get_rule',
   title: 'Get Rule Guidance',
-  description: `Retrieves a single frontend development rule by its unique slug. **Use PROACTIVELY** when reviewing or debugging frontend code to get best practice guidance. Returns complete rule details including content, prompts (check/fix/explain), and metadata as Markdown with code examples. If the slug doesn't exist, returns suggestions for similar rules.
-
-**Workflow:** Use after review_code identifies issues, or after search_rules finds relevant rules. Follow up with check_rule to validate code, fix_rule to get remediation steps, or explain_rule to understand why it matters.
-
-**Related Rules:** This tool includes related rules in its response, helping you discover connected best practices and build comprehensive understanding.`,
+  description: `Returns everything about one rule: what it requires, why it matters, how to check and fix it, code examples, sources, and related rules. Use it when you know the rule slug (from search_rules, review_code, or the user) and need its complete guidance. Unknown slugs return similar suggestions. If the user only wants fix steps use fix_rule; if they only ask why it matters use explain_rule.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       slug: {
         type: 'string',
-        description: "The rule's unique slug (e.g., 'doctype', 'alt-text')"
+        description: RULE_SLUG_DESCRIPTION
       },
       includeUrl: {
         type: 'boolean',

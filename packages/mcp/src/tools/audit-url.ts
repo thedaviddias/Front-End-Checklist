@@ -30,9 +30,7 @@ export interface AuditUrlResult extends ReviewCodeResult {
 export const auditUrlDefinition = {
   name: 'audit_url',
   title: 'Audit Live URL',
-  description: `Fetches a public URL and audits its HTML against frontend best practice rules. **Use this tool** when you want to check a live website without manually pasting HTML. Automatically fetches the page source and runs the same heuristic checks as review_code.
-
-**Workflow:** Call audit_url with a public https:// URL → get back a prioritized issue list → use fix_rule for remediation guidance on each issue.`,
+  description: `Fetches a public https:// page and runs the same static review as review_code on its HTML, returning prioritized issues with fix guidance. Use it when the user gives the URL of a deployed site instead of source code. Localhost, private networks, and plain http URLs are refused. Follow up on each issue with fix_rule or get_rule.`,
   annotations: OPEN_WORLD_READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
@@ -57,13 +55,12 @@ export const auditUrlDefinition = {
             'images'
           ]
         },
-        description:
-          'Optional: Focus review on specific categories (default: auto-detect from fetched HTML)'
+        description: 'Only check these categories (default: auto-detected from the fetched HTML).'
       },
       minPriority: {
         type: 'string',
         enum: ['critical', 'high', 'medium', 'low'],
-        description: 'Optional: Minimum priority level to report (default: medium)'
+        description: 'Lowest priority to report (default: medium).'
       }
     },
     required: ['url']

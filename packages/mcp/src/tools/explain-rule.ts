@@ -5,6 +5,7 @@ import {
   CATEGORY_ARRAY_SCHEMA,
   ERROR_WITH_SUGGESTIONS_SCHEMA,
   READ_ONLY_TOOL_ANNOTATIONS,
+  RULE_SLUG_DESCRIPTION,
   STRING_SCHEMA
 } from './metadata'
 
@@ -30,16 +31,14 @@ export type ExplainRuleOutput = ExplainRuleResult | ExplainRuleError
 export const explainRuleDefinition = {
   name: 'explain_rule',
   title: 'Explain Frontend Rule',
-  description: `Retrieves the educational explanation for a frontend rule. **Use PROACTIVELY** when the user asks "why" about frontend practices, or when explaining code review feedback. Provides context on why the rule matters, its background, and impact on web development. Categories help connect related concepts.
-
-**Workflow:** Use when users question a recommendation, or after fix_rule to provide educational context. Pair with check_rule to validate understanding, or search_rules to find related best practices in the same category.`,
+  description: `Explains why one rule matters: its background, the impact on users and the business, and related categories, without fix steps. Use it when the user asks why a practice matters or pushes back on a recommendation. For the complete rule including how to check and fix it, use get_rule.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       slug: {
         type: 'string',
-        description: "The rule's slug"
+        description: RULE_SLUG_DESCRIPTION
       }
     },
     required: ['slug']

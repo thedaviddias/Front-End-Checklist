@@ -53,6 +53,7 @@
     "mcp:audit": "tsx scripts/audit/mcp-audit.ts",
     "mcp:audit:security": "pnpm dlx mcp-security-auditor@latest scan packages/mcp/src --fail-on critical",
     "mcp:conformance": "pnpm --filter @repo/mcp conformance --",
+    "mcp:eval-tools": "pnpm --filter @repo/mcp eval:tools",
     "mcp:load": "pnpm --filter @repo/mcp load --",
     "mcp:serve": "pnpm --filter @repo/mcp serve --",
     "mcp:evaluate": "pnpm --filter @repo/mcp evaluate",

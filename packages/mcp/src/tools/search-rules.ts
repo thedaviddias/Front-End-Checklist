@@ -24,16 +24,15 @@ export interface SearchRulesInput {
 export const searchRulesDefinition = {
   name: 'search_rules',
   title: 'Search Frontend Rules',
-  description: `Searches and filters frontend development rules. **Use PROACTIVELY** when working on frontend code to find relevant best practices - search by technology (e.g., "react", "images"), concern (e.g., "accessibility", "performance"), or specific patterns. Returns summary information for each match - use get_rule for full details.
-
-**Workflow:** Use as a discovery tool before diving deeper. Start with list_categories to see available areas, then search_rules to find specific rules, then get_rule for complete details including code examples.`,
+  description: `Finds rules by keywords and/or category and priority filters, returning slugs, titles, and short summaries (paginated). Use it when you do not yet know which rule applies, e.g. "how should I load web fonts?" or "accessibility rules for forms". Then call get_rule on the best matches. To browse a whole category as a checklist use get_quick_reference.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       query: {
         type: 'string',
-        description: 'Free-text search query'
+        description:
+          "Keywords to match, e.g. 'lazy loading images'. Omit to list rules by filters only."
       },
       categories: {
         type: 'array',
@@ -54,7 +53,7 @@ export const searchRulesDefinition = {
             'i18n'
           ]
         },
-        description: 'Filter by categories (array)'
+        description: 'Only return rules in these categories.'
       },
       priorities: {
         type: 'array',
@@ -62,7 +61,7 @@ export const searchRulesDefinition = {
           type: 'string',
           enum: ['critical', 'high', 'medium', 'low']
         },
-        description: 'Filter by priorities (array)'
+        description: 'Only return rules with these priorities.'
       },
       limit: {
         type: 'integer',
@@ -73,7 +72,7 @@ export const searchRulesDefinition = {
       },
       cursor: {
         type: 'string',
-        description: 'Pagination cursor from previous response'
+        description: 'Cursor from a previous response, to fetch the next page of results.'
       }
     },
     required: []

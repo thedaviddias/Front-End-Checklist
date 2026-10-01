@@ -13,6 +13,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "conformance": "tsx scripts/conformance.ts",
+    "eval:tools": "tsx scripts/eval-tool-choice.ts",
     "evaluate": "jest tests/quality --runInBand",
     "lint": "biome check .",
     "load": "tsx scripts/load-test.ts",
@@ -34,6 +35,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
     "@modelcontextprotocol/client": "^2.2.0",
     "@repo/config-typescript": "workspace:^",
     "@types/jest": "catalog:",

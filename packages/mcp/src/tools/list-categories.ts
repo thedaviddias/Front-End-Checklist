@@ -9,9 +9,7 @@ import { NUMBER_SCHEMA, READ_ONLY_TOOL_ANNOTATIONS, STRING_SCHEMA } from './meta
 export const listCategoriesDefinition = {
   name: 'list_categories',
   title: 'List Rule Categories',
-  description: `Lists all available rule categories with their rule counts. **Use PROACTIVELY** at the start of a frontend project review to understand what best practice areas are available (accessibility, performance, SEO, security, etc.) and plan a comprehensive code review strategy.
-
-**Workflow:** Use FIRST when starting a comprehensive audit. Follow up with search_rules to explore specific categories, or review_code to automatically check code against rules in those categories.`,
+  description: `Lists every rule category (accessibility, performance, SEO, security, and more) with its rule count. Use it when the user asks what the checklist covers, or when you need valid category names for the filters of search_rules or get_quick_reference.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

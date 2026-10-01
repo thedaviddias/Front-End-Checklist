@@ -40,16 +40,14 @@ export interface ReviewCodeResult {
 export const reviewCodeDefinition = {
   name: 'review_code',
   title: 'Review Frontend Code',
-  description: `**PROACTIVE CODE REVIEW**: Runs a conservative, non-exhaustive static heuristic review of HTML/CSS/JS code against multiple frontend best practice rules simultaneously. **Use this tool FIRST** when reviewing, debugging, or improving any frontend code - it detects the code type and checks relevant rules it can prove from the snippet. Returns prioritized issues with fix guidance when static evidence is available, plus suggestions for rule retrieval when manual or rendered-state review is needed.
-
-**Workflow:** Use as the FIRST step for any code review. For each issue found, use fix_rule for remediation guidance or get_rule for complete context. If no issues are returned, treat that as "no provable static issue found", then follow suggestions with search_rules or get_rule before concluding the implementation is clean.`,
+  description: `Runs a non-exhaustive static heuristic review of pasted HTML, CSS, or JavaScript against many Front-End Checklist rules at once and returns prioritized issues with fix guidance. Use it as the first step when the user shares frontend code and wants it reviewed, audited, or debugged. No issues means nothing provable was found, not that the code is clean, so follow its suggestions with search_rules or get_rule. For a live page use audit_url instead; to test code against one named rule use check_rule.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
     properties: {
       code: {
         type: 'string',
-        description: 'The HTML, CSS, or JavaScript code to review'
+        description: 'The HTML, CSS, or JavaScript source to review (a snippet or a whole file).'
       },
       focus: {
         type: 'array',
@@ -66,13 +64,12 @@ export const reviewCodeDefinition = {
             'images'
           ]
         },
-        description:
-          'Optional: Focus review on specific categories (default: auto-detect from code)'
+        description: 'Only check these categories (default: auto-detected from the code).'
       },
       minPriority: {
         type: 'string',
         enum: ['critical', 'high', 'medium', 'low'],
-        description: 'Optional: Minimum priority level to report (default: medium)'
+        description: 'Lowest priority to report (default: medium).'
       }
     },
     required: ['code']
