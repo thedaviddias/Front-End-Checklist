@@ -1,4 +1,4 @@
-name: Routed CI
+name: Deploy
 
 on:
   push:
@@ -8,13 +8,16 @@ on:
 permissions:
   contents: read
 
+# Never cancel a production deploy that is already uploading to Vercel; queue
+# the next one instead.
 concurrency:
-  group: routed-production-${{ github.ref }}
-  cancel-in-progress: true
+  group: production-deploy
+  cancel-in-progress: false
 
 jobs:
   validate-and-deploy:
-    if: ${{ vars.BUILD_PROVIDER == 'github' || github.event_name == 'workflow_dispatch' }}
+    name: Validate and deploy production
+    if: github.repository == 'thedaviddias/Front-End-Checklist'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -26,8 +29,8 @@ jobs:
         with:
           node-version-file: .nvmrc
       - run: bash scripts/ci/validate.sh
-      - name: Build and deploy production
-        if: ${{ github.ref == 'refs/heads/main' && vars.BUILD_PROVIDER == 'github' }}
+      - name: Build on Vercel and deploy production
+        if: github.ref == 'refs/heads/main'
         run: bash scripts/ci/deploy-vercel.sh
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
