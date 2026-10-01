@@ -23,7 +23,8 @@ jest.mock('@/lib/rate-limit', () => ({
 }))
 
 jest.mock('@/lib/rule-content', () => ({
-  getRuleRawContent: mockGetRuleRawContent
+  getRuleRawContent: mockGetRuleRawContent,
+  readRuleRawContent: mockGetRuleRawContent
 }))
 
 jest.mock('@/lib/mcp-cache', () => ({

@@ -14,12 +14,17 @@ const RULES_DIR = path.join(process.cwd(), '..', '..', 'packages', 'content', 'r
  *
  * @param filePath - Relative path from rules dir (e.g. "en/html/alt-text.mdx")
  */
-export const getRuleRawContent = unstable_cache(
-  async (filePath: string): Promise<string> => {
-    const fullPath = path.join(RULES_DIR, filePath)
-    const raw = await readFile(fullPath, 'utf-8')
-    const match = raw.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/m)
-    return match ? match[1].trim() : raw
-  },
-  ['rule-raw-content']
-)
+export async function readRuleRawContent(filePath: string): Promise<string> {
+  const fullPath = path.join(RULES_DIR, filePath)
+  const raw = await readFile(fullPath, 'utf-8')
+  const match = raw.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/m)
+  return match ? match[1].trim() : raw
+}
+
+/**
+ * Cached variant of {@link readRuleRawContent} for rule pages.
+ *
+ * Avoid it for bulk reads: on Vercel each lookup is a data-cache round trip,
+ * so reading the whole corpus through it exhausts file descriptors.
+ */
+export const getRuleRawContent = unstable_cache(readRuleRawContent, ['rule-raw-content'])

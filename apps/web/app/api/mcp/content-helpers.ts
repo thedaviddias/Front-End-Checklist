@@ -1,3 +1,4 @@
+import { readdirSync, readlinkSync } from 'node:fs'
 import path from 'node:path'
 import type {
   Category,
@@ -9,7 +10,7 @@ import type {
   Subcategory
 } from '@repo/types'
 import { allChecklists, allRules } from 'content-collections'
-import { getRuleRawContent } from '@/lib/rule-content'
+import { readRuleRawContent } from '@/lib/rule-content'
 import { isChecklistDifficulty } from './route-helpers'
 
 let cachedRulesPromise: Promise<Rule[]> | null = null
@@ -79,10 +80,37 @@ export async function getRules(
   cachedRulesPromise ??= buildRules(isCategory, isSubcategory).catch(error => {
     // Never cache a failure: the next request should retry instead of failing forever.
     cachedRulesPromise = null
+    if (error instanceof Error && 'code' in error && error.code === 'EMFILE') {
+      console.error('[mcp] EMFILE while loading rules', describeOpenFileDescriptors())
+    }
     throw error
   })
 
   return cachedRulesPromise
+}
+
+/**
+ * Summarize this process's open file descriptors by target kind (Linux only).
+ *
+ * @returns Counts per descriptor kind, or a note when `/proc` is unavailable.
+ */
+function describeOpenFileDescriptors(): Record<string, number> | string {
+  try {
+    const counts: Record<string, number> = {}
+    for (const fd of readdirSync('/proc/self/fd')) {
+      let target = 'unknown'
+      try {
+        target = readlinkSync(`/proc/self/fd/${fd}`)
+      } catch {
+        // Descriptor closed while listing.
+      }
+      const kind = target.startsWith('/') ? path.dirname(target) : target.replace(/\[.*$/, '')
+      counts[kind] = (counts[kind] ?? 0) + 1
+    }
+    return counts
+  } catch {
+    return 'unavailable'
+  }
 }
 
 /** Raw MDX reads in flight at once, kept well under the function's file-descriptor limit. */
@@ -128,7 +156,7 @@ async function buildRule(
     typeof rule.subcategory === 'string' && isSubcategory(rule.subcategory)
       ? rule.subcategory
       : undefined
-  const content = rule.filePath ? await getRuleRawContent(rule.filePath) : ''
+  const content = rule.filePath ? await readRuleRawContent(rule.filePath) : ''
 
   return {
     title: rule.title,
