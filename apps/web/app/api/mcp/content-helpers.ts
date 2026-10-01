@@ -76,10 +76,17 @@ export async function getRules(
   isCategory: (value: string) => value is Category,
   isSubcategory: (value: string) => value is Subcategory
 ): Promise<Rule[]> {
-  cachedRulesPromise ??= buildRules(isCategory, isSubcategory)
+  cachedRulesPromise ??= buildRules(isCategory, isSubcategory).catch(error => {
+    // Never cache a failure: the next request should retry instead of failing forever.
+    cachedRulesPromise = null
+    throw error
+  })
 
   return cachedRulesPromise
 }
+
+/** Raw MDX reads in flight at once, kept well under the function's file-descriptor limit. */
+const RULE_READ_CONCURRENCY = 16
 
 /**
  * Build the English rule corpus exposed through MCP.
@@ -92,31 +99,51 @@ async function buildRules(
   isSubcategory: (value: string) => value is Subcategory
 ): Promise<Rule[]> {
   const enRules = allRules.filter(rule => rule.language === 'en')
+  const built: Rule[] = []
 
-  return Promise.all(
-    enRules.map(async rule => {
-      const subcategory =
-        typeof rule.subcategory === 'string' && isSubcategory(rule.subcategory)
-          ? rule.subcategory
-          : undefined
-      const content = rule.filePath ? await getRuleRawContent(rule.filePath) : ''
+  for (let start = 0; start < enRules.length; start += RULE_READ_CONCURRENCY) {
+    const batch = enRules.slice(start, start + RULE_READ_CONCURRENCY)
+    built.push(
+      ...(await Promise.all(batch.map(rule => buildRule(rule, isCategory, isSubcategory))))
+    )
+  }
 
-      return {
-        title: rule.title,
-        slug: rule.slug,
-        categories: rule.categories.filter(isCategory),
-        priority: rule.priority,
-        prompts: rule.prompts,
-        content,
-        primaryCategory: rule.primaryCategory,
-        url: rule.url,
-        ...(rule.sources ? { sources: rule.sources.filter(isRuleSource) } : {}),
-        ...(isRuleSourceSummary(rule.sourceSummary) ? { sourceSummary: rule.sourceSummary } : {}),
-        ...(subcategory ? { subcategory } : {}),
-        ...(rule.relatedRules ? { relatedRules: rule.relatedRules.filter(isRelatedRule) } : {})
-      }
-    })
-  )
+  return built
+}
+
+/**
+ * Convert one content-collection rule into the MCP rule shape, reading its raw MDX body.
+ *
+ * @param rule - Content-collection rule record.
+ * @param isCategory - Category validator.
+ * @param isSubcategory - Subcategory validator.
+ * @returns MCP rule record.
+ */
+async function buildRule(
+  rule: (typeof allRules)[number],
+  isCategory: (value: string) => value is Category,
+  isSubcategory: (value: string) => value is Subcategory
+): Promise<Rule> {
+  const subcategory =
+    typeof rule.subcategory === 'string' && isSubcategory(rule.subcategory)
+      ? rule.subcategory
+      : undefined
+  const content = rule.filePath ? await getRuleRawContent(rule.filePath) : ''
+
+  return {
+    title: rule.title,
+    slug: rule.slug,
+    categories: rule.categories.filter(isCategory),
+    priority: rule.priority,
+    prompts: rule.prompts,
+    content,
+    primaryCategory: rule.primaryCategory,
+    url: rule.url,
+    ...(rule.sources ? { sources: rule.sources.filter(isRuleSource) } : {}),
+    ...(isRuleSourceSummary(rule.sourceSummary) ? { sourceSummary: rule.sourceSummary } : {}),
+    ...(subcategory ? { subcategory } : {}),
+    ...(rule.relatedRules ? { relatedRules: rule.relatedRules.filter(isRelatedRule) } : {})
+  }
 }
 
 /**
