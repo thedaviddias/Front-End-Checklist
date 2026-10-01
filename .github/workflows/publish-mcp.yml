@@ -1,0 +1,45 @@
+name: Publish MCP server
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - packages/mcp/server.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-mcp
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish to MCP Registry
+    if: github.repository == 'thedaviddias/Front-End-Checklist'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # OIDC proves the io.github.thedaviddias namespace without a stored token.
+      id-token: write
+    env:
+      MCP_PUBLISHER_VERSION: v1.8.1
+    defaults:
+      run:
+        working-directory: packages/mcp
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install mcp-publisher
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}/mcp-publisher_linux_amd64.tar.gz" \
+            | tar xz mcp-publisher
+
+      - name: Authenticate with GitHub OIDC
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish server.json
+        run: ./mcp-publisher publish
