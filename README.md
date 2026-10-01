@@ -7,11 +7,19 @@
 
 **The essential checklist for modern web development, for humans and AI agents**
 
-Front-End Checklist is the open-source front-end quality system for humans and AI agents. It turns front-end best practices into a practical review workflow you can browse on the web, run through with MCP-compatible tools, or work through directly in this README.
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![ProductHunt](https://img.shields.io/badge/ProductHunt-Launch-orange)](https://www.producthunt.com/products/front-end-checklist)
+[![MCP](https://img.shields.io/badge/MCP-Ready-6366f1)](https://modelcontextprotocol.io)
 
 </div>
 
+--
+
+Front-End Checklist is the open-source front-end quality system for humans and AI agents. It turns front-end best practices into a practical review workflow you can browse on the web, run through with MCP-compatible tools, or work through directly in this README.
+
 ---
+
+## Introduction
 
 - Website: [frontendchecklist.io](https://frontendchecklist.io)
 - Rules: [frontendchecklist.io/rules](https://frontendchecklist.io/rules)
