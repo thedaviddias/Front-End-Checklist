@@ -110,14 +110,19 @@ function parseCategories(frontmatter: string): FrontendChecklistCategory[] {
 /**
  * Resolve the default rule directory for the current execution environment.
  *
+ * Inside the monorepo the canonical `packages/content/rules` tree wins: the
+ * packaged `rules/` copy is only refreshed by `sync:rules` at pack time, so a
+ * leftover copy would otherwise serve stale rules. Published installs have no
+ * monorepo tree and use the packaged copy.
+ *
  * @returns Filesystem path containing the MDX rules.
  */
 function resolveDefaultRulesDir(): string {
-  if (fs.existsSync(PACKAGE_RULES_DIR)) {
-    return PACKAGE_RULES_DIR
+  if (fs.existsSync(MONOREPO_RULES_DIR)) {
+    return MONOREPO_RULES_DIR
   }
 
-  return MONOREPO_RULES_DIR
+  return PACKAGE_RULES_DIR
 }
 
 /**
