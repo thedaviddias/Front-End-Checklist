@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/unused-css
+  url: https://frontendchecklist.io/rules/css/unused-css
 ---
 
 # Remove unused CSS rules
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Remove un
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/unused-css
+Rule page: https://frontendchecklist.io/rules/css/unused-css

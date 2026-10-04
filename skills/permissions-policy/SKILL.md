@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/permissions-policy
+  url: https://frontendchecklist.io/rules/security/permissions-policy
 ---
 
 # Set a Permissions-Policy header
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Set a Pe
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/permissions-policy
+Rule page: https://frontendchecklist.io/rules/security/permissions-policy

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/accesskeys
+  url: https://frontendchecklist.io/rules/accessibility/accesskeys
 ---
 
 # Ensure accesskey values are unique
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Ensure accesskey v
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/accesskeys
+Rule page: https://frontendchecklist.io/rules/accessibility/accesskeys

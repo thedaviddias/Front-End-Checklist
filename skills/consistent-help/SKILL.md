@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/consistent-help
+  url: https://frontendchecklist.io/rules/accessibility/consistent-help
 ---
 
 # Keep repeated help mechanisms in a consistent location
@@ -42,4 +42,4 @@ Review page chrome, support UI, and responsive layouts related to Keep repeated 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/consistent-help
+Rule page: https://frontendchecklist.io/rules/accessibility/consistent-help

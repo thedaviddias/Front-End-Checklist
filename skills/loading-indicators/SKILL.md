@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/loading-indicators
+  url: https://frontendchecklist.io/rules/performance/loading-indicators
 ---
 
 # Show loading indicators
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Show loading indicat
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/loading-indicators
+Rule page: https://frontendchecklist.io/rules/performance/loading-indicators

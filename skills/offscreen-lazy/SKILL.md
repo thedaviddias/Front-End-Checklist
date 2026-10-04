@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/offscreen-lazy
+  url: https://frontendchecklist.io/rules/images/offscreen-lazy
 ---
 
 # Lazy load offscreen images
@@ -43,4 +43,4 @@ Review image assets, markup, and delivery configuration related to Lazy load off
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/offscreen-lazy
+Rule page: https://frontendchecklist.io/rules/images/offscreen-lazy

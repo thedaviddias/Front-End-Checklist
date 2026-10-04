@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "120"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/contract-testing
+  url: https://frontendchecklist.io/rules/testing/contract-testing
 ---
 
 # Implement consumer-driven contract testing for API boundaries
@@ -42,4 +42,4 @@ Review the Pact consumer tests. Flag interactions that are too permissive (any-t
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/contract-testing
+Rule page: https://frontendchecklist.io/rules/testing/contract-testing

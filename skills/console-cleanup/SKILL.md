@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/console-cleanup
+  url: https://frontendchecklist.io/rules/javascript/console-cleanup
 ---
 
 # Remove console statements in production
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Remove
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/console-cleanup
+Rule page: https://frontendchecklist.io/rules/javascript/console-cleanup

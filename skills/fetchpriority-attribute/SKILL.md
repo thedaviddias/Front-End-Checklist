@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/fetchpriority-attribute
+  url: https://frontendchecklist.io/rules/performance/fetchpriority-attribute
 ---
 
 # Use fetchpriority to hint resource loading priority
@@ -42,4 +42,4 @@ Review the HTML for images above the fold. Flag the LCP candidate if it lacks fe
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/fetchpriority-attribute
+Rule page: https://frontendchecklist.io/rules/performance/fetchpriority-attribute

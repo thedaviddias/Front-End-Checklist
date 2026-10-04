@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/performance-budget
+  url: https://frontendchecklist.io/rules/testing/performance-budget
 ---
 
 # Enforce performance budgets in CI
@@ -43,4 +43,4 @@ Inspect CI workflows, `package.json`, and Lighthouse or bundle-size config for e
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/performance-budget
+Rule page: https://frontendchecklist.io/rules/testing/performance-budget

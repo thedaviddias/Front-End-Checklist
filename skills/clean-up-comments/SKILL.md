@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/clean-up-comments
+  url: https://frontendchecklist.io/rules/html/clean-up-comments
 ---
 
 # Remove comments and debug code in production
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/clean-up-comments
+Rule page: https://frontendchecklist.io/rules/html/clean-up-comments

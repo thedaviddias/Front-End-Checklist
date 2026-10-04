@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/styles-lint
+  url: https://frontendchecklist.io/rules/css/styles-lint
 ---
 
 # Lint CSS and SCSS files
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Lint CSS 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/styles-lint
+Rule page: https://frontendchecklist.io/rules/css/styles-lint

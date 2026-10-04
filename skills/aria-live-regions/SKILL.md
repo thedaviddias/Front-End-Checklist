@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-live-regions
+  url: https://frontendchecklist.io/rules/accessibility/aria-live-regions
 ---
 
 # Announce dynamic content with ARIA live regions
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Announce dynamic c
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-live-regions
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-live-regions

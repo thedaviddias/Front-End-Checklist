@@ -1,0 +1,6 @@
+[mcp_servers.frontend-checklist]
+command = "npx"
+args = [
+    "tsx",
+    "packages/mcp/src/cli.ts",
+]

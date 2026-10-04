@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/avif-format
+  url: https://frontendchecklist.io/rules/images/avif-format
 ---
 
 # Use AVIF format for modern browsers
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use AVIF form
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/avif-format
+Rule page: https://frontendchecklist.io/rules/images/avif-format

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/token-storage-security
+  url: https://frontendchecklist.io/rules/security/token-storage-security
 ---
 
 # Store authentication tokens securely
@@ -43,4 +43,4 @@ Review authentication flows, token storage calls, and API client code. Flag any 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/token-storage-security
+Rule page: https://frontendchecklist.io/rules/security/token-storage-security

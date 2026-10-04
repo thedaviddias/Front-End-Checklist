@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/srcset
+  url: https://frontendchecklist.io/rules/images/srcset
 ---
 
 # Use srcset for responsive images
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use srcset fo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/srcset
+Rule page: https://frontendchecklist.io/rules/images/srcset

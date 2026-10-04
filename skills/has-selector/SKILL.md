@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/has-selector
+  url: https://frontendchecklist.io/rules/css/has-selector
 ---
 
 # Use :has() to style parent elements based on their descendants
@@ -42,4 +42,4 @@ Review the stylesheets and component JavaScript in this file. Flag any locations
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/has-selector
+Rule page: https://frontendchecklist.io/rules/css/has-selector

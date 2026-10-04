@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/link-text
+  url: https://frontendchecklist.io/rules/accessibility/link-text
 ---
 
 # Use descriptive link text
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Use descriptive li
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/link-text
+Rule page: https://frontendchecklist.io/rules/accessibility/link-text

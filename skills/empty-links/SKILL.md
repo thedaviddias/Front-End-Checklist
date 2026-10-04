@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/empty-links
+  url: https://frontendchecklist.io/rules/accessibility/empty-links
 ---
 
 # Fix empty and broken links
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Fix empty and brok
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/empty-links
+Rule page: https://frontendchecklist.io/rules/accessibility/empty-links

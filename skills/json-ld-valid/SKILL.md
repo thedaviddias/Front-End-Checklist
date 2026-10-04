@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/json-ld-valid
+  url: https://frontendchecklist.io/rules/seo/json-ld-valid
 ---
 
 # Use valid JSON-LD structured data
@@ -51,4 +51,4 @@ Extract all `<script type='application/ld+json'>` element contents. Run `JSON.pa
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/json-ld-valid
+Rule page: https://frontendchecklist.io/rules/seo/json-ld-valid

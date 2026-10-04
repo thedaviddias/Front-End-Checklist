@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/privacy/data-minimisation
+  url: https://frontendchecklist.io/rules/privacy/data-minimisation
 ---
 
 # Collect only the minimum personal data necessary
@@ -43,4 +43,4 @@ Review form components, fetch/axios calls, and storage utilities for personal da
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/privacy/data-minimisation
+Rule page: https://frontendchecklist.io/rules/privacy/data-minimisation

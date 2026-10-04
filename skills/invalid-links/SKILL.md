@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/invalid-links
+  url: https://frontendchecklist.io/rules/seo/invalid-links
 ---
 
 # Fix invalid links
@@ -51,4 +51,4 @@ Query all `<a>` elements in the rendered DOM. For each, extract the `href` attri
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/invalid-links
+Rule page: https://frontendchecklist.io/rules/seo/invalid-links

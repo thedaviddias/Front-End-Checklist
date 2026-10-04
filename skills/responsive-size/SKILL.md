@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/responsive-size
+  url: https://frontendchecklist.io/rules/images/responsive-size
 ---
 
 # Serve images at the correct display size
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Serve images 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/responsive-size
+Rule page: https://frontendchecklist.io/rules/images/responsive-size

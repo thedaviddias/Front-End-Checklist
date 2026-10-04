@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/image-optimization
+  url: https://frontendchecklist.io/rules/images/image-optimization
 ---
 
 # Optimize all images for web
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Optimize all 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/image-optimization
+Rule page: https://frontendchecklist.io/rules/images/image-optimization

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/keyword-stuffing
+  url: https://frontendchecklist.io/rules/seo/keyword-stuffing
 ---
 
 # Avoid keyword stuffing
@@ -48,4 +48,4 @@ Extract text content from the page body (strip HTML tags). Tokenise into words. 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/keyword-stuffing
+Rule page: https://frontendchecklist.io/rules/seo/keyword-stuffing

@@ -49,7 +49,7 @@ jest.mock('content-collections', () => ({
         explain: 'Standards mode needs it.'
       },
       primaryCategory: 'html',
-      url: '/en/rules/html/doctype',
+      url: '/rules/html/doctype',
       filePath: 'rules/en/html/doctype.mdx'
     }
   ],
@@ -66,7 +66,7 @@ jest.mock('content-collections', () => ({
       order: 1,
       featured: true,
       language: 'en',
-      url: '/en/checklists/launch-checklist'
+      url: '/checklists/launch-checklist'
     }
   ]
 }))

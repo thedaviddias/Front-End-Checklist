@@ -36,16 +36,6 @@ interface AppShellContentProps {
   githubStars: number | null
 }
 
-/** Short temporary banner communicating the current beta period. */
-function BetaBanner() {
-  return (
-    <div className="border-border border-b bg-accent/10 px-4 py-2 text-center text-foreground text-sm">
-      <span className="font-medium">Beta:</span> Front-End Checklist is currently in beta. Some
-      issues are still being fixed. Thanks for your patience.
-    </div>
-  )
-}
-
 /** Renders the page layout with header, main content area, and footer. */
 function AppShellContent({ githubStars }: AppShellContentProps) {
   const { openPalette } = useCommandPalette()
@@ -54,10 +44,7 @@ function AppShellContent({ githubStars }: AppShellContentProps) {
     <ErrorBoundary
       fallback={reset => <SectionErrorFallback sectionName="Header" onRetry={reset} />}
     >
-      <div>
-        <BetaBanner />
-        <Header onOpenSearch={openPalette} githubStars={githubStars} />
-      </div>
+      <Header onOpenSearch={openPalette} githubStars={githubStars} />
     </ErrorBoundary>
   )
 }

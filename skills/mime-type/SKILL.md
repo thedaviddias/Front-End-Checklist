@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/mime-type
+  url: https://frontendchecklist.io/rules/seo/mime-type
 ---
 
 # MIME Type Validation
@@ -42,4 +42,4 @@ For HTML, CSS, and JS assets, check the Content-Type response header. Verify HTM
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/mime-type
+Rule page: https://frontendchecklist.io/rules/seo/mime-type

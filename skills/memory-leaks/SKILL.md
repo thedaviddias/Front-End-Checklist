@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/memory-leaks
+  url: https://frontendchecklist.io/rules/javascript/memory-leaks
 ---
 
 # Prevent common memory leak patterns
@@ -43,4 +43,4 @@ Review scripts, client components, and browser execution paths related to Preven
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/memory-leaks
+Rule page: https://frontendchecklist.io/rules/javascript/memory-leaks

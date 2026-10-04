@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/unit-tests
+  url: https://frontendchecklist.io/rules/testing/unit-tests
 ---
 
 # Write unit tests
@@ -43,4 +43,4 @@ Review tests, CI workflows, and enforcement points related to Write unit tests. 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/unit-tests
+Rule page: https://frontendchecklist.io/rules/testing/unit-tests

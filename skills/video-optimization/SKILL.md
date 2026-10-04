@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/video-optimization
+  url: https://frontendchecklist.io/rules/performance/video-optimization
 ---
 
 # Optimize and compress web videos
@@ -42,4 +42,4 @@ Review video assets, <video>/<source> markup, and any encoding or CDN transform 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/video-optimization
+Rule page: https://frontendchecklist.io/rules/performance/video-optimization

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/length
+  url: https://frontendchecklist.io/rules/seo/length
 ---
 
 # Keep URLs concise
@@ -50,4 +50,4 @@ Parse the pathname of each URL. Count path segments (split by `/`). Measure char
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/length
+Rule page: https://frontendchecklist.io/rules/seo/length

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/privacy/third-party-cookies
+  url: https://frontendchecklist.io/rules/privacy/third-party-cookies
 ---
 
 # Avoid third-party cookies
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Avoid th
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/privacy/third-party-cookies
+Rule page: https://frontendchecklist.io/rules/privacy/third-party-cookies

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/redirect-chain
+  url: https://frontendchecklist.io/rules/seo/redirect-chain
 ---
 
 # Avoid multi-hop redirect chains
@@ -42,4 +42,4 @@ Test each redirect rule configured on the server. For each source URL, follow al
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/redirect-chain
+Rule page: https://frontendchecklist.io/rules/seo/redirect-chain

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/css-file-size
+  url: https://frontendchecklist.io/rules/performance/css-file-size
 ---
 
 # Optimize CSS file size
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Optimize CSS file si
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/css-file-size
+Rule page: https://frontendchecklist.io/rules/performance/css-file-size

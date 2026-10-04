@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/https-downgrade
+  url: https://frontendchecklist.io/rules/seo/https-downgrade
 ---
 
 # Do not link from HTTPS to HTTP
@@ -48,4 +48,4 @@ Parse all `<a href>`, `<img src>`, `<script src>`, and `<link href>` attributes.
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/https-downgrade
+Rule page: https://frontendchecklist.io/rules/seo/https-downgrade

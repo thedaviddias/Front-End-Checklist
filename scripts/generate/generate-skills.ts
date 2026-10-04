@@ -20,6 +20,7 @@ import matter from 'gray-matter'
 
 const RULES_DIR = path.join(process.cwd(), 'packages/content/rules/en')
 const OUTPUT_DIR = path.join(process.cwd(), 'skills')
+const PLUGIN_SKILLS_DIR = path.join(process.cwd(), 'plugins/front-end-checklist/skills')
 const SITE_URL = 'https://frontendchecklist.io'
 
 interface RuleFrontmatter {
@@ -99,7 +100,7 @@ function buildSkillMd(slug: string, category: string, fm: RuleFrontmatter): stri
     description = `${description.replace(/\.$/, '')} — ${fm.title} (${category}).`
   }
 
-  const url = `${SITE_URL}/en/rules/${category}/${slug}`
+  const url = `${SITE_URL}/rules/${category}/${slug}`
 
   const lines: string[] = [
     '---',
@@ -352,7 +353,7 @@ function buildGlobalSkillMd(stats: GlobalRuleStat[]): string {
     '  difficulty: intermediate',
     `  estimatedTime: "30"`,
     '  source: frontendchecklist.io',
-    `  url: ${SITE_URL}/en/mcp`,
+    `  url: ${SITE_URL}/mcp`,
     '---',
     '',
     '# Front-End Checklist Global Audit',
@@ -423,7 +424,7 @@ function buildGlobalSkillMd(stats: GlobalRuleStat[]): string {
     '',
     'See `references/categories.md` for category coverage and tool routing.',
     '',
-    `MCP docs: ${SITE_URL}/en/mcp`,
+    `MCP docs: ${SITE_URL}/mcp`,
     ''
   ].join('\n')
 }
@@ -493,7 +494,7 @@ function buildGlobalReferencesMd(stats: GlobalRuleStat[]): string {
 
   lines.push(
     '',
-    `Rules browser: ${SITE_URL}/en/rules`,
+    `Rules browser: ${SITE_URL}/rules`,
     `Full reference: ${SITE_URL}/llms-full.txt`,
     ''
   )
@@ -503,12 +504,19 @@ function buildGlobalReferencesMd(stats: GlobalRuleStat[]): string {
 
 function writeGlobalSkill() {
   const stats = collectGlobalRuleStats()
-  const skillDir = path.join(OUTPUT_DIR, 'frontend-checklist-global')
-  const referencesDir = path.join(skillDir, 'references')
+  const skillMd = buildGlobalSkillMd(stats)
+  const categoriesMd = buildGlobalReferencesMd(stats)
 
-  mkdirSync(referencesDir, { recursive: true })
-  writeFileSync(path.join(skillDir, 'SKILL.md'), buildGlobalSkillMd(stats))
-  writeFileSync(path.join(referencesDir, 'categories.md'), buildGlobalReferencesMd(stats))
+  // The Claude Code / Codex plugin ships its own copy: installed plugins are
+  // copied into a cache, so a symlink back to skills/ would break.
+  for (const outputDir of [OUTPUT_DIR, PLUGIN_SKILLS_DIR]) {
+    const skillDir = path.join(outputDir, 'frontend-checklist-global')
+    const referencesDir = path.join(skillDir, 'references')
+
+    mkdirSync(referencesDir, { recursive: true })
+    writeFileSync(path.join(skillDir, 'SKILL.md'), skillMd)
+    writeFileSync(path.join(referencesDir, 'categories.md'), categoriesMd)
+  }
 }
 
 /**

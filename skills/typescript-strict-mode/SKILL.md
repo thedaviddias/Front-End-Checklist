@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/typescript-strict-mode
+  url: https://frontendchecklist.io/rules/javascript/typescript-strict-mode
 ---
 
 # Enable TypeScript strict mode in tsconfig.json
@@ -42,4 +42,4 @@ Check whether the codebase relies on implicit any, unchecked null access, or loo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/typescript-strict-mode
+Rule page: https://frontendchecklist.io/rules/javascript/typescript-strict-mode

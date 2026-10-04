@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/dom-size
+  url: https://frontendchecklist.io/rules/performance/dom-size
 ---
 
 # Reduce DOM size and complexity
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Reduce DOM size and 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/dom-size
+Rule page: https://frontendchecklist.io/rules/performance/dom-size

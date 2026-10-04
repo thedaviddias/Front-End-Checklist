@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/nap-consistency
+  url: https://frontendchecklist.io/rules/seo/nap-consistency
 ---
 
 # Keep NAP details consistent
@@ -42,4 +42,4 @@ Extract all instances of the business name, street address, and phone number fro
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/nap-consistency
+Rule page: https://frontendchecklist.io/rules/seo/nap-consistency

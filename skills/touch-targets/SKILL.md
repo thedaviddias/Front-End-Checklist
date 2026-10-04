@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/touch-targets
+  url: https://frontendchecklist.io/rules/accessibility/touch-targets
 ---
 
 # Provide sufficient touch target size
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Provide sufficient
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/touch-targets
+Rule page: https://frontendchecklist.io/rules/accessibility/touch-targets

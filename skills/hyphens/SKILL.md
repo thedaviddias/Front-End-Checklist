@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/hyphens
+  url: https://frontendchecklist.io/rules/seo/hyphens
 ---
 
 # Use hyphens in URLs
@@ -49,4 +49,4 @@ Parse all URL paths used in the application's router or CMS slug fields. Flag an
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/hyphens
+Rule page: https://frontendchecklist.io/rules/seo/hyphens

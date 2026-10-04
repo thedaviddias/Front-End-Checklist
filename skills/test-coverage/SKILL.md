@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/test-coverage
+  url: https://frontendchecklist.io/rules/testing/test-coverage
 ---
 
 # Maintain test coverage thresholds
@@ -42,4 +42,4 @@ Review tests, CI workflows, and enforcement points related to Maintain test cove
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/test-coverage
+Rule page: https://frontendchecklist.io/rules/testing/test-coverage

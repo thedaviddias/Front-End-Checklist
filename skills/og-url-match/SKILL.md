@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/og-url-match
+  url: https://frontendchecklist.io/rules/seo/og-url-match
 ---
 
 # OG URL Match
@@ -42,4 +42,4 @@ Compare the value of <meta property='og:url' content='...'> with the value of <l
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/og-url-match
+Rule page: https://frontendchecklist.io/rules/seo/og-url-match

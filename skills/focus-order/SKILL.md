@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/focus-order
+  url: https://frontendchecklist.io/rules/accessibility/focus-order
 ---
 
 # Ensure logical focus order
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Ensure logical foc
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/focus-order
+Rule page: https://frontendchecklist.io/rules/accessibility/focus-order

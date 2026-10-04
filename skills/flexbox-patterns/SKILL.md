@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/flexbox-patterns
+  url: https://frontendchecklist.io/rules/css/flexbox-patterns
 ---
 
 # Apply Flexbox best practices
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Apply Fle
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/flexbox-patterns
+Rule page: https://frontendchecklist.io/rules/css/flexbox-patterns

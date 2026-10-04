@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/charset
+  url: https://frontendchecklist.io/rules/html/charset
 ---
 
 # Declare UTF-8 character encoding
@@ -41,4 +41,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/charset
+Rule page: https://frontendchecklist.io/rules/html/charset

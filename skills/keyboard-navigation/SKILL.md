@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/keyboard-navigation
+  url: https://frontendchecklist.io/rules/accessibility/keyboard-navigation
 ---
 
 # Enable keyboard navigation for all elements
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Enable keyboard na
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/keyboard-navigation
+Rule page: https://frontendchecklist.io/rules/accessibility/keyboard-navigation

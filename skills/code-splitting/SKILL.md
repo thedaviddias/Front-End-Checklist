@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/code-splitting
+  url: https://frontendchecklist.io/rules/javascript/code-splitting
 ---
 
 # Split large JavaScript bundles
@@ -42,4 +42,4 @@ Inspect route modules, heavy feature imports, and third-party libraries loaded o
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/code-splitting
+Rule page: https://frontendchecklist.io/rules/javascript/code-splitting

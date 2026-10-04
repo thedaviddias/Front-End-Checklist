@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/browser-required
+  url: https://frontendchecklist.io/rules/performance/browser-required
 ---
 
 # Perform browser-based performance audits
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Perform browser-base
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/browser-required
+Rule page: https://frontendchecklist.io/rules/performance/browser-required

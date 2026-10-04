@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/i18n/hreflang
+  url: https://frontendchecklist.io/rules/i18n/hreflang
 ---
 
 # Add hreflang tags for multilingual sites
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/i18n/hreflang
+Rule page: https://frontendchecklist.io/rules/i18n/hreflang

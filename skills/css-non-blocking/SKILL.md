@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-non-blocking
+  url: https://frontendchecklist.io/rules/css/css-non-blocking
 ---
 
 # Load CSS without blocking render
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Load CSS 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-non-blocking
+Rule page: https://frontendchecklist.io/rules/css/css-non-blocking

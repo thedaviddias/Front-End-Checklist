@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/llm-parsability
+  url: https://frontendchecklist.io/rules/seo/llm-parsability
 ---
 
 # Make content easy for LLMs to parse
@@ -42,4 +42,4 @@ Check the page's rendered HTML for: (1) proper heading hierarchy (h1→h2→h3),
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/llm-parsability
+Rule page: https://frontendchecklist.io/rules/seo/llm-parsability

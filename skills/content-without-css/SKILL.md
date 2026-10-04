@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/content-without-css
+  url: https://frontendchecklist.io/rules/accessibility/content-without-css
 ---
 
 # Ensure content remains usable without CSS
@@ -42,4 +42,4 @@ Review templates, rendered HTML, and component markup related to Ensure content 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/content-without-css
+Rule page: https://frontendchecklist.io/rules/accessibility/content-without-css

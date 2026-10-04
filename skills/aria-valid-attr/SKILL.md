@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-valid-attr
+  url: https://frontendchecklist.io/rules/accessibility/aria-valid-attr
 ---
 
 # Ensure ARIA attributes are valid
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Ensure ARIA attrib
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-valid-attr
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-valid-attr

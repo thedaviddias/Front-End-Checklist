@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/const-let
+  url: https://frontendchecklist.io/rules/javascript/const-let
 ---
 
 # Prefer const and let over var
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Prefer
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/const-let
+Rule page: https://frontendchecklist.io/rules/javascript/const-let

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/product
+  url: https://frontendchecklist.io/rules/seo/product
 ---
 
 # Add Product schema markup
@@ -42,4 +42,4 @@ Find JSON-LD blocks with @type 'Product'. Verify required fields: name, image (m
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/product
+Rule page: https://frontendchecklist.io/rules/seo/product

@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-at-property
+  url: https://frontendchecklist.io/rules/css/css-at-property
 ---
 
 # Register CSS custom properties with @property for animation and type safety
@@ -42,4 +42,4 @@ Inspect all CSS transitions and animations that reference custom properties. Fla
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-at-property
+Rule page: https://frontendchecklist.io/rules/css/css-at-property

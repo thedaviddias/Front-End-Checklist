@@ -1,0 +1,20 @@
+{
+  "name": "front-end-checklist",
+  "interface": {
+    "displayName": "Front-End Checklist"
+  },
+  "plugins": [
+    {
+      "name": "front-end-checklist",
+      "source": {
+        "source": "local",
+        "path": "./plugins/front-end-checklist"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

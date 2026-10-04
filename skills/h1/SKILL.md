@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/h1
+  url: https://frontendchecklist.io/rules/seo/h1
 ---
 
 # Use a single descriptive H1
@@ -49,4 +49,4 @@ Query the DOM for all `<h1>` elements. Assert exactly one exists per page. Check
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/h1
+Rule page: https://frontendchecklist.io/rules/seo/h1

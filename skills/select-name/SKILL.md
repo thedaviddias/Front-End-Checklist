@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/select-name
+  url: https://frontendchecklist.io/rules/accessibility/select-name
 ---
 
 # Provide accessible names for select elements
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Provide accessible
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/select-name
+Rule page: https://frontendchecklist.io/rules/accessibility/select-name

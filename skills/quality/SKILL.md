@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/quality
+  url: https://frontendchecklist.io/rules/seo/quality
 ---
 
 # Publish high-quality content
@@ -42,4 +42,4 @@ Analyse the page content for quality signals: (1) Word count — is the topic co
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/quality
+Rule page: https://frontendchecklist.io/rules/seo/quality

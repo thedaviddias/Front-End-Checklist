@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/unique-id
+  url: https://frontendchecklist.io/rules/html/unique-id
 ---
 
 # Ensure all IDs are unique
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/unique-id
+Rule page: https://frontendchecklist.io/rules/html/unique-id

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/llms-txt
+  url: https://frontendchecklist.io/rules/seo/llms-txt
 ---
 
 # Publish llms.txt for documentation-heavy sites
@@ -42,4 +42,4 @@ Review route handlers, static files, or framework metadata output related to `ll
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/llms-txt
+Rule page: https://frontendchecklist.io/rules/seo/llms-txt

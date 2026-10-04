@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/internal-links
+  url: https://frontendchecklist.io/rules/seo/internal-links
 ---
 
 # Add internal links to key pages
@@ -48,4 +48,4 @@ Build an internal link graph from crawl data. Compute in-degree (number of pages
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/internal-links
+Rule page: https://frontendchecklist.io/rules/seo/internal-links

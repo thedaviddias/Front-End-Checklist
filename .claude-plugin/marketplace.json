@@ -1,0 +1,19 @@
+{
+  "name": "front-end-checklist",
+  "owner": {
+    "name": "David Dias",
+    "url": "https://thedaviddias.com"
+  },
+  "metadata": {
+    "description": "Official Front-End Checklist plugin: the remote MCP server plus the global audit skill."
+  },
+  "plugins": [
+    {
+      "name": "front-end-checklist",
+      "source": "./plugins/front-end-checklist",
+      "description": "Review frontend code and live pages against 386 quality-gated rules for accessibility, performance, SEO, security, and HTML/CSS/JS best practices.",
+      "category": "development",
+      "homepage": "https://frontendchecklist.io/mcp"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/webfont-format
+  url: https://frontendchecklist.io/rules/css/webfont-format
 ---
 
 # Optimize web font formats
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Optimize 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/webfont-format
+Rule page: https://frontendchecklist.io/rules/css/webfont-format

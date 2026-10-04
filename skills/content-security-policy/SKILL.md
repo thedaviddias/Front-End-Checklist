@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "45"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/content-security-policy
+  url: https://frontendchecklist.io/rules/security/content-security-policy
 ---
 
 # Implement a content security policy
@@ -45,4 +45,4 @@ Review server config, headers, forms, and integration points related to Implemen
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/content-security-policy
+Rule page: https://frontendchecklist.io/rules/security/content-security-policy

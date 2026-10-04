@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/js-file-size
+  url: https://frontendchecklist.io/rules/performance/js-file-size
 ---
 
 # Optimize JavaScript bundle size
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Optimize JavaScript 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/js-file-size
+Rule page: https://frontendchecklist.io/rules/performance/js-file-size

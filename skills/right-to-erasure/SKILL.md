@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "60"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/privacy/right-to-erasure
+  url: https://frontendchecklist.io/rules/privacy/right-to-erasure
 ---
 
 # Implement a user-facing data deletion mechanism
@@ -42,4 +42,4 @@ Review account settings, privacy pages, and API routes for a data deletion endpo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/privacy/right-to-erasure
+Rule page: https://frontendchecklist.io/rules/privacy/right-to-erasure

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/avoid-eval
+  url: https://frontendchecklist.io/rules/javascript/avoid-eval
 ---
 
 # Never use eval() or unsafe dynamic code execution
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Never 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/avoid-eval
+Rule page: https://frontendchecklist.io/rules/javascript/avoid-eval

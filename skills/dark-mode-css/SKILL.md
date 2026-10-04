@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/dark-mode-css
+  url: https://frontendchecklist.io/rules/css/dark-mode-css
 ---
 
 # Support dark mode with prefers-color-scheme
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Support d
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/dark-mode-css
+Rule page: https://frontendchecklist.io/rules/css/dark-mode-css

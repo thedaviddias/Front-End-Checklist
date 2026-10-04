@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-critical
+  url: https://frontendchecklist.io/rules/css/css-critical
 ---
 
 # Inline critical CSS for faster rendering
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Inline cr
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-critical
+Rule page: https://frontendchecklist.io/rules/css/css-critical

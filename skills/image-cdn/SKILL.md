@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/image-cdn
+  url: https://frontendchecklist.io/rules/images/image-cdn
 ---
 
 # Serve images from a CDN
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Serve images 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/image-cdn
+Rule page: https://frontendchecklist.io/rules/images/image-cdn

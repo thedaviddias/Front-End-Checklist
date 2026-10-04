@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/ttfb
+  url: https://frontendchecklist.io/rules/performance/ttfb
 ---
 
 # Reduce Time to First Byte (TTFB)
@@ -41,4 +41,4 @@ Review server-rendered routes, API handlers, cache configuration, and database a
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/ttfb
+Rule page: https://frontendchecklist.io/rules/performance/ttfb

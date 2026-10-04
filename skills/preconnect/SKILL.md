@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/preconnect
+  url: https://frontendchecklist.io/rules/performance/preconnect
 ---
 
 # Use preconnect for critical third-party origins
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Use preconnect for c
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/preconnect
+Rule page: https://frontendchecklist.io/rules/performance/preconnect

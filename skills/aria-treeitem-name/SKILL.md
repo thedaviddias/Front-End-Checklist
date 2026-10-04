@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-treeitem-name
+  url: https://frontendchecklist.io/rules/accessibility/aria-treeitem-name
 ---
 
 # Provide accessible names for tree items
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Provide accessible
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-treeitem-name
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-treeitem-name

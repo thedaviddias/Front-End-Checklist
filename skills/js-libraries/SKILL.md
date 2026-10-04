@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/js-libraries
+  url: https://frontendchecklist.io/rules/performance/js-libraries
 ---
 
 # Use secure and up-to-date JS libraries
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Use secure and up-to
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/js-libraries
+Rule page: https://frontendchecklist.io/rules/performance/js-libraries

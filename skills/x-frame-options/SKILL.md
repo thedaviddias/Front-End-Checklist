@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/x-frame-options
+  url: https://frontendchecklist.io/rules/security/x-frame-options
 ---
 
 # Set an X-Frame-Options header
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Set an X
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/x-frame-options
+Rule page: https://frontendchecklist.io/rules/security/x-frame-options

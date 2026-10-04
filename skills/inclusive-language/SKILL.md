@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/inclusive-language
+  url: https://frontendchecklist.io/rules/accessibility/inclusive-language
 ---
 
 # Use inclusive language
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Use inclusive lang
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/inclusive-language
+Rule page: https://frontendchecklist.io/rules/accessibility/inclusive-language

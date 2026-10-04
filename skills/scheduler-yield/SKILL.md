@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/scheduler-yield
+  url: https://frontendchecklist.io/rules/javascript/scheduler-yield
 ---
 
 # Use scheduler.yield() to keep the main thread responsive during long tasks
@@ -42,4 +42,4 @@ Review event handlers, data transformation functions, and initialization routine
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/scheduler-yield
+Rule page: https://frontendchecklist.io/rules/javascript/scheduler-yield

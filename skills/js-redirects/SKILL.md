@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/js-redirects
+  url: https://frontendchecklist.io/rules/performance/js-redirects
 ---
 
 # Avoid JavaScript-based redirects
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Avoid JavaScript-bas
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/js-redirects
+Rule page: https://frontendchecklist.io/rules/performance/js-redirects

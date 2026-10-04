@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/noindex-in-sitemap
+  url: https://frontendchecklist.io/rules/seo/noindex-in-sitemap
 ---
 
 # Noindex in Sitemap
@@ -42,4 +42,4 @@ Fetch each URL in the XML sitemap. For each URL, check the HTTP response for X-R
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/noindex-in-sitemap
+Rule page: https://frontendchecklist.io/rules/seo/noindex-in-sitemap

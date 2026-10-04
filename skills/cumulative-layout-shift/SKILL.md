@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/cumulative-layout-shift
+  url: https://frontendchecklist.io/rules/performance/cumulative-layout-shift
 ---
 
 # Minimize cumulative layout shift
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Minimize cumulative 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/cumulative-layout-shift
+Rule page: https://frontendchecklist.io/rules/performance/cumulative-layout-shift

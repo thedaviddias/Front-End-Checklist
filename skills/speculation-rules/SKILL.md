@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/speculation-rules
+  url: https://frontendchecklist.io/rules/performance/speculation-rules
 ---
 
 # Use the Speculation Rules API to prefetch and prerender navigations
@@ -42,4 +42,4 @@ Review speculation rule selectors for over-eagerness — flag patterns that woul
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/speculation-rules
+Rule page: https://frontendchecklist.io/rules/performance/speculation-rules

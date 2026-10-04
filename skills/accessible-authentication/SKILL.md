@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/accessible-authentication
+  url: https://frontendchecklist.io/rules/accessibility/accessible-authentication
 ---
 
 # Provide accessible authentication methods
@@ -42,4 +42,4 @@ Review authentication pages, MFA steps, recovery flows, and security controls re
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/accessible-authentication
+Rule page: https://frontendchecklist.io/rules/accessibility/accessible-authentication

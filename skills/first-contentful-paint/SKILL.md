@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/first-contentful-paint
+  url: https://frontendchecklist.io/rules/performance/first-contentful-paint
 ---
 
 # Optimize first contentful paint
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Optimize first conte
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/first-contentful-paint
+Rule page: https://frontendchecklist.io/rules/performance/first-contentful-paint

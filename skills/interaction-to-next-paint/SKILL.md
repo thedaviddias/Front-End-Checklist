@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/interaction-to-next-paint
+  url: https://frontendchecklist.io/rules/performance/interaction-to-next-paint
 ---
 
 # Optimize interaction to next paint
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Optimize interaction
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/interaction-to-next-paint
+Rule page: https://frontendchecklist.io/rules/performance/interaction-to-next-paint

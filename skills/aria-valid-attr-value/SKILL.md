@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-valid-attr-value
+  url: https://frontendchecklist.io/rules/accessibility/aria-valid-attr-value
 ---
 
 # Use valid values for ARIA attributes
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use valid values f
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-valid-attr-value
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-valid-attr-value

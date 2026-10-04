@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/http2
+  url: https://frontendchecklist.io/rules/performance/http2
 ---
 
 # Enable HTTP/2 or HTTP/3
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Enable HTTP/2 or HTT
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/http2
+Rule page: https://frontendchecklist.io/rules/performance/http2

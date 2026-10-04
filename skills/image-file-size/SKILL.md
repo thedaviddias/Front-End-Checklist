@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/image-file-size
+  url: https://frontendchecklist.io/rules/images/image-file-size
 ---
 
 # Keep image file sizes within recommended limits
@@ -42,4 +42,4 @@ Inspect image assets, build transforms, CMS output, and rendered markup. Flag ph
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/image-file-size
+Rule page: https://frontendchecklist.io/rules/images/image-file-size

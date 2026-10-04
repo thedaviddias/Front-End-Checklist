@@ -1,6 +1,3 @@
-[![Backers on Open Collective](https://opencollective.com/front-end-checklist/backers/badge.svg)](#backers)
-[![Support via Open Collective](https://opencollective.com/front-end-checklist/sponsors/badge.svg)](https://opencollective.com/front-end-checklist)
-
 <div align="center">
 
 # Front-End Checklist
@@ -8,12 +5,14 @@
 **The essential checklist for modern web development, for humans and AI agents**
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Backers on Open Collective](https://opencollective.com/front-end-checklist/backers/badge.svg)](#backers)
+[![Support via Open Collective](https://opencollective.com/front-end-checklist/sponsors/badge.svg)](https://opencollective.com/front-end-checklist)
 [![ProductHunt](https://img.shields.io/badge/ProductHunt-Launch-orange)](https://www.producthunt.com/products/front-end-checklist)
 [![MCP](https://img.shields.io/badge/MCP-Ready-6366f1)](https://modelcontextprotocol.io)
 
 </div>
 
---
+---
 
 Front-End Checklist is the open-source front-end quality system for humans and AI agents. It turns front-end best practices into a practical review workflow you can browse on the web, run through with MCP-compatible tools, or work through directly in this README.
 

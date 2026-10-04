@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/horizontal-scroll
+  url: https://frontendchecklist.io/rules/css/horizontal-scroll
 ---
 
 # Prevent horizontal scrolling
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Prevent h
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/horizontal-scroll
+Rule page: https://frontendchecklist.io/rules/css/horizontal-scroll

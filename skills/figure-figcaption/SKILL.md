@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/figure-figcaption
+  url: https://frontendchecklist.io/rules/images/figure-figcaption
 ---
 
 # Use <figure> and <figcaption> for image captions
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use <figure> 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/figure-figcaption
+Rule page: https://frontendchecklist.io/rules/images/figure-figcaption

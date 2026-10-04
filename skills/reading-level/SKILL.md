@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/reading-level
+  url: https://frontendchecklist.io/rules/seo/reading-level
 ---
 
 # Write at a clear reading level
@@ -42,4 +42,4 @@ Extract the text content from the page body (excluding navigation, headers, foot
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/reading-level
+Rule page: https://frontendchecklist.io/rules/seo/reading-level

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/input-image-alt
+  url: https://frontendchecklist.io/rules/accessibility/input-image-alt
 ---
 
 # Provide alt text for image buttons
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Provide alt text f
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/input-image-alt
+Rule page: https://frontendchecklist.io/rules/accessibility/input-image-alt

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/third-party-scripts
+  url: https://frontendchecklist.io/rules/performance/third-party-scripts
 ---
 
 # Optimize third-party script loading
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Optimize third-party
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/third-party-scripts
+Rule page: https://frontendchecklist.io/rules/performance/third-party-scripts

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-required-attr
+  url: https://frontendchecklist.io/rules/accessibility/aria-required-attr
 ---
 
 # Include required ARIA attributes for roles
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Include required A
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-required-attr
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-required-attr

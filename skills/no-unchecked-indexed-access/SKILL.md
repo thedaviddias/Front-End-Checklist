@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/no-unchecked-indexed-access
+  url: https://frontendchecklist.io/rules/javascript/no-unchecked-indexed-access
 ---
 
 # Enable noUncheckedIndexedAccess to catch out-of-bounds array bugs
@@ -42,4 +42,4 @@ Review all array index accesses in this file (arr[0], arr[i], object[key]). Flag
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/no-unchecked-indexed-access
+Rule page: https://frontendchecklist.io/rules/javascript/no-unchecked-indexed-access

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/form-labels
+  url: https://frontendchecklist.io/rules/accessibility/form-labels
 ---
 
 # Associate labels with form controls
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Associate labels w
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/form-labels
+Rule page: https://frontendchecklist.io/rules/accessibility/form-labels

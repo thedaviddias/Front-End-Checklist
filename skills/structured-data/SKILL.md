@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/structured-data
+  url: https://frontendchecklist.io/rules/seo/structured-data
 ---
 
 # Add structured data markup
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/structured-data
+Rule page: https://frontendchecklist.io/rules/seo/structured-data

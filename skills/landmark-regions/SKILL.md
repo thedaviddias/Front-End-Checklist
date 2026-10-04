@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/landmark-regions
+  url: https://frontendchecklist.io/rules/accessibility/landmark-regions
 ---
 
 # Use landmark regions correctly
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use landmark regio
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/landmark-regions
+Rule page: https://frontendchecklist.io/rules/accessibility/landmark-regions

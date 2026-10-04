@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/physical-address
+  url: https://frontendchecklist.io/rules/seo/physical-address
 ---
 
 # Display a physical business address
@@ -42,4 +42,4 @@ Check the contact page and footer for visible address text. Verify the address i
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/physical-address
+Rule page: https://frontendchecklist.io/rules/seo/physical-address

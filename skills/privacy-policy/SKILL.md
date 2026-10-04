@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/privacy/privacy-policy
+  url: https://frontendchecklist.io/rules/privacy/privacy-policy
 ---
 
 # Link to your privacy policy in the footer
@@ -44,4 +44,4 @@ Review server config, headers, forms, and integration points related to Link to 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/privacy/privacy-policy
+Rule page: https://frontendchecklist.io/rules/privacy/privacy-policy

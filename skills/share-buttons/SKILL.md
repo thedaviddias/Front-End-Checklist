@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/share-buttons
+  url: https://frontendchecklist.io/rules/seo/share-buttons
 ---
 
 # Add share buttons to content pages
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/share-buttons
+Rule page: https://frontendchecklist.io/rules/seo/share-buttons

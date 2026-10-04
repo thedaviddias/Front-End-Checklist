@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/webpagetest
+  url: https://frontendchecklist.io/rules/html/webpagetest
 ---
 
 # Analyze performance with WebPageTest
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/webpagetest
+Rule page: https://frontendchecklist.io/rules/html/webpagetest

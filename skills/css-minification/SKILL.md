@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-minification
+  url: https://frontendchecklist.io/rules/css/css-minification
 ---
 
 # Minify all CSS files
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Minify al
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-minification
+Rule page: https://frontendchecklist.io/rules/css/css-minification

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/og-image-size
+  url: https://frontendchecklist.io/rules/seo/og-image-size
 ---
 
 # OG Image Size
@@ -42,4 +42,4 @@ Check the og:image meta tag value. Fetch the image and verify: (1) dimensions ar
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/og-image-size
+Rule page: https://frontendchecklist.io/rules/seo/og-image-size

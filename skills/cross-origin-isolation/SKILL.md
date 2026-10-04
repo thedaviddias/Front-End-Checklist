@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/cross-origin-isolation
+  url: https://frontendchecklist.io/rules/security/cross-origin-isolation
 ---
 
 # Use COOP, COEP, and CORP for cross-origin isolation when needed
@@ -42,4 +42,4 @@ Review server headers, third-party integrations, popups, workers, and asset resp
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/cross-origin-isolation
+Rule page: https://frontendchecklist.io/rules/security/cross-origin-isolation

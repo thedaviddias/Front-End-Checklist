@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/autofocus-avoidance
+  url: https://frontendchecklist.io/rules/accessibility/autofocus-avoidance
 ---
 
 # Avoid autofocus on form fields
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Avoid autofocus on
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/autofocus-avoidance
+Rule page: https://frontendchecklist.io/rules/accessibility/autofocus-avoidance

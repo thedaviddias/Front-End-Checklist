@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-input-field-name
+  url: https://frontendchecklist.io/rules/accessibility/aria-input-field-name
 ---
 
 # Ensure all input fields have accessible names
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Ensure all input f
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-input-field-name
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-input-field-name

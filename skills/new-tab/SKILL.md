@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/new-tab
+  url: https://frontendchecklist.io/rules/security/new-tab
 ---
 
 # External Link Security
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to External
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/new-tab
+Rule page: https://frontendchecklist.io/rules/security/new-tab

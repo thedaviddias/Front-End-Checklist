@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/picture-element
+  url: https://frontendchecklist.io/rules/images/picture-element
 ---
 
 # Use <picture> with an <img> fallback
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use <picture>
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/picture-element
+Rule page: https://frontendchecklist.io/rules/images/picture-element

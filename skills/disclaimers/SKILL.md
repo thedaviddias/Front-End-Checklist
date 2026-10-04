@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/disclaimers
+  url: https://frontendchecklist.io/rules/seo/disclaimers
 ---
 
 # Add disclaimers to sensitive content
@@ -48,4 +48,4 @@ Scan page content for YMYL topic keywords (medical symptoms, drug names, investm
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/disclaimers
+Rule page: https://frontendchecklist.io/rules/seo/disclaimers

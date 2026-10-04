@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/nosnippet
+  url: https://frontendchecklist.io/rules/seo/nosnippet
 ---
 
 # Avoid nosnippet on important pages
@@ -42,4 +42,4 @@ Check all pages for <meta name='robots' content='...'> tags. Parse the content v
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/nosnippet
+Rule page: https://frontendchecklist.io/rules/seo/nosnippet

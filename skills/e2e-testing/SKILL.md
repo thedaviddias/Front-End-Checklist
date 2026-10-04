@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/e2e-testing
+  url: https://frontendchecklist.io/rules/testing/e2e-testing
 ---
 
 # Implement end-to-end testing
@@ -42,4 +42,4 @@ Review tests, CI workflows, and enforcement points related to Implement end-to-e
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/e2e-testing
+Rule page: https://frontendchecklist.io/rules/testing/e2e-testing

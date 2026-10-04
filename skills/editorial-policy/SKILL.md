@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/editorial-policy
+  url: https://frontendchecklist.io/rules/seo/editorial-policy
 ---
 
 # Publish an editorial policy page
@@ -50,4 +50,4 @@ Check the site's footer links, About page, and individual article templates for 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/editorial-policy
+Rule page: https://frontendchecklist.io/rules/seo/editorial-policy

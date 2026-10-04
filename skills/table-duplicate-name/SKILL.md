@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/table-duplicate-name
+  url: https://frontendchecklist.io/rules/accessibility/table-duplicate-name
 ---
 
 # Ensure tables have unique accessible names
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Ensure tables have
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/table-duplicate-name
+Rule page: https://frontendchecklist.io/rules/accessibility/table-duplicate-name

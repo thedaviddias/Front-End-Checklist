@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/html-size
+  url: https://frontendchecklist.io/rules/seo/html-size
 ---
 
 # Keep HTML documents under crawl limits
@@ -49,4 +49,4 @@ Check the response `Content-Length` header or measure the raw HTML byte count. I
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/html-size
+Rule page: https://frontendchecklist.io/rules/seo/html-size

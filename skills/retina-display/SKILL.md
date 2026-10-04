@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/retina-display
+  url: https://frontendchecklist.io/rules/images/retina-display
 ---
 
 # Support high-DPI retina displays
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Support high-
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/retina-display
+Rule page: https://frontendchecklist.io/rules/images/retina-display

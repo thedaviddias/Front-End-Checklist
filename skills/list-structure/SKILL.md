@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/list-structure
+  url: https://frontendchecklist.io/rules/accessibility/list-structure
 ---
 
 # Use correct list structure
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use correct list s
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/list-structure
+Rule page: https://frontendchecklist.io/rules/accessibility/list-structure

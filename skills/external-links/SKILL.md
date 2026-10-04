@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/external-links
+  url: https://frontendchecklist.io/rules/seo/external-links
 ---
 
 # Add relevant external links
@@ -48,4 +48,4 @@ Parse all `<a href>` elements with external URLs (different domain than the site
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/external-links
+Rule page: https://frontendchecklist.io/rules/seo/external-links

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/i18n/text-expansion
+  url: https://frontendchecklist.io/rules/i18n/text-expansion
 ---
 
 # Design UI components to accommodate text expansion from translation
@@ -43,4 +43,4 @@ Review CSS files and component styles for fixed widths, overflow: hidden, white-
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/i18n/text-expansion
+Rule page: https://frontendchecklist.io/rules/i18n/text-expansion

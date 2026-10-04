@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/list-virtualization
+  url: https://frontendchecklist.io/rules/performance/list-virtualization
 ---
 
 # Virtualize long lists and tables
@@ -42,4 +42,4 @@ Inspect collection components, data tables, infinite feeds, and dashboards. Flag
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/list-virtualization
+Rule page: https://frontendchecklist.io/rules/performance/list-virtualization

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/link-in-text-block
+  url: https://frontendchecklist.io/rules/accessibility/link-in-text-block
 ---
 
 # Make links in text blocks visually distinguishable
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Make links in text
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/link-in-text-block
+Rule page: https://frontendchecklist.io/rules/accessibility/link-in-text-block

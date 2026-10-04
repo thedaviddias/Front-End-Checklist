@@ -1,0 +1,22 @@
+{
+  "name": "front-end-checklist",
+  "version": "2.0.1",
+  "description": "Review frontend code and live pages against 386 quality-gated rules for accessibility, performance, SEO, security, and HTML/CSS/JS best practices.",
+  "author": {
+    "name": "David Dias",
+    "url": "https://thedaviddias.com"
+  },
+  "homepage": "https://frontendchecklist.io/mcp",
+  "repository": "https://github.com/thedaviddias/Front-End-Checklist",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "accessibility",
+    "performance",
+    "seo",
+    "security",
+    "code-review",
+    "audit",
+    "mcp"
+  ]
+}

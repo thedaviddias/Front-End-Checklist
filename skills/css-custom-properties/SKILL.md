@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-custom-properties
+  url: https://frontendchecklist.io/rules/css/css-custom-properties
 ---
 
 # Use CSS custom properties for design tokens
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use CSS c
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-custom-properties
+Rule page: https://frontendchecklist.io/rules/css/css-custom-properties

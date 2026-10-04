@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/browser-caching
+  url: https://frontendchecklist.io/rules/performance/browser-caching
 ---
 
 # Enable browser caching
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Enable browser cachi
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/browser-caching
+Rule page: https://frontendchecklist.io/rules/performance/browser-caching

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/button-name
+  url: https://frontendchecklist.io/rules/accessibility/button-name
 ---
 
 # Provide accessible names for buttons
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Provide accessible
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/button-name
+Rule page: https://frontendchecklist.io/rules/accessibility/button-name

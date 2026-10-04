@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/focus-not-obscured
+  url: https://frontendchecklist.io/rules/accessibility/focus-not-obscured
 ---
 
 # Keep focused elements unobscured
@@ -42,4 +42,4 @@ Review sticky layout, focus styles, overlays, and keyboard navigation related to
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/focus-not-obscured
+Rule page: https://frontendchecklist.io/rules/accessibility/focus-not-obscured

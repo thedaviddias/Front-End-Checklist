@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/duplicate-js
+  url: https://frontendchecklist.io/rules/performance/duplicate-js
 ---
 
 # Remove duplicate JavaScript libraries
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Remove duplicate Jav
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/duplicate-js
+Rule page: https://frontendchecklist.io/rules/performance/duplicate-js

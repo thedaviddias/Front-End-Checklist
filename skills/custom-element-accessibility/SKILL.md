@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "60"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/custom-element-accessibility
+  url: https://frontendchecklist.io/rules/html/custom-element-accessibility
 ---
 
 # Make custom elements and Web Components accessible
@@ -43,4 +43,4 @@ Review custom element class files for ElementInternals attachment, ARIA property
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/custom-element-accessibility
+Rule page: https://frontendchecklist.io/rules/html/custom-element-accessibility

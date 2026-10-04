@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/largest-contentful-paint
+  url: https://frontendchecklist.io/rules/performance/largest-contentful-paint
 ---
 
 # Optimize largest contentful paint
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Optimize largest con
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/largest-contentful-paint
+Rule page: https://frontendchecklist.io/rules/performance/largest-contentful-paint

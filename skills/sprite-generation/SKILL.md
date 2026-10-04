@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/sprite-generation
+  url: https://frontendchecklist.io/rules/images/sprite-generation
 ---
 
 # Use image sprites where appropriate
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use image spr
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/sprite-generation
+Rule page: https://frontendchecklist.io/rules/images/sprite-generation

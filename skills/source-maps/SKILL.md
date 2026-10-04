@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/source-maps
+  url: https://frontendchecklist.io/rules/performance/source-maps
 ---
 
 # Provide source maps for production debugging
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Provide source maps 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/source-maps
+Rule page: https://frontendchecklist.io/rules/performance/source-maps

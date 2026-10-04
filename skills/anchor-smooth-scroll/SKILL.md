@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/anchor-smooth-scroll
+  url: https://frontendchecklist.io/rules/accessibility/anchor-smooth-scroll
 ---
 
 # Provide instant anchor scroll option
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Provide instant an
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/anchor-smooth-scroll
+Rule page: https://frontendchecklist.io/rules/accessibility/anchor-smooth-scroll

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/text-resizing
+  url: https://frontendchecklist.io/rules/accessibility/text-resizing
 ---
 
 # Support text resizing to 200%
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Support text resiz
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/text-resizing
+Rule page: https://frontendchecklist.io/rules/accessibility/text-resizing

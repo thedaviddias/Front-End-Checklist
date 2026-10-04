@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/logical-properties
+  url: https://frontendchecklist.io/rules/css/logical-properties
 ---
 
 # Use CSS logical properties for i18n and RTL support
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use CSS l
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/logical-properties
+Rule page: https://frontendchecklist.io/rules/css/logical-properties

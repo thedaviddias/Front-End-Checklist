@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/definition-list
+  url: https://frontendchecklist.io/rules/accessibility/definition-list
 ---
 
 # Use correct definition list structure
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use correct defini
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/definition-list
+Rule page: https://frontendchecklist.io/rules/accessibility/definition-list

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/broken-images
+  url: https://frontendchecklist.io/rules/images/broken-images
 ---
 
 # Fix broken images
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Fix broken im
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/broken-images
+Rule page: https://frontendchecklist.io/rules/images/broken-images

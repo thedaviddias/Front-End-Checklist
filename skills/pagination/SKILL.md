@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/pagination
+  url: https://frontendchecklist.io/rules/seo/pagination
 ---
 
 # Use canonicals on paginated pages
@@ -43,4 +43,4 @@ Identify paginated URL patterns (URLs with page=, /page/, /p/ parameters). For e
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/pagination
+Rule page: https://frontendchecklist.io/rules/seo/pagination

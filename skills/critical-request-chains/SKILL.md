@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/critical-request-chains
+  url: https://frontendchecklist.io/rules/performance/critical-request-chains
 ---
 
 # Minimize critical request chains
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Minimize critical re
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/critical-request-chains
+Rule page: https://frontendchecklist.io/rules/performance/critical-request-chains

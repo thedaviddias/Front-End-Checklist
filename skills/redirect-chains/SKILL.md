@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/redirect-chains
+  url: https://frontendchecklist.io/rules/seo/redirect-chains
 ---
 
 # Link directly to final destination URLs
@@ -42,4 +42,4 @@ For each internal <a href='...'> link, follow the URL and check the HTTP respons
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/redirect-chains
+Rule page: https://frontendchecklist.io/rules/seo/redirect-chains

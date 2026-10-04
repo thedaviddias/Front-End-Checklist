@@ -7,7 +7,7 @@ description: >
   search rule guidance, and run launch-ready MCP workflows from the
   Front-End Checklist corpus.
 homepage: https://frontendchecklist.io
-documentationUrl: https://frontendchecklist.io/en/mcp
+documentationUrl: https://frontendchecklist.io/mcp
 license: MIT
 
 runtime: container

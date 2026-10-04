@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "60"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/service-worker
+  url: https://frontendchecklist.io/rules/performance/service-worker
 ---
 
 # Register a service worker for caching and offline support
@@ -42,4 +42,4 @@ Review the service worker file and its registration. Flag missing install/ activ
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/service-worker
+Rule page: https://frontendchecklist.io/rules/performance/service-worker

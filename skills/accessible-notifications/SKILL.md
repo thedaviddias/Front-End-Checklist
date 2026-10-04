@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/accessible-notifications
+  url: https://frontendchecklist.io/rules/html/accessible-notifications
 ---
 
 # Make notifications accessible
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/accessible-notifications
+Rule page: https://frontendchecklist.io/rules/html/accessible-notifications

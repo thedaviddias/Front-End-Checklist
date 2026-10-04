@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/svg-optimization
+  url: https://frontendchecklist.io/rules/images/svg-optimization
 ---
 
 # Optimize SVG files
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Optimize SVG 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/svg-optimization
+Rule page: https://frontendchecklist.io/rules/images/svg-optimization

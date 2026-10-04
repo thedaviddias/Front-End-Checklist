@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/stack-trace-exposure
+  url: https://frontendchecklist.io/rules/security/stack-trace-exposure
 ---
 
 # Prevent stack trace exposure in production error responses
@@ -42,4 +42,4 @@ Review error handlers, catch blocks, and API response code. Flag any location wh
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/stack-trace-exposure
+Rule page: https://frontendchecklist.io/rules/security/stack-trace-exposure

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/reset-css
+  url: https://frontendchecklist.io/rules/css/reset-css
 ---
 
 # Use a CSS reset or normalize stylesheet
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use a CSS
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/reset-css
+Rule page: https://frontendchecklist.io/rules/css/reset-css

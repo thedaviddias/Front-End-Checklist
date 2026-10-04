@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/leaked-secrets
+  url: https://frontendchecklist.io/rules/security/leaked-secrets
 ---
 
 # Leaked Environment Variables
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Leaked E
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/leaked-secrets
+Rule page: https://frontendchecklist.io/rules/security/leaked-secrets

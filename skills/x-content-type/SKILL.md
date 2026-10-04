@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/x-content-type
+  url: https://frontendchecklist.io/rules/security/x-content-type
 ---
 
 # Set X-Content-Type-Options: nosniff
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Set X-Co
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/x-content-type
+Rule page: https://frontendchecklist.io/rules/security/x-content-type

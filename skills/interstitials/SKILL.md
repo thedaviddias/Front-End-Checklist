@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/interstitials
+  url: https://frontendchecklist.io/rules/css/interstitials
 ---
 
 # Avoid intrusive interstitials
@@ -43,4 +43,4 @@ Review stylesheets, component styles, and responsive states related to Avoid int
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/interstitials
+Rule page: https://frontendchecklist.io/rules/css/interstitials

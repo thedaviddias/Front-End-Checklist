@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/page-load-time
+  url: https://frontendchecklist.io/rules/performance/page-load-time
 ---
 
 # Keep page load time under 3 seconds
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Keep page load time 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/page-load-time
+Rule page: https://frontendchecklist.io/rules/performance/page-load-time

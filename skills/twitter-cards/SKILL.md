@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/twitter-cards
+  url: https://frontendchecklist.io/rules/seo/twitter-cards
 ---
 
 # Add Twitter Card meta tags
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/twitter-cards
+Rule page: https://frontendchecklist.io/rules/seo/twitter-cards

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/orphan-pages
+  url: https://frontendchecklist.io/rules/seo/orphan-pages
 ---
 
 # Add internal links to orphan pages
@@ -42,4 +42,4 @@ Crawl the site and build an inbound link count for each URL. Cross-reference aga
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/orphan-pages
+Rule page: https://frontendchecklist.io/rules/seo/orphan-pages

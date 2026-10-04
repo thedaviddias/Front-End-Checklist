@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/color-contrast
+  url: https://frontendchecklist.io/rules/accessibility/color-contrast
 ---
 
 # Meet minimum color contrast ratios
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Meet minimum color
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/color-contrast
+Rule page: https://frontendchecklist.io/rules/accessibility/color-contrast

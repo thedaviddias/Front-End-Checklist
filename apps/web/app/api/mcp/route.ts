@@ -480,7 +480,7 @@ export async function GET(request: Request) {
       },
       prompts: [...MCP_PROMPTS],
       resourceTemplates: Object.values(MCP_RESOURCE_TEMPLATES),
-      documentation: `${SITE_URL}/en/mcp`,
+      documentation: `${SITE_URL}/mcp`,
       ...(Object.keys(usage).length > 0 ? { usage } : {})
     },
     {

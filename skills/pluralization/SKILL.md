@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/i18n/pluralization
+  url: https://frontendchecklist.io/rules/i18n/pluralization
 ---
 
 # Handle plural forms with Intl.PluralRules or ICU MessageFormat
@@ -42,4 +42,4 @@ Review translation files and components that render counts. Flag any strings tha
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/i18n/pluralization
+Rule page: https://frontendchecklist.io/rules/i18n/pluralization

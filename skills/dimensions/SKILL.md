@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/dimensions
+  url: https://frontendchecklist.io/rules/images/dimensions
 ---
 
 # Set explicit width and height on images
@@ -44,4 +44,4 @@ Review image assets, markup, and delivery configuration related to Set explicit 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/dimensions
+Rule page: https://frontendchecklist.io/rules/images/dimensions

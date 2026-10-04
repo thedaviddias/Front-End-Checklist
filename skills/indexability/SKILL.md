@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/indexability
+  url: https://frontendchecklist.io/rules/seo/indexability
 ---
 
 # Make important pages indexable
@@ -52,4 +52,4 @@ Parse every page's HTML for `<meta name='robots'>` or `<meta name='googlebot'>` 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/indexability
+Rule page: https://frontendchecklist.io/rules/seo/indexability

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/sensory-instructions
+  url: https://frontendchecklist.io/rules/accessibility/sensory-instructions
 ---
 
 # Avoid sensory-only instructions
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Avoid sensory-only
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/sensory-instructions
+Rule page: https://frontendchecklist.io/rules/accessibility/sensory-instructions

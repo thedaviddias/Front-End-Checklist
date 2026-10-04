@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/import-on-interaction
+  url: https://frontendchecklist.io/rules/performance/import-on-interaction
 ---
 
 # Load non-critical code on user interaction
@@ -42,4 +42,4 @@ Inspect event handlers, modal triggers, drawers, editors, maps, export actions, 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/import-on-interaction
+Rule page: https://frontendchecklist.io/rules/performance/import-on-interaction

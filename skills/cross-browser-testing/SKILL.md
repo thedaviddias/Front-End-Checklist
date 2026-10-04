@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "60"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/cross-browser-testing
+  url: https://frontendchecklist.io/rules/testing/cross-browser-testing
 ---
 
 # Test across all major browsers
@@ -43,4 +43,4 @@ Review tests, CI workflows, and enforcement points related to Test across all ma
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/cross-browser-testing
+Rule page: https://frontendchecklist.io/rules/testing/cross-browser-testing

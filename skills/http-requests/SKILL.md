@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/http-requests
+  url: https://frontendchecklist.io/rules/performance/http-requests
 ---
 
 # Minimize HTTP requests
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Minimize HTTP reques
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/http-requests
+Rule page: https://frontendchecklist.io/rules/performance/http-requests

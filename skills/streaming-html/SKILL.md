@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "45"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/streaming-html
+  url: https://frontendchecklist.io/rules/performance/streaming-html
 ---
 
 # Stream HTML to the browser before the full response is ready
@@ -42,4 +42,4 @@ Review server entry points and page components for renderToString calls, missing
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/streaming-html
+Rule page: https://frontendchecklist.io/rules/performance/streaming-html

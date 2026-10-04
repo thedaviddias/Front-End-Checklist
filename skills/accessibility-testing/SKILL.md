@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/accessibility-testing
+  url: https://frontendchecklist.io/rules/testing/accessibility-testing
 ---
 
 # Include accessibility testing
@@ -42,4 +42,4 @@ Inspect component tests, E2E suites, and CI workflows for automated accessibilit
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/accessibility-testing
+Rule page: https://frontendchecklist.io/rules/testing/accessibility-testing

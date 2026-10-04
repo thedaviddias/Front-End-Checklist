@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/referrer-policy
+  url: https://frontendchecklist.io/rules/security/referrer-policy
 ---
 
 # Set a Referrer-Policy header
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Set a Re
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/referrer-policy
+Rule page: https://frontendchecklist.io/rules/security/referrer-policy

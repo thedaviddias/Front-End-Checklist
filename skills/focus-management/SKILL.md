@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/focus-management
+  url: https://frontendchecklist.io/rules/accessibility/focus-management
 ---
 
 # Manage focus during dynamic interactions
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Manage focus durin
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/focus-management
+Rule page: https://frontendchecklist.io/rules/accessibility/focus-management

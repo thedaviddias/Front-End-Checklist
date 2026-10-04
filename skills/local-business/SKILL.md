@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/local-business
+  url: https://frontendchecklist.io/rules/seo/local-business
 ---
 
 # Add LocalBusiness schema markup
@@ -42,4 +42,4 @@ Find JSON-LD script blocks with @type 'LocalBusiness' or a sub-type. Verify requ
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/local-business
+Rule page: https://frontendchecklist.io/rules/seo/local-business

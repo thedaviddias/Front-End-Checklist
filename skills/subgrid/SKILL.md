@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/subgrid
+  url: https://frontendchecklist.io/rules/css/subgrid
 ---
 
 # Use CSS subgrid to align nested grid items to parent tracks
@@ -42,4 +42,4 @@ Review card grid and nested grid layouts in this stylesheet. Flag any layout tha
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/subgrid
+Rule page: https://frontendchecklist.io/rules/css/subgrid

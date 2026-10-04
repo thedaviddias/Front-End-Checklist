@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/svg-inline
+  url: https://frontendchecklist.io/rules/images/svg-inline
 ---
 
 # Manage inline SVG size and complexity
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Manage inline
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/svg-inline
+Rule page: https://frontendchecklist.io/rules/images/svg-inline

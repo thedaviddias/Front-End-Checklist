@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/dom-performance
+  url: https://frontendchecklist.io/rules/javascript/dom-performance
 ---
 
 # Minimize costly DOM read/write operations
@@ -44,4 +44,4 @@ Review scripts, client components, and browser execution paths related to Minimi
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/dom-performance
+Rule page: https://frontendchecklist.io/rules/javascript/dom-performance

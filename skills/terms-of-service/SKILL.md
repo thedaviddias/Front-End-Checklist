@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/terms-of-service
+  url: https://frontendchecklist.io/rules/security/terms-of-service
 ---
 
 # Link to your terms of service in the footer
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Link to 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/terms-of-service
+Rule page: https://frontendchecklist.io/rules/security/terms-of-service

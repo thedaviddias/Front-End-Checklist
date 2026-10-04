@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/offline-fallback
+  url: https://frontendchecklist.io/rules/performance/offline-fallback
 ---
 
 # Provide an offline fallback page
@@ -42,4 +42,4 @@ Review the service worker fetch handler and the offline page markup. Verify the 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/offline-fallback
+Rule page: https://frontendchecklist.io/rules/performance/offline-fallback

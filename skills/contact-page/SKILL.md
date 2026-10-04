@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/contact-page
+  url: https://frontendchecklist.io/rules/seo/contact-page
 ---
 
 # Create a comprehensive Contact page
@@ -41,4 +41,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/contact-page
+Rule page: https://frontendchecklist.io/rules/seo/contact-page

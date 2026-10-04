@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/decorative-elements
+  url: https://frontendchecklist.io/rules/accessibility/decorative-elements
 ---
 
 # Hide decorative elements from assistive technology
@@ -44,4 +44,4 @@ Review the rendered markup and interactive states that affect Hide decorative el
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/decorative-elements
+Rule page: https://frontendchecklist.io/rules/accessibility/decorative-elements

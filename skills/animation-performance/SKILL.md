@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/animation-performance
+  url: https://frontendchecklist.io/rules/css/animation-performance
 ---
 
 # Use transform and opacity for animations
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use trans
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/animation-performance
+Rule page: https://frontendchecklist.io/rules/css/animation-performance

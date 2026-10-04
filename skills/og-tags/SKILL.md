@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/og-tags
+  url: https://frontendchecklist.io/rules/seo/og-tags
 ---
 
 # Open Graph Tags
@@ -42,4 +42,4 @@ Check the rendered <head> for all five core OG properties: og:title, og:descript
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/og-tags
+Rule page: https://frontendchecklist.io/rules/seo/og-tags

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/lazy-loading
+  url: https://frontendchecklist.io/rules/performance/lazy-loading
 ---
 
 # Implement lazy loading for offscreen content
@@ -43,4 +43,4 @@ Review the routes, assets, and loading behavior that affect Implement lazy loadi
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/lazy-loading
+Rule page: https://frontendchecklist.io/rules/performance/lazy-loading

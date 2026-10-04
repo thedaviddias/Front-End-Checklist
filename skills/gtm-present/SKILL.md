@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/gtm-present
+  url: https://frontendchecklist.io/rules/performance/gtm-present
 ---
 
 # Optimize Google Tag Manager implementation
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Optimize Google Tag 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/gtm-present
+Rule page: https://frontendchecklist.io/rules/performance/gtm-present

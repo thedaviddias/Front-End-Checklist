@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/reduced-motion
+  url: https://frontendchecklist.io/rules/accessibility/reduced-motion
 ---
 
 # Respect reduced motion preferences
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Respect reduced mo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/reduced-motion
+Rule page: https://frontendchecklist.io/rules/accessibility/reduced-motion

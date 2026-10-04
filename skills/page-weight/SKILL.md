@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/page-weight
+  url: https://frontendchecklist.io/rules/performance/page-weight
 ---
 
 # Keep page weight under 1500KB
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Keep page weight und
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/page-weight
+Rule page: https://frontendchecklist.io/rules/performance/page-weight

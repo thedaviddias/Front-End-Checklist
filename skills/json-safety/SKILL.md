@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/json-safety
+  url: https://frontendchecklist.io/rules/javascript/json-safety
 ---
 
 # Parse JSON safely with error handling
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Parse 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/json-safety
+Rule page: https://frontendchecklist.io/rules/javascript/json-safety

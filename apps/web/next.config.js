@@ -151,6 +151,18 @@ const nextConfig = {
         destination: '/',
         permanent: true
       },
+      // The site dropped its /en locale prefix, but MCP clients, generated
+      // skills and registry metadata still carry /en/... links.
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true
+      },
+      {
+        source: '/en/:path*',
+        destination: '/:path*',
+        permanent: true
+      },
       {
         source: '/rules/seo/charset',
         destination: '/rules/html/charset',

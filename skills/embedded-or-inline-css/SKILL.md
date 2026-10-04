@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/embedded-or-inline-css
+  url: https://frontendchecklist.io/rules/css/embedded-or-inline-css
 ---
 
 # Avoid embedded and inline CSS
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Avoid emb
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/embedded-or-inline-css
+Rule page: https://frontendchecklist.io/rules/css/embedded-or-inline-css

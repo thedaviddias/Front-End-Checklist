@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/event-delegation
+  url: https://frontendchecklist.io/rules/javascript/event-delegation
 ---
 
 # Use event delegation for dynamic content
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Use ev
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/event-delegation
+Rule page: https://frontendchecklist.io/rules/javascript/event-delegation

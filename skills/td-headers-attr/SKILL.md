@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/td-headers-attr
+  url: https://frontendchecklist.io/rules/accessibility/td-headers-attr
 ---
 
 # Link table cells to headers using IDs
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Link table cells t
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/td-headers-attr
+Rule page: https://frontendchecklist.io/rules/accessibility/td-headers-attr

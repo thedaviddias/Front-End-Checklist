@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/privacy/cookie-consent
+  url: https://frontendchecklist.io/rules/privacy/cookie-consent
 ---
 
 # Show a cookie consent notice
@@ -44,4 +44,4 @@ Review server config, headers, forms, and integration points related to Show a c
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/privacy/cookie-consent
+Rule page: https://frontendchecklist.io/rules/privacy/cookie-consent

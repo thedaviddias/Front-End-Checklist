@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/font-size
+  url: https://frontendchecklist.io/rules/css/font-size
 ---
 
 # Use readable font sizes on mobile
@@ -43,4 +43,4 @@ Review stylesheets, component styles, and responsive states related to Use reada
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/font-size
+Rule page: https://frontendchecklist.io/rules/css/font-size

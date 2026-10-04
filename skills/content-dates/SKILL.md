@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/content-dates
+  url: https://frontendchecklist.io/rules/seo/content-dates
 ---
 
 # Show published and updated dates
@@ -56,4 +56,4 @@ Verify that Article or BlogPosting JSON-LD includes both `datePublished` and `da
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/content-dates
+Rule page: https://frontendchecklist.io/rules/seo/content-dates

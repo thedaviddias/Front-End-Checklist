@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/heading-order
+  url: https://frontendchecklist.io/rules/accessibility/heading-order
 ---
 
 # Maintain logical heading order
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Maintain logical h
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/heading-order
+Rule page: https://frontendchecklist.io/rules/accessibility/heading-order

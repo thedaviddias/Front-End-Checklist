@@ -58,7 +58,7 @@ const mockChecklists: CuratedChecklist[] = [
     order: 1,
     featured: true,
     language: 'en',
-    url: '/en/checklists/launch-checklist'
+    url: '/checklists/launch-checklist'
   }
 ]
 
@@ -119,7 +119,7 @@ describe('SDK-backed MCP server', () => {
         serverInfo: {
           name: 'frontend-checklist-mcp',
           title: 'Front-End Checklist',
-          version: '2.0.0'
+          version: '2.0.1'
         },
         instructions: MCP_SERVER_INSTRUCTIONS,
         capabilities: {

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/object-alt
+  url: https://frontendchecklist.io/rules/accessibility/object-alt
 ---
 
 # Provide alternative text for objects
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Provide alternativ
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/object-alt
+Rule page: https://frontendchecklist.io/rules/accessibility/object-alt

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/tabindex
+  url: https://frontendchecklist.io/rules/accessibility/tabindex
 ---
 
 # Use appropriate tabindex values
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use appropriate ta
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/tabindex
+Rule page: https://frontendchecklist.io/rules/accessibility/tabindex

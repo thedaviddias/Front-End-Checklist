@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/image-compression
+  url: https://frontendchecklist.io/rules/images/image-compression
 ---
 
 # Compress images without quality loss
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Compress imag
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/image-compression
+Rule page: https://frontendchecklist.io/rules/images/image-compression

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/lowercase
+  url: https://frontendchecklist.io/rules/seo/lowercase
 ---
 
 # Use lowercase URLs
@@ -42,4 +42,4 @@ Scan the site's route definitions, server configuration, and internal links for 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/lowercase
+Rule page: https://frontendchecklist.io/rules/seo/lowercase

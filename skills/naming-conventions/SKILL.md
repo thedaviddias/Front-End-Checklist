@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/naming-conventions
+  url: https://frontendchecklist.io/rules/css/naming-conventions
 ---
 
 # Use consistent CSS naming conventions
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use consi
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/naming-conventions
+Rule page: https://frontendchecklist.io/rules/css/naming-conventions

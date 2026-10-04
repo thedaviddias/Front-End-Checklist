@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/runtime-validation
+  url: https://frontendchecklist.io/rules/javascript/runtime-validation
 ---
 
 # Validate external data at runtime with a schema library
@@ -42,4 +42,4 @@ Review all external data entry points in this file: API calls, storage reads, en
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/runtime-validation
+Rule page: https://frontendchecklist.io/rules/javascript/runtime-validation

@@ -29,8 +29,8 @@ export { MCP_SERVER_ICON }
 export const MCP_SERVER_INFO = {
   name: 'frontend-checklist-mcp',
   title: 'Front-End Checklist',
-  version: '2.0.0',
-  websiteUrl: `${SITE_URL}/en/mcp`,
+  version: '2.0.1',
+  websiteUrl: `${SITE_URL}/mcp`,
   icons: [MCP_SERVER_ICON]
 }
 

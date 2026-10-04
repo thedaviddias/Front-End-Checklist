@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/meta-title
+  url: https://frontendchecklist.io/rules/seo/meta-title
 ---
 
 # Write a descriptive page title
@@ -42,4 +42,4 @@ Check the &lt;head&gt; for a &lt;title&gt; element. Verify: (1) exactly one &lt;
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/meta-title
+Rule page: https://frontendchecklist.io/rules/seo/meta-title

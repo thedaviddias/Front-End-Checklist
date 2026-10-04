@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/html5-semantic-elements
+  url: https://frontendchecklist.io/rules/html/html5-semantic-elements
 ---
 
 # Use semantic HTML elements
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/html5-semantic-elements
+Rule page: https://frontendchecklist.io/rules/html/html5-semantic-elements

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/blocked-links
+  url: https://frontendchecklist.io/rules/security/blocked-links
 ---
 
 # Blocked Tracking Links
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Blocked 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/blocked-links
+Rule page: https://frontendchecklist.io/rules/security/blocked-links

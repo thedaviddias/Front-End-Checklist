@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/session-timeout-recovery
+  url: https://frontendchecklist.io/rules/accessibility/session-timeout-recovery
 ---
 
 # Prevent data loss from session timeouts
@@ -42,4 +42,4 @@ Review authenticated forms, checkout flows, editors, and long-running tasks rela
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/session-timeout-recovery
+Rule page: https://frontendchecklist.io/rules/accessibility/session-timeout-recovery

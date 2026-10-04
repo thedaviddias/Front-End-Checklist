@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/responsive-images
+  url: https://frontendchecklist.io/rules/images/responsive-images
 ---
 
 # Implement responsive images with srcset
@@ -42,4 +42,4 @@ Inspect image markup and component abstractions for `srcset`, `sizes`, and width
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/responsive-images
+Rule page: https://frontendchecklist.io/rules/images/responsive-images

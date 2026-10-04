@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/progressive-jpeg
+  url: https://frontendchecklist.io/rules/images/progressive-jpeg
 ---
 
 # Use progressive JPEG encoding
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use progressi
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/progressive-jpeg
+Rule page: https://frontendchecklist.io/rules/images/progressive-jpeg

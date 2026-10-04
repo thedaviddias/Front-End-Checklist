@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "120"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/mutation-testing
+  url: https://frontendchecklist.io/rules/testing/mutation-testing
 ---
 
 # Use mutation testing to measure how well tests detect bugs
@@ -42,4 +42,4 @@ Review the Stryker configuration and mutation report to identify surviving mutan
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/mutation-testing
+Rule page: https://frontendchecklist.io/rules/testing/mutation-testing

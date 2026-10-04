@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/meta-description
+  url: https://frontendchecklist.io/rules/seo/meta-description
 ---
 
 # Write a meta description for each page
@@ -42,4 +42,4 @@ Check the <head> for <meta name='description' content='...'> element. Verify: (1
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/meta-description
+Rule page: https://frontendchecklist.io/rules/seo/meta-description

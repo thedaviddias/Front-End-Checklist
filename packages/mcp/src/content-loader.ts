@@ -91,7 +91,7 @@ export function loadLocalChecklists(repoRoot: string): CuratedChecklist[] {
       order,
       featured,
       language: 'en',
-      url: `/en/checklists/${slug}`,
+      url: `/checklists/${slug}`,
       mdx: body
     })
   }

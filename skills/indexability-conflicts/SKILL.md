@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/indexability-conflicts
+  url: https://frontendchecklist.io/rules/seo/indexability-conflicts
 ---
 
 # Avoid conflicting indexability signals
@@ -50,4 +50,4 @@ Programmatically fetch robots.txt and parse its Disallow rules. For each page UR
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/indexability-conflicts
+Rule page: https://frontendchecklist.io/rules/seo/indexability-conflicts

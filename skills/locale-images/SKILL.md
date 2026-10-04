@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/i18n/locale-images
+  url: https://frontendchecklist.io/rules/i18n/locale-images
 ---
 
 # Use locale-neutral images and provide cultural overrides when needed
@@ -42,4 +42,4 @@ Review React components and asset pipelines for hardcoded image paths, hand gest
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/i18n/locale-images
+Rule page: https://frontendchecklist.io/rules/i18n/locale-images

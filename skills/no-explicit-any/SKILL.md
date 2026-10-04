@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/no-explicit-any
+  url: https://frontendchecklist.io/rules/javascript/no-explicit-any
 ---
 
 # Avoid the any type — use unknown, generics, or type guards instead
@@ -42,4 +42,4 @@ Review all type annotations, function signatures, and external data handling in 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/no-explicit-any
+Rule page: https://frontendchecklist.io/rules/javascript/no-explicit-any

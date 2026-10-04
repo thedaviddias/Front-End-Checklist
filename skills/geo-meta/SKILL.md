@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/geo-meta
+  url: https://frontendchecklist.io/rules/seo/geo-meta
 ---
 
 # Geo Meta Tags
@@ -51,4 +51,4 @@ Check `<meta name='geo.region'>` for a valid ISO 3166-2 value (e.g., 'US-CA', 'G
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/geo-meta
+Rule page: https://frontendchecklist.io/rules/seo/geo-meta

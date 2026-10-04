@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/optimized
+  url: https://frontendchecklist.io/rules/images/optimized
 ---
 
 # Optimise images for faster loading
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Optimise imag
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/optimized
+Rule page: https://frontendchecklist.io/rules/images/optimized

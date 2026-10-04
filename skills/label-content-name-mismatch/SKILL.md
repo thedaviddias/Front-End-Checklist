@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/label-content-name-mismatch
+  url: https://frontendchecklist.io/rules/accessibility/label-content-name-mismatch
 ---
 
 # Align visible labels with accessible names
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Align visible labe
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/label-content-name-mismatch
+Rule page: https://frontendchecklist.io/rules/accessibility/label-content-name-mismatch

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-hidden-focus
+  url: https://frontendchecklist.io/rules/accessibility/aria-hidden-focus
 ---
 
 # Remove focusable elements from aria-hidden containers
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Remove focusable e
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-hidden-focus
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-hidden-focus

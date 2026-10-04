@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/element-hiding
+  url: https://frontendchecklist.io/rules/security/element-hiding
 ---
 
 # Adblock Element Hiding
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Adblock 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/element-hiding
+Rule page: https://frontendchecklist.io/rules/security/element-hiding

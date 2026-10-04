@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/view-transitions
+  url: https://frontendchecklist.io/rules/css/view-transitions
 ---
 
 # Use the View Transitions API for smooth page and component transitions
@@ -42,4 +42,4 @@ Review transition implementation for missing prefers-reduced-motion guards, dupl
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/view-transitions
+Rule page: https://frontendchecklist.io/rules/css/view-transitions

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/javascript-minification
+  url: https://frontendchecklist.io/rules/javascript/javascript-minification
 ---
 
 # Minify all JavaScript files
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Minify
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/javascript-minification
+Rule page: https://frontendchecklist.io/rules/javascript/javascript-minification

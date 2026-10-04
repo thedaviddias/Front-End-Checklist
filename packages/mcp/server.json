@@ -3,8 +3,8 @@
   "name": "io.github.thedaviddias/front-end-checklist",
   "title": "Front-End Checklist",
   "description": "Review frontend code and live pages against 386 quality-gated web development rules.",
-  "version": "2.0.0",
-  "websiteUrl": "https://frontendchecklist.io/en/mcp",
+  "version": "2.0.1",
+  "websiteUrl": "https://frontendchecklist.io/mcp",
   "repository": {
     "url": "https://github.com/thedaviddias/Front-End-Checklist",
     "source": "github",

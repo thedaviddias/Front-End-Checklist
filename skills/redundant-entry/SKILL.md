@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/redundant-entry
+  url: https://frontendchecklist.io/rules/accessibility/redundant-entry
 ---
 
 # Avoid redundant entry in the same process
@@ -42,4 +42,4 @@ Review multi-step forms, checkout, onboarding, support, and account flows relate
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/redundant-entry
+Rule page: https://frontendchecklist.io/rules/accessibility/redundant-entry

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/pwa-installability
+  url: https://frontendchecklist.io/rules/html/pwa-installability
 ---
 
 # Meet PWA installability criteria
@@ -42,4 +42,4 @@ Review the manifest.json and icon assets. Flag missing required fields, incorrec
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/pwa-installability
+Rule page: https://frontendchecklist.io/rules/html/pwa-installability

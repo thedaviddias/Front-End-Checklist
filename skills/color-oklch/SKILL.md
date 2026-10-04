@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/color-oklch
+  url: https://frontendchecklist.io/rules/css/color-oklch
 ---
 
 # Use oklch() and oklab() for perceptually uniform colour palettes
@@ -42,4 +42,4 @@ Review CSS custom properties for colour tokens. Flag palette definitions in hsl 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/color-oklch
+Rule page: https://frontendchecklist.io/rules/css/color-oklch

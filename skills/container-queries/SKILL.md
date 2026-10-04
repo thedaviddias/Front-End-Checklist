@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/container-queries
+  url: https://frontendchecklist.io/rules/css/container-queries
 ---
 
 # Use container queries for component-level responsiveness
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use conta
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/container-queries
+Rule page: https://frontendchecklist.io/rules/css/container-queries

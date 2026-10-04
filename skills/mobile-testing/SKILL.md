@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/mobile-testing
+  url: https://frontendchecklist.io/rules/testing/mobile-testing
 ---
 
 # Test on real mobile devices and viewports
@@ -42,4 +42,4 @@ Review tests, CI workflows, and enforcement points related to Test on real mobil
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/mobile-testing
+Rule page: https://frontendchecklist.io/rules/testing/mobile-testing

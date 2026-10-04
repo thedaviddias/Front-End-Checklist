@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-print
+  url: https://frontendchecklist.io/rules/css/css-print
 ---
 
 # Include a print stylesheet
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Include a
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-print
+Rule page: https://frontendchecklist.io/rules/css/css-print

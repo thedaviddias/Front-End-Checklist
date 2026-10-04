@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/webp-format
+  url: https://frontendchecklist.io/rules/images/webp-format
 ---
 
 # Use WebP format with fallbacks
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Use WebP form
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/webp-format
+Rule page: https://frontendchecklist.io/rules/images/webp-format

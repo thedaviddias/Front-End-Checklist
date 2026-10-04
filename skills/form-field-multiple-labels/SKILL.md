@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/form-field-multiple-labels
+  url: https://frontendchecklist.io/rules/accessibility/form-field-multiple-labels
 ---
 
 # Use a single label for each form field
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use a single label
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/form-field-multiple-labels
+Rule page: https://frontendchecklist.io/rules/accessibility/form-field-multiple-labels

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/error-handling
+  url: https://frontendchecklist.io/rules/javascript/error-handling
 ---
 
 # Implement proper error handling
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Implem
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/error-handling
+Rule page: https://frontendchecklist.io/rules/javascript/error-handling

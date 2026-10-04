@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/font-loading
+  url: https://frontendchecklist.io/rules/performance/font-loading
 ---
 
 # Optimize web font loading
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Optimize web font lo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/font-loading
+Rule page: https://frontendchecklist.io/rules/performance/font-loading

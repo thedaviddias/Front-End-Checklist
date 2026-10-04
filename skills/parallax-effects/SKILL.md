@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/parallax-effects
+  url: https://frontendchecklist.io/rules/accessibility/parallax-effects
 ---
 
 # Provide alternatives to parallax effects
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Provide alternativ
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/parallax-effects
+Rule page: https://frontendchecklist.io/rules/accessibility/parallax-effects

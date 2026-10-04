@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/aria-allowed-attr
+  url: https://frontendchecklist.io/rules/accessibility/aria-allowed-attr
 ---
 
 # Use only allowed ARIA attributes for each role
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use only allowed A
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/aria-allowed-attr
+Rule page: https://frontendchecklist.io/rules/accessibility/aria-allowed-attr

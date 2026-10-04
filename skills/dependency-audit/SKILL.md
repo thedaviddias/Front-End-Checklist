@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/dependency-audit
+  url: https://frontendchecklist.io/rules/security/dependency-audit
 ---
 
 # Audit dependencies for known vulnerabilities
@@ -42,4 +42,4 @@ Review the lock file and package.json for unpinned version ranges, abandoned pac
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/dependency-audit
+Rule page: https://frontendchecklist.io/rules/security/dependency-audit

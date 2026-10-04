@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/compression
+  url: https://frontendchecklist.io/rules/performance/compression
 ---
 
 # Enable text-based compression
@@ -42,4 +42,4 @@ Review the routes, assets, and loading behavior that affect Enable text-based co
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/compression
+Rule page: https://frontendchecklist.io/rules/performance/compression

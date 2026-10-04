@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/file-upload-accessibility
+  url: https://frontendchecklist.io/rules/html/file-upload-accessibility
 ---
 
 # Make file uploads accessible
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/file-upload-accessibility
+Rule page: https://frontendchecklist.io/rules/html/file-upload-accessibility

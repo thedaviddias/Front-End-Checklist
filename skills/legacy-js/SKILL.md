@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/legacy-js
+  url: https://frontendchecklist.io/rules/performance/legacy-js
 ---
 
 # Avoid serving legacy JavaScript to modern browsers
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Avoid serving legacy
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/legacy-js
+Rule page: https://frontendchecklist.io/rules/performance/legacy-js

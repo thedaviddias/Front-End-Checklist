@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/form-captcha
+  url: https://frontendchecklist.io/rules/security/form-captcha
 ---
 
 # Protect public forms with CAPTCHA
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Protect 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/form-captcha
+Rule page: https://frontendchecklist.io/rules/security/form-captcha

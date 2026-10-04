@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/accessible-tables
+  url: https://frontendchecklist.io/rules/accessibility/accessible-tables
 ---
 
 # Use semantic table markup for screen readers
@@ -44,4 +44,4 @@ Review the rendered markup and interactive states that affect Use semantic table
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/accessible-tables
+Rule page: https://frontendchecklist.io/rules/accessibility/accessible-tables

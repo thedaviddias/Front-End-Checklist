@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/responsive-units
+  url: https://frontendchecklist.io/rules/css/responsive-units
 ---
 
 # Use relative units for responsive layouts
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Use relat
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/responsive-units
+Rule page: https://frontendchecklist.io/rules/css/responsive-units

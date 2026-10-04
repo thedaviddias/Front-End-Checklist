@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "front-end-checklist": {
+      "type": "http",
+      "url": "https://mcp.frontendchecklist.io"
+    }
+  }
+}

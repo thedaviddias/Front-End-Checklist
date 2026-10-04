@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/scrolljacking
+  url: https://frontendchecklist.io/rules/accessibility/scrolljacking
 ---
 
 # Avoid scrolljacking and custom scroll behavior
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Avoid scrolljackin
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/scrolljacking
+Rule page: https://frontendchecklist.io/rules/accessibility/scrolljacking

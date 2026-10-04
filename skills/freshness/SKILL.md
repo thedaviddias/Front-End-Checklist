@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/freshness
+  url: https://frontendchecklist.io/rules/seo/freshness
 ---
 
 # Show content freshness signals
@@ -51,4 +51,4 @@ Check that the `Last-Modified` response header is present on article pages. Veri
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/freshness
+Rule page: https://frontendchecklist.io/rules/seo/freshness

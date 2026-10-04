@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/404-page
+  url: https://frontendchecklist.io/rules/html/404-page
 ---
 
 # Create a custom 404 error page
@@ -43,4 +43,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/404-page
+Rule page: https://frontendchecklist.io/rules/html/404-page

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/nofollow-internal
+  url: https://frontendchecklist.io/rules/seo/nofollow-internal
 ---
 
 # Avoid nofollow on internal links
@@ -42,4 +42,4 @@ Query all <a href='...'> elements. For each link, check if rel contains 'nofollo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/nofollow-internal
+Rule page: https://frontendchecklist.io/rules/seo/nofollow-internal

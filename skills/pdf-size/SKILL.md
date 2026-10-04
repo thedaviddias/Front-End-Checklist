@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/pdf-size
+  url: https://frontendchecklist.io/rules/seo/pdf-size
 ---
 
 # Keep linked PDFs under 60 MB
@@ -42,4 +42,4 @@ Find all <a href> links with .pdf extension. For each PDF URL, perform a HEAD re
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/pdf-size
+Rule page: https://frontendchecklist.io/rules/seo/pdf-size

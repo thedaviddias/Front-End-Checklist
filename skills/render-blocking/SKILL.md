@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/render-blocking
+  url: https://frontendchecklist.io/rules/performance/render-blocking
 ---
 
 # Eliminate render-blocking resources
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Eliminate render-blo
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/render-blocking
+Rule page: https://frontendchecklist.io/rules/performance/render-blocking

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/cascade-layers
+  url: https://frontendchecklist.io/rules/css/cascade-layers
 ---
 
 # Use @layer to manage CSS cascade order explicitly
@@ -42,4 +42,4 @@ Review the CSS for !important declarations, excessively specific selectors (more
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/cascade-layers
+Rule page: https://frontendchecklist.io/rules/css/cascade-layers

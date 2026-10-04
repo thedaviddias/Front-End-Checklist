@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/images/alt-text
+  url: https://frontendchecklist.io/rules/images/alt-text
 ---
 
 # Provide meaningful alt text for images
@@ -42,4 +42,4 @@ Review image assets, markup, and delivery configuration related to Provide meani
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/images/alt-text
+Rule page: https://frontendchecklist.io/rules/images/alt-text

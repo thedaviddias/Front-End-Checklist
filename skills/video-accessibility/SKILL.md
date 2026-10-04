@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/html/video-accessibility
+  url: https://frontendchecklist.io/rules/html/video-accessibility
 ---
 
 # Make videos accessible with captions
@@ -42,4 +42,4 @@ Review templates, server-rendered HTML, and shared components that output markup
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/html/video-accessibility
+Rule page: https://frontendchecklist.io/rules/html/video-accessibility

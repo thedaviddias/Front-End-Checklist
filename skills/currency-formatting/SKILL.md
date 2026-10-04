@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/i18n/currency-formatting
+  url: https://frontendchecklist.io/rules/i18n/currency-formatting
 ---
 
 # Use Intl APIs for currency, number, and date formatting
@@ -43,4 +43,4 @@ Review utility functions and components that render numbers, prices, percentages
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/i18n/currency-formatting
+Rule page: https://frontendchecklist.io/rules/i18n/currency-formatting

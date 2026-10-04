@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/meta-refresh
+  url: https://frontendchecklist.io/rules/accessibility/meta-refresh
 ---
 
 # Avoid meta refresh redirects
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Avoid meta refresh
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/meta-refresh
+Rule page: https://frontendchecklist.io/rules/accessibility/meta-refresh

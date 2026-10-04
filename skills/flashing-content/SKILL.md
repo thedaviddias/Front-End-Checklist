@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/flashing-content
+  url: https://frontendchecklist.io/rules/accessibility/flashing-content
 ---
 
 # Prevent seizure-triggering flashing content
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Prevent seizure-tr
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/flashing-content
+Rule page: https://frontendchecklist.io/rules/accessibility/flashing-content

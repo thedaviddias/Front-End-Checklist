@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/duplicate-id-aria
+  url: https://frontendchecklist.io/rules/accessibility/duplicate-id-aria
 ---
 
 # Use unique IDs for ARIA references
@@ -41,4 +41,4 @@ Review the rendered markup and interactive states that affect Use unique IDs for
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/duplicate-id-aria
+Rule page: https://frontendchecklist.io/rules/accessibility/duplicate-id-aria

@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/javascript-linter
+  url: https://frontendchecklist.io/rules/javascript/javascript-linter
 ---
 
 # Lint JavaScript code
@@ -42,4 +42,4 @@ Review scripts, client components, and browser execution paths related to Lint J
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/javascript-linter
+Rule page: https://frontendchecklist.io/rules/javascript/javascript-linter

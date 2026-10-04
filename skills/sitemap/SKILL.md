@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/sitemap
+  url: https://frontendchecklist.io/rules/seo/sitemap
 ---
 
 # Create and submit an XML sitemap
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/sitemap
+Rule page: https://frontendchecklist.io/rules/seo/sitemap

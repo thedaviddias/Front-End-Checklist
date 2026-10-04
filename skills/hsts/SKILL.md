@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/hsts
+  url: https://frontendchecklist.io/rules/security/hsts
 ---
 
 # Set an HSTS header
@@ -43,4 +43,4 @@ Review server config, headers, forms, and integration points related to Set an H
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/hsts
+Rule page: https://frontendchecklist.io/rules/security/hsts

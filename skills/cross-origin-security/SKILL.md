@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/cross-origin-security
+  url: https://frontendchecklist.io/rules/javascript/cross-origin-security
 ---
 
 # Handle cross-origin requests securely
@@ -43,4 +43,4 @@ Review scripts, client components, and browser execution paths related to Handle
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/cross-origin-security
+Rule page: https://frontendchecklist.io/rules/javascript/cross-origin-security

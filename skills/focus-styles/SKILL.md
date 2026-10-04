@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/focus-styles
+  url: https://frontendchecklist.io/rules/css/focus-styles
 ---
 
 # Provide visible custom focus indicators
@@ -44,4 +44,4 @@ Review stylesheets, component styles, and responsive states related to Provide v
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/focus-styles
+Rule page: https://frontendchecklist.io/rules/css/focus-styles

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/sitemap-4xx
+  url: https://frontendchecklist.io/rules/seo/sitemap-4xx
 ---
 
 # 4XX Pages in Sitemap
@@ -42,4 +42,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/sitemap-4xx
+Rule page: https://frontendchecklist.io/rules/seo/sitemap-4xx

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/lazy-above-fold
+  url: https://frontendchecklist.io/rules/performance/lazy-above-fold
 ---
 
 # Disable lazy loading for above-the-fold content
@@ -41,4 +41,4 @@ Review the routes, assets, and loading behavior that affect Disable lazy loading
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/lazy-above-fold
+Rule page: https://frontendchecklist.io/rules/performance/lazy-above-fold

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "60"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/screen-reader-testing
+  url: https://frontendchecklist.io/rules/accessibility/screen-reader-testing
 ---
 
 # Test with screen readers
@@ -43,4 +43,4 @@ Review the rendered markup and interactive states that affect Test with screen r
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/screen-reader-testing
+Rule page: https://frontendchecklist.io/rules/accessibility/screen-reader-testing

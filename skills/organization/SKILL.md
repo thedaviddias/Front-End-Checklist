@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/organization
+  url: https://frontendchecklist.io/rules/seo/organization
 ---
 
 # Add Organization schema markup
@@ -42,4 +42,4 @@ Check the homepage for a JSON-LD script with @type 'Organization' or 'Corporatio
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/organization
+Rule page: https://frontendchecklist.io/rules/seo/organization

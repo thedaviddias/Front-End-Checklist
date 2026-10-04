@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/duplicate-description
+  url: https://frontendchecklist.io/rules/seo/duplicate-description
 ---
 
 # Avoid duplicate meta descriptions
@@ -48,4 +48,4 @@ Check that no two `<meta name="description">` tags in the rendered HTML across d
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/duplicate-description
+Rule page: https://frontendchecklist.io/rules/seo/duplicate-description

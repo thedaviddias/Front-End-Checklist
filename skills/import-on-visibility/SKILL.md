@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/import-on-visibility
+  url: https://frontendchecklist.io/rules/performance/import-on-visibility
 ---
 
 # Load non-critical code when content approaches the viewport
@@ -42,4 +42,4 @@ Inspect scroll-triggered sections, embeds, charts, recommendation modules, and l
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/import-on-visibility
+Rule page: https://frontendchecklist.io/rules/performance/import-on-visibility

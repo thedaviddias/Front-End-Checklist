@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/security/session-cookie-flags
+  url: https://frontendchecklist.io/rules/security/session-cookie-flags
 ---
 
 # Set Secure, HttpOnly, and SameSite flags on session cookies
@@ -42,4 +42,4 @@ Review all Set-Cookie headers and cookie creation code. Flag any cookies missing
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/security/session-cookie-flags
+Rule page: https://frontendchecklist.io/rules/security/session-cookie-flags

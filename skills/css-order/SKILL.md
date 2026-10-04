@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/css-order
+  url: https://frontendchecklist.io/rules/css/css-order
 ---
 
 # Order CSS files correctly
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Order CSS
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/css-order
+Rule page: https://frontendchecklist.io/rules/css/css-order

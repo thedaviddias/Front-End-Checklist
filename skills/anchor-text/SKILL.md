@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/anchor-text
+  url: https://frontendchecklist.io/rules/seo/anchor-text
 ---
 
 # Use descriptive anchor text
@@ -41,4 +41,4 @@ Review metadata generation, rendered HTML, structured data, and response headers
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/anchor-text
+Rule page: https://frontendchecklist.io/rules/seo/anchor-text

@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "20"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/css/specificity-management
+  url: https://frontendchecklist.io/rules/css/specificity-management
 ---
 
 # Keep CSS specificity low and flat
@@ -42,4 +42,4 @@ Review stylesheets, component styles, and responsive states related to Keep CSS 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/css/specificity-management
+Rule page: https://frontendchecklist.io/rules/css/specificity-management

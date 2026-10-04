@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/javascript/type-only-imports
+  url: https://frontendchecklist.io/rules/javascript/type-only-imports
 ---
 
 # Use import type for type-only imports
@@ -42,4 +42,4 @@ Inspect all import statements in this file. For each import, check whether the i
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/javascript/type-only-imports
+Rule page: https://frontendchecklist.io/rules/javascript/type-only-imports

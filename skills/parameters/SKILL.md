@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "15"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/parameters
+  url: https://frontendchecklist.io/rules/seo/parameters
 ---
 
 # Limit unnecessary URL parameters
@@ -42,4 +42,4 @@ Enumerate all URL parameter patterns used across the site. For each parameter ty
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/parameters
+Rule page: https://frontendchecklist.io/rules/seo/parameters

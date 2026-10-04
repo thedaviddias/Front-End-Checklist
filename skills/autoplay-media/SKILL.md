@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "10"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/accessibility/autoplay-media
+  url: https://frontendchecklist.io/rules/accessibility/autoplay-media
 ---
 
 # Avoid autoplaying media
@@ -42,4 +42,4 @@ Review the rendered markup and interactive states that affect Avoid autoplaying 
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/accessibility/autoplay-media
+Rule page: https://frontendchecklist.io/rules/accessibility/autoplay-media

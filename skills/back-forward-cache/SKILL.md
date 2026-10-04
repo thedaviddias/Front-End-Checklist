@@ -7,7 +7,7 @@ metadata:
   difficulty: advanced
   estimatedTime: "25"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/performance/back-forward-cache
+  url: https://frontendchecklist.io/rules/performance/back-forward-cache
 ---
 
 # Optimize pages for back/forward cache
@@ -43,4 +43,4 @@ Review route code, global listeners, analytics hooks, and data-refresh logic rel
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/performance/back-forward-cache
+Rule page: https://frontendchecklist.io/rules/performance/back-forward-cache

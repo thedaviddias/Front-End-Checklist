@@ -7,7 +7,7 @@ metadata:
   difficulty: beginner
   estimatedTime: "5"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/seo/meta-in-body
+  url: https://frontendchecklist.io/rules/seo/meta-in-body
 ---
 
 # Meta Tags in Body
@@ -42,4 +42,4 @@ Parse the rendered HTML and check the DOM structure. Find all <meta> elements. F
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/seo/meta-in-body
+Rule page: https://frontendchecklist.io/rules/seo/meta-in-body

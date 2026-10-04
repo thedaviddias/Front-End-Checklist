@@ -7,7 +7,7 @@ metadata:
   difficulty: intermediate
   estimatedTime: "30"
   source: frontendchecklist.io
-  url: https://frontendchecklist.io/en/rules/testing/error-monitoring
+  url: https://frontendchecklist.io/rules/testing/error-monitoring
 ---
 
 # Integrate real-time error monitoring in production
@@ -43,4 +43,4 @@ Review the monitoring initialisation code. Flag missing user context, absent rel
 For full implementation details, code examples, and framework-specific guidance,
 see `references/rule.md`.
 
-Rule page: https://frontendchecklist.io/en/rules/testing/error-monitoring
+Rule page: https://frontendchecklist.io/rules/testing/error-monitoring
