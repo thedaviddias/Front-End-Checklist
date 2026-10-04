@@ -8,6 +8,9 @@
   },
   "homepage": "https://frontendchecklist.io/mcp",
   "privacyPolicyUrl": "https://frontendchecklist.io/privacy",
+  "termsOfServiceUrl": "https://frontendchecklist.io/terms",
+  "supportUrl": "https://github.com/thedaviddias/Front-End-Checklist/issues",
+  "documentationUrl": "https://frontendchecklist.io/mcp",
   "repository": "https://github.com/thedaviddias/Front-End-Checklist",
   "license": "MIT",
   "keywords": [

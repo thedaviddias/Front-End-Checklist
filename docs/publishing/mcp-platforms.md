@@ -146,6 +146,23 @@ The challenge route has two passing unit tests; the account hook regression test
 
 ChatGPT personal archive upload succeeded: https://chatgpt.com/plugins/Plugin_f880f65efaf8819196cba494eaa350fc shows version 2.0.1, one MCP, and one global skill. This is a personal cloud installation, not a public directory submission. Public publication uses the developer dashboard at https://platform.openai.com/plugins; it currently requires owner sign-in.
 
-Claude directory validation passed at `14f3317` (seven checks, one missing-privacy-URL warning). The Claude manifest now declares the directory-specific `privacyPolicyUrl`. Claude Code accepts the bundle but reports that optional field as unknown and ignores it at load time; `--strict` treats this known warning as an error. Marketplace validation remains strict. Do not remove the directory privacy URL solely to silence an older client schema.
+Claude directory validation passed at `14f3317` (seven checks, one missing-privacy-URL warning). The Claude manifest now declares the directory-specific privacy, terms, support, and documentation URL fields. Claude Code accepts the bundle but reports those optional fields as unknown and ignores it at load time; `--strict` treats this known warning as an error. Marketplace validation remains strict. Do not remove the directory privacy URL solely to silence an older client schema.
 
 Push of `14f3317` passed 125 web tests in 41 suites and the required production build. Production deployment remains pending the approved support email. The Nextcloud ZIP copy was read back and verified byte-for-byte.
+
+## Codex model smoke evidence
+
+Eight functional scenarios were exercised on October 4, 2026 using subscription-authenticated `codex exec`, ephemeral sessions, read-only permissions, and only the hosted Front-End Checklist MCP. These were direct client/MCP checks, not a desktop plugin/skill walkthrough: the form used one session and the other seven scenarios shared a second session. Hosted server version was still `2.0.0`.
+
+| Scenario | Observed result |
+| --- | --- |
+| Unlabeled form | `review_code` plus rule lookup; identified missing label and distinguished the method warning as a heuristic |
+| Alt text | Model selected `explain_rule` rather than the case's proposed `get_rule`; returned explicit decorative-image `alt=""` caveat |
+| LCP | `search_rules` returned 19 matches, first ten shown |
+| Launch | `get_workflow` returned 16 ordered rules |
+| Public page | `audit_url` successfully fetched example.com, 577 characters; findings described as heuristics |
+| Private IP | Tool rejected 127.0.0.1 with an explicit private-IP error |
+| Private account data | Model explained that the MCP inventory provides no private-progress access |
+| WCAG certification | Model refused certification and explained static-review and manual-testing limits |
+
+Raw traces are temporary staging files under `.artifacts/mcp-publication/`. A generated CLI transcript replay is labeled as a replay, not a desktop screen recording. Claude CLI reports no active login; its model scenarios remain pending. Record the final platform walkthrough against the deployed release and publish a reviewer-accessible recording before submitting.
