@@ -17,10 +17,10 @@ Repository distribution and directory approval are separate. The MCP Registry li
 
 | Check | Result |
 | --- | --- |
-| Plugin manifests and both marketplace catalogs | Present locally, with pre-existing staged work; public availability must be checked after push |
+| Plugin manifests and both marketplace catalogs | Committed and publicly pushed; verify the selected revision before submitting |
 | Shared global skill | Bundled; only this skill is included, not the entire generated skill collection |
 | MIT license and PNG icon | Included |
-| Claude local validation | Strict plugin and marketplace validation passed; portal validation remains separate |
+| Claude validation | Directory source validation passed at `14f3317`; local CLI warns about directory-only `privacyPolicyUrl`, which it ignores at load time |
 | Codex local install | Isolated marketplace add and plugin add passed for version `2.0.1`; client model walkthrough remains |
 | Package integration tests | Three passed: bundled skill equality, versions, hosted URL configuration |
 | MCP initialization at `https://mcp.frontendchecklist.io` | HTTP 200, protocol `2025-11-25`, server version `2.0.0` |
@@ -42,7 +42,7 @@ Direct live protocol smoke checks also passed: 11 tools with `readOnlyHint`, for
 Run from this repository root:
 
 ```bash
-claude plugin validate --strict plugins/front-end-checklist
+claude plugin validate plugins/front-end-checklist
 claude plugin validate --strict .claude-plugin/marketplace.json
 pnpm --filter @repo/mcp test --runInBand tests/integration/plugin.test.ts
 pnpm exec node scripts/generate/package-mcp-plugin.mjs
@@ -145,3 +145,7 @@ David Dias is the confirmed operator. Automatic newsletter enrollment was remove
 The challenge route has two passing unit tests; the account hook regression test passes. The current GitHub deployment fails due to an invalid VERCEL_TOKEN (DAV-312), although local Vercel login works. Production release still requires clean-source deployment and verification.
 
 ChatGPT personal archive upload succeeded: https://chatgpt.com/plugins/Plugin_f880f65efaf8819196cba494eaa350fc shows version 2.0.1, one MCP, and one global skill. This is a personal cloud installation, not a public directory submission. Public publication uses the developer dashboard at https://platform.openai.com/plugins; it currently requires owner sign-in.
+
+Claude directory validation passed at `14f3317` (seven checks, one missing-privacy-URL warning). The Claude manifest now declares the directory-specific `privacyPolicyUrl`. Claude Code accepts the bundle but reports that optional field as unknown and ignores it at load time; `--strict` treats this known warning as an error. Marketplace validation remains strict. Do not remove the directory privacy URL solely to silence an older client schema.
+
+Push of `14f3317` passed 125 web tests in 41 suites and the required production build. Production deployment remains pending the approved support email. The Nextcloud ZIP copy was read back and verified byte-for-byte.

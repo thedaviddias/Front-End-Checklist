@@ -7,6 +7,7 @@
     "url": "https://thedaviddias.com"
   },
   "homepage": "https://frontendchecklist.io/mcp",
+  "privacyPolicyUrl": "https://frontendchecklist.io/privacy",
   "repository": "https://github.com/thedaviddias/Front-End-Checklist",
   "license": "MIT",
   "keywords": [
