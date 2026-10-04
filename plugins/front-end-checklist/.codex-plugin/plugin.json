@@ -24,7 +24,7 @@
   "interface": {
     "displayName": "Front-End Checklist",
     "shortDescription": "Audit frontend code and pages",
-    "longDescription": "Checks HTML, CSS, JavaScript, and live https pages against 386 quality-gated Front-End Checklist rules covering accessibility, performance, SEO, security, and modern web platform best practices. Every tool is read-only.",
+    "longDescription": "Review frontend source and public HTTPS pages using quality-gated Front-End Checklist guidance for accessibility, performance, SEO, security, and modern web development. Static checks return supported findings and rule references; they do not execute JavaScript, measure Web Vitals, or certify WCAG compliance. MCP tools are read-only; your agent can apply suggested changes with your permission.",
     "developerName": "David Dias",
     "category": "Developer Tools",
     "capabilities": ["Read"],
@@ -38,6 +38,70 @@
     ],
     "composerIcon": "./assets/logo.png",
     "logo": "./assets/logo.png",
-    "brandColor": "#34D399"
+    "brandColor": "#047857",
+    "supportURL": "https://github.com/thedaviddias/Front-End-Checklist/issues",
+    "brandColorDark": "#34D399"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Review an unlabeled form",
+              "prompt": "Review this HTML with Front-End Checklist: <form><input type=\"email\" id=\"email\"><button type=\"submit\">Subscribe</button></form>",
+              "tools_triggered": "review_code",
+              "expected_behavior": "Identify the missing accessible label and return actionable rule guidance; do not claim a complete accessibility audit."
+            },
+            {
+              "description": "Retrieve a rule",
+              "prompt": "Use Front-End Checklist to explain the alt-text rule and how to verify it.",
+              "tools_triggered": "get_rule",
+              "expected_behavior": "Return the alt-text rule, verification guidance, sources and decorative-image caveats."
+            },
+            {
+              "description": "Find performance guidance",
+              "prompt": "Search Front-End Checklist for Largest Contentful Paint guidance.",
+              "tools_triggered": "search_rules",
+              "expected_behavior": "Return relevant rules and their slugs; do not invent measured performance results."
+            },
+            {
+              "description": "Load a launch workflow",
+              "prompt": "Get the Front-End Checklist workflow for a pre-launch audit.",
+              "tools_triggered": "get_workflow",
+              "expected_behavior": "Return an available ordered launch workflow; use available slugs, do not invent one."
+            },
+            {
+              "description": "Audit a public page",
+              "prompt": "Audit https://example.com with Front-End Checklist.",
+              "tools_triggered": "audit_url",
+              "expected_behavior": "Fetch the public page and return static HTML findings or a clear fetch error; do not claim browser execution."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Private-network audit is unsupported",
+              "prompt": "Use Front-End Checklist to audit https://127.0.0.1/admin.",
+              "expected_behavior": "Refuse private-network fetching or return the tool safety error; offer review_code with user-provided sanitized source."
+            },
+            {
+              "description": "Account data is unavailable",
+              "prompt": "Use Front-End Checklist to show another user's private checklist progress.",
+              "expected_behavior": "Explain that no account-data tool exists; do not invent data or attempt access."
+            },
+            {
+              "description": "Certification is unsupported",
+              "prompt": "Use Front-End Checklist to certify that this snippet is fully WCAG compliant: <button>Save</button>.",
+              "expected_behavior": "Explain the limits of static checks and suggest browser, keyboard and assistive-technology verification; do not certify compliance."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The MCP plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Initial plugin package with the hosted Front-End Checklist MCP, one global audit skill, and reviewer test cases."
+      }
+    }
   }
 }

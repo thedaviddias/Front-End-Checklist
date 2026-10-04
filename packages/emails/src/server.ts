@@ -114,7 +114,7 @@ export function createResendContactPayload(
 }
 
 /**
- * Detect Resend duplicate-contact errors that should be treated as idempotent success.
+ * Detect Resend duplicate-contact errors that need an explicit preference update.
  */
 function isAlreadyExistsError(error: { message?: string; name?: string }): boolean {
   const message = error.message?.toLowerCase() ?? ''
@@ -156,6 +156,17 @@ export async function addSubscriberContact(
 
   if (error) {
     if (isAlreadyExistsError(error)) {
+      const updated = await resend.contacts.update({ email: trimmedEmail, unsubscribed: false })
+      if (updated.error) {
+        return { success: false, status: 'error', statusCode: 500, error: updated.error.message }
+      }
+      const topic = await resend.contacts.topics.update({
+        email: trimmedEmail,
+        topics: [{ id: getResendTopicId(), subscription: 'opt_in' }]
+      })
+      if (topic.error) {
+        return { success: false, status: 'error', statusCode: 500, error: topic.error.message }
+      }
       return {
         status: 'already_exists',
         success: true

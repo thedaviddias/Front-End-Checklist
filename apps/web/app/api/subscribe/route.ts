@@ -6,7 +6,7 @@ const SUBSCRIBE_SECRET = process.env.SUBSCRIBE_SECRET
 
 /**
  * Internal API: add an email to the mailing list audience.
- * Called from auth databaseHooks.user.create.after with x-subscribe-secret.
+ * Reserved for trusted integrations that have already obtained newsletter consent.
  * Do not expose this as a public endpoint without rate limiting and validation.
  */
 export async function POST(request: Request) {

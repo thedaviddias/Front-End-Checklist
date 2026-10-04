@@ -113,9 +113,13 @@ describe('@repo/emails/server', () => {
 
   it('treats existing Resend contacts as a successful sync', async () => {
     process.env.RESEND_API_KEY = 're_test_key'
+    const mockUpdate = jest.fn().mockResolvedValue({ data: { id: 'existing' }, error: null })
+    const mockTopicUpdate = jest.fn().mockResolvedValue({ data: { id: 'existing' }, error: null })
     jest.doMock('resend', () => ({
       Resend: jest.fn().mockImplementation(() => ({
         contacts: {
+          update: mockUpdate,
+          topics: { update: mockTopicUpdate },
           create: jest.fn().mockResolvedValue({
             data: null,
             error: {
@@ -132,6 +136,11 @@ describe('@repo/emails/server', () => {
     await expect(addSubscriberContact('test@example.com')).resolves.toEqual({
       status: 'already_exists',
       success: true
+    })
+    expect(mockUpdate).toHaveBeenCalledWith({ email: 'test@example.com', unsubscribed: false })
+    expect(mockTopicUpdate).toHaveBeenCalledWith({
+      email: 'test@example.com',
+      topics: [{ id: 'cdb0d440-4825-412a-8152-29681e8155b7', subscription: 'opt_in' }]
     })
   })
 })

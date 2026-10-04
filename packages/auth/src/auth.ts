@@ -11,7 +11,6 @@ import {
 
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
 const baseUrl = process.env.BETTER_AUTH_URL ?? publicSiteUrl ?? 'http://localhost:3000'
-const subscribeSecret = process.env.SUBSCRIBE_SECRET
 const isProductionBuild = process.env.NEXT_PHASE === 'phase-production-build'
 const productionBuildAuthSecret = isProductionBuild
   ? 'fec-build-only-better-auth-secret-d2f9a4c8b1e6-7a3d-4b9f-9e2c-8f1a6d5c3b0a'
@@ -64,22 +63,6 @@ export const auth = betterAuth({
               ...(taken ? {} : { username }),
               isProfilePublic: true
             }
-          }
-        },
-        after: async user => {
-          if (!subscribeSecret || !user.email) return
-          const url = `${baseUrl}/api/subscribe`
-          try {
-            await fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'x-subscribe-secret': subscribeSecret
-              },
-              body: JSON.stringify({ email: user.email })
-            })
-          } catch {
-            // Fire-and-forget: do not block sign-up if mailing list add fails
           }
         }
       }

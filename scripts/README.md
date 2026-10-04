@@ -16,6 +16,10 @@ Scripts are grouped by purpose. Run from repo root with `pnpm <script>` unless n
 
 Root: `setup-qmd.sh` — QMD setup/embed (run via `pnpm qmd:setup` / `pnpm qmd:embed`).
 
+MCP plugin upload archive: `pnpm exec node scripts/generate/package-mcp-plugin.mjs`.
+It creates an allowlisted ZIP in ignored `.artifacts/mcp-publication/` and prints its SHA-256.
+See [the publishing runbook](../docs/publishing/mcp-platforms.md) for directory requirements and release blockers.
+
 ---
 
 ## Core (CI / lefthook)

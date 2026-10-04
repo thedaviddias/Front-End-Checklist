@@ -7,6 +7,7 @@ import { cn } from '@repo/utils'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useCallback, useState } from 'react'
+import { NewsletterSettings } from '@/components/account/newsletter-settings'
 import { signOutCurrentUser } from '@/lib/auth-actions'
 
 /**
@@ -120,6 +121,8 @@ export function SettingsPageClient() {
           </p>
         </div>
       </section>
+
+      <NewsletterSettings />
 
       {/* Data section */}
       <section className="mt-8">

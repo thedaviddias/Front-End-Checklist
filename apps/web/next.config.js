@@ -121,7 +121,7 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
-          source: '/:path*',
+          source: '/:path((?!\\.well-known/openai-apps-challenge).*)',
           has: [
             {
               type: 'host',

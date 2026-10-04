@@ -4,6 +4,8 @@
 
 const mockGetSession = jest.fn()
 const mockCreate = jest.fn()
+const mockUpdate = jest.fn()
+const mockTopicUpdate = jest.fn()
 const originalApiKey = process.env.RESEND_API_KEY
 
 process.env.RESEND_API_KEY = 're_test_key'
@@ -19,7 +21,9 @@ jest.mock('@repo/auth/auth', () => ({
 jest.mock('resend', () => ({
   Resend: jest.fn().mockImplementation(() => ({
     contacts: {
-      create: mockCreate
+      create: mockCreate,
+      update: mockUpdate,
+      topics: { update: mockTopicUpdate }
     }
   }))
 }))
@@ -46,6 +50,8 @@ describe('subscribe me route', () => {
 
   beforeEach(() => {
     jest.clearAllMocks()
+    mockUpdate.mockResolvedValue({ data: { id: 'contact-1' }, error: null })
+    mockTopicUpdate.mockResolvedValue({ data: { id: 'contact-1' }, error: null })
     headers.mockResolvedValue(new Headers())
   })
 

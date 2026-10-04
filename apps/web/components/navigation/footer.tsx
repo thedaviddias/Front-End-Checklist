@@ -23,7 +23,9 @@ const PROJECT_LINKS = [
   { href: routeAbout(), label: 'About' },
   { href: routeMentions(), label: 'Community Mentions' },
   { href: GITHUB_REPO_URL, label: 'Source Code', external: true },
-  { href: '/sitemap.xml', label: 'Sitemap' }
+  { href: '/sitemap.xml', label: 'Sitemap' },
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms of Service' }
 ] as const
 
 const AGENT_LINKS = [

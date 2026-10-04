@@ -32,8 +32,8 @@ for Claude Desktop, Claude.ai, ChatGPT, Cursor, VS Code, and other clients.
 
 | Tool | What it does |
 | --- | --- |
-| `review_code` | Audit pasted HTML, CSS, or JavaScript against every relevant rule |
-| `audit_url` | Fetch a public `https://` page and audit its HTML |
+| `review_code` | Statically review pasted frontend source and retrieve relevant rule guidance |
+| `audit_url` | Fetch a public `https://` page and statically audit its HTML |
 | `get_workflow` | Ordered checklist for a launch, accessibility, SEO, security, or performance pass |
 | `get_checklist_rules` | Full rule details for every rule in a checklist |
 | `get_quick_reference` | Compact checklist filtered by priority |
@@ -42,7 +42,8 @@ for Claude Desktop, Claude.ai, ChatGPT, Cursor, VS Code, and other clients.
 | `check_rule` / `fix_rule` / `explain_rule` | Verify, remediate, or explain a single rule |
 | `list_categories` | Rule categories with counts |
 
-Every tool is read-only: nothing is written to your project or to any account.
+MCP tools are read-only. Your agent can use their guidance to edit your project.
+Static review does not execute JavaScript, measure Web Vitals, or certify accessibility compliance.
 
 ## Example prompts
 
@@ -52,9 +53,13 @@ Every tool is read-only: nothing is written to your project or to any account.
 
 ## Privacy Policy
 
-Code you send to `review_code` is processed in memory to produce the review and
-is not stored. The server records only which tool was called and when, for usage
-statistics. Full details: [frontendchecklist.io/privacy](https://frontendchecklist.io/privacy).
+Code sent to `review_code` is sent to the hosted MCP service for static analysis.
+`audit_url` makes a server-side request to the public URL you provide. Send only
+code and URLs you are authorized to share, with secrets removed.
+
+Publication preparation is in progress: the public privacy and terms pages are
+not yet available. See the [publishing runbook](https://github.com/thedaviddias/Front-End-Checklist/blob/main/docs/publishing/mcp-platforms.md)
+for the verified status and remaining directory requirements.
 
 ## Support
 
