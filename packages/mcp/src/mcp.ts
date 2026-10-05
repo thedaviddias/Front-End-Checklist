@@ -19,6 +19,7 @@ export {
 export { APPS_EXTENSION, REVIEW_REPORT_UI_URI } from './server-apps'
 export { loadSkills, SKILLS_EXTENSION } from './server-skills'
 export { getToolDefinitions } from './server-tools'
+export type { McpRuleUsage, McpToolUsage } from './telemetry'
 // Tools
 export {
   type AuditUrlInput,

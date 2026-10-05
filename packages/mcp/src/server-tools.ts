@@ -1,6 +1,7 @@
 import { fromJsonSchema, type McpServer } from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
 import { getToolUiMeta } from './server-apps'
+import { buildToolUsage, type McpToolUsage, notifyToolUsage } from './telemetry'
 import {
   type AuditUrlInput,
   auditUrlDefinition,
@@ -263,7 +264,8 @@ export function registerTools(
   getChecklists: () => CuratedChecklist[],
   maxResponseChars: number,
   telemetryEnabled: boolean,
-  recordTelemetry: (toolName: string) => void
+  recordTelemetry: (toolName: string) => void,
+  onToolCompleted?: (usage: McpToolUsage) => void
 ): void {
   const toolDefinitions = getToolDefinitions(getChecklists())
 
@@ -281,6 +283,7 @@ export function registerTools(
         _meta: getToolUiMeta(definition.name)
       },
       async (args: unknown) => {
+        const started = performance.now()
         const rules = await Promise.resolve(getRules())
         const checklists = getChecklists()
 
@@ -288,12 +291,44 @@ export function registerTools(
           recordTelemetry(definition.name)
         }
 
-        const { isError, result } = await executeTool(
-          definition.name,
-          (args || {}) as Record<string, unknown>,
-          rules,
-          checklists
-        )
+        let execution: ToolExecutionResult
+        try {
+          execution = await executeTool(
+            definition.name,
+            (args || {}) as Record<string, unknown>,
+            rules,
+            checklists
+          )
+        } catch (error) {
+          if (telemetryEnabled) {
+            notifyToolUsage(
+              onToolCompleted,
+              buildToolUsage(
+                definition.name,
+                args,
+                undefined,
+                rules,
+                'error',
+                performance.now() - started
+              )
+            )
+          }
+          throw error
+        }
+        const { isError, result } = execution
+        if (telemetryEnabled) {
+          notifyToolUsage(
+            onToolCompleted,
+            buildToolUsage(
+              definition.name,
+              args,
+              result,
+              rules,
+              isError ? 'error' : 'success',
+              performance.now() - started
+            )
+          )
+        }
 
         return {
           content: toTextContent(result, maxResponseChars),

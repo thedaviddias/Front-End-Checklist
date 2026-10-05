@@ -1,4 +1,3 @@
-import { prisma } from '@repo/auth/prisma'
 import { MCP_SERVER_URL, SITE_URL } from '@repo/config'
 import {
   getTelemetryStats,
@@ -8,18 +7,19 @@ import {
   MCP_PROTOCOL_VERSIONS,
   MCP_RESOURCE_TEMPLATES,
   MCP_SERVER_INFO,
-  MCP_SERVER_INSTRUCTIONS
+  MCP_SERVER_INSTRUCTIONS,
+  type McpToolUsage
 } from '@repo/mcp'
 import { CATEGORIES, type Category, SUBCATEGORIES, type Subcategory } from '@repo/types'
 import { GET_CACHE_HEADERS, getCachedResponse, setCachedResponse } from '@/lib/mcp-cache'
+import { scheduleMcpTelemetry } from '@/lib/mcp-telemetry'
 import {
   checkRateLimit,
   createRateLimitHeaders,
   getClientIp,
   type RateLimitResult
 } from '@/lib/rate-limit'
-import { TELEMETRY_EVENTS } from '@/lib/telemetry-events'
-import { captureServerException, trackServerEvent } from '@/lib/telemetry-server'
+import { captureServerException } from '@/lib/telemetry-server'
 import { getChecklists, getRules, SKILLS_DIR } from './content-helpers'
 import { getPostCacheInput, readBoundedJson } from './request-body'
 import {
@@ -92,16 +92,6 @@ function isMcpRequest(value: unknown): value is McpRequest {
 }
 
 /**
- * Check whether the payload is a valid MCP request batch.
- *
- * @param value - Candidate request payload.
- * @returns True when the payload is an array of valid MCP requests.
- */
-function isMcpRequestBatch(value: unknown): value is McpRequest[] {
-  return Array.isArray(value) && value.every(isMcpRequest)
-}
-
-/**
  * Check whether an MCP request is safe to cache at the response-envelope level.
  *
  * Tool lists are static for a deployment and do not contain user payloads.
@@ -135,26 +125,6 @@ function cachedMcpResponseToResponse(cached: CachedMcpResponse): Response {
     statusText: cached.statusText,
     headers: new Headers(cached.headers)
   })
-}
-
-/**
- * Extract tool names from a single or batch request for DB telemetry.
- *
- * @param body - Parsed request body.
- * @returns Tool names for any tools/call entries in the payload.
- */
-function extractToolNamesFromRequest(body: unknown): string[] {
-  if (isMcpRequestBatch(body)) {
-    return body
-      .filter(req => req.method === 'tools/call' && typeof req.params?.name === 'string')
-      .map(req => req.params!.name as string)
-  }
-
-  if (isMcpRequest(body) && body.method === 'tools/call' && typeof body.params?.name === 'string') {
-    return [body.params.name]
-  }
-
-  return []
 }
 
 /**
@@ -298,6 +268,7 @@ export async function POST(request: Request) {
     )
   }
 
+  const usages: McpToolUsage[] = []
   try {
     const cacheableBody = isCacheableMcpPostBody(body)
     const cacheInput = getPostCacheInput(request, body)
@@ -316,6 +287,7 @@ export async function POST(request: Request) {
           ? parseInt(process.env.MCP_MAX_RESPONSE_CHARS, 10)
           : undefined,
         telemetryEnabled: MCP_TELEMETRY_ENABLED,
+        onToolCompleted: usage => usages.push(usage),
         skillsDir: SKILLS_DIR
       },
       body
@@ -329,25 +301,6 @@ export async function POST(request: Request) {
         status: clonedResponse.status,
         statusText: clonedResponse.statusText
       } satisfies CachedMcpResponse)
-    }
-
-    if (MCP_TELEMETRY_ENABLED) {
-      const toolNames = extractToolNamesFromRequest(body)
-      if (toolNames.length > 0) {
-        prisma.mcpToolCall
-          .createMany({
-            data: toolNames.map(toolName => ({ toolName }))
-          })
-          .catch(() => {
-            // Telemetry must not break MCP responses.
-          })
-
-        for (const toolName of toolNames) {
-          trackServerEvent(TELEMETRY_EVENTS.mcpToolCalled, {
-            toolName
-          })
-        }
-      }
     }
 
     return withRouteHeaders(request, response, rateLimitResult)
@@ -366,6 +319,8 @@ export async function POST(request: Request) {
       error instanceof Error ? error.message : 'Unknown error',
       rateLimitResult
     )
+  } finally {
+    scheduleMcpTelemetry(usages)
   }
 }
 

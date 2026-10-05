@@ -12,6 +12,7 @@ import { registerPrompts } from './server-prompts'
 import { registerResources } from './server-resources'
 import { loadSkills, registerSkills, SKILLS_EXTENSION } from './server-skills'
 import { registerTools } from './server-tools'
+import type { McpToolUsage } from './telemetry'
 import { MCP_SERVER_ICON } from './tools/metadata'
 import { DEFAULT_MAX_RESPONSE_CHARS } from './utils/response-cap'
 
@@ -61,6 +62,8 @@ export const MCP_PROMPTS = [
 interface McpServerOptions {
   maxResponseChars?: number
   telemetryEnabled?: boolean
+  /** Receives only canonical aggregate metadata after tool execution. */
+  onToolCompleted?: (usage: McpToolUsage) => void
   /** Directory of generated agent skills to serve via the Skills extension. */
   skillsDir?: string
 }
@@ -156,7 +159,8 @@ export function createMcpServer(
     getChecklists,
     maxResponseChars,
     telemetryEnabled,
-    recordTelemetry
+    recordTelemetry,
+    options.onToolCompleted
   )
   registerResources(
     server,

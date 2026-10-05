@@ -59,9 +59,12 @@ export default function PrivacyPage() {
           fields. Some diagnostics may include an account ID.
         </p>
         <p>
-          Where enabled, anonymous MCP usage records contain the tool name and timestamp. IP-based
-          rate limiting uses Redis to protect the service. We use this information to operate,
-          secure, troubleshoot, and improve Front-End Checklist.
+          Where enabled, anonymous MCP usage records contain the tool name, timestamp, result
+          status, execution duration, and canonical rule slugs and categories requested or returned.
+          These analytics do not include submitted code, prompts, search queries, audited URLs, or
+          website account identifiers. A returned rule does not mean that a user applied a change.
+          IP-based rate limiting uses Redis to protect the service. We use this information to
+          operate, secure, troubleshoot, and improve Front-End Checklist.
         </p>
         <h2>Email preferences</h2>
         <p>

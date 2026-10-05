@@ -19,6 +19,8 @@ export const TELEMETRY_EVENTS = {
   filterChanged: 'filter_changed',
   mcpSetupClicked: 'mcp_setup_clicked',
   mcpToolCalled: 'mcp_tool_called',
+  mcpRuleRequested: 'mcp_rule_requested',
+  mcpRuleReturned: 'mcp_rule_returned',
   profileGithubSynced: 'profile_github_synced',
   profileUpdated: 'profile_updated',
   progressBulkSynced: 'progress_bulk_synced',

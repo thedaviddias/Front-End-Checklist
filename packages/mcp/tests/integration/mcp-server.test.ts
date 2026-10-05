@@ -9,6 +9,7 @@ import {
   MCP_SERVER_INSTRUCTIONS,
   resetTelemetry
 } from '../../src/server'
+import type { McpToolUsage } from '../../src/telemetry'
 
 /** A 2025-era revision still used by deployed clients. */
 const LEGACY_PROTOCOL_VERSION = '2025-06-18'
@@ -64,7 +65,8 @@ const mockChecklists: CuratedChecklist[] = [
 
 async function callMcp(
   body: Record<string, unknown>,
-  checklists: CuratedChecklist[] = mockChecklists
+  checklists: CuratedChecklist[] = mockChecklists,
+  options: { telemetryEnabled?: boolean; onToolCompleted?: (usage: McpToolUsage) => void } = {}
 ) {
   const request = new Request('https://example.com/mcp', {
     method: 'POST',
@@ -78,7 +80,7 @@ async function callMcp(
     request,
     () => mockRules,
     () => checklists,
-    {},
+    options,
     body
   )
 
@@ -312,6 +314,32 @@ describe('SDK-backed MCP server', () => {
     expect(getTelemetryStats()).toMatchObject({
       search_rules: 1
     })
+  })
+
+  it('reports successful and failed execution while respecting the telemetry flag', async () => {
+    const observer = jest.fn()
+    const request = {
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'tools/call',
+      params: { name: 'get_rule', arguments: { slug: 'doctype' } }
+    }
+    await callMcp(request, mockChecklists, { onToolCompleted: observer })
+    expect(observer).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        toolName: 'get_rule',
+        outcome: 'success',
+        requestedRule: { slug: 'doctype', category: 'html' }
+      })
+    )
+    await callMcp(
+      { ...request, params: { ...request.params, arguments: { slug: 'unknown' } } },
+      mockChecklists,
+      { onToolCompleted: observer }
+    )
+    expect(observer).toHaveBeenLastCalledWith(expect.objectContaining({ outcome: 'error' }))
+    await callMcp(request, mockChecklists, { telemetryEnabled: false, onToolCompleted: observer })
+    expect(observer).toHaveBeenCalledTimes(2)
   })
 
   it('advertises a description for every tool input property', async () => {
