@@ -45,6 +45,7 @@
   "extensions": {
     "com.openai": {
       "review": {
+        "demo_recording_url": "https://cloud.lab.coolio.cloud/index.php/s/dfqcAPTziF7ofy4",
         "test_cases": {
           "positive": [
             {
