@@ -1,0 +1,21 @@
+PASS tests/unit/review-code-detection.test.ts
+PASS tests/quality/mcp-quality.test.ts (8.787 s)
+PASS tests/unit/false-positive-audit.test.ts
+PASS tests/unit/heuristic-coverage.test.ts
+PASS tests/integration/mcp-server.test.ts
+PASS tests/unit/tool-performance.test.ts
+PASS tests/integration/skills.test.ts (26.598 s)
+PASS tests/quality/tool-descriptions.test.ts
+PASS tests/unit/tool-choice-eval.test.ts
+PASS tests/unit/audit-url-ssrf.test.ts
+PASS tests/integration/http-server.test.ts (9.317 s)
+PASS tests/integration/plugin.test.ts
+PASS tests/unit/eval-detection.test.ts
+PASS tests/unit/jsx-list-structure.test.ts
+PASS tests/unit/get-rule.test.ts
+PASS tests/unit/response-cap.test.ts
+Test Suites: 16 passed, 16 total
+Tests:       296 passed, 296 total
+Snapshots:   0 total
+Time:        70.632 s
+Ran all test suites.

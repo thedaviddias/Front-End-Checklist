@@ -51,7 +51,12 @@ export function CodeTabs({ defaultTab, children }: CodeTabsProps) {
     return tabList
   }, [children])
 
-  const [selection, setSelection] = useState(() => resolveFrameworkTabSelection(tabs, defaultTab))
+  const [selection, setSelection] = useState<ReturnType<typeof resolveFrameworkTabSelection>>(
+    () => ({
+      activeTab: defaultTab || tabs[0]?.value || '',
+      source: 'default'
+    })
+  )
 
   useEffect(() => {
     if (typeof window === 'undefined') {

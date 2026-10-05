@@ -1,0 +1,266 @@
+{
+  "comparison": "MCP SDK 2.2.0 vs 2.3.0; identical current source and corpus",
+  "order": ["before-1", "after-1", "after-2", "before-2"],
+  "runs": {
+    "before-1": {
+      "node": "v24.19.0",
+      "modernClientSmoke": true,
+      "stages": [
+        {
+          "concurrency": 1,
+          "requests": 491,
+          "errors": 0,
+          "rps": 97.4,
+          "p50": 7.34,
+          "p95": 27.06,
+          "p99": 53.89,
+          "cpuMsPerRequest": 10.92,
+          "rssMB": 229.3
+        },
+        {
+          "concurrency": 8,
+          "requests": 944,
+          "errors": 0,
+          "rps": 187.8,
+          "p50": 35.76,
+          "p95": 93.67,
+          "p99": 121.79,
+          "cpuMsPerRequest": 6.394,
+          "rssMB": 248.3
+        },
+        {
+          "concurrency": 32,
+          "requests": 921,
+          "errors": 0,
+          "rps": 179,
+          "p50": 143.64,
+          "p95": 381.71,
+          "p99": 515.76,
+          "cpuMsPerRequest": 6.466,
+          "rssMB": 253.7
+        }
+      ],
+      "holdout": [
+        {
+          "name": "eval in executable code",
+          "code": "const value = eval(userInput)",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "name": "eval in comment",
+          "code": "// eval(userInput) is unsafe\nconst value = Number(userInput)",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "eval in string literal",
+          "code": "const example = \"eval(userInput)\"",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "indirect eval",
+          "code": "const value = (0, eval)(userInput)",
+          "expected": true,
+          "actual": false
+        }
+      ]
+    },
+    "after-1": {
+      "node": "v24.19.0",
+      "modernClientSmoke": true,
+      "stages": [
+        {
+          "concurrency": 1,
+          "requests": 593,
+          "errors": 0,
+          "rps": 118.5,
+          "p50": 6.14,
+          "p95": 22.48,
+          "p99": 40.21,
+          "cpuMsPerRequest": 9.054,
+          "rssMB": 217.3
+        },
+        {
+          "concurrency": 8,
+          "requests": 893,
+          "errors": 0,
+          "rps": 177.3,
+          "p50": 33.07,
+          "p95": 111.82,
+          "p99": 215.23,
+          "cpuMsPerRequest": 6.662,
+          "rssMB": 245.4
+        },
+        {
+          "concurrency": 32,
+          "requests": 1218,
+          "errors": 0,
+          "rps": 239.1,
+          "p50": 111.78,
+          "p95": 275.41,
+          "p99": 432.26,
+          "cpuMsPerRequest": 4.854,
+          "rssMB": 247.6
+        }
+      ],
+      "holdout": [
+        {
+          "name": "eval in executable code",
+          "code": "const value = eval(userInput)",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "name": "eval in comment",
+          "code": "// eval(userInput) is unsafe\nconst value = Number(userInput)",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "eval in string literal",
+          "code": "const example = \"eval(userInput)\"",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "indirect eval",
+          "code": "const value = (0, eval)(userInput)",
+          "expected": true,
+          "actual": false
+        }
+      ]
+    },
+    "after-2": {
+      "node": "v24.19.0",
+      "modernClientSmoke": true,
+      "stages": [
+        {
+          "concurrency": 1,
+          "requests": 484,
+          "errors": 0,
+          "rps": 96.1,
+          "p50": 7.6,
+          "p95": 27.68,
+          "p99": 53.88,
+          "cpuMsPerRequest": 10.803,
+          "rssMB": 203.4
+        },
+        {
+          "concurrency": 8,
+          "requests": 676,
+          "errors": 0,
+          "rps": 133.6,
+          "p50": 51.45,
+          "p95": 133.11,
+          "p99": 204.92,
+          "cpuMsPerRequest": 9.699,
+          "rssMB": 247.1
+        },
+        {
+          "concurrency": 32,
+          "requests": 854,
+          "errors": 0,
+          "rps": 155,
+          "p50": 156.99,
+          "p95": 376.29,
+          "p99": 1189.1,
+          "cpuMsPerRequest": 7.457,
+          "rssMB": 256.6
+        }
+      ],
+      "holdout": [
+        {
+          "name": "eval in executable code",
+          "code": "const value = eval(userInput)",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "name": "eval in comment",
+          "code": "// eval(userInput) is unsafe\nconst value = Number(userInput)",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "eval in string literal",
+          "code": "const example = \"eval(userInput)\"",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "indirect eval",
+          "code": "const value = (0, eval)(userInput)",
+          "expected": true,
+          "actual": false
+        }
+      ]
+    },
+    "before-2": {
+      "node": "v24.19.0",
+      "modernClientSmoke": true,
+      "stages": [
+        {
+          "concurrency": 1,
+          "requests": 346,
+          "errors": 0,
+          "rps": 68.8,
+          "p50": 10.37,
+          "p95": 39.44,
+          "p99": 73.51,
+          "cpuMsPerRequest": 15.493,
+          "rssMB": 205.1
+        },
+        {
+          "concurrency": 8,
+          "requests": 449,
+          "errors": 0,
+          "rps": 89.1,
+          "p50": 75.39,
+          "p95": 209.79,
+          "p99": 285.12,
+          "cpuMsPerRequest": 13.621,
+          "rssMB": 238.6
+        },
+        {
+          "concurrency": 32,
+          "requests": 826,
+          "errors": 0,
+          "rps": 158.3,
+          "p50": 165.46,
+          "p95": 427.25,
+          "p99": 570.96,
+          "cpuMsPerRequest": 7.513,
+          "rssMB": 247
+        }
+      ],
+      "holdout": [
+        {
+          "name": "eval in executable code",
+          "code": "const value = eval(userInput)",
+          "expected": true,
+          "actual": true
+        },
+        {
+          "name": "eval in comment",
+          "code": "// eval(userInput) is unsafe\nconst value = Number(userInput)",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "eval in string literal",
+          "code": "const example = \"eval(userInput)\"",
+          "expected": false,
+          "actual": true
+        },
+        {
+          "name": "indirect eval",
+          "code": "const value = (0, eval)(userInput)",
+          "expected": true,
+          "actual": false
+        }
+      ]
+    }
+  }
+}

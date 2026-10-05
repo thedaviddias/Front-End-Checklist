@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@repo/utils'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface TocItem {
   id: string
@@ -26,18 +26,15 @@ export function TableOfContents({
   minLevel = 2,
   maxLevel = 3
 }: TableOfContentsProps) {
-  const [activeId, setActiveId] = useState<string>(() =>
-    typeof window === 'undefined' ? '' : window.location.hash.slice(1)
-  )
+  const [activeId, setActiveId] = useState('')
+  const [headings, setHeadings] = useState<TocItem[]>([])
 
-  const headings = useMemo<TocItem[]>(() => {
-    if (typeof document === 'undefined') {
-      return []
-    }
-
+  useEffect(() => {
+    setActiveId(window.location.hash.slice(1))
     const content = document.querySelector(contentSelector)
     if (!content) {
-      return []
+      setHeadings([])
+      return
     }
 
     const selector = Array.from(
@@ -45,11 +42,13 @@ export function TableOfContents({
       (_, i) => `h${minLevel + i}[id]`
     ).join(', ')
 
-    return Array.from(content.querySelectorAll(selector)).map(el => ({
-      id: el.id,
-      text: el.textContent || '',
-      level: Number.parseInt(el.tagName.charAt(1), 10)
-    }))
+    setHeadings(
+      Array.from(content.querySelectorAll(selector)).map(el => ({
+        id: el.id,
+        text: el.textContent || '',
+        level: Number.parseInt(el.tagName.charAt(1), 10)
+      }))
+    )
   }, [contentSelector, minLevel, maxLevel])
 
   // Track active heading on scroll

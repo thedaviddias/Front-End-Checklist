@@ -118,11 +118,12 @@ test('skill prints the bundled SKILL.md', () => {
 })
 
 test('the npm tarball ships the bundle, content snapshot, and skill', () => {
-  const pack = spawnSync('npm', ['pack', '--dry-run', '--json'], {
+  const pack = spawnSync('pnpm', ['pack', '--dry-run', '--json'], {
     cwd: packageRoot,
     encoding: 'utf-8'
   })
-  const files = JSON.parse(pack.stdout)[0].files.map(f => f.path)
+  assert.equal(pack.status, 0, pack.stderr)
+  const files = JSON.parse(pack.stdout).files.map(f => f.path)
   for (const required of [
     'dist/index.js',
     'dist/content.json',

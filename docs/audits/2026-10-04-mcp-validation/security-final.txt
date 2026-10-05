@@ -1,0 +1,9 @@
+PASS tests/quality/validation.test.cjs (8.753 s)
+        Retrieval: Recall@5 100%, MRR 0.92 across 8 cases
+        review_code: precision 100%, recall 100%, false-positive rate 0%
+        improvement impact: detects 100%, verifies fixes 100%, guides 100% across 5 scenarios
+PASS tests/quality/security.test.cjs
+PASS tests/quality/request-body.test.cjs
+Test Suites: 3 passed, 3 total
+Tests:       47 passed, 47 total
+Time:        12.508 s

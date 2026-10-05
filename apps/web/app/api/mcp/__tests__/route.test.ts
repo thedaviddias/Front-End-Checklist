@@ -8,6 +8,11 @@ const mockGetRuleRawContent = jest.fn()
 const mockGetCachedResponse = jest.fn()
 const mockSetCachedResponse = jest.fn()
 
+jest.mock('@/lib/telemetry-server', () => ({
+  captureServerException: jest.fn(),
+  trackServerEvent: jest.fn()
+}))
+
 jest.mock('@repo/auth/prisma', () => ({
   prisma: {
     mcpToolCall: {
@@ -74,8 +79,50 @@ jest.mock('content-collections', () => ({
 const { GET, OPTIONS, POST } = require('../route') as typeof import('../route')
 
 describe('mcp route', () => {
+  it('rejects a body above 100 KB without a declared length', async () => {
+    const response = await POST(
+      new Request('https://mcp.frontendchecklist.io', {
+        method: 'POST',
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'tools/list',
+          padding: 'x'.repeat(102401)
+        })
+      })
+    )
+    expect(response.status).toBe(413)
+    expect(mockGetCachedResponse).not.toHaveBeenCalled()
+  })
+
+  it('does not reuse a successful cache entry for an unacceptable Accept header', async () => {
+    const cache = new Map<string, unknown>()
+    mockGetCachedResponse.mockImplementation(input => cache.get(JSON.stringify(input)))
+    mockSetCachedResponse.mockImplementation((input, response) =>
+      cache.set(JSON.stringify(input), response)
+    )
+    const body = JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list' })
+    const first = await POST(
+      new Request('https://mcp.frontendchecklist.io', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body
+      })
+    )
+    expect(first.status).toBe(200)
+    const second = await POST(
+      new Request('https://mcp.frontendchecklist.io', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'text/plain' },
+        body
+      })
+    )
+    expect(second.status).toBe(406)
+  })
+
   beforeEach(() => {
     jest.clearAllMocks()
+    mockSetCachedResponse.mockReset()
     mockCheckRateLimit.mockResolvedValue({
       success: true,
       limit: 100,

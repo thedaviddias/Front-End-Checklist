@@ -1,0 +1,7 @@
+FAIL before-tests/content/code/__tests__/code-tabs-hydration.test.cjs (13.545 s)
+FAIL before-tests/rules/detail/__tests__/table-of-contents-hydration.test.cjs (7.798 s)
+Test Suites: 2 failed, 2 total
+Tests:       4 failed, 4 total
+Snapshots:   0 total
+Time:        35.725 s
+Ran all test suites.

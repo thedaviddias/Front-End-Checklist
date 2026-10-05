@@ -1,0 +1,6 @@
+PASS app/api/mcp/__tests__/route.test.ts (14.5 s)
+PASS app/api/mcp/__tests__/request-body.test.ts
+PASS lib/__tests__/mcp-cache.test.ts
+Test Suites: 3 passed, 3 total
+Tests:       20 passed, 20 total
+Time:        19.47 s

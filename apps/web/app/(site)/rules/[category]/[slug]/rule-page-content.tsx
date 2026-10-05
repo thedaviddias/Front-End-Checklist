@@ -143,7 +143,7 @@ export function RulePageContent({
             <RuleFeedbackCard ruleId={rule.id} />
           </div>
 
-          <RuleSidebar contentSelector="article" relatedRules={relatedRules} />
+          <RuleSidebar key={rule.id} contentSelector="article" relatedRules={relatedRules} />
         </div>
       </div>
     </AnimatedPage>

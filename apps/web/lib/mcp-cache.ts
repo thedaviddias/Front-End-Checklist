@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { LRUCache } from 'lru-cache'
 
 /**
@@ -27,24 +28,10 @@ const responseCache = new LRUCache<string, CachedResponse>({
 
 /**
  * Generate a cache key from a request body
- * Uses a simple hash of the stringified body
+ * Hash the complete cache input without retaining potentially large request keys.
  */
 export function generateCacheKey(body: unknown): string {
-  const str = JSON.stringify(body)
-  return simpleHash(str)
-}
-
-/**
- * Simple string hash function (djb2 algorithm)
- * Fast and good enough for cache keys
- */
-function simpleHash(str: string): string {
-  let hash = 5381
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash * 33) ^ str.charCodeAt(i)
-  }
-  // Convert to unsigned 32-bit integer and then to hex
-  return (hash >>> 0).toString(16)
+  return createHash('sha256').update(JSON.stringify(body)).digest('hex')
 }
 
 /**

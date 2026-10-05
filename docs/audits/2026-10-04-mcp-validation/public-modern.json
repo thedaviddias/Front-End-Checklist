@@ -1,0 +1,24 @@
+{
+  "protocol": "2026-07-28",
+  "server": {
+    "name": "frontend-checklist-mcp",
+    "title": "Front-End Checklist",
+    "icons": [
+      {
+        "src": "https://frontendchecklist.io/favicon.svg",
+        "mimeType": "image/svg+xml",
+        "sizes": ["any"]
+      }
+    ],
+    "version": "2.0.0",
+    "websiteUrl": "https://frontendchecklist.io/en/mcp"
+  },
+  "toolCount": 11,
+  "searchError": false,
+  "search": [
+    {
+      "type": "text",
+      "text": "{\n  \"rules\": [\n    {\n      \"slug\": \"avoid-eval\",\n      \"title\": \"Never use eval() or unsafe dynamic code execution\",\n      \"priority\": \"critical\",\n      \"categories\": [\n        \"javascript\"\n      ],\n      \"primaryCategory\": \"javascript\"\n    },\n    {\n      \"slug\": \"color-contrast\",\n      \"title\": \"Meet minimum color contrast ratios\",\n      \"priority\": \"high\",\n      \"categories\": [\n        \"accessibility\"\n      ],\n      \"primaryCategory\": \"accessibility\"\n    },\n    {\n      \"slug\": \"picture-element\",\n      \"title\": \"Use <picture> with an <img> fallback\",\n      \"priority\": \"high\",\n      \"categories\": [\n        \"images\"\n      ],\n      \"primaryCategory\": \"images\"\n    }\n  ],\n  \"nextCursor\": \"eyJvZmZzZXQiOjN9\",\n  \"totalCount\": 66\n}"
+    }
+  ]
+}

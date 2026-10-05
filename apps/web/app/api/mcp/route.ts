@@ -21,6 +21,7 @@ import {
 import { TELEMETRY_EVENTS } from '@/lib/telemetry-events'
 import { captureServerException, trackServerEvent } from '@/lib/telemetry-server'
 import { getChecklists, getRules, SKILLS_DIR } from './content-helpers'
+import { getPostCacheInput, readBoundedJson } from './request-body'
 import {
   createCorsHeaders,
   isOriginAllowed,
@@ -273,12 +274,18 @@ export async function POST(request: Request) {
     )
   }
 
-  let body: unknown
-  try {
-    body = await request.json()
-  } catch {
-    return createErrorResponse(request, 400, -32700, 'Parse error', 'Invalid JSON', rateLimitResult)
+  const parsed = await readBoundedJson(request, MAX_REQUEST_SIZE)
+  if (!parsed.ok) {
+    return createErrorResponse(
+      request,
+      parsed.tooLarge ? 413 : 400,
+      parsed.tooLarge ? -32600 : -32700,
+      parsed.tooLarge ? 'Request too large' : 'Parse error',
+      parsed.tooLarge ? `Maximum request size is ${MAX_REQUEST_SIZE / 1024}KB` : 'Invalid JSON',
+      rateLimitResult
+    )
   }
+  const body = parsed.body
 
   if (Array.isArray(body) && body.length > MAX_BATCH_SIZE) {
     return createErrorResponse(
@@ -293,7 +300,8 @@ export async function POST(request: Request) {
 
   try {
     const cacheableBody = isCacheableMcpPostBody(body)
-    const cachedResponse = cacheableBody ? getCachedResponse(body) : undefined
+    const cacheInput = getPostCacheInput(request, body)
+    const cachedResponse = cacheableBody ? getCachedResponse(cacheInput) : undefined
 
     if (isCachedMcpResponse(cachedResponse)) {
       return withRouteHeaders(request, cachedMcpResponseToResponse(cachedResponse), rateLimitResult)
@@ -315,7 +323,7 @@ export async function POST(request: Request) {
 
     if (cacheableBody && response.ok) {
       const clonedResponse = response.clone()
-      setCachedResponse(body, {
+      setCachedResponse(cacheInput, {
         body: await clonedResponse.text(),
         headers: Array.from(clonedResponse.headers.entries()),
         status: clonedResponse.status,

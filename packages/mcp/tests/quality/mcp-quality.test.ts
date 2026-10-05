@@ -169,13 +169,31 @@ const REVIEW_EVAL_CASES: ReviewEvalCase[] = [
     expectPresent: ['avoid-eval']
   },
   {
-    name: 'safe string containing eval characters',
+    name: 'safe string containing eval call text',
     input: {
-      code: 'const label = "evaluation score"',
+      code: 'const label = "eval(userInput)"',
       focus: JAVASCRIPT,
       minPriority: 'low'
     },
     expectAbsent: ['avoid-eval']
+  },
+  {
+    name: 'comment containing eval call text',
+    input: {
+      code: '// eval(userInput) is unsafe\nconst value = Number(userInput)',
+      focus: JAVASCRIPT,
+      minPriority: 'low'
+    },
+    expectAbsent: ['avoid-eval']
+  },
+  {
+    name: 'indirect eval call',
+    input: {
+      code: 'const value = (0, eval)(userInput)',
+      focus: JAVASCRIPT,
+      minPriority: 'low'
+    },
+    expectPresent: ['avoid-eval']
   },
   {
     name: 'mixed content asset',

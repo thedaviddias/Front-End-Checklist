@@ -1,0 +1,8 @@
+PASS validation-tests/content/code/__tests__/code-tabs.test.cjs (6.534 s)
+PASS validation-tests/content/code/__tests__/code-tabs-hydration.test.cjs
+PASS validation-tests/rules/detail/__tests__/table-of-contents-hydration.test.cjs (5.415 s)
+Test Suites: 3 passed, 3 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        22.629 s
+Ran all test suites.

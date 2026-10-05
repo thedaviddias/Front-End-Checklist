@@ -1,5 +1,7 @@
 import type { Category, Priority, Rule } from '@repo/types'
 import { parse as parseHtml } from 'node-html-parser'
+import { hasEvalCall } from './eval-detection'
+import { maskDynamicJsx } from './jsx-markup'
 import {
   NUMBER_SCHEMA,
   PRIORITY_SCHEMA,
@@ -1202,10 +1204,10 @@ function checkRule(code: string, rule: Rule): CheckResult {
 
   // avoid-eval
   if (slug.includes('avoid-eval')) {
-    if (code.match(/\beval\s*\(/)) {
+    if (hasEvalCall(code)) {
       return {
         hasIssue: true,
-        issue: 'Found use of eval — executes arbitrary code and is a serious XSS risk'
+        issue: 'Found an eval call — avoid evaluating strings as code'
       }
     }
   }
@@ -2160,6 +2162,19 @@ function checkStructural(code: string): Map<string, string> {
     comment: false,
     blockTextElements: { script: false, style: false }
   })
+  const listMarkup =
+    !fullDocument && /<(?:ul|ol|li)[\s>]/i.test(code) && (componentSource || code.includes('{'))
+      ? maskDynamicJsx(code)
+      : code
+  const listRoot =
+    listMarkup === code
+      ? root
+      : listMarkup === undefined
+        ? undefined
+        : parseHtml(listMarkup, {
+            comment: false,
+            blockTextElements: { script: false, style: false }
+          })
 
   // ── form-labels: every <input>/<select>/<textarea> must have a matching <label for="id">
   const labelledBy = new Set<string>()
@@ -2264,7 +2279,7 @@ function checkStructural(code: string): Map<string, string> {
   }
 
   // ── list-structure/listitem: <li> must be direct child of <ul> or <ol>
-  for (const li of root.querySelectorAll('li')) {
+  for (const li of listRoot?.querySelectorAll('li') ?? []) {
     const parent = li.parentNode
     const parentTag = parent?.rawTagName?.toLowerCase()
     if (parentTag && parentTag !== 'ul' && parentTag !== 'ol' && parentTag !== 'menu') {
@@ -2277,7 +2292,7 @@ function checkStructural(code: string): Map<string, string> {
   }
 
   // ── list-structure: <ul>/<ol> direct children should be <li> (not bare text or other elements)
-  for (const list of root.querySelectorAll('ul, ol')) {
+  for (const list of listRoot?.querySelectorAll('ul, ol') ?? []) {
     const badChildren = list.childNodes.filter(n => {
       if (n.nodeType === 3 /* TEXT_NODE */) return (n.rawText ?? '').trim().length > 0
       const tag = (n as typeof list).rawTagName?.toLowerCase()

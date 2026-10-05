@@ -31,7 +31,7 @@
     "@repo/utils": "workspace:*",
     "class-variance-authority": "catalog:",
     "framer-motion": "catalog:",
-    "lucide-react": "^1.49.0",
+    "lucide-react": "^1.52.0",
     "react": "catalog:"
   },
   "devDependencies": {

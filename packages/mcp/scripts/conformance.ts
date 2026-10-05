@@ -25,9 +25,9 @@ async function main(): Promise<void> {
 
   const exitCode = await new Promise<number>(resolve => {
     const suite = spawn(
-      'npx',
+      'pnpm',
       [
-        '-y',
+        'dlx',
         `@modelcontextprotocol/conformance@${SUITE_VERSION}`,
         'server',
         '--url',

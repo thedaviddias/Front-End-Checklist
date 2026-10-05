@@ -21,7 +21,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-email": "^6.11.0",
-    "resend": "^6.31.0"
+    "resend": "^6.32.0"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",

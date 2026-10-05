@@ -19,7 +19,7 @@
     "@repo/storage": "workspace:*",
     "@repo/types": "workspace:*",
     "@tanstack/react-query": "catalog:",
-    "@tanstack/react-query-persist-client": "^5.104.0"
+    "@tanstack/react-query-persist-client": "^5.104.1"
   },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",

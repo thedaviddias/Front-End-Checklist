@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "column": 45765,
+      "line": 46,
+      "text": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at rX (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:45766)\n    at lf (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:97014)\n    at uh (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:137843)\n    at https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:132722\n    at ur (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:132823)\n    at uY (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:47:159404)\n    at MessagePort.R (https://frontendchecklist.io/_next/static/immutable/chunks/3zgo3eur_b7x1.js:17:67648)",
+      "url": null
+    }
+  ]
+}

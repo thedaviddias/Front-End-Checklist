@@ -25,8 +25,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@babel/parser": "7.29.9",
     "@frontendchecklist/rules": "workspace:*",
-    "@modelcontextprotocol/server": "^2.2.0",
+    "@modelcontextprotocol/server": "^2.3.0",
     "@repo/config": "workspace:*",
     "@repo/types": "workspace:*",
     "node-html-parser": "^9.0.4",
@@ -36,7 +37,7 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
-    "@modelcontextprotocol/client": "^2.2.0",
+    "@modelcontextprotocol/client": "^2.3.0",
     "@repo/config-typescript": "workspace:^",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
