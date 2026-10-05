@@ -1,4 +1,4 @@
-import { act } from 'react'
+import { act } from '@testing-library/react'
 import { hydrateRoot, type Root } from 'react-dom/client'
 import { renderToString } from 'react-dom/server'
 import { TableOfContents } from '@/components/rules/detail/table-of-contents'

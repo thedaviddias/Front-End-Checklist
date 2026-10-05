@@ -1,6 +1,6 @@
 # MCP maintenance validation — 4 October 2026
 
-Tracked in [DAV-614](https://paperclip.lab.coolio.cloud/DAV/issues/DAV-614), following dependency maintenance [DAV-598](https://paperclip.lab.coolio.cloud/DAV/issues/DAV-598). Changes are local and uncommitted. Production smoke checks exercise the deployed service, not these local fixes.
+Tracked in [DAV-614](https://paperclip.lab.coolio.cloud/DAV/issues/DAV-614), following dependency maintenance [DAV-598](https://paperclip.lab.coolio.cloud/DAV/issues/DAV-598). This report records local validation before publication. Commit/push verification is tracked in [DAV-645](https://paperclip.lab.coolio.cloud/DAV/issues/DAV-645). Production smoke checks exercise the deployed service, not these fixes.
 
 ## Findings and fixes
 
@@ -70,6 +70,6 @@ Follow-up full MCP tests use ts-jest on current source with a resolver shim and 
 
 Targeted parser timing uses 5 warmups and 20 samples per case, with the same two-CPU container limits. Ordinary code without an eval marker takes p95 0.001–0.006 ms for roughly 1–100 KiB. Parsing a 100 KiB comment-containing fixture takes p95 **148.74 ms**, while a 100 KiB executable-call fixture takes **45.42 ms**. Final RSS was 189.9 MiB. These expose parsing cost and are not full-request latency or a capacity guarantee. [Raw parser measurements](eval-performance.json). The earlier SDK comparison predates these detector fixes.
 
-The latest inspected [deployment run](https://github.com/thedaviddias/Front-End-Checklist/actions/runs/37244912233), created 4 October at 23:45 UTC, failed with an invalid `VERCEL_TOKEN`. Credential repair remains tracked in DAV-600. No credentials were retrieved, and these local changes remain uncommitted and undeployed.
+The latest inspected [deployment run](https://github.com/thedaviddias/Front-End-Checklist/actions/runs/37244912233), created 4 October at 23:45 UTC, failed with an invalid `VERCEL_TOKEN`. Credential repair remains tracked in DAV-600. No credentials were retrieved. Deployment of these fixes remains unverified; commit/push progress belongs to DAV-645.
 
 An out-of-scope documentation discrepancy is tracked in DAV-642: `validate:packages` checks rule metadata's npm package annotations; it does not validate workspace dependency consistency. The current zero-annotation result is not evidence of dependency health.
