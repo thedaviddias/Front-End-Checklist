@@ -277,7 +277,7 @@ export function registerTools(
         inputSchema: compileToolSchema(definition.inputSchema),
         outputSchema: compileToolSchema(definition.outputSchema),
         icons: [MCP_SERVER_ICON],
-        annotations: definition.annotations,
+        annotations: { ...definition.annotations, title: definition.title },
         _meta: getToolUiMeta(definition.name)
       },
       async (args: unknown) => {
