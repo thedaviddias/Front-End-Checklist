@@ -1,0 +1,756 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "runner": "promptfoo@0.123.1",
+  "status": "provisional-static-only",
+  "results": [
+    {
+      "task": "product-photo",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Give the product photo useful alternative text. Preserve the photo and product heading.\\n\\nHTML:\\n<article><img src=\\\"/shoe.jpg\\\"><h2>Trail shoe</h2></article>\"}]",
+      "output": "```html\n<article><img src=\"/shoe.jpg\" alt=\"Gray and blue trail running shoe with aggressive tread pattern, shown from the side\"><h2>Trail shoe</h2></article>\n```",
+      "usage": {
+        "prompt": 81,
+        "completion": 48,
+        "cached": 0,
+        "total": 129,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000321,
+      "latencyMs": 1191,
+      "toolCalls": []
+    },
+    {
+      "task": "product-photo",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Give the product photo useful alternative text. Preserve the photo and product heading.\\n\\nHTML:\\n<article><img src=\\\"/shoe.jpg\\\"><h2>Trail shoe</h2></article>\"}]",
+      "output": "<article><img src=\"/shoe.jpg\" alt=\"Trail shoe with rugged tread and reinforced ankle support\"><h2>Trail shoe</h2></article>",
+      "usage": {
+        "prompt": 9116,
+        "completion": 95,
+        "cached": 0,
+        "total": 9211,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.009590999999999999,
+      "latencyMs": 1771,
+      "toolCalls": [
+        {
+          "id": "toolu_01JX2A27EPcvQckM2qQLqjJ3",
+          "name": "get_rule",
+          "input": {
+            "slug": "alt-text"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"alt-text\\\",\\n  \\\"title\\\": \\\"Provide meaningful alt text for images\\\",\\n  \\\"description\\\": \\\"The `alt` attribute is the primary accessibility mechanism for images. Every `<img>` must have an `alt` attribute. Its value depends on the image's role.  <Tip> Use the [W3C alt decision tree](https:/...\\\",\\n  \\\"priority\\\": \\\"critical\\\",\\n  \\\"categories\\\": [\\n    \\\"images\\\"\\n  ],\\n  \\\"primaryCategory\\\": \\\"images\\\",\\n  \\\"content\\\": \\\"The `alt` attribute is the primary accessibility mechanism for images. Every `<img>` must have an `alt` attribute. Its value depends on the image's role.\\\\n\\\\n> **Tip:**\\\\n> Use the [W3C alt decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) to determine the correct alt value for any image type.\\\\n\\\\n## Code Example\\\\n\\\\nImages that convey meaning need descriptive alt text explaining what the image communicates.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: Missing alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\">\\\\n\\\\n<!-- ❌ Bad: Filename as alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\" alt=\\\\\\\"revenue-chart.png\\\\\\\">\\\\n\\\\n<!-- ❌ Bad: Generic alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\" alt=\\\\\\\"chart\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Describes what the image conveys -->\\\\n<img\\\\n  src=\\\\\\\"revenue-chart.png\\\\\\\"\\\\n  alt=\\\\\\\"Bar chart showing Q3 2024 revenue increased 40% year-over-year, reaching $2.4M\\\\\\\"\\\\n>\\\\n```\\\\n\\\\n## Why It Matters\\\\n\\\\nApproximately 2.2 billion people worldwide have vision impairment. Screen readers read the alt attribute aloud—without meaningful alt text, users who are blind receive no information about image content. Missing alt text also fails WCAG 2.1 Success Criterion 1.1.1, which is a Level A (minimum) requirement. Search engines also rely on alt text to index image content.\\\\n\\\\n## Decorative Images\\\\n\\\\nImages used purely for visual decoration carry no information and should be hidden from assistive technology.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: No alt attribute—screen reader may announce the filename -->\\\\n<img src=\\\\\\\"decorative-swirl.png\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Empty alt hides image from screen readers -->\\\\n<img src=\\\\\\\"decorative-swirl.png\\\\\\\" alt=\\\\\\\"\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Or use CSS background images for decoration -->\\\\n<div class=\\\\\\\"decorative-swirl\\\\\\\" aria-hidden=\\\\\\\"true\\\\\\\"></div>\\\\n```\\\\n\\\\n## Images Used as Links\\\\n\\\\nWhen an `<img>` is inside an `<a>`, the alt text must describe the link destination, not the visual appearance.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: Describes appearance, not destination -->\\\\n<a href=\\\\\\\"https://twitter.com/example\\\\\\\">\\\\n  <img src=\\\\\\\"twitter-logo.svg\\\\\\\" alt=\\\\\\\"Blue bird logo\\\\\\\">\\\\n</a>\\\\n\\\\n<!-- ✅ Good: Describes the link destination -->\\\\n<a href=\\\\\\\"https://twitter.com/example\\\\\\\">\\\\n  <img src=\\\\\\\"twitter-logo.svg\\\\\\\" alt=\\\\\\\"Follow us on Twitter\\\\\\\">\\\\n</a>\\\\n```\\\\n\\\\n## Images of Text\\\\n\\\\nIf an image contains text (e.g., a logo, banner, or screenshot), reproduce that text verbatim in alt.\\\\n\\\\n```html\\\\n<!-- ✅ Good: Alt reproduces the text shown in the image -->\\\\n<img src=\\\\\\\"sale-banner.png\\\\\\\" alt=\\\\\\\"Summer Sale — 50% off all items\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Logo with company name -->\\\\n<img src=\\\\\\\"logo.svg\\\\\\\" alt=\\\\\\\"Acme Corp\\\\\\\">\\\\n```\\\\n\\\\n## Complex Images (Charts, Diagrams)\\\\n\\\\nFor complex visuals, provide a brief alt plus a longer description accessible to all users.\\\\n\\\\n```html\\\\n<!-- Using aria-describedby to link to a visible description -->\\\\n<figure>\\\\n  <img\\\\n    src=\\\\\\\"org-chart.png\\\\\\\"\\\\n    alt=\\\\\\\"Company organisational chart\\\\\\\"\\\\n    aria-describedby=\\\\\\\"org-chart-desc\\\\\\\"\\\\n  >\\\\n  <figcaption id=\\\\\\\"org-chart-desc\\\\\\\">\\\\n    The chart shows three departments reporting to the CEO: Engineering (12 staff),\\\\n    Marketing (8 staff), and Operations (5 staff).\\\\n  </figcaption>\\\\n</figure>\\\\n```\\\\n\\\\n## Framework Examples\\\\n\\\\n**React:**\\\\n\\\\n```tsx\\\\ninterface ImageProps {\\\\n  src: string\\\\n  alt: string\\\\n  decorative?: boolean\\\\n}\\\\n\\\\nfunction AccessibleImage({ src, alt, decorative = false }: ImageProps) {\\\\n  return (\\\\n    <img\\\\n      src={src}\\\\n      // Decorative images use empty string; informative images use descriptive text\\\\n      alt={decorative ? '' : alt}\\\\n    />\\\\n  )\\\\n}\\\\n\\\\n// Usage\\\\n<AccessibleImage src=\\\\\\\"hero.jpg\\\\\\\" alt=\\\\\\\"Team members collaborating in a modern office\\\\\\\" />\\\\n<AccessibleImage src=\\\\\\\"divider.png\\\\\\\" decorative />\\\\n```\\\\n  **Next.js:**\\\\n\\\\n```tsx\\\\n\\\\n// Next.js Image requires alt; use \\\\\\\"\\\\\\\" for decorative\\\\nfunction HeroBanner() {\\\\n  return (\\\\n    <>\\\\n      {/* Informative */}\\\\n      <Image\\\\n        src=\\\\\\\"/hero.jpg\\\\\\\"\\\\n        alt=\\\\\\\"Product team celebrating a successful launch\\\\\\\"\\\\n        width={1200}\\\\n        height={600}\\\\n        priority\\\\n      />\\\\n\\\\n      {/* Decorative */}\\\\n      <Image\\\\n        src=\\\\\\\"/wave-divider.svg\\\\\\\"\\\\n        alt=\\\\\\\"\\\\\\\"\\\\n        width={1200}\\\\n        height={60}\\\\n        aria-hidden=\\\\\\\"true\\\\\\\"\\\\n      />\\\\n    </>\\\\n  )\\\\n}\\\\n```\\\\n\\\\n## Standards\\\\n\\\\n- Use these references as the standard for the final image format, delivery, accessibility, and rendering behavior.\\\\n- Check the implementation against MDN: Responsive images before treating the rule as satisfied.\\\\n- Check the implementation against web.dev: Image performance before treating the rule as satisfied.\\\\n\\\\n## Verification\\\\n\\\\n### Automated Checks\\\\n\\\\n- Run axe DevTools or WAVE on the page—both flag missing or empty non-decorative alt attributes\\\\n- Use Lighthouse Accessibility audit—\\\\\\\"Images do not have alternate text\\\\\\\" is a scored item\\\\n\\\\n### Manual Checks\\\\n\\\\n- Enable a screen reader (VoiceOver, NVDA, or JAWS) and navigate through images with the `G` key\\\\n- Inspect the Network tab: for any image URL, verify the corresponding `<img>` has a meaningful `alt`\\\\n- **CAPTCHA images** — provide alt describing the purpose, not the characters (e.g., `alt=\\\\\\\"CAPTCHA: type the characters shown\\\\\\\"`), and offer an audio alternative per WCAG 1.1.1\\\\n- **SVG icons with adjacent text labels** — if the icon's meaning is already conveyed by visible text, use `aria-hidden=\\\\\\\"true\\\\\\\"` on the SVG instead of alt\\\",\\n  \\\"prompts\\\": {\\n    \\\"check\\\": \\\"Scan all <img> elements in the codebase. Verify: 1) Every <img> has an alt attribute (missing alt is an error). 2) Decorative images use alt=\\\\\\\"\\\\\\\". 3) Informative images have descriptive text that conveys the image's meaning—not just its file name. 4) Images that are links describe the destination. 5) Images of text reproduce the text in alt. Flag any <img> without alt, with alt matching the filename (e.g., alt=\\\\\\\"photo1.jpg\\\\\\\"), or with generic values like alt=\\\\\\\"image\\\\\\\" or alt=\\\\\\\"photo\\\\\\\".\\\",\\n    \\\"fix\\\": \\\"For each image missing or with poor alt text: 1) Informative images—describe what the image conveys, not just what it shows (e.g., alt=\\\\\\\"Bar chart showing 40% increase in sales Q3 2024\\\\\\\" not alt=\\\\\\\"chart\\\\\\\"). 2) Decorative images—add alt=\\\\\\\"\\\\\\\" so screen readers skip them. 3) Linked images—describe the link destination (e.g., alt=\\\\\\\"Visit our Twitter profile\\\\\\\"). 4) Images of text—copy the text verbatim into alt. 5) Complex images (charts, infographics)—provide a short alt plus a longer description via aria-describedby or a visible caption.\\\",\\n    \\\"explain\\\": \\\"Explain WCAG 2.1 Success Criterion 1.1.1 Non-text Content: every image must have a text alternative. Screen readers announce the alt attribute aloud—without it, users who are blind or have low vision cannot understand the page. Bad alt text (like alt=\\\\\\\"image\\\\\\\") is no better than no alt text. Decorative images must use alt=\\\\\\\"\\\\\\\" explicitly so screen readers skip them entirely—omitting alt causes some screen readers to announce the filename.\\\",\\n    \\\"codeReview\\\": \\\"Review image assets, markup, and delivery configuration related to Provide meaningful alt text for images. Flag exact files or components where format choice, sizing, or loading behavior violates the rule, and describe how to confirm the fix in DevTools.\\\"\\n  },\\n  \\\"relatedRules\\\": [\\n    {\\n      \\\"slug\\\": \\\"decorative-elements\\\",\\n      \\\"title\\\": \\\"Hide decorative elements from assistive technology\\\",\\n      \\\"reason\\\": \\\"Handle decorative images appropriately\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"responsive-images\\\",\\n      \\\"title\\\": \\\"Implement responsive images with srcset\\\",\\n      \\\"reason\\\": \\\"Ensure alt text works with responsive images\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"text-in-images\\\",\\n      \\\"title\\\": \\\"Avoid images of text\\\",\\n      \\\"reason\\\": \\\"Avoid text that requires alt text\\\"\\n    }\\n  ]\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Mark this purely decorative divider with an empty alt attribute. Preserve the source.\\n\\nHTML:\\n<img src=\\\"/divider.svg\\\">\"}]",
+      "output": "```html\n<img src=\"/divider.svg\" alt=\"\">\n```",
+      "usage": {
+        "prompt": 71,
+        "completion": 19,
+        "cached": 0,
+        "total": 90,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000166,
+      "latencyMs": 653,
+      "toolCalls": []
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Mark this purely decorative divider with an empty alt attribute. Preserve the source.\\n\\nHTML:\\n<img src=\\\"/divider.svg\\\">\"}]",
+      "output": "<img src=\"/divider.svg\" alt=\"\">",
+      "usage": {
+        "prompt": 6885,
+        "completion": 93,
+        "cached": 0,
+        "total": 6978,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00735,
+      "latencyMs": 1347,
+      "toolCalls": [
+        {
+          "id": "toolu_01BSsdnfKZfpqwEbY6DYjWxe",
+          "name": "check_rule",
+          "input": {
+            "slug": "alt-text",
+            "code": "<img src=\"/divider.svg\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"alt-text\\\",\\n  \\\"title\\\": \\\"Provide meaningful alt text for images\\\",\\n  \\\"checkPrompt\\\": \\\"Scan all <img> elements in the codebase. Verify: 1) Every <img> has an alt attribute (missing alt is an error). 2) Decorative images use alt=\\\\\\\"\\\\\\\". 3) Informative images have descriptive text that conveys the image's meaning—not just its file name. 4) Images that are links describe the destination. 5) Images of text reproduce the text in alt. Flag any <img> without alt, with alt matching the filename (e.g., alt=\\\\\\\"photo1.jpg\\\\\\\"), or with generic values like alt=\\\\\\\"image\\\\\\\" or alt=\\\\\\\"photo\\\\\\\".\\\",\\n  \\\"analysis\\\": \\\"Found 1 potential issue(s):\\\\n\\\\n1. Found <img> element without alt attribute\\\\n\\\\nReview the check prompt below for verification guidance.\\\",\\n  \\\"fixPrompt\\\": \\\"For each image missing or with poor alt text: 1) Informative images—describe what the image conveys, not just what it shows (e.g., alt=\\\\\\\"Bar chart showing 40% increase in sales Q3 2024\\\\\\\" not alt=\\\\\\\"chart\\\\\\\"). 2) Decorative images—add alt=\\\\\\\"\\\\\\\" so screen readers skip them. 3) Linked images—describe the link destination (e.g., alt=\\\\\\\"Visit our Twitter profile\\\\\\\"). 4) Images of text—copy the text verbatim into alt. 5) Complex images (charts, infographics)—provide a short alt plus a longer description via aria-describedby or a visible caption.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Reserve intrinsic dimensions of 1200 by 630 for this image. Preserve its source and alt text.\\n\\nHTML:\\n<img src=\\\"/hero.jpg\\\" alt=\\\"Mountain ridge\\\">\"}]",
+      "output": "```html\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">\n```",
+      "usage": {
+        "prompt": 83,
+        "completion": 30,
+        "cached": 0,
+        "total": 113,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00023300000000000003,
+      "latencyMs": 629,
+      "toolCalls": []
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Reserve intrinsic dimensions of 1200 by 630 for this image. Preserve its source and alt text.\\n\\nHTML:\\n<img src=\\\"/hero.jpg\\\" alt=\\\"Mountain ridge\\\">\"}]",
+      "output": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">",
+      "usage": {
+        "prompt": 10725,
+        "completion": 188,
+        "cached": 0,
+        "total": 10913,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.011665,
+      "latencyMs": 2686,
+      "toolCalls": [
+        {
+          "id": "toolu_01LuqRimjjfEXS7MsrvK5zRg",
+          "name": "check_rule",
+          "input": {
+            "slug": "image-dimensions",
+            "code": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\">"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"image-compression\\\",\\n      \\\"title\\\": \\\"Compress images without quality loss\\\",\\n      \\\"similarity\\\": 0.65\\n    },\\n    {\\n      \\\"slug\\\": \\\"dimensions\\\",\\n      \\\"title\\\": \\\"Set explicit width and height on images\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"image-file-size\\\",\\n      \\\"title\\\": \\\"Keep image file sizes within recommended limits\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"image-optimization\\\",\\n      \\\"title\\\": \\\"Optimize all images for web\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"css-grid\\\",\\n      \\\"title\\\": \\\"Use CSS Grid for two-dimensional layouts\\\",\\n      \\\"similarity\\\": 0.51\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'image-dimensions' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01GLzQCioFetxnWzkJodcEXn",
+          "name": "check_rule",
+          "input": {
+            "slug": "dimensions",
+            "code": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"dimensions\\\",\\n  \\\"title\\\": \\\"Set explicit width and height on images\\\",\\n  \\\"checkPrompt\\\": \\\"Scan all <img> elements in the codebase. Identify any that are missing either the width or height attribute. Also check <source> elements inside <picture>—dimensions should be on the <img> fallback. Report each image missing dimensions with its file path and line number. Note: SVG icons under 32px, tiny decorative SVG ornaments with stable CSS sizing, and images loaded as CSS backgrounds are exempt.\\\",\\n  \\\"analysis\\\": \\\"No obvious issues detected for rule \\\\\\\"Set explicit width and height on images\\\\\\\". However, manual review is recommended using the check prompt below.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "close-button",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Add aria-label=\\\"Close\\\" to identify this action. Preserve the button and decorative icon.\\n\\nHTML:\\n<button type=\\\"button\\\"><svg aria-hidden=\\\"true\\\"></svg></button>\"}]",
+      "output": "```html\n<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>\n```",
+      "usage": {
+        "prompt": 82,
+        "completion": 31,
+        "cached": 0,
+        "total": 113,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00023700000000000001,
+      "latencyMs": 619,
+      "toolCalls": []
+    },
+    {
+      "task": "close-button",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Add aria-label=\\\"Close\\\" to identify this action. Preserve the button and decorative icon.\\n\\nHTML:\\n<button type=\\\"button\\\"><svg aria-hidden=\\\"true\\\"></svg></button>\"}]",
+      "output": "<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>",
+      "usage": {
+        "prompt": 6786,
+        "completion": 113,
+        "cached": 0,
+        "total": 6899,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.007351,
+      "latencyMs": 1613,
+      "toolCalls": [
+        {
+          "id": "toolu_01LrZNxEKTbhqmH9qiJhWQUn",
+          "name": "check_rule",
+          "input": {
+            "slug": "aria-label",
+            "code": "<button type=\"button\"><svg aria-hidden=\"true\"></svg></button>"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"aria-labels\\\",\\n      \\\"title\\\": \\\"Provide accessible names for all interactive elements\\\",\\n      \\\"similarity\\\": 0.91\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-roles\\\",\\n      \\\"title\\\": \\\"Use valid ARIA role values\\\",\\n      \\\"similarity\\\": 0.6\\n    },\\n    {\\n      \\\"slug\\\": \\\"form-labels\\\",\\n      \\\"title\\\": \\\"Associate labels with form controls\\\",\\n      \\\"similarity\\\": 0.55\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-text\\\",\\n      \\\"title\\\": \\\"Avoid focusable descendants in role=\\\\\\\"text\\\\\\\" elements\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'aria-label' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        }
+      ]
+    },
+    {
+      "task": "email-label",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Associate the visible Email label with the input using for and its existing id.\\n\\nHTML:\\n<label>Email</label><input id=\\\"email\\\" type=\\\"email\\\" name=\\\"email\\\">\"}]",
+      "output": "```html\n<label for=\"email\">Email</label><input id=\"email\" type=\"email\" name=\"email\">\n```",
+      "usage": {
+        "prompt": 79,
+        "completion": 31,
+        "cached": 0,
+        "total": 110,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000234,
+      "latencyMs": 742,
+      "toolCalls": []
+    },
+    {
+      "task": "email-label",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Associate the visible Email label with the input using for and its existing id.\\n\\nHTML:\\n<label>Email</label><input id=\\\"email\\\" type=\\\"email\\\" name=\\\"email\\\">\"}]",
+      "output": "<label for=\"email\">Email</label><input id=\"email\" type=\"email\" name=\"email\">",
+      "usage": {
+        "prompt": 10551,
+        "completion": 213,
+        "cached": 0,
+        "total": 10764,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.011616,
+      "latencyMs": 2391,
+      "toolCalls": [
+        {
+          "id": "toolu_01NihbdKTiMAeKNuRvbmPShy",
+          "name": "fix_rule",
+          "input": {
+            "slug": "label-for",
+            "codeSnippet": "<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">"
+          },
+          "output": "MCP Tool Error (fix_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"form-field-multiple-labels\\\",\\n      \\\"title\\\": \\\"Use a single label for each form field\\\",\\n      \\\"similarity\\\": 0.5\\n    },\\n    {\\n      \\\"slug\\\": \\\"form-labels\\\",\\n      \\\"title\\\": \\\"Associate labels with form controls\\\",\\n      \\\"similarity\\\": 0.5\\n    },\\n    {\\n      \\\"slug\\\": \\\"label-content-name-mismatch\\\",\\n      \\\"title\\\": \\\"Align visible labels with accessible names\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'label-for' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_013YqqYXhDtRuQXSAcCYNsLA",
+          "name": "fix_rule",
+          "input": {
+            "slug": "form-labels",
+            "codeSnippet": "<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"form-labels\\\",\\n  \\\"title\\\": \\\"Associate labels with form controls\\\",\\n  \\\"fixPrompt\\\": \\\"Add a <label> element with a 'for' attribute that matches the 'id' of the corresponding input field. Replace placeholder-only labels with real label text and wrap related checkboxes or radio buttons in a `<fieldset>` with a `<legend>`.\\\",\\n  \\\"priority\\\": \\\"critical\\\",\\n  \\\"codeContext\\\": \\\"<label>Email</label><input id=\\\\\\\"email\\\\\\\" type=\\\\\\\"email\\\\\\\" name=\\\\\\\"email\\\\\\\">\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Replace the viewport content with width=device-width, initial-scale=1 so users can zoom.\\n\\nHTML:\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1, user-scalable=no\\\">\"}]",
+      "output": "```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n```",
+      "usage": {
+        "prompt": 93,
+        "completion": 28,
+        "cached": 0,
+        "total": 121,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00023300000000000003,
+      "latencyMs": 631,
+      "toolCalls": []
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Replace the viewport content with width=device-width, initial-scale=1 so users can zoom.\\n\\nHTML:\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1, user-scalable=no\\\">\"}]",
+      "output": "```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n```",
+      "usage": {
+        "prompt": 3211,
+        "completion": 28,
+        "cached": 0,
+        "total": 3239,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.003351,
+      "latencyMs": 581,
+      "toolCalls": []
+    },
+    {
+      "task": "valid-hero",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"This is the above-the-fold LCP image. Review only lazy loading; eager loading is intentional. Leave unchanged.\\n\\nHTML:\\n<img src=\\\"/lcp.jpg\\\" alt=\\\"Home\\\" loading=\\\"eager\\\" width=\\\"1200\\\" height=\\\"800\\\">\"}]",
+      "output": "```html\n<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">\n```",
+      "usage": {
+        "prompt": 96,
+        "completion": 34,
+        "cached": 0,
+        "total": 130,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000266,
+      "latencyMs": 626,
+      "toolCalls": []
+    },
+    {
+      "task": "valid-hero",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"This is the above-the-fold LCP image. Review only lazy loading; eager loading is intentional. Leave unchanged.\\n\\nHTML:\\n<img src=\\\"/lcp.jpg\\\" alt=\\\"Home\\\" loading=\\\"eager\\\" width=\\\"1200\\\" height=\\\"800\\\">\"}]",
+      "output": "**Result:** ✓ No issues found.\n\nYour markup is correct. The image uses `loading=\"eager\"` which is appropriate for above-the-fold LCP content. The lazy-loading rule applies only to offscreen content, which this is not.\n\n<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">",
+      "usage": {
+        "prompt": 10775,
+        "completion": 279,
+        "cached": 0,
+        "total": 11054,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.01217,
+      "latencyMs": 3612,
+      "toolCalls": [
+        {
+          "id": "toolu_01EsC9naYu9PSZG9wRnxqnHP",
+          "name": "check_rule",
+          "input": {
+            "slug": "lazy-load-images",
+            "code": "<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"lazy-loading\\\",\\n      \\\"title\\\": \\\"Implement lazy loading for offscreen content\\\",\\n      \\\"similarity\\\": 0.69\\n    },\\n    {\\n      \\\"slug\\\": \\\"locale-images\\\",\\n      \\\"title\\\": \\\"Use locale-neutral images and provide cultural overrides when needed\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"page-load-time\\\",\\n      \\\"title\\\": \\\"Keep page load time under 3 seconds\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"text-in-images\\\",\\n      \\\"title\\\": \\\"Avoid images of text\\\",\\n      \\\"similarity\\\": 0.5\\n    },\\n    {\\n      \\\"slug\\\": \\\"critical-images\\\",\\n      \\\"title\\\": \\\"Prioritize loading critical images\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'lazy-load-images' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01WWkDYf1ggAp63rGTurLSeT",
+          "name": "check_rule",
+          "input": {
+            "slug": "lazy-loading",
+            "code": "<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"lazy-loading\\\",\\n  \\\"title\\\": \\\"Implement lazy loading for offscreen content\\\",\\n  \\\"checkPrompt\\\": \\\"Verify that images and other heavy resources below the fold are lazy loaded. Only report this when the code or route context makes offscreen placement clear.\\\",\\n  \\\"analysis\\\": \\\"No obvious issues detected for rule \\\\\\\"Implement lazy loading for offscreen content\\\\\\\". However, manual review is recommended using the check prompt below.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Review only opener isolation. This link opens in the same tab; leave it unchanged.\\n\\nHTML:\\n<a href=\\\"/account\\\">Account</a>\"}]",
+      "output": "```html\n<a href=\"/account\">Account</a>\n```\n\nThe link opens in the same tab (default behavior), so no changes are needed.",
+      "usage": {
+        "prompt": 71,
+        "completion": 36,
+        "cached": 0,
+        "total": 107,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00025100000000000003,
+      "latencyMs": 775,
+      "toolCalls": []
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "[{\"role\":\"system\",\"content\":\"Complete the HTML task. Return only the complete HTML, without Markdown fences or explanation. Preserve valid markup exactly when asked. Use available tools when helpful.\"},{\"role\":\"user\",\"content\":\"Review only opener isolation. This link opens in the same tab; leave it unchanged.\\n\\nHTML:\\n<a href=\\\"/account\\\">Account</a>\"}]",
+      "output": "**Result:** ✓ **Pass**\n\nYour HTML passes the external link security check. The link `<a href=\"/account\">Account</a>` opens in the same tab (no `target=\"_blank\"`), so opener isolation attributes are not required. The code is correct as-is.",
+      "usage": {
+        "prompt": 17356,
+        "completion": 312,
+        "cached": 0,
+        "total": 17668,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.018916,
+      "latencyMs": 4375,
+      "toolCalls": [
+        {
+          "id": "toolu_01DN53qumJSVXGS55GJKpmB7",
+          "name": "check_rule",
+          "input": {
+            "slug": "opener-isolation",
+            "code": "<a href=\"/account\">Account</a>"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"cross-origin-isolation\\\",\\n      \\\"title\\\": \\\"Use COOP, COEP, and CORP for cross-origin isolation when needed\\\",\\n      \\\"similarity\\\": 0.55\\n    },\\n    {\\n      \\\"slug\\\": \\\"orientation\\\",\\n      \\\"title\\\": \\\"Support both portrait and landscape orientation\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'opener-isolation' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01H1nujuqJaxXfVTgn7U9zFU",
+          "name": "search_rules",
+          "input": {
+            "query": "opener isolation"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"rules\\\": [\\n    {\\n      \\\"slug\\\": \\\"cross-origin-isolation\\\",\\n      \\\"title\\\": \\\"Use COOP, COEP, and CORP for cross-origin isolation when needed\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\",\\n        \\\"javascript\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"direction-attribute\\\",\\n      \\\"title\\\": \\\"Set text direction for RTL languages\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"html\\\",\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"html\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"new-tab\\\",\\n      \\\"title\\\": \\\"External Link Security\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"integration-testing\\\",\\n      \\\"title\\\": \\\"Write integration tests for key workflows\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"testing\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"testing\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-required-parent\\\",\\n      \\\"title\\\": \\\"Ensure ARIA roles are contained by required parent roles\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"dom-performance\\\",\\n      \\\"title\\\": \\\"Minimize costly DOM read/write operations\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"javascript\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"javascript\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"content-security-policy\\\",\\n      \\\"title\\\": \\\"Implement a content security policy\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"hsts\\\",\\n      \\\"title\\\": \\\"Set an HSTS header\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"permissions-policy\\\",\\n      \\\"title\\\": \\\"Set a Permissions-Policy header\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"referrer-policy\\\",\\n      \\\"title\\\": \\\"Set a Referrer-Policy header\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"x-content-type\\\",\\n      \\\"title\\\": \\\"Set X-Content-Type-Options: nosniff\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"x-frame-options\\\",\\n      \\\"title\\\": \\\"Set an X-Frame-Options header\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"anchor-text\\\",\\n      \\\"title\\\": \\\"Use descriptive anchor text\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"duplicate-description\\\",\\n      \\\"title\\\": \\\"Avoid duplicate meta descriptions\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"favicon\\\",\\n      \\\"title\\\": \\\"Add a favicon to every page\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-description\\\",\\n      \\\"title\\\": \\\"Write a meta description for each page\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-in-body\\\",\\n      \\\"title\\\": \\\"Meta Tags in Body\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-title\\\",\\n      \\\"title\\\": \\\"Write a descriptive page title\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"og-image-size\\\",\\n      \\\"title\\\": \\\"OG Image Size\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"og-tags\\\",\\n      \\\"title\\\": \\\"Open Graph Tags\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    }\\n  ],\\n  \\\"nextCursor\\\": \\\"eyJvZmZzZXQiOjIwfQ==\\\",\\n  \\\"totalCount\\\": 27\\n}\"}]",
+          "is_error": false
+        },
+        {
+          "id": "toolu_01D2hng3TPZNQ3Wd22rGvE1A",
+          "name": "check_rule",
+          "input": {
+            "slug": "new-tab",
+            "code": "<a href=\"/account\">Account</a>"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"new-tab\\\",\\n  \\\"title\\\": \\\"External Link Security\\\",\\n  \\\"checkPrompt\\\": \\\"Find all anchor elements with target='_blank' in the HTML and JSX source. Verify each one includes rel='noopener noreferrer' (or at minimum rel='noopener'). Flag any external links opening in a new tab that are missing this attribute.\\\",\\n  \\\"analysis\\\": \\\"No obvious issues detected for rule \\\\\\\"External Link Security\\\\\\\". However, manual review is recommended using the check prompt below.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    }
+  ]
+}

@@ -41,6 +41,7 @@ catalog:
   tsx: "^4.23.15"
   typescript: "^6.0.3"
   # Validation & data
+  yaml: "^2.9.1"
   zod: "^4.6.5"
 
 # Security patches for transitive deps pinned by upstream packages.

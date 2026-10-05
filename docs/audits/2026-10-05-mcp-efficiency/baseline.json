@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "measuredAt": "2026-10-05T04:22:48.334Z",
+  "runtime": {
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "encoding": "o200k_base",
+  "tokenizer": "gpt-tokenizer@4.0.0",
+  "corpusWarnings": [
+    "Public loader returned YAML block markers as prompts for 386 rules; small prompt responses do not prove efficiency. Recalibrate after loader repair."
+  ],
+  "ruleCount": 386,
+  "checklistCount": 12,
+  "toolCount": 11,
+  "iterations": 20,
+  "warmups": 3,
+  "protocol": "2025-06-18",
+  "definitionContext": {
+    "bytes": 9182,
+    "tokens": 1989,
+    "sha256": "e33151486ffe7b315f05cb9fdace65bf2edf6358c57a9c0f3fa4f04d987090df"
+  },
+  "instructions": {
+    "bytes": 809,
+    "tokens": 162,
+    "sha256": "84add5942e65c9a02392cdf4f2d2549a1735f81b0249cdc300c37bd3afc9cd59"
+  },
+  "samples": [
+    {
+      "id": "tools-list",
+      "text": {
+        "bytes": 0,
+        "tokens": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "structured": {
+        "bytes": 19210,
+        "tokens": 4450,
+        "sha256": "ceb1310978f687a8ccbc1c0b874be8c0db3884d7fa93c6328354988619616ca3"
+      },
+      "wire": {
+        "bytes": 19254,
+        "tokens": 4467,
+        "sha256": "f9cb2953154cf0b31476d6f6121575005fe4760666d5dca1f983e3746c49ea5d"
+      },
+      "p50Ms": 0.6401670000000195,
+      "p95Ms": 0.9215829999999414
+    },
+    {
+      "id": "search-default",
+      "text": {
+        "bytes": 4414,
+        "tokens": 1085,
+        "sha256": "70acad90ecd592e60197bb88088f8a36486abbff20b54fdd0f2c030343839292"
+      },
+      "structured": {
+        "bytes": 3006,
+        "tokens": 620,
+        "sha256": "36bd1d5c94a657eb7c87a9d4b2b35a5bf7f4fefd91e5a303e08fe6ddcec553b6"
+      },
+      "wire": {
+        "bytes": 8131,
+        "tokens": 1988,
+        "sha256": "a4d4590314331d271c8257aab5408224ea8f27a41e5f670048bb99d662521ec0"
+      },
+      "p50Ms": 2.2187079999999924,
+      "p95Ms": 2.4152500000000146
+    },
+    {
+      "id": "search-max",
+      "text": {
+        "bytes": 23192,
+        "tokens": 5483,
+        "sha256": "0747f7b2fd96fef6c94aa106ae71bb358f0e0f96c64759b13f882432503ed5bc"
+      },
+      "structured": {
+        "bytes": 16180,
+        "tokens": 3186,
+        "sha256": "d55e3c679a2affdd3702809240533312ce30497bbd41bc39ef6d869b3e3ca408"
+      },
+      "wire": {
+        "bytes": 42511,
+        "tokens": 9947,
+        "sha256": "846a958fce3ee2f2804d1080b76d0ef0ccea0ffffd1b317a2c049bd7ef02e16b"
+      },
+      "p50Ms": 1.3165420000000267,
+      "p95Ms": 1.8909589999999525
+    },
+    {
+      "id": "review-page",
+      "text": {
+        "bytes": 8188,
+        "tokens": 2096,
+        "sha256": "c7570ae59fab89173713bd8bb273e53ca96e4850d15950d92557d4a13db317f8"
+      },
+      "structured": {
+        "bytes": 6348,
+        "tokens": 1433,
+        "sha256": "98d0fd246d00c1f0e163739b22ebf165fe72fa5406ad4d45c0a4fa03cba52204"
+      },
+      "wire": {
+        "bytes": 15659,
+        "tokens": 3937,
+        "sha256": "34adc6865f7f7acac5f8671e088bca05be5763e0f83aefb2bb54bcc7895f8fa7"
+      },
+      "p50Ms": 1.8504580000000033,
+      "p95Ms": 2.774832999999944
+    },
+    {
+      "id": "rule-full",
+      "text": {
+        "bytes": 6395,
+        "tokens": 1625,
+        "sha256": "642fc58149e95cc5d43e531b510c91bca127661e33e39712a694669f067ebbe5"
+      },
+      "structured": {
+        "bytes": 6218,
+        "tokens": 1547,
+        "sha256": "30fee932bdb3ff6d78d53eb90ce337240349a75a921c908ceb42973a26dfd82d"
+      },
+      "wire": {
+        "bytes": 13141,
+        "tokens": 3480,
+        "sha256": "a30aa87ff86bf93635643288cf35ab714e1dddceb14d1ad0fe2c387f4188f30e"
+      },
+      "p50Ms": 0.47862499999996544,
+      "p95Ms": 0.9054580000000669
+    },
+    {
+      "id": "rule-check",
+      "text": {
+        "bytes": 100,
+        "tokens": 30,
+        "sha256": "616b6e0d4a8f04d0434517fac820fa5bf03cc6084175f3a2812fa8ed97b0336e"
+      },
+      "structured": {
+        "bytes": 87,
+        "tokens": 21,
+        "sha256": "40a55bcd3332b905b8144229f984190418fc062f374a35f54f82d72af2665ddf"
+      },
+      "wire": {
+        "bytes": 297,
+        "tokens": 84,
+        "sha256": "5eee40147a49a815c57e6ae70dea24022ff2b8f9a1ecfd51e95669fb25de3ef9"
+      },
+      "p50Ms": 0.23749999999995453,
+      "p95Ms": 0.337833000000046
+    },
+    {
+      "id": "rule-fix",
+      "text": {
+        "bytes": 124,
+        "tokens": 37,
+        "sha256": "dd091a0809f67958aa7c67e1700b861c9d8693d99ae4148ff77c3320fabdcb4a"
+      },
+      "structured": {
+        "bytes": 107,
+        "tokens": 25,
+        "sha256": "f25eb0ff31dc9b10b70e1472dcf7529e7c9b3d840e1cf050f8923db93ef01dd2"
+      },
+      "wire": {
+        "bytes": 346,
+        "tokens": 96,
+        "sha256": "d96a413bf2104dc99da2cb77338632f83ddc993b84c70ba0435e7f9eb843a035"
+      },
+      "p50Ms": 0.2052080000000842,
+      "p95Ms": 0.2258750000000873
+    },
+    {
+      "id": "rule-explain",
+      "text": {
+        "bytes": 138,
+        "tokens": 42,
+        "sha256": "d3c4bc3fc3696a3bbb4f16d6923a09482e67ee2014000df7df6f1323eaf7ee99"
+      },
+      "structured": {
+        "bytes": 113,
+        "tokens": 27,
+        "sha256": "91a7dbe123cbbc43b90c2ff3ded2a665bb950cd9ec3cf250e9bacae69b3522a3"
+      },
+      "wire": {
+        "bytes": 368,
+        "tokens": 107,
+        "sha256": "5b6561077ad4087f2868e3d30b90a73d7c1dde63d4479e846c60c16652122fbd"
+      },
+      "p50Ms": 0.24245800000005602,
+      "p95Ms": 0.3650000000000091
+    },
+    {
+      "id": "categories",
+      "text": {
+        "bytes": 2122,
+        "tokens": 544,
+        "sha256": "46012773796f37e935cbd9a6e3a3171642391603c011ba78674010666e13134a"
+      },
+      "structured": {
+        "bytes": 1564,
+        "tokens": 331,
+        "sha256": "972b9c55d6405c1735b564aadc97a033e0b01b902c70c679aea77d24e622f00c"
+      },
+      "wire": {
+        "bytes": 4060,
+        "tokens": 996,
+        "sha256": "7bfe349710a56902e3d6066255f0f3cde0aa3ea0f4c4fb46a6ee48177fd540d3"
+      },
+      "p50Ms": 0.297916999999984,
+      "p95Ms": 0.34199999999998454
+    },
+    {
+      "id": "quick-reference",
+      "text": {
+        "bytes": 9809,
+        "tokens": 2470,
+        "sha256": "2c3462a475a9b15a0d79bbbb3d86fe74f275efda11bceb474c2c4eabf489d6b7"
+      },
+      "structured": {
+        "bytes": 7975,
+        "tokens": 1807,
+        "sha256": "cb9410306017bae986726df7900d379934a025665ad476b6e927561abab9b433"
+      },
+      "wire": {
+        "bytes": 18901,
+        "tokens": 4665,
+        "sha256": "55440e169e88460e1478b9834ca72e5e4415f50a10c8173f0868fe25b47ece63"
+      },
+      "p50Ms": 0.49958299999991596,
+      "p95Ms": 0.6947079999999914
+    },
+    {
+      "id": "workflow",
+      "text": {
+        "bytes": 2982,
+        "tokens": 813,
+        "sha256": "2a83737ee278ab2dc555d1920710d1f52256b0efcba75634c059f6aabf67bb8d"
+      },
+      "structured": {
+        "bytes": 2138,
+        "tokens": 478,
+        "sha256": "ff342af724f607eb16aee7f3aae92c9fa82d29d3ec5d9cbab227294e29a5655e"
+      },
+      "wire": {
+        "bytes": 5658,
+        "tokens": 1461,
+        "sha256": "770f9ca65371859726c234c453b9ab9778c9a6e03c2f117bf76e05f0132e3c22"
+      },
+      "p50Ms": 0.32095800000001873,
+      "p95Ms": 0.44887500000004366
+    },
+    {
+      "id": "checklist",
+      "text": {
+        "bytes": 5747,
+        "tokens": 1589,
+        "sha256": "1d87dccdff4ac91fcaa022c8434b8b312577ddec011ce0f2b47598070ad398b5"
+      },
+      "structured": {
+        "bytes": 4012,
+        "tokens": 1064,
+        "sha256": "6ca4d8320ef5bbb9edc76cbf175343ed7f07fe0dd0007edd24e883383ea6553c"
+      },
+      "wire": {
+        "bytes": 10705,
+        "tokens": 3001,
+        "sha256": "c179aebcdb737da51976a689737566897ca841d6fed3b59df2ed74e1505f5bbd"
+      },
+      "p50Ms": 0.30770799999993415,
+      "p95Ms": 0.6344169999999849
+    },
+    {
+      "id": "checklist-full",
+      "text": {
+        "bytes": 32040,
+        "tokens": 8719,
+        "sha256": "fc8e97a507f80e75f6dfbf25ed0581dff83c8f387a8d53d93175e294ecffff30"
+      },
+      "structured": {
+        "bytes": 92357,
+        "tokens": 24236,
+        "sha256": "78412354618deb40baf3ed263caa90960ec0baadad5a5704364ac0071e2f073f"
+      },
+      "wire": {
+        "bytes": 126735,
+        "tokens": 34615,
+        "sha256": "16f956064cefeba0a07b640c71a1bfeaf3308923a0195b8c6db5bef6081b5961"
+      },
+      "p50Ms": 1.3721250000000964,
+      "p95Ms": 2.791500000000042
+    }
+  ],
+  "limitations": [
+    "Offline reference-encoding counts, not billed tokens for every provider.",
+    "Client may forward text, structured content, or both; surfaces are reported separately.",
+    "Local warm HTTP-handler timing excludes network, cold start, corpus loading and LLM time.",
+    "audit_url network fetch is excluded; no paid API requests or user telemetry."
+  ],
+  "passed": true,
+  "violations": []
+}

@@ -1,0 +1,7 @@
+{
+  "packages/mcp/scripts/impact/promptfoo-pilot-config.ts": "d09df639b0e21e516122e52b00d66d890d56bbb73eba7a116b39f9f8c455d848",
+  "packages/mcp/scripts/impact/pilot-budget.ts": "c97c9d43636387bd47a032c7f109ad21f98400056c7a7ce815a6072719ce9755",
+  "packages/mcp/scripts/impact/pilot-proxy.ts": "a5adff917b28789be7faa2d2ac818a0449913d4f40e54b25aa270056bc2c685e",
+  "packages/mcp/scripts/impact/score.ts": "75f1631ecaf8f42c39a2e86d7ff5528d7e305942fa7f631f66a54c2c12143c6e",
+  "packages/mcp/scripts/impact/cases.ts": "36371293abc69e2debe72113e5cd7b94232119548d596256f9f9d92a65504302"
+}

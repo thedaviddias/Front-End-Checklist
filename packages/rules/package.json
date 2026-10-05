@@ -21,6 +21,9 @@
     "test:ci": "node --import tsx --test src/__tests__/load-rules.test.ts",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "yaml": "catalog:"
+  },
   "devDependencies": {
     "@repo/config-typescript": "workspace:^",
     "@types/node": "catalog:",

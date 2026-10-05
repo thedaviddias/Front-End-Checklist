@@ -1,4 +1,5 @@
 import type { CuratedChecklist, Rule } from '@repo/types'
+import { retrievalMetrics } from '../../scripts/retrieval-metrics'
 import { getToolDefinitions } from '../../src/server-tools'
 import { executeReviewCode, executeSearchRules, type ReviewCodeInput } from '../../src/tools'
 import { ACCESSIBILITY, HTML, IMAGES, JAVASCRIPT, loadRulesFromMdx, SECURITY } from './rule-loader'
@@ -25,6 +26,7 @@ interface ImprovementScenario {
 interface QualityReport {
   retrieval: {
     cases: number
+    hitRateAtFive: number
     recallAtFive: number
     meanReciprocalRank: number
   }
@@ -306,31 +308,20 @@ const IMPROVEMENT_SCENARIOS: ImprovementScenario[] = [
   }
 ]
 
-function reciprocalRank(results: string[], expectedSlugs: string[]): number {
-  const rank = results.findIndex(slug => expectedSlugs.includes(slug))
-  return rank === -1 ? 0 : 1 / (rank + 1)
-}
-
 function calculateRetrievalMetrics(rules: Rule[]): QualityReport['retrieval'] {
-  let hitsAtFive = 0
-  let reciprocalRankTotal = 0
-
-  for (const evalCase of RETRIEVAL_CASES) {
+  const metrics = RETRIEVAL_CASES.map(evalCase => {
     const result = executeSearchRules({ query: evalCase.query, limit: 10 }, rules)
-    const slugs = result.rules.map(rule => rule.slug)
-    const topFive = slugs.slice(0, 5)
-
-    if (topFive.some(slug => evalCase.expectedSlugs.includes(slug))) {
-      hitsAtFive += 1
-    }
-
-    reciprocalRankTotal += reciprocalRank(slugs, evalCase.expectedSlugs)
-  }
-
+    return retrievalMetrics(
+      result.rules.map(rule => rule.slug),
+      evalCase.expectedSlugs
+    )
+  })
   return {
-    cases: RETRIEVAL_CASES.length,
-    recallAtFive: hitsAtFive / RETRIEVAL_CASES.length,
-    meanReciprocalRank: reciprocalRankTotal / RETRIEVAL_CASES.length
+    cases: metrics.length,
+    hitRateAtFive: metrics.reduce((sum, metric) => sum + metric.hit, 0) / metrics.length,
+    recallAtFive: metrics.reduce((sum, metric) => sum + metric.recall, 0) / metrics.length,
+    meanReciprocalRank:
+      metrics.reduce((sum, metric) => sum + metric.reciprocalRank, 0) / metrics.length
   }
 }
 
@@ -435,6 +426,7 @@ describe('MCP quality evaluation', () => {
   it('meets retrieval quality thresholds for golden discovery queries', () => {
     const metrics = calculateRetrievalMetrics(rules)
 
+    expect(metrics.hitRateAtFive).toBeGreaterThanOrEqual(0.8)
     expect(metrics.recallAtFive).toBeGreaterThanOrEqual(0.8)
     expect(metrics.meanReciprocalRank).toBeGreaterThanOrEqual(0.5)
   })
@@ -493,7 +485,7 @@ describe('MCP quality evaluation', () => {
     console.log('\nMCP Quality Report')
     console.log(`  Tools checked: ${report.toolContracts.toolsChecked}`)
     console.log(
-      `  Retrieval: Recall@5 ${formatPercent(report.retrieval.recallAtFive)}, MRR ${report.retrieval.meanReciprocalRank.toFixed(2)} across ${report.retrieval.cases} cases`
+      `  Retrieval: Hit@5 ${formatPercent(report.retrieval.hitRateAtFive)}, Recall@5 ${formatPercent(report.retrieval.recallAtFive)}, MRR ${report.retrieval.meanReciprocalRank.toFixed(2)} across ${report.retrieval.cases} cases`
     )
     console.log(
       `  review_code: precision ${formatPercent(report.reviewCode.precision)}, recall ${formatPercent(report.reviewCode.recall)}, false-positive rate ${formatPercent(report.reviewCode.falsePositiveRate)}`

@@ -62,7 +62,7 @@ catalogs:
       version: 0.7.1
     framer-motion:
       specifier: ^13.4.6
-      version: 12.43.0
+      version: 13.4.6
     jest:
       specifier: ^30.5.2
       version: 30.5.2
@@ -90,6 +90,9 @@ catalogs:
     typescript:
       specifier: ^6.0.3
       version: 6.0.3
+    yaml:
+      specifier: ^2.9.1
+      version: 2.9.1
     zod:
       specifier: ^4.6.5
       version: 4.6.5
@@ -824,7 +827,7 @@ importers:
         specifier: ^7.30.0
         version: 7.30.0
       yaml:
-        specifier: ^2.9.1
+        specifier: 'catalog:'
         version: 2.9.1
       zod:
         specifier: 'catalog:'
@@ -845,6 +848,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 25.9.8
+      gpt-tokenizer:
+        specifier: 4.0.0
+        version: 4.0.0
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@25.9.8)(babel-plugin-macros@3.1.0)
@@ -878,6 +884,10 @@ importers:
         version: 6.0.3
 
   packages/rules:
+    dependencies:
+      yaml:
+        specifier: 'catalog:'
+        version: 2.9.1
     devDependencies:
       '@repo/config-typescript':
         specifier: workspace:^
@@ -5626,6 +5636,9 @@ packages:
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
+
+  gpt-tokenizer@4.0.0:
+    resolution: {integrity: sha512-YAWIyzvuVUHEfW7tFfFAxH8qQb+Q3RU9nYOTy7skMNX5qzU6Q8jxTHZLyO56ug1vYvCR7wndzpd3jwD86/mhjQ==}
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -12859,6 +12872,8 @@ snapshots:
       csstype: 3.2.3
 
   gopd@1.2.0: {}
+
+  gpt-tokenizer@4.0.0: {}
 
   graceful-fs@4.2.11: {}
 
