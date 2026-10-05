@@ -1,5 +1,6 @@
 import { fromJsonSchema, type McpServer } from '@modelcontextprotocol/server'
 import type { CuratedChecklist, Rule } from '@repo/types'
+import { identifyMcpClient } from './client-source'
 import { getToolUiMeta } from './server-apps'
 import { buildToolUsage, type McpToolUsage, notifyToolUsage } from './telemetry'
 import {
@@ -282,7 +283,12 @@ export function registerTools(
         annotations: { ...definition.annotations, title: definition.title },
         _meta: getToolUiMeta(definition.name)
       },
-      async (args: unknown) => {
+      async (args: unknown, context) => {
+        const clientSource = identifyMcpClient(
+          Reflect.get(context.mcpReq.envelope ?? {}, 'io.modelcontextprotocol/clientInfo'),
+          context.mcpReq._meta,
+          context.http?.req?.headers.get('user-agent')
+        )
         const started = performance.now()
         const rules = await Promise.resolve(getRules())
         const checklists = getChecklists()
@@ -301,33 +307,33 @@ export function registerTools(
           )
         } catch (error) {
           if (telemetryEnabled) {
-            notifyToolUsage(
-              onToolCompleted,
-              buildToolUsage(
+            notifyToolUsage(onToolCompleted, {
+              ...buildToolUsage(
                 definition.name,
                 args,
                 undefined,
                 rules,
                 'error',
                 performance.now() - started
-              )
-            )
+              ),
+              clientSource
+            })
           }
           throw error
         }
         const { isError, result } = execution
         if (telemetryEnabled) {
-          notifyToolUsage(
-            onToolCompleted,
-            buildToolUsage(
+          notifyToolUsage(onToolCompleted, {
+            ...buildToolUsage(
               definition.name,
               args,
               result,
               rules,
               isError ? 'error' : 'success',
               performance.now() - started
-            )
-          )
+            ),
+            clientSource
+          })
         }
 
         return {

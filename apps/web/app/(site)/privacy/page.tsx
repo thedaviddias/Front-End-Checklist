@@ -60,11 +60,13 @@ export default function PrivacyPage() {
         </p>
         <p>
           Where enabled, anonymous MCP usage records contain the tool name, timestamp, result
-          status, execution duration, and canonical rule slugs and categories requested or returned.
-          These analytics do not include submitted code, prompts, search queries, audited URLs, or
-          website account identifiers. A returned rule does not mean that a user applied a change.
-          IP-based rate limiting uses Redis to protect the service. We use this information to
-          operate, secure, troubleshoot, and improve Front-End Checklist.
+          status, execution duration, canonical rule slugs and categories requested or returned, and
+          a best-effort client platform classification (Claude, OpenAI, or unknown). Raw client
+          names and user-agent strings are not retained in these usage events. These analytics do
+          not include submitted code, prompts, search queries, audited URLs, or website account
+          identifiers. A returned rule does not mean that a user applied a change. IP-based rate
+          limiting uses Redis to protect the service. We use this information to operate, secure,
+          troubleshoot, and improve Front-End Checklist.
         </p>
         <h2>Email preferences</h2>
         <p>

@@ -1,4 +1,5 @@
 import type { Rule } from '@repo/types'
+import type { McpClientSource } from './client-source'
 
 export interface McpRuleUsage {
   slug: string
@@ -11,6 +12,7 @@ export interface McpToolUsage {
   durationMs: number
   requestedRule?: McpRuleUsage
   returnedRules: McpRuleUsage[]
+  clientSource?: McpClientSource
 }
 
 const RULE_TOOLS = new Set(['get_rule', 'check_rule', 'fix_rule', 'explain_rule'])

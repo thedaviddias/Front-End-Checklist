@@ -66,12 +66,14 @@ const mockChecklists: CuratedChecklist[] = [
 async function callMcp(
   body: Record<string, unknown>,
   checklists: CuratedChecklist[] = mockChecklists,
-  options: { telemetryEnabled?: boolean; onToolCompleted?: (usage: McpToolUsage) => void } = {}
+  options: { telemetryEnabled?: boolean; onToolCompleted?: (usage: McpToolUsage) => void } = {},
+  headers: Record<string, string> = {}
 ) {
   const request = new Request('https://example.com/mcp', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      ...headers
     },
     body: JSON.stringify(body)
   })
@@ -342,6 +344,45 @@ describe('SDK-backed MCP server', () => {
     expect(observer).toHaveBeenCalledTimes(2)
   })
 
+  it('classifies legacy per-call hints without requiring a persisted session', async () => {
+    const observer = jest.fn()
+    const request = {
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'tools/call',
+      params: { name: 'get_rule', arguments: { slug: 'doctype' } }
+    }
+    await callMcp(
+      {
+        ...request,
+        params: {
+          ...request.params,
+          _meta: { 'openai/userAgent': 'opaque client fingerprint', 'openai/subject': 'private' }
+        }
+      },
+      mockChecklists,
+      { onToolCompleted: observer }
+    )
+    await callMcp(
+      request,
+      mockChecklists,
+      { onToolCompleted: observer },
+      { 'User-Agent': 'Claude-User/1.0' }
+    )
+    await callMcp(request, mockChecklists, { onToolCompleted: observer })
+    expect(observer.mock.calls.map(([usage]) => usage.clientSource)).toEqual([
+      {
+        clientPlatform: 'openai',
+        clientProduct: 'unknown',
+        clientSourceEvidence: 'openai_metadata'
+      },
+      { clientPlatform: 'claude', clientProduct: 'claude', clientSourceEvidence: 'user_agent' },
+      { clientPlatform: 'unknown', clientProduct: 'unknown', clientSourceEvidence: 'unknown' }
+    ])
+    expect(JSON.stringify(observer.mock.calls)).not.toContain('fingerprint')
+    expect(JSON.stringify(observer.mock.calls)).not.toContain('private')
+  })
+
   it('advertises a description for every tool input property', async () => {
     const { json } = await callMcp({ jsonrpc: '2.0', id: 1, method: 'tools/list' })
     const tools = (
@@ -417,9 +458,12 @@ describe('SDK-backed MCP server', () => {
 })
 
 describe('2026-07-28 protocol revision', () => {
-  async function connectModernClient() {
+  async function connectModernClient(
+    name = 'jest-client',
+    onToolCompleted?: (usage: McpToolUsage) => void
+  ) {
     const client = new Client(
-      { name: 'jest-client', version: '1.0.0' },
+      { name, version: '1.0.0' },
       { versionNegotiation: { mode: { pin: MCP_MODERN_PROTOCOL_VERSION } } }
     )
     const transport = new StreamableHTTPClientTransport(new URL('https://example.com/mcp'), {
@@ -431,7 +475,7 @@ describe('2026-07-28 protocol revision', () => {
           request,
           () => mockRules,
           () => mockChecklists,
-          {},
+          { onToolCompleted },
           parsedBody
         )
       }
@@ -440,6 +484,23 @@ describe('2026-07-28 protocol revision', () => {
     await client.connect(transport)
     return client
   }
+
+  it('attributes modern client metadata per call without leaking across clients', async () => {
+    const observer = jest.fn()
+    for (const name of ['claude-ai', 'codex']) {
+      const client = await connectModernClient(name, observer)
+      await client.callTool({ name: 'get_rule', arguments: { slug: 'doctype' } })
+      await client.close()
+    }
+    expect(observer.mock.calls.map(([usage]) => usage.clientSource)).toEqual([
+      {
+        clientPlatform: 'claude',
+        clientProduct: 'claude',
+        clientSourceEvidence: 'mcp_client_info'
+      },
+      { clientPlatform: 'openai', clientProduct: 'codex', clientSourceEvidence: 'mcp_client_info' }
+    ])
+  })
 
   it('negotiates the stateless revision through server/discover', async () => {
     const client = await connectModernClient()

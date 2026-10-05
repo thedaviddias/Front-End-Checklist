@@ -61,6 +61,9 @@ describe('post-response MCP event delivery', () => {
       'mcp_rule_returned'
     ])
     expect(mockTrack.mock.calls[1][1]).toMatchObject({ ruleSlug: 'doctype', category: 'html' })
+    expect(
+      mockTrack.mock.calls.every(([, properties]) => properties.clientPlatform === 'unknown')
+    ).toBe(true)
     expect(mockCreateMany).toHaveBeenCalledWith({ data: [{ toolName: 'get_rule' }] })
   })
 
@@ -74,6 +77,21 @@ describe('post-response MCP event delivery', () => {
     scheduleMcpTelemetry([usage])
     await expect(mockAfter.mock.calls[0][0]()).resolves.toBeUndefined()
     expect(mockTrack).toHaveBeenCalledTimes(3)
+  })
+
+  it('propagates the same bounded source dimensions to tool and rule events', async () => {
+    mockTrack.mockResolvedValue(undefined)
+    mockCreateMany.mockResolvedValue({ count: 1 })
+    const clientSource = {
+      clientPlatform: 'claude',
+      clientProduct: 'claude',
+      clientSourceEvidence: 'user_agent'
+    } as const
+    scheduleMcpTelemetry([{ ...usage, clientSource }])
+    await mockAfter.mock.calls[0][0]()
+    for (const [, properties] of mockTrack.mock.calls) {
+      expect(properties).toMatchObject(clientSource)
+    }
   })
 
   it('does not schedule empty requests or send development usage to OpenPanel', async () => {

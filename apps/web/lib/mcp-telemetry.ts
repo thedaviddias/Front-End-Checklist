@@ -22,7 +22,12 @@ export function scheduleMcpTelemetry(usages: McpToolUsage[]): void {
         const common = {
           source: 'mcp',
           toolName: usage.toolName,
-          serverVersion: MCP_SERVER_INFO.version
+          serverVersion: MCP_SERVER_INFO.version,
+          ...(usage.clientSource ?? {
+            clientPlatform: 'unknown',
+            clientProduct: 'unknown',
+            clientSourceEvidence: 'unknown'
+          })
         }
         writes.push(
           Promise.resolve().then(() =>
