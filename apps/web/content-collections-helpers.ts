@@ -25,10 +25,12 @@ async function fetchNpmPackage(name: string): Promise<NpmPackageResult | null> {
     const encoded = encodeURIComponent(name).replace('%40', '@').replace('%2F', '/')
     const [metaRes, dlRes] = await Promise.all([
       fetch(`${NPM_REGISTRY}/${encoded}/latest`, {
-        headers: { Accept: 'application/json' }
+        headers: { Accept: 'application/json' },
+        signal: AbortSignal.timeout(10_000)
       }),
       fetch(`${NPM_DOWNLOADS_API}/${encoded}`, {
-        headers: { Accept: 'application/json' }
+        headers: { Accept: 'application/json' },
+        signal: AbortSignal.timeout(10_000)
       })
     ])
 

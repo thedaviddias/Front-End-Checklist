@@ -110,7 +110,7 @@ export async function fetchUrlMetadata(url: string): Promise<UrlMetadata | null>
   try {
     const { result, error } = await ogs({
       url,
-      timeout: 10000,
+      timeout: 10,
       fetchOptions: {
         headers: {
           'User-Agent': BOT_USER_AGENT
