@@ -32,7 +32,7 @@ export type CheckRuleOutput = CheckRuleResult | CheckRuleError
 export const checkRuleDefinition = {
   name: 'check_rule',
   title: 'Check Rule Compliance',
-  description: `Checks a code snippet against one specific rule and reports whether it complies, including the fix prompt when it does not. Without code, returns how to verify the rule manually. Use it to confirm that a fix worked or to test code against a rule the user names. To review code against all rules at once use review_code.`,
+  description: `Checks a code snippet against one named frontend rule using static heuristics and returns findings and verification guidance. Without code, returns manual verification guidance. Use it when the user requests a check of a specific rule or a proposed fix. Results do not establish rendered-state or runtime conformance.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

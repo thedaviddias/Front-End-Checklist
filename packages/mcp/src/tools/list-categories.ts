@@ -9,7 +9,7 @@ import { NUMBER_SCHEMA, READ_ONLY_TOOL_ANNOTATIONS, STRING_SCHEMA } from './meta
 export const listCategoriesDefinition = {
   name: 'list_categories',
   title: 'List Rule Categories',
-  description: `Lists every rule category (accessibility, performance, SEO, security, and more) with its rule count. Use it when the user asks what the checklist covers, or when you need valid category names for the filters of search_rules or get_quick_reference.`,
+  description: `Lists available frontend rule categories, their descriptions, and rule counts. Use it when the user asks what the checklist covers or needs valid category names.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

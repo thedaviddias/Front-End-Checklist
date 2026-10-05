@@ -57,7 +57,7 @@ export function buildGetChecklistRulesDefinition(checklists: CuratedChecklist[])
   return {
     name: 'get_checklist_rules',
     title: 'Get Checklist Rules',
-    description: `Returns guidance (title, priority, check/fix prompts) for every rule in a curated checklist in one call. Use it instead of calling get_rule once per rule when auditing against a whole checklist, typically after get_workflow. Set includeContent only when you need each rule's long-form body. Available checklists: ${availableSlugs.join(', ')}.`,
+    description: `Returns titles, priorities, verification and remediation prompts for every rule in a curated checklist. Use it when the user requests guidance for an entire checklist. includeContent optionally adds each rule’s long-form body. Available checklists: ${availableSlugs.join(', ')}.`,
     annotations: READ_ONLY_TOOL_ANNOTATIONS,
     inputSchema: {
       type: 'object' as const,
@@ -121,7 +121,7 @@ export function buildGetChecklistRulesDefinition(checklists: CuratedChecklist[])
 export const getChecklistRulesDefinition = {
   name: 'get_checklist_rules',
   title: 'Get Checklist Rules',
-  description: `Returns guidance (title, priority, check/fix prompts) for every rule in a curated checklist in one call. Use it instead of calling get_rule once per rule when auditing against a whole checklist, typically after get_workflow. Set includeContent only when you need each rule's long-form body.`,
+  description: `Returns titles, priorities, verification and remediation prompts for every rule in a curated checklist. Use it when the user requests guidance for an entire checklist. includeContent optionally adds each rule’s long-form body.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

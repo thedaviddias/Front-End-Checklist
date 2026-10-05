@@ -32,7 +32,7 @@ export type FixRuleOutput = FixRuleResult | FixRuleError
 export const fixRuleDefinition = {
   name: 'fix_rule',
   title: 'Get Rule Fix',
-  description: `Returns step-by-step remediation instructions for one rule, with its priority so multiple issues can be triaged. Use it when an issue has been found (by review_code, audit_url, or check_rule) and the user wants it fixed. Pass codeSnippet to get guidance framed around their code.`,
+  description: `Returns step-by-step remediation guidance and priority for one named frontend rule. Use it when the user requests implementation or fix instructions for a known issue. Optional codeSnippet provides context; the tool does not edit files or apply changes.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

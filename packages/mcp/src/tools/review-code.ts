@@ -40,7 +40,7 @@ export interface ReviewCodeResult {
 export const reviewCodeDefinition = {
   name: 'review_code',
   title: 'Review Frontend Code',
-  description: `Runs a non-exhaustive static heuristic review of pasted HTML, CSS, or JavaScript against many Front-End Checklist rules at once and returns prioritized issues with fix guidance. Use it as the first step when the user shares frontend code and wants it reviewed, audited, or debugged. No issues means nothing provable was found, not that the code is clean, so follow its suggestions with search_rules or get_rule. For a live page use audit_url instead; to test code against one named rule use check_rule.`,
+  description: `Runs a non-exhaustive static heuristic review of pasted HTML, CSS, or JavaScript against multiple frontend best practices and returns prioritized issues, fix guidance, and suggestions for manual verification. Use it when the user requests a review, audit, or debugging of source code. An empty issue list means no provable static issue was found; it does not establish accessibility conformance or runtime correctness.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

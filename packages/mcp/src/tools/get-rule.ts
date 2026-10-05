@@ -238,7 +238,7 @@ function toRuleDifficulty(value: unknown): RuleResponse['difficulty'] | undefine
 export const getRuleDefinition = {
   name: 'get_rule',
   title: 'Get Rule Guidance',
-  description: `Returns everything about one rule: what it requires, why it matters, how to check and fix it, code examples, sources, and related rules. Use it when you know the rule slug (from search_rules, review_code, or the user) and need its complete guidance. Unknown slugs return similar suggestions. If the user only wants fix steps use fix_rule; if they only ask why it matters use explain_rule.`,
+  description: `Returns complete guidance for one known rule slug: requirements, rationale, verification and remediation prompts, code examples, sources, and related rules. Use it when the user requests detailed guidance for a specific frontend rule. Unknown slugs return similar suggestions.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

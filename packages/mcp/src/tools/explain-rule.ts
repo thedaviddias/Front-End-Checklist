@@ -31,7 +31,7 @@ export type ExplainRuleOutput = ExplainRuleResult | ExplainRuleError
 export const explainRuleDefinition = {
   name: 'explain_rule',
   title: 'Explain Frontend Rule',
-  description: `Explains why one rule matters: its background, the impact on users and the business, and related categories, without fix steps. Use it when the user asks why a practice matters or pushes back on a recommendation. For the complete rule including how to check and fix it, use get_rule.`,
+  description: `Explains one frontend rule, including its background, impact on users and the business, and related categories. Use it when the user asks why a practice matters or requests educational context. It returns explanation guidance rather than applying a fix.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

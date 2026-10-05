@@ -24,7 +24,7 @@ export interface SearchRulesInput {
 export const searchRulesDefinition = {
   name: 'search_rules',
   title: 'Search Frontend Rules',
-  description: `Finds rules by keywords and/or category and priority filters, returning slugs, titles, and short summaries (paginated). Use it when you do not yet know which rule applies, e.g. "how should I load web fonts?" or "accessibility rules for forms". Then call get_rule on the best matches. To browse a whole category as a checklist use get_quick_reference.`,
+  description: `Finds frontend rules by keywords, category, and priority, returning paginated slugs, titles, and short summaries. Use it when the user requests relevant practices for a technology, concern, or pattern, such as web fonts or accessible forms.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

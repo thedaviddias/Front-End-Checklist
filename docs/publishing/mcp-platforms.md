@@ -166,3 +166,20 @@ Eight functional scenarios were exercised on October 4, 2026 using subscription-
 | WCAG certification | Model refused certification and explained static-review and manual-testing limits |
 
 Raw traces are temporary staging files under `.artifacts/mcp-publication/`. A generated CLI transcript replay is labeled as a replay, not a desktop screen recording. Claude CLI reports no active login; its model scenarios remain pending. Record the final platform walkthrough against the deployed release and publish a reviewer-accessible recording before submitting.
+
+## Claude Inspector and policy preparation
+
+All eleven hosted tools passed valid sample calls using MCP Inspector 2.5.0 on October 4, 2026, including an actual public-page fetch. The tested host still reported version 2.0.0. Repeat live checks after deploying the prepared release; existing evidence does not prove deployed 2.0.1 behavior.
+
+The connector draft reached Review and submit with no authentication, three use cases, reviewer setup instructions, and Inspector self-testing confirmed. Policy acknowledgements remain unchecked and nothing has been submitted for review. The paired plugin still depends on connector approval.
+
+The current [Anthropic directory policy](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy) requires annotation titles. Registration now mirrors each existing tool title into `annotations.title`. Descriptions state each tool's function and invocation context without instructions to invoke other tools, matching the portal's policy acknowledgement. Static-review limitations remain explicit.
+
+Private durable copies in Nextcloud were read back and verified byte-for-byte:
+
+- `Documents/front-end-checklist-mcp-2.0.1-2026-10-04.zip` (SHA256 `bfeec214de95bf5885333143c3607b24eb198e0816cd604d1ee2560884794024`)
+- `Documents/front-end-checklist-codex-reviewer-traces-2026-10-04.zip`
+- `Documents/front-end-checklist-codex-cli-replay-2026-10-04.mp4` (transcript replay)
+- `Documents/front-end-checklist-mcp-inspector-evidence-2026-10-04.zip` (eleven tool results and summary)
+
+These private copies are not reviewer-accessible publication links. Owner-approved support email, public legal URLs, OpenAI portal sign-in/domain verification, final recording, policy/terms acceptance, submission and vendor approval remain release gates.

@@ -30,7 +30,7 @@ export interface AuditUrlResult extends ReviewCodeResult {
 export const auditUrlDefinition = {
   name: 'audit_url',
   title: 'Audit Live URL',
-  description: `Fetches a public https:// page and runs the same static review as review_code on its HTML, returning prioritized issues with fix guidance. Use it when the user gives the URL of a deployed site instead of source code. Localhost, private networks, and plain http URLs are refused. Follow up on each issue with fix_rule or get_rule.`,
+  description: `Fetches a public HTTPS page and performs a non-exhaustive static review of its HTML, returning prioritized issues and fix guidance. Use it when the user requests an audit of a deployed public page. Localhost, private networks, and plain HTTP URLs are refused. It does not execute the page, measure live Core Web Vitals, or certify accessibility.`,
   annotations: OPEN_WORLD_READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

@@ -7,7 +7,7 @@ import { getToolDefinitions } from '../../src/server-tools'
  * Agents pick tools from the name + description + input schema alone, so these are the
  * MCP server's real "prompt". The checks below encode the guidance from Anthropic's
  * "Writing effective tools for agents": say what the tool returns, when to use it (and
- * which sibling to use instead), document every parameter, and avoid emphatic wording
+ * the situations where it applies), document every parameter, and avoid emphatic wording
  * that makes models over-trigger a tool. The tool-choice eval
  * (`pnpm --filter @repo/mcp eval:tools`) measures whether models actually pick right.
  */
@@ -43,7 +43,18 @@ const PARAMETER_DESCRIPTION_MIN = 25
 const MAX_SIBLING_OVERLAP = 0.35
 
 /** All-caps words that are legitimate acronyms rather than emphasis. */
-const ACRONYMS = new Set(['HTML', 'CSS', 'JSON', 'MDX', 'URL', 'URLS', 'SEO', 'HTTPS', 'ARIA'])
+const ACRONYMS = new Set([
+  'HTML',
+  'CSS',
+  'JSON',
+  'MDX',
+  'URL',
+  'URLS',
+  'SEO',
+  'HTTP',
+  'HTTPS',
+  'ARIA'
+])
 const STOPWORDS = new Set(
   'the and for with from that this when use one its are not but you your into than then also only each every rule rules tool code'.split(
     ' '
@@ -104,9 +115,9 @@ describe('MCP tool descriptions', () => {
     expect(d.description).not.toMatch(/\*\*/)
   })
 
-  it.each(definitions.map(d => [d.name, d]))('%s only references tools that exist', (_, d) => {
+  it.each(definitions.map(d => [d.name, d]))('%s avoids instructions about other tools', (_, d) => {
     const referenced = d.description.match(/\b[a-z]+(?:_[a-z]+)+\b/g) ?? []
-    expect(referenced.filter(name => !toolNames.has(name))).toEqual([])
+    expect(referenced.filter(name => toolNames.has(name) && name !== d.name)).toEqual([])
   })
 
   it.each(definitions.map(d => [d.name, d]))('%s documents every parameter', (_, d) => {

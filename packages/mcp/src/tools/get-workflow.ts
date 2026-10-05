@@ -50,7 +50,7 @@ export function buildGetWorkflowDefinition(checklists: CuratedChecklist[]) {
   return {
     name: 'get_workflow',
     title: 'Get Audit Workflow',
-    description: `Returns the ordered steps of a curated audit workflow, each with its rule slug, priority, and category. Use it when the user wants a structured, end-to-end pass such as a pre-launch audit, rather than help with one specific rule. Then call get_checklist_rules to fetch guidance for every step in one call, or get_rule for a single step. Available workflows: ${availableSlugs.join(', ')}.`,
+    description: `Returns the ordered steps of a curated audit workflow, including rule slugs, priorities, and categories. Use it when the user requests a structured audit such as a pre-launch checklist. Available workflows: ${availableSlugs.join(', ')}.`,
     annotations: READ_ONLY_TOOL_ANNOTATIONS,
     inputSchema: {
       type: 'object' as const,
@@ -108,7 +108,7 @@ export function buildGetWorkflowDefinition(checklists: CuratedChecklist[]) {
 export const getWorkflowDefinition = {
   name: 'get_workflow',
   title: 'Get Audit Workflow',
-  description: `Returns the ordered steps of a curated audit workflow, each with its rule slug, priority, and category. Use it when the user wants a structured, end-to-end pass such as a pre-launch audit, rather than help with one specific rule. Then call get_checklist_rules to fetch guidance for every step in one call, or get_rule for a single step.`,
+  description: `Returns the ordered steps of a curated audit workflow, including rule slugs, priorities, and categories. Use it when the user requests a structured audit such as a pre-launch checklist.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,

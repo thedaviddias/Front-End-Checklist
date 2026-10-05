@@ -2,7 +2,7 @@ import { SITE_URL } from '@repo/config'
 
 /** Shared description for the `slug` input of single-rule tools. */
 export const RULE_SLUG_DESCRIPTION =
-  "Rule slug: the kebab-case rule ID, e.g. 'alt-text' or 'doctype'. Get slugs from search_rules or review_code results."
+  "Rule slug: the kebab-case rule ID, e.g. 'alt-text' or 'doctype'. The ID must identify a rule in the published catalogue."
 
 export const STRING_SCHEMA = {
   type: 'string'

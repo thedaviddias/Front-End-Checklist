@@ -78,7 +78,7 @@ const PRIORITY_EMOJI: Record<string, string> = {
 export const getQuickReferenceDefinition = {
   name: 'get_quick_reference',
   title: 'Get Quick Reference',
-  description: `Returns a compact checklist of the rules in one category, filtered by priority and formatted as JSON, Markdown, or a copy-paste task list. Use it when the user wants a short checklist to follow or paste, for example before a deploy or in a PR template. For a keyword search use search_rules; for detailed guidance on one rule use get_rule.`,
+  description: `Returns a compact checklist for one frontend category, filtered by priority and formatted as JSON, Markdown, or a task list. Use it when the user requests a concise checklist for a deployment, review, or team handoff.`,
   annotations: READ_ONLY_TOOL_ANNOTATIONS,
   inputSchema: {
     type: 'object' as const,
