@@ -64,7 +64,8 @@ test('rule returns full guidance with an absolute URL', () => {
   const { rule } = run(['rule', 'alt-text']).json()
   assert.equal(rule.slug, 'alt-text')
   assert.match(rule.url, /^https:\/\//)
-  assert.ok(rule.prompts.fix.length > 0)
+  assert.ok(rule.prompts.fix.length > 20)
+  assert.doesNotMatch(rule.prompts.fix, /^[>|][+-]?$/)
 })
 
 test('review exits 1 only when findings meet --fail-on', () => {
@@ -136,4 +137,14 @@ test('the npm tarball ships the bundle, content snapshot, and skill', () => {
   assert.ok(!files.some(f => f.startsWith('src/')), 'tarball must not ship sources')
   const pkg = JSON.parse(readFileSync(path.join(packageRoot, 'package.json'), 'utf-8'))
   assert.deepEqual(Object.keys(pkg.dependencies), ['undici'], 'only public runtime dependencies')
+})
+
+test('checklist CLI consumes all pages while preserving real guidance', () => {
+  const result = run(['checklist', 'launch-checklist'])
+  assert.equal(result.status, 0)
+  const { checklist, rules } = result.json()
+  assert.equal(rules.length, checklist.totalRules)
+  assert.ok(rules.length > 5)
+  assert.equal(new Set(rules.map(rule => rule.slug)).size, rules.length)
+  for (const rule of rules) assert.ok(rule.prompts.check.length > 5)
 })

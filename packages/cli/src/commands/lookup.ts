@@ -130,14 +130,31 @@ export function runChecklist(options: CliOptions, content: Content): number {
     throw new UsageError(`${output.error.message} Available: ${available}`)
   }
 
+  // The CLI promises every rule; consume bounded MCP pages before rendering.
+  const allRules = [...output.rules]
+  let cursor = output.nextCursor
+  const seenCursors = new Set<string>()
+  while (cursor) {
+    if (seenCursors.has(cursor)) throw new UsageError('Checklist pagination repeated a cursor')
+    seenCursors.add(cursor)
+    const page = executeGetChecklistRules(
+      { checklist: slug, cursor },
+      content.rules,
+      content.checklists
+    )
+    if (!page.success) throw new UsageError(page.error.message)
+    allRules.push(...page.rules)
+    cursor = page.nextCursor
+  }
+
   if (options.format === 'json') {
-    writeJson({ command: 'checklist', checklist: output.checklist, rules: output.rules })
+    writeJson({ command: 'checklist', checklist: output.checklist, rules: allRules })
   } else {
     writeLines([
       `# ${output.checklist.title} — ${output.checklist.totalRules} rules`,
       output.checklist.description,
       '',
-      ...output.rules.map(r => `  [${r.priority.padEnd(8)}] ${r.slug.padEnd(36)} ${r.title}`)
+      ...allRules.map(r => `  [${r.priority.padEnd(8)}] ${r.slug.padEnd(36)} ${r.title}`)
     ])
   }
   return EXIT.ok

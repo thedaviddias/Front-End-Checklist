@@ -13,6 +13,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "conformance": "tsx scripts/conformance.ts",
+    "efficiency": "tsx scripts/efficiency.ts",
     "eval:tools": "tsx scripts/eval-tool-choice.ts",
     "evaluate": "jest tests/quality --runInBand",
     "lint": "biome check .",
@@ -32,7 +33,7 @@
     "@repo/types": "workspace:*",
     "node-html-parser": "^9.0.4",
     "undici": "^7.30.0",
-    "yaml": "^2.9.1",
+    "yaml": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -41,6 +42,7 @@
     "@repo/config-typescript": "workspace:^",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
+    "gpt-tokenizer": "4.0.0",
     "jest": "catalog:",
     "ts-jest": "catalog:",
     "typescript": "catalog:"

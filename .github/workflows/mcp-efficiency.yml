@@ -1,0 +1,42 @@
+name: MCP efficiency
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcp-efficiency-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  budgets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: corepack enable
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: pnpm install --frozen-lockfile
+      - name: Check context and latency budgets
+        run: pnpm mcp:efficiency -- --out "$RUNNER_TEMP/mcp-efficiency.json"
+      - name: Check measurement logic and quality floors
+        run: pnpm --filter @repo/mcp exec jest tests/unit/efficiency.test.ts tests/unit/checklist-pagination.test.ts tests/unit/promptfoo-pilot.test.ts tests/unit/pilot-budget.test.ts tests/unit/output-score.test.ts tests/unit/rule-discovery.test.ts tests/integration/mcp-server.test.ts tests/quality --runInBand
+      - name: Check YAML prompt loading
+        run: pnpm --filter @frontendchecklist/rules test
+      - name: Retain measurements even on budget failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-efficiency
+          path: ${{ runner.temp }}/mcp-efficiency.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -61,7 +61,8 @@
     "audit:url": "pnpm --filter @frontendchecklist/cli build && node packages/cli/dist/index.js audit",
     "crawl:site": "tsx packages/crawler/src/run.ts",
     "ci:check": "pnpm run lint && pnpm run typecheck && pnpm run validate:rule-structure && pnpm run validate:guide-structure && pnpm run validate:guides && pnpm run validate:evidence && pnpm run test:ci",
-    "ci:e2e": "pnpm run build && pnpm run test:e2e:ci"
+    "ci:e2e": "pnpm run build && pnpm run test:e2e:ci",
+    "mcp:efficiency": "pnpm --filter @repo/mcp efficiency"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",

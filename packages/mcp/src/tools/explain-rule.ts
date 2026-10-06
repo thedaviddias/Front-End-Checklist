@@ -1,6 +1,6 @@
 import type { Rule } from '@repo/types'
 import type { ErrorWithSuggestions, ExplainRuleResponse } from '../types'
-import { findSimilarRules } from '../utils/fuzzy-match'
+import { ruleNotFound } from '../utils/rule-not-found'
 import {
   CATEGORY_ARRAY_SCHEMA,
   ERROR_WITH_SUGGESTIONS_SCHEMA,
@@ -66,20 +66,7 @@ export function executeExplainRule(input: ExplainRuleInput, rules: Rule[]): Expl
   const rule = rules.find(r => r.slug === slug)
 
   if (!rule) {
-    const suggestions = findSimilarRules(
-      slug,
-      rules.map(r => ({ slug: r.slug, title: r.title }))
-    )
-
-    return {
-      success: false,
-      error: {
-        error: null,
-        result: null,
-        suggestions,
-        message: `Rule '${slug}' not found.${suggestions.length > 0 ? ' Did you mean one of these?' : ''}`
-      }
-    }
+    return { success: false, error: ruleNotFound(slug, rules) }
   }
 
   const explainPrompt = rule.prompts?.explain || 'No explanation prompt available for this rule.'

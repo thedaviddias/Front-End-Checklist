@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "analysis": "post-hoc; not pre-registered model uplift",
+  "sourceHash": "f31008b7f1820b426821fd4e045758bbca0bd505177cb5135dd4a072fe779a15",
+  "extractionContract": "raw HTML or exactly one explicit HTML fence; no competing markup",
+  "summary": [
+    {
+      "condition": "without-mcp",
+      "attempts": 8,
+      "formatPassed": 0,
+      "staticPassed": 8,
+      "artifactsMissing": 0,
+      "controlPassed": 2,
+      "semanticVerified": null
+    },
+    {
+      "condition": "with-mcp",
+      "attempts": 8,
+      "formatPassed": 5,
+      "staticPassed": 6,
+      "artifactsMissing": 2,
+      "controlPassed": 0,
+      "semanticVerified": null
+    }
+  ],
+  "results": [
+    {
+      "task": "product-photo",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<article><img src=\"/shoe.jpg\" alt=\"Gray and blue trail running shoe with aggressive tread pattern, shown from the side\"><h2>Trail shoe</h2></article>",
+      "staticScore": {
+        "id": "product-photo",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "4b5af3d76b384e64a0b76c79b97ead919ed00b2f098c601e1454034368726b9e",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "product-photo",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": true,
+      "staticPass": true,
+      "artifact": "<article><img src=\"/shoe.jpg\" alt=\"Trail shoe with rugged tread and reinforced ankle support\"><h2>Trail shoe</h2></article>",
+      "staticScore": {
+        "id": "product-photo",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "9d6704093fa679b4bfa33ba4d8e7e5eaf3ad94c84cb0764d19aeeba716a25a58",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<img src=\"/divider.svg\" alt=\"\">",
+      "staticScore": {
+        "id": "decorative-divider",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "e2ef70c1ce679fab13d78abab1e7cc834ffcb7d982979f469ee72b87f468ca3a",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": true,
+      "staticPass": true,
+      "artifact": "<img src=\"/divider.svg\" alt=\"\">",
+      "staticScore": {
+        "id": "decorative-divider",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "e2ef70c1ce679fab13d78abab1e7cc834ffcb7d982979f469ee72b87f468ca3a",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">",
+      "staticScore": {
+        "id": "hero-dimensions",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "c139de9f9d1c16745e425b15339eab24dfbed6b92d0e44b8cf49781bc00d2a8a",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": true,
+      "staticPass": true,
+      "artifact": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">",
+      "staticScore": {
+        "id": "hero-dimensions",
+        "category": "images",
+        "split": "development",
+        "control": false,
+        "candidateHash": "c139de9f9d1c16745e425b15339eab24dfbed6b92d0e44b8cf49781bc00d2a8a",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "close-button",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>",
+      "staticScore": {
+        "id": "close-button",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "6da6cce7dda8a012c9880eea04bf5414ae78306bb67ba004fe885ab7b0c59531",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "close-button",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": true,
+      "staticPass": true,
+      "artifact": "<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>",
+      "staticScore": {
+        "id": "close-button",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "6da6cce7dda8a012c9880eea04bf5414ae78306bb67ba004fe885ab7b0c59531",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "email-label",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<label for=\"email\">Email</label><input id=\"email\" type=\"email\" name=\"email\">",
+      "staticScore": {
+        "id": "email-label",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "cd43a0c22ebd69d29fcaa997911680c3b62d4b0c5088a234830a63240863749b",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "email-label",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": true,
+      "staticPass": true,
+      "artifact": "<label for=\"email\">Email</label><input id=\"email\" type=\"email\" name=\"email\">",
+      "staticScore": {
+        "id": "email-label",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "cd43a0c22ebd69d29fcaa997911680c3b62d4b0c5088a234830a63240863749b",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "without-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "staticScore": {
+        "id": "viewport-zoom",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "74a974d39580e4cb80bbfcaf132f8e0b54570113be03ee8d1668fc3d90352b8c",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "with-mcp",
+      "control": false,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "staticScore": {
+        "id": "viewport-zoom",
+        "category": "accessibility",
+        "split": "development",
+        "control": false,
+        "candidateHash": "74a974d39580e4cb80bbfcaf132f8e0b54570113be03ee8d1668fc3d90352b8c",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "valid-hero",
+      "condition": "without-mcp",
+      "control": true,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">",
+      "staticScore": {
+        "id": "valid-hero",
+        "category": "performance",
+        "split": "development",
+        "control": true,
+        "candidateHash": "f40136333d89a53205c7b04fa874e2f3a88e38667b789733a9c5c92fb1699dde",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "valid-hero",
+      "condition": "with-mcp",
+      "control": true,
+      "formatPass": false,
+      "staticPass": false,
+      "artifact": null,
+      "staticScore": {
+        "id": "valid-hero",
+        "category": "performance",
+        "split": "development",
+        "control": true,
+        "candidateHash": null,
+        "completed": false,
+        "automatedPass": false,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [
+          {
+            "selector": "img",
+            "attribute": "loading",
+            "equals": "eager"
+          }
+        ],
+        "regressions": [
+          {
+            "selector": "img",
+            "attribute": "src",
+            "equals": "/lcp.jpg"
+          }
+        ],
+        "controlChanged": true,
+        "error": "Missing, empty, or malformed HTML"
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "without-mcp",
+      "control": true,
+      "formatPass": false,
+      "staticPass": true,
+      "artifact": "<a href=\"/account\">Account</a>",
+      "staticScore": {
+        "id": "valid-same-tab",
+        "category": "security",
+        "split": "development",
+        "control": true,
+        "candidateHash": "d8eb17d9325637a5b058af37c688b0ef4003ab4e78d02acc5a4d910d038c7c8b",
+        "completed": false,
+        "automatedPass": true,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [],
+        "regressions": [],
+        "controlChanged": false,
+        "error": null
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "with-mcp",
+      "control": true,
+      "formatPass": false,
+      "staticPass": false,
+      "artifact": null,
+      "staticScore": {
+        "id": "valid-same-tab",
+        "category": "security",
+        "split": "development",
+        "control": true,
+        "candidateHash": null,
+        "completed": false,
+        "automatedPass": false,
+        "verifiedPass": false,
+        "humanReview": "pending",
+        "failedChecks": [
+          {
+            "selector": "a",
+            "attribute": "href",
+            "equals": "/account"
+          }
+        ],
+        "regressions": [
+          {
+            "selector": "a",
+            "equals": "Account"
+          }
+        ],
+        "controlChanged": true,
+        "error": "Missing, empty, or malformed HTML"
+      },
+      "semanticReview": "pending",
+      "verifiedPass": null
+    }
+  ]
+}

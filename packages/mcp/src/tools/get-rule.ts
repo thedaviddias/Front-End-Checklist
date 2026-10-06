@@ -1,7 +1,7 @@
 import type { Rule } from '@repo/types'
 import type { ErrorWithSuggestions, RelatedRule, RuleResponse } from '../types'
-import { findSimilarRules } from '../utils/fuzzy-match'
 import { mdxToMarkdown } from '../utils/mdx-to-markdown'
+import { ruleNotFound } from '../utils/rule-not-found'
 import {
   CATEGORY_ARRAY_SCHEMA,
   ERROR_WITH_SUGGESTIONS_SCHEMA,
@@ -364,21 +364,7 @@ export function executeGetRule(input: GetRuleInput, rules: Rule[]): GetRuleOutpu
   const rule = rules.find(r => r.slug === slug)
 
   if (!rule) {
-    // Find similar rules for suggestions
-    const suggestions = findSimilarRules(
-      slug,
-      rules.map(r => ({ slug: r.slug, title: r.title }))
-    )
-
-    return {
-      success: false,
-      error: {
-        error: null,
-        result: null,
-        suggestions,
-        message: `Rule '${slug}' not found.${suggestions.length > 0 ? ' Did you mean one of these?' : ''}`
-      }
-    }
+    return { success: false, error: ruleNotFound(slug, rules) }
   }
 
   // Transform content from MDX to Markdown

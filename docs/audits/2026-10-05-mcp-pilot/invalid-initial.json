@@ -1,0 +1,797 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "runner": "promptfoo@0.123.1",
+  "status": "invalid-prompt-configuration",
+  "results": [
+    {
+      "task": "product-photo",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Give the product photo useful alternative text. Preserve the photo and product heading.\n\nHTML:\n<article><img src=\"/shoe.jpg\"><h2>Trail shoe</h2></article>",
+      "output": "```html\n<article><img src=\"/shoe.jpg\" alt=\"Gray and blue trail running shoe with aggressive tread pattern, shown from the side\"><h2>Trail shoe</h2></article>\n```\n\n**Note:** I've added descriptive alt text, but for the most accurate alternative text, please verify the shoe's actual colors, style details, and design features from the actual product photo, as I cannot see the image itself.",
+      "usage": {
+        "prompt": 48,
+        "completion": 96,
+        "cached": 0,
+        "total": 144,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000528,
+      "latencyMs": 1907,
+      "toolCalls": []
+    },
+    {
+      "task": "product-photo",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "Give the product photo useful alternative text. Preserve the photo and product heading.\n\nHTML:\n<article><img src=\"/shoe.jpg\"><h2>Trail shoe</h2></article>",
+      "output": "Here's the updated HTML with meaningful alt text for the product photo:\n\n```html\n<article>\n  <img src=\"/shoe.jpg\" alt=\"Trail shoe with gray mesh upper and orange accents\">\n  <h2>Trail shoe</h2>\n</article>\n```\n\n**Why this alt text works:**\n\n- **Descriptive**: It describes what the image shows (a trail shoe) and key visual details (gray mesh, orange accents) that help users understand the product\n- **Accessible**: Screen reader users now get meaningful information about the product appearance\n- **Concise**: It's brief enough to be read aloud without being overwhelming\n- **Not redundant**: It complements the heading without simply repeating \"Trail shoe\"\n\n**Tips for your specific product:**\n- If the shoe has other distinctive features (e.g., waterproof, specific sole type), consider adding them: `alt=\"Waterproof trail shoe with gray mesh upper and orange accents\"`\n- Avoid generic alt text like `alt=\"shoe\"` or `alt=\"product photo\"`\n- If you have multiple shoe images, vary the alt text to describe different angles or features",
+      "usage": {
+        "prompt": 9085,
+        "completion": 332,
+        "cached": 0,
+        "total": 9417,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.010745,
+      "latencyMs": 4585,
+      "toolCalls": [
+        {
+          "id": "toolu_01MDthazY8YbgNYR33nupXvP",
+          "name": "get_rule",
+          "input": {
+            "slug": "alt-text",
+            "includeUrl": true
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"alt-text\\\",\\n  \\\"title\\\": \\\"Provide meaningful alt text for images\\\",\\n  \\\"description\\\": \\\"The `alt` attribute is the primary accessibility mechanism for images. Every `<img>` must have an `alt` attribute. Its value depends on the image's role.  <Tip> Use the [W3C alt decision tree](https:/...\\\",\\n  \\\"priority\\\": \\\"critical\\\",\\n  \\\"categories\\\": [\\n    \\\"images\\\"\\n  ],\\n  \\\"primaryCategory\\\": \\\"images\\\",\\n  \\\"content\\\": \\\"The `alt` attribute is the primary accessibility mechanism for images. Every `<img>` must have an `alt` attribute. Its value depends on the image's role.\\\\n\\\\n> **Tip:**\\\\n> Use the [W3C alt decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) to determine the correct alt value for any image type.\\\\n\\\\n## Code Example\\\\n\\\\nImages that convey meaning need descriptive alt text explaining what the image communicates.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: Missing alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\">\\\\n\\\\n<!-- ❌ Bad: Filename as alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\" alt=\\\\\\\"revenue-chart.png\\\\\\\">\\\\n\\\\n<!-- ❌ Bad: Generic alt -->\\\\n<img src=\\\\\\\"revenue-chart.png\\\\\\\" alt=\\\\\\\"chart\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Describes what the image conveys -->\\\\n<img\\\\n  src=\\\\\\\"revenue-chart.png\\\\\\\"\\\\n  alt=\\\\\\\"Bar chart showing Q3 2024 revenue increased 40% year-over-year, reaching $2.4M\\\\\\\"\\\\n>\\\\n```\\\\n\\\\n## Why It Matters\\\\n\\\\nApproximately 2.2 billion people worldwide have vision impairment. Screen readers read the alt attribute aloud—without meaningful alt text, users who are blind receive no information about image content. Missing alt text also fails WCAG 2.1 Success Criterion 1.1.1, which is a Level A (minimum) requirement. Search engines also rely on alt text to index image content.\\\\n\\\\n## Decorative Images\\\\n\\\\nImages used purely for visual decoration carry no information and should be hidden from assistive technology.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: No alt attribute—screen reader may announce the filename -->\\\\n<img src=\\\\\\\"decorative-swirl.png\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Empty alt hides image from screen readers -->\\\\n<img src=\\\\\\\"decorative-swirl.png\\\\\\\" alt=\\\\\\\"\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Or use CSS background images for decoration -->\\\\n<div class=\\\\\\\"decorative-swirl\\\\\\\" aria-hidden=\\\\\\\"true\\\\\\\"></div>\\\\n```\\\\n\\\\n## Images Used as Links\\\\n\\\\nWhen an `<img>` is inside an `<a>`, the alt text must describe the link destination, not the visual appearance.\\\\n\\\\n```html\\\\n<!-- ❌ Bad: Describes appearance, not destination -->\\\\n<a href=\\\\\\\"https://twitter.com/example\\\\\\\">\\\\n  <img src=\\\\\\\"twitter-logo.svg\\\\\\\" alt=\\\\\\\"Blue bird logo\\\\\\\">\\\\n</a>\\\\n\\\\n<!-- ✅ Good: Describes the link destination -->\\\\n<a href=\\\\\\\"https://twitter.com/example\\\\\\\">\\\\n  <img src=\\\\\\\"twitter-logo.svg\\\\\\\" alt=\\\\\\\"Follow us on Twitter\\\\\\\">\\\\n</a>\\\\n```\\\\n\\\\n## Images of Text\\\\n\\\\nIf an image contains text (e.g., a logo, banner, or screenshot), reproduce that text verbatim in alt.\\\\n\\\\n```html\\\\n<!-- ✅ Good: Alt reproduces the text shown in the image -->\\\\n<img src=\\\\\\\"sale-banner.png\\\\\\\" alt=\\\\\\\"Summer Sale — 50% off all items\\\\\\\">\\\\n\\\\n<!-- ✅ Good: Logo with company name -->\\\\n<img src=\\\\\\\"logo.svg\\\\\\\" alt=\\\\\\\"Acme Corp\\\\\\\">\\\\n```\\\\n\\\\n## Complex Images (Charts, Diagrams)\\\\n\\\\nFor complex visuals, provide a brief alt plus a longer description accessible to all users.\\\\n\\\\n```html\\\\n<!-- Using aria-describedby to link to a visible description -->\\\\n<figure>\\\\n  <img\\\\n    src=\\\\\\\"org-chart.png\\\\\\\"\\\\n    alt=\\\\\\\"Company organisational chart\\\\\\\"\\\\n    aria-describedby=\\\\\\\"org-chart-desc\\\\\\\"\\\\n  >\\\\n  <figcaption id=\\\\\\\"org-chart-desc\\\\\\\">\\\\n    The chart shows three departments reporting to the CEO: Engineering (12 staff),\\\\n    Marketing (8 staff), and Operations (5 staff).\\\\n  </figcaption>\\\\n</figure>\\\\n```\\\\n\\\\n## Framework Examples\\\\n\\\\n**React:**\\\\n\\\\n```tsx\\\\ninterface ImageProps {\\\\n  src: string\\\\n  alt: string\\\\n  decorative?: boolean\\\\n}\\\\n\\\\nfunction AccessibleImage({ src, alt, decorative = false }: ImageProps) {\\\\n  return (\\\\n    <img\\\\n      src={src}\\\\n      // Decorative images use empty string; informative images use descriptive text\\\\n      alt={decorative ? '' : alt}\\\\n    />\\\\n  )\\\\n}\\\\n\\\\n// Usage\\\\n<AccessibleImage src=\\\\\\\"hero.jpg\\\\\\\" alt=\\\\\\\"Team members collaborating in a modern office\\\\\\\" />\\\\n<AccessibleImage src=\\\\\\\"divider.png\\\\\\\" decorative />\\\\n```\\\\n  **Next.js:**\\\\n\\\\n```tsx\\\\n\\\\n// Next.js Image requires alt; use \\\\\\\"\\\\\\\" for decorative\\\\nfunction HeroBanner() {\\\\n  return (\\\\n    <>\\\\n      {/* Informative */}\\\\n      <Image\\\\n        src=\\\\\\\"/hero.jpg\\\\\\\"\\\\n        alt=\\\\\\\"Product team celebrating a successful launch\\\\\\\"\\\\n        width={1200}\\\\n        height={600}\\\\n        priority\\\\n      />\\\\n\\\\n      {/* Decorative */}\\\\n      <Image\\\\n        src=\\\\\\\"/wave-divider.svg\\\\\\\"\\\\n        alt=\\\\\\\"\\\\\\\"\\\\n        width={1200}\\\\n        height={60}\\\\n        aria-hidden=\\\\\\\"true\\\\\\\"\\\\n      />\\\\n    </>\\\\n  )\\\\n}\\\\n```\\\\n\\\\n## Standards\\\\n\\\\n- Use these references as the standard for the final image format, delivery, accessibility, and rendering behavior.\\\\n- Check the implementation against MDN: Responsive images before treating the rule as satisfied.\\\\n- Check the implementation against web.dev: Image performance before treating the rule as satisfied.\\\\n\\\\n## Verification\\\\n\\\\n### Automated Checks\\\\n\\\\n- Run axe DevTools or WAVE on the page—both flag missing or empty non-decorative alt attributes\\\\n- Use Lighthouse Accessibility audit—\\\\\\\"Images do not have alternate text\\\\\\\" is a scored item\\\\n\\\\n### Manual Checks\\\\n\\\\n- Enable a screen reader (VoiceOver, NVDA, or JAWS) and navigate through images with the `G` key\\\\n- Inspect the Network tab: for any image URL, verify the corresponding `<img>` has a meaningful `alt`\\\\n- **CAPTCHA images** — provide alt describing the purpose, not the characters (e.g., `alt=\\\\\\\"CAPTCHA: type the characters shown\\\\\\\"`), and offer an audio alternative per WCAG 1.1.1\\\\n- **SVG icons with adjacent text labels** — if the icon's meaning is already conveyed by visible text, use `aria-hidden=\\\\\\\"true\\\\\\\"` on the SVG instead of alt\\\",\\n  \\\"prompts\\\": {\\n    \\\"check\\\": \\\"Scan all <img> elements in the codebase. Verify: 1) Every <img> has an alt attribute (missing alt is an error). 2) Decorative images use alt=\\\\\\\"\\\\\\\". 3) Informative images have descriptive text that conveys the image's meaning—not just its file name. 4) Images that are links describe the destination. 5) Images of text reproduce the text in alt. Flag any <img> without alt, with alt matching the filename (e.g., alt=\\\\\\\"photo1.jpg\\\\\\\"), or with generic values like alt=\\\\\\\"image\\\\\\\" or alt=\\\\\\\"photo\\\\\\\".\\\",\\n    \\\"fix\\\": \\\"For each image missing or with poor alt text: 1) Informative images—describe what the image conveys, not just what it shows (e.g., alt=\\\\\\\"Bar chart showing 40% increase in sales Q3 2024\\\\\\\" not alt=\\\\\\\"chart\\\\\\\"). 2) Decorative images—add alt=\\\\\\\"\\\\\\\" so screen readers skip them. 3) Linked images—describe the link destination (e.g., alt=\\\\\\\"Visit our Twitter profile\\\\\\\"). 4) Images of text—copy the text verbatim into alt. 5) Complex images (charts, infographics)—provide a short alt plus a longer description via aria-describedby or a visible caption.\\\",\\n    \\\"explain\\\": \\\"Explain WCAG 2.1 Success Criterion 1.1.1 Non-text Content: every image must have a text alternative. Screen readers announce the alt attribute aloud—without it, users who are blind or have low vision cannot understand the page. Bad alt text (like alt=\\\\\\\"image\\\\\\\") is no better than no alt text. Decorative images must use alt=\\\\\\\"\\\\\\\" explicitly so screen readers skip them entirely—omitting alt causes some screen readers to announce the filename.\\\",\\n    \\\"codeReview\\\": \\\"Review image assets, markup, and delivery configuration related to Provide meaningful alt text for images. Flag exact files or components where format choice, sizing, or loading behavior violates the rule, and describe how to confirm the fix in DevTools.\\\"\\n  },\\n  \\\"url\\\": \\\"/rules/images/alt-text\\\",\\n  \\\"relatedRules\\\": [\\n    {\\n      \\\"slug\\\": \\\"decorative-elements\\\",\\n      \\\"title\\\": \\\"Hide decorative elements from assistive technology\\\",\\n      \\\"reason\\\": \\\"Handle decorative images appropriately\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"responsive-images\\\",\\n      \\\"title\\\": \\\"Implement responsive images with srcset\\\",\\n      \\\"reason\\\": \\\"Ensure alt text works with responsive images\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"text-in-images\\\",\\n      \\\"title\\\": \\\"Avoid images of text\\\",\\n      \\\"reason\\\": \\\"Avoid text that requires alt text\\\"\\n    }\\n  ]\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Mark this purely decorative divider with an empty alt attribute. Preserve the source.\n\nHTML:\n<img src=\"/divider.svg\">",
+      "output": "```html\n<img src=\"/divider.svg\" alt=\"\">\n```",
+      "usage": {
+        "prompt": 38,
+        "completion": 19,
+        "cached": 0,
+        "total": 57,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000133,
+      "latencyMs": 559,
+      "toolCalls": []
+    },
+    {
+      "task": "decorative-divider",
+      "condition": "with-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "Mark this purely decorative divider with an empty alt attribute. Preserve the source.\n\nHTML:\n<img src=\"/divider.svg\">",
+      "output": "Here's the corrected HTML with an empty `alt` attribute for the decorative divider:\n\n```html\n<img src=\"/divider.svg\" alt=\"\">\n```\n\n**Why this works:**  \nAn empty `alt=\"\"` tells screen readers to skip this image entirely, which is the correct approach for purely decorative elements. This prevents assistive technology users from hearing unnecessary announcements while preserving the visual design.",
+      "usage": {
+        "prompt": 6653,
+        "completion": 175,
+        "cached": 0,
+        "total": 6828,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.007528,
+      "latencyMs": 2959,
+      "toolCalls": [
+        {
+          "id": "toolu_018qWVjbZuHBcpxJqJ8fAJUz",
+          "name": "fix_rule",
+          "input": {
+            "slug": "alt-text",
+            "codeSnippet": "<img src=\"/divider.svg\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"alt-text\\\",\\n  \\\"title\\\": \\\"Provide meaningful alt text for images\\\",\\n  \\\"fixPrompt\\\": \\\"For each image missing or with poor alt text: 1) Informative images—describe what the image conveys, not just what it shows (e.g., alt=\\\\\\\"Bar chart showing 40% increase in sales Q3 2024\\\\\\\" not alt=\\\\\\\"chart\\\\\\\"). 2) Decorative images—add alt=\\\\\\\"\\\\\\\" so screen readers skip them. 3) Linked images—describe the link destination (e.g., alt=\\\\\\\"Visit our Twitter profile\\\\\\\"). 4) Images of text—copy the text verbatim into alt. 5) Complex images (charts, infographics)—provide a short alt plus a longer description via aria-describedby or a visible caption.\\\",\\n  \\\"priority\\\": \\\"critical\\\",\\n  \\\"codeContext\\\": \\\"<img src=\\\\\\\"/divider.svg\\\\\\\">\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Reserve intrinsic dimensions of 1200 by 630 for this image. Preserve its source and alt text.\n\nHTML:\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\">",
+      "output": "```html\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">\n```\n\nThis reserves the intrinsic dimensions of 1200×630 pixels, which helps prevent layout shift while the image loads. The source and alt text are preserved as requested.",
+      "usage": {
+        "prompt": 50,
+        "completion": 67,
+        "cached": 0,
+        "total": 117,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.00038500000000000003,
+      "latencyMs": 1166,
+      "toolCalls": []
+    },
+    {
+      "task": "hero-dimensions",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Reserve intrinsic dimensions of 1200 by 630 for this image. Preserve its source and alt text.\n\nHTML:\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\">",
+      "output": "Perfect! Here's your updated HTML with explicit intrinsic dimensions (1200 × 630) while preserving the source and alt text:\n\n**Before:**\n```html\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\">\n```\n\n**After:**\n```html\n<img src=\"/hero.jpg\" alt=\"Mountain ridge\" width=\"1200\" height=\"630\">\n```\n\n**Optional: Add responsive sizing with CSS**\n```css\nimg {\n  max-width: 100%;\n  height: auto;\n}\n```\n\nThis approach:\n- ✅ Reserves the intrinsic dimensions (1200 × 630) to prevent layout shift\n- ✅ Preserves the original `src` and `alt` attributes\n- ✅ Maintains the correct aspect ratio (1.905:1)\n- ✅ Allows the image to scale responsively on smaller screens with the CSS fallback",
+      "usage": {
+        "prompt": 10708,
+        "completion": 393,
+        "cached": 0,
+        "total": 11101,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.012672999999999999,
+      "latencyMs": 4972,
+      "toolCalls": [
+        {
+          "id": "toolu_01U1ULczmjAT3tnaBf6487iK",
+          "name": "fix_rule",
+          "input": {
+            "slug": "image-dimensions",
+            "codeSnippet": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\">"
+          },
+          "output": "MCP Tool Error (fix_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"image-compression\\\",\\n      \\\"title\\\": \\\"Compress images without quality loss\\\",\\n      \\\"similarity\\\": 0.65\\n    },\\n    {\\n      \\\"slug\\\": \\\"dimensions\\\",\\n      \\\"title\\\": \\\"Set explicit width and height on images\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"image-file-size\\\",\\n      \\\"title\\\": \\\"Keep image file sizes within recommended limits\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"image-optimization\\\",\\n      \\\"title\\\": \\\"Optimize all images for web\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"css-grid\\\",\\n      \\\"title\\\": \\\"Use CSS Grid for two-dimensional layouts\\\",\\n      \\\"similarity\\\": 0.51\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'image-dimensions' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_013FnRVoP3Nk7spYQcRKSMU6",
+          "name": "fix_rule",
+          "input": {
+            "slug": "dimensions",
+            "codeSnippet": "<img src=\"/hero.jpg\" alt=\"Mountain ridge\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"dimensions\\\",\\n  \\\"title\\\": \\\"Set explicit width and height on images\\\",\\n  \\\"fixPrompt\\\": \\\"For each <img> missing width/height: 1) Add the intrinsic pixel dimensions as attributes (e.g., width=\\\\\\\"800\\\\\\\" height=\\\\\\\"450\\\\\\\"). 2) Use CSS max-width: 100% and height: auto on the element to keep it responsive. 3) The attribute values must match the image's intrinsic aspect ratio—do not set arbitrary numbers. 4) For dynamically sized images, calculate the aspect ratio and use the CSS aspect-ratio property as a fallback. 5) Skip purely decorative micro assets when the snippet already shows stable sizing and there is no evidence of layout shift risk. Show the before and after HTML for each fixed image.\\\",\\n  \\\"priority\\\": \\\"high\\\",\\n  \\\"codeContext\\\": \\\"<img src=\\\\\\\"/hero.jpg\\\\\\\" alt=\\\\\\\"Mountain ridge\\\\\\\">\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "close-button",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Add aria-label=\"Close\" to identify this action. Preserve the button and decorative icon.\n\nHTML:\n<button type=\"button\"><svg aria-hidden=\"true\"></svg></button>",
+      "output": "# Updated HTML with aria-label\n\n```html\n<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>\n```\n\n**Changes made:**\n- Added `aria-label=\"Close\"` to the `<button>` element to provide an accessible name for screen readers\n- Preserved the `<svg>` element with `aria-hidden=\"true\"` so it remains decorative and doesn't interfere with accessibility\n\nThis ensures users with assistive technologies understand the button's purpose while keeping the icon purely visual.",
+      "usage": {
+        "prompt": 49,
+        "completion": 123,
+        "cached": 0,
+        "total": 172,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.0006640000000000001,
+      "latencyMs": 1412,
+      "toolCalls": []
+    },
+    {
+      "task": "close-button",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Add aria-label=\"Close\" to identify this action. Preserve the button and decorative icon.\n\nHTML:\n<button type=\"button\"><svg aria-hidden=\"true\"></svg></button>",
+      "output": "## Fixed HTML\n\n```html\n<button type=\"button\" aria-label=\"Close\"><svg aria-hidden=\"true\"></svg></button>\n```\n\n### What changed:\n- **Added `aria-label=\"Close\"`** to the `<button>` element to provide an accessible name for screen reader users\n- **Preserved the button** structure and `type=\"button\"` attribute\n- **Kept the decorative SVG** with `aria-hidden=\"true\"` so it won't be announced to assistive technologies\n\n### Why this works:\n- The button now has an accessible name (\"Close\") that screen readers will announce\n- The SVG is properly hidden from accessibility trees with `aria-hidden=\"true\"`, preventing duplicate or confusing announcements\n- The visual icon remains for sighted users while the label ensures all users understand the button's purpose",
+      "usage": {
+        "prompt": 10506,
+        "completion": 377,
+        "cached": 0,
+        "total": 10883,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.012391,
+      "latencyMs": 5462,
+      "toolCalls": [
+        {
+          "id": "toolu_01H9MG4a7DuYzzcEVQ89EXPx",
+          "name": "fix_rule",
+          "input": {
+            "slug": "aria-label",
+            "codeSnippet": "<button type=\"button\"><svg aria-hidden=\"true\"></svg></button>"
+          },
+          "output": "MCP Tool Error (fix_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"aria-labels\\\",\\n      \\\"title\\\": \\\"Provide accessible names for all interactive elements\\\",\\n      \\\"similarity\\\": 0.91\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-roles\\\",\\n      \\\"title\\\": \\\"Use valid ARIA role values\\\",\\n      \\\"similarity\\\": 0.6\\n    },\\n    {\\n      \\\"slug\\\": \\\"form-labels\\\",\\n      \\\"title\\\": \\\"Associate labels with form controls\\\",\\n      \\\"similarity\\\": 0.55\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-text\\\",\\n      \\\"title\\\": \\\"Avoid focusable descendants in role=\\\\\\\"text\\\\\\\" elements\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'aria-label' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01U4MqZivovTHYyfe3p3cZNQ",
+          "name": "fix_rule",
+          "input": {
+            "slug": "aria-labels",
+            "codeSnippet": "<button type=\"button\"><svg aria-hidden=\"true\"></svg></button>"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"aria-labels\\\",\\n  \\\"title\\\": \\\"Provide accessible names for all interactive elements\\\",\\n  \\\"fixPrompt\\\": \\\"Add descriptive text content or `aria-label` attributes to all interactive elements.\\\",\\n  \\\"priority\\\": \\\"high\\\",\\n  \\\"codeContext\\\": \\\"<button type=\\\\\\\"button\\\\\\\"><svg aria-hidden=\\\\\\\"true\\\\\\\"></svg></button>\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "email-label",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Associate the visible Email label with the input using for and its existing id.\n\nHTML:\n<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">",
+      "output": "# Associated Label and Input\n\n```html\n<label for=\"email\">Email</label><input id=\"email\" type=\"email\" name=\"email\">\n```\n\n**Change made:** Added `for=\"email\"` attribute to the `<label>` element to associate it with the input's `id=\"email\"`.\n\nThis creates a proper semantic connection that:\n- Improves accessibility for screen readers\n- Increases the clickable area (clicking the label focuses the input)\n- Enhances usability on mobile devices",
+      "usage": {
+        "prompt": 46,
+        "completion": 115,
+        "cached": 0,
+        "total": 161,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.0006210000000000001,
+      "latencyMs": 1800,
+      "toolCalls": []
+    },
+    {
+      "task": "email-label",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Associate the visible Email label with the input using for and its existing id.\n\nHTML:\n<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">",
+      "output": "## Fix: Associate the label with the input\n\n**Add the `for` attribute to the `<label>` element** and set it to match the input's `id`:\n\n```html\n<label for=\"email\">Email</label>\n<input id=\"email\" type=\"email\" name=\"email\">\n```\n\n### What changed:\n- Added `for=\"email\"` to the `<label>` element\n- The `for` attribute now matches the input's `id=\"email\"`\n\n### Why this matters:\n- **Accessibility**: Screen readers announce the label text when the input is focused\n- **Usability**: Users can click the label to focus the input (larger click target)\n- **Mobile**: Touch targets are larger and easier to interact with\n- **Semantics**: Creates a programmatic association between the label and control\n\nThis is a **critical** accessibility requirement for all form fields.",
+      "usage": {
+        "prompt": 17579,
+        "completion": 495,
+        "cached": 0,
+        "total": 18074,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.020054000000000002,
+      "latencyMs": 5600,
+      "toolCalls": [
+        {
+          "id": "toolu_01HT6wmgCL28QTfKn4vc5rWD",
+          "name": "fix_rule",
+          "input": {
+            "slug": "label-for-attribute",
+            "codeSnippet": "<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">"
+          },
+          "output": "MCP Tool Error (fix_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"direction-attribute\\\",\\n      \\\"title\\\": \\\"Set text direction for RTL languages\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"lang-attribute\\\",\\n      \\\"title\\\": \\\"Set the page lang attribute\\\",\\n      \\\"similarity\\\": 0.63\\n    },\\n    {\\n      \\\"slug\\\": \\\"fetchpriority-attribute\\\",\\n      \\\"title\\\": \\\"Use fetchpriority to hint resource loading priority\\\",\\n      \\\"similarity\\\": 0.52\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'label-for-attribute' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01GUNdfzDeQPEXN4XCdM8TXo",
+          "name": "search_rules",
+          "input": {
+            "query": "label for attribute form input",
+            "categories": ["html", "accessibility"]
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"rules\\\": [\\n    {\\n      \\\"slug\\\": \\\"form-field-multiple-labels\\\",\\n      \\\"title\\\": \\\"Use a single label for each form field\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"form-labels\\\",\\n      \\\"title\\\": \\\"Associate labels with form controls\\\",\\n      \\\"priority\\\": \\\"critical\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"paste-inputs\\\",\\n      \\\"title\\\": \\\"Allow pasting into form inputs\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"webpagetest\\\",\\n      \\\"title\\\": \\\"Analyze performance with WebPageTest\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"performance\\\",\\n        \\\"html\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"performance\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"input-types\\\",\\n      \\\"title\\\": \\\"Use semantic input type attributes\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"html\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"html\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"form-validation\\\",\\n      \\\"title\\\": \\\"Validate forms accessibly\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"html\\\",\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"html\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"resource-hints\\\",\\n      \\\"title\\\": \\\"Use resource hints for faster loading\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"performance\\\",\\n        \\\"html\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"performance\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-input-field-name\\\",\\n      \\\"title\\\": \\\"Ensure all input fields have accessible names\\\",\\n      \\\"priority\\\": \\\"critical\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-valid-attr-value\\\",\\n      \\\"title\\\": \\\"Use valid values for ARIA attributes\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"autofocus-avoidance\\\",\\n      \\\"title\\\": \\\"Avoid autofocus on form fields\\\",\\n      \\\"priority\\\": \\\"low\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\",\\n        \\\"html\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-allowed-attr\\\",\\n      \\\"title\\\": \\\"Use only allowed ARIA attributes for each role\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-required-attr\\\",\\n      \\\"title\\\": \\\"Include required ARIA attributes for roles\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"search-input\\\",\\n      \\\"title\\\": \\\"Make search inputs accessible\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"html\\\",\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"html\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"select-name\\\",\\n      \\\"title\\\": \\\"Provide accessible names for select elements\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-command-name\\\",\\n      \\\"title\\\": \\\"Provide accessible names for ARIA command elements\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-toggle-field-name\\\",\\n      \\\"title\\\": \\\"Provide accessible names for toggle fields\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"duplicate-id-active\\\",\\n      \\\"title\\\": \\\"Use unique IDs for active elements\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"duplicate-id-aria\\\",\\n      \\\"title\\\": \\\"Use unique IDs for ARIA references\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"password-field-security\\\",\\n      \\\"title\\\": \\\"Secure password input fields\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\",\\n        \\\"html\\\",\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-labels\\\",\\n      \\\"title\\\": \\\"Provide accessible names for all interactive elements\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    }\\n  ],\\n  \\\"nextCursor\\\": \\\"eyJvZmZzZXQiOjIwfQ==\\\",\\n  \\\"totalCount\\\": 131\\n}\"}]",
+          "is_error": false
+        },
+        {
+          "id": "toolu_01DUjzQpstBHqo1idAbLMsGV",
+          "name": "fix_rule",
+          "input": {
+            "slug": "form-labels",
+            "codeSnippet": "<label>Email</label><input id=\"email\" type=\"email\" name=\"email\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"form-labels\\\",\\n  \\\"title\\\": \\\"Associate labels with form controls\\\",\\n  \\\"fixPrompt\\\": \\\"Add a <label> element with a 'for' attribute that matches the 'id' of the corresponding input field. Replace placeholder-only labels with real label text and wrap related checkboxes or radio buttons in a `<fieldset>` with a `<legend>`.\\\",\\n  \\\"priority\\\": \\\"critical\\\",\\n  \\\"codeContext\\\": \\\"<label>Email</label><input id=\\\\\\\"email\\\\\\\" type=\\\\\\\"email\\\\\\\" name=\\\\\\\"email\\\\\\\">\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "without-mcp",
+      "success": true,
+      "error": null,
+      "prompt": "Replace the viewport content with width=device-width, initial-scale=1 so users can zoom.\n\nHTML:\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">",
+      "output": "# Updated HTML\n\n```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n```\n\n**Changes made:**\n- Removed `user-scalable=no` to allow users to zoom in and out on the page\n\nThis viewport setting now:\n- ✅ Sets width to device width\n- ✅ Sets initial zoom to 100%\n- ✅ Allows user pinch-zoom and browser zoom controls",
+      "usage": {
+        "prompt": 60,
+        "completion": 107,
+        "cached": 0,
+        "total": 167,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000595,
+      "latencyMs": 1565,
+      "toolCalls": []
+    },
+    {
+      "task": "viewport-zoom",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Replace the viewport content with width=device-width, initial-scale=1 so users can zoom.\n\nHTML:\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">",
+      "output": "## ✅ Fix Applied\n\n**Replace this:**\n```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">\n```\n\n**With this:**\n```html\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n```\n\n## Why This Matters\n\nDisabling zoom (`user-scalable=no`) is a **high-priority accessibility violation** that prevents low-vision users from reading content. Removing this attribute:\n\n- ✅ Allows users to pinch-to-zoom on mobile devices\n- ✅ Complies with WCAG 2.1 SC 1.4.4 (Resize Text, Level AA)\n- ✅ Enables users with vision impairments to enlarge text up to 200%\n\n## If You Were Disabling Zoom to Prevent iOS Input Zoom\n\nIf you added `user-scalable=no` to prevent iOS Safari from auto-zooming into form inputs, the correct solution is to set form input font sizes to **16px or larger** in your CSS:\n\n```css\ninput[type=\"text\"],\ninput[type=\"email\"],\ninput[type=\"tel\"],\ninput[type=\"password\"],\ninput[type=\"number\"],\ninput[type=\"search\"],\nselect,\ntextarea {\n  font-size: 1rem; /* 16px — iOS Safari won't auto-zoom */\n}\n```\n\nThis fixes the root cause without sacrificing accessibility.",
+      "usage": {
+        "prompt": 8405,
+        "completion": 516,
+        "cached": 0,
+        "total": 8921,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.010985,
+      "latencyMs": 4741,
+      "toolCalls": [
+        {
+          "id": "toolu_016WpnRBvjtuFoJSXsbNXZvi",
+          "name": "get_rule",
+          "input": {
+            "slug": "viewport-zoom"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"viewport-zoom\\\",\\n  \\\"title\\\": \\\"Do not disable pinch zoom\\\",\\n  \\\"description\\\": \\\"The viewport meta tag controls how mobile browsers scale a page. Disabling zoom in this tag is a common but serious accessibility failure that prevents low-vision users from reading content.  ## Code...\\\",\\n  \\\"priority\\\": \\\"high\\\",\\n  \\\"categories\\\": [\\n    \\\"css\\\",\\n    \\\"accessibility\\\"\\n  ],\\n  \\\"primaryCategory\\\": \\\"css\\\",\\n  \\\"content\\\": \\\"The viewport meta tag controls how mobile browsers scale a page. Disabling zoom in this tag is a common but serious accessibility failure that prevents low-vision users from reading content.\\\\n\\\\n## Code Example\\\\n\\\\n```html\\\\n<!-- ✅ Correct: responsive viewport, zoom enabled -->\\\\n<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1\\\\\\\">\\\\n\\\\n<!-- ❌ Incorrect: zoom disabled entirely -->\\\\n<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1, user-scalable=no\\\\\\\">\\\\n\\\\n<!-- ❌ Incorrect: maximum-scale=1 prevents any zoom beyond initial scale -->\\\\n<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1, maximum-scale=1\\\\\\\">\\\\n\\\\n<!-- ❌ Incorrect: combined restriction -->\\\\n<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0\\\\\\\">\\\\n\\\\n<!-- ✅ Acceptable if maximum-scale allows meaningful zoom -->\\\\n<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1, maximum-scale=5\\\\\\\">\\\\n```\\\\n\\\\n## Why It Matters\\\\n\\\\n- **Low Vision**: Users who cannot read at default mobile font sizes rely entirely on pinch-to-zoom when browser text size settings are insufficient.\\\\n- **Fine Print**: Dense text (terms and conditions, footnotes, table data) is only readable when users can zoom in.\\\\n- **Image Detail**: Maps, charts, and diagrams require zoom to read labels and annotations.\\\\n- **WCAG AA Compliance**: This is one of the simplest violations to fix — a one-line HTML change — yet one of the most impactful for low-vision users.\\\\n\\\\n## iOS Input Zoom — The Real Problem\\\\n\\\\nThe most common reason developers disable zoom is to prevent iOS Safari from zooming into form inputs on focus. The correct solution is not to disable zoom — it is to prevent the cause:\\\\n\\\\n```css\\\\n/* ✅ Fix: set font-size to 16px on inputs to prevent iOS auto-zoom */\\\\ninput[type=\\\\\\\"text\\\\\\\"],\\\\ninput[type=\\\\\\\"email\\\\\\\"],\\\\ninput[type=\\\\\\\"tel\\\\\\\"],\\\\ninput[type=\\\\\\\"password\\\\\\\"],\\\\ninput[type=\\\\\\\"number\\\\\\\"],\\\\ninput[type=\\\\\\\"search\\\\\\\"],\\\\nselect,\\\\ntextarea {\\\\n  font-size: 1rem; /* 16px — iOS Safari does not zoom when font-size ≥ 16px */\\\\n}\\\\n```\\\\n\\\\n## Browser Behavior Notes\\\\n\\\\n| Browser | Honors `user-scalable=no`? |\\\\n|---|---|\\\\n| iOS Safari (10+) | No — ignores it (accessibility improvement) |\\\\n| Chrome for iOS | Yes — still restricts zoom |\\\\n| Chrome for Android | Yes — still restricts zoom |\\\\n| Firefox (Android) | Depends on version |\\\\n| Samsung Internet | Yes |\\\\n\\\\nBecause Chrome for iOS and Android still respect the attribute, removing it is required for full cross-browser accessibility.\\\\n\\\\n## Verification\\\\n\\\\n1. Inspect the rendered UI at the breakpoints and interaction states affected by the rule.\\\\n2. Confirm the computed styles match the intended fix in DevTools.\\\\n3. Test at least one mobile and one desktop viewport before shipping.\\\\n4. If the rule affects motion, contrast, or layout stability, verify those user-facing outcomes directly.\\\",\\n  \\\"prompts\\\": {\\n    \\\"check\\\": \\\"Find the `<meta name='viewport'>` element in the HTML `<head>`. Check its `content` attribute for: (1) `user-scalable=no` — disables all zoom; (2) `user-scalable=0` — same effect; (3) `maximum-scale=1` or `maximum-scale=1.0` — limits zoom to the initial scale; (4) any `maximum-scale` value below 2 — significantly limits zoom range. Flag any of these. Also check CSS for `touch-action: none` or `user-zoom: fixed` (CSS Device Adaptation, rarely used) that may limit zoom.\\\",\\n    \\\"fix\\\": \\\"Remove `user-scalable=no` and `maximum-scale=1` from the viewport meta tag. The correct viewport meta tag for a responsive site is: `<meta name='viewport' content='width=device-width, initial-scale=1'>`. If `maximum-scale` was set for a specific reason (e.g., to prevent unintended zoom on input focus on iOS), the correct fix is to set form input `font-size: 1rem` (16px) instead — iOS Safari only auto-zooms on input focus when font-size is below 16px.\\\",\\n    \\\"explain\\\": \\\"WCAG 2.1 SC 1.4.4 (Resize Text, Level AA) requires that text can be resized up to 200% without loss of content or functionality, except for captions and images of text. On mobile devices, pinch-to-zoom and the browser's built-in text size settings are the primary mechanisms for resizing text. Setting `user-scalable=no` or `maximum-scale=1` in the viewport meta tag disables pinch-to-zoom entirely (or limits it to 1x), preventing low-vision users from enlarging content. This is a direct violation of SC 1.4.4. While iOS 10+ Safari ignores these settings, Android browsers, Chrome for iOS, and older iOS versions do not — so the setting must be removed regardless.\\\",\\n    \\\"codeReview\\\": \\\"Review stylesheets, component styles, and responsive states related to Do not disable pinch zoom. Flag exact selectors, declarations, or breakpoints that violate the rule in the rendered UI.\\\"\\n  },\\n  \\\"subcategory\\\": \\\"responsive\\\"\\n}\"}]",
+          "is_error": false
+        },
+        {
+          "id": "toolu_01BhbajCNtQYcWtJ2Qv4CALc",
+          "name": "fix_rule",
+          "input": {
+            "slug": "viewport-zoom",
+            "codeSnippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"viewport-zoom\\\",\\n  \\\"title\\\": \\\"Do not disable pinch zoom\\\",\\n  \\\"fixPrompt\\\": \\\"Remove `user-scalable=no` and `maximum-scale=1` from the viewport meta tag. The correct viewport meta tag for a responsive site is: `<meta name='viewport' content='width=device-width, initial-scale=1'>`. If `maximum-scale` was set for a specific reason (e.g., to prevent unintended zoom on input focus on iOS), the correct fix is to set form input `font-size: 1rem` (16px) instead — iOS Safari only auto-zooms on input focus when font-size is below 16px.\\\",\\n  \\\"priority\\\": \\\"high\\\",\\n  \\\"codeContext\\\": \\\"<meta name=\\\\\\\"viewport\\\\\\\" content=\\\\\\\"width=device-width, initial-scale=1, user-scalable=no\\\\\\\">\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "valid-hero",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "This is the above-the-fold LCP image. Review only lazy loading; eager loading is intentional. Leave unchanged.\n\nHTML:\n<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">",
+      "output": "# Review: LCP Image Lazy Loading\n\n✅ **No changes needed.**\n\nThe image correctly uses `loading=\"eager\"` for the LCP (Largest Contentful Paint) image. This is the intentional and recommended approach:\n\n- **Eager loading** ensures the image loads immediately without delay\n- **Lazy loading** would harm Core Web Vitals by delaying the LCP metric\n- The explicit `loading=\"eager\"` attribute is appropriate here\n\nThe markup is optimized for performance.",
+      "usage": {
+        "prompt": 63,
+        "completion": 113,
+        "cached": 0,
+        "total": 176,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.0006280000000000001,
+      "latencyMs": 1532,
+      "toolCalls": []
+    },
+    {
+      "task": "valid-hero",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "This is the above-the-fold LCP image. Review only lazy loading; eager loading is intentional. Leave unchanged.\n\nHTML:\n<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">",
+      "output": "**✓ Lazy loading review passed**\n\nYour LCP image is correctly configured:\n- **`loading=\"eager\"`** is appropriate for above-the-fold content\n- The rule \"Implement lazy loading for offscreen content\" applies to **offscreen/below-the-fold** images only\n- Since this is your LCP (Largest Contentful Paint) image, eager loading is the right choice for performance\n\n**No changes needed.** The image will load immediately to support fast rendering of critical content.",
+      "usage": {
+        "prompt": 10681,
+        "completion": 315,
+        "cached": 0,
+        "total": 10996,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.012256,
+      "latencyMs": 3635,
+      "toolCalls": [
+        {
+          "id": "toolu_015WWw3hABqhuR2WPNJyiGMV",
+          "name": "check_rule",
+          "input": {
+            "slug": "lazy-load-images",
+            "code": "<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"lazy-loading\\\",\\n      \\\"title\\\": \\\"Implement lazy loading for offscreen content\\\",\\n      \\\"similarity\\\": 0.69\\n    },\\n    {\\n      \\\"slug\\\": \\\"locale-images\\\",\\n      \\\"title\\\": \\\"Use locale-neutral images and provide cultural overrides when needed\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"page-load-time\\\",\\n      \\\"title\\\": \\\"Keep page load time under 3 seconds\\\",\\n      \\\"similarity\\\": 0.56\\n    },\\n    {\\n      \\\"slug\\\": \\\"text-in-images\\\",\\n      \\\"title\\\": \\\"Avoid images of text\\\",\\n      \\\"similarity\\\": 0.5\\n    },\\n    {\\n      \\\"slug\\\": \\\"critical-images\\\",\\n      \\\"title\\\": \\\"Prioritize loading critical images\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'lazy-load-images' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01FCoQsmuJd7LyQbzmZ5jTpN",
+          "name": "check_rule",
+          "input": {
+            "slug": "lazy-loading",
+            "code": "<img src=\"/lcp.jpg\" alt=\"Home\" loading=\"eager\" width=\"1200\" height=\"800\">"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"lazy-loading\\\",\\n  \\\"title\\\": \\\"Implement lazy loading for offscreen content\\\",\\n  \\\"checkPrompt\\\": \\\"Verify that images and other heavy resources below the fold are lazy loaded. Only report this when the code or route context makes offscreen placement clear.\\\",\\n  \\\"analysis\\\": \\\"No obvious issues detected for rule \\\\\\\"Implement lazy loading for offscreen content\\\\\\\". However, manual review is recommended using the check prompt below.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "without-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Review only opener isolation. This link opens in the same tab; leave it unchanged.\n\nHTML:\n<a href=\"/account\">Account</a>",
+      "output": "# Review: Opener Isolation\n\n**Status:** ✅ No changes needed\n\n**Analysis:**\n- This link navigates to an internal path (`/account`)\n- It opens in the same tab (no `target=\"_blank\"`)\n- No opener isolation attributes are required\n\n**Why no changes:**\nOpener isolation attributes (`rel=\"noopener\"` or `rel=\"noreferrer\"`) are only necessary when:\n- Opening links in a new tab/window (`target=\"_blank\"`)\n- Linking to external domains\n\nSince this link opens internally in the same tab, there is no security risk from window opener access.",
+      "usage": {
+        "prompt": 38,
+        "completion": 140,
+        "cached": 0,
+        "total": 178,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.000738,
+      "latencyMs": 1964,
+      "toolCalls": []
+    },
+    {
+      "task": "valid-same-tab",
+      "condition": "with-mcp",
+      "success": false,
+      "error": "Custom function returned false",
+      "prompt": "Review only opener isolation. This link opens in the same tab; leave it unchanged.\n\nHTML:\n<a href=\"/account\">Account</a>",
+      "output": "**Result: ✅ No issues found**\n\nYour HTML is compliant. The link `<a href=\"/account\">Account</a>` opens in the same tab (no `target=\"_blank\"`), so opener isolation security concerns do not apply.\n\nThe **\"new-tab\"** rule (External Link Security) only requires `rel=\"noopener noreferrer\"` when links explicitly open in a new tab with `target=\"_blank\"`. Since your link doesn't do that, no changes are needed.",
+      "usage": {
+        "prompt": 17286,
+        "completion": 387,
+        "cached": 0,
+        "total": 17673,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "costUsd": 0.019221,
+      "latencyMs": 5566,
+      "toolCalls": [
+        {
+          "id": "toolu_01AMnGcxmtzdC3DXL63Cmp1e",
+          "name": "check_rule",
+          "input": {
+            "slug": "opener-isolation",
+            "code": "<a href=\"/account\">Account</a>"
+          },
+          "output": "MCP Tool Error (check_rule): [{\"type\":\"text\",\"text\":\"{\\n  \\\"error\\\": null,\\n  \\\"result\\\": null,\\n  \\\"suggestions\\\": [\\n    {\\n      \\\"slug\\\": \\\"cross-origin-isolation\\\",\\n      \\\"title\\\": \\\"Use COOP, COEP, and CORP for cross-origin isolation when needed\\\",\\n      \\\"similarity\\\": 0.55\\n    },\\n    {\\n      \\\"slug\\\": \\\"orientation\\\",\\n      \\\"title\\\": \\\"Support both portrait and landscape orientation\\\",\\n      \\\"similarity\\\": 0.5\\n    }\\n  ],\\n  \\\"message\\\": \\\"Rule 'opener-isolation' not found. Did you mean one of these?\\\"\\n}\"}]",
+          "is_error": true
+        },
+        {
+          "id": "toolu_01EaEBFzsWckjxGCknLEKKWV",
+          "name": "search_rules",
+          "input": {
+            "query": "opener isolation"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"rules\\\": [\\n    {\\n      \\\"slug\\\": \\\"cross-origin-isolation\\\",\\n      \\\"title\\\": \\\"Use COOP, COEP, and CORP for cross-origin isolation when needed\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\",\\n        \\\"javascript\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"direction-attribute\\\",\\n      \\\"title\\\": \\\"Set text direction for RTL languages\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"html\\\",\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"html\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"new-tab\\\",\\n      \\\"title\\\": \\\"External Link Security\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"integration-testing\\\",\\n      \\\"title\\\": \\\"Write integration tests for key workflows\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"testing\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"testing\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"aria-required-parent\\\",\\n      \\\"title\\\": \\\"Ensure ARIA roles are contained by required parent roles\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"accessibility\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"accessibility\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"dom-performance\\\",\\n      \\\"title\\\": \\\"Minimize costly DOM read/write operations\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"javascript\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"javascript\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"content-security-policy\\\",\\n      \\\"title\\\": \\\"Implement a content security policy\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"hsts\\\",\\n      \\\"title\\\": \\\"Set an HSTS header\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"permissions-policy\\\",\\n      \\\"title\\\": \\\"Set a Permissions-Policy header\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"referrer-policy\\\",\\n      \\\"title\\\": \\\"Set a Referrer-Policy header\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"x-content-type\\\",\\n      \\\"title\\\": \\\"Set X-Content-Type-Options: nosniff\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"x-frame-options\\\",\\n      \\\"title\\\": \\\"Set an X-Frame-Options header\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"security\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"security\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"anchor-text\\\",\\n      \\\"title\\\": \\\"Use descriptive anchor text\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"duplicate-description\\\",\\n      \\\"title\\\": \\\"Avoid duplicate meta descriptions\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"favicon\\\",\\n      \\\"title\\\": \\\"Add a favicon to every page\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-description\\\",\\n      \\\"title\\\": \\\"Write a meta description for each page\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-in-body\\\",\\n      \\\"title\\\": \\\"Meta Tags in Body\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"meta-title\\\",\\n      \\\"title\\\": \\\"Write a descriptive page title\\\",\\n      \\\"priority\\\": \\\"high\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"og-image-size\\\",\\n      \\\"title\\\": \\\"OG Image Size\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    },\\n    {\\n      \\\"slug\\\": \\\"og-tags\\\",\\n      \\\"title\\\": \\\"Open Graph Tags\\\",\\n      \\\"priority\\\": \\\"medium\\\",\\n      \\\"categories\\\": [\\n        \\\"seo\\\"\\n      ],\\n      \\\"primaryCategory\\\": \\\"seo\\\"\\n    }\\n  ],\\n  \\\"nextCursor\\\": \\\"eyJvZmZzZXQiOjIwfQ==\\\",\\n  \\\"totalCount\\\": 27\\n}\"}]",
+          "is_error": false
+        },
+        {
+          "id": "toolu_012gJBJDWwmB6zu7Xnd69j9t",
+          "name": "check_rule",
+          "input": {
+            "slug": "new-tab",
+            "code": "<a href=\"/account\">Account</a>"
+          },
+          "output": "[{\"type\":\"text\",\"text\":\"{\\n  \\\"slug\\\": \\\"new-tab\\\",\\n  \\\"title\\\": \\\"External Link Security\\\",\\n  \\\"checkPrompt\\\": \\\"Find all anchor elements with target='_blank' in the HTML and JSX source. Verify each one includes rel='noopener noreferrer' (or at minimum rel='noopener'). Flag any external links opening in a new tab that are missing this attribute.\\\",\\n  \\\"analysis\\\": \\\"No obvious issues detected for rule \\\\\\\"External Link Security\\\\\\\". However, manual review is recommended using the check prompt below.\\\"\\n}\"}]",
+          "is_error": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { parse } from 'yaml'
 import type {
   FrontendChecklistCategory,
   FrontendChecklistPriority,
@@ -14,30 +15,15 @@ const CURRENT_DIR = path.dirname(fileURLToPath(import.meta.url))
 const PACKAGE_RULES_DIR = path.resolve(CURRENT_DIR, '../rules/en')
 const MONOREPO_RULES_DIR = path.resolve(CURRENT_DIR, '../../content/rules/en')
 
-/**
- * Extract a simple YAML field from frontmatter without a full parser.
- *
- * @param yaml - Raw frontmatter text.
- * @param field - Field name to extract.
- * @returns Field value when present, otherwise null.
- */
-function extractYamlField(yaml: string, field: string): string | null {
-  const singleLineMatch = yaml.match(new RegExp(`${field}:\\s*["']?([^"'\\n]+)["']?`))
-  if (singleLineMatch) {
-    return singleLineMatch[1].trim()
-  }
+/** Narrow YAML mappings before reading authored metadata. */
+function isMapping(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
 
-  const multiLineMatch = yaml.match(new RegExp(`${field}:\\s*[|>]\\s*\\n((?:\\s{2,}.*\\n?)+)`))
-  if (multiLineMatch) {
-    return multiLineMatch[1]
-      .split('\n')
-      .map(line => line.trim())
-      .filter(Boolean)
-      .join(' ')
-      .trim()
-  }
-
-  return null
+/** Read only strings; YAML collections and booleans are not prompt text. */
+function stringField(mapping: Record<string, unknown>, key: string): string | undefined {
+  const value = mapping[key]
+  return typeof value === 'string' ? value : undefined
 }
 
 /**
@@ -70,40 +56,13 @@ function isRuleSubcategory(value: string): value is FrontendChecklistSubcategory
   return RULE_SUBCATEGORIES.some(subcategory => subcategory === value)
 }
 
-/**
- * Normalize a YAML array item or inline scalar into a clean value.
- *
- * @param value - Raw YAML value.
- * @returns Trimmed value without wrapping quotes.
- */
-function normalizeYamlListValue(value: string): string {
-  return value
-    .trim()
-    .replace(/^['"]|['"]$/g, '')
-    .toLowerCase()
-}
-
-/**
- * Parse a categories field from inline or block-style YAML.
- *
- * @param frontmatter - Raw YAML frontmatter text.
- * @returns Supported categories in declared order.
- */
-function parseCategories(frontmatter: string): FrontendChecklistCategory[] {
-  const inlineMatch = frontmatter.match(/categories:\s*\[(.*?)\]/s)
-  if (inlineMatch) {
-    return inlineMatch[1].split(',').map(normalizeYamlListValue).filter(isRuleCategory)
-  }
-
-  const blockMatch = frontmatter.match(/^categories:\s*\n((?:\s+- .+\n?)+)/m)
-  if (!blockMatch) {
-    return []
-  }
-
-  return blockMatch[1]
-    .split('\n')
-    .map(line => line.replace(/^\s+-\s*/, ''))
-    .map(normalizeYamlListValue)
+/** Read categories from parsed inline or block YAML arrays. */
+function parseCategories(frontmatter: Record<string, unknown>): FrontendChecklistCategory[] {
+  const values: unknown = frontmatter.categories
+  if (!Array.isArray(values)) return []
+  return values
+    .filter((value): value is string => typeof value === 'string')
+    .map(value => value.trim().toLowerCase())
     .filter(isRuleCategory)
 }
 
@@ -126,33 +85,22 @@ function resolveDefaultRulesDir(): string {
 }
 
 /**
- * Parse AI prompt strings from raw frontmatter.
+ * Read AI prompt strings from parsed YAML, preserving folding and chomping semantics.
  *
- * @param frontmatter - Raw YAML frontmatter text.
+ * @param frontmatter - Parsed YAML metadata.
  * @returns Prompt object when prompt fields exist.
  */
-function parsePrompts(frontmatter: string): FrontendChecklistRulePrompts | undefined {
-  const promptsMatch = frontmatter.match(/prompts:\s*\n([\s\S]*?)(?=\n[a-zA-Z]|$)/)
-  if (!promptsMatch) {
-    return undefined
-  }
-
-  const promptsBlock = promptsMatch[1]
-  const check = extractYamlField(promptsBlock, 'check') || ''
-  const fix = extractYamlField(promptsBlock, 'fix') || ''
-  const explain = extractYamlField(promptsBlock, 'explain') || ''
-  const codeReview = extractYamlField(promptsBlock, 'codeReview') || undefined
-
-  if (!check && !fix && !explain && !codeReview) {
-    return undefined
-  }
-
-  return {
-    check,
-    fix,
-    explain,
-    ...(codeReview ? { codeReview } : {})
-  }
+function parsePrompts(
+  frontmatter: Record<string, unknown>
+): FrontendChecklistRulePrompts | undefined {
+  const prompts = frontmatter.prompts
+  if (!isMapping(prompts)) return undefined
+  const check = stringField(prompts, 'check') ?? ''
+  const fix = stringField(prompts, 'fix') ?? ''
+  const explain = stringField(prompts, 'explain') ?? ''
+  const codeReview = stringField(prompts, 'codeReview')
+  if (!check && !fix && !explain && !codeReview) return undefined
+  return { check, fix, explain, ...(codeReview ? { codeReview } : {}) }
 }
 
 /**
@@ -182,13 +130,15 @@ export function loadRules(rulesDir: string = resolveDefaultRulesDir()): Frontend
 
       if (!frontmatterMatch) continue
 
-      const frontmatter = frontmatterMatch[1]
+      const parsed: unknown = parse(frontmatterMatch[1])
+      if (!isMapping(parsed)) throw new Error(`Invalid YAML mapping in ${filePath}`)
+      const frontmatter = parsed
       const body = content.slice(frontmatterMatch[0].length).trim()
       const slug = file.replace('.mdx', '')
-      const title = extractYamlField(frontmatter, 'title') || slug
-      const priorityField = extractYamlField(frontmatter, 'priority')
+      const title = stringField(frontmatter, 'title') || slug
+      const priorityField = stringField(frontmatter, 'priority')
       const priority = priorityField && isRulePriority(priorityField) ? priorityField : 'medium'
-      const subcategoryField = extractYamlField(frontmatter, 'subcategory')
+      const subcategoryField = stringField(frontmatter, 'subcategory')
       const subcategory =
         subcategoryField && isRuleSubcategory(subcategoryField) ? subcategoryField : undefined
       const categoriesArray = parseCategories(frontmatter)

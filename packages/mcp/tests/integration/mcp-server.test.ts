@@ -527,3 +527,38 @@ describe('2026-07-28 protocol revision', () => {
     await client.close()
   })
 })
+
+test('SDK validates and returns checklist continuation pages as intact JSON', async () => {
+  const first = await callMcp({
+    jsonrpc: '2.0',
+    id: 901,
+    method: 'tools/call',
+    params: { name: 'get_checklist_rules', arguments: { checklist: 'launch-checklist', limit: 1 } }
+  })
+  expect(first.status).toBe(200)
+  const firstResult = first.json.result as {
+    structuredContent: { nextCursor: string; rules: Array<{ slug: string }> }
+    content: Array<{ text: string }>
+  }
+  expect(firstResult.structuredContent.rules).toHaveLength(1)
+  expect(JSON.parse(firstResult.content[0]!.text)).toEqual(firstResult.structuredContent)
+  const second = await callMcp({
+    jsonrpc: '2.0',
+    id: 902,
+    method: 'tools/call',
+    params: {
+      name: 'get_checklist_rules',
+      arguments: {
+        checklist: 'launch-checklist',
+        limit: 1,
+        cursor: firstResult.structuredContent.nextCursor
+      }
+    }
+  })
+  expect(second.status).toBe(200)
+  expect(second.json).toMatchObject({
+    result: {
+      structuredContent: { nextCursor: null, hasMore: false, rules: [{ slug: 'alt-tags' }] }
+    }
+  })
+})

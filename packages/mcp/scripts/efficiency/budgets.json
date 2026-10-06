@@ -1,0 +1,84 @@
+{
+  "definitionTokens": 2400,
+  "instructionTokens": 200,
+  "scenarios": {
+    "tools-list": {
+      "textTokens": 100,
+      "structuredTokens": 5350,
+      "wireBytes": 24000,
+      "p95Ms": 100
+    },
+    "search-default": {
+      "textTokens": 1350,
+      "structuredTokens": 750,
+      "wireBytes": 10000,
+      "p95Ms": 100
+    },
+    "search-max": {
+      "textTokens": 6600,
+      "structuredTokens": 3850,
+      "wireBytes": 52000,
+      "p95Ms": 100
+    },
+    "review-page": {
+      "textTokens": 4950,
+      "structuredTokens": 4150,
+      "wireBytes": 40000,
+      "p95Ms": 100
+    },
+    "rule-full": {
+      "textTokens": 2450,
+      "structuredTokens": 2350,
+      "wireBytes": 20000,
+      "p95Ms": 100
+    },
+    "rule-check": {
+      "textTokens": 200,
+      "structuredTokens": 200,
+      "wireBytes": 2000,
+      "p95Ms": 100
+    },
+    "rule-fix": {
+      "textTokens": 250,
+      "structuredTokens": 200,
+      "wireBytes": 2000,
+      "p95Ms": 100
+    },
+    "rule-explain": {
+      "textTokens": 200,
+      "structuredTokens": 150,
+      "wireBytes": 2000,
+      "p95Ms": 100
+    },
+    "categories": {
+      "textTokens": 700,
+      "structuredTokens": 400,
+      "wireBytes": 5000,
+      "p95Ms": 100
+    },
+    "quick-reference": {
+      "textTokens": 5150,
+      "structuredTokens": 4350,
+      "wireBytes": 45000,
+      "p95Ms": 100
+    },
+    "workflow": {
+      "textTokens": 1000,
+      "structuredTokens": 600,
+      "wireBytes": 7000,
+      "p95Ms": 100
+    },
+    "checklist": {
+      "textTokens": 4200,
+      "structuredTokens": 3650,
+      "wireBytes": 36000,
+      "p95Ms": 100
+    },
+    "checklist-full": {
+      "textTokens": 4700,
+      "structuredTokens": 4550,
+      "wireBytes": 37000,
+      "p95Ms": 100
+    }
+  }
+}

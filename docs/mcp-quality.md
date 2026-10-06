@@ -32,14 +32,15 @@ pnpm mcp:evaluate
 
 This runs `packages/mcp/tests/quality/mcp-quality.test.ts` against the real rule corpus and prints a compact quality report. It currently measures:
 
-1. **Retrieval quality** with golden discovery queries using `Recall@5` and mean reciprocal rank.
+1. **Retrieval quality** with golden discovery queries using `Hit@5`, true macro `Recall@5`, and mean reciprocal rank. Hit rate counts queries with at least one relevant result; recall averages the fraction of each query's labeled relevant rules found in the first five results.
 2. **`review_code` accuracy** with labeled true-positive and true-negative fixtures, reported as precision, recall, and false-positive rate.
 3. **Improvement impact** with before/after code scenarios that check whether `review_code` identifies known defects, provides guidance, and verifies those defects are gone after a corrected version.
 4. **Tool contract quality** across the full 11-tool surface, including naming, schemas, read-only annotations, and agent-facing descriptions.
 
 The command fails when quality drops below the current thresholds:
 
-- Retrieval `Recall@5 >= 80%`
+- Retrieval `Hit@5 >= 80%`
+- Retrieval macro `Recall@5 >= 80%`
 - Retrieval `MRR >= 0.50`
 - `review_code` precision `>= 90%`
 - `review_code` recall `>= 85%`
@@ -53,32 +54,25 @@ Use this when changing search scoring, rule metadata, detector heuristics, tool 
 
 This is still a deterministic proxy, not a full agent A/B test. It answers whether the MCP can point an agent at the right fixes and verify those fixes locally. To prove an LLM writes better patches with the MCP, run the same benchmark tasks twice with the same model: once without MCP access and once with MCP access, then score the resulting diffs for expected fixes, regressions, tests, token cost, and time.
 
+## Continuous efficiency gates
+
+Run `pnpm mcp:efficiency` for offline reference-token, wire-size and local-handler latency budgets against the real corpus. See [efficiency budgets and GitHub project research](mcp-efficiency.md). The PR/main workflow stores reports, and deployment validation runs this gate alongside the quality suite.
+
 ## Impact benchmark
 
-Run the A/B benchmark harness when you want to measure whether MCP access improves actual agent patches:
+The version 2 harness uses **independent DOM assertions**, not `review_code`, to grade 32 authored HTML tasks. There are 24 development tasks and 8 held-out tasks; 8 total are valid controls that should remain unchanged. These are focused fixtures, not a representative estimate of all frontend work.
 
 ```bash
 pnpm mcp:impact -- --init .mcp-impact/run-001
-```
-
-This creates two identical workspaces:
-
-- `.mcp-impact/run-001/without-mcp`
-- `.mcp-impact/run-001/with-mcp`
-
-Run the same model twice with the same prompt, time budget, and temperature. Disable the Front-End Checklist MCP in `without-mcp`; enable it in `with-mcp`. Then score the outputs:
-
-```bash
 pnpm mcp:impact -- --score .mcp-impact/run-001
-```
-
-The scorer checks fixed frontend defects across image accessibility/layout stability, icon-button accessible names, new-tab link hardening, unsafe dynamic code execution, and viewport zoom accessibility. It reports expected fixes completed in each condition plus the MCP delta.
-
-Verify the harness itself with:
-
-```bash
 pnpm mcp:impact -- --self-test
 ```
+
+Initialization defaults to the development split. Use `--split held-out` only after freezing the server under evaluation, or `--split all` for harness validation. Existing directories are never overwritten. Version 1 workspaces must be reinitialized in a new directory.
+
+The JSON report separates static-check success, preservation failures, unnecessary edits to valid controls, and human-verified task success. Missing, empty, malformed or deleted candidates fail. Matched model/settings, completed runs and independent human reviews bound to candidate hashes are required for `verifiedSuccessDelta`; otherwise it is `null`. Missing cost/token/time data stays `null`.
+
+See [the impact benchmark protocol](mcp-impact-benchmark.md) for isolation, run metadata, review criteria, repeated trials and cost planning. Initialization, scoring, self-tests and unit tests make **no model API calls**.
 
 ## Ecosystem quality radar
 
