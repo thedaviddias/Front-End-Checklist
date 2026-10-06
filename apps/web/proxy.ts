@@ -12,6 +12,12 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map)$).*)'
+    {
+      source:
+        '/((?!api/mcp(?:/|$)|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|map)$).*)',
+      // MCP requests are rewritten after proxy matching, so exclude the entire host too.
+      // The route already enforces its own origin, size, and rate-limit checks.
+      missing: [{ type: 'host', value: 'mcp\\.frontendchecklist\\.io' }]
+    }
   ]
 }
