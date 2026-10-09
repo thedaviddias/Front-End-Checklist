@@ -34,7 +34,9 @@ prompts:
     Inspect `<head>` for `<meta name="twitter:card">`, `<meta
     name="twitter:title">`, `<meta name="twitter:description">`, and `<meta
     name="twitter:image">`. Verify the card type is valid (`summary` or
-    `summary_large_image`). Test the URL in the X Card Validator.
+    `summary_large_image`). X's Card Validator no longer renders a preview, so
+    check the card with a preview tool or by posting the URL to a private
+    account.
   fix: >-
     Add the required Twitter Card meta tags to the `<head>`. For article/blog
     pages use `summary_large_image`. Ensure `twitter:image` points to an
@@ -64,15 +66,17 @@ sources:
     id: x-cards-getting-started-guide
     role: implementation
     authority: primary
+  - title: Card Validator preview removal (X Developer Community)
+    url: 'https://devcommunity.x.com/t/card-validator-preview-removal/175006'
+    type: guide
+    id: x-card-validator-preview-removal
+    role: reference
+    authority: secondary
 resources:
   - name: Google Search Console
     url: 'https://search.google.com/search-console/about'
     type: tool
 relatedRules:
-  - slug: og-tags
-    reason: >-
-      Both rules sit in the `seo/social` area and are commonly reviewed
-      together.
   - slug: og-tags
     reason: >-
       Both rules sit in the `seo/social` area and are commonly reviewed
@@ -85,6 +89,11 @@ relatedRules:
     reason: >-
       Both rules sit in the `seo/social` area and are commonly reviewed
       together.
+tools:
+  - name: getwowlink Twitter card validator
+    url: 'https://www.getwowlink.com/x-card-preview'
+  - name: OpenGraph.xyz
+    url: 'https://www.opengraph.xyz/'
 ---
 Twitter Cards (now X Cards) control how your page appears when shared as a link on the X platform. Without them, shared links appear as plain text URLs.
 
@@ -173,3 +182,4 @@ Best practice: provide both `og:` and `twitter:` tags for maximum compatibility.
 ### Manual Checks
 
 - Review representative live pages manually and confirm there is no stronger conflicting signal that changes the intended SEO outcome.
+- Preview how the card renders before sharing. X's Card Validator stopped showing previews in 2022, so use a card preview tool (see Tools) or post the URL to a private account.
