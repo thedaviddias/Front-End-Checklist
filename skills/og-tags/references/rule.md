@@ -88,6 +88,7 @@ Open Graph tags control how your pages appear when shared on Facebook, LinkedIn,
 - Use the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to inspect and refresh cached OG data
 - Use the [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) for LinkedIn previews
 - Check that og:url exactly matches the `<link rel="canonical">` tag
+- After a release, check a representative URL from each page template, such as the homepage, a product page and a blog post. [ShareScan](https://sharescan.io/scan) checks Open Graph tags and image URLs across up to 10 public pages at once, for free and without an account.
 
 Social platforms cache OG data aggressively. After fixing tags, use each platform's debugger tool to force a cache refresh.
 
