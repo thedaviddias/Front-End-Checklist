@@ -31,7 +31,7 @@
     "@repo/config": "workspace:*",
     "@repo/types": "workspace:*",
     "node-html-parser": "^9.0.4",
-    "undici": "^7.30.0",
+    "undici": "^7.30.1",
     "yaml": "^2.9.1",
     "zod": "catalog:"
   },
