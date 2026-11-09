@@ -41,6 +41,9 @@ const SYSTEM_PROMPT =
   'You are a coding assistant helping a web developer. You have access to tools from the Front-End Checklist MCP server. Call a tool when it would help with the request; otherwise answer directly.'
 
 interface Options {
+  provider: ProviderName
+  region?: RegionName
+  baseURL?: string
   models: string[]
   trials: number
   concurrency: number
@@ -49,6 +52,33 @@ interface Options {
   dryRun: boolean
   minPassHatK?: number
   out: string
+}
+
+type ProviderName = 'anthropic' | 'minimax'
+type RegionName = 'global' | 'cn'
+
+interface ProviderConfig {
+  defaultModels: string[]
+  defaultEffort: Effort
+  apiKeyEnv: string
+  baseURLs?: Partial<Record<RegionName, string>>
+}
+
+const PROVIDERS: Record<ProviderName, ProviderConfig> = {
+  anthropic: {
+    defaultModels: ['claude-opus-5-5'],
+    defaultEffort: 'medium',
+    apiKeyEnv: 'ANTHROPIC_API_KEY'
+  },
+  minimax: {
+    defaultModels: ['MiniMax-M3.1-Flash', 'MiniMax-M3'],
+    defaultEffort: 'max',
+    apiKeyEnv: 'MINIMAX_API_KEY',
+    baseURLs: {
+      global: 'https://api.minimax.io/anthropic',
+      cn: 'https://api.minimaxi.com/anthropic'
+    }
+  }
 }
 
 interface ModelReport {
@@ -78,27 +108,43 @@ function parseOptions(argv: string[]): Options {
   const { values } = parseArgs({
     args: argv.filter(arg => arg !== '--'),
     options: {
-      models: { type: 'string', default: 'claude-opus-5-5' },
+      provider: { type: 'string', default: 'anthropic' },
+      region: { type: 'string' },
+      'base-url': { type: 'string' },
+      models: { type: 'string' },
       trials: { type: 'string', default: '3' },
       concurrency: { type: 'string', default: '4' },
-      effort: { type: 'string', default: 'medium' },
+      effort: { type: 'string' },
       only: { type: 'string' },
       'dry-run': { type: 'boolean', default: false },
       'min-pass-hat-k': { type: 'string' },
       out: { type: 'string' }
     }
   })
-  if (!isEffort(values.effort)) throw new Error(`--effort must be one of ${EFFORTS.join(', ')}`)
+  if (!(values.provider in PROVIDERS)) {
+    throw new Error(`--provider must be one of ${Object.keys(PROVIDERS).join(', ')}`)
+  }
+  const provider = values.provider as ProviderName
+  const region = values.region as RegionName | undefined
+  if (region !== undefined && !['global', 'cn'].includes(region)) {
+    throw new Error('--region must be global or cn')
+  }
+  const providerConfig = PROVIDERS[provider]
+  const effort = values.effort ?? providerConfig.defaultEffort
+  if (!isEffort(effort)) throw new Error(`--effort must be one of ${EFFORTS.join(', ')}`)
   const baseDir = process.env.INIT_CWD ?? process.cwd()
   const stamp = new Date().toISOString().replace(/[:.]/g, '-')
   return {
-    models: values.models
+    provider,
+    region,
+    baseURL: values['base-url'],
+    models: (values.models ?? providerConfig.defaultModels.join(','))
       .split(',')
       .map(model => model.trim())
       .filter(Boolean),
     trials: Math.max(1, Number.parseInt(values.trials, 10)),
     concurrency: Math.max(1, Number.parseInt(values.concurrency, 10)),
-    effort: values.effort,
+    effort,
     only: values.only,
     dryRun: values['dry-run'],
     minPassHatK: values['min-pass-hat-k'] ? Number(values['min-pass-hat-k']) : undefined,
@@ -131,8 +177,10 @@ function buildTools(): Anthropic.Tool[] {
  * @param model - Model ID.
  * @returns True when effort can be sent.
  */
-function supportsEffort(model: string): boolean {
-  return !model.startsWith('claude-haiku')
+function supportsEffort(provider: ProviderName, model: string): boolean {
+  return provider === 'anthropic'
+    ? !model.startsWith('claude-haiku')
+    : model === 'MiniMax-M3.1-Flash'
 }
 
 /**
@@ -151,6 +199,7 @@ function supportsEffort(model: string): boolean {
 async function runTrial(
   client: Anthropic,
   tools: Anthropic.Tool[],
+  provider: ProviderName,
   model: string,
   effort: Effort,
   testCase: ToolChoiceCase
@@ -164,7 +213,7 @@ async function runTrial(
       system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
       tools,
       tool_choice: { type: 'auto' },
-      ...(supportsEffort(model) ? { output_config: { effort } } : {}),
+      ...(supportsEffort(provider, model) ? { output_config: { effort } } : {}),
       messages: [{ role: 'user', content: testCase.prompt }]
     })
     const usage = {
@@ -227,6 +276,7 @@ async function runPool<T>(jobs: Array<() => Promise<T>>, limit: number): Promise
 async function evaluateModel(
   client: Anthropic,
   tools: Anthropic.Tool[],
+  provider: ProviderName,
   model: string,
   cases: ToolChoiceCase[],
   options: Options
@@ -234,7 +284,7 @@ async function evaluateModel(
   const jobs = cases.flatMap(testCase =>
     Array.from(
       { length: options.trials },
-      () => () => runTrial(client, tools, model, options.effort, testCase)
+      () => () => runTrial(client, tools, provider, model, options.effort, testCase)
     )
   )
   const trials = await runPool(jobs, options.concurrency)
@@ -322,7 +372,9 @@ function printPlan(tools: Anthropic.Tool[], cases: ToolChoiceCase[], options: Op
   console.log(
     `~${approxPrefixTokens} prefix tokens per request (tools + system; cached when above the model's minimum cacheable prefix)`
   )
-  console.log(`models: ${options.models.join(', ')} · effort: ${options.effort}`)
+  console.log(
+    `provider: ${options.provider} · region: ${options.region ?? 'default'} · models: ${options.models.join(', ')} · effort: ${options.effort}`
+  )
 }
 
 /**
@@ -345,10 +397,20 @@ async function main(): Promise<void> {
   printPlan(tools, cases, options)
   if (options.dryRun) return
 
-  const client = new Anthropic({ maxRetries: 4 })
+  const providerConfig = PROVIDERS[options.provider]
+  const baseURL =
+    options.baseURL ??
+    (options.provider === 'minimax' ? process.env.MINIMAX_BASE_URL : undefined) ??
+    providerConfig.baseURLs?.[options.region ?? 'global']
+  const apiKey = process.env[providerConfig.apiKeyEnv]
+  const client = new Anthropic({
+    maxRetries: 4,
+    ...(apiKey ? { apiKey } : {}),
+    ...(baseURL ? { baseURL } : {})
+  })
   const reports: ModelReport[] = []
   for (const model of options.models) {
-    const report = await evaluateModel(client, tools, model, cases, options)
+    const report = await evaluateModel(client, tools, options.provider, model, cases, options)
     printReport(report)
     reports.push(report)
   }
@@ -375,9 +437,7 @@ main().catch(error => {
     error instanceof Anthropic.AuthenticationError ||
     (error instanceof Error && /authentication method/i.test(error.message))
   if (missingCredentials) {
-    console.error(
-      'Anthropic credentials missing or invalid: export ANTHROPIC_API_KEY or run `ant auth login`.'
-    )
+    console.error('Provider credentials missing or invalid for the selected provider.')
   } else {
     console.error(error instanceof Error ? error.message : error)
   }
