@@ -59,6 +59,7 @@ type RegionName = 'global' | 'cn'
 
 interface ProviderConfig {
   defaultModels: string[]
+  defaultEffort: Effort
   apiKeyEnv: string
   baseURLs?: Partial<Record<RegionName, string>>
 }
@@ -66,10 +67,12 @@ interface ProviderConfig {
 const PROVIDERS: Record<ProviderName, ProviderConfig> = {
   anthropic: {
     defaultModels: ['claude-opus-5-5'],
+    defaultEffort: 'medium',
     apiKeyEnv: 'ANTHROPIC_API_KEY'
   },
   minimax: {
     defaultModels: ['MiniMax-M3.1-Flash', 'MiniMax-M3'],
+    defaultEffort: 'max',
     apiKeyEnv: 'MINIMAX_API_KEY',
     baseURLs: {
       global: 'https://api.minimax.io/anthropic',
@@ -111,7 +114,7 @@ function parseOptions(argv: string[]): Options {
       models: { type: 'string' },
       trials: { type: 'string', default: '3' },
       concurrency: { type: 'string', default: '4' },
-      effort: { type: 'string', default: 'medium' },
+      effort: { type: 'string' },
       only: { type: 'string' },
       'dry-run': { type: 'boolean', default: false },
       'min-pass-hat-k': { type: 'string' },
@@ -127,7 +130,8 @@ function parseOptions(argv: string[]): Options {
     throw new Error('--region must be global or cn')
   }
   const providerConfig = PROVIDERS[provider]
-  if (!isEffort(values.effort)) throw new Error(`--effort must be one of ${EFFORTS.join(', ')}`)
+  const effort = values.effort ?? providerConfig.defaultEffort
+  if (!isEffort(effort)) throw new Error(`--effort must be one of ${EFFORTS.join(', ')}`)
   const baseDir = process.env.INIT_CWD ?? process.cwd()
   const stamp = new Date().toISOString().replace(/[:.]/g, '-')
   return {
@@ -140,7 +144,7 @@ function parseOptions(argv: string[]): Options {
       .filter(Boolean),
     trials: Math.max(1, Number.parseInt(values.trials, 10)),
     concurrency: Math.max(1, Number.parseInt(values.concurrency, 10)),
-    effort: values.effort,
+    effort,
     only: values.only,
     dryRun: values['dry-run'],
     minPassHatK: values['min-pass-hat-k'] ? Number(values['min-pass-hat-k']) : undefined,
