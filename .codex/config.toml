@@ -4,3 +4,7 @@ args = [
     "tsx",
     "packages/mcp/src/cli.ts",
 ]
+
+[mcp_servers.qmd]
+command = "qmd"
+args = ["mcp"]
